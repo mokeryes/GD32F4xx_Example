@@ -1,0 +1,423 @@
+ARM GAS  /tmp/ccHliqc5.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f4xx_iref.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c"
+  18              		.section	.text.iref_deinit,"ax",%progbits
+  19              		.align	1
+  20              		.global	iref_deinit
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	iref_deinit:
+  26              	.LFB116:
+   1:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** /*!
+   2:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \file    gd32f4xx_iref.c
+   3:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \brief   IREF driver
+   4:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+   5:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \version 2016-08-15, V1.0.0, firmware for GD32F4xx
+   6:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \version 2018-12-12, V2.0.0, firmware for GD32F4xx
+   7:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \version 2020-09-30, V2.1.0, firmware for GD32F4xx
+   8:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \version 2022-03-09, V3.0.0, firmware for GD32F4xx
+   9:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** */
+  10:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+  11:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** /*
+  12:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     Copyright (c) 2022, GigaDevice Semiconductor Inc.
+  13:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+  14:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     Redistribution and use in source and binary forms, with or without modification,
+  15:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** are permitted provided that the following conditions are met:
+  16:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+  17:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     1. Redistributions of source code must retain the above copyright notice, this
+  18:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****        list of conditions and the following disclaimer.
+  19:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     2. Redistributions in binary form must reproduce the above copyright notice,
+  20:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****        this list of conditions and the following disclaimer in the documentation
+  21:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****        and/or other materials provided with the distribution.
+  22:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     3. Neither the name of the copyright holder nor the names of its contributors
+  23:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****        may be used to endorse or promote products derived from this software without
+  24:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****        specific prior written permission.
+  25:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+  26:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  27:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  28:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+  29:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+  30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+  31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ARM GAS  /tmp/ccHliqc5.s 			page 2
+
+
+  33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  34:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+  35:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** OF SUCH DAMAGE.
+  36:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** */
+  37:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+  38:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** #include "gd32f4xx_iref.h"
+  39:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+  40:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** /*!
+  41:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \brief      deinitialize IREF
+  42:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[in]  none
+  43:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[out] none
+  44:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \retval     none
+  45:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** */
+  46:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** void iref_deinit(void)
+  47:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** {
+  27              		.loc 1 47 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  48:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     rcu_periph_reset_enable(RCU_IREFRST);
+  31              		.loc 1 48 5 view .LVU1
+  47:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     rcu_periph_reset_enable(RCU_IREFRST);
+  32              		.loc 1 47 1 is_stmt 0 view .LVU2
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  38              		.loc 1 48 5 view .LVU3
+  39 0002 43F61F00 		movw	r0, #14367
+  40 0006 FFF7FEFF 		bl	rcu_periph_reset_enable
+  41              	.LVL0:
+  49:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     rcu_periph_reset_disable(RCU_IREFRST);
+  42              		.loc 1 49 5 is_stmt 1 view .LVU4
+  50:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** }
+  43              		.loc 1 50 1 is_stmt 0 view .LVU5
+  44 000a BDE80840 		pop	{r3, lr}
+  45              	.LCFI1:
+  46              		.cfi_restore 14
+  47              		.cfi_restore 3
+  48              		.cfi_def_cfa_offset 0
+  49:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     rcu_periph_reset_disable(RCU_IREFRST);
+  49              		.loc 1 49 5 view .LVU6
+  50 000e 43F61F00 		movw	r0, #14367
+  51 0012 FFF7FEBF 		b	rcu_periph_reset_disable
+  52              	.LVL1:
+  53              		.cfi_endproc
+  54              	.LFE116:
+  56              		.section	.text.iref_enable,"ax",%progbits
+  57              		.align	1
+  58              		.global	iref_enable
+  59              		.syntax unified
+  60              		.thumb
+  61              		.thumb_func
+  63              	iref_enable:
+  64              	.LFB117:
+  51:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+ARM GAS  /tmp/ccHliqc5.s 			page 3
+
+
+  52:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** /*!
+  53:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \brief    enable IREF
+  54:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[in]  none
+  55:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[out] none
+  56:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \retval     none
+  57:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** */
+  58:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** void iref_enable(void)
+  59:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** {
+  65              		.loc 1 59 1 is_stmt 1 view -0
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 0
+  68              		@ frame_needed = 0, uses_anonymous_args = 0
+  69              		@ link register save eliminated.
+  60:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     IREF_CTL |= IREF_CTL_CREN;
+  70              		.loc 1 60 5 view .LVU8
+  71 0000 034A     		ldr	r2, .L3
+  72 0002 D2F80037 		ldr	r3, [r2, #1792]
+  73              		.loc 1 60 14 is_stmt 0 view .LVU9
+  74 0006 43F40043 		orr	r3, r3, #32768
+  75 000a C2F80037 		str	r3, [r2, #1792]
+  61:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** }
+  76              		.loc 1 61 1 view .LVU10
+  77 000e 7047     		bx	lr
+  78              	.L4:
+  79              		.align	2
+  80              	.L3:
+  81 0010 00C00040 		.word	1073790976
+  82              		.cfi_endproc
+  83              	.LFE117:
+  85              		.section	.text.iref_disable,"ax",%progbits
+  86              		.align	1
+  87              		.global	iref_disable
+  88              		.syntax unified
+  89              		.thumb
+  90              		.thumb_func
+  92              	iref_disable:
+  93              	.LFB118:
+  62:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+  63:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** /*!
+  64:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \brief      disable IREF
+  65:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[in]  none
+  66:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[out] none
+  67:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \retval     none
+  68:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** */
+  69:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** void iref_disable(void)
+  70:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** {
+  94              		.loc 1 70 1 is_stmt 1 view -0
+  95              		.cfi_startproc
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98              		@ link register save eliminated.
+  71:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     IREF_CTL &= ~IREF_CTL_CREN;
+  99              		.loc 1 71 5 view .LVU12
+ 100 0000 034A     		ldr	r2, .L6
+ 101 0002 D2F80037 		ldr	r3, [r2, #1792]
+ 102              		.loc 1 71 14 is_stmt 0 view .LVU13
+ 103 0006 23F40043 		bic	r3, r3, #32768
+ARM GAS  /tmp/ccHliqc5.s 			page 4
+
+
+ 104 000a C2F80037 		str	r3, [r2, #1792]
+  72:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** }
+ 105              		.loc 1 72 1 view .LVU14
+ 106 000e 7047     		bx	lr
+ 107              	.L7:
+ 108              		.align	2
+ 109              	.L6:
+ 110 0010 00C00040 		.word	1073790976
+ 111              		.cfi_endproc
+ 112              	.LFE118:
+ 114              		.section	.text.iref_mode_set,"ax",%progbits
+ 115              		.align	1
+ 116              		.global	iref_mode_set
+ 117              		.syntax unified
+ 118              		.thumb
+ 119              		.thumb_func
+ 121              	iref_mode_set:
+ 122              	.LVL2:
+ 123              	.LFB119:
+  73:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+  74:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** /*!
+  75:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \brief      set IREF mode
+  76:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[in]  step
+  77:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****       \arg        IREF_MODE_LOW_POWER: 1uA step
+  78:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****       \arg        IREF_MODE_HIGH_CURRENT: 8uA step
+  79:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[out] none
+  80:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \retval     none
+  81:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** */
+  82:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** void iref_mode_set(uint32_t step)
+  83:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** {
+ 124              		.loc 1 83 1 is_stmt 1 view -0
+ 125              		.cfi_startproc
+ 126              		@ args = 0, pretend = 0, frame = 0
+ 127              		@ frame_needed = 0, uses_anonymous_args = 0
+ 128              		@ link register save eliminated.
+  84:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     IREF_CTL &= ~IREF_CTL_SSEL;
+ 129              		.loc 1 84 5 view .LVU16
+ 130 0000 064B     		ldr	r3, .L9
+ 131 0002 D3F80027 		ldr	r2, [r3, #1792]
+ 132              		.loc 1 84 14 is_stmt 0 view .LVU17
+ 133 0006 22F48042 		bic	r2, r2, #16384
+ 134 000a C3F80027 		str	r2, [r3, #1792]
+  85:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     IREF_CTL |= step;
+ 135              		.loc 1 85 5 is_stmt 1 view .LVU18
+ 136 000e D3F80027 		ldr	r2, [r3, #1792]
+ 137              		.loc 1 85 14 is_stmt 0 view .LVU19
+ 138 0012 0243     		orrs	r2, r2, r0
+ 139 0014 C3F80027 		str	r2, [r3, #1792]
+  86:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** }
+ 140              		.loc 1 86 1 view .LVU20
+ 141 0018 7047     		bx	lr
+ 142              	.L10:
+ 143 001a 00BF     		.align	2
+ 144              	.L9:
+ 145 001c 00C00040 		.word	1073790976
+ 146              		.cfi_endproc
+ 147              	.LFE119:
+ARM GAS  /tmp/ccHliqc5.s 			page 5
+
+
+ 149              		.section	.text.iref_precision_trim_value_set,"ax",%progbits
+ 150              		.align	1
+ 151              		.global	iref_precision_trim_value_set
+ 152              		.syntax unified
+ 153              		.thumb
+ 154              		.thumb_func
+ 156              	iref_precision_trim_value_set:
+ 157              	.LVL3:
+ 158              	.LFB120:
+  87:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+  88:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** /*!
+  89:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \brief      set IREF precision_trim_value
+  90:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[in]  precisiontrim
+  91:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****       \arg        IREF_CUR_PRECISION_TRIM_X(x=0..31): (-15+ x)%
+  92:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[out] none
+  93:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \retval     none
+  94:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** */
+  95:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** void iref_precision_trim_value_set(uint32_t precisiontrim)
+  96:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** {
+ 159              		.loc 1 96 1 is_stmt 1 view -0
+ 160              		.cfi_startproc
+ 161              		@ args = 0, pretend = 0, frame = 0
+ 162              		@ frame_needed = 0, uses_anonymous_args = 0
+ 163              		@ link register save eliminated.
+  97:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     IREF_CTL &= ~IREF_CTL_CPT;
+ 164              		.loc 1 97 5 view .LVU22
+ 165 0000 064B     		ldr	r3, .L12
+ 166 0002 D3F80027 		ldr	r2, [r3, #1792]
+ 167              		.loc 1 97 14 is_stmt 0 view .LVU23
+ 168 0006 22F4F852 		bic	r2, r2, #7936
+ 169 000a C3F80027 		str	r2, [r3, #1792]
+  98:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     IREF_CTL |= precisiontrim;
+ 170              		.loc 1 98 5 is_stmt 1 view .LVU24
+ 171 000e D3F80027 		ldr	r2, [r3, #1792]
+ 172              		.loc 1 98 14 is_stmt 0 view .LVU25
+ 173 0012 0243     		orrs	r2, r2, r0
+ 174 0014 C3F80027 		str	r2, [r3, #1792]
+  99:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** }
+ 175              		.loc 1 99 1 view .LVU26
+ 176 0018 7047     		bx	lr
+ 177              	.L13:
+ 178 001a 00BF     		.align	2
+ 179              	.L12:
+ 180 001c 00C00040 		.word	1073790976
+ 181              		.cfi_endproc
+ 182              	.LFE120:
+ 184              		.section	.text.iref_sink_set,"ax",%progbits
+ 185              		.align	1
+ 186              		.global	iref_sink_set
+ 187              		.syntax unified
+ 188              		.thumb
+ 189              		.thumb_func
+ 191              	iref_sink_set:
+ 192              	.LVL4:
+ 193              	.LFB121:
+ 100:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+ 101:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** /*!
+ARM GAS  /tmp/ccHliqc5.s 			page 6
+
+
+ 102:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \brief      set IREF sink mode
+ 103:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[in]  sinkmode
+ 104:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****       \arg        IREF_SOURCE_CURRENT : source current.
+ 105:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****       \arg        IREF_SINK_CURRENT: sink current
+ 106:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[out] none
+ 107:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \retval     none
+ 108:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** */
+ 109:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** void iref_sink_set(uint32_t sinkmode)
+ 110:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** {
+ 194              		.loc 1 110 1 is_stmt 1 view -0
+ 195              		.cfi_startproc
+ 196              		@ args = 0, pretend = 0, frame = 0
+ 197              		@ frame_needed = 0, uses_anonymous_args = 0
+ 198              		@ link register save eliminated.
+ 111:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     IREF_CTL &= ~IREF_CTL_SCMOD;
+ 199              		.loc 1 111 5 view .LVU28
+ 200 0000 064B     		ldr	r3, .L15
+ 201 0002 D3F80027 		ldr	r2, [r3, #1792]
+ 202              		.loc 1 111 14 is_stmt 0 view .LVU29
+ 203 0006 22F08002 		bic	r2, r2, #128
+ 204 000a C3F80027 		str	r2, [r3, #1792]
+ 112:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     IREF_CTL |= sinkmode;
+ 205              		.loc 1 112 5 is_stmt 1 view .LVU30
+ 206 000e D3F80027 		ldr	r2, [r3, #1792]
+ 207              		.loc 1 112 14 is_stmt 0 view .LVU31
+ 208 0012 0243     		orrs	r2, r2, r0
+ 209 0014 C3F80027 		str	r2, [r3, #1792]
+ 113:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** }
+ 210              		.loc 1 113 1 view .LVU32
+ 211 0018 7047     		bx	lr
+ 212              	.L16:
+ 213 001a 00BF     		.align	2
+ 214              	.L15:
+ 215 001c 00C00040 		.word	1073790976
+ 216              		.cfi_endproc
+ 217              	.LFE121:
+ 219              		.section	.text.iref_step_data_config,"ax",%progbits
+ 220              		.align	1
+ 221              		.global	iref_step_data_config
+ 222              		.syntax unified
+ 223              		.thumb
+ 224              		.thumb_func
+ 226              	iref_step_data_config:
+ 227              	.LVL5:
+ 228              	.LFB122:
+ 114:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+ 115:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** /*!
+ 116:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \brief      set IREF step data
+ 117:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[in]  stepdata
+ 118:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****       \arg        IREF_CUR_STEP_DATA_X:(x=0..63): step*x
+ 119:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \param[out] none
+ 120:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \retval     none
+ 121:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** */
+ 122:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
+ 123:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** void iref_step_data_config(uint32_t stepdata)
+ 124:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** {
+ 229              		.loc 1 124 1 is_stmt 1 view -0
+ARM GAS  /tmp/ccHliqc5.s 			page 7
+
+
+ 230              		.cfi_startproc
+ 231              		@ args = 0, pretend = 0, frame = 0
+ 232              		@ frame_needed = 0, uses_anonymous_args = 0
+ 233              		@ link register save eliminated.
+ 125:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     IREF_CTL &= ~IREF_CTL_CSDT;
+ 234              		.loc 1 125 5 view .LVU34
+ 235 0000 064B     		ldr	r3, .L18
+ 236 0002 D3F80027 		ldr	r2, [r3, #1792]
+ 237              		.loc 1 125 14 is_stmt 0 view .LVU35
+ 238 0006 22F03F02 		bic	r2, r2, #63
+ 239 000a C3F80027 		str	r2, [r3, #1792]
+ 126:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     IREF_CTL |= stepdata;
+ 240              		.loc 1 126 5 is_stmt 1 view .LVU36
+ 241 000e D3F80027 		ldr	r2, [r3, #1792]
+ 242              		.loc 1 126 14 is_stmt 0 view .LVU37
+ 243 0012 0243     		orrs	r2, r2, r0
+ 244 0014 C3F80027 		str	r2, [r3, #1792]
+ 127:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** }
+ 245              		.loc 1 127 1 view .LVU38
+ 246 0018 7047     		bx	lr
+ 247              	.L19:
+ 248 001a 00BF     		.align	2
+ 249              	.L18:
+ 250 001c 00C00040 		.word	1073790976
+ 251              		.cfi_endproc
+ 252              	.LFE122:
+ 254              		.text
+ 255              	.Letext0:
+ 256              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 257              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 258              		.file 4 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
+ARM GAS  /tmp/ccHliqc5.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 gd32f4xx_iref.c
+     /tmp/ccHliqc5.s:19     .text.iref_deinit:0000000000000000 $t
+     /tmp/ccHliqc5.s:25     .text.iref_deinit:0000000000000000 iref_deinit
+     /tmp/ccHliqc5.s:57     .text.iref_enable:0000000000000000 $t
+     /tmp/ccHliqc5.s:63     .text.iref_enable:0000000000000000 iref_enable
+     /tmp/ccHliqc5.s:81     .text.iref_enable:0000000000000010 $d
+     /tmp/ccHliqc5.s:86     .text.iref_disable:0000000000000000 $t
+     /tmp/ccHliqc5.s:92     .text.iref_disable:0000000000000000 iref_disable
+     /tmp/ccHliqc5.s:110    .text.iref_disable:0000000000000010 $d
+     /tmp/ccHliqc5.s:115    .text.iref_mode_set:0000000000000000 $t
+     /tmp/ccHliqc5.s:121    .text.iref_mode_set:0000000000000000 iref_mode_set
+     /tmp/ccHliqc5.s:145    .text.iref_mode_set:000000000000001c $d
+     /tmp/ccHliqc5.s:150    .text.iref_precision_trim_value_set:0000000000000000 $t
+     /tmp/ccHliqc5.s:156    .text.iref_precision_trim_value_set:0000000000000000 iref_precision_trim_value_set
+     /tmp/ccHliqc5.s:180    .text.iref_precision_trim_value_set:000000000000001c $d
+     /tmp/ccHliqc5.s:185    .text.iref_sink_set:0000000000000000 $t
+     /tmp/ccHliqc5.s:191    .text.iref_sink_set:0000000000000000 iref_sink_set
+     /tmp/ccHliqc5.s:215    .text.iref_sink_set:000000000000001c $d
+     /tmp/ccHliqc5.s:220    .text.iref_step_data_config:0000000000000000 $t
+     /tmp/ccHliqc5.s:226    .text.iref_step_data_config:0000000000000000 iref_step_data_config
+     /tmp/ccHliqc5.s:250    .text.iref_step_data_config:000000000000001c $d
+
+UNDEFINED SYMBOLS
+rcu_periph_reset_enable
+rcu_periph_reset_disable

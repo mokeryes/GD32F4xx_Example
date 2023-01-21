@@ -1,0 +1,88 @@
+ARM GAS  /tmp/ccMaJAtl.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/main.c"
+  18              		.section	.text.startup.main,"ax",%progbits
+  19              		.align	1
+  20              		.global	main
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	main:
+  26              	.LFB119:
+   1:Core/Src/main.c **** #include <stdio.h>
+   2:Core/Src/main.c **** #include "main.h"
+   3:Core/Src/main.c **** 
+   4:Core/Src/main.c **** 
+   5:Core/Src/main.c **** int main(void)
+   6:Core/Src/main.c **** {
+  27              		.loc 1 6 1 view -0
+  28              		.cfi_startproc
+  29              		@ Volatile: function does not return.
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+   7:Core/Src/main.c ****     systick_config();
+  32              		.loc 1 7 5 view .LVU1
+   6:Core/Src/main.c ****     systick_config();
+  33              		.loc 1 6 1 is_stmt 0 view .LVU2
+  34 0000 08B5     		push	{r3, lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 3, -8
+  38              		.cfi_offset 14, -4
+  39              		.loc 1 7 5 view .LVU3
+  40 0002 FFF7FEFF 		bl	systick_config
+  41              	.LVL0:
+   8:Core/Src/main.c ****     usart_gpio_config();
+  42              		.loc 1 8 5 is_stmt 1 view .LVU4
+  43 0006 FFF7FEFF 		bl	usart_gpio_config
+  44              	.LVL1:
+  45              	.L3:
+   9:Core/Src/main.c ****     MPU6050_init();
+  46              		.loc 1 9 5 view .LVU5
+  47 000a FFF7FEFF 		bl	MPU6050_init
+  48              	.LVL2:
+ARM GAS  /tmp/ccMaJAtl.s 			page 2
+
+
+  10:Core/Src/main.c **** 
+  11:Core/Src/main.c ****     while (1) {
+  49              		.loc 1 11 5 view .LVU6
+  12:Core/Src/main.c ****         MPU6050_init();
+  50              		.loc 1 12 9 view .LVU7
+  51 000e FCE7     		b	.L3
+  52              		.cfi_endproc
+  53              	.LFE119:
+  55              		.text
+  56              	.Letext0:
+  57              		.file 2 "Hardware/Inc/bsp_mpu6050.h"
+  58              		.file 3 "Core/Inc/bsp_usart.h"
+  59              		.file 4 "Core/Inc/systick.h"
+ARM GAS  /tmp/ccMaJAtl.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/ccMaJAtl.s:19     .text.startup.main:0000000000000000 $t
+     /tmp/ccMaJAtl.s:25     .text.startup.main:0000000000000000 main
+
+UNDEFINED SYMBOLS
+systick_config
+usart_gpio_config
+MPU6050_init

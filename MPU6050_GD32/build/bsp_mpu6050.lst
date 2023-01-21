@@ -1,0 +1,1363 @@
+ARM GAS  /tmp/ccqxhqYc.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"bsp_mpu6050.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Hardware/Src/bsp_mpu6050.c"
+  18              		.section	.rodata.mpu6050_buffer_read_timeout.str1.1,"aMS",%progbits,1
+  19              	.LC0:
+  20 0000 69326320 		.ascii	"i2c bus is busy in READ!\000"
+  20      62757320 
+  20      69732062 
+  20      75737920 
+  20      696E2052 
+  21              	.LC1:
+  22 0019 69326320 		.ascii	"i2c master sends start signal timeout in READ!\000"
+  22      6D617374 
+  22      65722073 
+  22      656E6473 
+  22      20737461 
+  23              	.LC2:
+  24 0048 69326320 		.ascii	"i2c master clears address flag timeout in READ!\000"
+  24      6D617374 
+  24      65722063 
+  24      6C656172 
+  24      73206164 
+  25              	.LC3:
+  26 0078 69326320 		.ascii	"i2c master wait data buffer is empty timeout in REA"
+  26      6D617374 
+  26      65722077 
+  26      61697420 
+  26      64617461 
+  27 00ab 442100   		.ascii	"D!\000"
+  28              	.LC4:
+  29 00ae 69326320 		.ascii	"i2c master sends EEPROM's internal address timeout "
+  29      6D617374 
+  29      65722073 
+  29      656E6473 
+  29      20454550 
+  30 00e1 696E2052 		.ascii	"in READ!\000"
+  30      45414421 
+  30      00
+  31              	.LC5:
+  32 00ea 69326320 		.ascii	"i2c master sends data timeout in READ!\000"
+  32      6D617374 
+  32      65722073 
+  32      656E6473 
+ARM GAS  /tmp/ccqxhqYc.s 			page 2
+
+
+  32      20646174 
+  33              	.LC6:
+  34 0111 69326320 		.ascii	"i2c master sends stop signal timeout in READ!\000"
+  34      6D617374 
+  34      65722073 
+  34      656E6473 
+  34      2073746F 
+  35              		.section	.text.mpu6050_buffer_read_timeout,"ax",%progbits
+  36              		.align	1
+  37              		.global	mpu6050_buffer_read_timeout
+  38              		.syntax unified
+  39              		.thumb
+  40              		.thumb_func
+  42              	mpu6050_buffer_read_timeout:
+  43              	.LVL0:
+  44              	.LFB121:
+   1:Hardware/Src/bsp_mpu6050.c **** #include <stdio.h>
+   2:Hardware/Src/bsp_mpu6050.c **** #include "bsp_mpu6050.h"
+   3:Hardware/Src/bsp_mpu6050.c **** 
+   4:Hardware/Src/bsp_mpu6050.c **** 
+   5:Hardware/Src/bsp_mpu6050.c **** /**
+   6:Hardware/Src/bsp_mpu6050.c ****  * @brief 向器件内部功能地址发送数据
+   7:Hardware/Src/bsp_mpu6050.c ****  * 
+   8:Hardware/Src/bsp_mpu6050.c ****  * @param slave_addr 器件地址
+   9:Hardware/Src/bsp_mpu6050.c ****  * @param internel_addr 器件内部功能地址
+  10:Hardware/Src/bsp_mpu6050.c ****  * @param data 要发送的数据
+  11:Hardware/Src/bsp_mpu6050.c ****  */
+  12:Hardware/Src/bsp_mpu6050.c **** static uint8_t mpu6050_single_read(uint8_t internal_addr)
+  13:Hardware/Src/bsp_mpu6050.c **** {
+  14:Hardware/Src/bsp_mpu6050.c ****     i2c_ack_config(I2CX, I2C_ACK_ENABLE);
+  15:Hardware/Src/bsp_mpu6050.c **** 
+  16:Hardware/Src/bsp_mpu6050.c ****     while (i2c_flag_get(I2CX, I2C_FLAG_I2CBSY));
+  17:Hardware/Src/bsp_mpu6050.c ****     i2c_start_on_bus(I2CX);
+  18:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_SBSEND));
+  19:Hardware/Src/bsp_mpu6050.c **** 
+  20:Hardware/Src/bsp_mpu6050.c ****     i2c_master_addressing(I2CX, MPU6050_ADDR, I2C_TRANSMITTER);
+  21:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_ADDSEND));
+  22:Hardware/Src/bsp_mpu6050.c ****     i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+  23:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_TBE));
+  24:Hardware/Src/bsp_mpu6050.c **** 
+  25:Hardware/Src/bsp_mpu6050.c ****     i2c_data_transmit(I2CX, internal_addr);
+  26:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_BTC));
+  27:Hardware/Src/bsp_mpu6050.c **** 
+  28:Hardware/Src/bsp_mpu6050.c ****     i2c_start_on_bus(I2CX);
+  29:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_SBSEND));
+  30:Hardware/Src/bsp_mpu6050.c **** 
+  31:Hardware/Src/bsp_mpu6050.c ****     i2c_master_addressing(I2CX, MPU6050_ADDR, I2C_RECEIVER);
+  32:Hardware/Src/bsp_mpu6050.c ****     i2c_ack_config(I2CX, I2C_ACK_DISABLE);
+  33:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_ADDSEND));
+  34:Hardware/Src/bsp_mpu6050.c ****     i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+  35:Hardware/Src/bsp_mpu6050.c ****     i2c_stop_on_bus(I2CX);
+  36:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_RBNE));
+  37:Hardware/Src/bsp_mpu6050.c ****     uint8_t data = i2c_data_receive(I2CX);
+  38:Hardware/Src/bsp_mpu6050.c ****     while (I2C_CTL0(I2CX) & I2C_CTL0_STOP);
+  39:Hardware/Src/bsp_mpu6050.c **** 
+  40:Hardware/Src/bsp_mpu6050.c ****     return data;
+  41:Hardware/Src/bsp_mpu6050.c **** }
+ARM GAS  /tmp/ccqxhqYc.s 			page 3
+
+
+  42:Hardware/Src/bsp_mpu6050.c **** 
+  43:Hardware/Src/bsp_mpu6050.c **** 
+  44:Hardware/Src/bsp_mpu6050.c **** static void MPU6050_single_byte_write(uint8_t internal_addr, uint8_t data)
+  45:Hardware/Src/bsp_mpu6050.c **** {
+  46:Hardware/Src/bsp_mpu6050.c ****     i2c_ack_config(I2CX, I2C_ACK_DISABLE);
+  47:Hardware/Src/bsp_mpu6050.c **** 
+  48:Hardware/Src/bsp_mpu6050.c ****     i2c_ack_config(I2CX, I2C_ACK_ENABLE);
+  49:Hardware/Src/bsp_mpu6050.c **** }
+  50:Hardware/Src/bsp_mpu6050.c **** 
+  51:Hardware/Src/bsp_mpu6050.c **** /**
+  52:Hardware/Src/bsp_mpu6050.c ****  * @brief 从设备中读取单个数据
+  53:Hardware/Src/bsp_mpu6050.c ****  * 
+  54:Hardware/Src/bsp_mpu6050.c ****  * @param slave_addr 器件地址
+  55:Hardware/Src/bsp_mpu6050.c ****  * @param internal_addr 器件内部功能地址
+  56:Hardware/Src/bsp_mpu6050.c ****  * @return uint8_t 返回读取的数据
+  57:Hardware/Src/bsp_mpu6050.c ****  */
+  58:Hardware/Src/bsp_mpu6050.c **** uint8_t mpu6050_buffer_read_timeout(uint8_t *p_buffer, uint8_t read_address, uint16_t number_of_byt
+  59:Hardware/Src/bsp_mpu6050.c **** {
+  45              		.loc 1 59 1 view -0
+  46              		.cfi_startproc
+  47              		@ args = 0, pretend = 0, frame = 0
+  48              		@ frame_needed = 0, uses_anonymous_args = 0
+  60:Hardware/Src/bsp_mpu6050.c ****     uint8_t state = I2C_START;
+  49              		.loc 1 60 5 view .LVU1
+  61:Hardware/Src/bsp_mpu6050.c ****     uint8_t read_cycle = 0;
+  50              		.loc 1 61 5 view .LVU2
+  62:Hardware/Src/bsp_mpu6050.c ****     uint16_t timeout = 0;
+  51              		.loc 1 62 5 view .LVU3
+  63:Hardware/Src/bsp_mpu6050.c ****     uint8_t i2c_timeout_flag = 0;
+  52              		.loc 1 63 5 view .LVU4
+  64:Hardware/Src/bsp_mpu6050.c **** 
+  65:Hardware/Src/bsp_mpu6050.c ****     /* enable acknowledge */
+  66:Hardware/Src/bsp_mpu6050.c ****     i2c_ack_config(I2CX, I2C_ACK_ENABLE);
+  53              		.loc 1 66 5 view .LVU5
+  59:Hardware/Src/bsp_mpu6050.c ****     uint8_t state = I2C_START;
+  54              		.loc 1 59 1 is_stmt 0 view .LVU6
+  55 0000 2DE9F84F 		push	{r3, r4, r5, r6, r7, r8, r9, r10, fp, lr}
+  56              	.LCFI0:
+  57              		.cfi_def_cfa_offset 40
+  58              		.cfi_offset 3, -40
+  59              		.cfi_offset 4, -36
+  60              		.cfi_offset 5, -32
+  61              		.cfi_offset 6, -28
+  62              		.cfi_offset 7, -24
+  63              		.cfi_offset 8, -20
+  64              		.cfi_offset 9, -16
+  65              		.cfi_offset 10, -12
+  66              		.cfi_offset 11, -8
+  67              		.cfi_offset 14, -4
+  59:Hardware/Src/bsp_mpu6050.c ****     uint8_t state = I2C_START;
+  68              		.loc 1 59 1 view .LVU7
+  69 0004 8046     		mov	r8, r0
+  70 0006 8946     		mov	r9, r1
+  71              		.loc 1 66 5 view .LVU8
+  72 0008 7448     		ldr	r0, .L55
+  73              	.LVL1:
+  74              		.loc 1 66 5 view .LVU9
+ARM GAS  /tmp/ccqxhqYc.s 			page 4
+
+
+  75 000a 4FF48061 		mov	r1, #1024
+  76              	.LVL2:
+  59:Hardware/Src/bsp_mpu6050.c ****     uint8_t state = I2C_START;
+  77              		.loc 1 59 1 view .LVU10
+  78 000e 1446     		mov	r4, r2
+  79              		.loc 1 66 5 view .LVU11
+  80 0010 FFF7FEFF 		bl	i2c_ack_config
+  81              	.LVL3:
+  67:Hardware/Src/bsp_mpu6050.c ****     while(!(i2c_timeout_flag)) {
+  82              		.loc 1 67 5 is_stmt 1 view .LVU12
+  83              		.loc 1 67 11 view .LVU13
+  68:Hardware/Src/bsp_mpu6050.c ****         switch(state) {
+  84              		.loc 1 68 9 view .LVU14
+  69:Hardware/Src/bsp_mpu6050.c ****         case I2C_START:
+  70:Hardware/Src/bsp_mpu6050.c ****             if(RESET == read_cycle) {
+  85              		.loc 1 70 13 view .LVU15
+  71:Hardware/Src/bsp_mpu6050.c ****                 /* i2c master sends start signal only when the bus is idle */
+  72:Hardware/Src/bsp_mpu6050.c ****                 while(i2c_flag_get(I2CX, I2C_FLAG_I2CBSY) && (timeout < I2C_TIME_OUT)) {
+  86              		.loc 1 72 59 is_stmt 0 view .LVU16
+  87 0014 41F28936 		movw	r6, #5001
+  88              	.LVL4:
+  89              	.L2:
+  90              		.loc 1 72 23 view .LVU17
+  91 0018 DFF8C0A1 		ldr	r10, .L55
+  73:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+  74:Hardware/Src/bsp_mpu6050.c ****                 }
+  75:Hardware/Src/bsp_mpu6050.c ****                 if(timeout < I2C_TIME_OUT) {
+  76:Hardware/Src/bsp_mpu6050.c ****                     /* whether to send ACK or not for the next byte */
+  77:Hardware/Src/bsp_mpu6050.c ****                     if(2 == number_of_byte) {
+  78:Hardware/Src/bsp_mpu6050.c ****                         i2c_ackpos_config(I2CX, I2C_ACKPOS_NEXT);
+  79:Hardware/Src/bsp_mpu6050.c ****                     }
+  80:Hardware/Src/bsp_mpu6050.c ****                 } else {
+  81:Hardware/Src/bsp_mpu6050.c ****                     i2c_bus_reset();
+  82:Hardware/Src/bsp_mpu6050.c ****                     timeout = 0;
+  83:Hardware/Src/bsp_mpu6050.c ****                     state = I2C_START;
+  84:Hardware/Src/bsp_mpu6050.c ****                     printf("i2c bus is busy in READ!\n");
+  85:Hardware/Src/bsp_mpu6050.c ****                 }
+  86:Hardware/Src/bsp_mpu6050.c ****             }
+  87:Hardware/Src/bsp_mpu6050.c ****             /* send the start signal */
+  88:Hardware/Src/bsp_mpu6050.c ****             i2c_start_on_bus(I2CX);
+  89:Hardware/Src/bsp_mpu6050.c ****             timeout = 0;
+  90:Hardware/Src/bsp_mpu6050.c ****             state = I2C_SEND_ADDRESS;
+  91:Hardware/Src/bsp_mpu6050.c ****             break;
+  92:Hardware/Src/bsp_mpu6050.c ****         case I2C_SEND_ADDRESS:
+  93:Hardware/Src/bsp_mpu6050.c ****             /* i2c master sends START signal successfully */
+  94:Hardware/Src/bsp_mpu6050.c ****             while((!i2c_flag_get(I2CX, I2C_FLAG_SBSEND)) && (timeout < I2C_TIME_OUT)) {
+  95:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+  96:Hardware/Src/bsp_mpu6050.c ****             }
+  97:Hardware/Src/bsp_mpu6050.c ****             if(timeout < I2C_TIME_OUT) {
+  98:Hardware/Src/bsp_mpu6050.c ****                 if(RESET == read_cycle) {
+  99:Hardware/Src/bsp_mpu6050.c ****                     i2c_master_addressing(I2CX, MPU6050_ADDR, I2C_TRANSMITTER);
+ 100:Hardware/Src/bsp_mpu6050.c ****                     state = I2C_CLEAR_ADDRESS_FLAG;
+ 101:Hardware/Src/bsp_mpu6050.c ****                 } else {
+ 102:Hardware/Src/bsp_mpu6050.c ****                     i2c_master_addressing(I2CX, MPU6050_ADDR, I2C_RECEIVER);
+ 103:Hardware/Src/bsp_mpu6050.c ****                     if(number_of_byte < 3) {
+ 104:Hardware/Src/bsp_mpu6050.c ****                         /* disable acknowledge */
+ 105:Hardware/Src/bsp_mpu6050.c ****                         i2c_ack_config(I2CX, I2C_ACK_DISABLE);
+ARM GAS  /tmp/ccqxhqYc.s 			page 5
+
+
+ 106:Hardware/Src/bsp_mpu6050.c ****                     }
+ 107:Hardware/Src/bsp_mpu6050.c ****                     state = I2C_CLEAR_ADDRESS_FLAG;
+ 108:Hardware/Src/bsp_mpu6050.c ****                 }
+ 109:Hardware/Src/bsp_mpu6050.c ****                 timeout = 0;
+ 110:Hardware/Src/bsp_mpu6050.c ****             } else {
+ 111:Hardware/Src/bsp_mpu6050.c ****                 timeout = 0;
+ 112:Hardware/Src/bsp_mpu6050.c ****                 state = I2C_START;
+ 113:Hardware/Src/bsp_mpu6050.c ****                 read_cycle = 0;
+ 114:Hardware/Src/bsp_mpu6050.c ****                 printf("i2c master sends start signal timeout in READ!\n");
+ 115:Hardware/Src/bsp_mpu6050.c ****             }
+ 116:Hardware/Src/bsp_mpu6050.c ****             break;
+ 117:Hardware/Src/bsp_mpu6050.c ****         case I2C_CLEAR_ADDRESS_FLAG:
+ 118:Hardware/Src/bsp_mpu6050.c ****             /* address flag set means i2c slave sends ACK */
+ 119:Hardware/Src/bsp_mpu6050.c ****             while((!i2c_flag_get(I2CX, I2C_FLAG_ADDSEND)) && (timeout < I2C_TIME_OUT)) {
+ 120:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 121:Hardware/Src/bsp_mpu6050.c ****             }
+ 122:Hardware/Src/bsp_mpu6050.c ****             if(timeout < I2C_TIME_OUT) {
+ 123:Hardware/Src/bsp_mpu6050.c ****                 i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 124:Hardware/Src/bsp_mpu6050.c ****                 if((SET == read_cycle) && (1 == number_of_byte)) {
+ 125:Hardware/Src/bsp_mpu6050.c ****                     /* send a stop condition to I2C bus */
+ 126:Hardware/Src/bsp_mpu6050.c ****                     i2c_stop_on_bus(I2CX);
+ 127:Hardware/Src/bsp_mpu6050.c ****                 }
+ 128:Hardware/Src/bsp_mpu6050.c ****                 timeout = 0;
+ 129:Hardware/Src/bsp_mpu6050.c ****                 state = I2C_TRANSMIT_DATA;
+ 130:Hardware/Src/bsp_mpu6050.c ****             } else {
+ 131:Hardware/Src/bsp_mpu6050.c ****                 timeout = 0;
+ 132:Hardware/Src/bsp_mpu6050.c ****                 state = I2C_START;
+ 133:Hardware/Src/bsp_mpu6050.c ****                 read_cycle = 0;
+ 134:Hardware/Src/bsp_mpu6050.c ****                 printf("i2c master clears address flag timeout in READ!\n");
+ 135:Hardware/Src/bsp_mpu6050.c ****             }
+ 136:Hardware/Src/bsp_mpu6050.c ****             break;
+ 137:Hardware/Src/bsp_mpu6050.c ****         case I2C_TRANSMIT_DATA:
+ 138:Hardware/Src/bsp_mpu6050.c ****             if(RESET == read_cycle) {
+ 139:Hardware/Src/bsp_mpu6050.c ****                 /* wait until the transmit data buffer is empty */
+ 140:Hardware/Src/bsp_mpu6050.c ****                 while((! i2c_flag_get(I2CX, I2C_FLAG_TBE)) && (timeout < I2C_TIME_OUT)) {
+ 141:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 142:Hardware/Src/bsp_mpu6050.c ****                 }
+ 143:Hardware/Src/bsp_mpu6050.c ****                 if(timeout < I2C_TIME_OUT) {
+ 144:Hardware/Src/bsp_mpu6050.c ****                     /* send the EEPROM's internal address to write to : only one byte address */
+ 145:Hardware/Src/bsp_mpu6050.c ****                     i2c_data_transmit(I2CX, read_address);
+ 146:Hardware/Src/bsp_mpu6050.c ****                     timeout = 0;
+ 147:Hardware/Src/bsp_mpu6050.c ****                 } else {
+ 148:Hardware/Src/bsp_mpu6050.c ****                     timeout = 0;
+ 149:Hardware/Src/bsp_mpu6050.c ****                     state = I2C_START;
+ 150:Hardware/Src/bsp_mpu6050.c ****                     read_cycle = 0;
+ 151:Hardware/Src/bsp_mpu6050.c ****                     printf("i2c master wait data buffer is empty timeout in READ!\n");
+ 152:Hardware/Src/bsp_mpu6050.c ****                 }
+ 153:Hardware/Src/bsp_mpu6050.c ****                 /* wait until BTC bit is set */
+ 154:Hardware/Src/bsp_mpu6050.c ****                 while((!i2c_flag_get(I2CX, I2C_FLAG_BTC)) && (timeout < I2C_TIME_OUT)) {
+ 155:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 156:Hardware/Src/bsp_mpu6050.c ****                 }
+ 157:Hardware/Src/bsp_mpu6050.c ****                 if(timeout < I2C_TIME_OUT) {
+ 158:Hardware/Src/bsp_mpu6050.c ****                     timeout = 0;
+ 159:Hardware/Src/bsp_mpu6050.c ****                     state = I2C_START;
+ 160:Hardware/Src/bsp_mpu6050.c ****                     read_cycle++;
+  92              		.loc 1 160 31 view .LVU18
+  93 001c 0025     		movs	r5, #0
+ARM GAS  /tmp/ccqxhqYc.s 			page 6
+
+
+  94              	.LVL5:
+  95              	.L5:
+  72:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+  96              		.loc 1 72 59 is_stmt 1 view .LVU19
+  72:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+  97              		.loc 1 72 23 is_stmt 0 view .LVU20
+  98 001e 40F20161 		movw	r1, #1537
+  99 0022 5046     		mov	r0, r10
+ 100 0024 FFF7FEFF 		bl	i2c_flag_get
+ 101              	.LVL6:
+  72:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 102              		.loc 1 72 59 view .LVU21
+ 103 0028 0746     		mov	r7, r0
+ 104 002a 48B1     		cbz	r0, .L4
+  72:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 105              		.loc 1 72 59 discriminator 1 view .LVU22
+ 106 002c 0135     		adds	r5, r5, #1
+ 107              	.LVL7:
+  72:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 108              		.loc 1 72 59 discriminator 1 view .LVU23
+ 109 002e B542     		cmp	r5, r6
+ 110 0030 F5D1     		bne	.L5
+ 111              	.L6:
+  81:Hardware/Src/bsp_mpu6050.c ****                     timeout = 0;
+ 112              		.loc 1 81 21 is_stmt 1 view .LVU24
+ 113 0032 FFF7FEFF 		bl	i2c_bus_reset
+ 114              	.LVL8:
+  82:Hardware/Src/bsp_mpu6050.c ****                     state = I2C_START;
+ 115              		.loc 1 82 21 view .LVU25
+  83:Hardware/Src/bsp_mpu6050.c ****                     printf("i2c bus is busy in READ!\n");
+ 116              		.loc 1 83 21 view .LVU26
+  84:Hardware/Src/bsp_mpu6050.c ****                 }
+ 117              		.loc 1 84 21 view .LVU27
+ 118 0036 6A48     		ldr	r0, .L55+4
+ 119 0038 FFF7FEFF 		bl	puts
+ 120              	.LVL9:
+ 121 003c 0027     		movs	r7, #0
+ 122 003e 0BE0     		b	.L3
+ 123              	.LVL10:
+ 124              	.L4:
+  75:Hardware/Src/bsp_mpu6050.c ****                     /* whether to send ACK or not for the next byte */
+ 125              		.loc 1 75 17 view .LVU28
+  75:Hardware/Src/bsp_mpu6050.c ****                     /* whether to send ACK or not for the next byte */
+ 126              		.loc 1 75 19 is_stmt 0 view .LVU29
+ 127 0040 ADB2     		uxth	r5, r5
+  75:Hardware/Src/bsp_mpu6050.c ****                     /* whether to send ACK or not for the next byte */
+ 128              		.loc 1 75 19 view .LVU30
+ 129 0042 41F28833 		movw	r3, #5000
+ 130 0046 9D42     		cmp	r5, r3
+ 131 0048 F3D0     		beq	.L6
+  77:Hardware/Src/bsp_mpu6050.c ****                         i2c_ackpos_config(I2CX, I2C_ACKPOS_NEXT);
+ 132              		.loc 1 77 21 is_stmt 1 view .LVU31
+  77:Hardware/Src/bsp_mpu6050.c ****                         i2c_ackpos_config(I2CX, I2C_ACKPOS_NEXT);
+ 133              		.loc 1 77 23 is_stmt 0 view .LVU32
+ 134 004a 022C     		cmp	r4, #2
+ 135 004c 04D1     		bne	.L3
+  78:Hardware/Src/bsp_mpu6050.c ****                     }
+ARM GAS  /tmp/ccqxhqYc.s 			page 7
+
+
+ 136              		.loc 1 78 25 is_stmt 1 view .LVU33
+ 137 004e 6348     		ldr	r0, .L55
+ 138 0050 4FF40061 		mov	r1, #2048
+ 139 0054 FFF7FEFF 		bl	i2c_ackpos_config
+ 140              	.LVL11:
+ 141              	.L3:
+  88:Hardware/Src/bsp_mpu6050.c ****             timeout = 0;
+ 142              		.loc 1 88 13 is_stmt 0 view .LVU34
+ 143 0058 604D     		ldr	r5, .L55
+ 144 005a 65E0     		b	.L52
+ 145              	.LVL12:
+ 146              	.L8:
+  97:Hardware/Src/bsp_mpu6050.c ****                 if(RESET == read_cycle) {
+ 147              		.loc 1 97 13 is_stmt 1 view .LVU35
+  97:Hardware/Src/bsp_mpu6050.c ****                 if(RESET == read_cycle) {
+ 148              		.loc 1 97 15 is_stmt 0 view .LVU36
+ 149 005c 1FFA8AFA 		uxth	r10, r10
+  97:Hardware/Src/bsp_mpu6050.c ****                 if(RESET == read_cycle) {
+ 150              		.loc 1 97 15 view .LVU37
+ 151 0060 41F28833 		movw	r3, #5000
+ 152 0064 9A45     		cmp	r10, r3
+ 153 0066 6FD0     		beq	.L10
+  98:Hardware/Src/bsp_mpu6050.c ****                     i2c_master_addressing(I2CX, MPU6050_ADDR, I2C_TRANSMITTER);
+ 154              		.loc 1 98 17 is_stmt 1 view .LVU38
+  98:Hardware/Src/bsp_mpu6050.c ****                     i2c_master_addressing(I2CX, MPU6050_ADDR, I2C_TRANSMITTER);
+ 155              		.loc 1 98 19 is_stmt 0 view .LVU39
+ 156 0068 9FB9     		cbnz	r7, .L11
+  99:Hardware/Src/bsp_mpu6050.c ****                     state = I2C_CLEAR_ADDRESS_FLAG;
+ 157              		.loc 1 99 21 is_stmt 1 view .LVU40
+ 158 006a 6FF00102 		mvn	r2, #1
+ 159 006e D021     		movs	r1, #208
+ 160 0070 2846     		mov	r0, r5
+ 161 0072 FFF7FEFF 		bl	i2c_master_addressing
+ 162              	.LVL13:
+ 100:Hardware/Src/bsp_mpu6050.c ****                 } else {
+ 163              		.loc 1 100 21 view .LVU41
+  67:Hardware/Src/bsp_mpu6050.c ****         switch(state) {
+ 164              		.loc 1 67 11 view .LVU42
+  68:Hardware/Src/bsp_mpu6050.c ****         case I2C_START:
+ 165              		.loc 1 68 9 view .LVU43
+ 166              	.L12:
+  88:Hardware/Src/bsp_mpu6050.c ****             timeout = 0;
+ 167              		.loc 1 88 13 is_stmt 0 view .LVU44
+ 168 0076 4FF0000A 		mov	r10, #0
+ 169              	.L16:
+ 170              	.LVL14:
+ 119:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 171              		.loc 1 119 59 is_stmt 1 view .LVU45
+ 119:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 172              		.loc 1 119 21 is_stmt 0 view .LVU46
+ 173 007a 40F20151 		movw	r1, #1281
+ 174 007e 2846     		mov	r0, r5
+ 175 0080 FFF7FEFF 		bl	i2c_flag_get
+ 176              	.LVL15:
+ 119:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 177              		.loc 1 119 59 view .LVU47
+ 178 0084 88B9     		cbnz	r0, .L15
+ARM GAS  /tmp/ccqxhqYc.s 			page 8
+
+
+ 119:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 179              		.loc 1 119 59 discriminator 1 view .LVU48
+ 180 0086 0AF1010A 		add	r10, r10, #1
+ 181              	.LVL16:
+ 119:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 182              		.loc 1 119 59 discriminator 1 view .LVU49
+ 183 008a B245     		cmp	r10, r6
+ 184 008c F5D1     		bne	.L16
+ 185              	.L17:
+ 131:Hardware/Src/bsp_mpu6050.c ****                 state = I2C_START;
+ 186              		.loc 1 131 17 is_stmt 1 view .LVU50
+ 187              	.LVL17:
+ 132:Hardware/Src/bsp_mpu6050.c ****                 read_cycle = 0;
+ 188              		.loc 1 132 17 view .LVU51
+ 133:Hardware/Src/bsp_mpu6050.c ****                 printf("i2c master clears address flag timeout in READ!\n");
+ 189              		.loc 1 133 17 view .LVU52
+ 134:Hardware/Src/bsp_mpu6050.c ****             }
+ 190              		.loc 1 134 17 view .LVU53
+ 191 008e 5548     		ldr	r0, .L55+8
+ 192 0090 5BE0     		b	.L54
+ 193              	.LVL18:
+ 194              	.L11:
+ 102:Hardware/Src/bsp_mpu6050.c ****                     if(number_of_byte < 3) {
+ 195              		.loc 1 102 21 view .LVU54
+ 196 0092 0122     		movs	r2, #1
+ 197 0094 D021     		movs	r1, #208
+ 198 0096 2846     		mov	r0, r5
+ 199 0098 FFF7FEFF 		bl	i2c_master_addressing
+ 200              	.LVL19:
+ 103:Hardware/Src/bsp_mpu6050.c ****                         /* disable acknowledge */
+ 201              		.loc 1 103 21 view .LVU55
+ 103:Hardware/Src/bsp_mpu6050.c ****                         /* disable acknowledge */
+ 202              		.loc 1 103 23 is_stmt 0 view .LVU56
+ 203 009c 022C     		cmp	r4, #2
+ 204 009e EAD8     		bhi	.L12
+ 105:Hardware/Src/bsp_mpu6050.c ****                     }
+ 205              		.loc 1 105 25 is_stmt 1 view .LVU57
+ 206 00a0 4E48     		ldr	r0, .L55
+ 207 00a2 0021     		movs	r1, #0
+ 208 00a4 FFF7FEFF 		bl	i2c_ack_config
+ 209              	.LVL20:
+  67:Hardware/Src/bsp_mpu6050.c ****         switch(state) {
+ 210              		.loc 1 67 11 view .LVU58
+  68:Hardware/Src/bsp_mpu6050.c ****         case I2C_START:
+ 211              		.loc 1 68 9 view .LVU59
+ 212 00a8 E5E7     		b	.L12
+ 213              	.LVL21:
+ 214              	.L15:
+ 122:Hardware/Src/bsp_mpu6050.c ****                 i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 215              		.loc 1 122 13 view .LVU60
+ 122:Hardware/Src/bsp_mpu6050.c ****                 i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 216              		.loc 1 122 15 is_stmt 0 view .LVU61
+ 217 00aa 1FFA8AFA 		uxth	r10, r10
+ 122:Hardware/Src/bsp_mpu6050.c ****                 i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 218              		.loc 1 122 15 view .LVU62
+ 219 00ae 41F28833 		movw	r3, #5000
+ 220 00b2 9A45     		cmp	r10, r3
+ARM GAS  /tmp/ccqxhqYc.s 			page 9
+
+
+ 221 00b4 EBD0     		beq	.L17
+ 123:Hardware/Src/bsp_mpu6050.c ****                 if((SET == read_cycle) && (1 == number_of_byte)) {
+ 222              		.loc 1 123 17 is_stmt 1 view .LVU63
+ 223 00b6 40F20151 		movw	r1, #1281
+ 224 00ba 2846     		mov	r0, r5
+ 225 00bc FFF7FEFF 		bl	i2c_flag_clear
+ 226              	.LVL22:
+ 124:Hardware/Src/bsp_mpu6050.c ****                     /* send a stop condition to I2C bus */
+ 227              		.loc 1 124 17 view .LVU64
+ 124:Hardware/Src/bsp_mpu6050.c ****                     /* send a stop condition to I2C bus */
+ 228              		.loc 1 124 19 is_stmt 0 view .LVU65
+ 229 00c0 012F     		cmp	r7, #1
+ 230 00c2 08D1     		bne	.L39
+ 124:Hardware/Src/bsp_mpu6050.c ****                     /* send a stop condition to I2C bus */
+ 231              		.loc 1 124 40 discriminator 1 view .LVU66
+ 232 00c4 012C     		cmp	r4, #1
+ 233 00c6 02D1     		bne	.L19
+ 126:Hardware/Src/bsp_mpu6050.c ****                 }
+ 234              		.loc 1 126 21 is_stmt 1 view .LVU67
+ 235 00c8 4448     		ldr	r0, .L55
+ 236 00ca FFF7FEFF 		bl	i2c_stop_on_bus
+ 237              	.LVL23:
+  67:Hardware/Src/bsp_mpu6050.c ****         switch(state) {
+ 238              		.loc 1 67 11 view .LVU68
+  68:Hardware/Src/bsp_mpu6050.c ****         case I2C_START:
+ 239              		.loc 1 68 9 view .LVU69
+ 240              	.L19:
+ 138:Hardware/Src/bsp_mpu6050.c ****                 /* wait until the transmit data buffer is empty */
+ 241              		.loc 1 138 13 view .LVU70
+ 161:Hardware/Src/bsp_mpu6050.c ****                 } else {
+ 162:Hardware/Src/bsp_mpu6050.c ****                     timeout = 0;
+ 163:Hardware/Src/bsp_mpu6050.c ****                     state = I2C_START;
+ 164:Hardware/Src/bsp_mpu6050.c ****                     read_cycle = 0;
+ 165:Hardware/Src/bsp_mpu6050.c ****                     printf("i2c master sends EEPROM's internal address timeout in READ!\n");
+ 166:Hardware/Src/bsp_mpu6050.c ****                 }
+ 167:Hardware/Src/bsp_mpu6050.c ****             } else {
+ 168:Hardware/Src/bsp_mpu6050.c ****                 while(number_of_byte) {
+ 169:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 170:Hardware/Src/bsp_mpu6050.c ****                     if(3 == number_of_byte) {
+ 171:Hardware/Src/bsp_mpu6050.c ****                         /* wait until BTC bit is set */
+ 172:Hardware/Src/bsp_mpu6050.c ****                         while(!i2c_flag_get(I2CX, I2C_FLAG_BTC));
+ 173:Hardware/Src/bsp_mpu6050.c ****                         /* disable acknowledge */
+ 174:Hardware/Src/bsp_mpu6050.c ****                         i2c_ack_config(I2CX, I2C_ACK_DISABLE);
+ 175:Hardware/Src/bsp_mpu6050.c ****                     }
+ 176:Hardware/Src/bsp_mpu6050.c ****                     if(2 == number_of_byte) {
+ 177:Hardware/Src/bsp_mpu6050.c ****                         /* wait until BTC bit is set */
+ 178:Hardware/Src/bsp_mpu6050.c ****                         while(!i2c_flag_get(I2CX, I2C_FLAG_BTC));
+ 179:Hardware/Src/bsp_mpu6050.c ****                         /* send a stop condition to I2C bus */
+ 180:Hardware/Src/bsp_mpu6050.c ****                         i2c_stop_on_bus(I2CX);
+ 181:Hardware/Src/bsp_mpu6050.c ****                     }
+ 182:Hardware/Src/bsp_mpu6050.c ****                     /* wait until RBNE bit is set */
+ 183:Hardware/Src/bsp_mpu6050.c ****                     if(i2c_flag_get(I2CX, I2C_FLAG_RBNE)) {
+ 242              		.loc 1 183 24 is_stmt 0 view .LVU71
+ 243 00ce 434D     		ldr	r5, .L55
+ 184:Hardware/Src/bsp_mpu6050.c ****                         /* read a byte from the EEPROM */
+ 185:Hardware/Src/bsp_mpu6050.c ****                         *p_buffer = i2c_data_receive(I2CX);
+ 186:Hardware/Src/bsp_mpu6050.c ****                         /* point to the next location where the byte read will be saved */
+ARM GAS  /tmp/ccqxhqYc.s 			page 10
+
+
+ 187:Hardware/Src/bsp_mpu6050.c ****                         p_buffer++;
+ 188:Hardware/Src/bsp_mpu6050.c ****                         /* decrement the read bytes counter */
+ 189:Hardware/Src/bsp_mpu6050.c ****                         number_of_byte--;
+ 190:Hardware/Src/bsp_mpu6050.c ****                         timeout = 0;
+ 191:Hardware/Src/bsp_mpu6050.c ****                     }
+ 192:Hardware/Src/bsp_mpu6050.c ****                     if(timeout > I2C_TIME_OUT) {
+ 193:Hardware/Src/bsp_mpu6050.c ****                         timeout = 0;
+ 194:Hardware/Src/bsp_mpu6050.c ****                         state = I2C_START;
+ 195:Hardware/Src/bsp_mpu6050.c ****                         read_cycle = 0;
+ 196:Hardware/Src/bsp_mpu6050.c ****                         printf("i2c master sends data timeout in READ!\n");
+ 244              		.loc 1 196 25 view .LVU72
+ 245 00d0 DFF814B1 		ldr	fp, .L55+12
+ 246 00d4 6CE0     		b	.L32
+ 247              	.LVL24:
+ 248              	.L39:
+ 249              		.loc 1 196 25 view .LVU73
+ 250 00d6 0027     		movs	r7, #0
+ 251              	.LVL25:
+ 252              	.L18:
+ 140:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 253              		.loc 1 140 60 is_stmt 1 view .LVU74
+ 140:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 254              		.loc 1 140 26 is_stmt 0 view .LVU75
+ 255 00d8 40F20751 		movw	r1, #1287
+ 256 00dc 2846     		mov	r0, r5
+ 257 00de FFF7FEFF 		bl	i2c_flag_get
+ 258              	.LVL26:
+ 140:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 259              		.loc 1 140 60 view .LVU76
+ 260 00e2 30B9     		cbnz	r0, .L21
+ 140:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 261              		.loc 1 140 60 discriminator 1 view .LVU77
+ 262 00e4 0137     		adds	r7, r7, #1
+ 263              	.LVL27:
+ 140:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 264              		.loc 1 140 60 discriminator 1 view .LVU78
+ 265 00e6 B742     		cmp	r7, r6
+ 266 00e8 F6D1     		bne	.L18
+ 267              	.L22:
+ 148:Hardware/Src/bsp_mpu6050.c ****                     state = I2C_START;
+ 268              		.loc 1 148 21 is_stmt 1 view .LVU79
+ 269              	.LVL28:
+ 149:Hardware/Src/bsp_mpu6050.c ****                     read_cycle = 0;
+ 270              		.loc 1 149 21 view .LVU80
+ 150:Hardware/Src/bsp_mpu6050.c ****                     printf("i2c master wait data buffer is empty timeout in READ!\n");
+ 271              		.loc 1 150 21 view .LVU81
+ 151:Hardware/Src/bsp_mpu6050.c ****                 }
+ 272              		.loc 1 151 21 view .LVU82
+ 273 00ea 4048     		ldr	r0, .L55+16
+ 274 00ec FFF7FEFF 		bl	puts
+ 275              	.LVL29:
+ 276 00f0 08E0     		b	.L23
+ 277              	.LVL30:
+ 278              	.L21:
+ 143:Hardware/Src/bsp_mpu6050.c ****                     /* send the EEPROM's internal address to write to : only one byte address */
+ 279              		.loc 1 143 17 view .LVU83
+ 143:Hardware/Src/bsp_mpu6050.c ****                     /* send the EEPROM's internal address to write to : only one byte address */
+ARM GAS  /tmp/ccqxhqYc.s 			page 11
+
+
+ 280              		.loc 1 143 19 is_stmt 0 view .LVU84
+ 281 00f2 BFB2     		uxth	r7, r7
+ 143:Hardware/Src/bsp_mpu6050.c ****                     /* send the EEPROM's internal address to write to : only one byte address */
+ 282              		.loc 1 143 19 view .LVU85
+ 283 00f4 41F28833 		movw	r3, #5000
+ 284 00f8 9F42     		cmp	r7, r3
+ 285 00fa F6D0     		beq	.L22
+ 145:Hardware/Src/bsp_mpu6050.c ****                     timeout = 0;
+ 286              		.loc 1 145 21 is_stmt 1 view .LVU86
+ 287 00fc 4946     		mov	r1, r9
+ 288 00fe 2846     		mov	r0, r5
+ 289 0100 FFF7FEFF 		bl	i2c_data_transmit
+ 290              	.LVL31:
+ 146:Hardware/Src/bsp_mpu6050.c ****                 } else {
+ 291              		.loc 1 146 21 view .LVU87
+ 292              	.L23:
+ 146:Hardware/Src/bsp_mpu6050.c ****                 } else {
+ 293              		.loc 1 146 21 is_stmt 0 view .LVU88
+ 294 0104 0027     		movs	r7, #0
+ 295              	.LVL32:
+ 296              	.L25:
+ 154:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 297              		.loc 1 154 59 is_stmt 1 view .LVU89
+ 154:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 298              		.loc 1 154 25 is_stmt 0 view .LVU90
+ 299 0106 40F20251 		movw	r1, #1282
+ 300 010a 2846     		mov	r0, r5
+ 301 010c FFF7FEFF 		bl	i2c_flag_get
+ 302              	.LVL33:
+ 154:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 303              		.loc 1 154 59 view .LVU91
+ 304 0110 20B9     		cbnz	r0, .L24
+ 154:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 305              		.loc 1 154 59 discriminator 1 view .LVU92
+ 306 0112 0137     		adds	r7, r7, #1
+ 307              	.LVL34:
+ 154:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 308              		.loc 1 154 59 discriminator 1 view .LVU93
+ 309 0114 B742     		cmp	r7, r6
+ 310 0116 F6D1     		bne	.L25
+ 311              	.L26:
+ 162:Hardware/Src/bsp_mpu6050.c ****                     state = I2C_START;
+ 312              		.loc 1 162 21 is_stmt 1 view .LVU94
+ 313              	.LVL35:
+ 163:Hardware/Src/bsp_mpu6050.c ****                     read_cycle = 0;
+ 314              		.loc 1 163 21 view .LVU95
+ 164:Hardware/Src/bsp_mpu6050.c ****                     printf("i2c master sends EEPROM's internal address timeout in READ!\n");
+ 315              		.loc 1 164 21 view .LVU96
+ 165:Hardware/Src/bsp_mpu6050.c ****                 }
+ 316              		.loc 1 165 21 view .LVU97
+ 317 0118 3548     		ldr	r0, .L55+20
+ 318 011a 16E0     		b	.L54
+ 319              	.LVL36:
+ 320              	.L24:
+ 157:Hardware/Src/bsp_mpu6050.c ****                     timeout = 0;
+ 321              		.loc 1 157 17 view .LVU98
+ 157:Hardware/Src/bsp_mpu6050.c ****                     timeout = 0;
+ARM GAS  /tmp/ccqxhqYc.s 			page 12
+
+
+ 322              		.loc 1 157 19 is_stmt 0 view .LVU99
+ 323 011c BFB2     		uxth	r7, r7
+ 157:Hardware/Src/bsp_mpu6050.c ****                     timeout = 0;
+ 324              		.loc 1 157 19 view .LVU100
+ 325 011e 41F28833 		movw	r3, #5000
+ 326 0122 9F42     		cmp	r7, r3
+ 327 0124 F8D0     		beq	.L26
+ 160:Hardware/Src/bsp_mpu6050.c ****                 } else {
+ 328              		.loc 1 160 31 view .LVU101
+ 329 0126 0127     		movs	r7, #1
+ 330              	.LVL37:
+ 331              	.L52:
+  88:Hardware/Src/bsp_mpu6050.c ****             timeout = 0;
+ 332              		.loc 1 88 13 is_stmt 1 view .LVU102
+ 333 0128 2846     		mov	r0, r5
+ 334 012a FFF7FEFF 		bl	i2c_start_on_bus
+ 335              	.LVL38:
+  89:Hardware/Src/bsp_mpu6050.c ****             state = I2C_SEND_ADDRESS;
+ 336              		.loc 1 89 13 view .LVU103
+  90:Hardware/Src/bsp_mpu6050.c ****             break;
+ 337              		.loc 1 90 13 view .LVU104
+  91:Hardware/Src/bsp_mpu6050.c ****         case I2C_SEND_ADDRESS:
+ 338              		.loc 1 91 13 view .LVU105
+  67:Hardware/Src/bsp_mpu6050.c ****         switch(state) {
+ 339              		.loc 1 67 11 view .LVU106
+  68:Hardware/Src/bsp_mpu6050.c ****         case I2C_START:
+ 340              		.loc 1 68 9 view .LVU107
+  88:Hardware/Src/bsp_mpu6050.c ****             timeout = 0;
+ 341              		.loc 1 88 13 is_stmt 0 view .LVU108
+ 342 012e 4FF0000A 		mov	r10, #0
+ 343              	.LVL39:
+ 344              	.L9:
+  94:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 345              		.loc 1 94 58 is_stmt 1 view .LVU109
+  94:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 346              		.loc 1 94 21 is_stmt 0 view .LVU110
+ 347 0132 4FF4A061 		mov	r1, #1280
+ 348 0136 2846     		mov	r0, r5
+ 349 0138 FFF7FEFF 		bl	i2c_flag_get
+ 350              	.LVL40:
+  94:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 351              		.loc 1 94 58 view .LVU111
+ 352 013c 0028     		cmp	r0, #0
+ 353 013e 8DD1     		bne	.L8
+  94:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 354              		.loc 1 94 58 discriminator 1 view .LVU112
+ 355 0140 0AF1010A 		add	r10, r10, #1
+ 356              	.LVL41:
+  94:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 357              		.loc 1 94 58 discriminator 1 view .LVU113
+ 358 0144 B245     		cmp	r10, r6
+ 359 0146 F4D1     		bne	.L9
+ 360              	.L10:
+ 111:Hardware/Src/bsp_mpu6050.c ****                 state = I2C_START;
+ 361              		.loc 1 111 17 is_stmt 1 view .LVU114
+ 362              	.LVL42:
+ 112:Hardware/Src/bsp_mpu6050.c ****                 read_cycle = 0;
+ARM GAS  /tmp/ccqxhqYc.s 			page 13
+
+
+ 363              		.loc 1 112 17 view .LVU115
+ 113:Hardware/Src/bsp_mpu6050.c ****                 printf("i2c master sends start signal timeout in READ!\n");
+ 364              		.loc 1 113 17 view .LVU116
+ 114:Hardware/Src/bsp_mpu6050.c ****             }
+ 365              		.loc 1 114 17 view .LVU117
+ 366 0148 2A48     		ldr	r0, .L55+24
+ 367              	.LVL43:
+ 368              	.L54:
+ 197:Hardware/Src/bsp_mpu6050.c ****                     }
+ 198:Hardware/Src/bsp_mpu6050.c ****                 }
+ 199:Hardware/Src/bsp_mpu6050.c ****                 timeout = 0;
+ 200:Hardware/Src/bsp_mpu6050.c ****                 state = I2C_STOP;
+ 201:Hardware/Src/bsp_mpu6050.c ****             }
+ 202:Hardware/Src/bsp_mpu6050.c ****             break;
+ 203:Hardware/Src/bsp_mpu6050.c ****         case I2C_STOP:
+ 204:Hardware/Src/bsp_mpu6050.c ****             /* i2c master sends STOP signal successfully */
+ 205:Hardware/Src/bsp_mpu6050.c ****             while((I2C_CTL0(I2CX) & I2C_CTL0_STOP) && (timeout < I2C_TIME_OUT)) {
+ 206:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 207:Hardware/Src/bsp_mpu6050.c ****             }
+ 208:Hardware/Src/bsp_mpu6050.c ****             if(timeout < I2C_TIME_OUT) {
+ 209:Hardware/Src/bsp_mpu6050.c ****                 timeout = 0;
+ 210:Hardware/Src/bsp_mpu6050.c ****                 state = I2C_END;
+ 211:Hardware/Src/bsp_mpu6050.c ****                 i2c_timeout_flag = I2C_OK;
+ 212:Hardware/Src/bsp_mpu6050.c ****             } else {
+ 213:Hardware/Src/bsp_mpu6050.c ****                 timeout = 0;
+ 214:Hardware/Src/bsp_mpu6050.c ****                 state = I2C_START;
+ 215:Hardware/Src/bsp_mpu6050.c ****                 read_cycle = 0;
+ 216:Hardware/Src/bsp_mpu6050.c ****                 printf("i2c master sends stop signal timeout in READ!\n");
+ 369              		.loc 1 216 17 is_stmt 0 view .LVU118
+ 370 014a FFF7FEFF 		bl	puts
+ 371              	.LVL44:
+ 372 014e 63E7     		b	.L2
+ 373              	.LVL45:
+ 374              	.L27:
+ 176:Hardware/Src/bsp_mpu6050.c ****                         /* wait until BTC bit is set */
+ 375              		.loc 1 176 21 is_stmt 1 view .LVU119
+ 176:Hardware/Src/bsp_mpu6050.c ****                         /* wait until BTC bit is set */
+ 376              		.loc 1 176 23 is_stmt 0 view .LVU120
+ 377 0150 022C     		cmp	r4, #2
+ 378 0152 1FD1     		bne	.L29
+ 379              	.L30:
+ 178:Hardware/Src/bsp_mpu6050.c ****                         /* send a stop condition to I2C bus */
+ 380              		.loc 1 178 31 is_stmt 1 discriminator 1 view .LVU121
+ 178:Hardware/Src/bsp_mpu6050.c ****                         /* send a stop condition to I2C bus */
+ 381              		.loc 1 178 32 is_stmt 0 discriminator 1 view .LVU122
+ 382 0154 40F20251 		movw	r1, #1282
+ 383 0158 2846     		mov	r0, r5
+ 384 015a FFF7FEFF 		bl	i2c_flag_get
+ 385              	.LVL46:
+ 178:Hardware/Src/bsp_mpu6050.c ****                         /* send a stop condition to I2C bus */
+ 386              		.loc 1 178 31 discriminator 1 view .LVU123
+ 387 015e 0028     		cmp	r0, #0
+ 388 0160 F8D0     		beq	.L30
+ 180:Hardware/Src/bsp_mpu6050.c ****                     }
+ 389              		.loc 1 180 25 is_stmt 1 view .LVU124
+ 390 0162 2846     		mov	r0, r5
+ 391 0164 FFF7FEFF 		bl	i2c_stop_on_bus
+ARM GAS  /tmp/ccqxhqYc.s 			page 14
+
+
+ 392              	.LVL47:
+ 393 0168 14E0     		b	.L29
+ 394              	.L31:
+ 169:Hardware/Src/bsp_mpu6050.c ****                     if(3 == number_of_byte) {
+ 395              		.loc 1 169 28 is_stmt 0 view .LVU125
+ 396 016a 0137     		adds	r7, r7, #1
+ 397              	.LVL48:
+ 169:Hardware/Src/bsp_mpu6050.c ****                     if(3 == number_of_byte) {
+ 398              		.loc 1 169 28 view .LVU126
+ 399 016c BFB2     		uxth	r7, r7
+ 192:Hardware/Src/bsp_mpu6050.c ****                         timeout = 0;
+ 400              		.loc 1 192 21 is_stmt 1 view .LVU127
+ 192:Hardware/Src/bsp_mpu6050.c ****                         timeout = 0;
+ 401              		.loc 1 192 23 is_stmt 0 view .LVU128
+ 402 016e B742     		cmp	r7, r6
+ 403 0170 03D1     		bne	.L34
+ 193:Hardware/Src/bsp_mpu6050.c ****                         state = I2C_START;
+ 404              		.loc 1 193 25 is_stmt 1 view .LVU129
+ 405              	.LVL49:
+ 194:Hardware/Src/bsp_mpu6050.c ****                         read_cycle = 0;
+ 406              		.loc 1 194 25 view .LVU130
+ 195:Hardware/Src/bsp_mpu6050.c ****                         printf("i2c master sends data timeout in READ!\n");
+ 407              		.loc 1 195 25 view .LVU131
+ 196:Hardware/Src/bsp_mpu6050.c ****                     }
+ 408              		.loc 1 196 25 view .LVU132
+ 409 0172 5846     		mov	r0, fp
+ 410 0174 FFF7FEFF 		bl	puts
+ 411              	.LVL50:
+ 168:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 412              		.loc 1 168 23 view .LVU133
+ 413              	.L41:
+ 168:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 414              		.loc 1 168 23 is_stmt 0 view .LVU134
+ 415 0178 0027     		movs	r7, #0
+ 416              	.LVL51:
+ 417              	.L34:
+ 169:Hardware/Src/bsp_mpu6050.c ****                     if(3 == number_of_byte) {
+ 418              		.loc 1 169 21 is_stmt 1 view .LVU135
+ 170:Hardware/Src/bsp_mpu6050.c ****                         /* wait until BTC bit is set */
+ 419              		.loc 1 170 21 view .LVU136
+ 170:Hardware/Src/bsp_mpu6050.c ****                         /* wait until BTC bit is set */
+ 420              		.loc 1 170 23 is_stmt 0 view .LVU137
+ 421 017a 032C     		cmp	r4, #3
+ 422 017c E8D1     		bne	.L27
+ 423              	.L28:
+ 172:Hardware/Src/bsp_mpu6050.c ****                         /* disable acknowledge */
+ 424              		.loc 1 172 31 is_stmt 1 discriminator 1 view .LVU138
+ 172:Hardware/Src/bsp_mpu6050.c ****                         /* disable acknowledge */
+ 425              		.loc 1 172 32 is_stmt 0 discriminator 1 view .LVU139
+ 426 017e 40F20251 		movw	r1, #1282
+ 427 0182 2846     		mov	r0, r5
+ 428 0184 FFF7FEFF 		bl	i2c_flag_get
+ 429              	.LVL52:
+ 172:Hardware/Src/bsp_mpu6050.c ****                         /* disable acknowledge */
+ 430              		.loc 1 172 31 discriminator 1 view .LVU140
+ 431 0188 0028     		cmp	r0, #0
+ 432 018a F8D0     		beq	.L28
+ARM GAS  /tmp/ccqxhqYc.s 			page 15
+
+
+ 174:Hardware/Src/bsp_mpu6050.c ****                     }
+ 433              		.loc 1 174 25 is_stmt 1 view .LVU141
+ 434 018c 0021     		movs	r1, #0
+ 435 018e 2846     		mov	r0, r5
+ 436 0190 FFF7FEFF 		bl	i2c_ack_config
+ 437              	.LVL53:
+ 176:Hardware/Src/bsp_mpu6050.c ****                         /* wait until BTC bit is set */
+ 438              		.loc 1 176 21 view .LVU142
+ 439              	.L29:
+ 183:Hardware/Src/bsp_mpu6050.c ****                         /* read a byte from the EEPROM */
+ 440              		.loc 1 183 21 view .LVU143
+ 183:Hardware/Src/bsp_mpu6050.c ****                         /* read a byte from the EEPROM */
+ 441              		.loc 1 183 24 is_stmt 0 view .LVU144
+ 442 0194 40F20651 		movw	r1, #1286
+ 443 0198 2846     		mov	r0, r5
+ 444 019a FFF7FEFF 		bl	i2c_flag_get
+ 445              	.LVL54:
+ 183:Hardware/Src/bsp_mpu6050.c ****                         /* read a byte from the EEPROM */
+ 446              		.loc 1 183 23 view .LVU145
+ 447 019e 0028     		cmp	r0, #0
+ 448 01a0 E3D0     		beq	.L31
+ 185:Hardware/Src/bsp_mpu6050.c ****                         /* point to the next location where the byte read will be saved */
+ 449              		.loc 1 185 25 is_stmt 1 view .LVU146
+ 185:Hardware/Src/bsp_mpu6050.c ****                         /* point to the next location where the byte read will be saved */
+ 450              		.loc 1 185 37 is_stmt 0 view .LVU147
+ 451 01a2 2846     		mov	r0, r5
+ 452 01a4 FFF7FEFF 		bl	i2c_data_receive
+ 453              	.LVL55:
+ 189:Hardware/Src/bsp_mpu6050.c ****                         timeout = 0;
+ 454              		.loc 1 189 39 view .LVU148
+ 455 01a8 013C     		subs	r4, r4, #1
+ 185:Hardware/Src/bsp_mpu6050.c ****                         /* point to the next location where the byte read will be saved */
+ 456              		.loc 1 185 35 view .LVU149
+ 457 01aa 08F8010B 		strb	r0, [r8], #1
+ 458              	.LVL56:
+ 187:Hardware/Src/bsp_mpu6050.c ****                         /* decrement the read bytes counter */
+ 459              		.loc 1 187 25 is_stmt 1 view .LVU150
+ 189:Hardware/Src/bsp_mpu6050.c ****                         timeout = 0;
+ 460              		.loc 1 189 25 view .LVU151
+ 189:Hardware/Src/bsp_mpu6050.c ****                         timeout = 0;
+ 461              		.loc 1 189 39 is_stmt 0 view .LVU152
+ 462 01ae A4B2     		uxth	r4, r4
+ 463              	.LVL57:
+ 190:Hardware/Src/bsp_mpu6050.c ****                     }
+ 464              		.loc 1 190 25 is_stmt 1 view .LVU153
+ 192:Hardware/Src/bsp_mpu6050.c ****                         timeout = 0;
+ 465              		.loc 1 192 21 view .LVU154
+ 466              	.L32:
+ 168:Hardware/Src/bsp_mpu6050.c ****                     timeout++;
+ 467              		.loc 1 168 23 view .LVU155
+ 468 01b0 002C     		cmp	r4, #0
+ 469 01b2 E1D1     		bne	.L41
+ 205:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 470              		.loc 1 205 20 is_stmt 0 view .LVU156
+ 471 01b4 104A     		ldr	r2, .L55+28
+ 472 01b6 2346     		mov	r3, r4
+ 473              	.LVL58:
+ARM GAS  /tmp/ccqxhqYc.s 			page 16
+
+
+ 474              	.L36:
+ 205:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 475              		.loc 1 205 52 is_stmt 1 view .LVU157
+ 205:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 476              		.loc 1 205 20 is_stmt 0 view .LVU158
+ 477 01b8 D2F80014 		ldr	r1, [r2, #1024]
+ 205:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 478              		.loc 1 205 52 view .LVU159
+ 479 01bc 8905     		lsls	r1, r1, #22
+ 480 01be 04D5     		bpl	.L35
+ 205:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 481              		.loc 1 205 52 discriminator 1 view .LVU160
+ 482 01c0 0133     		adds	r3, r3, #1
+ 483              	.LVL59:
+ 205:Hardware/Src/bsp_mpu6050.c ****                 timeout++;
+ 484              		.loc 1 205 52 discriminator 1 view .LVU161
+ 485 01c2 B342     		cmp	r3, r6
+ 486 01c4 F8D1     		bne	.L36
+ 487              	.L37:
+ 213:Hardware/Src/bsp_mpu6050.c ****                 state = I2C_START;
+ 488              		.loc 1 213 17 is_stmt 1 view .LVU162
+ 489              	.LVL60:
+ 214:Hardware/Src/bsp_mpu6050.c ****                 read_cycle = 0;
+ 490              		.loc 1 214 17 view .LVU163
+ 215:Hardware/Src/bsp_mpu6050.c ****                 printf("i2c master sends stop signal timeout in READ!\n");
+ 491              		.loc 1 215 17 view .LVU164
+ 492              		.loc 1 216 17 view .LVU165
+ 493 01c6 0D48     		ldr	r0, .L55+32
+ 494 01c8 BFE7     		b	.L54
+ 495              	.LVL61:
+ 496              	.L35:
+ 208:Hardware/Src/bsp_mpu6050.c ****                 timeout = 0;
+ 497              		.loc 1 208 13 view .LVU166
+ 208:Hardware/Src/bsp_mpu6050.c ****                 timeout = 0;
+ 498              		.loc 1 208 15 is_stmt 0 view .LVU167
+ 499 01ca 9BB2     		uxth	r3, r3
+ 208:Hardware/Src/bsp_mpu6050.c ****                 timeout = 0;
+ 500              		.loc 1 208 15 view .LVU168
+ 501 01cc 41F28832 		movw	r2, #5000
+ 502 01d0 9342     		cmp	r3, r2
+ 503 01d2 F8D0     		beq	.L37
+ 217:Hardware/Src/bsp_mpu6050.c ****             }
+ 218:Hardware/Src/bsp_mpu6050.c ****             break;
+ 219:Hardware/Src/bsp_mpu6050.c ****         default:
+ 220:Hardware/Src/bsp_mpu6050.c ****             state = I2C_START;
+ 221:Hardware/Src/bsp_mpu6050.c ****             read_cycle = 0;
+ 222:Hardware/Src/bsp_mpu6050.c ****             i2c_timeout_flag = I2C_OK;
+ 223:Hardware/Src/bsp_mpu6050.c ****             timeout = 0;
+ 224:Hardware/Src/bsp_mpu6050.c ****             printf("i2c master sends start signal in READ.\n");
+ 225:Hardware/Src/bsp_mpu6050.c ****             break;
+ 226:Hardware/Src/bsp_mpu6050.c ****         }
+ 227:Hardware/Src/bsp_mpu6050.c ****     }
+ 228:Hardware/Src/bsp_mpu6050.c ****     return I2C_END;
+ 229:Hardware/Src/bsp_mpu6050.c **** }
+ 504              		.loc 1 229 1 view .LVU169
+ 505 01d4 0120     		movs	r0, #1
+ 506 01d6 BDE8F88F 		pop	{r3, r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ARM GAS  /tmp/ccqxhqYc.s 			page 17
+
+
+ 507              	.LVL62:
+ 508              	.L56:
+ 509              		.loc 1 229 1 view .LVU170
+ 510 01da 00BF     		.align	2
+ 511              	.L55:
+ 512 01dc 00540040 		.word	1073763328
+ 513 01e0 00000000 		.word	.LC0
+ 514 01e4 48000000 		.word	.LC2
+ 515 01e8 EA000000 		.word	.LC5
+ 516 01ec 78000000 		.word	.LC3
+ 517 01f0 AE000000 		.word	.LC4
+ 518 01f4 19000000 		.word	.LC1
+ 519 01f8 00500040 		.word	1073762304
+ 520 01fc 11010000 		.word	.LC6
+ 521              		.cfi_endproc
+ 522              	.LFE121:
+ 524              		.section	.rodata.MPU6050_init.str1.1,"aMS",%progbits,1
+ 525              	.LC7:
+ 526 0000 53746172 		.ascii	"Start read!\015\000"
+ 526      74207265 
+ 526      6164210D 
+ 526      00
+ 527              	.LC8:
+ 528 000d 6D707536 		.ascii	"mpu6050_single_read: Data read: check = %d\015\012\000"
+ 528      3035305F 
+ 528      73696E67 
+ 528      6C655F72 
+ 528      6561643A 
+ 529              		.section	.text.MPU6050_init,"ax",%progbits
+ 530              		.align	1
+ 531              		.global	MPU6050_init
+ 532              		.syntax unified
+ 533              		.thumb
+ 534              		.thumb_func
+ 536              	MPU6050_init:
+ 537              	.LFB122:
+ 230:Hardware/Src/bsp_mpu6050.c **** 
+ 231:Hardware/Src/bsp_mpu6050.c **** 
+ 232:Hardware/Src/bsp_mpu6050.c **** 
+ 233:Hardware/Src/bsp_mpu6050.c **** void MPU6050_init(void)
+ 234:Hardware/Src/bsp_mpu6050.c **** {
+ 538              		.loc 1 234 1 is_stmt 1 view -0
+ 539              		.cfi_startproc
+ 540              		@ args = 0, pretend = 0, frame = 0
+ 541              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235:Hardware/Src/bsp_mpu6050.c ****     I2C_init();
+ 542              		.loc 1 235 5 view .LVU172
+ 234:Hardware/Src/bsp_mpu6050.c ****     I2C_init();
+ 543              		.loc 1 234 1 is_stmt 0 view .LVU173
+ 544 0000 10B5     		push	{r4, lr}
+ 545              	.LCFI1:
+ 546              		.cfi_def_cfa_offset 8
+ 547              		.cfi_offset 4, -8
+ 548              		.cfi_offset 14, -4
+ 549              		.loc 1 235 5 view .LVU174
+ 550 0002 FFF7FEFF 		bl	I2C_init
+ 551              	.LVL63:
+ARM GAS  /tmp/ccqxhqYc.s 			page 18
+
+
+ 236:Hardware/Src/bsp_mpu6050.c **** 
+ 237:Hardware/Src/bsp_mpu6050.c ****     uint8_t buffer[10];
+ 552              		.loc 1 237 5 is_stmt 1 view .LVU175
+ 238:Hardware/Src/bsp_mpu6050.c ****     printf("Start read!\r\n");
+ 553              		.loc 1 238 5 view .LVU176
+ 554 0006 3E48     		ldr	r0, .L83
+ 555              	.LBB4:
+ 556              	.LBB5:
+  16:Hardware/Src/bsp_mpu6050.c ****     i2c_start_on_bus(I2CX);
+ 557              		.loc 1 16 12 is_stmt 0 view .LVU177
+ 558 0008 3E4C     		ldr	r4, .L83+4
+ 559              	.LBE5:
+ 560              	.LBE4:
+ 561              		.loc 1 238 5 view .LVU178
+ 562 000a FFF7FEFF 		bl	puts
+ 563              	.LVL64:
+ 239:Hardware/Src/bsp_mpu6050.c ****     // mpu6050_buffer_read_timeout(buffer, WHO_AM_I_REG, 1);
+ 240:Hardware/Src/bsp_mpu6050.c ****     // printf("mpu6050_buffer_read_timeout: Data read: check = %d\r\n", buffer[0]);
+ 241:Hardware/Src/bsp_mpu6050.c ****     uint8_t check = mpu6050_single_read(WHO_AM_I_REG);
+ 564              		.loc 1 241 5 is_stmt 1 view .LVU179
+ 565              	.LBB7:
+ 566              	.LBI4:
+  12:Hardware/Src/bsp_mpu6050.c **** {
+ 567              		.loc 1 12 16 view .LVU180
+ 568              	.LBB6:
+  14:Hardware/Src/bsp_mpu6050.c **** 
+ 569              		.loc 1 14 5 view .LVU181
+ 570 000e 3D48     		ldr	r0, .L83+4
+ 571 0010 4FF48061 		mov	r1, #1024
+ 572 0014 FFF7FEFF 		bl	i2c_ack_config
+ 573              	.LVL65:
+  16:Hardware/Src/bsp_mpu6050.c ****     i2c_start_on_bus(I2CX);
+ 574              		.loc 1 16 5 view .LVU182
+ 575              	.L58:
+  16:Hardware/Src/bsp_mpu6050.c ****     i2c_start_on_bus(I2CX);
+ 576              		.loc 1 16 12 view .LVU183
+ 577 0018 40F20161 		movw	r1, #1537
+ 578 001c 2046     		mov	r0, r4
+ 579 001e FFF7FEFF 		bl	i2c_flag_get
+ 580              	.LVL66:
+ 581 0022 0028     		cmp	r0, #0
+ 582 0024 F8D1     		bne	.L58
+  17:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_SBSEND));
+ 583              		.loc 1 17 5 view .LVU184
+ 584 0026 3748     		ldr	r0, .L83+4
+  18:Hardware/Src/bsp_mpu6050.c **** 
+ 585              		.loc 1 18 13 is_stmt 0 view .LVU185
+ 586 0028 364C     		ldr	r4, .L83+4
+  17:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_SBSEND));
+ 587              		.loc 1 17 5 view .LVU186
+ 588 002a FFF7FEFF 		bl	i2c_start_on_bus
+ 589              	.LVL67:
+  18:Hardware/Src/bsp_mpu6050.c **** 
+ 590              		.loc 1 18 5 is_stmt 1 view .LVU187
+ 591              	.L59:
+  18:Hardware/Src/bsp_mpu6050.c **** 
+ 592              		.loc 1 18 12 view .LVU188
+ARM GAS  /tmp/ccqxhqYc.s 			page 19
+
+
+  18:Hardware/Src/bsp_mpu6050.c **** 
+ 593              		.loc 1 18 13 is_stmt 0 view .LVU189
+ 594 002e 4FF4A061 		mov	r1, #1280
+ 595 0032 2046     		mov	r0, r4
+ 596 0034 FFF7FEFF 		bl	i2c_flag_get
+ 597              	.LVL68:
+  18:Hardware/Src/bsp_mpu6050.c **** 
+ 598              		.loc 1 18 12 view .LVU190
+ 599 0038 0028     		cmp	r0, #0
+ 600 003a F8D0     		beq	.L59
+  20:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_ADDSEND));
+ 601              		.loc 1 20 5 is_stmt 1 view .LVU191
+ 602 003c 3148     		ldr	r0, .L83+4
+  21:Hardware/Src/bsp_mpu6050.c ****     i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 603              		.loc 1 21 13 is_stmt 0 view .LVU192
+ 604 003e 314C     		ldr	r4, .L83+4
+  20:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_ADDSEND));
+ 605              		.loc 1 20 5 view .LVU193
+ 606 0040 6FF00102 		mvn	r2, #1
+ 607 0044 D021     		movs	r1, #208
+ 608 0046 FFF7FEFF 		bl	i2c_master_addressing
+ 609              	.LVL69:
+  21:Hardware/Src/bsp_mpu6050.c ****     i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 610              		.loc 1 21 5 is_stmt 1 view .LVU194
+ 611              	.L60:
+  21:Hardware/Src/bsp_mpu6050.c ****     i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 612              		.loc 1 21 12 view .LVU195
+  21:Hardware/Src/bsp_mpu6050.c ****     i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 613              		.loc 1 21 13 is_stmt 0 view .LVU196
+ 614 004a 40F20151 		movw	r1, #1281
+ 615 004e 2046     		mov	r0, r4
+ 616 0050 FFF7FEFF 		bl	i2c_flag_get
+ 617              	.LVL70:
+  21:Hardware/Src/bsp_mpu6050.c ****     i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 618              		.loc 1 21 12 view .LVU197
+ 619 0054 0028     		cmp	r0, #0
+ 620 0056 F8D0     		beq	.L60
+  22:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_TBE));
+ 621              		.loc 1 22 5 is_stmt 1 view .LVU198
+ 622 0058 2A48     		ldr	r0, .L83+4
+  23:Hardware/Src/bsp_mpu6050.c **** 
+ 623              		.loc 1 23 13 is_stmt 0 view .LVU199
+ 624 005a 2A4C     		ldr	r4, .L83+4
+  22:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_TBE));
+ 625              		.loc 1 22 5 view .LVU200
+ 626 005c 40F20151 		movw	r1, #1281
+ 627 0060 FFF7FEFF 		bl	i2c_flag_clear
+ 628              	.LVL71:
+  23:Hardware/Src/bsp_mpu6050.c **** 
+ 629              		.loc 1 23 5 is_stmt 1 view .LVU201
+ 630              	.L61:
+  23:Hardware/Src/bsp_mpu6050.c **** 
+ 631              		.loc 1 23 12 view .LVU202
+  23:Hardware/Src/bsp_mpu6050.c **** 
+ 632              		.loc 1 23 13 is_stmt 0 view .LVU203
+ 633 0064 40F20751 		movw	r1, #1287
+ 634 0068 2046     		mov	r0, r4
+ARM GAS  /tmp/ccqxhqYc.s 			page 20
+
+
+ 635 006a FFF7FEFF 		bl	i2c_flag_get
+ 636              	.LVL72:
+  23:Hardware/Src/bsp_mpu6050.c **** 
+ 637              		.loc 1 23 12 view .LVU204
+ 638 006e 0028     		cmp	r0, #0
+ 639 0070 F8D0     		beq	.L61
+  25:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_BTC));
+ 640              		.loc 1 25 5 is_stmt 1 view .LVU205
+ 641 0072 2448     		ldr	r0, .L83+4
+  26:Hardware/Src/bsp_mpu6050.c **** 
+ 642              		.loc 1 26 13 is_stmt 0 view .LVU206
+ 643 0074 234C     		ldr	r4, .L83+4
+  25:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_BTC));
+ 644              		.loc 1 25 5 view .LVU207
+ 645 0076 7521     		movs	r1, #117
+ 646 0078 FFF7FEFF 		bl	i2c_data_transmit
+ 647              	.LVL73:
+  26:Hardware/Src/bsp_mpu6050.c **** 
+ 648              		.loc 1 26 5 is_stmt 1 view .LVU208
+ 649              	.L62:
+  26:Hardware/Src/bsp_mpu6050.c **** 
+ 650              		.loc 1 26 12 view .LVU209
+  26:Hardware/Src/bsp_mpu6050.c **** 
+ 651              		.loc 1 26 13 is_stmt 0 view .LVU210
+ 652 007c 40F20251 		movw	r1, #1282
+ 653 0080 2046     		mov	r0, r4
+ 654 0082 FFF7FEFF 		bl	i2c_flag_get
+ 655              	.LVL74:
+  26:Hardware/Src/bsp_mpu6050.c **** 
+ 656              		.loc 1 26 12 view .LVU211
+ 657 0086 0028     		cmp	r0, #0
+ 658 0088 F8D0     		beq	.L62
+  28:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_SBSEND));
+ 659              		.loc 1 28 5 is_stmt 1 view .LVU212
+ 660 008a 1E48     		ldr	r0, .L83+4
+  29:Hardware/Src/bsp_mpu6050.c **** 
+ 661              		.loc 1 29 13 is_stmt 0 view .LVU213
+ 662 008c 1D4C     		ldr	r4, .L83+4
+  28:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_SBSEND));
+ 663              		.loc 1 28 5 view .LVU214
+ 664 008e FFF7FEFF 		bl	i2c_start_on_bus
+ 665              	.LVL75:
+  29:Hardware/Src/bsp_mpu6050.c **** 
+ 666              		.loc 1 29 5 is_stmt 1 view .LVU215
+ 667              	.L63:
+  29:Hardware/Src/bsp_mpu6050.c **** 
+ 668              		.loc 1 29 12 view .LVU216
+  29:Hardware/Src/bsp_mpu6050.c **** 
+ 669              		.loc 1 29 13 is_stmt 0 view .LVU217
+ 670 0092 4FF4A061 		mov	r1, #1280
+ 671 0096 2046     		mov	r0, r4
+ 672 0098 FFF7FEFF 		bl	i2c_flag_get
+ 673              	.LVL76:
+  29:Hardware/Src/bsp_mpu6050.c **** 
+ 674              		.loc 1 29 12 view .LVU218
+ 675 009c 0028     		cmp	r0, #0
+ 676 009e F8D0     		beq	.L63
+ARM GAS  /tmp/ccqxhqYc.s 			page 21
+
+
+  31:Hardware/Src/bsp_mpu6050.c ****     i2c_ack_config(I2CX, I2C_ACK_DISABLE);
+ 677              		.loc 1 31 5 is_stmt 1 view .LVU219
+ 678 00a0 1848     		ldr	r0, .L83+4
+  33:Hardware/Src/bsp_mpu6050.c ****     i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 679              		.loc 1 33 13 is_stmt 0 view .LVU220
+ 680 00a2 184C     		ldr	r4, .L83+4
+  31:Hardware/Src/bsp_mpu6050.c ****     i2c_ack_config(I2CX, I2C_ACK_DISABLE);
+ 681              		.loc 1 31 5 view .LVU221
+ 682 00a4 0122     		movs	r2, #1
+ 683 00a6 D021     		movs	r1, #208
+ 684 00a8 FFF7FEFF 		bl	i2c_master_addressing
+ 685              	.LVL77:
+  32:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_ADDSEND));
+ 686              		.loc 1 32 5 is_stmt 1 view .LVU222
+ 687 00ac 1548     		ldr	r0, .L83+4
+ 688 00ae 0021     		movs	r1, #0
+ 689 00b0 FFF7FEFF 		bl	i2c_ack_config
+ 690              	.LVL78:
+  33:Hardware/Src/bsp_mpu6050.c ****     i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 691              		.loc 1 33 5 view .LVU223
+ 692              	.L64:
+  33:Hardware/Src/bsp_mpu6050.c ****     i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 693              		.loc 1 33 12 view .LVU224
+  33:Hardware/Src/bsp_mpu6050.c ****     i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 694              		.loc 1 33 13 is_stmt 0 view .LVU225
+ 695 00b4 40F20151 		movw	r1, #1281
+ 696 00b8 2046     		mov	r0, r4
+ 697 00ba FFF7FEFF 		bl	i2c_flag_get
+ 698              	.LVL79:
+  33:Hardware/Src/bsp_mpu6050.c ****     i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 699              		.loc 1 33 12 view .LVU226
+ 700 00be 0028     		cmp	r0, #0
+ 701 00c0 F8D0     		beq	.L64
+  34:Hardware/Src/bsp_mpu6050.c ****     i2c_stop_on_bus(I2CX);
+ 702              		.loc 1 34 5 is_stmt 1 view .LVU227
+ 703 00c2 1048     		ldr	r0, .L83+4
+  36:Hardware/Src/bsp_mpu6050.c ****     uint8_t data = i2c_data_receive(I2CX);
+ 704              		.loc 1 36 13 is_stmt 0 view .LVU228
+ 705 00c4 0F4C     		ldr	r4, .L83+4
+  34:Hardware/Src/bsp_mpu6050.c ****     i2c_stop_on_bus(I2CX);
+ 706              		.loc 1 34 5 view .LVU229
+ 707 00c6 40F20151 		movw	r1, #1281
+ 708 00ca FFF7FEFF 		bl	i2c_flag_clear
+ 709              	.LVL80:
+  35:Hardware/Src/bsp_mpu6050.c ****     while (!i2c_flag_get(I2CX, I2C_FLAG_RBNE));
+ 710              		.loc 1 35 5 is_stmt 1 view .LVU230
+ 711 00ce 0D48     		ldr	r0, .L83+4
+ 712 00d0 FFF7FEFF 		bl	i2c_stop_on_bus
+ 713              	.LVL81:
+  36:Hardware/Src/bsp_mpu6050.c ****     uint8_t data = i2c_data_receive(I2CX);
+ 714              		.loc 1 36 5 view .LVU231
+ 715              	.L65:
+  36:Hardware/Src/bsp_mpu6050.c ****     uint8_t data = i2c_data_receive(I2CX);
+ 716              		.loc 1 36 12 view .LVU232
+  36:Hardware/Src/bsp_mpu6050.c ****     uint8_t data = i2c_data_receive(I2CX);
+ 717              		.loc 1 36 13 is_stmt 0 view .LVU233
+ 718 00d4 40F20651 		movw	r1, #1286
+ARM GAS  /tmp/ccqxhqYc.s 			page 22
+
+
+ 719 00d8 2046     		mov	r0, r4
+ 720 00da FFF7FEFF 		bl	i2c_flag_get
+ 721              	.LVL82:
+  36:Hardware/Src/bsp_mpu6050.c ****     uint8_t data = i2c_data_receive(I2CX);
+ 722              		.loc 1 36 12 view .LVU234
+ 723 00de 0028     		cmp	r0, #0
+ 724 00e0 F8D0     		beq	.L65
+  37:Hardware/Src/bsp_mpu6050.c ****     while (I2C_CTL0(I2CX) & I2C_CTL0_STOP);
+ 725              		.loc 1 37 5 is_stmt 1 view .LVU235
+  37:Hardware/Src/bsp_mpu6050.c ****     while (I2C_CTL0(I2CX) & I2C_CTL0_STOP);
+ 726              		.loc 1 37 20 is_stmt 0 view .LVU236
+ 727 00e2 0848     		ldr	r0, .L83+4
+ 728 00e4 FFF7FEFF 		bl	i2c_data_receive
+ 729              	.LVL83:
+  38:Hardware/Src/bsp_mpu6050.c **** 
+ 730              		.loc 1 38 12 view .LVU237
+ 731 00e8 074A     		ldr	r2, .L83+8
+  37:Hardware/Src/bsp_mpu6050.c ****     while (I2C_CTL0(I2CX) & I2C_CTL0_STOP);
+ 732              		.loc 1 37 20 view .LVU238
+ 733 00ea 0146     		mov	r1, r0
+ 734              	.LVL84:
+  38:Hardware/Src/bsp_mpu6050.c **** 
+ 735              		.loc 1 38 5 is_stmt 1 view .LVU239
+ 736              	.L66:
+  38:Hardware/Src/bsp_mpu6050.c **** 
+ 737              		.loc 1 38 12 view .LVU240
+ 738 00ec D2F80034 		ldr	r3, [r2, #1024]
+ 739 00f0 9B05     		lsls	r3, r3, #22
+ 740 00f2 FBD4     		bmi	.L66
+  40:Hardware/Src/bsp_mpu6050.c **** }
+ 741              		.loc 1 40 5 view .LVU241
+ 742              	.LVL85:
+  40:Hardware/Src/bsp_mpu6050.c **** }
+ 743              		.loc 1 40 5 is_stmt 0 view .LVU242
+ 744              	.LBE6:
+ 745              	.LBE7:
+ 242:Hardware/Src/bsp_mpu6050.c ****     printf("mpu6050_single_read: Data read: check = %d\r\n", check);
+ 746              		.loc 1 242 5 is_stmt 1 view .LVU243
+ 243:Hardware/Src/bsp_mpu6050.c **** }...
+ 747              		.loc 1 243 1 is_stmt 0 view .LVU244
+ 748 00f4 BDE81040 		pop	{r4, lr}
+ 749              	.LCFI2:
+ 750              		.cfi_restore 14
+ 751              		.cfi_restore 4
+ 752              		.cfi_def_cfa_offset 0
+ 242:Hardware/Src/bsp_mpu6050.c ****     printf("mpu6050_single_read: Data read: check = %d\r\n", check);
+ 753              		.loc 1 242 5 view .LVU245
+ 754 00f8 0448     		ldr	r0, .L83+12
+ 755 00fa FFF7FEBF 		b	printf
+ 756              	.LVL86:
+ 757              	.L84:
+ 242:Hardware/Src/bsp_mpu6050.c ****     printf("mpu6050_single_read: Data read: check = %d\r\n", check);
+ 758              		.loc 1 242 5 view .LVU246
+ 759 00fe 00BF     		.align	2
+ 760              	.L83:
+ 761 0100 00000000 		.word	.LC7
+ 762 0104 00540040 		.word	1073763328
+ARM GAS  /tmp/ccqxhqYc.s 			page 23
+
+
+ 763 0108 00500040 		.word	1073762304
+ 764 010c 0D000000 		.word	.LC8
+ 765              		.cfi_endproc
+ 766              	.LFE122:
+ 768              		.text
+ 769              	.Letext0:
+ 770              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 771              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 772              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
+ 773              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_i2c.h"
+ 774              		.file 6 "Hardware/Inc/bsp_mpu6050.h"
+ 775              		.file 7 "/usr/arm-none-eabi/include/stdio.h"
+ 776              		.file 8 "Core/Inc/bsp_i2c.h"
+ 777              		.file 9 "<built-in>"
+ARM GAS  /tmp/ccqxhqYc.s 			page 24
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 bsp_mpu6050.c
+     /tmp/ccqxhqYc.s:36     .text.mpu6050_buffer_read_timeout:0000000000000000 $t
+     /tmp/ccqxhqYc.s:42     .text.mpu6050_buffer_read_timeout:0000000000000000 mpu6050_buffer_read_timeout
+     /tmp/ccqxhqYc.s:512    .text.mpu6050_buffer_read_timeout:00000000000001dc $d
+     /tmp/ccqxhqYc.s:530    .text.MPU6050_init:0000000000000000 $t
+     /tmp/ccqxhqYc.s:536    .text.MPU6050_init:0000000000000000 MPU6050_init
+     /tmp/ccqxhqYc.s:761    .text.MPU6050_init:0000000000000100 $d
+
+UNDEFINED SYMBOLS
+i2c_ack_config
+i2c_flag_get
+i2c_bus_reset
+puts
+i2c_ackpos_config
+i2c_master_addressing
+i2c_flag_clear
+i2c_stop_on_bus
+i2c_data_transmit
+i2c_start_on_bus
+i2c_data_receive
+I2C_init
+printf

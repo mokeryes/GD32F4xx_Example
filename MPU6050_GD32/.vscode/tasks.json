@@ -1,0 +1,36 @@
+{
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "build",
+                "type": "shell",
+                "command": "make",
+                "args": [
+                    "-j4"
+                ] 
+            },
+            {
+                "label": "clean",
+                "type": "shell",
+                "command": "make",
+                "args": [
+                    "clean"
+                ] 
+            },
+            {
+                "dependsOn":"build",
+                "label": "build and download",
+                "type": "shell",
+                "command": "openocd", 
+                "args": [
+                    "-f",
+                    "interface/cmsis-dap.cfg",
+                    "-f",
+                    "target/stm32f4x.cfg",
+                    "-c",
+                    "program build/${workspaceFolderBasename}.bin 0x08000000 verify reset exit;"
+                ],
+                "problemMatcher": []
+            }
+        ],
+}

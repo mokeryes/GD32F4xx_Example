@@ -1,0 +1,838 @@
+ARM GAS  /tmp/ccrWXILn.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f4xx_exti.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c"
+  18              		.section	.text.exti_deinit,"ax",%progbits
+  19              		.align	1
+  20              		.global	exti_deinit
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	exti_deinit:
+  26              	.LFB116:
+   1:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+   2:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \file    gd32f4xx_exti.c
+   3:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief   EXTI driver
+   4:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \version 2016-08-15, V1.0.0, firmware for GD32F4xx
+   5:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \version 2018-12-12, V2.0.0, firmware for GD32F4xx
+   6:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \version 2020-09-30, V2.1.0, firmware for GD32F4xx
+   7:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \version 2022-03-09, V3.0.0, firmware for GD32F4xx
+   8:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+   9:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+  10:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*
+  11:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     Copyright (c) 2022, GigaDevice Semiconductor Inc.
+  12:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+  13:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     Redistribution and use in source and binary forms, with or without modification,
+  14:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** are permitted provided that the following conditions are met:
+  15:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+  16:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     1. Redistributions of source code must retain the above copyright notice, this
+  17:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****        list of conditions and the following disclaimer.
+  18:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     2. Redistributions in binary form must reproduce the above copyright notice,
+  19:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****        this list of conditions and the following disclaimer in the documentation
+  20:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****        and/or other materials provided with the distribution.
+  21:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     3. Neither the name of the copyright holder nor the names of its contributors
+  22:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****        may be used to endorse or promote products derived from this software without
+  23:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****        specific prior written permission.
+  24:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+  25:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  26:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  27:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+  28:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+  29:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+  30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARM GAS  /tmp/ccrWXILn.s 			page 2
+
+
+  33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+  34:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** OF SUCH DAMAGE.
+  35:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+  36:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+  37:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** #include "gd32f4xx_exti.h"
+  38:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+  39:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+  40:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief    deinitialize the EXTI
+  41:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  none
+  42:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
+  43:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     none
+  44:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+  45:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** void exti_deinit(void)
+  46:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** {
+  27              		.loc 1 46 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  47:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     /* reset the value of all the EXTI registers */
+  48:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_INTEN = (uint32_t)0x00000000U;
+  32              		.loc 1 48 5 view .LVU1
+  33              		.loc 1 48 16 is_stmt 0 view .LVU2
+  34 0000 064B     		ldr	r3, .L2
+  35 0002 0022     		movs	r2, #0
+  36 0004 C3F8002C 		str	r2, [r3, #3072]
+  49:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_EVEN  = (uint32_t)0x00000000U;
+  37              		.loc 1 49 5 is_stmt 1 view .LVU3
+  38              		.loc 1 49 16 is_stmt 0 view .LVU4
+  39 0008 C3F8042C 		str	r2, [r3, #3076]
+  50:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_RTEN  = (uint32_t)0x00000000U;
+  40              		.loc 1 50 5 is_stmt 1 view .LVU5
+  41              		.loc 1 50 16 is_stmt 0 view .LVU6
+  42 000c C3F8082C 		str	r2, [r3, #3080]
+  51:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_FTEN  = (uint32_t)0x00000000U;
+  43              		.loc 1 51 5 is_stmt 1 view .LVU7
+  44              		.loc 1 51 16 is_stmt 0 view .LVU8
+  45 0010 C3F80C2C 		str	r2, [r3, #3084]
+  52:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_SWIEV = (uint32_t)0x00000000U;
+  46              		.loc 1 52 5 is_stmt 1 view .LVU9
+  47              		.loc 1 52 16 is_stmt 0 view .LVU10
+  48 0014 C3F8102C 		str	r2, [r3, #3088]
+  53:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** }
+  49              		.loc 1 53 1 view .LVU11
+  50 0018 7047     		bx	lr
+  51              	.L3:
+  52 001a 00BF     		.align	2
+  53              	.L2:
+  54 001c 00300140 		.word	1073819648
+  55              		.cfi_endproc
+  56              	.LFE116:
+  58              		.section	.text.exti_init,"ax",%progbits
+  59              		.align	1
+  60              		.global	exti_init
+  61              		.syntax unified
+  62              		.thumb
+  63              		.thumb_func
+ARM GAS  /tmp/ccrWXILn.s 			page 3
+
+
+  65              	exti_init:
+  66              	.LVL0:
+  67              	.LFB117:
+  54:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+  55:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+  56:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief    initialize the EXTI
+  57:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+  58:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+  59:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_x (x=0..22): EXTI line x
+  60:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  mode: interrupt or event mode, refer to exti_mode_enum
+  61:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+  62:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_INTERRUPT: interrupt mode
+  63:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_EVENT: event mode
+  64:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  trig_type: interrupt trigger type, refer to exti_trig_type_enum
+  65:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+  66:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_TRIG_RISING: rising edge trigger
+  67:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_TRIG_FALLING: falling trigger
+  68:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_TRIG_BOTH: rising and falling trigger
+  69:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_TRIG_NONE: without rising edge or falling edge trigger
+  70:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
+  71:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     none
+  72:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+  73:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** void exti_init(exti_line_enum linex, \
+  74:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                exti_mode_enum mode, \
+  75:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                exti_trig_type_enum trig_type)
+  76:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** {
+  68              		.loc 1 76 1 is_stmt 1 view -0
+  69              		.cfi_startproc
+  70              		@ args = 0, pretend = 0, frame = 0
+  71              		@ frame_needed = 0, uses_anonymous_args = 0
+  77:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     /* reset the EXTI line x */
+  78:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_INTEN &= ~(uint32_t)linex;
+  72              		.loc 1 78 5 view .LVU13
+  73 0000 254B     		ldr	r3, .L13
+  76:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     /* reset the EXTI line x */
+  74              		.loc 1 76 1 is_stmt 0 view .LVU14
+  75 0002 30B5     		push	{r4, r5, lr}
+  76              	.LCFI0:
+  77              		.cfi_def_cfa_offset 12
+  78              		.cfi_offset 4, -12
+  79              		.cfi_offset 5, -8
+  80              		.cfi_offset 14, -4
+  81              		.loc 1 78 5 view .LVU15
+  82 0004 D3F8005C 		ldr	r5, [r3, #3072]
+  83              		.loc 1 78 16 view .LVU16
+  84 0008 25EA0005 		bic	r5, r5, r0
+  85 000c C3F8005C 		str	r5, [r3, #3072]
+  79:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_EVEN &= ~(uint32_t)linex;
+  86              		.loc 1 79 5 is_stmt 1 view .LVU17
+  87 0010 D3F8045C 		ldr	r5, [r3, #3076]
+  88              		.loc 1 79 15 is_stmt 0 view .LVU18
+  89 0014 25EA0005 		bic	r5, r5, r0
+  90 0018 C3F8045C 		str	r5, [r3, #3076]
+  80:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_RTEN &= ~(uint32_t)linex;
+  91              		.loc 1 80 5 is_stmt 1 view .LVU19
+  92 001c D3F8085C 		ldr	r5, [r3, #3080]
+  93              		.loc 1 80 15 is_stmt 0 view .LVU20
+ARM GAS  /tmp/ccrWXILn.s 			page 4
+
+
+  94 0020 25EA0005 		bic	r5, r5, r0
+  95 0024 C3F8085C 		str	r5, [r3, #3080]
+  81:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_FTEN &= ~(uint32_t)linex;
+  96              		.loc 1 81 5 is_stmt 1 view .LVU21
+  97 0028 D3F80C5C 		ldr	r5, [r3, #3084]
+  98              		.loc 1 81 15 is_stmt 0 view .LVU22
+  99 002c 25EA0005 		bic	r5, r5, r0
+  78:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_EVEN &= ~(uint32_t)linex;
+ 100              		.loc 1 78 19 view .LVU23
+ 101 0030 C443     		mvns	r4, r0
+ 102              		.loc 1 81 15 view .LVU24
+ 103 0032 C3F80C5C 		str	r5, [r3, #3084]
+  82:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+  83:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     /* set the EXTI mode and enable the interrupts or events from EXTI line x */
+  84:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     switch(mode) {
+ 104              		.loc 1 84 5 is_stmt 1 view .LVU25
+ 105 0036 91B1     		cbz	r1, .L5
+ 106 0038 0129     		cmp	r1, #1
+ 107 003a 16D0     		beq	.L6
+ 108              	.LVL1:
+ 109              	.L7:
+  85:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     case EXTI_INTERRUPT:
+  86:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_INTEN |= (uint32_t)linex;
+  87:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+  88:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     case EXTI_EVENT:
+  89:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_EVEN |= (uint32_t)linex;
+  90:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+  91:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     default:
+  92:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+  93:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     }
+  94:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+  95:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     /* set the EXTI trigger type */
+  96:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     switch(trig_type) {
+ 110              		.loc 1 96 5 view .LVU26
+ 111 003c 012A     		cmp	r2, #1
+ 112 003e 1AD0     		beq	.L8
+ 113 0040 022A     		cmp	r2, #2
+ 114 0042 21D0     		beq	.L9
+ 115 0044 52B9     		cbnz	r2, .L4
+  97:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     case EXTI_TRIG_RISING:
+  98:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_RTEN |= (uint32_t)linex;
+ 116              		.loc 1 98 9 view .LVU27
+ 117 0046 144B     		ldr	r3, .L13
+ 118 0048 D3F8082C 		ldr	r2, [r3, #3080]
+ 119              	.LVL2:
+ 120              		.loc 1 98 19 is_stmt 0 view .LVU28
+ 121 004c 0243     		orrs	r2, r2, r0
+ 122 004e C3F8082C 		str	r2, [r3, #3080]
+  99:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_FTEN &= ~(uint32_t)linex;
+ 123              		.loc 1 99 9 is_stmt 1 view .LVU29
+ 124 0052 D3F80C2C 		ldr	r2, [r3, #3084]
+ 125              		.loc 1 99 19 is_stmt 0 view .LVU30
+ 126 0056 2240     		ands	r2, r2, r4
+ 127              	.L11:
+ 100:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+ 101:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     case EXTI_TRIG_FALLING:
+ 102:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_RTEN &= ~(uint32_t)linex;
+ARM GAS  /tmp/ccrWXILn.s 			page 5
+
+
+ 103:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 104:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+ 105:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     case EXTI_TRIG_BOTH:
+ 106:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_RTEN |= (uint32_t)linex;
+ 107:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 128              		.loc 1 107 19 view .LVU31
+ 129 0058 C3F80C2C 		str	r2, [r3, #3084]
+ 108:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+ 130              		.loc 1 108 9 is_stmt 1 view .LVU32
+ 131              	.L4:
+ 109:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     case EXTI_TRIG_NONE:
+ 110:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     default:
+ 111:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+ 112:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     }
+ 113:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** }
+ 132              		.loc 1 113 1 is_stmt 0 view .LVU33
+ 133 005c 30BD     		pop	{r4, r5, pc}
+ 134              	.LVL3:
+ 135              	.L5:
+  86:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+ 136              		.loc 1 86 9 is_stmt 1 view .LVU34
+ 137 005e D3F8001C 		ldr	r1, [r3, #3072]
+ 138              	.LVL4:
+  86:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+ 139              		.loc 1 86 20 is_stmt 0 view .LVU35
+ 140 0062 0143     		orrs	r1, r1, r0
+ 141 0064 C3F8001C 		str	r1, [r3, #3072]
+  87:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     case EXTI_EVENT:
+ 142              		.loc 1 87 9 is_stmt 1 view .LVU36
+ 143 0068 E8E7     		b	.L7
+ 144              	.LVL5:
+ 145              	.L6:
+  89:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+ 146              		.loc 1 89 9 view .LVU37
+ 147 006a D3F8041C 		ldr	r1, [r3, #3076]
+ 148              	.LVL6:
+  89:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+ 149              		.loc 1 89 19 is_stmt 0 view .LVU38
+ 150 006e 0143     		orrs	r1, r1, r0
+ 151 0070 C3F8041C 		str	r1, [r3, #3076]
+  90:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     default:
+ 152              		.loc 1 90 9 is_stmt 1 view .LVU39
+ 153 0074 E2E7     		b	.L7
+ 154              	.L8:
+ 102:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 155              		.loc 1 102 9 view .LVU40
+ 156 0076 D3F8082C 		ldr	r2, [r3, #3080]
+ 157              	.LVL7:
+ 102:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 158              		.loc 1 102 19 is_stmt 0 view .LVU41
+ 159 007a 1440     		ands	r4, r4, r2
+ 160 007c C3F8084C 		str	r4, [r3, #3080]
+ 103:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+ 161              		.loc 1 103 9 is_stmt 1 view .LVU42
+ 162              	.L12:
+ 107:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+ 163              		.loc 1 107 9 view .LVU43
+ARM GAS  /tmp/ccrWXILn.s 			page 6
+
+
+ 164 0080 D3F80C2C 		ldr	r2, [r3, #3084]
+ 107:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
+ 165              		.loc 1 107 19 is_stmt 0 view .LVU44
+ 166 0084 0243     		orrs	r2, r2, r0
+ 167 0086 E7E7     		b	.L11
+ 168              	.LVL8:
+ 169              	.L9:
+ 106:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 170              		.loc 1 106 9 is_stmt 1 view .LVU45
+ 171 0088 034B     		ldr	r3, .L13
+ 172 008a D3F8082C 		ldr	r2, [r3, #3080]
+ 173              	.LVL9:
+ 106:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
+ 174              		.loc 1 106 19 is_stmt 0 view .LVU46
+ 175 008e 0243     		orrs	r2, r2, r0
+ 176 0090 C3F8082C 		str	r2, [r3, #3080]
+ 177 0094 F4E7     		b	.L12
+ 178              	.L14:
+ 179 0096 00BF     		.align	2
+ 180              	.L13:
+ 181 0098 00300140 		.word	1073819648
+ 182              		.cfi_endproc
+ 183              	.LFE117:
+ 185              		.section	.text.exti_interrupt_enable,"ax",%progbits
+ 186              		.align	1
+ 187              		.global	exti_interrupt_enable
+ 188              		.syntax unified
+ 189              		.thumb
+ 190              		.thumb_func
+ 192              	exti_interrupt_enable:
+ 193              	.LVL10:
+ 194              	.LFB118:
+ 114:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+ 115:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+ 116:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief    enable the interrupts from EXTI line x
+ 117:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 118:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+ 119:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_x (x=0..22): EXTI line x
+ 120:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
+ 121:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     none
+ 122:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+ 123:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** void exti_interrupt_enable(exti_line_enum linex)
+ 124:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** {
+ 195              		.loc 1 124 1 is_stmt 1 view -0
+ 196              		.cfi_startproc
+ 197              		@ args = 0, pretend = 0, frame = 0
+ 198              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199              		@ link register save eliminated.
+ 125:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_INTEN |= (uint32_t)linex;
+ 200              		.loc 1 125 5 view .LVU48
+ 201 0000 034A     		ldr	r2, .L16
+ 202 0002 D2F8003C 		ldr	r3, [r2, #3072]
+ 203              		.loc 1 125 16 is_stmt 0 view .LVU49
+ 204 0006 0343     		orrs	r3, r3, r0
+ 205 0008 C2F8003C 		str	r3, [r2, #3072]
+ 126:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** }
+ 206              		.loc 1 126 1 view .LVU50
+ARM GAS  /tmp/ccrWXILn.s 			page 7
+
+
+ 207 000c 7047     		bx	lr
+ 208              	.L17:
+ 209 000e 00BF     		.align	2
+ 210              	.L16:
+ 211 0010 00300140 		.word	1073819648
+ 212              		.cfi_endproc
+ 213              	.LFE118:
+ 215              		.section	.text.exti_interrupt_disable,"ax",%progbits
+ 216              		.align	1
+ 217              		.global	exti_interrupt_disable
+ 218              		.syntax unified
+ 219              		.thumb
+ 220              		.thumb_func
+ 222              	exti_interrupt_disable:
+ 223              	.LVL11:
+ 224              	.LFB119:
+ 127:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+ 128:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+ 129:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief    disable the interrupt from EXTI line x
+ 130:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 131:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+ 132:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_x (x=0..22): EXTI line x
+ 133:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
+ 134:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     none
+ 135:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+ 136:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** void exti_interrupt_disable(exti_line_enum linex)
+ 137:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** {
+ 225              		.loc 1 137 1 is_stmt 1 view -0
+ 226              		.cfi_startproc
+ 227              		@ args = 0, pretend = 0, frame = 0
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ 229              		@ link register save eliminated.
+ 138:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_INTEN &= ~(uint32_t)linex;
+ 230              		.loc 1 138 5 view .LVU52
+ 231 0000 034A     		ldr	r2, .L19
+ 232 0002 D2F8003C 		ldr	r3, [r2, #3072]
+ 233              		.loc 1 138 16 is_stmt 0 view .LVU53
+ 234 0006 23EA0003 		bic	r3, r3, r0
+ 235 000a C2F8003C 		str	r3, [r2, #3072]
+ 139:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** }
+ 236              		.loc 1 139 1 view .LVU54
+ 237 000e 7047     		bx	lr
+ 238              	.L20:
+ 239              		.align	2
+ 240              	.L19:
+ 241 0010 00300140 		.word	1073819648
+ 242              		.cfi_endproc
+ 243              	.LFE119:
+ 245              		.section	.text.exti_event_enable,"ax",%progbits
+ 246              		.align	1
+ 247              		.global	exti_event_enable
+ 248              		.syntax unified
+ 249              		.thumb
+ 250              		.thumb_func
+ 252              	exti_event_enable:
+ 253              	.LVL12:
+ 254              	.LFB120:
+ARM GAS  /tmp/ccrWXILn.s 			page 8
+
+
+ 140:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+ 141:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+ 142:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief    enable the events from EXTI line x
+ 143:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 144:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+ 145:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_x (x=0..22): EXTI line x
+ 146:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
+ 147:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     none
+ 148:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+ 149:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** void exti_event_enable(exti_line_enum linex)
+ 150:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** {
+ 255              		.loc 1 150 1 is_stmt 1 view -0
+ 256              		.cfi_startproc
+ 257              		@ args = 0, pretend = 0, frame = 0
+ 258              		@ frame_needed = 0, uses_anonymous_args = 0
+ 259              		@ link register save eliminated.
+ 151:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_EVEN |= (uint32_t)linex;
+ 260              		.loc 1 151 5 view .LVU56
+ 261 0000 034A     		ldr	r2, .L22
+ 262 0002 D2F8043C 		ldr	r3, [r2, #3076]
+ 263              		.loc 1 151 15 is_stmt 0 view .LVU57
+ 264 0006 0343     		orrs	r3, r3, r0
+ 265 0008 C2F8043C 		str	r3, [r2, #3076]
+ 152:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** }
+ 266              		.loc 1 152 1 view .LVU58
+ 267 000c 7047     		bx	lr
+ 268              	.L23:
+ 269 000e 00BF     		.align	2
+ 270              	.L22:
+ 271 0010 00300140 		.word	1073819648
+ 272              		.cfi_endproc
+ 273              	.LFE120:
+ 275              		.section	.text.exti_event_disable,"ax",%progbits
+ 276              		.align	1
+ 277              		.global	exti_event_disable
+ 278              		.syntax unified
+ 279              		.thumb
+ 280              		.thumb_func
+ 282              	exti_event_disable:
+ 283              	.LVL13:
+ 284              	.LFB121:
+ 153:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+ 154:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+ 155:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief    disable the events from EXTI line x
+ 156:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 157:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+ 158:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_x (x=0..22): EXTI line x
+ 159:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
+ 160:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     none
+ 161:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+ 162:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** void exti_event_disable(exti_line_enum linex)
+ 163:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** {
+ 285              		.loc 1 163 1 is_stmt 1 view -0
+ 286              		.cfi_startproc
+ 287              		@ args = 0, pretend = 0, frame = 0
+ 288              		@ frame_needed = 0, uses_anonymous_args = 0
+ 289              		@ link register save eliminated.
+ARM GAS  /tmp/ccrWXILn.s 			page 9
+
+
+ 164:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_EVEN &= ~(uint32_t)linex;
+ 290              		.loc 1 164 5 view .LVU60
+ 291 0000 034A     		ldr	r2, .L25
+ 292 0002 D2F8043C 		ldr	r3, [r2, #3076]
+ 293              		.loc 1 164 15 is_stmt 0 view .LVU61
+ 294 0006 23EA0003 		bic	r3, r3, r0
+ 295 000a C2F8043C 		str	r3, [r2, #3076]
+ 165:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** }
+ 296              		.loc 1 165 1 view .LVU62
+ 297 000e 7047     		bx	lr
+ 298              	.L26:
+ 299              		.align	2
+ 300              	.L25:
+ 301 0010 00300140 		.word	1073819648
+ 302              		.cfi_endproc
+ 303              	.LFE121:
+ 305              		.section	.text.exti_software_interrupt_enable,"ax",%progbits
+ 306              		.align	1
+ 307              		.global	exti_software_interrupt_enable
+ 308              		.syntax unified
+ 309              		.thumb
+ 310              		.thumb_func
+ 312              	exti_software_interrupt_enable:
+ 313              	.LVL14:
+ 314              	.LFB122:
+ 166:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+ 167:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+ 168:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief    enable EXTI software interrupt event
+ 169:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 170:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+ 171:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_x (x=0..22): EXTI line x
+ 172:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
+ 173:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     none
+ 174:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+ 175:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** void exti_software_interrupt_enable(exti_line_enum linex)
+ 176:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** {
+ 315              		.loc 1 176 1 is_stmt 1 view -0
+ 316              		.cfi_startproc
+ 317              		@ args = 0, pretend = 0, frame = 0
+ 318              		@ frame_needed = 0, uses_anonymous_args = 0
+ 319              		@ link register save eliminated.
+ 177:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_SWIEV |= (uint32_t)linex;
+ 320              		.loc 1 177 5 view .LVU64
+ 321 0000 034A     		ldr	r2, .L28
+ 322 0002 D2F8103C 		ldr	r3, [r2, #3088]
+ 323              		.loc 1 177 16 is_stmt 0 view .LVU65
+ 324 0006 0343     		orrs	r3, r3, r0
+ 325 0008 C2F8103C 		str	r3, [r2, #3088]
+ 178:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** }
+ 326              		.loc 1 178 1 view .LVU66
+ 327 000c 7047     		bx	lr
+ 328              	.L29:
+ 329 000e 00BF     		.align	2
+ 330              	.L28:
+ 331 0010 00300140 		.word	1073819648
+ 332              		.cfi_endproc
+ 333              	.LFE122:
+ARM GAS  /tmp/ccrWXILn.s 			page 10
+
+
+ 335              		.section	.text.exti_software_interrupt_disable,"ax",%progbits
+ 336              		.align	1
+ 337              		.global	exti_software_interrupt_disable
+ 338              		.syntax unified
+ 339              		.thumb
+ 340              		.thumb_func
+ 342              	exti_software_interrupt_disable:
+ 343              	.LVL15:
+ 344              	.LFB123:
+ 179:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+ 180:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+ 181:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief    disable EXTI software interrupt event
+ 182:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 183:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+ 184:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_x (x=0..22): EXTI line x
+ 185:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
+ 186:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     none
+ 187:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+ 188:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** void exti_software_interrupt_disable(exti_line_enum linex)
+ 189:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** {
+ 345              		.loc 1 189 1 is_stmt 1 view -0
+ 346              		.cfi_startproc
+ 347              		@ args = 0, pretend = 0, frame = 0
+ 348              		@ frame_needed = 0, uses_anonymous_args = 0
+ 349              		@ link register save eliminated.
+ 190:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_SWIEV &= ~(uint32_t)linex;
+ 350              		.loc 1 190 5 view .LVU68
+ 351 0000 034A     		ldr	r2, .L31
+ 352 0002 D2F8103C 		ldr	r3, [r2, #3088]
+ 353              		.loc 1 190 16 is_stmt 0 view .LVU69
+ 354 0006 23EA0003 		bic	r3, r3, r0
+ 355 000a C2F8103C 		str	r3, [r2, #3088]
+ 191:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** }
+ 356              		.loc 1 191 1 view .LVU70
+ 357 000e 7047     		bx	lr
+ 358              	.L32:
+ 359              		.align	2
+ 360              	.L31:
+ 361 0010 00300140 		.word	1073819648
+ 362              		.cfi_endproc
+ 363              	.LFE123:
+ 365              		.section	.text.exti_flag_get,"ax",%progbits
+ 366              		.align	1
+ 367              		.global	exti_flag_get
+ 368              		.syntax unified
+ 369              		.thumb
+ 370              		.thumb_func
+ 372              	exti_flag_get:
+ 373              	.LVL16:
+ 374              	.LFB124:
+ 192:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+ 193:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+ 194:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief    get EXTI lines flag
+ 195:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 196:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+ 197:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_x (x=0..22): EXTI line x
+ 198:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
+ARM GAS  /tmp/ccrWXILn.s 			page 11
+
+
+ 199:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     FlagStatus: status of flag (RESET or SET)
+ 200:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+ 201:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** FlagStatus exti_flag_get(exti_line_enum linex)
+ 202:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** {
+ 375              		.loc 1 202 1 is_stmt 1 view -0
+ 376              		.cfi_startproc
+ 377              		@ args = 0, pretend = 0, frame = 0
+ 378              		@ frame_needed = 0, uses_anonymous_args = 0
+ 379              		@ link register save eliminated.
+ 203:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     if(RESET != (EXTI_PD & (uint32_t)linex)) {
+ 380              		.loc 1 203 5 view .LVU72
+ 381              		.loc 1 203 18 is_stmt 0 view .LVU73
+ 382 0000 034B     		ldr	r3, .L34
+ 383 0002 D3F8143C 		ldr	r3, [r3, #3092]
+ 384              		.loc 1 203 7 view .LVU74
+ 385 0006 0342     		tst	r3, r0
+ 204:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         return SET;
+ 205:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     } else {
+ 206:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         return RESET;
+ 207:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     }
+ 208:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** }
+ 386              		.loc 1 208 1 view .LVU75
+ 387 0008 14BF     		ite	ne
+ 388 000a 0120     		movne	r0, #1
+ 389              	.LVL17:
+ 390              		.loc 1 208 1 view .LVU76
+ 391 000c 0020     		moveq	r0, #0
+ 392 000e 7047     		bx	lr
+ 393              	.L35:
+ 394              		.align	2
+ 395              	.L34:
+ 396 0010 00300140 		.word	1073819648
+ 397              		.cfi_endproc
+ 398              	.LFE124:
+ 400              		.section	.text.exti_flag_clear,"ax",%progbits
+ 401              		.align	1
+ 402              		.global	exti_flag_clear
+ 403              		.syntax unified
+ 404              		.thumb
+ 405              		.thumb_func
+ 407              	exti_flag_clear:
+ 408              	.LVL18:
+ 409              	.LFB125:
+ 209:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+ 210:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+ 211:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief    clear EXTI lines pending flag
+ 212:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 213:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+ 214:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_x (x=0..22): EXTI line x
+ 215:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
+ 216:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     none
+ 217:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+ 218:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** void exti_flag_clear(exti_line_enum linex)
+ 219:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** {
+ 410              		.loc 1 219 1 is_stmt 1 view -0
+ 411              		.cfi_startproc
+ 412              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccrWXILn.s 			page 12
+
+
+ 413              		@ frame_needed = 0, uses_anonymous_args = 0
+ 414              		@ link register save eliminated.
+ 220:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_PD = (uint32_t)linex;
+ 415              		.loc 1 220 5 view .LVU78
+ 416              		.loc 1 220 13 is_stmt 0 view .LVU79
+ 417 0000 014B     		ldr	r3, .L37
+ 418 0002 C3F8140C 		str	r0, [r3, #3092]
+ 221:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** }
+ 419              		.loc 1 221 1 view .LVU80
+ 420 0006 7047     		bx	lr
+ 421              	.L38:
+ 422              		.align	2
+ 423              	.L37:
+ 424 0008 00300140 		.word	1073819648
+ 425              		.cfi_endproc
+ 426              	.LFE125:
+ 428              		.section	.text.exti_interrupt_flag_get,"ax",%progbits
+ 429              		.align	1
+ 430              		.global	exti_interrupt_flag_get
+ 431              		.syntax unified
+ 432              		.thumb
+ 433              		.thumb_func
+ 435              	exti_interrupt_flag_get:
+ 436              	.LVL19:
+ 437              	.LFB126:
+ 222:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+ 223:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+ 224:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief    get EXTI lines flag when the interrupt flag is set
+ 225:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 226:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+ 227:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_x (x=0..22): EXTI line x
+ 228:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
+ 229:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     FlagStatus: status of flag (RESET or SET)
+ 230:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+ 231:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** FlagStatus exti_interrupt_flag_get(exti_line_enum linex)
+ 232:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** {
+ 438              		.loc 1 232 1 is_stmt 1 view -0
+ 439              		.cfi_startproc
+ 440              		@ args = 0, pretend = 0, frame = 0
+ 441              		@ frame_needed = 0, uses_anonymous_args = 0
+ 442              		@ link register save eliminated.
+ 233:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     uint32_t flag_left, flag_right;
+ 443              		.loc 1 233 5 view .LVU82
+ 234:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+ 235:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     flag_left = EXTI_PD & (uint32_t)linex;
+ 444              		.loc 1 235 5 view .LVU83
+ 445              		.loc 1 235 17 is_stmt 0 view .LVU84
+ 446 0000 0649     		ldr	r1, .L42
+ 232:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     uint32_t flag_left, flag_right;
+ 447              		.loc 1 232 1 view .LVU85
+ 448 0002 0246     		mov	r2, r0
+ 449              		.loc 1 235 17 view .LVU86
+ 450 0004 D1F8140C 		ldr	r0, [r1, #3092]
+ 451              	.LVL20:
+ 236:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     flag_right = EXTI_INTEN & (uint32_t)linex;
+ 452              		.loc 1 236 5 is_stmt 1 view .LVU87
+ 453              		.loc 1 236 18 is_stmt 0 view .LVU88
+ARM GAS  /tmp/ccrWXILn.s 			page 13
+
+
+ 454 0008 D1F8001C 		ldr	r1, [r1, #3072]
+ 455              	.LVL21:
+ 237:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+ 238:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     if((RESET != flag_left) && (RESET != flag_right)) {
+ 456              		.loc 1 238 5 is_stmt 1 view .LVU89
+ 457              		.loc 1 238 7 is_stmt 0 view .LVU90
+ 458 000c 1040     		ands	r0, r0, r2
+ 459              	.LVL22:
+ 460              		.loc 1 238 7 view .LVU91
+ 461 000e 03D0     		beq	.L40
+ 462              		.loc 1 238 29 discriminator 1 view .LVU92
+ 463 0010 1142     		tst	r1, r2
+ 464 0012 14BF     		ite	ne
+ 465 0014 0120     		movne	r0, #1
+ 466              	.LVL23:
+ 467              		.loc 1 238 29 discriminator 1 view .LVU93
+ 468 0016 0020     		moveq	r0, #0
+ 469              	.L40:
+ 239:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         return SET;
+ 240:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     } else {
+ 241:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         return RESET;
+ 242:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     }
+ 243:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** }
+ 470              		.loc 1 243 1 view .LVU94
+ 471 0018 7047     		bx	lr
+ 472              	.L43:
+ 473 001a 00BF     		.align	2
+ 474              	.L42:
+ 475 001c 00300140 		.word	1073819648
+ 476              		.cfi_endproc
+ 477              	.LFE126:
+ 479              		.section	.text.exti_interrupt_flag_clear,"ax",%progbits
+ 480              		.align	1
+ 481              		.global	exti_interrupt_flag_clear
+ 482              		.syntax unified
+ 483              		.thumb
+ 484              		.thumb_func
+ 486              	exti_interrupt_flag_clear:
+ 487              	.LFB129:
+ 488              		.cfi_startproc
+ 244:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
+ 245:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** /*!
+ 246:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \brief    clear EXTI lines pending flag
+ 247:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[in]  linex: EXTI line number, refer to exti_line_enum
+ 248:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
+ 249:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_x (x=0..22): EXTI line x
+ 250:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
+ 251:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     none
+ 252:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** */
+ 253:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** void exti_interrupt_flag_clear(exti_line_enum linex)
+ 489              		.loc 1 253 6 is_stmt 1 view -0
+ 490              		@ args = 0, pretend = 0, frame = 0
+ 491              		@ frame_needed = 0, uses_anonymous_args = 0
+ 492              		@ link register save eliminated.
+ 493 0000 014B     		ldr	r3, .L45
+ 494 0002 C3F8140C 		str	r0, [r3, #3092]
+ 495 0006 7047     		bx	lr
+ARM GAS  /tmp/ccrWXILn.s 			page 14
+
+
+ 496              	.L46:
+ 497              		.align	2
+ 498              	.L45:
+ 499 0008 00300140 		.word	1073819648
+ 500              		.cfi_endproc
+ 501              	.LFE129:
+ 503              		.text
+ 504              	.Letext0:
+ 505              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 506              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 507              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
+ 508              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_exti.h"
+ARM GAS  /tmp/ccrWXILn.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 gd32f4xx_exti.c
+     /tmp/ccrWXILn.s:19     .text.exti_deinit:0000000000000000 $t
+     /tmp/ccrWXILn.s:25     .text.exti_deinit:0000000000000000 exti_deinit
+     /tmp/ccrWXILn.s:54     .text.exti_deinit:000000000000001c $d
+     /tmp/ccrWXILn.s:59     .text.exti_init:0000000000000000 $t
+     /tmp/ccrWXILn.s:65     .text.exti_init:0000000000000000 exti_init
+     /tmp/ccrWXILn.s:181    .text.exti_init:0000000000000098 $d
+     /tmp/ccrWXILn.s:186    .text.exti_interrupt_enable:0000000000000000 $t
+     /tmp/ccrWXILn.s:192    .text.exti_interrupt_enable:0000000000000000 exti_interrupt_enable
+     /tmp/ccrWXILn.s:211    .text.exti_interrupt_enable:0000000000000010 $d
+     /tmp/ccrWXILn.s:216    .text.exti_interrupt_disable:0000000000000000 $t
+     /tmp/ccrWXILn.s:222    .text.exti_interrupt_disable:0000000000000000 exti_interrupt_disable
+     /tmp/ccrWXILn.s:241    .text.exti_interrupt_disable:0000000000000010 $d
+     /tmp/ccrWXILn.s:246    .text.exti_event_enable:0000000000000000 $t
+     /tmp/ccrWXILn.s:252    .text.exti_event_enable:0000000000000000 exti_event_enable
+     /tmp/ccrWXILn.s:271    .text.exti_event_enable:0000000000000010 $d
+     /tmp/ccrWXILn.s:276    .text.exti_event_disable:0000000000000000 $t
+     /tmp/ccrWXILn.s:282    .text.exti_event_disable:0000000000000000 exti_event_disable
+     /tmp/ccrWXILn.s:301    .text.exti_event_disable:0000000000000010 $d
+     /tmp/ccrWXILn.s:306    .text.exti_software_interrupt_enable:0000000000000000 $t
+     /tmp/ccrWXILn.s:312    .text.exti_software_interrupt_enable:0000000000000000 exti_software_interrupt_enable
+     /tmp/ccrWXILn.s:331    .text.exti_software_interrupt_enable:0000000000000010 $d
+     /tmp/ccrWXILn.s:336    .text.exti_software_interrupt_disable:0000000000000000 $t
+     /tmp/ccrWXILn.s:342    .text.exti_software_interrupt_disable:0000000000000000 exti_software_interrupt_disable
+     /tmp/ccrWXILn.s:361    .text.exti_software_interrupt_disable:0000000000000010 $d
+     /tmp/ccrWXILn.s:366    .text.exti_flag_get:0000000000000000 $t
+     /tmp/ccrWXILn.s:372    .text.exti_flag_get:0000000000000000 exti_flag_get
+     /tmp/ccrWXILn.s:396    .text.exti_flag_get:0000000000000010 $d
+     /tmp/ccrWXILn.s:401    .text.exti_flag_clear:0000000000000000 $t
+     /tmp/ccrWXILn.s:407    .text.exti_flag_clear:0000000000000000 exti_flag_clear
+     /tmp/ccrWXILn.s:424    .text.exti_flag_clear:0000000000000008 $d
+     /tmp/ccrWXILn.s:429    .text.exti_interrupt_flag_get:0000000000000000 $t
+     /tmp/ccrWXILn.s:435    .text.exti_interrupt_flag_get:0000000000000000 exti_interrupt_flag_get
+     /tmp/ccrWXILn.s:475    .text.exti_interrupt_flag_get:000000000000001c $d
+     /tmp/ccrWXILn.s:480    .text.exti_interrupt_flag_clear:0000000000000000 $t
+     /tmp/ccrWXILn.s:486    .text.exti_interrupt_flag_clear:0000000000000000 exti_interrupt_flag_clear
+     /tmp/ccrWXILn.s:499    .text.exti_interrupt_flag_clear:0000000000000008 $d
+
+NO UNDEFINED SYMBOLS
