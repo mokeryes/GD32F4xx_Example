@@ -1,0 +1,1777 @@
+ARM GAS  /tmp/ccHFRWt3.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"system_gd32f4xx.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Drivers/CMSIS/Source/system_gd32f4xx.c"
+  18              		.section	.text.SystemInit,"ax",%progbits
+  19              		.align	1
+  20              		.global	SystemInit
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	SystemInit:
+  26              	.LFB116:
+   1:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+   2:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \file  system_gd32f4xx.c
+   3:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief CMSIS Cortex-M4 Device Peripheral Access Layer Source File for
+   4:Drivers/CMSIS/Source/system_gd32f4xx.c ****            GD32F4xx Device Series
+   5:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+   6:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+   7:Drivers/CMSIS/Source/system_gd32f4xx.c **** /* Copyright (c) 2012 ARM LIMITED
+   8:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+   9:Drivers/CMSIS/Source/system_gd32f4xx.c ****    All rights reserved.
+  10:Drivers/CMSIS/Source/system_gd32f4xx.c ****    Redistribution and use in source and binary forms, with or without
+  11:Drivers/CMSIS/Source/system_gd32f4xx.c ****    modification, are permitted provided that the following conditions are met:
+  12:Drivers/CMSIS/Source/system_gd32f4xx.c ****    - Redistributions of source code must retain the above copyright
+  13:Drivers/CMSIS/Source/system_gd32f4xx.c ****      notice, this list of conditions and the following disclaimer.
+  14:Drivers/CMSIS/Source/system_gd32f4xx.c ****    - Redistributions in binary form must reproduce the above copyright
+  15:Drivers/CMSIS/Source/system_gd32f4xx.c ****      notice, this list of conditions and the following disclaimer in the
+  16:Drivers/CMSIS/Source/system_gd32f4xx.c ****      documentation and/or other materials provided with the distribution.
+  17:Drivers/CMSIS/Source/system_gd32f4xx.c ****    - Neither the name of ARM nor the names of its contributors may be used
+  18:Drivers/CMSIS/Source/system_gd32f4xx.c ****      to endorse or promote products derived from this software without
+  19:Drivers/CMSIS/Source/system_gd32f4xx.c ****      specific prior written permission.
+  20:Drivers/CMSIS/Source/system_gd32f4xx.c ****    *
+  21:Drivers/CMSIS/Source/system_gd32f4xx.c ****    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:Drivers/CMSIS/Source/system_gd32f4xx.c ****    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:Drivers/CMSIS/Source/system_gd32f4xx.c ****    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:Drivers/CMSIS/Source/system_gd32f4xx.c ****    ARE DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDERS AND CONTRIBUTORS BE
+  25:Drivers/CMSIS/Source/system_gd32f4xx.c ****    LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:Drivers/CMSIS/Source/system_gd32f4xx.c ****    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:Drivers/CMSIS/Source/system_gd32f4xx.c ****    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:Drivers/CMSIS/Source/system_gd32f4xx.c ****    INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:Drivers/CMSIS/Source/system_gd32f4xx.c ****    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:Drivers/CMSIS/Source/system_gd32f4xx.c ****    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:Drivers/CMSIS/Source/system_gd32f4xx.c ****    POSSIBILITY OF SUCH DAMAGE.
+  32:Drivers/CMSIS/Source/system_gd32f4xx.c ****    ---------------------------------------------------------------------------*/
+ARM GAS  /tmp/ccHFRWt3.s 			page 2
+
+
+  33:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+  34:Drivers/CMSIS/Source/system_gd32f4xx.c **** /* This file refers the CMSIS standard, some adjustments are made according to GigaDevice chips */
+  35:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+  36:Drivers/CMSIS/Source/system_gd32f4xx.c **** #include "gd32f4xx.h"
+  37:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+  38:Drivers/CMSIS/Source/system_gd32f4xx.c **** /* system frequency define */
+  39:Drivers/CMSIS/Source/system_gd32f4xx.c **** #define __IRC16M          (IRC16M_VALUE)            /* internal 16 MHz RC oscillator frequency */
+  40:Drivers/CMSIS/Source/system_gd32f4xx.c **** #define __HXTAL           (HXTAL_VALUE)             /* high speed crystal oscillator frequency */
+  41:Drivers/CMSIS/Source/system_gd32f4xx.c **** #define __SYS_OSC_CLK     (__IRC16M)                /* main oscillator frequency */
+  42:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+  43:Drivers/CMSIS/Source/system_gd32f4xx.c **** /* select a system clock by uncommenting the following line */
+  44:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_IRC16M                   (uint32_t)(__IRC16M)
+  45:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_HXTAL                    (uint32_t)(__HXTAL)
+  46:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_120M_PLL_IRC16M          (uint32_t)(120000000)
+  47:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_120M_PLL_8M_HXTAL        (uint32_t)(120000000)
+  48:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_120M_PLL_25M_HXTAL       (uint32_t)(120000000)
+  49:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_168M_PLL_IRC16M          (uint32_t)(168000000)
+  50:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_168M_PLL_8M_HXTAL        (uint32_t)(168000000)
+  51:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_168M_PLL_25M_HXTAL       (uint32_t)(168000000)
+  52:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_200M_PLL_IRC16M          (uint32_t)(200000000)
+  53:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_200M_PLL_8M_HXTAL        (uint32_t)(200000000)
+  54:Drivers/CMSIS/Source/system_gd32f4xx.c **** #define __SYSTEM_CLOCK_200M_PLL_25M_HXTAL       (uint32_t)(200000000)
+  55:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_240M_PLL_IRC16M          (uint32_t)(240000000)
+  56:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_240M_PLL_8M_HXTAL        (uint32_t)(240000000)
+  57:Drivers/CMSIS/Source/system_gd32f4xx.c **** //#define __SYSTEM_CLOCK_240M_PLL_25M_HXTAL       (uint32_t)(240000000)
+  58:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+  59:Drivers/CMSIS/Source/system_gd32f4xx.c **** #define RCU_MODIFY(__delay)     do{                                     \
+  60:Drivers/CMSIS/Source/system_gd32f4xx.c ****                                     volatile uint32_t i;                \
+  61:Drivers/CMSIS/Source/system_gd32f4xx.c ****                                     if(0 != __delay){                   \
+  62:Drivers/CMSIS/Source/system_gd32f4xx.c ****                                         RCU_CFG0 |= RCU_AHB_CKSYS_DIV2; \
+  63:Drivers/CMSIS/Source/system_gd32f4xx.c ****                                         for(i=0; i<__delay; i++){       \
+  64:Drivers/CMSIS/Source/system_gd32f4xx.c ****                                         }                               \
+  65:Drivers/CMSIS/Source/system_gd32f4xx.c ****                                         RCU_CFG0 |= RCU_AHB_CKSYS_DIV4; \
+  66:Drivers/CMSIS/Source/system_gd32f4xx.c ****                                         for(i=0; i<__delay; i++){       \
+  67:Drivers/CMSIS/Source/system_gd32f4xx.c ****                                         }                               \
+  68:Drivers/CMSIS/Source/system_gd32f4xx.c ****                                     }                                   \
+  69:Drivers/CMSIS/Source/system_gd32f4xx.c ****                                 }while(0)
+  70:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+  71:Drivers/CMSIS/Source/system_gd32f4xx.c **** #define SEL_IRC16M      0x00U
+  72:Drivers/CMSIS/Source/system_gd32f4xx.c **** #define SEL_HXTAL       0x01U
+  73:Drivers/CMSIS/Source/system_gd32f4xx.c **** #define SEL_PLLP        0x02U
+  74:Drivers/CMSIS/Source/system_gd32f4xx.c ****                         
+  75:Drivers/CMSIS/Source/system_gd32f4xx.c **** /* set the system clock frequency and declare the system clock configuration function */
+  76:Drivers/CMSIS/Source/system_gd32f4xx.c **** #ifdef __SYSTEM_CLOCK_IRC16M
+  77:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_IRC16M;
+  78:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_16m_irc16m(void);
+  79:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_HXTAL)
+  80:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_HXTAL;
+  81:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_hxtal(void);
+  82:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_120M_PLL_IRC16M)
+  83:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_120M_PLL_IRC16M;
+  84:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_120m_irc16m(void);
+  85:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_120M_PLL_8M_HXTAL)
+  86:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_120M_PLL_8M_HXTAL;
+  87:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_120m_8m_hxtal(void);
+  88:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_120M_PLL_25M_HXTAL)
+  89:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_120M_PLL_25M_HXTAL;
+ARM GAS  /tmp/ccHFRWt3.s 			page 3
+
+
+  90:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_120m_25m_hxtal(void);
+  91:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_168M_PLL_IRC16M)
+  92:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_168M_PLL_IRC16M;
+  93:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_168m_irc16m(void);
+  94:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_168M_PLL_8M_HXTAL)
+  95:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_168M_PLL_8M_HXTAL;
+  96:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_168m_8m_hxtal(void);
+  97:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_168M_PLL_25M_HXTAL)
+  98:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_168M_PLL_25M_HXTAL;
+  99:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_168m_25m_hxtal(void);
+ 100:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_200M_PLL_IRC16M)
+ 101:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_200M_PLL_IRC16M;
+ 102:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_200m_irc16m(void);
+ 103:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_200M_PLL_8M_HXTAL)
+ 104:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_200M_PLL_8M_HXTAL;
+ 105:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_200m_8m_hxtal(void);
+ 106:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_200M_PLL_25M_HXTAL)
+ 107:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_200M_PLL_25M_HXTAL;
+ 108:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_200m_25m_hxtal(void);
+ 109:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_240M_PLL_IRC16M)
+ 110:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_240M_PLL_IRC16M;
+ 111:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_240m_irc16m(void);
+ 112:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_240M_PLL_8M_HXTAL)
+ 113:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_240M_PLL_8M_HXTAL;
+ 114:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_240m_8m_hxtal(void);
+ 115:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_240M_PLL_25M_HXTAL)
+ 116:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_240M_PLL_25M_HXTAL;
+ 117:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_240m_25m_hxtal(void);
+ 118:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 119:Drivers/CMSIS/Source/system_gd32f4xx.c **** #endif /* __SYSTEM_CLOCK_IRC16M */
+ 120:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 121:Drivers/CMSIS/Source/system_gd32f4xx.c **** /* configure the system clock */
+ 122:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_config(void);
+ 123:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 124:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 125:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      setup the microcontroller system, initialize the system
+ 126:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 127:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 128:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 129:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 130:Drivers/CMSIS/Source/system_gd32f4xx.c **** void SystemInit (void)
+ 131:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+  27              		.loc 1 131 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+ 132:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* FPU settings */
+ 133:Drivers/CMSIS/Source/system_gd32f4xx.c **** #if (__FPU_PRESENT == 1) && (__FPU_USED == 1)
+ 134:Drivers/CMSIS/Source/system_gd32f4xx.c ****     SCB->CPACR |= ((3UL << 10*2)|(3UL << 11*2));  /* set CP10 and CP11 Full Access */
+ 135:Drivers/CMSIS/Source/system_gd32f4xx.c **** #endif
+ 136:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Reset the RCU clock configuration to the default reset state */
+ 137:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Set IRC16MEN bit */
+ 138:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_IRC16MEN;
+  32              		.loc 1 138 5 view .LVU1
+  33 0000 524B     		ldr	r3, .L28
+  34 0002 D3F80028 		ldr	r2, [r3, #2048]
+ARM GAS  /tmp/ccHFRWt3.s 			page 4
+
+
+  35              		.loc 1 138 13 is_stmt 0 view .LVU2
+  36 0006 42F00102 		orr	r2, r2, #1
+ 131:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* FPU settings */
+  37              		.loc 1 131 1 view .LVU3
+  38 000a 82B0     		sub	sp, sp, #8
+  39              	.LCFI0:
+  40              		.cfi_def_cfa_offset 8
+  41              		.loc 1 138 13 view .LVU4
+  42 000c C3F80028 		str	r2, [r3, #2048]
+ 139:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_IRC16MSTB)){
+  43              		.loc 1 139 5 is_stmt 1 view .LVU5
+  44              	.L2:
+ 140:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+  45              		.loc 1 140 5 discriminator 1 view .LVU6
+ 139:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_IRC16MSTB)){
+  46              		.loc 1 139 14 discriminator 1 view .LVU7
+ 139:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_IRC16MSTB)){
+  47              		.loc 1 139 18 is_stmt 0 discriminator 1 view .LVU8
+  48 0010 D3F80028 		ldr	r2, [r3, #2048]
+ 139:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_IRC16MSTB)){
+  49              		.loc 1 139 14 discriminator 1 view .LVU9
+  50 0014 9007     		lsls	r0, r2, #30
+  51 0016 FBD5     		bpl	.L2
+ 141:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_MODIFY(0x50);
+  52              		.loc 1 141 5 is_stmt 1 discriminator 1 view .LVU10
+  53              	.LBB10:
+  54              		.loc 1 141 5 discriminator 1 view .LVU11
+  55              		.loc 1 141 5 discriminator 1 view .LVU12
+  56              		.loc 1 141 5 discriminator 1 view .LVU13
+  57 0018 D3F80828 		ldr	r2, [r3, #2056]
+  58 001c 42F08002 		orr	r2, r2, #128
+  59 0020 C3F80828 		str	r2, [r3, #2056]
+  60              		.loc 1 141 5 discriminator 1 view .LVU14
+  61 0024 0023     		movs	r3, #0
+  62              	.L26:
+  63              		.loc 1 141 5 is_stmt 0 discriminator 5 view .LVU15
+  64 0026 0193     		str	r3, [sp, #4]
+  65              		.loc 1 141 5 is_stmt 1 discriminator 5 view .LVU16
+  66 0028 019B     		ldr	r3, [sp, #4]
+  67 002a 4F2B     		cmp	r3, #79
+  68 002c 3DD9     		bls	.L4
+  69              		.loc 1 141 5 discriminator 6 view .LVU17
+  70 002e 474B     		ldr	r3, .L28
+  71 0030 D3F80828 		ldr	r2, [r3, #2056]
+  72 0034 42F09002 		orr	r2, r2, #144
+  73 0038 C3F80828 		str	r2, [r3, #2056]
+  74              		.loc 1 141 5 discriminator 6 view .LVU18
+  75 003c 0022     		movs	r2, #0
+  76              	.L27:
+  77              		.loc 1 141 5 is_stmt 0 discriminator 9 view .LVU19
+  78 003e 0192     		str	r2, [sp, #4]
+  79              		.loc 1 141 5 is_stmt 1 discriminator 9 view .LVU20
+  80 0040 019A     		ldr	r2, [sp, #4]
+  81 0042 4F2A     		cmp	r2, #79
+  82 0044 34D9     		bls	.L6
+  83              	.LBE10:
+  84              		.loc 1 141 5 discriminator 10 view .LVU21
+ARM GAS  /tmp/ccHFRWt3.s 			page 5
+
+
+ 142:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 143:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+  85              		.loc 1 143 5 discriminator 10 view .LVU22
+  86 0046 D3F80828 		ldr	r2, [r3, #2056]
+  87              		.loc 1 143 14 is_stmt 0 discriminator 10 view .LVU23
+  88 004a 22F00302 		bic	r2, r2, #3
+  89 004e C3F80828 		str	r2, [r3, #2056]
+ 144:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 145:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Reset HXTALEN, CKMEN and PLLEN bits */
+ 146:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL &= ~(RCU_CTL_PLLEN | RCU_CTL_CKMEN | RCU_CTL_HXTALEN);
+  90              		.loc 1 146 5 is_stmt 1 discriminator 10 view .LVU24
+  91 0052 D3F80028 		ldr	r2, [r3, #2048]
+  92              		.loc 1 146 13 is_stmt 0 discriminator 10 view .LVU25
+  93 0056 22F08472 		bic	r2, r2, #17301504
+  94 005a 22F48032 		bic	r2, r2, #65536
+  95 005e C3F80028 		str	r2, [r3, #2048]
+ 147:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 148:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Reset HSEBYP bit */
+ 149:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL &= ~(RCU_CTL_HXTALBPS);
+  96              		.loc 1 149 5 is_stmt 1 discriminator 10 view .LVU26
+  97 0062 D3F80028 		ldr	r2, [r3, #2048]
+  98              		.loc 1 149 13 is_stmt 0 discriminator 10 view .LVU27
+  99 0066 22F48022 		bic	r2, r2, #262144
+ 100 006a C3F80028 		str	r2, [r3, #2048]
+ 150:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 151:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Reset CFG0 register */
+ 152:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 = 0x00000000U;
+ 101              		.loc 1 152 5 is_stmt 1 discriminator 10 view .LVU28
+ 102              		.loc 1 152 14 is_stmt 0 discriminator 10 view .LVU29
+ 103 006e 0022     		movs	r2, #0
+ 104 0070 C3F80828 		str	r2, [r3, #2056]
+ 153:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 154:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until IRC16M is selected as system clock */
+ 155:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0 != (RCU_CFG0 & RCU_SCSS_IRC16M)){
+ 105              		.loc 1 155 5 is_stmt 1 discriminator 10 view .LVU30
+ 156:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 106              		.loc 1 156 5 discriminator 10 view .LVU31
+ 155:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 107              		.loc 1 155 13 discriminator 10 view .LVU32
+ 155:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 108              		.loc 1 155 17 is_stmt 0 discriminator 10 view .LVU33
+ 109 0074 D3F80818 		ldr	r1, [r3, #2056]
+ 157:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 158:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Reset PLLCFGR register */
+ 159:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = 0x24003010U;
+ 110              		.loc 1 159 5 is_stmt 1 discriminator 10 view .LVU34
+ 111              		.loc 1 159 13 is_stmt 0 discriminator 10 view .LVU35
+ 112 0078 3549     		ldr	r1, .L28+4
+ 113 007a C3F80418 		str	r1, [r3, #2052]
+ 160:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 161:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Disable all interrupts */
+ 162:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_INT = 0x00000000U;
+ 114              		.loc 1 162 5 is_stmt 1 discriminator 10 view .LVU36
+ 115              		.loc 1 162 13 is_stmt 0 discriminator 10 view .LVU37
+ 116 007e C3F80C28 		str	r2, [r3, #2060]
+ 163:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
+ 164:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the System clock source, PLL Multiplier and Divider factors, 
+ARM GAS  /tmp/ccHFRWt3.s 			page 6
+
+
+ 165:Drivers/CMSIS/Source/system_gd32f4xx.c ****         AHB/APBx prescalers and Flash settings */
+ 166:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_config();
+ 117              		.loc 1 166 5 is_stmt 1 discriminator 10 view .LVU38
+ 118              	.LBB11:
+ 119              	.LBI11:
+ 167:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 168:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 169:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock
+ 170:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 171:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 172:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 173:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 174:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_config(void)
+ 120              		.loc 1 174 13 discriminator 10 view .LVU39
+ 175:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 176:Drivers/CMSIS/Source/system_gd32f4xx.c **** #ifdef __SYSTEM_CLOCK_IRC16M
+ 177:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_16m_irc16m();
+ 178:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_HXTAL)
+ 179:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_hxtal();
+ 180:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_120M_PLL_IRC16M)
+ 181:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_120m_irc16m();
+ 182:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_120M_PLL_8M_HXTAL)
+ 183:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_120m_8m_hxtal();
+ 184:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_120M_PLL_25M_HXTAL)
+ 185:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_120m_25m_hxtal();
+ 186:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_168M_PLL_IRC16M)
+ 187:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_168m_irc16m();
+ 188:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_168M_PLL_8M_HXTAL)
+ 189:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_168m_8m_hxtal();
+ 190:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_168M_PLL_25M_HXTAL)
+ 191:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_168m_25m_hxtal();
+ 192:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_200M_PLL_IRC16M)
+ 193:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_200m_irc16m();
+ 194:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_200M_PLL_8M_HXTAL)
+ 195:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_200m_8m_hxtal();
+ 196:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_200M_PLL_25M_HXTAL)
+ 197:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_200m_25m_hxtal();
+ 121              		.loc 1 197 5 discriminator 10 view .LVU40
+ 122              	.LBB12:
+ 123              	.LBI12:
+ 198:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_240M_PLL_IRC16M)
+ 199:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_240m_irc16m();
+ 200:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_240M_PLL_8M_HXTAL)
+ 201:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_240m_8m_hxtal();
+ 202:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_240M_PLL_25M_HXTAL)
+ 203:Drivers/CMSIS/Source/system_gd32f4xx.c ****     system_clock_240m_25m_hxtal();
+ 204:Drivers/CMSIS/Source/system_gd32f4xx.c **** #endif /* __SYSTEM_CLOCK_IRC16M */   
+ 205:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 206:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 207:Drivers/CMSIS/Source/system_gd32f4xx.c **** #ifdef __SYSTEM_CLOCK_IRC16M
+ 208:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 209:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 16M by IRC16M
+ 210:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 211:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 212:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 213:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 214:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_16m_irc16m(void)
+ARM GAS  /tmp/ccHFRWt3.s 			page 7
+
+
+ 215:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 216:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 217:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+ 218:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 219:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable IRC16M */
+ 220:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_IRC16MEN;
+ 221:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 222:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until IRC16M is stable or the startup time is longer than IRC16M_STARTUP_TIMEOUT */
+ 223:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+ 224:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 225:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_IRC16MSTB);
+ 226:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (IRC16M_STARTUP_TIMEOUT != timeout));
+ 227:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 228:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ 229:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_IRC16MSTB)){
+ 230:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 231:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ 232:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 233:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 234:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+ 235:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+ 236:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB */
+ 237:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV1;
+ 238:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB */
+ 239:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV1;
+ 240:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 241:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select IRC16M as system clock */
+ 242:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+ 243:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_IRC16M;
+ 244:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 245:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until IRC16M is selected as system clock */
+ 246:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0 != (RCU_CFG0 & RCU_SCSS_IRC16M)){
+ 247:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 248:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 249:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 250:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_HXTAL)
+ 251:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 252:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to HXTAL
+ 253:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 254:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 255:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 256:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 257:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_hxtal(void)
+ 258:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 259:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 260:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+ 261:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 262:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable HXTAL */
+ 263:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
+ 264:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 265:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until HXTAL is stable or the startup time is longer than HXTAL_STARTUP_TIMEOUT */
+ 266:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+ 267:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 268:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_HXTALSTB);
+ 269:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (HXTAL_STARTUP_TIMEOUT != timeout));
+ 270:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 271:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ARM GAS  /tmp/ccHFRWt3.s 			page 8
+
+
+ 272:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_HXTALSTB)){
+ 273:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 274:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ 275:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 276:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 277:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+ 278:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+ 279:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB */
+ 280:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV1;
+ 281:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB */
+ 282:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV1;
+ 283:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 284:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select HXTAL as system clock */
+ 285:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+ 286:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_HXTAL;
+ 287:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 288:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until HXTAL is selected as system clock */
+ 289:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0 == (RCU_CFG0 & RCU_SCSS_HXTAL)){
+ 290:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 291:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 292:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 293:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_120M_PLL_IRC16M)
+ 294:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 295:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 120M by PLL which selects IRC16M as its clock source
+ 296:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 297:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 298:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 299:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 300:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_120m_irc16m(void)
+ 301:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 302:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 303:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+ 304:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 305:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable IRC16M */
+ 306:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_IRC16MEN;
+ 307:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 308:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until IRC16M is stable or the startup time is longer than IRC16M_STARTUP_TIMEOUT */
+ 309:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+ 310:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 311:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_IRC16MSTB);
+ 312:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (IRC16M_STARTUP_TIMEOUT != timeout));
+ 313:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 314:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ 315:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_IRC16MSTB)){
+ 316:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 317:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ 318:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 319:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
+ 320:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_APB1EN |= RCU_APB1EN_PMUEN;
+ 321:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
+ 322:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 323:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* IRC16M is stable */
+ 324:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+ 325:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+ 326:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB/2 */
+ 327:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
+ 328:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB/4 */
+ARM GAS  /tmp/ccHFRWt3.s 			page 9
+
+
+ 329:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
+ 330:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 331:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the main PLL, PSC = 16, PLL_N = 240, PLL_P = 2, PLL_Q = 5 */ 
+ 332:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (16U | (240U << 6U) | (((2U >> 1U) - 1U) << 16U) |
+ 333:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_IRC16M) | (5U << 24U));
+ 334:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 335:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
+ 336:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_PLLEN;
+ 337:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 338:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
+ 339:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
+ 340:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 341:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 342:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Enable the high-drive to extend the clock frequency to 120 Mhz */
+ 343:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
+ 344:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 345:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 346:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 347:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select the high-drive mode */
+ 348:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDS;
+ 349:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 350:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
+ 351:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 352:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
+ 353:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+ 354:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLLP;
+ 355:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 356:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
+ 357:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CFG0 & RCU_SCSS_PLLP)){
+ 358:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 359:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 360:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 361:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_120M_PLL_8M_HXTAL)
+ 362:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 363:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 120M by PLL which selects HXTAL(8M) as its clock sour
+ 364:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 365:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 366:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 367:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 368:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_120m_8m_hxtal(void)
+ 369:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 370:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 371:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+ 372:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 373:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable HXTAL */
+ 374:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
+ 375:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 376:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until HXTAL is stable or the startup time is longer than HXTAL_STARTUP_TIMEOUT */
+ 377:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+ 378:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 379:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_HXTALSTB);
+ 380:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (HXTAL_STARTUP_TIMEOUT != timeout));
+ 381:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 382:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ 383:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_HXTALSTB)){
+ 384:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 385:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ARM GAS  /tmp/ccHFRWt3.s 			page 10
+
+
+ 386:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 387:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
+ 388:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_APB1EN |= RCU_APB1EN_PMUEN;
+ 389:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
+ 390:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 391:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* HXTAL is stable */
+ 392:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+ 393:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+ 394:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB/2 */
+ 395:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
+ 396:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB/4 */
+ 397:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
+ 398:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 399:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the main PLL, PSC = 8, PLL_N = 240, PLL_P = 2, PLL_Q = 5 */ 
+ 400:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (8U | (240U << 6U) | (((2U >> 1U) - 1U) << 16U) |
+ 401:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_HXTAL) | (5U << 24U));
+ 402:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 403:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
+ 404:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_PLLEN;
+ 405:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 406:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
+ 407:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
+ 408:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 409:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 410:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Enable the high-drive to extend the clock frequency to 120 Mhz */
+ 411:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
+ 412:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 413:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 414:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 415:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select the high-drive mode */
+ 416:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDS;
+ 417:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 418:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
+ 419:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 420:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
+ 421:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+ 422:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLLP;
+ 423:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 424:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
+ 425:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CFG0 & RCU_SCSS_PLLP)){
+ 426:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 427:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 428:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 429:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_120M_PLL_25M_HXTAL)
+ 430:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 431:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 120M by PLL which selects HXTAL(25M) as its clock sou
+ 432:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 433:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 434:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 435:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 436:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_120m_25m_hxtal(void)
+ 437:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 438:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 439:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+ 440:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 441:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable HXTAL */
+ 442:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
+ARM GAS  /tmp/ccHFRWt3.s 			page 11
+
+
+ 443:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 444:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until HXTAL is stable or the startup time is longer than HXTAL_STARTUP_TIMEOUT */
+ 445:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+ 446:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 447:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_HXTALSTB);
+ 448:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (HXTAL_STARTUP_TIMEOUT != timeout));
+ 449:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 450:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ 451:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_HXTALSTB)){
+ 452:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 453:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ 454:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 455:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
+ 456:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_APB1EN |= RCU_APB1EN_PMUEN;
+ 457:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
+ 458:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 459:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* HXTAL is stable */
+ 460:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+ 461:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+ 462:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB/2 */
+ 463:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
+ 464:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB/4 */
+ 465:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
+ 466:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 467:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the main PLL, PSC = 25, PLL_N = 240, PLL_P = 2, PLL_Q = 5 */ 
+ 468:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (25U | (240U << 6U) | (((2U >> 1U) - 1U) << 16U) |
+ 469:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_HXTAL) | (5U << 24U));
+ 470:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 471:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
+ 472:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_PLLEN;
+ 473:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 474:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
+ 475:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
+ 476:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 477:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 478:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Enable the high-drive to extend the clock frequency to 120 Mhz */
+ 479:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
+ 480:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 481:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 482:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 483:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select the high-drive mode */
+ 484:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDS;
+ 485:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 486:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
+ 487:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 488:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
+ 489:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+ 490:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLLP;
+ 491:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 492:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
+ 493:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CFG0 & RCU_SCSS_PLLP)){
+ 494:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 495:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 496:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 497:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_168M_PLL_IRC16M)
+ 498:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 499:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 168M by PLL which selects IRC16M as its clock source
+ARM GAS  /tmp/ccHFRWt3.s 			page 12
+
+
+ 500:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 501:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 502:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 503:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 504:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_168m_irc16m(void)
+ 505:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 506:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 507:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+ 508:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 509:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable IRC16M */
+ 510:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_IRC16MEN;
+ 511:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 512:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until IRC16M is stable or the startup time is longer than IRC16M_STARTUP_TIMEOUT */
+ 513:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+ 514:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 515:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_IRC16MSTB);
+ 516:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (IRC16M_STARTUP_TIMEOUT != timeout));
+ 517:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 518:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ 519:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_IRC16MSTB)){
+ 520:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 521:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ 522:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 523:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
+ 524:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_APB1EN |= RCU_APB1EN_PMUEN;
+ 525:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
+ 526:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 527:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* IRC16M is stable */
+ 528:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+ 529:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+ 530:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB/2 */
+ 531:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
+ 532:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB/4 */
+ 533:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
+ 534:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 535:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the main PLL, PSC = 16, PLL_N = 336, PLL_P = 2, PLL_Q = 7 */ 
+ 536:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (16U | (336U << 6U) | (((2U >> 1U) - 1U) << 16U) |
+ 537:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_IRC16M) | (7U << 24U));
+ 538:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 539:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
+ 540:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_PLLEN;
+ 541:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 542:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
+ 543:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
+ 544:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 545:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 546:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Enable the high-drive to extend the clock frequency to 168 Mhz */
+ 547:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
+ 548:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 549:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 550:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 551:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select the high-drive mode */
+ 552:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDS;
+ 553:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 554:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
+ 555:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 556:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
+ARM GAS  /tmp/ccHFRWt3.s 			page 13
+
+
+ 557:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+ 558:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLLP;
+ 559:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 560:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
+ 561:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CFG0 & RCU_SCSS_PLLP)){
+ 562:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 563:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 564:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 565:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_168M_PLL_8M_HXTAL)
+ 566:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 567:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 168M by PLL which selects HXTAL(8M) as its clock sour
+ 568:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 569:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 570:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 571:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 572:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_168m_8m_hxtal(void)
+ 573:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 574:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 575:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 576:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable HXTAL */
+ 577:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
+ 578:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 579:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until HXTAL is stable or the startup time is longer than HXTAL_STARTUP_TIMEOUT */
+ 580:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while((0U == (RCU_CTL & RCU_CTL_HXTALSTB)) && (HXTAL_STARTUP_TIMEOUT != timeout++)){
+ 581:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 582:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 583:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ 584:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_HXTALSTB)){
+ 585:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 586:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ 587:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 588:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 589:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_APB1EN |= RCU_APB1EN_PMUEN;
+ 590:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
+ 591:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* HXTAL is stable */
+ 592:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+ 593:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+ 594:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB/2 */
+ 595:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
+ 596:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB/4 */
+ 597:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
+ 598:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 599:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the main PLL, PSC = 8, PLL_N = 336, PLL_P = 2, PLL_Q = 7 */ 
+ 600:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (8U | (336 << 6U) | (((2 >> 1U) -1U) << 16U) |
+ 601:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_HXTAL) | (7 << 24U));
+ 602:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 603:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
+ 604:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_PLLEN;
+ 605:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 606:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
+ 607:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
+ 608:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 609:Drivers/CMSIS/Source/system_gd32f4xx.c ****   
+ 610:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Enable the high-drive to extend the clock frequency to 168 Mhz */
+ 611:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
+ 612:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 613:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ARM GAS  /tmp/ccHFRWt3.s 			page 14
+
+
+ 614:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 615:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select the high-drive mode */
+ 616:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDS;
+ 617:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 618:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 619:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 620:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
+ 621:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+ 622:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLLP;
+ 623:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 624:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
+ 625:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CFG0 & RCU_SCSS_PLLP)){
+ 626:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 627:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 628:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 629:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_168M_PLL_25M_HXTAL)
+ 630:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 631:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 168M by PLL which selects HXTAL(25M) as its clock sou
+ 632:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 633:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 634:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 635:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 636:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_168m_25m_hxtal(void)
+ 637:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 638:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 639:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+ 640:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 641:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable HXTAL */
+ 642:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
+ 643:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 644:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until HXTAL is stable or the startup time is longer than HXTAL_STARTUP_TIMEOUT */
+ 645:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+ 646:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 647:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_HXTALSTB);
+ 648:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (HXTAL_STARTUP_TIMEOUT != timeout));
+ 649:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 650:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ 651:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_HXTALSTB)){
+ 652:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 653:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ 654:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 655:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
+ 656:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_APB1EN |= RCU_APB1EN_PMUEN;
+ 657:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
+ 658:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 659:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* HXTAL is stable */
+ 660:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+ 661:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+ 662:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB */
+ 663:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
+ 664:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB */
+ 665:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
+ 666:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 667:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the main PLL, PSC = 25, PLL_N = 336, PLL_P = 2, PLL_Q = 7 */ 
+ 668:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (25U | (336U << 6U) | (((2U >> 1U) - 1U) << 16U) |
+ 669:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_HXTAL) | (7U << 24U));
+ 670:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ARM GAS  /tmp/ccHFRWt3.s 			page 15
+
+
+ 671:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
+ 672:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_PLLEN;
+ 673:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 674:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
+ 675:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
+ 676:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 677:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 678:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Enable the high-drive to extend the clock frequency to 168 Mhz */
+ 679:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
+ 680:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 681:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 682:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 683:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select the high-drive mode */
+ 684:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDS;
+ 685:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 686:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
+ 687:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 688:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
+ 689:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+ 690:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLLP;
+ 691:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 692:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
+ 693:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CFG0 & RCU_SCSS_PLLP)){
+ 694:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 695:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 696:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 697:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_200M_PLL_IRC16M)
+ 698:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 699:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 200M by PLL which selects IRC16M as its clock source
+ 700:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 701:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 702:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 703:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 704:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_200m_irc16m(void)
+ 705:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 706:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 707:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+ 708:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 709:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable IRC16M */
+ 710:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_IRC16MEN;
+ 711:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 712:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until IRC16M is stable or the startup time is longer than IRC16M_STARTUP_TIMEOUT */
+ 713:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+ 714:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 715:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_IRC16MSTB);
+ 716:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (IRC16M_STARTUP_TIMEOUT != timeout));
+ 717:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 718:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ 719:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_IRC16MSTB)){
+ 720:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 721:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ 722:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 723:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
+ 724:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_APB1EN |= RCU_APB1EN_PMUEN;
+ 725:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
+ 726:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 727:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* IRC16M is stable */
+ARM GAS  /tmp/ccHFRWt3.s 			page 16
+
+
+ 728:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+ 729:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+ 730:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB/2 */
+ 731:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
+ 732:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB/4 */
+ 733:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
+ 734:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 735:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the main PLL, PSC = 16, PLL_N = 400, PLL_P = 2, PLL_Q = 9 */ 
+ 736:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (16U | (400U << 6U) | (((2U >> 1U) - 1U) << 16U) |
+ 737:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_IRC16M) | (9U << 24U));
+ 738:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 739:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
+ 740:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_PLLEN;
+ 741:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 742:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
+ 743:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
+ 744:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 745:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 746:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Enable the high-drive to extend the clock frequency to 200 Mhz */
+ 747:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
+ 748:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 749:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 750:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 751:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select the high-drive mode */
+ 752:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDS;
+ 753:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 754:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
+ 755:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 756:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
+ 757:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+ 758:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLLP;
+ 759:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 760:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
+ 761:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CFG0 & RCU_SCSS_PLLP)){
+ 762:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 763:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 764:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 765:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_200M_PLL_8M_HXTAL)
+ 766:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 767:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 200M by PLL which selects HXTAL(8M) as its clock sour
+ 768:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 769:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 770:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 771:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 772:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_200m_8m_hxtal(void)
+ 773:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 774:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 775:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+ 776:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 777:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable HXTAL */
+ 778:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
+ 779:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 780:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until HXTAL is stable or the startup time is longer than HXTAL_STARTUP_TIMEOUT */
+ 781:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+ 782:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 783:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_HXTALSTB);
+ 784:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (HXTAL_STARTUP_TIMEOUT != timeout));
+ARM GAS  /tmp/ccHFRWt3.s 			page 17
+
+
+ 785:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 786:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ 787:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_HXTALSTB)){
+ 788:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 789:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ 790:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 791:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
+ 792:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_APB1EN |= RCU_APB1EN_PMUEN;
+ 793:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
+ 794:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 795:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* HXTAL is stable */
+ 796:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+ 797:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+ 798:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB/2 */
+ 799:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
+ 800:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB/4 */
+ 801:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
+ 802:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 803:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the main PLL, PSC = 8, PLL_N = 400, PLL_P = 2, PLL_Q = 9 */ 
+ 804:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (8U | (400U << 6U) | (((2U >> 1U) - 1U) << 16U) |
+ 805:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_HXTAL) | (9U << 24U));
+ 806:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 807:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
+ 808:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_PLLEN;
+ 809:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 810:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
+ 811:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
+ 812:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 813:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 814:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Enable the high-drive to extend the clock frequency to 200 Mhz */
+ 815:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
+ 816:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 817:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 818:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 819:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select the high-drive mode */
+ 820:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDS;
+ 821:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 822:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
+ 823:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 824:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
+ 825:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+ 826:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLLP;
+ 827:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 828:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
+ 829:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CFG0 & RCU_SCSS_PLLP)){
+ 830:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 831:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 832:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 833:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_200M_PLL_25M_HXTAL)
+ 834:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 835:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 200M by PLL which selects HXTAL(25M) as its clock sou
+ 836:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 837:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 838:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 839:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 840:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_200m_25m_hxtal(void)
+ 124              		.loc 1 840 13 discriminator 10 view .LVU41
+ARM GAS  /tmp/ccHFRWt3.s 			page 18
+
+
+ 125              	.LBB13:
+ 841:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 842:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 126              		.loc 1 842 5 discriminator 10 view .LVU42
+ 127              	.LVL0:
+ 843:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+ 128              		.loc 1 843 5 discriminator 10 view .LVU43
+ 844:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 845:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable HXTAL */
+ 846:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
+ 129              		.loc 1 846 5 discriminator 10 view .LVU44
+ 130 0082 D3F80028 		ldr	r2, [r3, #2048]
+ 131              		.loc 1 846 13 is_stmt 0 discriminator 10 view .LVU45
+ 132 0086 42F48032 		orr	r2, r2, #65536
+ 133 008a C3F80028 		str	r2, [r3, #2048]
+ 847:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 848:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until HXTAL is stable or the startup time is longer than HXTAL_STARTUP_TIMEOUT */
+ 849:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+ 850:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 851:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_HXTALSTB);
+ 134              		.loc 1 851 22 discriminator 10 view .LVU46
+ 135 008e 2F4B     		ldr	r3, .L28
+ 846:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 136              		.loc 1 846 13 discriminator 10 view .LVU47
+ 137 0090 4FF6FF72 		movw	r2, #65535
+ 138              	.LVL1:
+ 139              	.L8:
+ 849:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 140              		.loc 1 849 5 is_stmt 1 view .LVU48
+ 850:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_HXTALSTB);
+ 141              		.loc 1 850 9 view .LVU49
+ 142              		.loc 1 851 9 view .LVU50
+ 143              		.loc 1 851 22 is_stmt 0 view .LVU51
+ 144 0094 D3F80018 		ldr	r1, [r3, #2048]
+ 145              	.LVL2:
+ 852:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (HXTAL_STARTUP_TIMEOUT != timeout));
+ 146              		.loc 1 852 30 is_stmt 1 view .LVU52
+ 147 0098 8903     		lsls	r1, r1, #14
+ 148              	.LVL3:
+ 149              		.loc 1 852 30 is_stmt 0 view .LVU53
+ 150 009a 01D4     		bmi	.L7
+ 151 009c 013A     		subs	r2, r2, #1
+ 152              	.LVL4:
+ 153              		.loc 1 852 30 view .LVU54
+ 154 009e F9D1     		bne	.L8
+ 155              	.LVL5:
+ 156              	.L7:
+ 853:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 854:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ 855:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_HXTALSTB)){
+ 157              		.loc 1 855 5 is_stmt 1 view .LVU55
+ 158              		.loc 1 855 15 is_stmt 0 view .LVU56
+ 159 00a0 D3F80028 		ldr	r2, [r3, #2048]
+ 160              		.loc 1 855 7 view .LVU57
+ 161 00a4 9203     		lsls	r2, r2, #14
+ 162 00a6 06D4     		bmi	.L9
+ 163              	.L10:
+ARM GAS  /tmp/ccHFRWt3.s 			page 19
+
+
+ 856:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 164              		.loc 1 856 9 is_stmt 1 view .LVU58
+ 857:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ 165              		.loc 1 857 9 view .LVU59
+ 856:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 166              		.loc 1 856 14 view .LVU60
+ 167 00a8 FEE7     		b	.L10
+ 168              	.LVL6:
+ 169              	.L4:
+ 856:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 170              		.loc 1 856 14 is_stmt 0 view .LVU61
+ 171              	.LBE13:
+ 172              	.LBE12:
+ 173              	.LBE11:
+ 174              	.LBB16:
+ 141:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 175              		.loc 1 141 5 is_stmt 1 discriminator 5 view .LVU62
+ 141:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 176              		.loc 1 141 5 discriminator 5 view .LVU63
+ 177 00aa 019B     		ldr	r3, [sp, #4]
+ 178 00ac 0133     		adds	r3, r3, #1
+ 179 00ae BAE7     		b	.L26
+ 180              	.L6:
+ 141:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 181              		.loc 1 141 5 discriminator 9 view .LVU64
+ 141:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 182              		.loc 1 141 5 discriminator 9 view .LVU65
+ 183 00b0 019A     		ldr	r2, [sp, #4]
+ 184 00b2 0132     		adds	r2, r2, #1
+ 185 00b4 C3E7     		b	.L27
+ 186              	.LVL7:
+ 187              	.L9:
+ 141:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 188              		.loc 1 141 5 is_stmt 0 discriminator 9 view .LVU66
+ 189              	.LBE16:
+ 190              	.LBB17:
+ 191              	.LBB15:
+ 192              	.LBB14:
+ 858:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 859:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
+ 860:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_APB1EN |= RCU_APB1EN_PMUEN;
+ 193              		.loc 1 860 5 is_stmt 1 view .LVU67
+ 194 00b6 D3F84028 		ldr	r2, [r3, #2112]
+ 195              		.loc 1 860 16 is_stmt 0 view .LVU68
+ 196 00ba 42F08052 		orr	r2, r2, #268435456
+ 197 00be C3F84028 		str	r2, [r3, #2112]
+ 861:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
+ 198              		.loc 1 861 5 is_stmt 1 view .LVU69
+ 199 00c2 244A     		ldr	r2, .L28+8
+ 200 00c4 1168     		ldr	r1, [r2]
+ 201              		.loc 1 861 13 is_stmt 0 view .LVU70
+ 202 00c6 41F44041 		orr	r1, r1, #49152
+ 203 00ca 1160     		str	r1, [r2]
+ 862:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 863:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* HXTAL is stable */
+ 864:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+ 865:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+ARM GAS  /tmp/ccHFRWt3.s 			page 20
+
+
+ 204              		.loc 1 865 5 is_stmt 1 view .LVU71
+ 205              		.loc 1 865 14 is_stmt 0 view .LVU72
+ 206 00cc D3F80818 		ldr	r1, [r3, #2056]
+ 207 00d0 C3F80818 		str	r1, [r3, #2056]
+ 866:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB/2 */
+ 867:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
+ 208              		.loc 1 867 5 is_stmt 1 view .LVU73
+ 209 00d4 D3F80818 		ldr	r1, [r3, #2056]
+ 210              		.loc 1 867 14 is_stmt 0 view .LVU74
+ 211 00d8 41F40041 		orr	r1, r1, #32768
+ 212 00dc C3F80818 		str	r1, [r3, #2056]
+ 868:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB/4 */
+ 869:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
+ 213              		.loc 1 869 5 is_stmt 1 view .LVU75
+ 214 00e0 D3F80818 		ldr	r1, [r3, #2056]
+ 215              		.loc 1 869 14 is_stmt 0 view .LVU76
+ 216 00e4 41F4A051 		orr	r1, r1, #5120
+ 217 00e8 C3F80818 		str	r1, [r3, #2056]
+ 870:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 871:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the main PLL, PSC = 25, PLL_N = 400, PLL_P = 2, PLL_Q = 9 */ 
+ 872:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (25U | (400U << 6U) | (((2U >> 1U) - 1U) << 16U) |
+ 218              		.loc 1 872 5 is_stmt 1 view .LVU77
+ 219              		.loc 1 872 13 is_stmt 0 view .LVU78
+ 220 00ec 1A49     		ldr	r1, .L28+12
+ 221 00ee C3F80418 		str	r1, [r3, #2052]
+ 873:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_HXTAL) | (9U << 24U));
+ 874:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 875:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
+ 876:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_PLLEN;
+ 222              		.loc 1 876 5 is_stmt 1 view .LVU79
+ 223 00f2 D3F80018 		ldr	r1, [r3, #2048]
+ 224              		.loc 1 876 13 is_stmt 0 view .LVU80
+ 225 00f6 41F08071 		orr	r1, r1, #16777216
+ 226 00fa C3F80018 		str	r1, [r3, #2048]
+ 877:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 878:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
+ 879:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
+ 227              		.loc 1 879 5 is_stmt 1 view .LVU81
+ 228              		.loc 1 879 18 is_stmt 0 view .LVU82
+ 229 00fe 1349     		ldr	r1, .L28
+ 230              	.L11:
+ 880:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 231              		.loc 1 880 5 is_stmt 1 view .LVU83
+ 879:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 232              		.loc 1 879 14 view .LVU84
+ 879:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 233              		.loc 1 879 18 is_stmt 0 view .LVU85
+ 234 0100 D1F80038 		ldr	r3, [r1, #2048]
+ 879:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 235              		.loc 1 879 14 view .LVU86
+ 236 0104 9B01     		lsls	r3, r3, #6
+ 237 0106 FBD5     		bpl	.L11
+ 881:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 882:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Enable the high-drive to extend the clock frequency to 200 Mhz */
+ 883:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
+ 238              		.loc 1 883 5 is_stmt 1 view .LVU87
+ 239 0108 1368     		ldr	r3, [r2]
+ARM GAS  /tmp/ccHFRWt3.s 			page 21
+
+
+ 240              		.loc 1 883 13 is_stmt 0 view .LVU88
+ 241 010a 43F48033 		orr	r3, r3, #65536
+ 242 010e 1360     		str	r3, [r2]
+ 884:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 243              		.loc 1 884 5 is_stmt 1 view .LVU89
+ 244              		.loc 1 884 18 is_stmt 0 view .LVU90
+ 245 0110 104B     		ldr	r3, .L28+8
+ 246              	.L12:
+ 885:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 247              		.loc 1 885 5 is_stmt 1 view .LVU91
+ 884:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 248              		.loc 1 884 14 view .LVU92
+ 884:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 249              		.loc 1 884 18 is_stmt 0 view .LVU93
+ 250 0112 5A68     		ldr	r2, [r3, #4]
+ 884:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 251              		.loc 1 884 14 view .LVU94
+ 252 0114 D003     		lsls	r0, r2, #15
+ 253 0116 FCD5     		bpl	.L12
+ 886:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 887:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select the high-drive mode */
+ 888:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDS;
+ 254              		.loc 1 888 5 is_stmt 1 view .LVU95
+ 255 0118 1A68     		ldr	r2, [r3]
+ 256              		.loc 1 888 13 is_stmt 0 view .LVU96
+ 257 011a 42F40032 		orr	r2, r2, #131072
+ 258 011e 1A60     		str	r2, [r3]
+ 889:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 259              		.loc 1 889 5 is_stmt 1 view .LVU97
+ 260              	.L13:
+ 890:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
+ 261              		.loc 1 890 5 view .LVU98
+ 889:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 262              		.loc 1 889 14 view .LVU99
+ 889:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 263              		.loc 1 889 18 is_stmt 0 view .LVU100
+ 264 0120 5A68     		ldr	r2, [r3, #4]
+ 889:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 265              		.loc 1 889 14 view .LVU101
+ 266 0122 9103     		lsls	r1, r2, #14
+ 267 0124 FCD5     		bpl	.L13
+ 891:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 892:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
+ 893:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+ 268              		.loc 1 893 5 is_stmt 1 view .LVU102
+ 269 0126 094B     		ldr	r3, .L28
+ 270 0128 D3F80828 		ldr	r2, [r3, #2056]
+ 271              		.loc 1 893 14 is_stmt 0 view .LVU103
+ 272 012c 22F00302 		bic	r2, r2, #3
+ 273 0130 C3F80828 		str	r2, [r3, #2056]
+ 894:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLLP;
+ 274              		.loc 1 894 5 is_stmt 1 view .LVU104
+ 275 0134 D3F80828 		ldr	r2, [r3, #2056]
+ 276              		.loc 1 894 14 is_stmt 0 view .LVU105
+ 277 0138 42F00202 		orr	r2, r2, #2
+ 278 013c C3F80828 		str	r2, [r3, #2056]
+ 895:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ARM GAS  /tmp/ccHFRWt3.s 			page 22
+
+
+ 896:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
+ 897:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CFG0 & RCU_SCSS_PLLP)){
+ 279              		.loc 1 897 5 is_stmt 1 view .LVU106
+ 280              	.L14:
+ 898:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 281              		.loc 1 898 5 view .LVU107
+ 897:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 282              		.loc 1 897 14 view .LVU108
+ 897:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 283              		.loc 1 897 18 is_stmt 0 view .LVU109
+ 284 0140 D3F80828 		ldr	r2, [r3, #2056]
+ 897:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 285              		.loc 1 897 14 view .LVU110
+ 286 0144 1207     		lsls	r2, r2, #28
+ 287 0146 FBD5     		bpl	.L14
+ 288              	.LBE14:
+ 289              	.LBE15:
+ 290              	.LBE17:
+ 167:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 291              		.loc 1 167 1 view .LVU111
+ 292 0148 02B0     		add	sp, sp, #8
+ 293              	.LCFI1:
+ 294              		.cfi_def_cfa_offset 0
+ 295              		@ sp needed
+ 296 014a 7047     		bx	lr
+ 297              	.L29:
+ 298              		.align	2
+ 299              	.L28:
+ 300 014c 00300240 		.word	1073885184
+ 301 0150 10300024 		.word	603992080
+ 302 0154 00700040 		.word	1073770496
+ 303 0158 19644009 		.word	155214873
+ 304              		.cfi_endproc
+ 305              	.LFE116:
+ 307              		.section	.text.SystemCoreClockUpdate,"ax",%progbits
+ 308              		.align	1
+ 309              		.global	SystemCoreClockUpdate
+ 310              		.syntax unified
+ 311              		.thumb
+ 312              		.thumb_func
+ 314              	SystemCoreClockUpdate:
+ 315              	.LFB119:
+ 899:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 900:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 901:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_240M_PLL_IRC16M)
+ 902:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ 903:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 240M by PLL which selects IRC16M as its clock source
+ 904:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 905:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 906:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 907:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 908:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_240m_irc16m(void)
+ 909:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 910:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 911:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+ 912:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 913:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable IRC16M */
+ARM GAS  /tmp/ccHFRWt3.s 			page 23
+
+
+ 914:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_IRC16MEN;
+ 915:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 916:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until IRC16M is stable or the startup time is longer than IRC16M_STARTUP_TIMEOUT */
+ 917:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+ 918:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 919:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_IRC16MSTB);
+ 920:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (IRC16M_STARTUP_TIMEOUT != timeout));
+ 921:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 922:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ 923:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_IRC16MSTB)){
+ 924:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 925:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ 926:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 927:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
+ 928:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_APB1EN |= RCU_APB1EN_PMUEN;
+ 929:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
+ 930:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 931:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* IRC16M is stable */
+ 932:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+ 933:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+ 934:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB/2 */
+ 935:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
+ 936:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB/4 */
+ 937:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
+ 938:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 939:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the main PLL, PSC = 16, PLL_N = 480, PLL_P = 2, PLL_Q = 10 */ 
+ 940:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (16U | (480U << 6U) | (((2U >> 1U) - 1U) << 16U) |
+ 941:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_IRC16M) | (10U << 24U));
+ 942:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 943:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
+ 944:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_PLLEN;
+ 945:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 946:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
+ 947:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
+ 948:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 949:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 950:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Enable the high-drive to extend the clock frequency to 240 Mhz */
+ 951:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
+ 952:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+ 953:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 954:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 955:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select the high-drive mode */
+ 956:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDS;
+ 957:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+ 958:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
+ 959:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 960:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
+ 961:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+ 962:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLLP;
+ 963:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 964:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
+ 965:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CFG0 & RCU_SCSS_PLLP)){
+ 966:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 967:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 968:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 969:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_240M_PLL_8M_HXTAL)
+ 970:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+ARM GAS  /tmp/ccHFRWt3.s 			page 24
+
+
+ 971:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 240M by PLL which selects HXTAL(8M) as its clock sour
+ 972:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+ 973:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+ 974:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+ 975:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+ 976:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_240m_8m_hxtal(void)
+ 977:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 978:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+ 979:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+ 980:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ 981:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable HXTAL */
+ 982:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
+ 983:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 984:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until HXTAL is stable or the startup time is longer than HXTAL_STARTUP_TIMEOUT */
+ 985:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+ 986:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+ 987:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_HXTALSTB);
+ 988:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (HXTAL_STARTUP_TIMEOUT != timeout));
+ 989:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 990:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+ 991:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_HXTALSTB)){
+ 992:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+ 993:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+ 994:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ 995:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
+ 996:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_APB1EN |= RCU_APB1EN_PMUEN;
+ 997:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
+ 998:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+ 999:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* HXTAL is stable */
+1000:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+1001:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+1002:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB/2 */
+1003:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
+1004:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB/4 */
+1005:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
+1006:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1007:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the main PLL, PSC = 8, PLL_N = 480, PLL_P = 2, PLL_Q = 10 */ 
+1008:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (8U | (480U << 6U) | (((2U >> 1U) - 1U) << 16U) |
+1009:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_HXTAL) | (10U << 24U));
+1010:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1011:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
+1012:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_PLLEN;
+1013:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1014:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
+1015:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
+1016:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+1017:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+1018:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Enable the high-drive to extend the clock frequency to 240 Mhz */
+1019:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
+1020:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+1021:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+1022:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+1023:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select the high-drive mode */
+1024:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDS;
+1025:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+1026:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
+1027:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+ARM GAS  /tmp/ccHFRWt3.s 			page 25
+
+
+1028:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
+1029:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+1030:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLLP;
+1031:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1032:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
+1033:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CFG0 & RCU_SCSS_PLLP)){
+1034:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+1035:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+1036:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1037:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_240M_PLL_25M_HXTAL)
+1038:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+1039:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 240M by PLL which selects HXTAL(25M) as its clock sou
+1040:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+1041:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+1042:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+1043:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+1044:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_240m_25m_hxtal(void)
+1045:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+1046:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t timeout = 0U;
+1047:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
+1048:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+1049:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable HXTAL */
+1050:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
+1051:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1052:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until HXTAL is stable or the startup time is longer than HXTAL_STARTUP_TIMEOUT */
+1053:Drivers/CMSIS/Source/system_gd32f4xx.c ****     do{
+1054:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
+1055:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_HXTALSTB);
+1056:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (HXTAL_STARTUP_TIMEOUT != timeout));
+1057:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1058:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
+1059:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_HXTALSTB)){
+1060:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
+1061:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+1062:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+1063:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
+1064:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_APB1EN |= RCU_APB1EN_PMUEN;
+1065:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
+1066:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1067:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* HXTAL is stable */
+1068:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
+1069:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
+1070:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB/2 */
+1071:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
+1072:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB/4 */
+1073:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
+1074:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1075:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the main PLL, PSC = 25, PLL_N = 480, PLL_P = 2, PLL_Q = 10 */ 
+1076:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (25U | (480U << 6U) | (((2U >> 1U) - 1U) << 16U) |
+1077:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_HXTAL) | (10U << 24U));
+1078:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1079:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
+1080:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_PLLEN;
+1081:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1082:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
+1083:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
+1084:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+ARM GAS  /tmp/ccHFRWt3.s 			page 26
+
+
+1085:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+1086:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Enable the high-drive to extend the clock frequency to 240 Mhz */
+1087:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
+1088:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
+1089:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+1090:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+1091:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select the high-drive mode */
+1092:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDS;
+1093:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
+1094:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
+1095:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+1096:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
+1097:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
+1098:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_CKSYSSRC_PLLP;
+1099:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1100:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
+1101:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CFG0 & RCU_SCSS_PLLP)){
+1102:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+1103:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+1104:Drivers/CMSIS/Source/system_gd32f4xx.c **** #endif /* __SYSTEM_CLOCK_IRC16M */
+1105:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
+1106:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      update the SystemCoreClock with current core clock retrieved from cpu registers
+1107:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
+1108:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[out] none
+1109:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
+1110:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
+1111:Drivers/CMSIS/Source/system_gd32f4xx.c **** void SystemCoreClockUpdate(void)
+1112:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
+ 316              		.loc 1 1112 1 is_stmt 1 view -0
+ 317              		.cfi_startproc
+ 318              		@ args = 0, pretend = 0, frame = 16
+ 319              		@ frame_needed = 0, uses_anonymous_args = 0
+1113:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t sws;
+ 320              		.loc 1 1113 5 view .LVU113
+1114:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t pllpsc, plln, pllsel, pllp, ck_src, idx, clk_exp;
+ 321              		.loc 1 1114 5 view .LVU114
+1115:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
+1116:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* exponent of AHB, APB1 and APB2 clock divider */
+1117:Drivers/CMSIS/Source/system_gd32f4xx.c ****     const uint8_t ahb_exp[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+ 322              		.loc 1 1117 5 view .LVU115
+1112:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t sws;
+ 323              		.loc 1 1112 1 is_stmt 0 view .LVU116
+ 324 0000 30B5     		push	{r4, r5, lr}
+ 325              	.LCFI2:
+ 326              		.cfi_def_cfa_offset 12
+ 327              		.cfi_offset 4, -12
+ 328              		.cfi_offset 5, -8
+ 329              		.cfi_offset 14, -4
+ 330              		.loc 1 1117 19 view .LVU117
+ 331 0002 234B     		ldr	r3, .L38
+1112:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t sws;
+ 332              		.loc 1 1112 1 view .LVU118
+ 333 0004 85B0     		sub	sp, sp, #20
+ 334              	.LCFI3:
+ 335              		.cfi_def_cfa_offset 32
+ 336              		.loc 1 1117 19 view .LVU119
+ 337 0006 6C46     		mov	r4, sp
+ARM GAS  /tmp/ccHFRWt3.s 			page 27
+
+
+ 338 0008 03F11005 		add	r5, r3, #16
+ 339              	.L31:
+ 340 000c 1868     		ldr	r0, [r3]	@ unaligned
+ 341 000e 5968     		ldr	r1, [r3, #4]	@ unaligned
+ 342 0010 2246     		mov	r2, r4
+ 343 0012 03C2     		stmia	r2!, {r0, r1}
+ 344 0014 0833     		adds	r3, r3, #8
+ 345 0016 AB42     		cmp	r3, r5
+ 346 0018 1446     		mov	r4, r2
+ 347 001a F7D1     		bne	.L31
+1118:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
+1119:Drivers/CMSIS/Source/system_gd32f4xx.c ****     sws = GET_BITS(RCU_CFG0, 2, 3);
+ 348              		.loc 1 1119 5 is_stmt 1 view .LVU120
+ 349              		.loc 1 1119 11 is_stmt 0 view .LVU121
+ 350 001c 1D4B     		ldr	r3, .L38+4
+ 351 001e D3F80828 		ldr	r2, [r3, #2056]
+ 352              		.loc 1 1119 9 view .LVU122
+ 353 0022 C2F38102 		ubfx	r2, r2, #2, #2
+ 354              	.LVL8:
+1120:Drivers/CMSIS/Source/system_gd32f4xx.c ****     switch(sws){
+ 355              		.loc 1 1120 5 is_stmt 1 view .LVU123
+ 356 0026 012A     		cmp	r2, #1
+ 357 0028 2DD0     		beq	.L34
+ 358 002a 022A     		cmp	r2, #2
+ 359 002c 2DD1     		bne	.L35
+1121:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* IRC16M is selected as CK_SYS */
+1122:Drivers/CMSIS/Source/system_gd32f4xx.c ****     case SEL_IRC16M:
+1123:Drivers/CMSIS/Source/system_gd32f4xx.c ****         SystemCoreClock = IRC16M_VALUE;
+1124:Drivers/CMSIS/Source/system_gd32f4xx.c ****         break;
+1125:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* HXTAL is selected as CK_SYS */
+1126:Drivers/CMSIS/Source/system_gd32f4xx.c ****     case SEL_HXTAL:
+1127:Drivers/CMSIS/Source/system_gd32f4xx.c ****         SystemCoreClock = HXTAL_VALUE;
+1128:Drivers/CMSIS/Source/system_gd32f4xx.c ****         break;
+1129:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* PLLP is selected as CK_SYS */
+1130:Drivers/CMSIS/Source/system_gd32f4xx.c ****     case SEL_PLLP:
+1131:Drivers/CMSIS/Source/system_gd32f4xx.c ****         /* get the value of PLLPSC[5:0] */
+1132:Drivers/CMSIS/Source/system_gd32f4xx.c ****         pllpsc = GET_BITS(RCU_PLL, 0U, 5U);
+ 360              		.loc 1 1132 9 view .LVU124
+ 361              		.loc 1 1132 18 is_stmt 0 view .LVU125
+ 362 002e D3F80408 		ldr	r0, [r3, #2052]
+1133:Drivers/CMSIS/Source/system_gd32f4xx.c ****         plln = GET_BITS(RCU_PLL, 6U, 14U);
+ 363              		.loc 1 1133 16 view .LVU126
+ 364 0032 D3F80418 		ldr	r1, [r3, #2052]
+1134:Drivers/CMSIS/Source/system_gd32f4xx.c ****         pllp = (GET_BITS(RCU_PLL, 16U, 17U) + 1U) * 2U;
+ 365              		.loc 1 1134 17 view .LVU127
+ 366 0036 D3F80428 		ldr	r2, [r3, #2052]
+ 367              	.LVL9:
+1135:Drivers/CMSIS/Source/system_gd32f4xx.c ****         /* PLL clock source selection, HXTAL or IRC8M/2 */
+1136:Drivers/CMSIS/Source/system_gd32f4xx.c ****         pllsel = (RCU_PLL & RCU_PLL_PLLSEL);
+ 368              		.loc 1 1136 19 view .LVU128
+ 369 003a D3F80438 		ldr	r3, [r3, #2052]
+1137:Drivers/CMSIS/Source/system_gd32f4xx.c ****         if (RCU_PLLSRC_HXTAL == pllsel) {
+1138:Drivers/CMSIS/Source/system_gd32f4xx.c ****             ck_src = HXTAL_VALUE;
+ 370              		.loc 1 1138 20 view .LVU129
+ 371 003e 164C     		ldr	r4, .L38+8
+1134:Drivers/CMSIS/Source/system_gd32f4xx.c ****         /* PLL clock source selection, HXTAL or IRC8M/2 */
+ 372              		.loc 1 1134 17 view .LVU130
+ARM GAS  /tmp/ccHFRWt3.s 			page 28
+
+
+ 373 0040 C2F30142 		ubfx	r2, r2, #16, #2
+ 374              		.loc 1 1138 20 view .LVU131
+ 375 0044 13F4800F 		tst	r3, #4194304
+1133:Drivers/CMSIS/Source/system_gd32f4xx.c ****         pllp = (GET_BITS(RCU_PLL, 16U, 17U) + 1U) * 2U;
+ 376              		.loc 1 1133 14 view .LVU132
+ 377 0048 C1F38811 		ubfx	r1, r1, #6, #9
+1134:Drivers/CMSIS/Source/system_gd32f4xx.c ****         /* PLL clock source selection, HXTAL or IRC8M/2 */
+ 378              		.loc 1 1134 45 view .LVU133
+ 379 004c 02F10102 		add	r2, r2, #1
+ 380              		.loc 1 1138 20 view .LVU134
+ 381 0050 124B     		ldr	r3, .L38+12
+1132:Drivers/CMSIS/Source/system_gd32f4xx.c ****         plln = GET_BITS(RCU_PLL, 6U, 14U);
+ 382              		.loc 1 1132 16 view .LVU135
+ 383 0052 00F03F00 		and	r0, r0, #63
+ 384              	.LVL10:
+1133:Drivers/CMSIS/Source/system_gd32f4xx.c ****         pllp = (GET_BITS(RCU_PLL, 16U, 17U) + 1U) * 2U;
+ 385              		.loc 1 1133 9 is_stmt 1 view .LVU136
+1134:Drivers/CMSIS/Source/system_gd32f4xx.c ****         /* PLL clock source selection, HXTAL or IRC8M/2 */
+ 386              		.loc 1 1134 9 view .LVU137
+1134:Drivers/CMSIS/Source/system_gd32f4xx.c ****         /* PLL clock source selection, HXTAL or IRC8M/2 */
+ 387              		.loc 1 1134 14 is_stmt 0 view .LVU138
+ 388 0056 4FEA4202 		lsl	r2, r2, #1
+ 389              	.LVL11:
+1136:Drivers/CMSIS/Source/system_gd32f4xx.c ****         if (RCU_PLLSRC_HXTAL == pllsel) {
+ 390              		.loc 1 1136 9 is_stmt 1 view .LVU139
+1137:Drivers/CMSIS/Source/system_gd32f4xx.c ****             ck_src = HXTAL_VALUE;
+ 391              		.loc 1 1137 9 view .LVU140
+ 392              		.loc 1 1138 20 is_stmt 0 view .LVU141
+ 393 005a 18BF     		it	ne
+ 394 005c 2346     		movne	r3, r4
+ 395              	.LVL12:
+1139:Drivers/CMSIS/Source/system_gd32f4xx.c ****         } else {
+1140:Drivers/CMSIS/Source/system_gd32f4xx.c ****             ck_src = IRC16M_VALUE;
+1141:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
+1142:Drivers/CMSIS/Source/system_gd32f4xx.c ****         SystemCoreClock = ((ck_src / pllpsc) * plln) / pllp;
+ 396              		.loc 1 1142 9 is_stmt 1 view .LVU142
+ 397              		.loc 1 1142 36 is_stmt 0 view .LVU143
+ 398 005e B3FBF0F3 		udiv	r3, r3, r0
+ 399              	.LVL13:
+ 400              		.loc 1 1142 46 view .LVU144
+ 401 0062 4B43     		muls	r3, r1, r3
+ 402              		.loc 1 1142 54 view .LVU145
+ 403 0064 B3FBF2F3 		udiv	r3, r3, r2
+1143:Drivers/CMSIS/Source/system_gd32f4xx.c ****         break;
+ 404              		.loc 1 1143 9 is_stmt 1 view .LVU146
+ 405              	.LVL14:
+ 406              	.L32:
+1123:Drivers/CMSIS/Source/system_gd32f4xx.c ****         break;
+ 407              		.loc 1 1123 25 is_stmt 0 view .LVU147
+ 408 0068 0D49     		ldr	r1, .L38+16
+1144:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* IRC16M is selected as CK_SYS */
+1145:Drivers/CMSIS/Source/system_gd32f4xx.c ****     default:
+1146:Drivers/CMSIS/Source/system_gd32f4xx.c ****         SystemCoreClock = IRC16M_VALUE;
+1147:Drivers/CMSIS/Source/system_gd32f4xx.c ****         break;
+1148:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
+1149:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* calculate AHB clock frequency */
+1150:Drivers/CMSIS/Source/system_gd32f4xx.c ****     idx = GET_BITS(RCU_CFG0, 4, 7);
+ARM GAS  /tmp/ccHFRWt3.s 			page 29
+
+
+ 409              		.loc 1 1150 11 view .LVU148
+ 410 006a 0A4A     		ldr	r2, .L38+4
+1123:Drivers/CMSIS/Source/system_gd32f4xx.c ****         break;
+ 411              		.loc 1 1123 25 view .LVU149
+ 412 006c 0B60     		str	r3, [r1]
+ 413              		.loc 1 1150 5 is_stmt 1 view .LVU150
+ 414              		.loc 1 1150 11 is_stmt 0 view .LVU151
+ 415 006e D2F80828 		ldr	r2, [r2, #2056]
+ 416              	.LVL15:
+1151:Drivers/CMSIS/Source/system_gd32f4xx.c ****     clk_exp = ahb_exp[idx];
+ 417              		.loc 1 1151 5 is_stmt 1 view .LVU152
+1152:Drivers/CMSIS/Source/system_gd32f4xx.c ****     SystemCoreClock = SystemCoreClock >> clk_exp;
+ 418              		.loc 1 1152 5 view .LVU153
+1150:Drivers/CMSIS/Source/system_gd32f4xx.c ****     clk_exp = ahb_exp[idx];
+ 419              		.loc 1 1150 9 is_stmt 0 view .LVU154
+ 420 0072 C2F30312 		ubfx	r2, r2, #4, #4
+ 421              	.LVL16:
+1151:Drivers/CMSIS/Source/system_gd32f4xx.c ****     clk_exp = ahb_exp[idx];
+ 422              		.loc 1 1151 22 view .LVU155
+ 423 0076 1032     		adds	r2, r2, #16
+ 424 0078 6A44     		add	r2, sp, r2
+1151:Drivers/CMSIS/Source/system_gd32f4xx.c ****     clk_exp = ahb_exp[idx];
+ 425              		.loc 1 1151 13 view .LVU156
+ 426 007a 12F8102C 		ldrb	r2, [r2, #-16]	@ zero_extendqisi2
+ 427              		.loc 1 1152 39 view .LVU157
+ 428 007e D340     		lsrs	r3, r3, r2
+ 429              		.loc 1 1152 21 view .LVU158
+ 430 0080 0B60     		str	r3, [r1]
+1153:Drivers/CMSIS/Source/system_gd32f4xx.c **** }
+ 431              		.loc 1 1153 1 view .LVU159
+ 432 0082 05B0     		add	sp, sp, #20
+ 433              	.LCFI4:
+ 434              		.cfi_remember_state
+ 435              		.cfi_def_cfa_offset 12
+ 436              		@ sp needed
+ 437 0084 30BD     		pop	{r4, r5, pc}
+ 438              	.LVL17:
+ 439              	.L34:
+ 440              	.LCFI5:
+ 441              		.cfi_restore_state
+1120:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* IRC16M is selected as CK_SYS */
+ 442              		.loc 1 1120 5 view .LVU160
+ 443 0086 044B     		ldr	r3, .L38+8
+ 444 0088 EEE7     		b	.L32
+ 445              	.L35:
+ 446 008a 044B     		ldr	r3, .L38+12
+ 447 008c ECE7     		b	.L32
+ 448              	.L39:
+ 449 008e 00BF     		.align	2
+ 450              	.L38:
+ 451 0090 00000000 		.word	.LANCHOR0
+ 452 0094 00300240 		.word	1073885184
+ 453 0098 40787D01 		.word	25000000
+ 454 009c 0024F400 		.word	16000000
+ 455 00a0 00000000 		.word	SystemCoreClock
+ 456              		.cfi_endproc
+ 457              	.LFE119:
+ARM GAS  /tmp/ccHFRWt3.s 			page 30
+
+
+ 459              		.global	SystemCoreClock
+ 460              		.section	.data.SystemCoreClock,"aw"
+ 461              		.align	2
+ 464              	SystemCoreClock:
+ 465 0000 00C2EB0B 		.word	200000000
+ 466              		.section	.rodata
+ 467              		.set	.LANCHOR0,. + 0
+ 468              	.LC0:
+ 469 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\001\002\003\004\006"
+ 469      00000000 
+ 469      01020304 
+ 469      06
+ 470 000d 070809   		.ascii	"\007\010\011"
+ 471              		.text
+ 472              	.Letext0:
+ 473              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 474              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 475              		.file 4 "Drivers/CMSIS/Include/system_gd32f4xx.h"
+ 476              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_dbg.h"
+ARM GAS  /tmp/ccHFRWt3.s 			page 31
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 system_gd32f4xx.c
+     /tmp/ccHFRWt3.s:19     .text.SystemInit:0000000000000000 $t
+     /tmp/ccHFRWt3.s:25     .text.SystemInit:0000000000000000 SystemInit
+     /tmp/ccHFRWt3.s:300    .text.SystemInit:000000000000014c $d
+     /tmp/ccHFRWt3.s:308    .text.SystemCoreClockUpdate:0000000000000000 $t
+     /tmp/ccHFRWt3.s:314    .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
+     /tmp/ccHFRWt3.s:451    .text.SystemCoreClockUpdate:0000000000000090 $d
+     /tmp/ccHFRWt3.s:464    .data.SystemCoreClock:0000000000000000 SystemCoreClock
+     /tmp/ccHFRWt3.s:461    .data.SystemCoreClock:0000000000000000 $d
+
+NO UNDEFINED SYMBOLS

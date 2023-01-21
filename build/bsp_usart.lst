@@ -1,0 +1,406 @@
+ARM GAS  /tmp/ccZEmC4y.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"bsp_usart.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/bsp_usart.c"
+  18              		.section	.text.usart_gpio_config,"ax",%progbits
+  19              		.align	1
+  20              		.global	usart_gpio_config
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	usart_gpio_config:
+  26              	.LFB119:
+   1:Core/Src/bsp_usart.c **** #include "bsp_usart.h"
+   2:Core/Src/bsp_usart.c **** #include <stdio.h>
+   3:Core/Src/bsp_usart.c **** 
+   4:Core/Src/bsp_usart.c **** 
+   5:Core/Src/bsp_usart.c **** void usart_gpio_config(void)
+   6:Core/Src/bsp_usart.c **** {
+  27              		.loc 1 6 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+   7:Core/Src/bsp_usart.c ****     /* 配置USART-GPIOA的时钟 */
+   8:Core/Src/bsp_usart.c ****     rcu_periph_clock_enable(BSP_USART_RCU);
+  31              		.loc 1 8 5 view .LVU1
+   6:Core/Src/bsp_usart.c ****     /* 配置USART-GPIOA的时钟 */
+  32              		.loc 1 6 1 is_stmt 0 view .LVU2
+  33 0000 10B5     		push	{r4, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 4, -8
+  37              		.cfi_offset 14, -4
+  38              		.loc 1 8 5 view .LVU3
+  39 0002 41F20410 		movw	r0, #4356
+   9:Core/Src/bsp_usart.c ****     rcu_periph_clock_enable(BSP_USART_TX_RCU);
+  10:Core/Src/bsp_usart.c ****     rcu_periph_clock_enable(BSP_USART_RX_RCU);
+  11:Core/Src/bsp_usart.c **** 
+  12:Core/Src/bsp_usart.c ****     /* 配置GPIO复用功能 */
+  13:Core/Src/bsp_usart.c ****     gpio_af_set(BSP_USART_TX_PORT, BSP_USART_AF, BSP_USART_TX_PIN);
+  40              		.loc 1 13 5 view .LVU4
+  41 0006 2B4C     		ldr	r4, .L2
+   8:Core/Src/bsp_usart.c ****     rcu_periph_clock_enable(BSP_USART_TX_RCU);
+  42              		.loc 1 8 5 view .LVU5
+  43 0008 FFF7FEFF 		bl	rcu_periph_clock_enable
+ARM GAS  /tmp/ccZEmC4y.s 			page 2
+
+
+  44              	.LVL0:
+   9:Core/Src/bsp_usart.c ****     rcu_periph_clock_enable(BSP_USART_TX_RCU);
+  45              		.loc 1 9 5 is_stmt 1 view .LVU6
+  46 000c 4FF44060 		mov	r0, #3072
+  47 0010 FFF7FEFF 		bl	rcu_periph_clock_enable
+  48              	.LVL1:
+  10:Core/Src/bsp_usart.c **** 
+  49              		.loc 1 10 5 view .LVU7
+  50 0014 4FF44060 		mov	r0, #3072
+  51 0018 FFF7FEFF 		bl	rcu_periph_clock_enable
+  52              	.LVL2:
+  53              		.loc 1 13 5 view .LVU8
+  54 001c 2046     		mov	r0, r4
+  55 001e 4FF40072 		mov	r2, #512
+  56 0022 0721     		movs	r1, #7
+  57 0024 FFF7FEFF 		bl	gpio_af_set
+  58              	.LVL3:
+  14:Core/Src/bsp_usart.c ****     gpio_af_set(BSP_USART_RX_PORT, BSP_USART_AF, BSP_USART_RX_PIN);
+  59              		.loc 1 14 5 view .LVU9
+  60 0028 2046     		mov	r0, r4
+  61 002a 4FF48062 		mov	r2, #1024
+  62 002e 0721     		movs	r1, #7
+  63 0030 FFF7FEFF 		bl	gpio_af_set
+  64              	.LVL4:
+  15:Core/Src/bsp_usart.c **** 
+  16:Core/Src/bsp_usart.c ****     /* 配置GPIO的模式 上拉模式 */
+  17:Core/Src/bsp_usart.c ****     gpio_mode_set(BSP_USART_TX_PORT, GPIO_MODE_AF, GPIO_PUPD_PULLUP, BSP_USART_TX_PIN);
+  65              		.loc 1 17 5 view .LVU10
+  66 0034 2046     		mov	r0, r4
+  67 0036 4FF40073 		mov	r3, #512
+  68 003a 0122     		movs	r2, #1
+  69 003c 0221     		movs	r1, #2
+  70 003e FFF7FEFF 		bl	gpio_mode_set
+  71              	.LVL5:
+  18:Core/Src/bsp_usart.c ****     gpio_mode_set(BSP_USART_RX_PORT, GPIO_MODE_AF, GPIO_PUPD_PULLUP, BSP_USART_RX_PIN);
+  72              		.loc 1 18 5 view .LVU11
+  73 0042 2046     		mov	r0, r4
+  74 0044 4FF48063 		mov	r3, #1024
+  75 0048 0122     		movs	r2, #1
+  76 004a 0221     		movs	r1, #2
+  77 004c FFF7FEFF 		bl	gpio_mode_set
+  78              	.LVL6:
+  19:Core/Src/bsp_usart.c **** 
+  20:Core/Src/bsp_usart.c ****     /* 配置GPIO输出 推挽输出 */
+  21:Core/Src/bsp_usart.c ****     gpio_output_options_set(BSP_USART_TX_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, BSP_USART_TX_PIN);
+  79              		.loc 1 21 5 view .LVU12
+  80 0050 2046     		mov	r0, r4
+  81 0052 4FF40073 		mov	r3, #512
+  82 0056 0222     		movs	r2, #2
+  83 0058 0021     		movs	r1, #0
+  84 005a FFF7FEFF 		bl	gpio_output_options_set
+  85              	.LVL7:
+  22:Core/Src/bsp_usart.c ****     gpio_output_options_set(BSP_USART_RX_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, BSP_USART_RX_PIN);
+  86              		.loc 1 22 5 view .LVU13
+  87 005e 4FF48063 		mov	r3, #1024
+  88 0062 0222     		movs	r2, #2
+  89 0064 0021     		movs	r1, #0
+ARM GAS  /tmp/ccZEmC4y.s 			page 3
+
+
+  90 0066 2046     		mov	r0, r4
+  23:Core/Src/bsp_usart.c **** 
+  24:Core/Src/bsp_usart.c **** 
+  25:Core/Src/bsp_usart.c ****     /* 配置USART */
+  26:Core/Src/bsp_usart.c ****     usart_deinit(BSP_USART);
+  91              		.loc 1 26 5 is_stmt 0 view .LVU14
+  92 0068 A4F57044 		sub	r4, r4, #61440
+  22:Core/Src/bsp_usart.c ****     gpio_output_options_set(BSP_USART_RX_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, BSP_USART_RX_PIN);
+  93              		.loc 1 22 5 view .LVU15
+  94 006c FFF7FEFF 		bl	gpio_output_options_set
+  95              	.LVL8:
+  96              		.loc 1 26 5 is_stmt 1 view .LVU16
+  97 0070 2046     		mov	r0, r4
+  98 0072 FFF7FEFF 		bl	usart_deinit
+  99              	.LVL9:
+  27:Core/Src/bsp_usart.c ****     usart_baudrate_set(BSP_USART, BSP_USART_BAUDRATE);
+ 100              		.loc 1 27 5 view .LVU17
+ 101 0076 2046     		mov	r0, r4
+ 102 0078 4FF4E131 		mov	r1, #115200
+ 103 007c FFF7FEFF 		bl	usart_baudrate_set
+ 104              	.LVL10:
+  28:Core/Src/bsp_usart.c ****     usart_parity_config(BSP_USART, USART_PM_NONE);
+ 105              		.loc 1 28 5 view .LVU18
+ 106 0080 2046     		mov	r0, r4
+ 107 0082 0021     		movs	r1, #0
+ 108 0084 FFF7FEFF 		bl	usart_parity_config
+ 109              	.LVL11:
+  29:Core/Src/bsp_usart.c ****     usart_word_length_set(BSP_USART, USART_WL_8BIT);
+ 110              		.loc 1 29 5 view .LVU19
+ 111 0088 2046     		mov	r0, r4
+ 112 008a 0021     		movs	r1, #0
+ 113 008c FFF7FEFF 		bl	usart_word_length_set
+ 114              	.LVL12:
+  30:Core/Src/bsp_usart.c ****     usart_stop_bit_set(BSP_USART, USART_STB_1BIT);
+ 115              		.loc 1 30 5 view .LVU20
+ 116 0090 0021     		movs	r1, #0
+ 117 0092 2046     		mov	r0, r4
+ 118 0094 FFF7FEFF 		bl	usart_stop_bit_set
+ 119              	.LVL13:
+  31:Core/Src/bsp_usart.c ****     usart_enable(BSP_USART);
+ 120              		.loc 1 31 5 view .LVU21
+ 121 0098 2046     		mov	r0, r4
+ 122 009a FFF7FEFF 		bl	usart_enable
+ 123              	.LVL14:
+  32:Core/Src/bsp_usart.c **** 
+  33:Core/Src/bsp_usart.c ****     /* 配置USART发送开启 */
+  34:Core/Src/bsp_usart.c ****     usart_transmit_config(BSP_USART, USART_TRANSMIT_ENABLE);
+ 124              		.loc 1 34 5 view .LVU22
+ 125 009e 2046     		mov	r0, r4
+ 126 00a0 0821     		movs	r1, #8
+ 127 00a2 FFF7FEFF 		bl	usart_transmit_config
+ 128              	.LVL15:
+  35:Core/Src/bsp_usart.c ****     /* 配置USART接收开启 */
+  36:Core/Src/bsp_usart.c ****     usart_receive_config(BSP_USART, USART_RECEIVE_ENABLE);
+ 129              		.loc 1 36 5 view .LVU23
+ 130 00a6 2046     		mov	r0, r4
+ 131 00a8 0421     		movs	r1, #4
+ARM GAS  /tmp/ccZEmC4y.s 			page 4
+
+
+  37:Core/Src/bsp_usart.c **** }
+ 132              		.loc 1 37 1 is_stmt 0 view .LVU24
+ 133 00aa BDE81040 		pop	{r4, lr}
+ 134              	.LCFI1:
+ 135              		.cfi_restore 14
+ 136              		.cfi_restore 4
+ 137              		.cfi_def_cfa_offset 0
+  36:Core/Src/bsp_usart.c **** }
+ 138              		.loc 1 36 5 view .LVU25
+ 139 00ae FFF7FEBF 		b	usart_receive_config
+ 140              	.LVL16:
+ 141              	.L3:
+ 142 00b2 00BF     		.align	2
+ 143              	.L2:
+ 144 00b4 00000240 		.word	1073872896
+ 145              		.cfi_endproc
+ 146              	.LFE119:
+ 148              		.section	.text.usart_send_data,"ax",%progbits
+ 149              		.align	1
+ 150              		.global	usart_send_data
+ 151              		.syntax unified
+ 152              		.thumb
+ 153              		.thumb_func
+ 155              	usart_send_data:
+ 156              	.LVL17:
+ 157              	.LFB120:
+  38:Core/Src/bsp_usart.c **** 
+  39:Core/Src/bsp_usart.c **** void usart_send_data(uint32_t data)
+  40:Core/Src/bsp_usart.c **** {
+ 158              		.loc 1 40 1 is_stmt 1 view -0
+ 159              		.cfi_startproc
+ 160              		@ args = 0, pretend = 0, frame = 0
+ 161              		@ frame_needed = 0, uses_anonymous_args = 0
+  41:Core/Src/bsp_usart.c ****     usart_data_transmit(BSP_USART, data);
+ 162              		.loc 1 41 5 view .LVU27
+  40:Core/Src/bsp_usart.c ****     usart_data_transmit(BSP_USART, data);
+ 163              		.loc 1 40 1 is_stmt 0 view .LVU28
+ 164 0000 10B5     		push	{r4, lr}
+ 165              	.LCFI2:
+ 166              		.cfi_def_cfa_offset 8
+ 167              		.cfi_offset 4, -8
+ 168              		.cfi_offset 14, -4
+  40:Core/Src/bsp_usart.c ****     usart_data_transmit(BSP_USART, data);
+ 169              		.loc 1 40 1 view .LVU29
+ 170 0002 0146     		mov	r1, r0
+ 171              		.loc 1 41 5 view .LVU30
+ 172 0004 0548     		ldr	r0, .L8
+ 173              	.LVL18:
+  42:Core/Src/bsp_usart.c ****     /* 发送后等待缓冲区为空 */
+  43:Core/Src/bsp_usart.c ****     while (usart_flag_get(BSP_USART, USART_FLAG_TBE) == RESET);
+ 174              		.loc 1 43 12 view .LVU31
+ 175 0006 054C     		ldr	r4, .L8
+  41:Core/Src/bsp_usart.c ****     /* 发送后等待缓冲区为空 */
+ 176              		.loc 1 41 5 view .LVU32
+ 177 0008 FFF7FEFF 		bl	usart_data_transmit
+ 178              	.LVL19:
+ 179              		.loc 1 43 5 is_stmt 1 view .LVU33
+ARM GAS  /tmp/ccZEmC4y.s 			page 5
+
+
+ 180              	.L5:
+ 181              		.loc 1 43 54 discriminator 1 view .LVU34
+ 182              		.loc 1 43 12 is_stmt 0 discriminator 1 view .LVU35
+ 183 000c 0721     		movs	r1, #7
+ 184 000e 2046     		mov	r0, r4
+ 185 0010 FFF7FEFF 		bl	usart_flag_get
+ 186              	.LVL20:
+ 187              		.loc 1 43 54 discriminator 1 view .LVU36
+ 188 0014 0028     		cmp	r0, #0
+ 189 0016 F9D0     		beq	.L5
+  44:Core/Src/bsp_usart.c **** }
+ 190              		.loc 1 44 1 view .LVU37
+ 191 0018 10BD     		pop	{r4, pc}
+ 192              	.L9:
+ 193 001a 00BF     		.align	2
+ 194              	.L8:
+ 195 001c 00100140 		.word	1073811456
+ 196              		.cfi_endproc
+ 197              	.LFE120:
+ 199              		.section	.text._write,"ax",%progbits
+ 200              		.align	1
+ 201              		.global	_write
+ 202              		.syntax unified
+ 203              		.thumb
+ 204              		.thumb_func
+ 206              	_write:
+ 207              	.LVL21:
+ 208              	.LFB121:
+  45:Core/Src/bsp_usart.c **** 
+  46:Core/Src/bsp_usart.c **** /* 重写标准库的printf函数 */
+  47:Core/Src/bsp_usart.c **** int _write(int file, char *ptr, int len)
+  48:Core/Src/bsp_usart.c **** {
+ 209              		.loc 1 48 1 is_stmt 1 view -0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+  49:Core/Src/bsp_usart.c ****     for (int i = 0; i < len; i++) {
+ 213              		.loc 1 49 5 view .LVU39
+ 214              	.LBB2:
+ 215              		.loc 1 49 10 view .LVU40
+ 216              		.loc 1 49 10 is_stmt 0 view .LVU41
+ 217              	.LBE2:
+  48:Core/Src/bsp_usart.c ****     for (int i = 0; i < len; i++) {
+ 218              		.loc 1 48 1 view .LVU42
+ 219 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 220              	.LCFI3:
+ 221              		.cfi_def_cfa_offset 24
+ 222              		.cfi_offset 3, -24
+ 223              		.cfi_offset 4, -20
+ 224              		.cfi_offset 5, -16
+ 225              		.cfi_offset 6, -12
+ 226              		.cfi_offset 7, -8
+ 227              		.cfi_offset 14, -4
+ 228              	.LBB3:
+  50:Core/Src/bsp_usart.c ****         usart_data_transmit(BSP_USART, ptr[i]);
+ 229              		.loc 1 50 9 view .LVU43
+ 230 0002 0A4F     		ldr	r7, .L16
+ARM GAS  /tmp/ccZEmC4y.s 			page 6
+
+
+ 231              	.LBE3:
+  48:Core/Src/bsp_usart.c ****     for (int i = 0; i < len; i++) {
+ 232              		.loc 1 48 1 view .LVU44
+ 233 0004 0E46     		mov	r6, r1
+ 234 0006 1446     		mov	r4, r2
+ 235              	.LBB4:
+  49:Core/Src/bsp_usart.c ****     for (int i = 0; i < len; i++) {
+ 236              		.loc 1 49 14 view .LVU45
+ 237 0008 0025     		movs	r5, #0
+ 238              	.LVL22:
+ 239              	.L11:
+  49:Core/Src/bsp_usart.c ****     for (int i = 0; i < len; i++) {
+ 240              		.loc 1 49 23 is_stmt 1 discriminator 1 view .LVU46
+ 241 000a A542     		cmp	r5, r4
+ 242 000c 01DB     		blt	.L13
+ 243              	.LBE4:
+  51:Core/Src/bsp_usart.c ****         while(RESET == usart_flag_get(BSP_USART, USART_FLAG_TBE));
+  52:Core/Src/bsp_usart.c ****     }
+  53:Core/Src/bsp_usart.c ****     return len;
+ 244              		.loc 1 53 5 view .LVU47
+  54:Core/Src/bsp_usart.c **** }...
+ 245              		.loc 1 54 1 is_stmt 0 view .LVU48
+ 246 000e 2046     		mov	r0, r4
+ 247 0010 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 248              	.LVL23:
+ 249              	.L13:
+ 250              	.LBB5:
+  50:Core/Src/bsp_usart.c ****         usart_data_transmit(BSP_USART, ptr[i]);
+ 251              		.loc 1 50 9 is_stmt 1 view .LVU49
+ 252 0012 715D     		ldrb	r1, [r6, r5]	@ zero_extendqisi2
+ 253 0014 3846     		mov	r0, r7
+ 254 0016 FFF7FEFF 		bl	usart_data_transmit
+ 255              	.LVL24:
+  51:Core/Src/bsp_usart.c ****         while(RESET == usart_flag_get(BSP_USART, USART_FLAG_TBE));
+ 256              		.loc 1 51 9 view .LVU50
+ 257              	.L12:
+  51:Core/Src/bsp_usart.c ****         while(RESET == usart_flag_get(BSP_USART, USART_FLAG_TBE));
+ 258              		.loc 1 51 21 discriminator 1 view .LVU51
+  51:Core/Src/bsp_usart.c ****         while(RESET == usart_flag_get(BSP_USART, USART_FLAG_TBE));
+ 259              		.loc 1 51 24 is_stmt 0 discriminator 1 view .LVU52
+ 260 001a 0721     		movs	r1, #7
+ 261 001c 3846     		mov	r0, r7
+ 262 001e FFF7FEFF 		bl	usart_flag_get
+ 263              	.LVL25:
+  51:Core/Src/bsp_usart.c ****         while(RESET == usart_flag_get(BSP_USART, USART_FLAG_TBE));
+ 264              		.loc 1 51 21 discriminator 1 view .LVU53
+ 265 0022 0028     		cmp	r0, #0
+ 266 0024 F9D0     		beq	.L12
+  49:Core/Src/bsp_usart.c ****     for (int i = 0; i < len; i++) {
+ 267              		.loc 1 49 31 is_stmt 1 discriminator 2 view .LVU54
+ 268 0026 0135     		adds	r5, r5, #1
+ 269              	.LVL26:
+  49:Core/Src/bsp_usart.c ****     for (int i = 0; i < len; i++) {
+ 270              		.loc 1 49 31 is_stmt 0 discriminator 2 view .LVU55
+ 271 0028 EFE7     		b	.L11
+ 272              	.L17:
+ 273 002a 00BF     		.align	2
+ARM GAS  /tmp/ccZEmC4y.s 			page 7
+
+
+ 274              	.L16:
+ 275 002c 00100140 		.word	1073811456
+ 276              	.LBE5:
+ 277              		.cfi_endproc
+ 278              	.LFE121:
+ 280              		.text
+ 281              	.Letext0:
+ 282              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 283              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 284              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
+ 285              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
+ 286              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_usart.h"
+ 287              		.file 7 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_gpio.h"
+ARM GAS  /tmp/ccZEmC4y.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 bsp_usart.c
+     /tmp/ccZEmC4y.s:19     .text.usart_gpio_config:0000000000000000 $t
+     /tmp/ccZEmC4y.s:25     .text.usart_gpio_config:0000000000000000 usart_gpio_config
+     /tmp/ccZEmC4y.s:144    .text.usart_gpio_config:00000000000000b4 $d
+     /tmp/ccZEmC4y.s:149    .text.usart_send_data:0000000000000000 $t
+     /tmp/ccZEmC4y.s:155    .text.usart_send_data:0000000000000000 usart_send_data
+     /tmp/ccZEmC4y.s:195    .text.usart_send_data:000000000000001c $d
+     /tmp/ccZEmC4y.s:200    .text._write:0000000000000000 $t
+     /tmp/ccZEmC4y.s:206    .text._write:0000000000000000 _write
+     /tmp/ccZEmC4y.s:275    .text._write:000000000000002c $d
+
+UNDEFINED SYMBOLS
+rcu_periph_clock_enable
+gpio_af_set
+gpio_mode_set
+gpio_output_options_set
+usart_deinit
+usart_baudrate_set
+usart_parity_config
+usart_word_length_set
+usart_stop_bit_set
+usart_enable
+usart_transmit_config
+usart_receive_config
+usart_data_transmit
+usart_flag_get

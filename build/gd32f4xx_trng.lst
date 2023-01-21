@@ -1,0 +1,486 @@
+ARM GAS  /tmp/ccGUn8Mv.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f4xx_trng.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c"
+  18              		.section	.text.trng_deinit,"ax",%progbits
+  19              		.align	1
+  20              		.global	trng_deinit
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	trng_deinit:
+  26              	.LFB116:
+   1:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*!
+   2:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \file    gd32f4xx_trng.c
+   3:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \brief   TRNG driver
+   4:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+   5:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \version 2016-08-15, V1.0.0, firmware for GD32F4xx
+   6:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \version 2018-12-12, V2.0.0, firmware for GD32F4xx
+   7:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \version 2020-09-30, V2.1.0, firmware for GD32F4xx
+   8:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \version 2022-03-09, V3.0.0, firmware for GD32F4xx
+   9:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** */
+  10:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+  11:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*
+  12:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     Copyright (c) 2022, GigaDevice Semiconductor Inc.
+  13:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+  14:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     Redistribution and use in source and binary forms, with or without modification,
+  15:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** are permitted provided that the following conditions are met:
+  16:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+  17:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     1. Redistributions of source code must retain the above copyright notice, this
+  18:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****        list of conditions and the following disclaimer.
+  19:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     2. Redistributions in binary form must reproduce the above copyright notice,
+  20:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****        this list of conditions and the following disclaimer in the documentation
+  21:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****        and/or other materials provided with the distribution.
+  22:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     3. Neither the name of the copyright holder nor the names of its contributors
+  23:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****        may be used to endorse or promote products derived from this software without
+  24:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****        specific prior written permission.
+  25:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+  26:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  27:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  28:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+  29:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+  30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+  31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ARM GAS  /tmp/ccGUn8Mv.s 			page 2
+
+
+  33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  34:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+  35:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** OF SUCH DAMAGE.
+  36:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** */
+  37:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+  38:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** #include "gd32f4xx_trng.h"
+  39:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+  40:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*!
+  41:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \brief      reset TRNG
+  42:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[in]  none
+  43:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[out] none
+  44:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \retval     none
+  45:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** */
+  46:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** void trng_deinit(void)
+  47:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** {
+  27              		.loc 1 47 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  48:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     rcu_periph_reset_enable(RCU_TRNGRST);
+  31              		.loc 1 48 5 view .LVU1
+  47:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     rcu_periph_reset_enable(RCU_TRNGRST);
+  32              		.loc 1 47 1 is_stmt 0 view .LVU2
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  38              		.loc 1 48 5 view .LVU3
+  39 0002 40F20650 		movw	r0, #1286
+  40 0006 FFF7FEFF 		bl	rcu_periph_reset_enable
+  41              	.LVL0:
+  49:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     rcu_periph_reset_disable(RCU_TRNGRST);
+  42              		.loc 1 49 5 is_stmt 1 view .LVU4
+  50:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** }
+  43              		.loc 1 50 1 is_stmt 0 view .LVU5
+  44 000a BDE80840 		pop	{r3, lr}
+  45              	.LCFI1:
+  46              		.cfi_restore 14
+  47              		.cfi_restore 3
+  48              		.cfi_def_cfa_offset 0
+  49:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     rcu_periph_reset_disable(RCU_TRNGRST);
+  49              		.loc 1 49 5 view .LVU6
+  50 000e 40F20650 		movw	r0, #1286
+  51 0012 FFF7FEBF 		b	rcu_periph_reset_disable
+  52              	.LVL1:
+  53              		.cfi_endproc
+  54              	.LFE116:
+  56              		.section	.text.trng_enable,"ax",%progbits
+  57              		.align	1
+  58              		.global	trng_enable
+  59              		.syntax unified
+  60              		.thumb
+  61              		.thumb_func
+  63              	trng_enable:
+  64              	.LFB117:
+  51:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+ARM GAS  /tmp/ccGUn8Mv.s 			page 3
+
+
+  52:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*!
+  53:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \brief      enable TRNG 
+  54:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[in]  none
+  55:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[out] none
+  56:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \retval     none
+  57:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** */
+  58:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** void trng_enable(void)
+  59:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** {
+  65              		.loc 1 59 1 is_stmt 1 view -0
+  66              		.cfi_startproc
+  67              		@ args = 0, pretend = 0, frame = 0
+  68              		@ frame_needed = 0, uses_anonymous_args = 0
+  69              		@ link register save eliminated.
+  60:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     TRNG_CTL |= TRNG_CTL_TRNGEN;
+  70              		.loc 1 60 5 view .LVU8
+  71 0000 034A     		ldr	r2, .L3
+  72 0002 D2F80038 		ldr	r3, [r2, #2048]
+  73              		.loc 1 60 14 is_stmt 0 view .LVU9
+  74 0006 43F00403 		orr	r3, r3, #4
+  75 000a C2F80038 		str	r3, [r2, #2048]
+  61:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** }
+  76              		.loc 1 61 1 view .LVU10
+  77 000e 7047     		bx	lr
+  78              	.L4:
+  79              		.align	2
+  80              	.L3:
+  81 0010 00000650 		.word	1342570496
+  82              		.cfi_endproc
+  83              	.LFE117:
+  85              		.section	.text.trng_disable,"ax",%progbits
+  86              		.align	1
+  87              		.global	trng_disable
+  88              		.syntax unified
+  89              		.thumb
+  90              		.thumb_func
+  92              	trng_disable:
+  93              	.LFB118:
+  62:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+  63:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*!
+  64:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \brief      disable TRNG 
+  65:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[in]  none
+  66:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[out] none
+  67:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \retval     none
+  68:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** */
+  69:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** void trng_disable(void)
+  70:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** {
+  94              		.loc 1 70 1 is_stmt 1 view -0
+  95              		.cfi_startproc
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98              		@ link register save eliminated.
+  71:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     TRNG_CTL &= ~TRNG_CTL_TRNGEN;
+  99              		.loc 1 71 5 view .LVU12
+ 100 0000 034A     		ldr	r2, .L6
+ 101 0002 D2F80038 		ldr	r3, [r2, #2048]
+ 102              		.loc 1 71 14 is_stmt 0 view .LVU13
+ 103 0006 23F00403 		bic	r3, r3, #4
+ARM GAS  /tmp/ccGUn8Mv.s 			page 4
+
+
+ 104 000a C2F80038 		str	r3, [r2, #2048]
+  72:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** }
+ 105              		.loc 1 72 1 view .LVU14
+ 106 000e 7047     		bx	lr
+ 107              	.L7:
+ 108              		.align	2
+ 109              	.L6:
+ 110 0010 00000650 		.word	1342570496
+ 111              		.cfi_endproc
+ 112              	.LFE118:
+ 114              		.section	.text.trng_get_true_random_data,"ax",%progbits
+ 115              		.align	1
+ 116              		.global	trng_get_true_random_data
+ 117              		.syntax unified
+ 118              		.thumb
+ 119              		.thumb_func
+ 121              	trng_get_true_random_data:
+ 122              	.LFB119:
+  73:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+  74:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*!
+  75:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \brief      get the true random data
+  76:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[in]  none
+  77:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[out] none
+  78:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \retval     uint32_t: 0x0-0xFFFFFFFF
+  79:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** */
+  80:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** uint32_t trng_get_true_random_data(void)
+  81:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** {
+ 123              		.loc 1 81 1 is_stmt 1 view -0
+ 124              		.cfi_startproc
+ 125              		@ args = 0, pretend = 0, frame = 0
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127              		@ link register save eliminated.
+  82:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     return (TRNG_DATA);
+ 128              		.loc 1 82 5 view .LVU16
+ 129              		.loc 1 82 13 is_stmt 0 view .LVU17
+ 130 0000 014B     		ldr	r3, .L9
+ 131 0002 D3F80808 		ldr	r0, [r3, #2056]
+  83:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** }
+ 132              		.loc 1 83 1 view .LVU18
+ 133 0006 7047     		bx	lr
+ 134              	.L10:
+ 135              		.align	2
+ 136              	.L9:
+ 137 0008 00000650 		.word	1342570496
+ 138              		.cfi_endproc
+ 139              	.LFE119:
+ 141              		.section	.text.trng_interrupt_enable,"ax",%progbits
+ 142              		.align	1
+ 143              		.global	trng_interrupt_enable
+ 144              		.syntax unified
+ 145              		.thumb
+ 146              		.thumb_func
+ 148              	trng_interrupt_enable:
+ 149              	.LFB120:
+  84:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+  85:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*!
+  86:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \brief      enable TRNG interrupt
+ARM GAS  /tmp/ccGUn8Mv.s 			page 5
+
+
+  87:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[in]  none
+  88:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[out] none
+  89:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \retval     none
+  90:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** */
+  91:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** void trng_interrupt_enable(void)
+  92:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** {
+ 150              		.loc 1 92 1 is_stmt 1 view -0
+ 151              		.cfi_startproc
+ 152              		@ args = 0, pretend = 0, frame = 0
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154              		@ link register save eliminated.
+  93:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     TRNG_CTL |= TRNG_CTL_TRNGIE;
+ 155              		.loc 1 93 5 view .LVU20
+ 156 0000 034A     		ldr	r2, .L12
+ 157 0002 D2F80038 		ldr	r3, [r2, #2048]
+ 158              		.loc 1 93 14 is_stmt 0 view .LVU21
+ 159 0006 43F00803 		orr	r3, r3, #8
+ 160 000a C2F80038 		str	r3, [r2, #2048]
+  94:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** }
+ 161              		.loc 1 94 1 view .LVU22
+ 162 000e 7047     		bx	lr
+ 163              	.L13:
+ 164              		.align	2
+ 165              	.L12:
+ 166 0010 00000650 		.word	1342570496
+ 167              		.cfi_endproc
+ 168              	.LFE120:
+ 170              		.section	.text.trng_interrupt_disable,"ax",%progbits
+ 171              		.align	1
+ 172              		.global	trng_interrupt_disable
+ 173              		.syntax unified
+ 174              		.thumb
+ 175              		.thumb_func
+ 177              	trng_interrupt_disable:
+ 178              	.LFB121:
+  95:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+  96:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*!
+  97:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \brief      disable TRNG interrupt
+  98:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[in]  none
+  99:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[out] none
+ 100:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \retval     none
+ 101:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** */
+ 102:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** void trng_interrupt_disable(void)
+ 103:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** {
+ 179              		.loc 1 103 1 is_stmt 1 view -0
+ 180              		.cfi_startproc
+ 181              		@ args = 0, pretend = 0, frame = 0
+ 182              		@ frame_needed = 0, uses_anonymous_args = 0
+ 183              		@ link register save eliminated.
+ 104:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     TRNG_CTL &= ~TRNG_CTL_TRNGIE;
+ 184              		.loc 1 104 5 view .LVU24
+ 185 0000 034A     		ldr	r2, .L15
+ 186 0002 D2F80038 		ldr	r3, [r2, #2048]
+ 187              		.loc 1 104 14 is_stmt 0 view .LVU25
+ 188 0006 23F00803 		bic	r3, r3, #8
+ 189 000a C2F80038 		str	r3, [r2, #2048]
+ 105:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** }
+ARM GAS  /tmp/ccGUn8Mv.s 			page 6
+
+
+ 190              		.loc 1 105 1 view .LVU26
+ 191 000e 7047     		bx	lr
+ 192              	.L16:
+ 193              		.align	2
+ 194              	.L15:
+ 195 0010 00000650 		.word	1342570496
+ 196              		.cfi_endproc
+ 197              	.LFE121:
+ 199              		.section	.text.trng_flag_get,"ax",%progbits
+ 200              		.align	1
+ 201              		.global	trng_flag_get
+ 202              		.syntax unified
+ 203              		.thumb
+ 204              		.thumb_func
+ 206              	trng_flag_get:
+ 207              	.LVL2:
+ 208              	.LFB122:
+ 106:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+ 107:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*!
+ 108:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \brief      get TRNG flag status
+ 109:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[in]  flag: TRNG flag
+ 110:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****                 only one parameter can be selected which is shown as below:
+ 111:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****       \arg        TRNG_FLAG_DRDY: random Data ready status
+ 112:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****       \arg        TRNG_FLAG_CECS: clock error current status
+ 113:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****       \arg        TRNG_FLAG_SECS: seed error current status
+ 114:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[out] none
+ 115:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \retval     FlagStatus: SET or RESET
+ 116:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** */
+ 117:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** FlagStatus trng_flag_get(trng_flag_enum flag)
+ 118:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** {
+ 209              		.loc 1 118 1 is_stmt 1 view -0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213              		@ link register save eliminated.
+ 119:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     if(RESET != (TRNG_STAT & flag)) {
+ 214              		.loc 1 119 5 view .LVU28
+ 215              		.loc 1 119 18 is_stmt 0 view .LVU29
+ 216 0000 034B     		ldr	r3, .L18
+ 217 0002 D3F80438 		ldr	r3, [r3, #2052]
+ 218              		.loc 1 119 7 view .LVU30
+ 219 0006 1842     		tst	r0, r3
+ 120:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****         return SET;
+ 121:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     } else {
+ 122:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****         return RESET;
+ 123:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     }
+ 124:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** }
+ 220              		.loc 1 124 1 view .LVU31
+ 221 0008 14BF     		ite	ne
+ 222 000a 0120     		movne	r0, #1
+ 223              	.LVL3:
+ 224              		.loc 1 124 1 view .LVU32
+ 225 000c 0020     		moveq	r0, #0
+ 226 000e 7047     		bx	lr
+ 227              	.L19:
+ 228              		.align	2
+ 229              	.L18:
+ARM GAS  /tmp/ccGUn8Mv.s 			page 7
+
+
+ 230 0010 00000650 		.word	1342570496
+ 231              		.cfi_endproc
+ 232              	.LFE122:
+ 234              		.section	.text.trng_interrupt_flag_get,"ax",%progbits
+ 235              		.align	1
+ 236              		.global	trng_interrupt_flag_get
+ 237              		.syntax unified
+ 238              		.thumb
+ 239              		.thumb_func
+ 241              	trng_interrupt_flag_get:
+ 242              	.LFB126:
+ 243              		.cfi_startproc
+ 125:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+ 126:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*!
+ 127:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \brief      get TRNG interrupt flag status
+ 128:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[in]  int_flag: TRNG interrupt flag
+ 129:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****                 only one parameter can be selected which is shown as below:
+ 130:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****       \arg        TRNG_INT_FLAG_CEIF: clock error interrupt flag
+ 131:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****       \arg        TRNG_INT_FLAG_SEIF: seed error interrupt flag
+ 132:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[out] none
+ 133:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \retval     FlagStatus: SET or RESET
+ 134:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** */
+ 135:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** FlagStatus trng_interrupt_flag_get(trng_int_flag_enum int_flag)
+ 244              		.loc 1 135 12 is_stmt 1 view -0
+ 245              		@ args = 0, pretend = 0, frame = 0
+ 246              		@ frame_needed = 0, uses_anonymous_args = 0
+ 247              		@ link register save eliminated.
+ 248 0000 FFF7FEBF 		b	trng_flag_get
+ 249              		.cfi_endproc
+ 250              	.LFE126:
+ 252              		.section	.text.trng_interrupt_flag_clear,"ax",%progbits
+ 253              		.align	1
+ 254              		.global	trng_interrupt_flag_clear
+ 255              		.syntax unified
+ 256              		.thumb
+ 257              		.thumb_func
+ 259              	trng_interrupt_flag_clear:
+ 260              	.LVL4:
+ 261              	.LFB124:
+ 136:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** {
+ 137:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     if(RESET != (TRNG_STAT & int_flag)) {
+ 138:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****         return SET;
+ 139:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     } else {
+ 140:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****         return RESET;
+ 141:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     }
+ 142:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** }
+ 143:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
+ 144:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*!
+ 145:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \brief      clear TRNG interrupt flag status
+ 146:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[in]  int_flag: TRNG interrupt flag
+ 147:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****                 only one parameter can be selected which is shown as below:
+ 148:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****       \arg        TRNG_INT_FLAG_CEIF: clock error interrupt flag
+ 149:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****       \arg        TRNG_INT_FLAG_SEIF: seed error interrupt flag
+ 150:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[out] none
+ 151:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \retval     none
+ 152:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** */
+ 153:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** void trng_interrupt_flag_clear(trng_int_flag_enum int_flag)
+ARM GAS  /tmp/ccGUn8Mv.s 			page 8
+
+
+ 154:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** {
+ 262              		.loc 1 154 1 view -0
+ 263              		.cfi_startproc
+ 264              		@ args = 0, pretend = 0, frame = 0
+ 265              		@ frame_needed = 0, uses_anonymous_args = 0
+ 266              		@ link register save eliminated.
+ 155:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     TRNG_STAT &= ~(uint32_t)int_flag;
+ 267              		.loc 1 155 5 view .LVU35
+ 268 0000 034A     		ldr	r2, .L22
+ 269 0002 D2F80438 		ldr	r3, [r2, #2052]
+ 270              		.loc 1 155 15 is_stmt 0 view .LVU36
+ 271 0006 23EA0003 		bic	r3, r3, r0
+ 272 000a C2F80438 		str	r3, [r2, #2052]
+ 156:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** }
+ 273              		.loc 1 156 1 view .LVU37
+ 274 000e 7047     		bx	lr
+ 275              	.L23:
+ 276              		.align	2
+ 277              	.L22:
+ 278 0010 00000650 		.word	1342570496
+ 279              		.cfi_endproc
+ 280              	.LFE124:
+ 282              		.text
+ 283              	.Letext0:
+ 284              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 285              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 286              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
+ 287              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
+ 288              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_trng.h"
+ARM GAS  /tmp/ccGUn8Mv.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 gd32f4xx_trng.c
+     /tmp/ccGUn8Mv.s:19     .text.trng_deinit:0000000000000000 $t
+     /tmp/ccGUn8Mv.s:25     .text.trng_deinit:0000000000000000 trng_deinit
+     /tmp/ccGUn8Mv.s:57     .text.trng_enable:0000000000000000 $t
+     /tmp/ccGUn8Mv.s:63     .text.trng_enable:0000000000000000 trng_enable
+     /tmp/ccGUn8Mv.s:81     .text.trng_enable:0000000000000010 $d
+     /tmp/ccGUn8Mv.s:86     .text.trng_disable:0000000000000000 $t
+     /tmp/ccGUn8Mv.s:92     .text.trng_disable:0000000000000000 trng_disable
+     /tmp/ccGUn8Mv.s:110    .text.trng_disable:0000000000000010 $d
+     /tmp/ccGUn8Mv.s:115    .text.trng_get_true_random_data:0000000000000000 $t
+     /tmp/ccGUn8Mv.s:121    .text.trng_get_true_random_data:0000000000000000 trng_get_true_random_data
+     /tmp/ccGUn8Mv.s:137    .text.trng_get_true_random_data:0000000000000008 $d
+     /tmp/ccGUn8Mv.s:142    .text.trng_interrupt_enable:0000000000000000 $t
+     /tmp/ccGUn8Mv.s:148    .text.trng_interrupt_enable:0000000000000000 trng_interrupt_enable
+     /tmp/ccGUn8Mv.s:166    .text.trng_interrupt_enable:0000000000000010 $d
+     /tmp/ccGUn8Mv.s:171    .text.trng_interrupt_disable:0000000000000000 $t
+     /tmp/ccGUn8Mv.s:177    .text.trng_interrupt_disable:0000000000000000 trng_interrupt_disable
+     /tmp/ccGUn8Mv.s:195    .text.trng_interrupt_disable:0000000000000010 $d
+     /tmp/ccGUn8Mv.s:200    .text.trng_flag_get:0000000000000000 $t
+     /tmp/ccGUn8Mv.s:206    .text.trng_flag_get:0000000000000000 trng_flag_get
+     /tmp/ccGUn8Mv.s:230    .text.trng_flag_get:0000000000000010 $d
+     /tmp/ccGUn8Mv.s:235    .text.trng_interrupt_flag_get:0000000000000000 $t
+     /tmp/ccGUn8Mv.s:241    .text.trng_interrupt_flag_get:0000000000000000 trng_interrupt_flag_get
+     /tmp/ccGUn8Mv.s:253    .text.trng_interrupt_flag_clear:0000000000000000 $t
+     /tmp/ccGUn8Mv.s:259    .text.trng_interrupt_flag_clear:0000000000000000 trng_interrupt_flag_clear
+     /tmp/ccGUn8Mv.s:278    .text.trng_interrupt_flag_clear:0000000000000010 $d
+
+UNDEFINED SYMBOLS
+rcu_periph_reset_enable
+rcu_periph_reset_disable

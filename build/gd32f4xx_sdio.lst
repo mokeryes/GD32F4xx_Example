@@ -1,0 +1,2541 @@
+ARM GAS  /tmp/ccnQ335T.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gd32f4xx_sdio.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c"
+  18              		.section	.text.sdio_deinit,"ax",%progbits
+  19              		.align	1
+  20              		.global	sdio_deinit
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	sdio_deinit:
+  26              	.LFB116:
+   1:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+   2:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \file    gd32f4xx_sdio.c
+   3:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief   SDIO driver
+   4:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+   5:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \version 2016-08-15, V1.0.0, firmware for GD32F4xx
+   6:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \version 2018-12-12, V2.0.1, firmware for GD32F4xx
+   7:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \version 2020-09-30, V2.1.0, firmware for GD32F4xx
+   8:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \version 2022-03-09, V3.0.0, firmware for GD32F4xx
+   9:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+  10:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+  11:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*
+  12:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     Copyright (c) 2022, GigaDevice Semiconductor Inc.
+  13:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+  14:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     Redistribution and use in source and binary forms, with or without modification,
+  15:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** are permitted provided that the following conditions are met:
+  16:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+  17:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     1. Redistributions of source code must retain the above copyright notice, this
+  18:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****        list of conditions and the following disclaimer.
+  19:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     2. Redistributions in binary form must reproduce the above copyright notice,
+  20:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****        this list of conditions and the following disclaimer in the documentation
+  21:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****        and/or other materials provided with the distribution.
+  22:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     3. Neither the name of the copyright holder nor the names of its contributors
+  23:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****        may be used to endorse or promote products derived from this software without
+  24:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****        specific prior written permission.
+  25:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+  26:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  27:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  28:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+  29:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+  30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+  31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+  32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ARM GAS  /tmp/ccnQ335T.s 			page 2
+
+
+  33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  34:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+  35:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** OF SUCH DAMAGE.
+  36:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+  37:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+  38:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** #include "gd32f4xx_sdio.h"
+  39:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+  40:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+  41:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    deinitialize the SDIO
+  42:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+  43:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+  44:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+  45:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+  46:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_deinit(void)
+  47:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+  27              		.loc 1 47 1 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  48:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     rcu_periph_reset_enable(RCU_SDIORST);
+  31              		.loc 1 48 5 view .LVU1
+  47:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     rcu_periph_reset_enable(RCU_SDIORST);
+  32              		.loc 1 47 1 is_stmt 0 view .LVU2
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  38              		.loc 1 48 5 view .LVU3
+  39 0002 40F60B10 		movw	r0, #2315
+  40 0006 FFF7FEFF 		bl	rcu_periph_reset_enable
+  41              	.LVL0:
+  49:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     rcu_periph_reset_disable(RCU_SDIORST);
+  42              		.loc 1 49 5 is_stmt 1 view .LVU4
+  50:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+  43              		.loc 1 50 1 is_stmt 0 view .LVU5
+  44 000a BDE80840 		pop	{r3, lr}
+  45              	.LCFI1:
+  46              		.cfi_restore 14
+  47              		.cfi_restore 3
+  48              		.cfi_def_cfa_offset 0
+  49:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     rcu_periph_reset_disable(RCU_SDIORST);
+  49              		.loc 1 49 5 view .LVU6
+  50 000e 40F60B10 		movw	r0, #2315
+  51 0012 FFF7FEBF 		b	rcu_periph_reset_disable
+  52              	.LVL1:
+  53              		.cfi_endproc
+  54              	.LFE116:
+  56              		.section	.text.sdio_clock_config,"ax",%progbits
+  57              		.align	1
+  58              		.global	sdio_clock_config
+  59              		.syntax unified
+  60              		.thumb
+  61              		.thumb_func
+  63              	sdio_clock_config:
+  64              	.LVL2:
+  65              	.LFB117:
+ARM GAS  /tmp/ccnQ335T.s 			page 3
+
+
+  51:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+  52:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+  53:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    configure the SDIO clock
+  54:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  clock_edge: SDIO_CLK clock edge
+  55:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 only one parameter can be selected which is shown as below:
+  56:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_SDIOCLKEDGE_RISING: select the rising edge of the SDIOCLK to generate SDIO_C
+  57:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_SDIOCLKEDGE_FALLING: select the falling edge of the SDIOCLK to generate SDIO
+  58:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  clock_bypass: clock bypass
+  59:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 only one parameter can be selected which is shown as below:
+  60:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_CLOCKBYPASS_ENABLE: clock bypass
+  61:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_CLOCKBYPASS_DISABLE: no bypass
+  62:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  clock_powersave: SDIO_CLK clock dynamic switch on/off for power saving
+  63:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 only one parameter can be selected which is shown as below:
+  64:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_CLOCKPWRSAVE_ENABLE: SDIO_CLK closed when bus is idle
+  65:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_CLOCKPWRSAVE_DISABLE: SDIO_CLK clock is always on
+  66:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  clock_division: clock division, less than 512
+  67:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+  68:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+  69:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+  70:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_clock_config(uint32_t clock_edge, uint32_t clock_bypass, uint32_t clock_powersave, uint16
+  71:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+  66              		.loc 1 71 1 is_stmt 1 view -0
+  67              		.cfi_startproc
+  68              		@ args = 0, pretend = 0, frame = 0
+  69              		@ frame_needed = 0, uses_anonymous_args = 0
+  72:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     uint32_t clock_config = 0U;
+  70              		.loc 1 72 5 view .LVU8
+  73:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     clock_config = SDIO_CLKCTL;
+  71              		.loc 1 73 5 view .LVU9
+  71:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     uint32_t clock_config = 0U;
+  72              		.loc 1 71 1 is_stmt 0 view .LVU10
+  73 0000 70B5     		push	{r4, r5, r6, lr}
+  74              	.LCFI2:
+  75              		.cfi_def_cfa_offset 16
+  76              		.cfi_offset 4, -16
+  77              		.cfi_offset 5, -12
+  78              		.cfi_offset 6, -8
+  79              		.cfi_offset 14, -4
+  80              		.loc 1 73 18 view .LVU11
+  81 0002 0B4D     		ldr	r5, .L4
+  74:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* reset the CLKEDGE, CLKBYP, CLKPWRSAV, DIV */
+  75:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     clock_config &= ~(SDIO_CLKCTL_CLKEDGE | SDIO_CLKCTL_CLKBYP | SDIO_CLKCTL_CLKPWRSAV | SDIO_CLKCT
+  82              		.loc 1 75 18 view .LVU12
+  83 0004 0B4C     		ldr	r4, .L4+4
+  73:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* reset the CLKEDGE, CLKBYP, CLKPWRSAV, DIV */
+  84              		.loc 1 73 18 view .LVU13
+  85 0006 D5F8046C 		ldr	r6, [r5, #3076]
+  86              	.LVL3:
+  87              		.loc 1 75 5 is_stmt 1 view .LVU14
+  76:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* if the clock division is greater or equal to 256, set the DIV[8] */
+  77:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     if(clock_division >= 256U) {
+  88              		.loc 1 77 7 is_stmt 0 view .LVU15
+  89 000a FF2B     		cmp	r3, #255
+  75:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* if the clock division is greater or equal to 256, set the DIV[8] */
+  90              		.loc 1 75 18 view .LVU16
+  91 000c 04EA0604 		and	r4, r4, r6
+  92              	.LVL4:
+ARM GAS  /tmp/ccnQ335T.s 			page 4
+
+
+  93              		.loc 1 77 5 is_stmt 1 view .LVU17
+  78:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         clock_config |= SDIO_CLKCTL_DIV8;
+  94              		.loc 1 78 9 view .LVU18
+  95 0010 41EA0201 		orr	r1, r1, r2
+  96              	.LVL5:
+  79:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         clock_division -= 256U;
+  97              		.loc 1 79 24 is_stmt 0 view .LVU19
+  98 0014 84BF     		itt	hi
+  99 0016 A3F58073 		subhi	r3, r3, #256
+ 100              	.LVL6:
+  78:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         clock_config |= SDIO_CLKCTL_DIV8;
+ 101              		.loc 1 78 22 view .LVU20
+ 102 001a 44F00044 		orrhi	r4, r4, #-2147483648
+ 103              	.LVL7:
+ 104              		.loc 1 79 9 is_stmt 1 view .LVU21
+ 105 001e 40EA0100 		orr	r0, r0, r1
+ 106              	.LVL8:
+ 107              		.loc 1 79 24 is_stmt 0 view .LVU22
+ 108 0022 88BF     		it	hi
+ 109 0024 9BB2     		uxthhi	r3, r3
+ 110              	.LVL9:
+  80:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     }
+  81:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* configure the SDIO_CLKCTL according to the parameters */
+  82:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     clock_config |= (clock_edge | clock_bypass | clock_powersave | clock_division);
+ 111              		.loc 1 82 5 is_stmt 1 view .LVU23
+ 112 0026 2043     		orrs	r0, r0, r4
+ 113              		.loc 1 82 18 is_stmt 0 view .LVU24
+ 114 0028 0343     		orrs	r3, r3, r0
+ 115              	.LVL10:
+  83:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CLKCTL = clock_config;
+ 116              		.loc 1 83 5 is_stmt 1 view .LVU25
+ 117              		.loc 1 83 17 is_stmt 0 view .LVU26
+ 118 002a C5F8043C 		str	r3, [r5, #3076]
+  84:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 119              		.loc 1 84 1 view .LVU27
+ 120 002e 70BD     		pop	{r4, r5, r6, pc}
+ 121              	.L5:
+ 122              		.align	2
+ 123              	.L4:
+ 124 0030 00200140 		.word	1073815552
+ 125 0034 00D9FF7F 		.word	2147473664
+ 126              		.cfi_endproc
+ 127              	.LFE117:
+ 129              		.section	.text.sdio_hardware_clock_enable,"ax",%progbits
+ 130              		.align	1
+ 131              		.global	sdio_hardware_clock_enable
+ 132              		.syntax unified
+ 133              		.thumb
+ 134              		.thumb_func
+ 136              	sdio_hardware_clock_enable:
+ 137              	.LFB118:
+  85:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+  86:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+  87:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable hardware clock control
+  88:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+  89:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+  90:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ARM GAS  /tmp/ccnQ335T.s 			page 5
+
+
+  91:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+  92:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_hardware_clock_enable(void)
+  93:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 138              		.loc 1 93 1 is_stmt 1 view -0
+ 139              		.cfi_startproc
+ 140              		@ args = 0, pretend = 0, frame = 0
+ 141              		@ frame_needed = 0, uses_anonymous_args = 0
+ 142              		@ link register save eliminated.
+  94:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CLKCTL |= SDIO_CLKCTL_HWCLKEN;
+ 143              		.loc 1 94 5 view .LVU29
+ 144 0000 034A     		ldr	r2, .L7
+ 145 0002 D2F8043C 		ldr	r3, [r2, #3076]
+ 146              		.loc 1 94 17 is_stmt 0 view .LVU30
+ 147 0006 43F48043 		orr	r3, r3, #16384
+ 148 000a C2F8043C 		str	r3, [r2, #3076]
+  95:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 149              		.loc 1 95 1 view .LVU31
+ 150 000e 7047     		bx	lr
+ 151              	.L8:
+ 152              		.align	2
+ 153              	.L7:
+ 154 0010 00200140 		.word	1073815552
+ 155              		.cfi_endproc
+ 156              	.LFE118:
+ 158              		.section	.text.sdio_hardware_clock_disable,"ax",%progbits
+ 159              		.align	1
+ 160              		.global	sdio_hardware_clock_disable
+ 161              		.syntax unified
+ 162              		.thumb
+ 163              		.thumb_func
+ 165              	sdio_hardware_clock_disable:
+ 166              	.LFB119:
+  96:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+  97:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+  98:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable hardware clock control
+  99:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 100:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 101:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 102:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 103:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_hardware_clock_disable(void)
+ 104:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 167              		.loc 1 104 1 is_stmt 1 view -0
+ 168              		.cfi_startproc
+ 169              		@ args = 0, pretend = 0, frame = 0
+ 170              		@ frame_needed = 0, uses_anonymous_args = 0
+ 171              		@ link register save eliminated.
+ 105:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CLKCTL &= ~SDIO_CLKCTL_HWCLKEN;
+ 172              		.loc 1 105 5 view .LVU33
+ 173 0000 034A     		ldr	r2, .L10
+ 174 0002 D2F8043C 		ldr	r3, [r2, #3076]
+ 175              		.loc 1 105 17 is_stmt 0 view .LVU34
+ 176 0006 23F48043 		bic	r3, r3, #16384
+ 177 000a C2F8043C 		str	r3, [r2, #3076]
+ 106:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 178              		.loc 1 106 1 view .LVU35
+ 179 000e 7047     		bx	lr
+ 180              	.L11:
+ARM GAS  /tmp/ccnQ335T.s 			page 6
+
+
+ 181              		.align	2
+ 182              	.L10:
+ 183 0010 00200140 		.word	1073815552
+ 184              		.cfi_endproc
+ 185              	.LFE119:
+ 187              		.section	.text.sdio_bus_mode_set,"ax",%progbits
+ 188              		.align	1
+ 189              		.global	sdio_bus_mode_set
+ 190              		.syntax unified
+ 191              		.thumb
+ 192              		.thumb_func
+ 194              	sdio_bus_mode_set:
+ 195              	.LVL11:
+ 196              	.LFB120:
+ 107:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 108:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 109:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    set different SDIO card bus mode
+ 110:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  bus_mode: SDIO card bus mode
+ 111:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 112:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_BUSMODE_1BIT: 1-bit SDIO card bus mode
+ 113:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_BUSMODE_4BIT: 4-bit SDIO card bus mode
+ 114:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_BUSMODE_8BIT: 8-bit SDIO card bus mode
+ 115:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 116:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 117:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 118:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_bus_mode_set(uint32_t bus_mode)
+ 119:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 197              		.loc 1 119 1 is_stmt 1 view -0
+ 198              		.cfi_startproc
+ 199              		@ args = 0, pretend = 0, frame = 0
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 201              		@ link register save eliminated.
+ 120:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* reset the SDIO card bus mode bits and set according to bus_mode */
+ 121:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CLKCTL &= ~SDIO_CLKCTL_BUSMODE;
+ 202              		.loc 1 121 5 view .LVU37
+ 203 0000 064B     		ldr	r3, .L13
+ 204 0002 D3F8042C 		ldr	r2, [r3, #3076]
+ 205              		.loc 1 121 17 is_stmt 0 view .LVU38
+ 206 0006 22F4C052 		bic	r2, r2, #6144
+ 207 000a C3F8042C 		str	r2, [r3, #3076]
+ 122:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CLKCTL |= bus_mode;
+ 208              		.loc 1 122 5 is_stmt 1 view .LVU39
+ 209 000e D3F8042C 		ldr	r2, [r3, #3076]
+ 210              		.loc 1 122 17 is_stmt 0 view .LVU40
+ 211 0012 0243     		orrs	r2, r2, r0
+ 212 0014 C3F8042C 		str	r2, [r3, #3076]
+ 123:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 213              		.loc 1 123 1 view .LVU41
+ 214 0018 7047     		bx	lr
+ 215              	.L14:
+ 216 001a 00BF     		.align	2
+ 217              	.L13:
+ 218 001c 00200140 		.word	1073815552
+ 219              		.cfi_endproc
+ 220              	.LFE120:
+ 222              		.section	.text.sdio_power_state_set,"ax",%progbits
+ 223              		.align	1
+ARM GAS  /tmp/ccnQ335T.s 			page 7
+
+
+ 224              		.global	sdio_power_state_set
+ 225              		.syntax unified
+ 226              		.thumb
+ 227              		.thumb_func
+ 229              	sdio_power_state_set:
+ 230              	.LVL12:
+ 231              	.LFB121:
+ 124:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 125:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 126:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    set the SDIO power state
+ 127:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  power_state: SDIO power state
+ 128:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 129:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_POWER_ON: SDIO power on
+ 130:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_POWER_OFF: SDIO power off
+ 131:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 132:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 133:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 134:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_power_state_set(uint32_t power_state)
+ 135:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 232              		.loc 1 135 1 is_stmt 1 view -0
+ 233              		.cfi_startproc
+ 234              		@ args = 0, pretend = 0, frame = 0
+ 235              		@ frame_needed = 0, uses_anonymous_args = 0
+ 236              		@ link register save eliminated.
+ 136:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_PWRCTL = power_state;
+ 237              		.loc 1 136 5 view .LVU43
+ 238              		.loc 1 136 17 is_stmt 0 view .LVU44
+ 239 0000 014B     		ldr	r3, .L16
+ 240 0002 C3F8000C 		str	r0, [r3, #3072]
+ 137:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 241              		.loc 1 137 1 view .LVU45
+ 242 0006 7047     		bx	lr
+ 243              	.L17:
+ 244              		.align	2
+ 245              	.L16:
+ 246 0008 00200140 		.word	1073815552
+ 247              		.cfi_endproc
+ 248              	.LFE121:
+ 250              		.section	.text.sdio_power_state_get,"ax",%progbits
+ 251              		.align	1
+ 252              		.global	sdio_power_state_get
+ 253              		.syntax unified
+ 254              		.thumb
+ 255              		.thumb_func
+ 257              	sdio_power_state_get:
+ 258              	.LFB122:
+ 138:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 139:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 140:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    get the SDIO power state
+ 141:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 142:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 143:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     SDIO power state
+ 144:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_POWER_ON: SDIO power on
+ 145:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_POWER_OFF: SDIO power off
+ 146:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 147:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** uint32_t sdio_power_state_get(void)
+ 148:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ARM GAS  /tmp/ccnQ335T.s 			page 8
+
+
+ 259              		.loc 1 148 1 is_stmt 1 view -0
+ 260              		.cfi_startproc
+ 261              		@ args = 0, pretend = 0, frame = 0
+ 262              		@ frame_needed = 0, uses_anonymous_args = 0
+ 263              		@ link register save eliminated.
+ 149:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     return SDIO_PWRCTL;
+ 264              		.loc 1 149 5 view .LVU47
+ 265              		.loc 1 149 12 is_stmt 0 view .LVU48
+ 266 0000 014B     		ldr	r3, .L19
+ 267 0002 D3F8000C 		ldr	r0, [r3, #3072]
+ 150:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 268              		.loc 1 150 1 view .LVU49
+ 269 0006 7047     		bx	lr
+ 270              	.L20:
+ 271              		.align	2
+ 272              	.L19:
+ 273 0008 00200140 		.word	1073815552
+ 274              		.cfi_endproc
+ 275              	.LFE122:
+ 277              		.section	.text.sdio_clock_enable,"ax",%progbits
+ 278              		.align	1
+ 279              		.global	sdio_clock_enable
+ 280              		.syntax unified
+ 281              		.thumb
+ 282              		.thumb_func
+ 284              	sdio_clock_enable:
+ 285              	.LFB123:
+ 151:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 152:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 153:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable SDIO_CLK clock output
+ 154:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 155:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 156:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 157:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 158:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_clock_enable(void)
+ 159:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 286              		.loc 1 159 1 is_stmt 1 view -0
+ 287              		.cfi_startproc
+ 288              		@ args = 0, pretend = 0, frame = 0
+ 289              		@ frame_needed = 0, uses_anonymous_args = 0
+ 290              		@ link register save eliminated.
+ 160:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CLKCTL |= SDIO_CLKCTL_CLKEN;
+ 291              		.loc 1 160 5 view .LVU51
+ 292 0000 034A     		ldr	r2, .L22
+ 293 0002 D2F8043C 		ldr	r3, [r2, #3076]
+ 294              		.loc 1 160 17 is_stmt 0 view .LVU52
+ 295 0006 43F48073 		orr	r3, r3, #256
+ 296 000a C2F8043C 		str	r3, [r2, #3076]
+ 161:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 297              		.loc 1 161 1 view .LVU53
+ 298 000e 7047     		bx	lr
+ 299              	.L23:
+ 300              		.align	2
+ 301              	.L22:
+ 302 0010 00200140 		.word	1073815552
+ 303              		.cfi_endproc
+ 304              	.LFE123:
+ARM GAS  /tmp/ccnQ335T.s 			page 9
+
+
+ 306              		.section	.text.sdio_clock_disable,"ax",%progbits
+ 307              		.align	1
+ 308              		.global	sdio_clock_disable
+ 309              		.syntax unified
+ 310              		.thumb
+ 311              		.thumb_func
+ 313              	sdio_clock_disable:
+ 314              	.LFB124:
+ 162:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 163:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 164:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable SDIO_CLK clock output
+ 165:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 166:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 167:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 168:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 169:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_clock_disable(void)
+ 170:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 315              		.loc 1 170 1 is_stmt 1 view -0
+ 316              		.cfi_startproc
+ 317              		@ args = 0, pretend = 0, frame = 0
+ 318              		@ frame_needed = 0, uses_anonymous_args = 0
+ 319              		@ link register save eliminated.
+ 171:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CLKCTL &= ~SDIO_CLKCTL_CLKEN;
+ 320              		.loc 1 171 5 view .LVU55
+ 321 0000 034A     		ldr	r2, .L25
+ 322 0002 D2F8043C 		ldr	r3, [r2, #3076]
+ 323              		.loc 1 171 17 is_stmt 0 view .LVU56
+ 324 0006 23F48073 		bic	r3, r3, #256
+ 325 000a C2F8043C 		str	r3, [r2, #3076]
+ 172:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 326              		.loc 1 172 1 view .LVU57
+ 327 000e 7047     		bx	lr
+ 328              	.L26:
+ 329              		.align	2
+ 330              	.L25:
+ 331 0010 00200140 		.word	1073815552
+ 332              		.cfi_endproc
+ 333              	.LFE124:
+ 335              		.section	.text.sdio_command_response_config,"ax",%progbits
+ 336              		.align	1
+ 337              		.global	sdio_command_response_config
+ 338              		.syntax unified
+ 339              		.thumb
+ 340              		.thumb_func
+ 342              	sdio_command_response_config:
+ 343              	.LVL13:
+ 344              	.LFB125:
+ 173:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 174:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 175:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    configure the command and response
+ 176:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  cmd_index: command index, refer to the related specifications
+ 177:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  cmd_argument: command argument, refer to the related specifications
+ 178:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  response_type: response type
+ 179:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 180:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_RESPONSETYPE_NO: no response
+ 181:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_RESPONSETYPE_SHORT: short response
+ 182:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_RESPONSETYPE_LONG: long response
+ARM GAS  /tmp/ccnQ335T.s 			page 10
+
+
+ 183:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 184:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 185:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 186:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_command_response_config(uint32_t cmd_index, uint32_t cmd_argument, uint32_t response_type
+ 187:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 345              		.loc 1 187 1 is_stmt 1 view -0
+ 346              		.cfi_startproc
+ 347              		@ args = 0, pretend = 0, frame = 0
+ 348              		@ frame_needed = 0, uses_anonymous_args = 0
+ 188:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     uint32_t cmd_config = 0U;
+ 349              		.loc 1 188 5 view .LVU59
+ 189:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* disable the CSM */
+ 190:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL &= ~SDIO_CMDCTL_CSMEN;
+ 350              		.loc 1 190 5 view .LVU60
+ 351 0000 0B4B     		ldr	r3, .L28
+ 187:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     uint32_t cmd_config = 0U;
+ 352              		.loc 1 187 1 is_stmt 0 view .LVU61
+ 353 0002 10B5     		push	{r4, lr}
+ 354              	.LCFI3:
+ 355              		.cfi_def_cfa_offset 8
+ 356              		.cfi_offset 4, -8
+ 357              		.cfi_offset 14, -4
+ 358              		.loc 1 190 5 view .LVU62
+ 359 0004 D3F80C4C 		ldr	r4, [r3, #3084]
+ 360              		.loc 1 190 17 view .LVU63
+ 361 0008 24F48064 		bic	r4, r4, #1024
+ 362 000c C3F80C4C 		str	r4, [r3, #3084]
+ 191:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* reset the command index, command argument and response type */
+ 192:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDAGMT &= ~SDIO_CMDAGMT_CMDAGMT;
+ 363              		.loc 1 192 5 is_stmt 1 view .LVU64
+ 364 0010 D3F8084C 		ldr	r4, [r3, #3080]
+ 365              		.loc 1 192 18 is_stmt 0 view .LVU65
+ 366 0014 0024     		movs	r4, #0
+ 367 0016 C3F8084C 		str	r4, [r3, #3080]
+ 193:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDAGMT = cmd_argument;
+ 368              		.loc 1 193 5 is_stmt 1 view .LVU66
+ 369              		.loc 1 193 18 is_stmt 0 view .LVU67
+ 370 001a C3F8081C 		str	r1, [r3, #3080]
+ 194:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     cmd_config = SDIO_CMDCTL;
+ 371              		.loc 1 194 5 is_stmt 1 view .LVU68
+ 372              		.loc 1 194 16 is_stmt 0 view .LVU69
+ 373 001e D3F80C1C 		ldr	r1, [r3, #3084]
+ 374              	.LVL14:
+ 195:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     cmd_config &= ~(SDIO_CMDCTL_CMDIDX | SDIO_CMDCTL_CMDRESP);
+ 375              		.loc 1 195 5 is_stmt 1 view .LVU70
+ 196:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* configure SDIO_CMDCTL and SDIO_CMDAGMT according to the parameters */
+ 197:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     cmd_config |= (cmd_index | response_type);
+ 376              		.loc 1 197 5 view .LVU71
+ 195:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     cmd_config &= ~(SDIO_CMDCTL_CMDIDX | SDIO_CMDCTL_CMDRESP);
+ 377              		.loc 1 195 16 is_stmt 0 view .LVU72
+ 378 0022 21F0FF01 		bic	r1, r1, #255
+ 379              	.LVL15:
+ 195:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     cmd_config &= ~(SDIO_CMDCTL_CMDIDX | SDIO_CMDCTL_CMDRESP);
+ 380              		.loc 1 195 16 view .LVU73
+ 381 0026 1143     		orrs	r1, r1, r2
+ 382              	.LVL16:
+ 383              		.loc 1 197 16 view .LVU74
+ARM GAS  /tmp/ccnQ335T.s 			page 11
+
+
+ 384 0028 0843     		orrs	r0, r0, r1
+ 385              	.LVL17:
+ 198:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL = cmd_config;
+ 386              		.loc 1 198 5 is_stmt 1 view .LVU75
+ 387              		.loc 1 198 17 is_stmt 0 view .LVU76
+ 388 002a C3F80C0C 		str	r0, [r3, #3084]
+ 389              	.LVL18:
+ 199:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 390              		.loc 1 199 1 view .LVU77
+ 391 002e 10BD     		pop	{r4, pc}
+ 392              	.L29:
+ 393              		.align	2
+ 394              	.L28:
+ 395 0030 00200140 		.word	1073815552
+ 396              		.cfi_endproc
+ 397              	.LFE125:
+ 399              		.section	.text.sdio_wait_type_set,"ax",%progbits
+ 400              		.align	1
+ 401              		.global	sdio_wait_type_set
+ 402              		.syntax unified
+ 403              		.thumb
+ 404              		.thumb_func
+ 406              	sdio_wait_type_set:
+ 407              	.LVL19:
+ 408              	.LFB126:
+ 200:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 201:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 202:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    set the command state machine wait type
+ 203:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  wait_type: wait type
+ 204:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 205:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_WAITTYPE_NO: not wait interrupt
+ 206:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_WAITTYPE_INTERRUPT: wait interrupt
+ 207:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_WAITTYPE_DATAEND: wait the end of data transfer
+ 208:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 209:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 210:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 211:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_wait_type_set(uint32_t wait_type)
+ 212:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 409              		.loc 1 212 1 is_stmt 1 view -0
+ 410              		.cfi_startproc
+ 411              		@ args = 0, pretend = 0, frame = 0
+ 412              		@ frame_needed = 0, uses_anonymous_args = 0
+ 413              		@ link register save eliminated.
+ 213:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* reset INTWAIT and WAITDEND */
+ 214:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL &= ~(SDIO_CMDCTL_INTWAIT | SDIO_CMDCTL_WAITDEND);
+ 414              		.loc 1 214 5 view .LVU79
+ 415 0000 064B     		ldr	r3, .L31
+ 416 0002 D3F80C2C 		ldr	r2, [r3, #3084]
+ 417              		.loc 1 214 17 is_stmt 0 view .LVU80
+ 418 0006 22F44072 		bic	r2, r2, #768
+ 419 000a C3F80C2C 		str	r2, [r3, #3084]
+ 215:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* set the wait type according to wait_type */
+ 216:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL |= wait_type;
+ 420              		.loc 1 216 5 is_stmt 1 view .LVU81
+ 421 000e D3F80C2C 		ldr	r2, [r3, #3084]
+ 422              		.loc 1 216 17 is_stmt 0 view .LVU82
+ 423 0012 0243     		orrs	r2, r2, r0
+ARM GAS  /tmp/ccnQ335T.s 			page 12
+
+
+ 424 0014 C3F80C2C 		str	r2, [r3, #3084]
+ 217:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 425              		.loc 1 217 1 view .LVU83
+ 426 0018 7047     		bx	lr
+ 427              	.L32:
+ 428 001a 00BF     		.align	2
+ 429              	.L31:
+ 430 001c 00200140 		.word	1073815552
+ 431              		.cfi_endproc
+ 432              	.LFE126:
+ 434              		.section	.text.sdio_csm_enable,"ax",%progbits
+ 435              		.align	1
+ 436              		.global	sdio_csm_enable
+ 437              		.syntax unified
+ 438              		.thumb
+ 439              		.thumb_func
+ 441              	sdio_csm_enable:
+ 442              	.LFB127:
+ 218:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 219:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 220:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable the CSM(command state machine)
+ 221:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 222:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 223:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 224:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 225:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_csm_enable(void)
+ 226:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 443              		.loc 1 226 1 is_stmt 1 view -0
+ 444              		.cfi_startproc
+ 445              		@ args = 0, pretend = 0, frame = 0
+ 446              		@ frame_needed = 0, uses_anonymous_args = 0
+ 447              		@ link register save eliminated.
+ 227:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL |= SDIO_CMDCTL_CSMEN;
+ 448              		.loc 1 227 5 view .LVU85
+ 449 0000 034A     		ldr	r2, .L34
+ 450 0002 D2F80C3C 		ldr	r3, [r2, #3084]
+ 451              		.loc 1 227 17 is_stmt 0 view .LVU86
+ 452 0006 43F48063 		orr	r3, r3, #1024
+ 453 000a C2F80C3C 		str	r3, [r2, #3084]
+ 228:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 454              		.loc 1 228 1 view .LVU87
+ 455 000e 7047     		bx	lr
+ 456              	.L35:
+ 457              		.align	2
+ 458              	.L34:
+ 459 0010 00200140 		.word	1073815552
+ 460              		.cfi_endproc
+ 461              	.LFE127:
+ 463              		.section	.text.sdio_csm_disable,"ax",%progbits
+ 464              		.align	1
+ 465              		.global	sdio_csm_disable
+ 466              		.syntax unified
+ 467              		.thumb
+ 468              		.thumb_func
+ 470              	sdio_csm_disable:
+ 471              	.LFB128:
+ 229:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ARM GAS  /tmp/ccnQ335T.s 			page 13
+
+
+ 230:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 231:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable the CSM(command state machine)
+ 232:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 233:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 234:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 235:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 236:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_csm_disable(void)
+ 237:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 472              		.loc 1 237 1 is_stmt 1 view -0
+ 473              		.cfi_startproc
+ 474              		@ args = 0, pretend = 0, frame = 0
+ 475              		@ frame_needed = 0, uses_anonymous_args = 0
+ 476              		@ link register save eliminated.
+ 238:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL &= ~SDIO_CMDCTL_CSMEN;
+ 477              		.loc 1 238 5 view .LVU89
+ 478 0000 034A     		ldr	r2, .L37
+ 479 0002 D2F80C3C 		ldr	r3, [r2, #3084]
+ 480              		.loc 1 238 17 is_stmt 0 view .LVU90
+ 481 0006 23F48063 		bic	r3, r3, #1024
+ 482 000a C2F80C3C 		str	r3, [r2, #3084]
+ 239:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 483              		.loc 1 239 1 view .LVU91
+ 484 000e 7047     		bx	lr
+ 485              	.L38:
+ 486              		.align	2
+ 487              	.L37:
+ 488 0010 00200140 		.word	1073815552
+ 489              		.cfi_endproc
+ 490              	.LFE128:
+ 492              		.section	.text.sdio_command_index_get,"ax",%progbits
+ 493              		.align	1
+ 494              		.global	sdio_command_index_get
+ 495              		.syntax unified
+ 496              		.thumb
+ 497              		.thumb_func
+ 499              	sdio_command_index_get:
+ 500              	.LFB129:
+ 240:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 241:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 242:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    get the last response command index
+ 243:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 244:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 245:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     last response command index
+ 246:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 247:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** uint8_t sdio_command_index_get(void)
+ 248:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 501              		.loc 1 248 1 is_stmt 1 view -0
+ 502              		.cfi_startproc
+ 503              		@ args = 0, pretend = 0, frame = 0
+ 504              		@ frame_needed = 0, uses_anonymous_args = 0
+ 505              		@ link register save eliminated.
+ 249:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     return (uint8_t)SDIO_RSPCMDIDX;
+ 506              		.loc 1 249 5 view .LVU93
+ 507              		.loc 1 249 21 is_stmt 0 view .LVU94
+ 508 0000 024B     		ldr	r3, .L40
+ 509 0002 D3F8100C 		ldr	r0, [r3, #3088]
+ 250:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ARM GAS  /tmp/ccnQ335T.s 			page 14
+
+
+ 510              		.loc 1 250 1 view .LVU95
+ 511 0006 C0B2     		uxtb	r0, r0
+ 512 0008 7047     		bx	lr
+ 513              	.L41:
+ 514 000a 00BF     		.align	2
+ 515              	.L40:
+ 516 000c 00200140 		.word	1073815552
+ 517              		.cfi_endproc
+ 518              	.LFE129:
+ 520              		.section	.text.sdio_response_get,"ax",%progbits
+ 521              		.align	1
+ 522              		.global	sdio_response_get
+ 523              		.syntax unified
+ 524              		.thumb
+ 525              		.thumb_func
+ 527              	sdio_response_get:
+ 528              	.LVL20:
+ 529              	.LFB130:
+ 251:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 252:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 253:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    get the response for the last received command
+ 254:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  sdio_responsex: SDIO response
+ 255:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 256:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg       SDIO_RESPONSE0: card response[31:0]/card response[127:96]
+ 257:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg       SDIO_RESPONSE1: card response[95:64]
+ 258:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg       SDIO_RESPONSE2: card response[63:32]
+ 259:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg       SDIO_RESPONSE3: card response[31:1], plus bit 0
+ 260:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 261:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     response for the last received command
+ 262:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 263:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** uint32_t sdio_response_get(uint32_t sdio_responsex)
+ 264:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 530              		.loc 1 264 1 is_stmt 1 view -0
+ 531              		.cfi_startproc
+ 532              		@ args = 0, pretend = 0, frame = 0
+ 533              		@ frame_needed = 0, uses_anonymous_args = 0
+ 534              		@ link register save eliminated.
+ 265:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     uint32_t resp_content = 0U;
+ 535              		.loc 1 265 5 view .LVU97
+ 266:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     switch(sdio_responsex) {
+ 536              		.loc 1 266 5 view .LVU98
+ 537 0000 0328     		cmp	r0, #3
+ 538 0002 13D8     		bhi	.L49
+ 539 0004 DFE800F0 		tbb	[pc, r0]
+ 540              	.L45:
+ 541 0008 02       		.byte	(.L48-.L45)/2
+ 542 0009 06       		.byte	(.L47-.L45)/2
+ 543 000a 0A       		.byte	(.L46-.L45)/2
+ 544 000b 0E       		.byte	(.L44-.L45)/2
+ 545              		.p2align 1
+ 546              	.L48:
+ 267:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     case SDIO_RESPONSE0:
+ 268:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         resp_content = SDIO_RESP0;
+ 547              		.loc 1 268 9 view .LVU99
+ 548              		.loc 1 268 22 is_stmt 0 view .LVU100
+ 549 000c 084B     		ldr	r3, .L50
+ 550 000e D3F8140C 		ldr	r0, [r3, #3092]
+ARM GAS  /tmp/ccnQ335T.s 			page 15
+
+
+ 551              	.LVL21:
+ 269:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         break;
+ 552              		.loc 1 269 9 is_stmt 1 view .LVU101
+ 553 0012 7047     		bx	lr
+ 554              	.LVL22:
+ 555              	.L47:
+ 270:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     case SDIO_RESPONSE1:
+ 271:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         resp_content = SDIO_RESP1;
+ 556              		.loc 1 271 9 view .LVU102
+ 557              		.loc 1 271 22 is_stmt 0 view .LVU103
+ 558 0014 064B     		ldr	r3, .L50
+ 559 0016 D3F8180C 		ldr	r0, [r3, #3096]
+ 560              	.LVL23:
+ 272:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         break;
+ 561              		.loc 1 272 9 is_stmt 1 view .LVU104
+ 562 001a 7047     		bx	lr
+ 563              	.LVL24:
+ 564              	.L46:
+ 273:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     case SDIO_RESPONSE2:
+ 274:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         resp_content = SDIO_RESP2;
+ 565              		.loc 1 274 9 view .LVU105
+ 566              		.loc 1 274 22 is_stmt 0 view .LVU106
+ 567 001c 044B     		ldr	r3, .L50
+ 568 001e D3F81C0C 		ldr	r0, [r3, #3100]
+ 569              	.LVL25:
+ 275:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         break;
+ 570              		.loc 1 275 9 is_stmt 1 view .LVU107
+ 571 0022 7047     		bx	lr
+ 572              	.LVL26:
+ 573              	.L44:
+ 276:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     case SDIO_RESPONSE3:
+ 277:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         resp_content = SDIO_RESP3;
+ 574              		.loc 1 277 9 view .LVU108
+ 575              		.loc 1 277 22 is_stmt 0 view .LVU109
+ 576 0024 024B     		ldr	r3, .L50
+ 577 0026 D3F8200C 		ldr	r0, [r3, #3104]
+ 578              	.LVL27:
+ 278:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         break;
+ 579              		.loc 1 278 9 is_stmt 1 view .LVU110
+ 580 002a 7047     		bx	lr
+ 581              	.LVL28:
+ 582              	.L49:
+ 266:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     case SDIO_RESPONSE0:
+ 583              		.loc 1 266 5 is_stmt 0 view .LVU111
+ 584 002c 0020     		movs	r0, #0
+ 585              	.LVL29:
+ 279:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     default:
+ 280:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         break;
+ 281:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     }
+ 282:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     return resp_content;
+ 586              		.loc 1 282 5 is_stmt 1 view .LVU112
+ 283:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 587              		.loc 1 283 1 is_stmt 0 view .LVU113
+ 588 002e 7047     		bx	lr
+ 589              	.L51:
+ 590              		.align	2
+ 591              	.L50:
+ARM GAS  /tmp/ccnQ335T.s 			page 16
+
+
+ 592 0030 00200140 		.word	1073815552
+ 593              		.cfi_endproc
+ 594              	.LFE130:
+ 596              		.section	.text.sdio_data_config,"ax",%progbits
+ 597              		.align	1
+ 598              		.global	sdio_data_config
+ 599              		.syntax unified
+ 600              		.thumb
+ 601              		.thumb_func
+ 603              	sdio_data_config:
+ 604              	.LVL30:
+ 605              	.LFB131:
+ 284:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 285:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 286:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    configure the data timeout, data length and data block size
+ 287:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  data_timeout: data timeout period in card bus clock periods
+ 288:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  data_length: number of data bytes to be transferred
+ 289:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  data_blocksize: size of data block for block transfer
+ 290:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 291:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_1BYTE: block size = 1 byte
+ 292:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_2BYTES: block size = 2 bytes
+ 293:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_4BYTES: block size = 4 bytes
+ 294:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_8BYTES: block size = 8 bytes
+ 295:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_16BYTES: block size = 16 bytes
+ 296:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_32BYTES: block size = 32 bytes
+ 297:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_64BYTES: block size = 64 bytes
+ 298:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_128BYTES: block size = 128 bytes
+ 299:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_256BYTES: block size = 256 bytes
+ 300:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_512BYTES: block size = 512 bytes
+ 301:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_1024BYTES: block size = 1024 bytes
+ 302:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_2048BYTES: block size = 2048 bytes
+ 303:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_4096BYTES: block size = 4096 bytes
+ 304:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_8192BYTES: block size = 8192 bytes
+ 305:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_DATABLOCKSIZE_16384BYTES: block size = 16384 bytes
+ 306:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 307:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 308:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 309:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_data_config(uint32_t data_timeout, uint32_t data_length, uint32_t data_blocksize)
+ 310:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 606              		.loc 1 310 1 is_stmt 1 view -0
+ 607              		.cfi_startproc
+ 608              		@ args = 0, pretend = 0, frame = 0
+ 609              		@ frame_needed = 0, uses_anonymous_args = 0
+ 311:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* reset data timeout, data length and data block size */
+ 312:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATATO &= ~SDIO_DATATO_DATATO;
+ 610              		.loc 1 312 5 view .LVU115
+ 611 0000 0E4B     		ldr	r3, .L53
+ 310:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* reset data timeout, data length and data block size */
+ 612              		.loc 1 310 1 is_stmt 0 view .LVU116
+ 613 0002 10B5     		push	{r4, lr}
+ 614              	.LCFI4:
+ 615              		.cfi_def_cfa_offset 8
+ 616              		.cfi_offset 4, -8
+ 617              		.cfi_offset 14, -4
+ 618              		.loc 1 312 5 view .LVU117
+ 619 0004 D3F8244C 		ldr	r4, [r3, #3108]
+ 620              		.loc 1 312 17 view .LVU118
+ARM GAS  /tmp/ccnQ335T.s 			page 17
+
+
+ 621 0008 0024     		movs	r4, #0
+ 622 000a C3F8244C 		str	r4, [r3, #3108]
+ 313:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATALEN &= ~SDIO_DATALEN_DATALEN;
+ 623              		.loc 1 313 5 is_stmt 1 view .LVU119
+ 624 000e D3F8284C 		ldr	r4, [r3, #3112]
+ 625              		.loc 1 313 18 is_stmt 0 view .LVU120
+ 626 0012 04F07E44 		and	r4, r4, #-33554432
+ 627 0016 C3F8284C 		str	r4, [r3, #3112]
+ 314:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL &= ~SDIO_DATACTL_BLKSZ;
+ 628              		.loc 1 314 5 is_stmt 1 view .LVU121
+ 629 001a D3F82C4C 		ldr	r4, [r3, #3116]
+ 630              		.loc 1 314 18 is_stmt 0 view .LVU122
+ 631 001e 24F0F004 		bic	r4, r4, #240
+ 632 0022 C3F82C4C 		str	r4, [r3, #3116]
+ 315:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* configure the related parameters of data */
+ 316:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATATO = data_timeout;
+ 633              		.loc 1 316 5 is_stmt 1 view .LVU123
+ 634              		.loc 1 316 17 is_stmt 0 view .LVU124
+ 635 0026 C3F8240C 		str	r0, [r3, #3108]
+ 317:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATALEN = data_length;
+ 636              		.loc 1 317 5 is_stmt 1 view .LVU125
+ 637              		.loc 1 317 18 is_stmt 0 view .LVU126
+ 638 002a C3F8281C 		str	r1, [r3, #3112]
+ 318:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL |= data_blocksize;
+ 639              		.loc 1 318 5 is_stmt 1 view .LVU127
+ 640 002e D3F82C1C 		ldr	r1, [r3, #3116]
+ 641              	.LVL31:
+ 642              		.loc 1 318 18 is_stmt 0 view .LVU128
+ 643 0032 1143     		orrs	r1, r1, r2
+ 644 0034 C3F82C1C 		str	r1, [r3, #3116]
+ 645              	.LVL32:
+ 319:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 646              		.loc 1 319 1 view .LVU129
+ 647 0038 10BD     		pop	{r4, pc}
+ 648              	.L54:
+ 649 003a 00BF     		.align	2
+ 650              	.L53:
+ 651 003c 00200140 		.word	1073815552
+ 652              		.cfi_endproc
+ 653              	.LFE131:
+ 655              		.section	.text.sdio_data_transfer_config,"ax",%progbits
+ 656              		.align	1
+ 657              		.global	sdio_data_transfer_config
+ 658              		.syntax unified
+ 659              		.thumb
+ 660              		.thumb_func
+ 662              	sdio_data_transfer_config:
+ 663              	.LVL33:
+ 664              	.LFB132:
+ 320:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 321:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 322:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    configure the data transfer mode and direction
+ 323:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  transfer_mode: mode of data transfer
+ 324:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 325:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg       SDIO_TRANSMODE_BLOCK: block transfer
+ 326:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg       SDIO_TRANSMODE_STREAM: stream transfer or SDIO multibyte transfer
+ 327:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  transfer_direction: data transfer direction, read or write
+ARM GAS  /tmp/ccnQ335T.s 			page 18
+
+
+ 328:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 329:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg       SDIO_TRANSDIRECTION_TOCARD: write data to card
+ 330:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg       SDIO_TRANSDIRECTION_TOSDIO: read data from card
+ 331:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 332:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 333:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 334:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_data_transfer_config(uint32_t transfer_mode, uint32_t transfer_direction)
+ 335:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 665              		.loc 1 335 1 is_stmt 1 view -0
+ 666              		.cfi_startproc
+ 667              		@ args = 0, pretend = 0, frame = 0
+ 668              		@ frame_needed = 0, uses_anonymous_args = 0
+ 669              		@ link register save eliminated.
+ 336:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     uint32_t data_trans = 0U;
+ 670              		.loc 1 336 5 view .LVU131
+ 337:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     /* reset the data transfer mode, transfer direction and set according to the parameters */
+ 338:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     data_trans = SDIO_DATACTL;
+ 671              		.loc 1 338 5 view .LVU132
+ 672              		.loc 1 338 16 is_stmt 0 view .LVU133
+ 673 0000 044A     		ldr	r2, .L56
+ 674 0002 D2F82C3C 		ldr	r3, [r2, #3116]
+ 675              	.LVL34:
+ 339:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     data_trans &= ~(SDIO_DATACTL_TRANSMOD | SDIO_DATACTL_DATADIR);
+ 676              		.loc 1 339 5 is_stmt 1 view .LVU134
+ 340:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     data_trans |= (transfer_mode | transfer_direction);
+ 677              		.loc 1 340 5 view .LVU135
+ 339:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     data_trans &= ~(SDIO_DATACTL_TRANSMOD | SDIO_DATACTL_DATADIR);
+ 678              		.loc 1 339 16 is_stmt 0 view .LVU136
+ 679 0006 23F00603 		bic	r3, r3, #6
+ 680              	.LVL35:
+ 339:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     data_trans &= ~(SDIO_DATACTL_TRANSMOD | SDIO_DATACTL_DATADIR);
+ 681              		.loc 1 339 16 view .LVU137
+ 682 000a 0B43     		orrs	r3, r3, r1
+ 683              	.LVL36:
+ 684              		.loc 1 340 16 view .LVU138
+ 685 000c 1843     		orrs	r0, r0, r3
+ 686              	.LVL37:
+ 341:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL = data_trans;
+ 687              		.loc 1 341 5 is_stmt 1 view .LVU139
+ 688              		.loc 1 341 18 is_stmt 0 view .LVU140
+ 689 000e C2F82C0C 		str	r0, [r2, #3116]
+ 342:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 690              		.loc 1 342 1 view .LVU141
+ 691 0012 7047     		bx	lr
+ 692              	.L57:
+ 693              		.align	2
+ 694              	.L56:
+ 695 0014 00200140 		.word	1073815552
+ 696              		.cfi_endproc
+ 697              	.LFE132:
+ 699              		.section	.text.sdio_dsm_enable,"ax",%progbits
+ 700              		.align	1
+ 701              		.global	sdio_dsm_enable
+ 702              		.syntax unified
+ 703              		.thumb
+ 704              		.thumb_func
+ 706              	sdio_dsm_enable:
+ARM GAS  /tmp/ccnQ335T.s 			page 19
+
+
+ 707              	.LFB133:
+ 343:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 344:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 345:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable the DSM(data state machine) for data transfer
+ 346:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 347:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 348:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 349:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 350:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_dsm_enable(void)
+ 351:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 708              		.loc 1 351 1 is_stmt 1 view -0
+ 709              		.cfi_startproc
+ 710              		@ args = 0, pretend = 0, frame = 0
+ 711              		@ frame_needed = 0, uses_anonymous_args = 0
+ 712              		@ link register save eliminated.
+ 352:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL |= SDIO_DATACTL_DATAEN;
+ 713              		.loc 1 352 5 view .LVU143
+ 714 0000 034A     		ldr	r2, .L59
+ 715 0002 D2F82C3C 		ldr	r3, [r2, #3116]
+ 716              		.loc 1 352 18 is_stmt 0 view .LVU144
+ 717 0006 43F00103 		orr	r3, r3, #1
+ 718 000a C2F82C3C 		str	r3, [r2, #3116]
+ 353:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 719              		.loc 1 353 1 view .LVU145
+ 720 000e 7047     		bx	lr
+ 721              	.L60:
+ 722              		.align	2
+ 723              	.L59:
+ 724 0010 00200140 		.word	1073815552
+ 725              		.cfi_endproc
+ 726              	.LFE133:
+ 728              		.section	.text.sdio_dsm_disable,"ax",%progbits
+ 729              		.align	1
+ 730              		.global	sdio_dsm_disable
+ 731              		.syntax unified
+ 732              		.thumb
+ 733              		.thumb_func
+ 735              	sdio_dsm_disable:
+ 736              	.LFB134:
+ 354:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 355:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 356:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable the DSM(data state machine)
+ 357:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 358:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 359:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 360:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 361:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_dsm_disable(void)
+ 362:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 737              		.loc 1 362 1 is_stmt 1 view -0
+ 738              		.cfi_startproc
+ 739              		@ args = 0, pretend = 0, frame = 0
+ 740              		@ frame_needed = 0, uses_anonymous_args = 0
+ 741              		@ link register save eliminated.
+ 363:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL &= ~SDIO_DATACTL_DATAEN;
+ 742              		.loc 1 363 5 view .LVU147
+ 743 0000 034A     		ldr	r2, .L62
+ 744 0002 D2F82C3C 		ldr	r3, [r2, #3116]
+ARM GAS  /tmp/ccnQ335T.s 			page 20
+
+
+ 745              		.loc 1 363 18 is_stmt 0 view .LVU148
+ 746 0006 23F00103 		bic	r3, r3, #1
+ 747 000a C2F82C3C 		str	r3, [r2, #3116]
+ 364:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 748              		.loc 1 364 1 view .LVU149
+ 749 000e 7047     		bx	lr
+ 750              	.L63:
+ 751              		.align	2
+ 752              	.L62:
+ 753 0010 00200140 		.word	1073815552
+ 754              		.cfi_endproc
+ 755              	.LFE134:
+ 757              		.section	.text.sdio_data_write,"ax",%progbits
+ 758              		.align	1
+ 759              		.global	sdio_data_write
+ 760              		.syntax unified
+ 761              		.thumb
+ 762              		.thumb_func
+ 764              	sdio_data_write:
+ 765              	.LVL38:
+ 766              	.LFB135:
+ 365:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 366:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 367:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    write data(one word) to the transmit FIFO
+ 368:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  data: 32-bit data write to card
+ 369:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 370:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 371:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 372:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_data_write(uint32_t data)
+ 373:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 767              		.loc 1 373 1 is_stmt 1 view -0
+ 768              		.cfi_startproc
+ 769              		@ args = 0, pretend = 0, frame = 0
+ 770              		@ frame_needed = 0, uses_anonymous_args = 0
+ 771              		@ link register save eliminated.
+ 374:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_FIFO = data;
+ 772              		.loc 1 374 5 view .LVU151
+ 773              		.loc 1 374 15 is_stmt 0 view .LVU152
+ 774 0000 014B     		ldr	r3, .L65
+ 775 0002 C3F8800C 		str	r0, [r3, #3200]
+ 375:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 776              		.loc 1 375 1 view .LVU153
+ 777 0006 7047     		bx	lr
+ 778              	.L66:
+ 779              		.align	2
+ 780              	.L65:
+ 781 0008 00200140 		.word	1073815552
+ 782              		.cfi_endproc
+ 783              	.LFE135:
+ 785              		.section	.text.sdio_data_read,"ax",%progbits
+ 786              		.align	1
+ 787              		.global	sdio_data_read
+ 788              		.syntax unified
+ 789              		.thumb
+ 790              		.thumb_func
+ 792              	sdio_data_read:
+ 793              	.LFB136:
+ARM GAS  /tmp/ccnQ335T.s 			page 21
+
+
+ 376:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 377:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 378:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    read data(one word) from the receive FIFO
+ 379:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 380:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 381:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     received data
+ 382:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 383:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** uint32_t sdio_data_read(void)
+ 384:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 794              		.loc 1 384 1 is_stmt 1 view -0
+ 795              		.cfi_startproc
+ 796              		@ args = 0, pretend = 0, frame = 0
+ 797              		@ frame_needed = 0, uses_anonymous_args = 0
+ 798              		@ link register save eliminated.
+ 385:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     return SDIO_FIFO;
+ 799              		.loc 1 385 5 view .LVU155
+ 800              		.loc 1 385 12 is_stmt 0 view .LVU156
+ 801 0000 014B     		ldr	r3, .L68
+ 802 0002 D3F8800C 		ldr	r0, [r3, #3200]
+ 386:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 803              		.loc 1 386 1 view .LVU157
+ 804 0006 7047     		bx	lr
+ 805              	.L69:
+ 806              		.align	2
+ 807              	.L68:
+ 808 0008 00200140 		.word	1073815552
+ 809              		.cfi_endproc
+ 810              	.LFE136:
+ 812              		.section	.text.sdio_data_counter_get,"ax",%progbits
+ 813              		.align	1
+ 814              		.global	sdio_data_counter_get
+ 815              		.syntax unified
+ 816              		.thumb
+ 817              		.thumb_func
+ 819              	sdio_data_counter_get:
+ 820              	.LFB137:
+ 387:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 388:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 389:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    get the number of remaining data bytes to be transferred to card
+ 390:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 391:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 392:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     number of remaining data bytes to be transferred
+ 393:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 394:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** uint32_t sdio_data_counter_get(void)
+ 395:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 821              		.loc 1 395 1 is_stmt 1 view -0
+ 822              		.cfi_startproc
+ 823              		@ args = 0, pretend = 0, frame = 0
+ 824              		@ frame_needed = 0, uses_anonymous_args = 0
+ 825              		@ link register save eliminated.
+ 396:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     return SDIO_DATACNT;
+ 826              		.loc 1 396 5 view .LVU159
+ 827              		.loc 1 396 12 is_stmt 0 view .LVU160
+ 828 0000 014B     		ldr	r3, .L71
+ 829 0002 D3F8300C 		ldr	r0, [r3, #3120]
+ 397:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 830              		.loc 1 397 1 view .LVU161
+ARM GAS  /tmp/ccnQ335T.s 			page 22
+
+
+ 831 0006 7047     		bx	lr
+ 832              	.L72:
+ 833              		.align	2
+ 834              	.L71:
+ 835 0008 00200140 		.word	1073815552
+ 836              		.cfi_endproc
+ 837              	.LFE137:
+ 839              		.section	.text.sdio_fifo_counter_get,"ax",%progbits
+ 840              		.align	1
+ 841              		.global	sdio_fifo_counter_get
+ 842              		.syntax unified
+ 843              		.thumb
+ 844              		.thumb_func
+ 846              	sdio_fifo_counter_get:
+ 847              	.LFB138:
+ 398:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 399:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 400:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    get the number of words remaining to be written or read from FIFO
+ 401:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 402:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 403:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     remaining number of words
+ 404:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 405:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** uint32_t sdio_fifo_counter_get(void)
+ 406:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 848              		.loc 1 406 1 is_stmt 1 view -0
+ 849              		.cfi_startproc
+ 850              		@ args = 0, pretend = 0, frame = 0
+ 851              		@ frame_needed = 0, uses_anonymous_args = 0
+ 852              		@ link register save eliminated.
+ 407:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     return SDIO_FIFOCNT;
+ 853              		.loc 1 407 5 view .LVU163
+ 854              		.loc 1 407 12 is_stmt 0 view .LVU164
+ 855 0000 014B     		ldr	r3, .L74
+ 856 0002 D3F8480C 		ldr	r0, [r3, #3144]
+ 408:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 857              		.loc 1 408 1 view .LVU165
+ 858 0006 7047     		bx	lr
+ 859              	.L75:
+ 860              		.align	2
+ 861              	.L74:
+ 862 0008 00200140 		.word	1073815552
+ 863              		.cfi_endproc
+ 864              	.LFE138:
+ 866              		.section	.text.sdio_dma_enable,"ax",%progbits
+ 867              		.align	1
+ 868              		.global	sdio_dma_enable
+ 869              		.syntax unified
+ 870              		.thumb
+ 871              		.thumb_func
+ 873              	sdio_dma_enable:
+ 874              	.LFB139:
+ 409:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 410:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 411:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable the DMA request for SDIO
+ 412:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 413:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 414:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ARM GAS  /tmp/ccnQ335T.s 			page 23
+
+
+ 415:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 416:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_dma_enable(void)
+ 417:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 875              		.loc 1 417 1 is_stmt 1 view -0
+ 876              		.cfi_startproc
+ 877              		@ args = 0, pretend = 0, frame = 0
+ 878              		@ frame_needed = 0, uses_anonymous_args = 0
+ 879              		@ link register save eliminated.
+ 418:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL |= SDIO_DATACTL_DMAEN;
+ 880              		.loc 1 418 5 view .LVU167
+ 881 0000 034A     		ldr	r2, .L77
+ 882 0002 D2F82C3C 		ldr	r3, [r2, #3116]
+ 883              		.loc 1 418 18 is_stmt 0 view .LVU168
+ 884 0006 43F00803 		orr	r3, r3, #8
+ 885 000a C2F82C3C 		str	r3, [r2, #3116]
+ 419:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 886              		.loc 1 419 1 view .LVU169
+ 887 000e 7047     		bx	lr
+ 888              	.L78:
+ 889              		.align	2
+ 890              	.L77:
+ 891 0010 00200140 		.word	1073815552
+ 892              		.cfi_endproc
+ 893              	.LFE139:
+ 895              		.section	.text.sdio_dma_disable,"ax",%progbits
+ 896              		.align	1
+ 897              		.global	sdio_dma_disable
+ 898              		.syntax unified
+ 899              		.thumb
+ 900              		.thumb_func
+ 902              	sdio_dma_disable:
+ 903              	.LFB140:
+ 420:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 421:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 422:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable the DMA request for SDIO
+ 423:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 424:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 425:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 426:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 427:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_dma_disable(void)
+ 428:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 904              		.loc 1 428 1 is_stmt 1 view -0
+ 905              		.cfi_startproc
+ 906              		@ args = 0, pretend = 0, frame = 0
+ 907              		@ frame_needed = 0, uses_anonymous_args = 0
+ 908              		@ link register save eliminated.
+ 429:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL &= ~SDIO_DATACTL_DMAEN;
+ 909              		.loc 1 429 5 view .LVU171
+ 910 0000 034A     		ldr	r2, .L80
+ 911 0002 D2F82C3C 		ldr	r3, [r2, #3116]
+ 912              		.loc 1 429 18 is_stmt 0 view .LVU172
+ 913 0006 23F00803 		bic	r3, r3, #8
+ 914 000a C2F82C3C 		str	r3, [r2, #3116]
+ 430:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 915              		.loc 1 430 1 view .LVU173
+ 916 000e 7047     		bx	lr
+ 917              	.L81:
+ARM GAS  /tmp/ccnQ335T.s 			page 24
+
+
+ 918              		.align	2
+ 919              	.L80:
+ 920 0010 00200140 		.word	1073815552
+ 921              		.cfi_endproc
+ 922              	.LFE140:
+ 924              		.section	.text.sdio_flag_get,"ax",%progbits
+ 925              		.align	1
+ 926              		.global	sdio_flag_get
+ 927              		.syntax unified
+ 928              		.thumb
+ 929              		.thumb_func
+ 931              	sdio_flag_get:
+ 932              	.LVL39:
+ 933              	.LFB141:
+ 431:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 432:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 433:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    get the flags state of SDIO
+ 434:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  flag: flags state of SDIO
+ 435:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 one or more parameters can be selected which are shown as below:
+ 436:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_CCRCERR: command response received (CRC check failed) flag
+ 437:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_DTCRCERR: data block sent/received (CRC check failed) flag
+ 438:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_CMDTMOUT: command response timeout flag
+ 439:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_DTTMOUT: data timeout flag
+ 440:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_TXURE: transmit FIFO underrun error occurs flag
+ 441:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_RXORE: received FIFO overrun error occurs flag
+ 442:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_CMDRECV: command response received (CRC check passed) flag
+ 443:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_CMDSEND: command sent (no response required) flag
+ 444:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_DTEND: data end (data counter, SDIO_DATACNT, is zero) flag
+ 445:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_STBITE: start bit error in the bus flag
+ 446:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_DTBLKEND: data block sent/received (CRC check passed) flag
+ 447:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_CMDRUN: command transmission in progress flag
+ 448:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_TXRUN: data transmission in progress flag
+ 449:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_RXRUN: data reception in progress flag
+ 450:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_TFH: transmit FIFO is half empty flag: at least 8 words can be written 
+ 451:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_RFH: receive FIFO is half full flag: at least 8 words can be read in th
+ 452:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_TFF: transmit FIFO is full flag
+ 453:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_RFF: receive FIFO is full flag
+ 454:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_TFE: transmit FIFO is empty flag
+ 455:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_RFE: receive FIFO is empty flag
+ 456:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_TXDTVAL: data is valid in transmit FIFO flag
+ 457:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_RXDTVAL: data is valid in receive FIFO flag
+ 458:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_SDIOINT: SD I/O interrupt received flag
+ 459:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_ATAEND: CE-ATA command completion signal received (only for CMD61) flag
+ 460:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 461:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     FlagStatus: SET or RESET
+ 462:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 463:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** FlagStatus sdio_flag_get(uint32_t flag)
+ 464:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 934              		.loc 1 464 1 is_stmt 1 view -0
+ 935              		.cfi_startproc
+ 936              		@ args = 0, pretend = 0, frame = 0
+ 937              		@ frame_needed = 0, uses_anonymous_args = 0
+ 938              		@ link register save eliminated.
+ 465:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     FlagStatus temp_flag = RESET;
+ 939              		.loc 1 465 5 view .LVU175
+ 466:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     if(RESET != (SDIO_STAT & flag)) {
+ 940              		.loc 1 466 5 view .LVU176
+ARM GAS  /tmp/ccnQ335T.s 			page 25
+
+
+ 941              		.loc 1 466 18 is_stmt 0 view .LVU177
+ 942 0000 034B     		ldr	r3, .L83
+ 943 0002 D3F8343C 		ldr	r3, [r3, #3124]
+ 944              	.LVL40:
+ 467:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         temp_flag = SET;
+ 468:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     }
+ 469:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     return temp_flag;
+ 945              		.loc 1 469 5 is_stmt 1 view .LVU178
+ 466:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     if(RESET != (SDIO_STAT & flag)) {
+ 946              		.loc 1 466 7 is_stmt 0 view .LVU179
+ 947 0006 0342     		tst	r3, r0
+ 470:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 948              		.loc 1 470 1 view .LVU180
+ 949 0008 14BF     		ite	ne
+ 950 000a 0120     		movne	r0, #1
+ 951              	.LVL41:
+ 952              		.loc 1 470 1 view .LVU181
+ 953 000c 0020     		moveq	r0, #0
+ 954 000e 7047     		bx	lr
+ 955              	.L84:
+ 956              		.align	2
+ 957              	.L83:
+ 958 0010 00200140 		.word	1073815552
+ 959              		.cfi_endproc
+ 960              	.LFE141:
+ 962              		.section	.text.sdio_flag_clear,"ax",%progbits
+ 963              		.align	1
+ 964              		.global	sdio_flag_clear
+ 965              		.syntax unified
+ 966              		.thumb
+ 967              		.thumb_func
+ 969              	sdio_flag_clear:
+ 970              	.LVL42:
+ 971              	.LFB142:
+ 471:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 472:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 473:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    clear the pending flags of SDIO
+ 474:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  flag: flags state of SDIO
+ 475:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 one or more parameters can be selected which are shown as below:
+ 476:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_CCRCERR: command response received (CRC check failed) flag
+ 477:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_DTCRCERR: data block sent/received (CRC check failed) flag
+ 478:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_CMDTMOUT: command response timeout flag
+ 479:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_DTTMOUT: data timeout flag
+ 480:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_TXURE: transmit FIFO underrun error occurs flag
+ 481:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_RXORE: received FIFO overrun error occurs flag
+ 482:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_CMDRECV: command response received (CRC check passed) flag
+ 483:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_CMDSEND: command sent (no response required) flag
+ 484:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_DTEND: data end (data counter, SDIO_DATACNT, is zero) flag
+ 485:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_STBITE: start bit error in the bus flag
+ 486:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_DTBLKEND: data block sent/received (CRC check passed) flag
+ 487:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_SDIOINT: SD I/O interrupt received flag
+ 488:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_FLAG_ATAEND: CE-ATA command completion signal received (only for CMD61) flag
+ 489:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 490:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 491:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 492:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_flag_clear(uint32_t flag)
+ 493:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ARM GAS  /tmp/ccnQ335T.s 			page 26
+
+
+ 972              		.loc 1 493 1 is_stmt 1 view -0
+ 973              		.cfi_startproc
+ 974              		@ args = 0, pretend = 0, frame = 0
+ 975              		@ frame_needed = 0, uses_anonymous_args = 0
+ 976              		@ link register save eliminated.
+ 494:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_INTC = flag;
+ 977              		.loc 1 494 5 view .LVU183
+ 978              		.loc 1 494 15 is_stmt 0 view .LVU184
+ 979 0000 014B     		ldr	r3, .L86
+ 980 0002 C3F8380C 		str	r0, [r3, #3128]
+ 495:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 981              		.loc 1 495 1 view .LVU185
+ 982 0006 7047     		bx	lr
+ 983              	.L87:
+ 984              		.align	2
+ 985              	.L86:
+ 986 0008 00200140 		.word	1073815552
+ 987              		.cfi_endproc
+ 988              	.LFE142:
+ 990              		.section	.text.sdio_interrupt_enable,"ax",%progbits
+ 991              		.align	1
+ 992              		.global	sdio_interrupt_enable
+ 993              		.syntax unified
+ 994              		.thumb
+ 995              		.thumb_func
+ 997              	sdio_interrupt_enable:
+ 998              	.LVL43:
+ 999              	.LFB143:
+ 496:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 497:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 498:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable the SDIO interrupt
+ 499:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  int_flag: interrupt flags state of SDIO
+ 500:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 one or more parameters can be selected which are shown as below:
+ 501:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_CCRCERR: SDIO CCRCERR interrupt
+ 502:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_DTCRCERR: SDIO DTCRCERR interrupt
+ 503:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_CMDTMOUT: SDIO CMDTMOUT interrupt
+ 504:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_DTTMOUT: SDIO DTTMOUT interrupt
+ 505:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_TXURE: SDIO TXURE interrupt
+ 506:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_RXORE: SDIO RXORE interrupt
+ 507:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_CMDRECV: SDIO CMDRECV interrupt
+ 508:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_CMDSEND: SDIO CMDSEND interrupt
+ 509:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_DTEND: SDIO DTEND interrupt
+ 510:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_STBITE: SDIO STBITE interrupt
+ 511:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_DTBLKEND: SDIO DTBLKEND interrupt
+ 512:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_CMDRUN: SDIO CMDRUN interrupt
+ 513:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_TXRUN: SDIO TXRUN interrupt
+ 514:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_RXRUN: SDIO RXRUN interrupt
+ 515:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_TFH: SDIO TFH interrupt
+ 516:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_RFH: SDIO RFH interrupt
+ 517:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_TFF: SDIO TFF interrupt
+ 518:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_RFF: SDIO RFF interrupt
+ 519:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_TFE: SDIO TFE interrupt
+ 520:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_RFE: SDIO RFE interrupt
+ 521:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_TXDTVAL: SDIO TXDTVAL interrupt
+ 522:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_RXDTVAL: SDIO RXDTVAL interrupt
+ 523:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_SDIOINT: SDIO SDIOINT interrupt
+ 524:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_ATAEND: SDIO ATAEND interrupt
+ARM GAS  /tmp/ccnQ335T.s 			page 27
+
+
+ 525:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 526:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 527:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 528:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_interrupt_enable(uint32_t int_flag)
+ 529:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1000              		.loc 1 529 1 is_stmt 1 view -0
+ 1001              		.cfi_startproc
+ 1002              		@ args = 0, pretend = 0, frame = 0
+ 1003              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1004              		@ link register save eliminated.
+ 530:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_INTEN |= int_flag;
+ 1005              		.loc 1 530 5 view .LVU187
+ 1006 0000 034A     		ldr	r2, .L89
+ 1007 0002 D2F83C3C 		ldr	r3, [r2, #3132]
+ 1008              		.loc 1 530 16 is_stmt 0 view .LVU188
+ 1009 0006 0343     		orrs	r3, r3, r0
+ 1010 0008 C2F83C3C 		str	r3, [r2, #3132]
+ 531:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1011              		.loc 1 531 1 view .LVU189
+ 1012 000c 7047     		bx	lr
+ 1013              	.L90:
+ 1014 000e 00BF     		.align	2
+ 1015              	.L89:
+ 1016 0010 00200140 		.word	1073815552
+ 1017              		.cfi_endproc
+ 1018              	.LFE143:
+ 1020              		.section	.text.sdio_interrupt_disable,"ax",%progbits
+ 1021              		.align	1
+ 1022              		.global	sdio_interrupt_disable
+ 1023              		.syntax unified
+ 1024              		.thumb
+ 1025              		.thumb_func
+ 1027              	sdio_interrupt_disable:
+ 1028              	.LVL44:
+ 1029              	.LFB144:
+ 532:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 533:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 534:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable the SDIO interrupt
+ 535:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  int_flag: interrupt flags state of SDIO
+ 536:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 one or more parameters can be selected which are shown as below:
+ 537:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_CCRCERR: SDIO CCRCERR interrupt
+ 538:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_DTCRCERR: SDIO DTCRCERR interrupt
+ 539:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_CMDTMOUT: SDIO CMDTMOUT interrupt
+ 540:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_DTTMOUT: SDIO DTTMOUT interrupt
+ 541:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_TXURE: SDIO TXURE interrupt
+ 542:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_RXORE: SDIO RXORE interrupt
+ 543:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_CMDRECV: SDIO CMDRECV interrupt
+ 544:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_CMDSEND: SDIO CMDSEND interrupt
+ 545:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_DTEND: SDIO DTEND interrupt
+ 546:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_STBITE: SDIO STBITE interrupt
+ 547:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_DTBLKEND: SDIO DTBLKEND interrupt
+ 548:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_CMDRUN: SDIO CMDRUN interrupt
+ 549:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_TXRUN: SDIO TXRUN interrupt
+ 550:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_RXRUN: SDIO RXRUN interrupt
+ 551:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_TFH: SDIO TFH interrupt
+ 552:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_RFH: SDIO RFH interrupt
+ 553:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_TFF: SDIO TFF interrupt
+ARM GAS  /tmp/ccnQ335T.s 			page 28
+
+
+ 554:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_RFF: SDIO RFF interrupt
+ 555:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_TFE: SDIO TFE interrupt
+ 556:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_RFE: SDIO RFE interrupt
+ 557:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_TXDTVAL: SDIO TXDTVAL interrupt
+ 558:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_RXDTVAL: SDIO RXDTVAL interrupt
+ 559:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_SDIOINT: SDIO SDIOINT interrupt
+ 560:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_ATAEND: SDIO ATAEND interrupt
+ 561:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 562:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 563:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 564:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_interrupt_disable(uint32_t int_flag)
+ 565:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1030              		.loc 1 565 1 is_stmt 1 view -0
+ 1031              		.cfi_startproc
+ 1032              		@ args = 0, pretend = 0, frame = 0
+ 1033              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1034              		@ link register save eliminated.
+ 566:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_INTEN &= ~int_flag;
+ 1035              		.loc 1 566 5 view .LVU191
+ 1036 0000 034A     		ldr	r2, .L92
+ 1037 0002 D2F83C3C 		ldr	r3, [r2, #3132]
+ 1038              		.loc 1 566 16 is_stmt 0 view .LVU192
+ 1039 0006 23EA0003 		bic	r3, r3, r0
+ 1040 000a C2F83C3C 		str	r3, [r2, #3132]
+ 567:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1041              		.loc 1 567 1 view .LVU193
+ 1042 000e 7047     		bx	lr
+ 1043              	.L93:
+ 1044              		.align	2
+ 1045              	.L92:
+ 1046 0010 00200140 		.word	1073815552
+ 1047              		.cfi_endproc
+ 1048              	.LFE144:
+ 1050              		.section	.text.sdio_interrupt_flag_get,"ax",%progbits
+ 1051              		.align	1
+ 1052              		.global	sdio_interrupt_flag_get
+ 1053              		.syntax unified
+ 1054              		.thumb
+ 1055              		.thumb_func
+ 1057              	sdio_interrupt_flag_get:
+ 1058              	.LFB163:
+ 1059              		.cfi_startproc
+ 568:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 569:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 570:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    get the interrupt flags state of SDIO
+ 571:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  int_flag: interrupt flags state of SDIO
+ 572:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 one or more parameters can be selected which are shown as below:
+ 573:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_CCRCERR: SDIO CCRCERR interrupt flag
+ 574:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_DTCRCERR: SDIO DTCRCERR interrupt flag
+ 575:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_CMDTMOUT: SDIO CMDTMOUT interrupt flag
+ 576:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_DTTMOUT: SDIO DTTMOUT interrupt flag
+ 577:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_TXURE: SDIO TXURE interrupt flag
+ 578:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_RXORE: SDIO RXORE interrupt flag
+ 579:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_CMDRECV: SDIO CMDRECV interrupt flag
+ 580:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_CMDSEND: SDIO CMDSEND interrupt flag
+ 581:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_DTEND: SDIO DTEND interrupt flag
+ 582:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_STBITE: SDIO STBITE interrupt flag
+ARM GAS  /tmp/ccnQ335T.s 			page 29
+
+
+ 583:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_DTBLKEND: SDIO DTBLKEND interrupt flag
+ 584:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_CMDRUN: SDIO CMDRUN interrupt flag
+ 585:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_TXRUN: SDIO TXRUN interrupt flag
+ 586:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_RXRUN: SDIO RXRUN interrupt flag
+ 587:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_TFH: SDIO TFH interrupt flag
+ 588:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_RFH: SDIO RFH interrupt flag
+ 589:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_TFF: SDIO TFF interrupt flag
+ 590:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_RFF: SDIO RFF interrupt flag
+ 591:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_TFE: SDIO TFE interrupt flag
+ 592:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_RFE: SDIO RFE interrupt flag
+ 593:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_TXDTVAL: SDIO TXDTVAL interrupt flag
+ 594:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_RXDTVAL: SDIO RXDTVAL interrupt flag
+ 595:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_SDIOINT: SDIO SDIOINT interrupt flag
+ 596:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_ATAEND: SDIO ATAEND interrupt flag
+ 597:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 598:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     FlagStatus: SET or RESET
+ 599:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 600:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** FlagStatus sdio_interrupt_flag_get(uint32_t int_flag)
+ 1060              		.loc 1 600 12 is_stmt 1 view -0
+ 1061              		@ args = 0, pretend = 0, frame = 0
+ 1062              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1063              		@ link register save eliminated.
+ 1064 0000 FFF7FEBF 		b	sdio_flag_get
+ 1065              		.cfi_endproc
+ 1066              	.LFE163:
+ 1068              		.section	.text.sdio_interrupt_flag_clear,"ax",%progbits
+ 1069              		.align	1
+ 1070              		.global	sdio_interrupt_flag_clear
+ 1071              		.syntax unified
+ 1072              		.thumb
+ 1073              		.thumb_func
+ 1075              	sdio_interrupt_flag_clear:
+ 1076              	.LFB165:
+ 1077              		.cfi_startproc
+ 601:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 602:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     FlagStatus temp_flag = RESET;
+ 603:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     if(RESET != (SDIO_STAT & int_flag)) {
+ 604:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         temp_flag = SET;
+ 605:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     }
+ 606:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     return temp_flag;
+ 607:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 608:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 609:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 610:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    clear the interrupt pending flags of SDIO
+ 611:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  int_flag: interrupt flags state of SDIO
+ 612:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 one or more parameters can be selected which are shown as below:
+ 613:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_CCRCERR: command response received (CRC check failed) flag
+ 614:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_DTCRCERR: data block sent/received (CRC check failed) flag
+ 615:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_CMDTMOUT: command response timeout flag
+ 616:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_DTTMOUT: data timeout flag
+ 617:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_TXURE: transmit FIFO underrun error occurs flag
+ 618:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_RXORE: received FIFO overrun error occurs flag
+ 619:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_CMDRECV: command response received (CRC check passed) flag
+ 620:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_CMDSEND: command sent (no response required) flag
+ 621:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_DTEND: data end (data counter, SDIO_DATACNT, is zero) flag
+ 622:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_STBITE: start bit error in the bus flag
+ 623:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_DTBLKEND: data block sent/received (CRC check passed) flag
+ARM GAS  /tmp/ccnQ335T.s 			page 30
+
+
+ 624:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_SDIOINT: SD I/O interrupt received flag
+ 625:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_INT_FLAG_ATAEND: CE-ATA command completion signal received (only for CMD61) 
+ 626:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 627:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 628:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 629:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_interrupt_flag_clear(uint32_t int_flag)
+ 1078              		.loc 1 629 6 view -0
+ 1079              		@ args = 0, pretend = 0, frame = 0
+ 1080              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1081              		@ link register save eliminated.
+ 1082 0000 014B     		ldr	r3, .L96
+ 1083 0002 C3F8380C 		str	r0, [r3, #3128]
+ 1084 0006 7047     		bx	lr
+ 1085              	.L97:
+ 1086              		.align	2
+ 1087              	.L96:
+ 1088 0008 00200140 		.word	1073815552
+ 1089              		.cfi_endproc
+ 1090              	.LFE165:
+ 1092              		.section	.text.sdio_readwait_enable,"ax",%progbits
+ 1093              		.align	1
+ 1094              		.global	sdio_readwait_enable
+ 1095              		.syntax unified
+ 1096              		.thumb
+ 1097              		.thumb_func
+ 1099              	sdio_readwait_enable:
+ 1100              	.LFB147:
+ 630:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 631:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_INTC = int_flag;
+ 632:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 633:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 634:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 635:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable the read wait mode(SD I/O only)
+ 636:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 637:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 638:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 639:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 640:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_readwait_enable(void)
+ 641:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1101              		.loc 1 641 1 view -0
+ 1102              		.cfi_startproc
+ 1103              		@ args = 0, pretend = 0, frame = 0
+ 1104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1105              		@ link register save eliminated.
+ 642:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL |= SDIO_DATACTL_RWEN;
+ 1106              		.loc 1 642 5 view .LVU197
+ 1107 0000 034A     		ldr	r2, .L99
+ 1108 0002 D2F82C3C 		ldr	r3, [r2, #3116]
+ 1109              		.loc 1 642 18 is_stmt 0 view .LVU198
+ 1110 0006 43F48073 		orr	r3, r3, #256
+ 1111 000a C2F82C3C 		str	r3, [r2, #3116]
+ 643:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1112              		.loc 1 643 1 view .LVU199
+ 1113 000e 7047     		bx	lr
+ 1114              	.L100:
+ 1115              		.align	2
+ 1116              	.L99:
+ARM GAS  /tmp/ccnQ335T.s 			page 31
+
+
+ 1117 0010 00200140 		.word	1073815552
+ 1118              		.cfi_endproc
+ 1119              	.LFE147:
+ 1121              		.section	.text.sdio_readwait_disable,"ax",%progbits
+ 1122              		.align	1
+ 1123              		.global	sdio_readwait_disable
+ 1124              		.syntax unified
+ 1125              		.thumb
+ 1126              		.thumb_func
+ 1128              	sdio_readwait_disable:
+ 1129              	.LFB148:
+ 644:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 645:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 646:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable the read wait mode(SD I/O only)
+ 647:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 648:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 649:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 650:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 651:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_readwait_disable(void)
+ 652:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1130              		.loc 1 652 1 is_stmt 1 view -0
+ 1131              		.cfi_startproc
+ 1132              		@ args = 0, pretend = 0, frame = 0
+ 1133              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1134              		@ link register save eliminated.
+ 653:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL &= ~SDIO_DATACTL_RWEN;
+ 1135              		.loc 1 653 5 view .LVU201
+ 1136 0000 034A     		ldr	r2, .L102
+ 1137 0002 D2F82C3C 		ldr	r3, [r2, #3116]
+ 1138              		.loc 1 653 18 is_stmt 0 view .LVU202
+ 1139 0006 23F48073 		bic	r3, r3, #256
+ 1140 000a C2F82C3C 		str	r3, [r2, #3116]
+ 654:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1141              		.loc 1 654 1 view .LVU203
+ 1142 000e 7047     		bx	lr
+ 1143              	.L103:
+ 1144              		.align	2
+ 1145              	.L102:
+ 1146 0010 00200140 		.word	1073815552
+ 1147              		.cfi_endproc
+ 1148              	.LFE148:
+ 1150              		.section	.text.sdio_stop_readwait_enable,"ax",%progbits
+ 1151              		.align	1
+ 1152              		.global	sdio_stop_readwait_enable
+ 1153              		.syntax unified
+ 1154              		.thumb
+ 1155              		.thumb_func
+ 1157              	sdio_stop_readwait_enable:
+ 1158              	.LFB149:
+ 655:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 656:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 657:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable the function that stop the read wait process(SD I/O only)
+ 658:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 659:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 660:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 661:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 662:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_stop_readwait_enable(void)
+ARM GAS  /tmp/ccnQ335T.s 			page 32
+
+
+ 663:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1159              		.loc 1 663 1 is_stmt 1 view -0
+ 1160              		.cfi_startproc
+ 1161              		@ args = 0, pretend = 0, frame = 0
+ 1162              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1163              		@ link register save eliminated.
+ 664:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL |= SDIO_DATACTL_RWSTOP;
+ 1164              		.loc 1 664 5 view .LVU205
+ 1165 0000 034A     		ldr	r2, .L105
+ 1166 0002 D2F82C3C 		ldr	r3, [r2, #3116]
+ 1167              		.loc 1 664 18 is_stmt 0 view .LVU206
+ 1168 0006 43F40073 		orr	r3, r3, #512
+ 1169 000a C2F82C3C 		str	r3, [r2, #3116]
+ 665:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1170              		.loc 1 665 1 view .LVU207
+ 1171 000e 7047     		bx	lr
+ 1172              	.L106:
+ 1173              		.align	2
+ 1174              	.L105:
+ 1175 0010 00200140 		.word	1073815552
+ 1176              		.cfi_endproc
+ 1177              	.LFE149:
+ 1179              		.section	.text.sdio_stop_readwait_disable,"ax",%progbits
+ 1180              		.align	1
+ 1181              		.global	sdio_stop_readwait_disable
+ 1182              		.syntax unified
+ 1183              		.thumb
+ 1184              		.thumb_func
+ 1186              	sdio_stop_readwait_disable:
+ 1187              	.LFB150:
+ 666:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 667:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 668:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable the function that stop the read wait process(SD I/O only)
+ 669:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 670:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 671:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 672:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 673:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_stop_readwait_disable(void)
+ 674:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1188              		.loc 1 674 1 is_stmt 1 view -0
+ 1189              		.cfi_startproc
+ 1190              		@ args = 0, pretend = 0, frame = 0
+ 1191              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1192              		@ link register save eliminated.
+ 675:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL &= ~SDIO_DATACTL_RWSTOP;
+ 1193              		.loc 1 675 5 view .LVU209
+ 1194 0000 034A     		ldr	r2, .L108
+ 1195 0002 D2F82C3C 		ldr	r3, [r2, #3116]
+ 1196              		.loc 1 675 18 is_stmt 0 view .LVU210
+ 1197 0006 23F40073 		bic	r3, r3, #512
+ 1198 000a C2F82C3C 		str	r3, [r2, #3116]
+ 676:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1199              		.loc 1 676 1 view .LVU211
+ 1200 000e 7047     		bx	lr
+ 1201              	.L109:
+ 1202              		.align	2
+ 1203              	.L108:
+ARM GAS  /tmp/ccnQ335T.s 			page 33
+
+
+ 1204 0010 00200140 		.word	1073815552
+ 1205              		.cfi_endproc
+ 1206              	.LFE150:
+ 1208              		.section	.text.sdio_readwait_type_set,"ax",%progbits
+ 1209              		.align	1
+ 1210              		.global	sdio_readwait_type_set
+ 1211              		.syntax unified
+ 1212              		.thumb
+ 1213              		.thumb_func
+ 1215              	sdio_readwait_type_set:
+ 1216              	.LVL45:
+ 1217              	.LFB151:
+ 677:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 678:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 679:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    set the read wait type(SD I/O only)
+ 680:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  readwait_type: SD I/O read wait type
+ 681:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****                 only one parameter can be selected which is shown as below:
+ 682:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_READWAITTYPE_CLK: read wait control by stopping SDIO_CLK
+ 683:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****       \arg        SDIO_READWAITTYPE_DAT2: read wait control using SDIO_DAT[2]
+ 684:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 685:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 686:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 687:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_readwait_type_set(uint32_t readwait_type)
+ 688:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1218              		.loc 1 688 1 is_stmt 1 view -0
+ 1219              		.cfi_startproc
+ 1220              		@ args = 0, pretend = 0, frame = 0
+ 1221              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1222              		@ link register save eliminated.
+ 689:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     if(SDIO_READWAITTYPE_CLK == readwait_type) {
+ 1223              		.loc 1 689 5 view .LVU213
+ 1224 0000 064B     		ldr	r3, .L114
+ 690:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         SDIO_DATACTL |= SDIO_DATACTL_RWTYPE;
+ 1225              		.loc 1 690 9 is_stmt 0 view .LVU214
+ 1226 0002 D3F82C2C 		ldr	r2, [r3, #3116]
+ 1227              		.loc 1 690 9 is_stmt 1 view .LVU215
+ 689:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     if(SDIO_READWAITTYPE_CLK == readwait_type) {
+ 1228              		.loc 1 689 7 is_stmt 0 view .LVU216
+ 1229 0006 B0F5806F 		cmp	r0, #1024
+ 1230              		.loc 1 690 22 view .LVU217
+ 1231 000a 0CBF     		ite	eq
+ 1232 000c 42F48062 		orreq	r2, r2, #1024
+ 691:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     } else {
+ 692:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****         SDIO_DATACTL &= ~SDIO_DATACTL_RWTYPE;
+ 1233              		.loc 1 692 9 is_stmt 1 view .LVU218
+ 1234              		.loc 1 692 22 is_stmt 0 view .LVU219
+ 1235 0010 22F48062 		bicne	r2, r2, #1024
+ 1236 0014 C3F82C2C 		str	r2, [r3, #3116]
+ 693:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     }
+ 694:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1237              		.loc 1 694 1 view .LVU220
+ 1238 0018 7047     		bx	lr
+ 1239              	.L115:
+ 1240 001a 00BF     		.align	2
+ 1241              	.L114:
+ 1242 001c 00200140 		.word	1073815552
+ 1243              		.cfi_endproc
+ARM GAS  /tmp/ccnQ335T.s 			page 34
+
+
+ 1244              	.LFE151:
+ 1246              		.section	.text.sdio_operation_enable,"ax",%progbits
+ 1247              		.align	1
+ 1248              		.global	sdio_operation_enable
+ 1249              		.syntax unified
+ 1250              		.thumb
+ 1251              		.thumb_func
+ 1253              	sdio_operation_enable:
+ 1254              	.LFB152:
+ 695:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 696:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 697:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable the SD I/O mode specific operation(SD I/O only)
+ 698:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 699:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 700:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 701:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 702:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_operation_enable(void)
+ 703:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1255              		.loc 1 703 1 is_stmt 1 view -0
+ 1256              		.cfi_startproc
+ 1257              		@ args = 0, pretend = 0, frame = 0
+ 1258              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1259              		@ link register save eliminated.
+ 704:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL |= SDIO_DATACTL_IOEN;
+ 1260              		.loc 1 704 5 view .LVU222
+ 1261 0000 034A     		ldr	r2, .L117
+ 1262 0002 D2F82C3C 		ldr	r3, [r2, #3116]
+ 1263              		.loc 1 704 18 is_stmt 0 view .LVU223
+ 1264 0006 43F40063 		orr	r3, r3, #2048
+ 1265 000a C2F82C3C 		str	r3, [r2, #3116]
+ 705:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1266              		.loc 1 705 1 view .LVU224
+ 1267 000e 7047     		bx	lr
+ 1268              	.L118:
+ 1269              		.align	2
+ 1270              	.L117:
+ 1271 0010 00200140 		.word	1073815552
+ 1272              		.cfi_endproc
+ 1273              	.LFE152:
+ 1275              		.section	.text.sdio_operation_disable,"ax",%progbits
+ 1276              		.align	1
+ 1277              		.global	sdio_operation_disable
+ 1278              		.syntax unified
+ 1279              		.thumb
+ 1280              		.thumb_func
+ 1282              	sdio_operation_disable:
+ 1283              	.LFB153:
+ 706:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 707:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 708:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable the SD I/O mode specific operation(SD I/O only)
+ 709:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 710:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 711:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 712:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 713:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_operation_disable(void)
+ 714:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1284              		.loc 1 714 1 is_stmt 1 view -0
+ARM GAS  /tmp/ccnQ335T.s 			page 35
+
+
+ 1285              		.cfi_startproc
+ 1286              		@ args = 0, pretend = 0, frame = 0
+ 1287              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1288              		@ link register save eliminated.
+ 715:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_DATACTL &= ~SDIO_DATACTL_IOEN;
+ 1289              		.loc 1 715 5 view .LVU226
+ 1290 0000 034A     		ldr	r2, .L120
+ 1291 0002 D2F82C3C 		ldr	r3, [r2, #3116]
+ 1292              		.loc 1 715 18 is_stmt 0 view .LVU227
+ 1293 0006 23F40063 		bic	r3, r3, #2048
+ 1294 000a C2F82C3C 		str	r3, [r2, #3116]
+ 716:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1295              		.loc 1 716 1 view .LVU228
+ 1296 000e 7047     		bx	lr
+ 1297              	.L121:
+ 1298              		.align	2
+ 1299              	.L120:
+ 1300 0010 00200140 		.word	1073815552
+ 1301              		.cfi_endproc
+ 1302              	.LFE153:
+ 1304              		.section	.text.sdio_suspend_enable,"ax",%progbits
+ 1305              		.align	1
+ 1306              		.global	sdio_suspend_enable
+ 1307              		.syntax unified
+ 1308              		.thumb
+ 1309              		.thumb_func
+ 1311              	sdio_suspend_enable:
+ 1312              	.LFB154:
+ 717:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 718:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 719:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable the SD I/O suspend operation(SD I/O only)
+ 720:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 721:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 722:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 723:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 724:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_suspend_enable(void)
+ 725:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1313              		.loc 1 725 1 is_stmt 1 view -0
+ 1314              		.cfi_startproc
+ 1315              		@ args = 0, pretend = 0, frame = 0
+ 1316              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1317              		@ link register save eliminated.
+ 726:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL |= SDIO_CMDCTL_SUSPEND;
+ 1318              		.loc 1 726 5 view .LVU230
+ 1319 0000 034A     		ldr	r2, .L123
+ 1320 0002 D2F80C3C 		ldr	r3, [r2, #3084]
+ 1321              		.loc 1 726 17 is_stmt 0 view .LVU231
+ 1322 0006 43F40063 		orr	r3, r3, #2048
+ 1323 000a C2F80C3C 		str	r3, [r2, #3084]
+ 727:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1324              		.loc 1 727 1 view .LVU232
+ 1325 000e 7047     		bx	lr
+ 1326              	.L124:
+ 1327              		.align	2
+ 1328              	.L123:
+ 1329 0010 00200140 		.word	1073815552
+ 1330              		.cfi_endproc
+ARM GAS  /tmp/ccnQ335T.s 			page 36
+
+
+ 1331              	.LFE154:
+ 1333              		.section	.text.sdio_suspend_disable,"ax",%progbits
+ 1334              		.align	1
+ 1335              		.global	sdio_suspend_disable
+ 1336              		.syntax unified
+ 1337              		.thumb
+ 1338              		.thumb_func
+ 1340              	sdio_suspend_disable:
+ 1341              	.LFB155:
+ 728:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 729:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 730:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable the SD I/O suspend operation(SD I/O only)
+ 731:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 732:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 733:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 734:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 735:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_suspend_disable(void)
+ 736:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1342              		.loc 1 736 1 is_stmt 1 view -0
+ 1343              		.cfi_startproc
+ 1344              		@ args = 0, pretend = 0, frame = 0
+ 1345              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1346              		@ link register save eliminated.
+ 737:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL &= ~SDIO_CMDCTL_SUSPEND;
+ 1347              		.loc 1 737 5 view .LVU234
+ 1348 0000 034A     		ldr	r2, .L126
+ 1349 0002 D2F80C3C 		ldr	r3, [r2, #3084]
+ 1350              		.loc 1 737 17 is_stmt 0 view .LVU235
+ 1351 0006 23F40063 		bic	r3, r3, #2048
+ 1352 000a C2F80C3C 		str	r3, [r2, #3084]
+ 738:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1353              		.loc 1 738 1 view .LVU236
+ 1354 000e 7047     		bx	lr
+ 1355              	.L127:
+ 1356              		.align	2
+ 1357              	.L126:
+ 1358 0010 00200140 		.word	1073815552
+ 1359              		.cfi_endproc
+ 1360              	.LFE155:
+ 1362              		.section	.text.sdio_ceata_command_enable,"ax",%progbits
+ 1363              		.align	1
+ 1364              		.global	sdio_ceata_command_enable
+ 1365              		.syntax unified
+ 1366              		.thumb
+ 1367              		.thumb_func
+ 1369              	sdio_ceata_command_enable:
+ 1370              	.LFB156:
+ 739:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 740:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 741:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable the CE-ATA command(CE-ATA only)
+ 742:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 743:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 744:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 745:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 746:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_ceata_command_enable(void)
+ 747:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1371              		.loc 1 747 1 is_stmt 1 view -0
+ARM GAS  /tmp/ccnQ335T.s 			page 37
+
+
+ 1372              		.cfi_startproc
+ 1373              		@ args = 0, pretend = 0, frame = 0
+ 1374              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1375              		@ link register save eliminated.
+ 748:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL |= SDIO_CMDCTL_ATAEN;
+ 1376              		.loc 1 748 5 view .LVU238
+ 1377 0000 034A     		ldr	r2, .L129
+ 1378 0002 D2F80C3C 		ldr	r3, [r2, #3084]
+ 1379              		.loc 1 748 17 is_stmt 0 view .LVU239
+ 1380 0006 43F48043 		orr	r3, r3, #16384
+ 1381 000a C2F80C3C 		str	r3, [r2, #3084]
+ 749:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1382              		.loc 1 749 1 view .LVU240
+ 1383 000e 7047     		bx	lr
+ 1384              	.L130:
+ 1385              		.align	2
+ 1386              	.L129:
+ 1387 0010 00200140 		.word	1073815552
+ 1388              		.cfi_endproc
+ 1389              	.LFE156:
+ 1391              		.section	.text.sdio_ceata_command_disable,"ax",%progbits
+ 1392              		.align	1
+ 1393              		.global	sdio_ceata_command_disable
+ 1394              		.syntax unified
+ 1395              		.thumb
+ 1396              		.thumb_func
+ 1398              	sdio_ceata_command_disable:
+ 1399              	.LFB157:
+ 750:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 751:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 752:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable the CE-ATA command(CE-ATA only)
+ 753:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 754:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 755:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 756:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 757:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_ceata_command_disable(void)
+ 758:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1400              		.loc 1 758 1 is_stmt 1 view -0
+ 1401              		.cfi_startproc
+ 1402              		@ args = 0, pretend = 0, frame = 0
+ 1403              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1404              		@ link register save eliminated.
+ 759:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL &= ~SDIO_CMDCTL_ATAEN;
+ 1405              		.loc 1 759 5 view .LVU242
+ 1406 0000 034A     		ldr	r2, .L132
+ 1407 0002 D2F80C3C 		ldr	r3, [r2, #3084]
+ 1408              		.loc 1 759 17 is_stmt 0 view .LVU243
+ 1409 0006 23F48043 		bic	r3, r3, #16384
+ 1410 000a C2F80C3C 		str	r3, [r2, #3084]
+ 760:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1411              		.loc 1 760 1 view .LVU244
+ 1412 000e 7047     		bx	lr
+ 1413              	.L133:
+ 1414              		.align	2
+ 1415              	.L132:
+ 1416 0010 00200140 		.word	1073815552
+ 1417              		.cfi_endproc
+ARM GAS  /tmp/ccnQ335T.s 			page 38
+
+
+ 1418              	.LFE157:
+ 1420              		.section	.text.sdio_ceata_interrupt_enable,"ax",%progbits
+ 1421              		.align	1
+ 1422              		.global	sdio_ceata_interrupt_enable
+ 1423              		.syntax unified
+ 1424              		.thumb
+ 1425              		.thumb_func
+ 1427              	sdio_ceata_interrupt_enable:
+ 1428              	.LFB158:
+ 761:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 762:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 763:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable the CE-ATA interrupt(CE-ATA only)
+ 764:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 765:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 766:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 767:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 768:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_ceata_interrupt_enable(void)
+ 769:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1429              		.loc 1 769 1 is_stmt 1 view -0
+ 1430              		.cfi_startproc
+ 1431              		@ args = 0, pretend = 0, frame = 0
+ 1432              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1433              		@ link register save eliminated.
+ 770:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL &= ~SDIO_CMDCTL_NINTEN;
+ 1434              		.loc 1 770 5 view .LVU246
+ 1435 0000 034A     		ldr	r2, .L135
+ 1436 0002 D2F80C3C 		ldr	r3, [r2, #3084]
+ 1437              		.loc 1 770 17 is_stmt 0 view .LVU247
+ 1438 0006 23F40053 		bic	r3, r3, #8192
+ 1439 000a C2F80C3C 		str	r3, [r2, #3084]
+ 771:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1440              		.loc 1 771 1 view .LVU248
+ 1441 000e 7047     		bx	lr
+ 1442              	.L136:
+ 1443              		.align	2
+ 1444              	.L135:
+ 1445 0010 00200140 		.word	1073815552
+ 1446              		.cfi_endproc
+ 1447              	.LFE158:
+ 1449              		.section	.text.sdio_ceata_interrupt_disable,"ax",%progbits
+ 1450              		.align	1
+ 1451              		.global	sdio_ceata_interrupt_disable
+ 1452              		.syntax unified
+ 1453              		.thumb
+ 1454              		.thumb_func
+ 1456              	sdio_ceata_interrupt_disable:
+ 1457              	.LFB159:
+ 772:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 773:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 774:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable the CE-ATA interrupt(CE-ATA only)
+ 775:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 776:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 777:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 778:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 779:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_ceata_interrupt_disable(void)
+ 780:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1458              		.loc 1 780 1 is_stmt 1 view -0
+ARM GAS  /tmp/ccnQ335T.s 			page 39
+
+
+ 1459              		.cfi_startproc
+ 1460              		@ args = 0, pretend = 0, frame = 0
+ 1461              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1462              		@ link register save eliminated.
+ 781:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL |= SDIO_CMDCTL_NINTEN;
+ 1463              		.loc 1 781 5 view .LVU250
+ 1464 0000 034A     		ldr	r2, .L138
+ 1465 0002 D2F80C3C 		ldr	r3, [r2, #3084]
+ 1466              		.loc 1 781 17 is_stmt 0 view .LVU251
+ 1467 0006 43F40053 		orr	r3, r3, #8192
+ 1468 000a C2F80C3C 		str	r3, [r2, #3084]
+ 782:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1469              		.loc 1 782 1 view .LVU252
+ 1470 000e 7047     		bx	lr
+ 1471              	.L139:
+ 1472              		.align	2
+ 1473              	.L138:
+ 1474 0010 00200140 		.word	1073815552
+ 1475              		.cfi_endproc
+ 1476              	.LFE159:
+ 1478              		.section	.text.sdio_ceata_command_completion_enable,"ax",%progbits
+ 1479              		.align	1
+ 1480              		.global	sdio_ceata_command_completion_enable
+ 1481              		.syntax unified
+ 1482              		.thumb
+ 1483              		.thumb_func
+ 1485              	sdio_ceata_command_completion_enable:
+ 1486              	.LFB160:
+ 783:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 784:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 785:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    enable the CE-ATA command completion signal(CE-ATA only)
+ 786:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 787:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 788:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 789:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 790:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_ceata_command_completion_enable(void)
+ 791:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1487              		.loc 1 791 1 is_stmt 1 view -0
+ 1488              		.cfi_startproc
+ 1489              		@ args = 0, pretend = 0, frame = 0
+ 1490              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1491              		@ link register save eliminated.
+ 792:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL |= SDIO_CMDCTL_ENCMDC;
+ 1492              		.loc 1 792 5 view .LVU254
+ 1493 0000 034A     		ldr	r2, .L141
+ 1494 0002 D2F80C3C 		ldr	r3, [r2, #3084]
+ 1495              		.loc 1 792 17 is_stmt 0 view .LVU255
+ 1496 0006 43F48053 		orr	r3, r3, #4096
+ 1497 000a C2F80C3C 		str	r3, [r2, #3084]
+ 793:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1498              		.loc 1 793 1 view .LVU256
+ 1499 000e 7047     		bx	lr
+ 1500              	.L142:
+ 1501              		.align	2
+ 1502              	.L141:
+ 1503 0010 00200140 		.word	1073815552
+ 1504              		.cfi_endproc
+ARM GAS  /tmp/ccnQ335T.s 			page 40
+
+
+ 1505              	.LFE160:
+ 1507              		.section	.text.sdio_ceata_command_completion_disable,"ax",%progbits
+ 1508              		.align	1
+ 1509              		.global	sdio_ceata_command_completion_disable
+ 1510              		.syntax unified
+ 1511              		.thumb
+ 1512              		.thumb_func
+ 1514              	sdio_ceata_command_completion_disable:
+ 1515              	.LFB161:
+ 794:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** 
+ 795:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** /*!
+ 796:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \brief    disable the CE-ATA command completion signal(CE-ATA only)
+ 797:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[in]  none
+ 798:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \param[out] none
+ 799:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     \retval     none
+ 800:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** */
+ 801:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** void sdio_ceata_command_completion_disable(void)
+ 802:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** {
+ 1516              		.loc 1 802 1 is_stmt 1 view -0
+ 1517              		.cfi_startproc
+ 1518              		@ args = 0, pretend = 0, frame = 0
+ 1519              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1520              		@ link register save eliminated.
+ 803:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c ****     SDIO_CMDCTL &= ~SDIO_CMDCTL_ENCMDC;
+ 1521              		.loc 1 803 5 view .LVU258
+ 1522 0000 034A     		ldr	r2, .L144
+ 1523 0002 D2F80C3C 		ldr	r3, [r2, #3084]
+ 1524              		.loc 1 803 17 is_stmt 0 view .LVU259
+ 1525 0006 23F48053 		bic	r3, r3, #4096
+ 1526 000a C2F80C3C 		str	r3, [r2, #3084]
+ 804:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_sdio.c **** }
+ 1527              		.loc 1 804 1 view .LVU260
+ 1528 000e 7047     		bx	lr
+ 1529              	.L145:
+ 1530              		.align	2
+ 1531              	.L144:
+ 1532 0010 00200140 		.word	1073815552
+ 1533              		.cfi_endproc
+ 1534              	.LFE161:
+ 1536              		.text
+ 1537              	.Letext0:
+ 1538              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 1539              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 1540              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
+ 1541              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
+ARM GAS  /tmp/ccnQ335T.s 			page 41
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 gd32f4xx_sdio.c
+     /tmp/ccnQ335T.s:19     .text.sdio_deinit:0000000000000000 $t
+     /tmp/ccnQ335T.s:25     .text.sdio_deinit:0000000000000000 sdio_deinit
+     /tmp/ccnQ335T.s:57     .text.sdio_clock_config:0000000000000000 $t
+     /tmp/ccnQ335T.s:63     .text.sdio_clock_config:0000000000000000 sdio_clock_config
+     /tmp/ccnQ335T.s:124    .text.sdio_clock_config:0000000000000030 $d
+     /tmp/ccnQ335T.s:130    .text.sdio_hardware_clock_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:136    .text.sdio_hardware_clock_enable:0000000000000000 sdio_hardware_clock_enable
+     /tmp/ccnQ335T.s:154    .text.sdio_hardware_clock_enable:0000000000000010 $d
+     /tmp/ccnQ335T.s:159    .text.sdio_hardware_clock_disable:0000000000000000 $t
+     /tmp/ccnQ335T.s:165    .text.sdio_hardware_clock_disable:0000000000000000 sdio_hardware_clock_disable
+     /tmp/ccnQ335T.s:183    .text.sdio_hardware_clock_disable:0000000000000010 $d
+     /tmp/ccnQ335T.s:188    .text.sdio_bus_mode_set:0000000000000000 $t
+     /tmp/ccnQ335T.s:194    .text.sdio_bus_mode_set:0000000000000000 sdio_bus_mode_set
+     /tmp/ccnQ335T.s:218    .text.sdio_bus_mode_set:000000000000001c $d
+     /tmp/ccnQ335T.s:223    .text.sdio_power_state_set:0000000000000000 $t
+     /tmp/ccnQ335T.s:229    .text.sdio_power_state_set:0000000000000000 sdio_power_state_set
+     /tmp/ccnQ335T.s:246    .text.sdio_power_state_set:0000000000000008 $d
+     /tmp/ccnQ335T.s:251    .text.sdio_power_state_get:0000000000000000 $t
+     /tmp/ccnQ335T.s:257    .text.sdio_power_state_get:0000000000000000 sdio_power_state_get
+     /tmp/ccnQ335T.s:273    .text.sdio_power_state_get:0000000000000008 $d
+     /tmp/ccnQ335T.s:278    .text.sdio_clock_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:284    .text.sdio_clock_enable:0000000000000000 sdio_clock_enable
+     /tmp/ccnQ335T.s:302    .text.sdio_clock_enable:0000000000000010 $d
+     /tmp/ccnQ335T.s:307    .text.sdio_clock_disable:0000000000000000 $t
+     /tmp/ccnQ335T.s:313    .text.sdio_clock_disable:0000000000000000 sdio_clock_disable
+     /tmp/ccnQ335T.s:331    .text.sdio_clock_disable:0000000000000010 $d
+     /tmp/ccnQ335T.s:336    .text.sdio_command_response_config:0000000000000000 $t
+     /tmp/ccnQ335T.s:342    .text.sdio_command_response_config:0000000000000000 sdio_command_response_config
+     /tmp/ccnQ335T.s:395    .text.sdio_command_response_config:0000000000000030 $d
+     /tmp/ccnQ335T.s:400    .text.sdio_wait_type_set:0000000000000000 $t
+     /tmp/ccnQ335T.s:406    .text.sdio_wait_type_set:0000000000000000 sdio_wait_type_set
+     /tmp/ccnQ335T.s:430    .text.sdio_wait_type_set:000000000000001c $d
+     /tmp/ccnQ335T.s:435    .text.sdio_csm_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:441    .text.sdio_csm_enable:0000000000000000 sdio_csm_enable
+     /tmp/ccnQ335T.s:459    .text.sdio_csm_enable:0000000000000010 $d
+     /tmp/ccnQ335T.s:464    .text.sdio_csm_disable:0000000000000000 $t
+     /tmp/ccnQ335T.s:470    .text.sdio_csm_disable:0000000000000000 sdio_csm_disable
+     /tmp/ccnQ335T.s:488    .text.sdio_csm_disable:0000000000000010 $d
+     /tmp/ccnQ335T.s:493    .text.sdio_command_index_get:0000000000000000 $t
+     /tmp/ccnQ335T.s:499    .text.sdio_command_index_get:0000000000000000 sdio_command_index_get
+     /tmp/ccnQ335T.s:516    .text.sdio_command_index_get:000000000000000c $d
+     /tmp/ccnQ335T.s:521    .text.sdio_response_get:0000000000000000 $t
+     /tmp/ccnQ335T.s:527    .text.sdio_response_get:0000000000000000 sdio_response_get
+     /tmp/ccnQ335T.s:541    .text.sdio_response_get:0000000000000008 $d
+     /tmp/ccnQ335T.s:545    .text.sdio_response_get:000000000000000c $t
+     /tmp/ccnQ335T.s:592    .text.sdio_response_get:0000000000000030 $d
+     /tmp/ccnQ335T.s:597    .text.sdio_data_config:0000000000000000 $t
+     /tmp/ccnQ335T.s:603    .text.sdio_data_config:0000000000000000 sdio_data_config
+     /tmp/ccnQ335T.s:651    .text.sdio_data_config:000000000000003c $d
+     /tmp/ccnQ335T.s:656    .text.sdio_data_transfer_config:0000000000000000 $t
+     /tmp/ccnQ335T.s:662    .text.sdio_data_transfer_config:0000000000000000 sdio_data_transfer_config
+     /tmp/ccnQ335T.s:695    .text.sdio_data_transfer_config:0000000000000014 $d
+     /tmp/ccnQ335T.s:700    .text.sdio_dsm_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:706    .text.sdio_dsm_enable:0000000000000000 sdio_dsm_enable
+     /tmp/ccnQ335T.s:724    .text.sdio_dsm_enable:0000000000000010 $d
+ARM GAS  /tmp/ccnQ335T.s 			page 42
+
+
+     /tmp/ccnQ335T.s:729    .text.sdio_dsm_disable:0000000000000000 $t
+     /tmp/ccnQ335T.s:735    .text.sdio_dsm_disable:0000000000000000 sdio_dsm_disable
+     /tmp/ccnQ335T.s:753    .text.sdio_dsm_disable:0000000000000010 $d
+     /tmp/ccnQ335T.s:758    .text.sdio_data_write:0000000000000000 $t
+     /tmp/ccnQ335T.s:764    .text.sdio_data_write:0000000000000000 sdio_data_write
+     /tmp/ccnQ335T.s:781    .text.sdio_data_write:0000000000000008 $d
+     /tmp/ccnQ335T.s:786    .text.sdio_data_read:0000000000000000 $t
+     /tmp/ccnQ335T.s:792    .text.sdio_data_read:0000000000000000 sdio_data_read
+     /tmp/ccnQ335T.s:808    .text.sdio_data_read:0000000000000008 $d
+     /tmp/ccnQ335T.s:813    .text.sdio_data_counter_get:0000000000000000 $t
+     /tmp/ccnQ335T.s:819    .text.sdio_data_counter_get:0000000000000000 sdio_data_counter_get
+     /tmp/ccnQ335T.s:835    .text.sdio_data_counter_get:0000000000000008 $d
+     /tmp/ccnQ335T.s:840    .text.sdio_fifo_counter_get:0000000000000000 $t
+     /tmp/ccnQ335T.s:846    .text.sdio_fifo_counter_get:0000000000000000 sdio_fifo_counter_get
+     /tmp/ccnQ335T.s:862    .text.sdio_fifo_counter_get:0000000000000008 $d
+     /tmp/ccnQ335T.s:867    .text.sdio_dma_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:873    .text.sdio_dma_enable:0000000000000000 sdio_dma_enable
+     /tmp/ccnQ335T.s:891    .text.sdio_dma_enable:0000000000000010 $d
+     /tmp/ccnQ335T.s:896    .text.sdio_dma_disable:0000000000000000 $t
+     /tmp/ccnQ335T.s:902    .text.sdio_dma_disable:0000000000000000 sdio_dma_disable
+     /tmp/ccnQ335T.s:920    .text.sdio_dma_disable:0000000000000010 $d
+     /tmp/ccnQ335T.s:925    .text.sdio_flag_get:0000000000000000 $t
+     /tmp/ccnQ335T.s:931    .text.sdio_flag_get:0000000000000000 sdio_flag_get
+     /tmp/ccnQ335T.s:958    .text.sdio_flag_get:0000000000000010 $d
+     /tmp/ccnQ335T.s:963    .text.sdio_flag_clear:0000000000000000 $t
+     /tmp/ccnQ335T.s:969    .text.sdio_flag_clear:0000000000000000 sdio_flag_clear
+     /tmp/ccnQ335T.s:986    .text.sdio_flag_clear:0000000000000008 $d
+     /tmp/ccnQ335T.s:991    .text.sdio_interrupt_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:997    .text.sdio_interrupt_enable:0000000000000000 sdio_interrupt_enable
+     /tmp/ccnQ335T.s:1016   .text.sdio_interrupt_enable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1021   .text.sdio_interrupt_disable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1027   .text.sdio_interrupt_disable:0000000000000000 sdio_interrupt_disable
+     /tmp/ccnQ335T.s:1046   .text.sdio_interrupt_disable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1051   .text.sdio_interrupt_flag_get:0000000000000000 $t
+     /tmp/ccnQ335T.s:1057   .text.sdio_interrupt_flag_get:0000000000000000 sdio_interrupt_flag_get
+     /tmp/ccnQ335T.s:1069   .text.sdio_interrupt_flag_clear:0000000000000000 $t
+     /tmp/ccnQ335T.s:1075   .text.sdio_interrupt_flag_clear:0000000000000000 sdio_interrupt_flag_clear
+     /tmp/ccnQ335T.s:1088   .text.sdio_interrupt_flag_clear:0000000000000008 $d
+     /tmp/ccnQ335T.s:1093   .text.sdio_readwait_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1099   .text.sdio_readwait_enable:0000000000000000 sdio_readwait_enable
+     /tmp/ccnQ335T.s:1117   .text.sdio_readwait_enable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1122   .text.sdio_readwait_disable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1128   .text.sdio_readwait_disable:0000000000000000 sdio_readwait_disable
+     /tmp/ccnQ335T.s:1146   .text.sdio_readwait_disable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1151   .text.sdio_stop_readwait_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1157   .text.sdio_stop_readwait_enable:0000000000000000 sdio_stop_readwait_enable
+     /tmp/ccnQ335T.s:1175   .text.sdio_stop_readwait_enable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1180   .text.sdio_stop_readwait_disable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1186   .text.sdio_stop_readwait_disable:0000000000000000 sdio_stop_readwait_disable
+     /tmp/ccnQ335T.s:1204   .text.sdio_stop_readwait_disable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1209   .text.sdio_readwait_type_set:0000000000000000 $t
+     /tmp/ccnQ335T.s:1215   .text.sdio_readwait_type_set:0000000000000000 sdio_readwait_type_set
+     /tmp/ccnQ335T.s:1242   .text.sdio_readwait_type_set:000000000000001c $d
+     /tmp/ccnQ335T.s:1247   .text.sdio_operation_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1253   .text.sdio_operation_enable:0000000000000000 sdio_operation_enable
+     /tmp/ccnQ335T.s:1271   .text.sdio_operation_enable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1276   .text.sdio_operation_disable:0000000000000000 $t
+ARM GAS  /tmp/ccnQ335T.s 			page 43
+
+
+     /tmp/ccnQ335T.s:1282   .text.sdio_operation_disable:0000000000000000 sdio_operation_disable
+     /tmp/ccnQ335T.s:1300   .text.sdio_operation_disable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1305   .text.sdio_suspend_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1311   .text.sdio_suspend_enable:0000000000000000 sdio_suspend_enable
+     /tmp/ccnQ335T.s:1329   .text.sdio_suspend_enable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1334   .text.sdio_suspend_disable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1340   .text.sdio_suspend_disable:0000000000000000 sdio_suspend_disable
+     /tmp/ccnQ335T.s:1358   .text.sdio_suspend_disable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1363   .text.sdio_ceata_command_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1369   .text.sdio_ceata_command_enable:0000000000000000 sdio_ceata_command_enable
+     /tmp/ccnQ335T.s:1387   .text.sdio_ceata_command_enable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1392   .text.sdio_ceata_command_disable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1398   .text.sdio_ceata_command_disable:0000000000000000 sdio_ceata_command_disable
+     /tmp/ccnQ335T.s:1416   .text.sdio_ceata_command_disable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1421   .text.sdio_ceata_interrupt_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1427   .text.sdio_ceata_interrupt_enable:0000000000000000 sdio_ceata_interrupt_enable
+     /tmp/ccnQ335T.s:1445   .text.sdio_ceata_interrupt_enable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1450   .text.sdio_ceata_interrupt_disable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1456   .text.sdio_ceata_interrupt_disable:0000000000000000 sdio_ceata_interrupt_disable
+     /tmp/ccnQ335T.s:1474   .text.sdio_ceata_interrupt_disable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1479   .text.sdio_ceata_command_completion_enable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1485   .text.sdio_ceata_command_completion_enable:0000000000000000 sdio_ceata_command_completion_enable
+     /tmp/ccnQ335T.s:1503   .text.sdio_ceata_command_completion_enable:0000000000000010 $d
+     /tmp/ccnQ335T.s:1508   .text.sdio_ceata_command_completion_disable:0000000000000000 $t
+     /tmp/ccnQ335T.s:1514   .text.sdio_ceata_command_completion_disable:0000000000000000 sdio_ceata_command_completion_disable
+     /tmp/ccnQ335T.s:1532   .text.sdio_ceata_command_completion_disable:0000000000000010 $d
+
+UNDEFINED SYMBOLS
+rcu_periph_reset_enable
+rcu_periph_reset_disable
