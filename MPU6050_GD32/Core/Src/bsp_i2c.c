@@ -17,7 +17,7 @@ void I2C_init()
 
     /* I2C config */
     rcu_periph_clock_enable(I2C_RCU);
-    i2c_clock_config(I2CX, 100000, I2C_DTCY_2);
+    i2c_clock_config(I2CX, 1000, I2C_DTCY_2);
     i2c_mode_addr_config(I2CX, I2C_I2CMODE_ENABLE, I2C_ADDFORMAT_7BITS, SLAVE_ADDRESS7);
     i2c_enable(I2CX);
     i2c_ack_config(I2CX, I2C_ACK_ENABLE);

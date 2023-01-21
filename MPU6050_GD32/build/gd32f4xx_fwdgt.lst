@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccWgByfb.s 			page 1
+ARM GAS  /tmp/ccdVa773.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccWgByfb.s 			page 1
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-ARM GAS  /tmp/ccWgByfb.s 			page 2
+ARM GAS  /tmp/ccdVa773.s 			page 2
 
 
   33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccWgByfb.s 			page 1
   57              		@ args = 0, pretend = 0, frame = 0
   58              		@ frame_needed = 0, uses_anonymous_args = 0
   59              		@ link register save eliminated.
-ARM GAS  /tmp/ccWgByfb.s 			page 3
+ARM GAS  /tmp/ccdVa773.s 			page 3
 
 
   59:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c ****     FWDGT_CTL = FWDGT_WRITEACCESS_DISABLE;
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccWgByfb.s 			page 1
  104              		.global	fwdgt_prescaler_value_config
  105              		.syntax unified
  106              		.thumb
-ARM GAS  /tmp/ccWgByfb.s 			page 4
+ARM GAS  /tmp/ccdVa773.s 			page 4
 
 
  107              		.thumb_func
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccWgByfb.s 			page 1
  134              		.loc 1 97 21 discriminator 2 view .LVU21
  135 000e 02F00102 		and	r2, r2, #1
  136              	.LVL3:
-ARM GAS  /tmp/ccWgByfb.s 			page 5
+ARM GAS  /tmp/ccdVa773.s 			page 5
 
 
  137              		.loc 1 98 29 is_stmt 1 discriminator 2 view .LVU22
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccWgByfb.s 			page 1
  179              		.thumb_func
  181              	fwdgt_reload_value_config:
  182              	.LVL9:
-ARM GAS  /tmp/ccWgByfb.s 			page 6
+ARM GAS  /tmp/ccdVa773.s 			page 6
 
 
  183              	.LFB120:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccWgByfb.s 			page 1
  217              	.L23:
  128:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c ****    
  129:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c ****     if ((uint32_t)RESET != flag_status){
-ARM GAS  /tmp/ccWgByfb.s 			page 7
+ARM GAS  /tmp/ccdVa773.s 			page 7
 
 
  130:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c ****         return ERROR;
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccWgByfb.s 			page 1
  145:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c **** {
  256              		.loc 1 145 1 is_stmt 1 view -0
  257              		.cfi_startproc
-ARM GAS  /tmp/ccWgByfb.s 			page 8
+ARM GAS  /tmp/ccdVa773.s 			page 8
 
 
  258              		@ args = 0, pretend = 0, frame = 0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccWgByfb.s 			page 1
  169:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c ****     /* enable write access to FWDGT_PSC,and FWDGT_RLD */
  170:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c ****     FWDGT_CTL = FWDGT_WRITEACCESS_ENABLE;
  291              		.loc 1 170 5 view .LVU63
-ARM GAS  /tmp/ccWgByfb.s 			page 9
+ARM GAS  /tmp/ccdVa773.s 			page 9
 
 
  292              		.loc 1 170 15 is_stmt 0 view .LVU64
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccWgByfb.s 			page 1
  182:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c **** 
  330              		.loc 1 182 15 is_stmt 0 view .LVU78
  331 001c 0C49     		ldr	r1, .L49+4
-ARM GAS  /tmp/ccWgByfb.s 			page 10
+ARM GAS  /tmp/ccdVa773.s 			page 10
 
 
  332              	.LVL25:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccWgByfb.s 			page 1
  199:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c ****     return SUCCESS;
  369              		.loc 1 199 5 is_stmt 1 view .LVU94
  370              		.loc 1 199 12 is_stmt 0 view .LVU95
-ARM GAS  /tmp/ccWgByfb.s 			page 11
+ARM GAS  /tmp/ccdVa773.s 			page 11
 
 
  371 003a 0120     		movs	r0, #1
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccWgByfb.s 			page 1
  210:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c **** */
  211:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c **** FlagStatus fwdgt_flag_get(uint16_t flag)
  212:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_fwdgt.c **** {
-ARM GAS  /tmp/ccWgByfb.s 			page 12
+ARM GAS  /tmp/ccdVa773.s 			page 12
 
 
  412              		.loc 1 212 1 is_stmt 1 view -0
@@ -696,34 +696,34 @@ ARM GAS  /tmp/ccWgByfb.s 			page 1
  439              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
  440              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  441              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
-ARM GAS  /tmp/ccWgByfb.s 			page 13
+ARM GAS  /tmp/ccdVa773.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_fwdgt.c
-     /tmp/ccWgByfb.s:19     .text.fwdgt_write_enable:0000000000000000 $t
-     /tmp/ccWgByfb.s:25     .text.fwdgt_write_enable:0000000000000000 fwdgt_write_enable
-     /tmp/ccWgByfb.s:42     .text.fwdgt_write_enable:000000000000000c $d
-     /tmp/ccWgByfb.s:47     .text.fwdgt_write_disable:0000000000000000 $t
-     /tmp/ccWgByfb.s:53     .text.fwdgt_write_disable:0000000000000000 fwdgt_write_disable
-     /tmp/ccWgByfb.s:70     .text.fwdgt_write_disable:0000000000000008 $d
-     /tmp/ccWgByfb.s:75     .text.fwdgt_enable:0000000000000000 $t
-     /tmp/ccWgByfb.s:81     .text.fwdgt_enable:0000000000000000 fwdgt_enable
-     /tmp/ccWgByfb.s:98     .text.fwdgt_enable:000000000000000c $d
-     /tmp/ccWgByfb.s:103    .text.fwdgt_prescaler_value_config:0000000000000000 $t
-     /tmp/ccWgByfb.s:109    .text.fwdgt_prescaler_value_config:0000000000000000 fwdgt_prescaler_value_config
-     /tmp/ccWgByfb.s:169    .text.fwdgt_prescaler_value_config:0000000000000028 $d
-     /tmp/ccWgByfb.s:175    .text.fwdgt_reload_value_config:0000000000000000 $t
-     /tmp/ccWgByfb.s:181    .text.fwdgt_reload_value_config:0000000000000000 fwdgt_reload_value_config
-     /tmp/ccWgByfb.s:242    .text.fwdgt_reload_value_config:000000000000002c $d
-     /tmp/ccWgByfb.s:248    .text.fwdgt_counter_reload:0000000000000000 $t
-     /tmp/ccWgByfb.s:254    .text.fwdgt_counter_reload:0000000000000000 fwdgt_counter_reload
-     /tmp/ccWgByfb.s:271    .text.fwdgt_counter_reload:000000000000000c $d
-     /tmp/ccWgByfb.s:276    .text.fwdgt_config:0000000000000000 $t
-     /tmp/ccWgByfb.s:282    .text.fwdgt_config:0000000000000000 fwdgt_config
-     /tmp/ccWgByfb.s:397    .text.fwdgt_config:000000000000004c $d
-     /tmp/ccWgByfb.s:403    .text.fwdgt_flag_get:0000000000000000 $t
-     /tmp/ccWgByfb.s:409    .text.fwdgt_flag_get:0000000000000000 fwdgt_flag_get
-     /tmp/ccWgByfb.s:433    .text.fwdgt_flag_get:0000000000000010 $d
+     /tmp/ccdVa773.s:19     .text.fwdgt_write_enable:0000000000000000 $t
+     /tmp/ccdVa773.s:25     .text.fwdgt_write_enable:0000000000000000 fwdgt_write_enable
+     /tmp/ccdVa773.s:42     .text.fwdgt_write_enable:000000000000000c $d
+     /tmp/ccdVa773.s:47     .text.fwdgt_write_disable:0000000000000000 $t
+     /tmp/ccdVa773.s:53     .text.fwdgt_write_disable:0000000000000000 fwdgt_write_disable
+     /tmp/ccdVa773.s:70     .text.fwdgt_write_disable:0000000000000008 $d
+     /tmp/ccdVa773.s:75     .text.fwdgt_enable:0000000000000000 $t
+     /tmp/ccdVa773.s:81     .text.fwdgt_enable:0000000000000000 fwdgt_enable
+     /tmp/ccdVa773.s:98     .text.fwdgt_enable:000000000000000c $d
+     /tmp/ccdVa773.s:103    .text.fwdgt_prescaler_value_config:0000000000000000 $t
+     /tmp/ccdVa773.s:109    .text.fwdgt_prescaler_value_config:0000000000000000 fwdgt_prescaler_value_config
+     /tmp/ccdVa773.s:169    .text.fwdgt_prescaler_value_config:0000000000000028 $d
+     /tmp/ccdVa773.s:175    .text.fwdgt_reload_value_config:0000000000000000 $t
+     /tmp/ccdVa773.s:181    .text.fwdgt_reload_value_config:0000000000000000 fwdgt_reload_value_config
+     /tmp/ccdVa773.s:242    .text.fwdgt_reload_value_config:000000000000002c $d
+     /tmp/ccdVa773.s:248    .text.fwdgt_counter_reload:0000000000000000 $t
+     /tmp/ccdVa773.s:254    .text.fwdgt_counter_reload:0000000000000000 fwdgt_counter_reload
+     /tmp/ccdVa773.s:271    .text.fwdgt_counter_reload:000000000000000c $d
+     /tmp/ccdVa773.s:276    .text.fwdgt_config:0000000000000000 $t
+     /tmp/ccdVa773.s:282    .text.fwdgt_config:0000000000000000 fwdgt_config
+     /tmp/ccdVa773.s:397    .text.fwdgt_config:000000000000004c $d
+     /tmp/ccdVa773.s:403    .text.fwdgt_flag_get:0000000000000000 $t
+     /tmp/ccdVa773.s:409    .text.fwdgt_flag_get:0000000000000000 fwdgt_flag_get
+     /tmp/ccdVa773.s:433    .text.fwdgt_flag_get:0000000000000010 $d
 
 NO UNDEFINED SYMBOLS

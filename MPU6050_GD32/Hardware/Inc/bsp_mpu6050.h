@@ -7,7 +7,7 @@
 #include "bsp_i2c.h"
 
 
-#define I2C_TIME_OUT     5000
+#define I2C_TIME_OUT    5000
 #define I2C_OK          1
 #define I2C_FAIL        0
 #define I2C_END         1
@@ -16,6 +16,7 @@ typedef enum {
     I2C_SEND_ADDRESS,
     I2C_CLEAR_ADDRESS_FLAG,
     I2C_TRANSMIT_DATA,
+    I2C_RECEIVE_DATA,
     I2C_STOP
 } i2c_process_enum;
 

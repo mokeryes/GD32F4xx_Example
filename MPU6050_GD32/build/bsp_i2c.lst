@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc17gxxV.s 			page 1
+ARM GAS  /tmp/ccw2utac.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc17gxxV.s 			page 1
   44              		.loc 1 6 5 view .LVU5
   45 0006 2846     		mov	r0, r5
   46 0008 FFF7FEFF 		bl	i2c_deinit
-ARM GAS  /tmp/cc17gxxV.s 			page 2
+ARM GAS  /tmp/ccw2utac.s 			page 2
 
 
   47              	.LVL0:
@@ -118,38 +118,38 @@ ARM GAS  /tmp/cc17gxxV.s 			page 1
   19:Core/Src/bsp_i2c.c ****     rcu_periph_clock_enable(I2C_RCU);
   92              		.loc 1 19 5 view .LVU13
   93 0058 41F21500 		movw	r0, #4117
-ARM GAS  /tmp/cc17gxxV.s 			page 3
+ARM GAS  /tmp/ccw2utac.s 			page 3
 
 
   94 005c FFF7FEFF 		bl	rcu_periph_clock_enable
   95              	.LVL8:
-  20:Core/Src/bsp_i2c.c ****     i2c_clock_config(I2CX, 100000, I2C_DTCY_2);
+  20:Core/Src/bsp_i2c.c ****     i2c_clock_config(I2CX, 1000, I2C_DTCY_2);
   96              		.loc 1 20 5 view .LVU14
   97 0060 2846     		mov	r0, r5
-  98 0062 0C49     		ldr	r1, .L2+8
-  99 0064 0022     		movs	r2, #0
- 100 0066 FFF7FEFF 		bl	i2c_clock_config
+  98 0062 0022     		movs	r2, #0
+  99 0064 4FF47A71 		mov	r1, #1000
+ 100 0068 FFF7FEFF 		bl	i2c_clock_config
  101              	.LVL9:
   21:Core/Src/bsp_i2c.c ****     i2c_mode_addr_config(I2CX, I2C_I2CMODE_ENABLE, I2C_ADDFORMAT_7BITS, SLAVE_ADDRESS7);
  102              		.loc 1 21 5 view .LVU15
- 103 006a 0022     		movs	r2, #0
- 104 006c D023     		movs	r3, #208
- 105 006e 1146     		mov	r1, r2
- 106 0070 2846     		mov	r0, r5
- 107 0072 FFF7FEFF 		bl	i2c_mode_addr_config
+ 103 006c 0022     		movs	r2, #0
+ 104 006e D023     		movs	r3, #208
+ 105 0070 1146     		mov	r1, r2
+ 106 0072 2846     		mov	r0, r5
+ 107 0074 FFF7FEFF 		bl	i2c_mode_addr_config
  108              	.LVL10:
   22:Core/Src/bsp_i2c.c ****     i2c_enable(I2CX);
  109              		.loc 1 22 5 view .LVU16
- 110 0076 2846     		mov	r0, r5
- 111 0078 FFF7FEFF 		bl	i2c_enable
+ 110 0078 2846     		mov	r0, r5
+ 111 007a FFF7FEFF 		bl	i2c_enable
  112              	.LVL11:
   23:Core/Src/bsp_i2c.c ****     i2c_ack_config(I2CX, I2C_ACK_ENABLE);
  113              		.loc 1 23 5 view .LVU17
- 114 007c 2846     		mov	r0, r5
- 115 007e 4FF48061 		mov	r1, #1024
+ 114 007e 2846     		mov	r0, r5
+ 115 0080 4FF48061 		mov	r1, #1024
   24:Core/Src/bsp_i2c.c **** }
  116              		.loc 1 24 1 is_stmt 0 view .LVU18
- 117 0082 BDE83840 		pop	{r3, r4, r5, lr}
+ 117 0084 BDE83840 		pop	{r3, r4, r5, lr}
  118              	.LCFI1:
  119              		.cfi_restore 14
  120              		.cfi_restore 5
@@ -158,97 +158,96 @@ ARM GAS  /tmp/cc17gxxV.s 			page 1
  123              		.cfi_def_cfa_offset 0
   23:Core/Src/bsp_i2c.c ****     i2c_ack_config(I2CX, I2C_ACK_ENABLE);
  124              		.loc 1 23 5 view .LVU19
- 125 0086 FFF7FEBF 		b	i2c_ack_config
+ 125 0088 FFF7FEBF 		b	i2c_ack_config
  126              	.LVL12:
  127              	.L3:
- 128 008a 00BF     		.align	2
+ 128              		.align	2
  129              	.L2:
  130 008c 00540040 		.word	1073763328
  131 0090 00040240 		.word	1073873920
- 132 0094 A0860100 		.word	100000
- 133              		.cfi_endproc
- 134              	.LFE116:
- 136              		.section	.text.i2c_bus_reset,"ax",%progbits
- 137              		.align	1
- 138              		.global	i2c_bus_reset
- 139              		.syntax unified
- 140              		.thumb
- 141              		.thumb_func
- 143              	i2c_bus_reset:
- 144              	.LFB117:
+ 132              		.cfi_endproc
+ 133              	.LFE116:
+ 135              		.section	.text.i2c_bus_reset,"ax",%progbits
+ 136              		.align	1
+ 137              		.global	i2c_bus_reset
+ 138              		.syntax unified
+ 139              		.thumb
+ 140              		.thumb_func
+ 142              	i2c_bus_reset:
+ 143              	.LFB117:
   25:Core/Src/bsp_i2c.c **** 
   26:Core/Src/bsp_i2c.c **** void i2c_bus_reset(void)
-ARM GAS  /tmp/cc17gxxV.s 			page 4
-
-
   27:Core/Src/bsp_i2c.c **** {
- 145              		.loc 1 27 1 is_stmt 1 view -0
- 146              		.cfi_startproc
- 147              		@ args = 0, pretend = 0, frame = 0
- 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccw2utac.s 			page 4
+
+
+ 144              		.loc 1 27 1 is_stmt 1 view -0
+ 145              		.cfi_startproc
+ 146              		@ args = 0, pretend = 0, frame = 0
+ 147              		@ frame_needed = 0, uses_anonymous_args = 0
   28:Core/Src/bsp_i2c.c ****     i2c_deinit(I2CX);
- 149              		.loc 1 28 5 view .LVU21
+ 148              		.loc 1 28 5 view .LVU21
   27:Core/Src/bsp_i2c.c ****     i2c_deinit(I2CX);
- 150              		.loc 1 27 1 is_stmt 0 view .LVU22
- 151 0000 38B5     		push	{r3, r4, r5, lr}
- 152              	.LCFI2:
- 153              		.cfi_def_cfa_offset 16
- 154              		.cfi_offset 3, -16
- 155              		.cfi_offset 4, -12
- 156              		.cfi_offset 5, -8
- 157              		.cfi_offset 14, -4
+ 149              		.loc 1 27 1 is_stmt 0 view .LVU22
+ 150 0000 38B5     		push	{r3, r4, r5, lr}
+ 151              	.LCFI2:
+ 152              		.cfi_def_cfa_offset 16
+ 153              		.cfi_offset 3, -16
+ 154              		.cfi_offset 4, -12
+ 155              		.cfi_offset 5, -8
+ 156              		.cfi_offset 14, -4
   29:Core/Src/bsp_i2c.c ****     /* configure SDA/SCL for GPIO */
   30:Core/Src/bsp_i2c.c ****     GPIO_BC(I2C_GPIO_PORT) |= I2C_SCL_PIN;
- 158              		.loc 1 30 5 view .LVU23
- 159 0002 214C     		ldr	r4, .L5
+ 157              		.loc 1 30 5 view .LVU23
+ 158 0002 214C     		ldr	r4, .L5
   28:Core/Src/bsp_i2c.c ****     /* configure SDA/SCL for GPIO */
- 160              		.loc 1 28 5 view .LVU24
- 161 0004 2148     		ldr	r0, .L5+4
+ 159              		.loc 1 28 5 view .LVU24
+ 160 0004 2148     		ldr	r0, .L5+4
   31:Core/Src/bsp_i2c.c ****     GPIO_BC(I2C_GPIO_PORT) |= I2C_SDA_PIN;
   32:Core/Src/bsp_i2c.c ****     gpio_output_options_set(I2C_GPIO_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, I2C_SCL_PIN);
- 162              		.loc 1 32 5 view .LVU25
- 163 0006 224D     		ldr	r5, .L5+8
+ 161              		.loc 1 32 5 view .LVU25
+ 162 0006 224D     		ldr	r5, .L5+8
   28:Core/Src/bsp_i2c.c ****     /* configure SDA/SCL for GPIO */
- 164              		.loc 1 28 5 view .LVU26
- 165 0008 FFF7FEFF 		bl	i2c_deinit
- 166              	.LVL13:
+ 163              		.loc 1 28 5 view .LVU26
+ 164 0008 FFF7FEFF 		bl	i2c_deinit
+ 165              	.LVL13:
   30:Core/Src/bsp_i2c.c ****     GPIO_BC(I2C_GPIO_PORT) |= I2C_SDA_PIN;
- 167              		.loc 1 30 5 is_stmt 1 view .LVU27
- 168 000c D4F82834 		ldr	r3, [r4, #1064]
+ 166              		.loc 1 30 5 is_stmt 1 view .LVU27
+ 167 000c D4F82834 		ldr	r3, [r4, #1064]
   30:Core/Src/bsp_i2c.c ****     GPIO_BC(I2C_GPIO_PORT) |= I2C_SDA_PIN;
- 169              		.loc 1 30 28 is_stmt 0 view .LVU28
- 170 0010 43F04003 		orr	r3, r3, #64
- 171 0014 C4F82834 		str	r3, [r4, #1064]
+ 168              		.loc 1 30 28 is_stmt 0 view .LVU28
+ 169 0010 43F04003 		orr	r3, r3, #64
+ 170 0014 C4F82834 		str	r3, [r4, #1064]
   31:Core/Src/bsp_i2c.c ****     GPIO_BC(I2C_GPIO_PORT) |= I2C_SDA_PIN;
- 172              		.loc 1 31 5 is_stmt 1 view .LVU29
- 173 0018 D4F82834 		ldr	r3, [r4, #1064]
+ 171              		.loc 1 31 5 is_stmt 1 view .LVU29
+ 172 0018 D4F82834 		ldr	r3, [r4, #1064]
   31:Core/Src/bsp_i2c.c ****     GPIO_BC(I2C_GPIO_PORT) |= I2C_SDA_PIN;
- 174              		.loc 1 31 28 is_stmt 0 view .LVU30
- 175 001c 43F08003 		orr	r3, r3, #128
- 176 0020 C4F82834 		str	r3, [r4, #1064]
- 177              		.loc 1 32 5 is_stmt 1 view .LVU31
- 178 0024 2846     		mov	r0, r5
- 179 0026 4023     		movs	r3, #64
- 180 0028 0222     		movs	r2, #2
- 181 002a 0021     		movs	r1, #0
- 182 002c FFF7FEFF 		bl	gpio_output_options_set
- 183              	.LVL14:
+ 173              		.loc 1 31 28 is_stmt 0 view .LVU30
+ 174 001c 43F08003 		orr	r3, r3, #128
+ 175 0020 C4F82834 		str	r3, [r4, #1064]
+ 176              		.loc 1 32 5 is_stmt 1 view .LVU31
+ 177 0024 2846     		mov	r0, r5
+ 178 0026 4023     		movs	r3, #64
+ 179 0028 0222     		movs	r2, #2
+ 180 002a 0021     		movs	r1, #0
+ 181 002c FFF7FEFF 		bl	gpio_output_options_set
+ 182              	.LVL14:
   33:Core/Src/bsp_i2c.c ****     gpio_output_options_set(I2C_GPIO_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, I2C_SDA_PIN);
- 184              		.loc 1 33 5 view .LVU32
- 185 0030 8023     		movs	r3, #128
- 186 0032 0222     		movs	r2, #2
- 187 0034 0021     		movs	r1, #0
-ARM GAS  /tmp/cc17gxxV.s 			page 5
+ 183              		.loc 1 33 5 view .LVU32
+ 184 0030 8023     		movs	r3, #128
+ 185 0032 0222     		movs	r2, #2
+ 186 0034 0021     		movs	r1, #0
+ 187 0036 2846     		mov	r0, r5
+ARM GAS  /tmp/ccw2utac.s 			page 5
 
 
- 188 0036 2846     		mov	r0, r5
- 189 0038 FFF7FEFF 		bl	gpio_output_options_set
- 190              	.LVL15:
+ 188 0038 FFF7FEFF 		bl	gpio_output_options_set
+ 189              	.LVL15:
   34:Core/Src/bsp_i2c.c ****     __NOP();
- 191              		.loc 1 34 5 view .LVU33
- 192              	.LBB22:
- 193              	.LBI22:
- 194              		.file 2 "Drivers/CMSIS/core_cmInstr.h"
+ 190              		.loc 1 34 5 view .LVU33
+ 191              	.LBB22:
+ 192              	.LBI22:
+ 193              		.file 2 "Drivers/CMSIS/core_cmInstr.h"
    1:Drivers/CMSIS/core_cmInstr.h **** /**************************************************************************//**
    2:Drivers/CMSIS/core_cmInstr.h ****  * @file     core_cmInstr.h
    3:Drivers/CMSIS/core_cmInstr.h ****  * @brief    CMSIS Cortex-M Core Instruction Access Header File
@@ -298,10 +297,10 @@ ARM GAS  /tmp/cc17gxxV.s 			page 1
   47:Drivers/CMSIS/core_cmInstr.h **** 
   48:Drivers/CMSIS/core_cmInstr.h **** 
   49:Drivers/CMSIS/core_cmInstr.h **** /** \brief  Wait For Interrupt
-ARM GAS  /tmp/cc17gxxV.s 			page 6
-
-
   50:Drivers/CMSIS/core_cmInstr.h **** 
+ARM GAS  /tmp/ccw2utac.s 			page 6
+
+
   51:Drivers/CMSIS/core_cmInstr.h ****     Wait For Interrupt is a hint instruction that suspends execution
   52:Drivers/CMSIS/core_cmInstr.h ****     until one of a number of events occurs.
   53:Drivers/CMSIS/core_cmInstr.h ****  */
@@ -358,10 +357,10 @@ ARM GAS  /tmp/cc17gxxV.s 			page 1
  104:Drivers/CMSIS/core_cmInstr.h **** #define __REV                             __rev
  105:Drivers/CMSIS/core_cmInstr.h **** 
  106:Drivers/CMSIS/core_cmInstr.h **** 
-ARM GAS  /tmp/cc17gxxV.s 			page 7
-
-
  107:Drivers/CMSIS/core_cmInstr.h **** /** \brief  Reverse byte order (16 bit)
+ARM GAS  /tmp/ccw2utac.s 			page 7
+
+
  108:Drivers/CMSIS/core_cmInstr.h **** 
  109:Drivers/CMSIS/core_cmInstr.h ****     This function reverses the byte order in two unsigned short values.
  110:Drivers/CMSIS/core_cmInstr.h **** 
@@ -418,10 +417,10 @@ ARM GAS  /tmp/cc17gxxV.s 			page 1
  161:Drivers/CMSIS/core_cmInstr.h **** 
  162:Drivers/CMSIS/core_cmInstr.h ****     \param [in]    ptr  Pointer to data
  163:Drivers/CMSIS/core_cmInstr.h ****     \return             value of type uint8_t at (*ptr)
-ARM GAS  /tmp/cc17gxxV.s 			page 8
-
-
  164:Drivers/CMSIS/core_cmInstr.h ****  */
+ARM GAS  /tmp/ccw2utac.s 			page 8
+
+
  165:Drivers/CMSIS/core_cmInstr.h **** #define __LDREXB(ptr)                     ((uint8_t ) __ldrex(ptr))
  166:Drivers/CMSIS/core_cmInstr.h **** 
  167:Drivers/CMSIS/core_cmInstr.h **** 
@@ -478,10 +477,10 @@ ARM GAS  /tmp/cc17gxxV.s 			page 1
  218:Drivers/CMSIS/core_cmInstr.h ****     \return          0  Function succeeded
  219:Drivers/CMSIS/core_cmInstr.h ****     \return          1  Function failed
  220:Drivers/CMSIS/core_cmInstr.h ****  */
-ARM GAS  /tmp/cc17gxxV.s 			page 9
-
-
  221:Drivers/CMSIS/core_cmInstr.h **** #define __STREXW(value, ptr)              __strex(value, ptr)
+ARM GAS  /tmp/ccw2utac.s 			page 9
+
+
  222:Drivers/CMSIS/core_cmInstr.h **** 
  223:Drivers/CMSIS/core_cmInstr.h **** 
  224:Drivers/CMSIS/core_cmInstr.h **** /** \brief  Remove the exclusive lock
@@ -538,10 +537,10 @@ ARM GAS  /tmp/cc17gxxV.s 			page 1
  275:Drivers/CMSIS/core_cmInstr.h **** 
  276:Drivers/CMSIS/core_cmInstr.h **** #include <cmsis_ccs.h>
  277:Drivers/CMSIS/core_cmInstr.h **** 
-ARM GAS  /tmp/cc17gxxV.s 			page 10
-
-
  278:Drivers/CMSIS/core_cmInstr.h **** 
+ARM GAS  /tmp/ccw2utac.s 			page 10
+
+
  279:Drivers/CMSIS/core_cmInstr.h **** #elif defined ( __GNUC__ ) /*------------------ GNU Compiler ---------------------*/
  280:Drivers/CMSIS/core_cmInstr.h **** /* GNU gcc specific functions */
  281:Drivers/CMSIS/core_cmInstr.h **** 
@@ -550,244 +549,244 @@ ARM GAS  /tmp/cc17gxxV.s 			page 1
  284:Drivers/CMSIS/core_cmInstr.h ****     No Operation does nothing. This instruction can be used for code alignment purposes.
  285:Drivers/CMSIS/core_cmInstr.h ****  */
  286:Drivers/CMSIS/core_cmInstr.h **** __attribute__( ( always_inline ) ) __STATIC_INLINE void __NOP(void)
- 195              		.loc 2 286 57 view .LVU34
- 196              	.LBB23:
+ 194              		.loc 2 286 57 view .LVU34
+ 195              	.LBB23:
  287:Drivers/CMSIS/core_cmInstr.h **** {
  288:Drivers/CMSIS/core_cmInstr.h ****   __ASM volatile ("nop");
- 197              		.loc 2 288 3 view .LVU35
- 198              		.syntax unified
- 199              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
- 200 003c 00BF     		nop
- 201              	@ 0 "" 2
- 202              		.thumb
- 203              		.syntax unified
- 204              	.LBE23:
- 205              	.LBE22:
+ 196              		.loc 2 288 3 view .LVU35
+ 197              		.syntax unified
+ 198              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
+ 199 003c 00BF     		nop
+ 200              	@ 0 "" 2
+ 201              		.thumb
+ 202              		.syntax unified
+ 203              	.LBE23:
+ 204              	.LBE22:
   35:Core/Src/bsp_i2c.c ****     __NOP();
- 206              		.loc 1 35 5 view .LVU36
- 207              	.LBB24:
- 208              	.LBI24:
+ 205              		.loc 1 35 5 view .LVU36
+ 206              	.LBB24:
+ 207              	.LBI24:
  286:Drivers/CMSIS/core_cmInstr.h **** {
- 209              		.loc 2 286 57 view .LVU37
- 210              	.LBB25:
- 211              		.loc 2 288 3 view .LVU38
- 212              		.syntax unified
- 213              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
- 214 003e 00BF     		nop
- 215              	@ 0 "" 2
- 216              		.thumb
- 217              		.syntax unified
- 218              	.LBE25:
- 219              	.LBE24:
+ 208              		.loc 2 286 57 view .LVU37
+ 209              	.LBB25:
+ 210              		.loc 2 288 3 view .LVU38
+ 211              		.syntax unified
+ 212              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
+ 213 003e 00BF     		nop
+ 214              	@ 0 "" 2
+ 215              		.thumb
+ 216              		.syntax unified
+ 217              	.LBE25:
+ 218              	.LBE24:
   36:Core/Src/bsp_i2c.c ****     __NOP();
- 220              		.loc 1 36 5 view .LVU39
- 221              	.LBB26:
- 222              	.LBI26:
+ 219              		.loc 1 36 5 view .LVU39
+ 220              	.LBB26:
+ 221              	.LBI26:
  286:Drivers/CMSIS/core_cmInstr.h **** {
- 223              		.loc 2 286 57 view .LVU40
- 224              	.LBB27:
- 225              		.loc 2 288 3 view .LVU41
- 226              		.syntax unified
- 227              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
- 228 0040 00BF     		nop
- 229              	@ 0 "" 2
- 230              		.thumb
- 231              		.syntax unified
- 232              	.LBE27:
- 233              	.LBE26:
+ 222              		.loc 2 286 57 view .LVU40
+ 223              	.LBB27:
+ 224              		.loc 2 288 3 view .LVU41
+ 225              		.syntax unified
+ 226              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
+ 227 0040 00BF     		nop
+ 228              	@ 0 "" 2
+ 229              		.thumb
+ 230              		.syntax unified
+ 231              	.LBE27:
+ 232              	.LBE26:
   37:Core/Src/bsp_i2c.c ****     __NOP();
- 234              		.loc 1 37 5 view .LVU42
- 235              	.LBB28:
-ARM GAS  /tmp/cc17gxxV.s 			page 11
+ 233              		.loc 1 37 5 view .LVU42
+ 234              	.LBB28:
+ 235              	.LBI28:
+ARM GAS  /tmp/ccw2utac.s 			page 11
 
 
- 236              	.LBI28:
  286:Drivers/CMSIS/core_cmInstr.h **** {
- 237              		.loc 2 286 57 view .LVU43
- 238              	.LBB29:
- 239              		.loc 2 288 3 view .LVU44
- 240              		.syntax unified
- 241              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
- 242 0042 00BF     		nop
- 243              	@ 0 "" 2
- 244              		.thumb
- 245              		.syntax unified
- 246              	.LBE29:
- 247              	.LBE28:
+ 236              		.loc 2 286 57 view .LVU43
+ 237              	.LBB29:
+ 238              		.loc 2 288 3 view .LVU44
+ 239              		.syntax unified
+ 240              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
+ 241 0042 00BF     		nop
+ 242              	@ 0 "" 2
+ 243              		.thumb
+ 244              		.syntax unified
+ 245              	.LBE29:
+ 246              	.LBE28:
   38:Core/Src/bsp_i2c.c ****     __NOP();
- 248              		.loc 1 38 5 view .LVU45
- 249              	.LBB30:
- 250              	.LBI30:
+ 247              		.loc 1 38 5 view .LVU45
+ 248              	.LBB30:
+ 249              	.LBI30:
  286:Drivers/CMSIS/core_cmInstr.h **** {
- 251              		.loc 2 286 57 view .LVU46
- 252              	.LBB31:
- 253              		.loc 2 288 3 view .LVU47
- 254              		.syntax unified
- 255              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
- 256 0044 00BF     		nop
- 257              	@ 0 "" 2
- 258              		.thumb
- 259              		.syntax unified
- 260              	.LBE31:
- 261              	.LBE30:
+ 250              		.loc 2 286 57 view .LVU46
+ 251              	.LBB31:
+ 252              		.loc 2 288 3 view .LVU47
+ 253              		.syntax unified
+ 254              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
+ 255 0044 00BF     		nop
+ 256              	@ 0 "" 2
+ 257              		.thumb
+ 258              		.syntax unified
+ 259              	.LBE31:
+ 260              	.LBE30:
   39:Core/Src/bsp_i2c.c ****     GPIO_BOP(I2C_GPIO_PORT) |= I2C_SCL_PIN;
- 262              		.loc 1 39 5 view .LVU48
- 263 0046 D4F81834 		ldr	r3, [r4, #1048]
- 264              		.loc 1 39 29 is_stmt 0 view .LVU49
- 265 004a 43F04003 		orr	r3, r3, #64
- 266 004e C4F81834 		str	r3, [r4, #1048]
+ 261              		.loc 1 39 5 view .LVU48
+ 262 0046 D4F81834 		ldr	r3, [r4, #1048]
+ 263              		.loc 1 39 29 is_stmt 0 view .LVU49
+ 264 004a 43F04003 		orr	r3, r3, #64
+ 265 004e C4F81834 		str	r3, [r4, #1048]
   40:Core/Src/bsp_i2c.c ****     __NOP();
- 267              		.loc 1 40 5 is_stmt 1 view .LVU50
- 268              	.LBB32:
- 269              	.LBI32:
+ 266              		.loc 1 40 5 is_stmt 1 view .LVU50
+ 267              	.LBB32:
+ 268              	.LBI32:
  286:Drivers/CMSIS/core_cmInstr.h **** {
- 270              		.loc 2 286 57 view .LVU51
- 271              	.LBB33:
- 272              		.loc 2 288 3 view .LVU52
- 273              		.syntax unified
- 274              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
- 275 0052 00BF     		nop
- 276              	@ 0 "" 2
- 277              		.thumb
- 278              		.syntax unified
- 279              	.LBE33:
- 280              	.LBE32:
+ 269              		.loc 2 286 57 view .LVU51
+ 270              	.LBB33:
+ 271              		.loc 2 288 3 view .LVU52
+ 272              		.syntax unified
+ 273              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
+ 274 0052 00BF     		nop
+ 275              	@ 0 "" 2
+ 276              		.thumb
+ 277              		.syntax unified
+ 278              	.LBE33:
+ 279              	.LBE32:
   41:Core/Src/bsp_i2c.c ****     __NOP();
- 281              		.loc 1 41 5 view .LVU53
- 282              	.LBB34:
- 283              	.LBI34:
+ 280              		.loc 1 41 5 view .LVU53
+ 281              	.LBB34:
+ 282              	.LBI34:
  286:Drivers/CMSIS/core_cmInstr.h **** {
- 284              		.loc 2 286 57 view .LVU54
-ARM GAS  /tmp/cc17gxxV.s 			page 12
+ 283              		.loc 2 286 57 view .LVU54
+ 284              	.LBB35:
+ARM GAS  /tmp/ccw2utac.s 			page 12
 
 
- 285              	.LBB35:
- 286              		.loc 2 288 3 view .LVU55
- 287              		.syntax unified
- 288              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
- 289 0054 00BF     		nop
- 290              	@ 0 "" 2
- 291              		.thumb
- 292              		.syntax unified
- 293              	.LBE35:
- 294              	.LBE34:
+ 285              		.loc 2 288 3 view .LVU55
+ 286              		.syntax unified
+ 287              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
+ 288 0054 00BF     		nop
+ 289              	@ 0 "" 2
+ 290              		.thumb
+ 291              		.syntax unified
+ 292              	.LBE35:
+ 293              	.LBE34:
   42:Core/Src/bsp_i2c.c ****     __NOP();
- 295              		.loc 1 42 5 view .LVU56
- 296              	.LBB36:
- 297              	.LBI36:
+ 294              		.loc 1 42 5 view .LVU56
+ 295              	.LBB36:
+ 296              	.LBI36:
  286:Drivers/CMSIS/core_cmInstr.h **** {
- 298              		.loc 2 286 57 view .LVU57
- 299              	.LBB37:
- 300              		.loc 2 288 3 view .LVU58
- 301              		.syntax unified
- 302              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
- 303 0056 00BF     		nop
- 304              	@ 0 "" 2
- 305              		.thumb
- 306              		.syntax unified
- 307              	.LBE37:
- 308              	.LBE36:
+ 297              		.loc 2 286 57 view .LVU57
+ 298              	.LBB37:
+ 299              		.loc 2 288 3 view .LVU58
+ 300              		.syntax unified
+ 301              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
+ 302 0056 00BF     		nop
+ 303              	@ 0 "" 2
+ 304              		.thumb
+ 305              		.syntax unified
+ 306              	.LBE37:
+ 307              	.LBE36:
   43:Core/Src/bsp_i2c.c ****     __NOP();
- 309              		.loc 1 43 5 view .LVU59
- 310              	.LBB38:
- 311              	.LBI38:
+ 308              		.loc 1 43 5 view .LVU59
+ 309              	.LBB38:
+ 310              	.LBI38:
  286:Drivers/CMSIS/core_cmInstr.h **** {
- 312              		.loc 2 286 57 view .LVU60
- 313              	.LBB39:
- 314              		.loc 2 288 3 view .LVU61
- 315              		.syntax unified
- 316              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
- 317 0058 00BF     		nop
- 318              	@ 0 "" 2
- 319              		.thumb
- 320              		.syntax unified
- 321              	.LBE39:
- 322              	.LBE38:
+ 311              		.loc 2 286 57 view .LVU60
+ 312              	.LBB39:
+ 313              		.loc 2 288 3 view .LVU61
+ 314              		.syntax unified
+ 315              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
+ 316 0058 00BF     		nop
+ 317              	@ 0 "" 2
+ 318              		.thumb
+ 319              		.syntax unified
+ 320              	.LBE39:
+ 321              	.LBE38:
   44:Core/Src/bsp_i2c.c ****     __NOP();
- 323              		.loc 1 44 5 view .LVU62
- 324              	.LBB40:
- 325              	.LBI40:
+ 322              		.loc 1 44 5 view .LVU62
+ 323              	.LBB40:
+ 324              	.LBI40:
  286:Drivers/CMSIS/core_cmInstr.h **** {
- 326              		.loc 2 286 57 view .LVU63
- 327              	.LBB41:
- 328              		.loc 2 288 3 view .LVU64
- 329              		.syntax unified
- 330              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
- 331 005a 00BF     		nop
- 332              	@ 0 "" 2
- 333              		.thumb
- 334              		.syntax unified
- 335              	.LBE41:
-ARM GAS  /tmp/cc17gxxV.s 			page 13
+ 325              		.loc 2 286 57 view .LVU63
+ 326              	.LBB41:
+ 327              		.loc 2 288 3 view .LVU64
+ 328              		.syntax unified
+ 329              	@ 288 "Drivers/CMSIS/core_cmInstr.h" 1
+ 330 005a 00BF     		nop
+ 331              	@ 0 "" 2
+ 332              		.thumb
+ 333              		.syntax unified
+ 334              	.LBE41:
+ 335              	.LBE40:
+ARM GAS  /tmp/ccw2utac.s 			page 13
 
 
- 336              	.LBE40:
   45:Core/Src/bsp_i2c.c ****     GPIO_BOP(I2C_GPIO_PORT) |= I2C_SDA_PIN;
- 337              		.loc 1 45 5 view .LVU65
- 338 005c D4F81834 		ldr	r3, [r4, #1048]
- 339              		.loc 1 45 29 is_stmt 0 view .LVU66
- 340 0060 43F08003 		orr	r3, r3, #128
- 341 0064 C4F81834 		str	r3, [r4, #1048]
+ 336              		.loc 1 45 5 view .LVU65
+ 337 005c D4F81834 		ldr	r3, [r4, #1048]
+ 338              		.loc 1 45 29 is_stmt 0 view .LVU66
+ 339 0060 43F08003 		orr	r3, r3, #128
+ 340 0064 C4F81834 		str	r3, [r4, #1048]
   46:Core/Src/bsp_i2c.c ****     /* connect I2C_SCL_PIN to I2C_SCL */
   47:Core/Src/bsp_i2c.c ****     /* connect I2C_SDA_PIN to I2C_SDA */
   48:Core/Src/bsp_i2c.c ****     gpio_output_options_set(I2C_GPIO_PORT, GPIO_OTYPE_OD, GPIO_OSPEED_50MHZ, I2C_SCL_PIN);
- 342              		.loc 1 48 5 is_stmt 1 view .LVU67
- 343 0068 2846     		mov	r0, r5
- 344 006a 4023     		movs	r3, #64
- 345 006c 0222     		movs	r2, #2
- 346 006e 0121     		movs	r1, #1
- 347 0070 FFF7FEFF 		bl	gpio_output_options_set
- 348              	.LVL16:
+ 341              		.loc 1 48 5 is_stmt 1 view .LVU67
+ 342 0068 2846     		mov	r0, r5
+ 343 006a 4023     		movs	r3, #64
+ 344 006c 0222     		movs	r2, #2
+ 345 006e 0121     		movs	r1, #1
+ 346 0070 FFF7FEFF 		bl	gpio_output_options_set
+ 347              	.LVL16:
   49:Core/Src/bsp_i2c.c ****     gpio_output_options_set(I2C_GPIO_PORT, GPIO_OTYPE_OD, GPIO_OSPEED_50MHZ, I2C_SDA_PIN);
- 349              		.loc 1 49 5 view .LVU68
- 350 0074 8023     		movs	r3, #128
- 351 0076 2846     		mov	r0, r5
- 352 0078 0222     		movs	r2, #2
- 353 007a 0121     		movs	r1, #1
- 354 007c FFF7FEFF 		bl	gpio_output_options_set
- 355              	.LVL17:
+ 348              		.loc 1 49 5 view .LVU68
+ 349 0074 8023     		movs	r3, #128
+ 350 0076 2846     		mov	r0, r5
+ 351 0078 0222     		movs	r2, #2
+ 352 007a 0121     		movs	r1, #1
+ 353 007c FFF7FEFF 		bl	gpio_output_options_set
+ 354              	.LVL17:
   50:Core/Src/bsp_i2c.c ****     /* configure the I2CX interface */
   51:Core/Src/bsp_i2c.c ****     I2C_init();
- 356              		.loc 1 51 5 view .LVU69
+ 355              		.loc 1 51 5 view .LVU69
   52:Core/Src/bsp_i2c.c **** }...
- 357              		.loc 1 52 1 is_stmt 0 view .LVU70
- 358 0080 BDE83840 		pop	{r3, r4, r5, lr}
- 359              	.LCFI3:
- 360              		.cfi_restore 14
- 361              		.cfi_restore 5
- 362              		.cfi_restore 4
- 363              		.cfi_restore 3
- 364              		.cfi_def_cfa_offset 0
+ 356              		.loc 1 52 1 is_stmt 0 view .LVU70
+ 357 0080 BDE83840 		pop	{r3, r4, r5, lr}
+ 358              	.LCFI3:
+ 359              		.cfi_restore 14
+ 360              		.cfi_restore 5
+ 361              		.cfi_restore 4
+ 362              		.cfi_restore 3
+ 363              		.cfi_def_cfa_offset 0
   51:Core/Src/bsp_i2c.c ****     I2C_init();
- 365              		.loc 1 51 5 view .LVU71
- 366 0084 FFF7FEBF 		b	I2C_init
- 367              	.LVL18:
- 368              	.L6:
- 369              		.align	2
- 370              	.L5:
- 371 0088 00000240 		.word	1073872896
- 372 008c 00540040 		.word	1073763328
- 373 0090 00040240 		.word	1073873920
- 374              		.cfi_endproc
- 375              	.LFE117:
- 377              		.text
- 378              	.Letext0:
- 379              		.file 3 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 380              		.file 4 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 381              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
- 382              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_i2c.h"
- 383              		.file 7 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_gpio.h"
-ARM GAS  /tmp/cc17gxxV.s 			page 14
+ 364              		.loc 1 51 5 view .LVU71
+ 365 0084 FFF7FEBF 		b	I2C_init
+ 366              	.LVL18:
+ 367              	.L6:
+ 368              		.align	2
+ 369              	.L5:
+ 370 0088 00000240 		.word	1073872896
+ 371 008c 00540040 		.word	1073763328
+ 372 0090 00040240 		.word	1073873920
+ 373              		.cfi_endproc
+ 374              	.LFE117:
+ 376              		.text
+ 377              	.Letext0:
+ 378              		.file 3 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 379              		.file 4 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 380              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
+ 381              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_i2c.h"
+ 382              		.file 7 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_gpio.h"
+ARM GAS  /tmp/ccw2utac.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 bsp_i2c.c
-     /tmp/cc17gxxV.s:19     .text.I2C_init:0000000000000000 $t
-     /tmp/cc17gxxV.s:25     .text.I2C_init:0000000000000000 I2C_init
-     /tmp/cc17gxxV.s:130    .text.I2C_init:000000000000008c $d
-     /tmp/cc17gxxV.s:137    .text.i2c_bus_reset:0000000000000000 $t
-     /tmp/cc17gxxV.s:143    .text.i2c_bus_reset:0000000000000000 i2c_bus_reset
-     /tmp/cc17gxxV.s:371    .text.i2c_bus_reset:0000000000000088 $d
+     /tmp/ccw2utac.s:19     .text.I2C_init:0000000000000000 $t
+     /tmp/ccw2utac.s:25     .text.I2C_init:0000000000000000 I2C_init
+     /tmp/ccw2utac.s:130    .text.I2C_init:000000000000008c $d
+     /tmp/ccw2utac.s:136    .text.i2c_bus_reset:0000000000000000 $t
+     /tmp/ccw2utac.s:142    .text.i2c_bus_reset:0000000000000000 i2c_bus_reset
+     /tmp/ccw2utac.s:370    .text.i2c_bus_reset:0000000000000088 $d
 
 UNDEFINED SYMBOLS
 i2c_deinit

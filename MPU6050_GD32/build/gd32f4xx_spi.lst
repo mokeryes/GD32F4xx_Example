@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccHUNSdN.s 			page 1
+ARM GAS  /tmp/ccsBEoGL.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
   29:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-ARM GAS  /tmp/ccHUNSdN.s 			page 2
+ARM GAS  /tmp/ccsBEoGL.s 			page 2
 
 
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
   59:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     case SPI0:
   60:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****         /* reset SPI0 */
   61:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****         rcu_periph_reset_enable(RCU_SPI0RST);
-ARM GAS  /tmp/ccHUNSdN.s 			page 3
+ARM GAS  /tmp/ccsBEoGL.s 			page 3
 
 
   62:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****         rcu_periph_reset_disable(RCU_SPI0RST);
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
   73              	.LVL3:
   74              	.L5:
   61:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****         rcu_periph_reset_disable(RCU_SPI0RST);
-ARM GAS  /tmp/ccHUNSdN.s 			page 4
+ARM GAS  /tmp/ccsBEoGL.s 			page 4
 
 
   75              		.loc 1 61 9 view .LVU9
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  119              		.loc 1 76 9 view .LVU20
  120 0070 40F60D10 		movw	r0, #2317
  121              	.LVL13:
-ARM GAS  /tmp/ccHUNSdN.s 			page 5
+ARM GAS  /tmp/ccsBEoGL.s 			page 5
 
 
   76:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****         rcu_periph_reset_disable(RCU_SPI3RST);
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  162              		.loc 1 103 5 view .LVU27
  163              		.loc 1 103 38 is_stmt 0 view .LVU28
  164 0000 0023     		movs	r3, #0
-ARM GAS  /tmp/ccHUNSdN.s 			page 6
+ARM GAS  /tmp/ccsBEoGL.s 			page 6
 
 
  104:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     spi_struct->trans_mode           = SPI_TRANSMODE_FULLDUPLEX;
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  130:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     uint32_t reg = 0U;
  195              		.loc 1 130 5 view .LVU38
  131:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     reg = SPI_CTL0(spi_periph);
-ARM GAS  /tmp/ccHUNSdN.s 			page 7
+ARM GAS  /tmp/ccsBEoGL.s 			page 7
 
 
  196              		.loc 1 131 5 view .LVU39
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  227              		.loc 1 139 5 view .LVU49
  141:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     /* select SPI LSB or MSB */
  228              		.loc 1 141 5 view .LVU50
-ARM GAS  /tmp/ccHUNSdN.s 			page 8
+ARM GAS  /tmp/ccsBEoGL.s 			page 8
 
 
  143:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     /* select SPI polarity and phase */
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  267 0000 0368     		ldr	r3, [r0]
  268              		.loc 1 163 26 is_stmt 0 view .LVU62
  269 0002 43F04003 		orr	r3, r3, #64
-ARM GAS  /tmp/ccHUNSdN.s 			page 9
+ARM GAS  /tmp/ccsBEoGL.s 			page 9
 
 
  270 0006 0360     		str	r3, [r0]
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  181:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****                 only one parameter can be selected which is shown as below:
  182:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****       \arg        I2S_MODE_SLAVETX : I2S slave transmit mode
  183:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****       \arg        I2S_MODE_SLAVERX : I2S slave receive mode
-ARM GAS  /tmp/ccHUNSdN.s 			page 10
+ARM GAS  /tmp/ccsBEoGL.s 			page 10
 
 
  184:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****       \arg        I2S_MODE_MASTERTX : I2S master transmit mode
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  334 0008 24F00804 		bic	r4, r4, #8
  335 000c 2404     		lsls	r4, r4, #16
  336 000e 240C     		lsrs	r4, r4, #16
-ARM GAS  /tmp/ccHUNSdN.s 			page 11
+ARM GAS  /tmp/ccsBEoGL.s 			page 11
 
 
  337 0010 1C43     		orrs	r4, r4, r3
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  242:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****       \arg        I2S_MCKOUT_DISABLE: I2S master clock output disable
  243:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \param[out] none
  244:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \retval     none
-ARM GAS  /tmp/ccHUNSdN.s 			page 12
+ARM GAS  /tmp/ccsBEoGL.s 			page 12
 
 
  245:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** */
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  391 0008 0546     		mov	r5, r0
  392              		.loc 1 267 5 view .LVU97
  393 000a 1020     		movs	r0, #16
-ARM GAS  /tmp/ccHUNSdN.s 			page 13
+ARM GAS  /tmp/ccsBEoGL.s 			page 13
 
 
  394              	.LVL34:
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  286:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****         i2sclock = (uint32_t)(((HXTAL_VALUE / plli2sm) * plli2sn) / plli2sr);
  429              		.loc 1 286 45 view .LVU110
  430 0040 4CBF     		ite	mi
-ARM GAS  /tmp/ccHUNSdN.s 			page 14
+ARM GAS  /tmp/ccsBEoGL.s 			page 14
 
 
  431 0042 1B4B     		ldrmi	r3, .L28+4
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  296:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     } else {
  297:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****         if(I2S_FRAMEFORMAT_DT16B_CH16B == i2s_frameformat) {
  298:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****             clks = (uint32_t)(((i2sclock / 32U) * 10U) / i2s_audiosample);
-ARM GAS  /tmp/ccHUNSdN.s 			page 15
+ARM GAS  /tmp/ccsBEoGL.s 			page 15
 
 
  299:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****         } else {
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  502              	.LVL51:
  313:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     }
  314:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** 
-ARM GAS  /tmp/ccHUNSdN.s 			page 16
+ARM GAS  /tmp/ccsBEoGL.s 			page 16
 
 
  315:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     /* configure SPI_I2SPSC */
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  541              		.loc 1 300 42 view .LVU161
  542 00a8 DFE7     		b	.L27
  543              	.L29:
-ARM GAS  /tmp/ccHUNSdN.s 			page 17
+ARM GAS  /tmp/ccsBEoGL.s 			page 17
 
 
  544 00aa 00BF     		.align	2
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  338:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \param[out] none
  339:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \retval     none
  340:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** */
-ARM GAS  /tmp/ccHUNSdN.s 			page 18
+ARM GAS  /tmp/ccsBEoGL.s 			page 18
 
 
  341:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** void i2s_disable(uint32_t spi_periph)
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  629              		.global	spi_nss_output_disable
  630              		.syntax unified
  631              		.thumb
-ARM GAS  /tmp/ccHUNSdN.s 			page 19
+ARM GAS  /tmp/ccsBEoGL.s 			page 19
 
 
  632              		.thumb_func
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  668 0000 0368     		ldr	r3, [r0]
  669              		.loc 1 376 26 is_stmt 0 view .LVU180
  670 0002 43F48073 		orr	r3, r3, #256
-ARM GAS  /tmp/ccHUNSdN.s 			page 20
+ARM GAS  /tmp/ccsBEoGL.s 			page 20
 
 
  671 0006 0360     		str	r3, [r0]
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  394:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****                 only one parameter can be selected which is shown as below:
  395:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****       \arg        SPI_DMA_TRANSMIT: SPI transmit data use DMA
  396:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****       \arg        SPI_DMA_RECEIVE: SPI receive data use DMA
-ARM GAS  /tmp/ccHUNSdN.s 			page 21
+ARM GAS  /tmp/ccsBEoGL.s 			page 21
 
 
  397:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \param[out] none
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  414:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****       \arg        SPI_DMA_TRANSMIT: SPI transmit data use DMA
  415:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****       \arg        SPI_DMA_RECEIVE: SPI receive data use DMA
  416:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \param[out] none
-ARM GAS  /tmp/ccHUNSdN.s 			page 22
+ARM GAS  /tmp/ccsBEoGL.s 			page 22
 
 
  417:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \retval     none
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  434:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****       \arg        SPI_FRAMESIZE_8BIT: SPI frame size is 8 bits
  435:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \param[out] none
  436:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \retval     none
-ARM GAS  /tmp/ccHUNSdN.s 			page 23
+ARM GAS  /tmp/ccsBEoGL.s 			page 23
 
 
  437:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** */
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  821              		.loc 1 455 5 view .LVU214
  822              		.loc 1 455 26 is_stmt 0 view .LVU215
  823 0000 C160     		str	r1, [r0, #12]
-ARM GAS  /tmp/ccHUNSdN.s 			page 24
+ARM GAS  /tmp/ccsBEoGL.s 			page 24
 
 
  456:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** }
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  474:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****       \arg        SPI_BIDIRECTIONAL_TRANSMIT: SPI work in transmit-only mode
  475:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****       \arg        SPI_BIDIRECTIONAL_RECEIVE: SPI work in receive-only mode
  476:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \retval     none
-ARM GAS  /tmp/ccHUNSdN.s 			page 25
+ARM GAS  /tmp/ccsBEoGL.s 			page 25
 
 
  477:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** */
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  898              		.cfi_startproc
  899              		@ args = 0, pretend = 0, frame = 0
  900              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccHUNSdN.s 			page 26
+ARM GAS  /tmp/ccsBEoGL.s 			page 26
 
 
  901              		@ link register save eliminated.
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  512:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** 
  513:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** /*!
  514:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \brief      turn on SPI CRC function
-ARM GAS  /tmp/ccHUNSdN.s 			page 27
+ARM GAS  /tmp/ccsBEoGL.s 			page 27
 
 
  515:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \param[in]  spi_periph: SPIx(x=0,1,2,3,4,5)
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  982              		.cfi_endproc
  983              	.LFE138:
  985              		.section	.text.spi_crc_next,"ax",%progbits
-ARM GAS  /tmp/ccHUNSdN.s 			page 28
+ARM GAS  /tmp/ccsBEoGL.s 			page 28
 
 
  986              		.align	1
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  557:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** {
  1020              		.loc 1 557 1 is_stmt 1 view -0
  1021              		.cfi_startproc
-ARM GAS  /tmp/ccHUNSdN.s 			page 29
+ARM GAS  /tmp/ccsBEoGL.s 			page 29
 
 
  1022              		@ args = 0, pretend = 0, frame = 0
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  1060              		@ args = 0, pretend = 0, frame = 0
  1061              		@ frame_needed = 0, uses_anonymous_args = 0
  1062              		@ link register save eliminated.
-ARM GAS  /tmp/ccHUNSdN.s 			page 30
+ARM GAS  /tmp/ccsBEoGL.s 			page 30
 
 
  573:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     SPI_CTL1(spi_periph) |= (uint32_t)SPI_CTL1_TMOD;
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  586:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** 
  587:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** /*!
  588:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \brief      configure i2s full duplex mode
-ARM GAS  /tmp/ccHUNSdN.s 			page 31
+ARM GAS  /tmp/ccsBEoGL.s 			page 31
 
 
  589:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \param[in]  i2s_add_periph: I2Sx_ADD(x=1,2)
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  1128 000c 4909     		lsrne	r1, r1, #5
  1129 000e 039D     		ldr	r5, [sp, #12]
  617:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     reg &= I2S_FULL_DUPLEX_MASK;
-ARM GAS  /tmp/ccHUNSdN.s 			page 32
+ARM GAS  /tmp/ccsBEoGL.s 			page 32
 
 
  1130              		.loc 1 617 9 view .LVU275
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  1162              		.cfi_endproc
  1163              	.LFE143:
  1165              		.section	.text.spi_quad_enable,"ax",%progbits
-ARM GAS  /tmp/ccHUNSdN.s 			page 33
+ARM GAS  /tmp/ccsBEoGL.s 			page 33
 
 
  1166              		.align	1
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  1203              		@ frame_needed = 0, uses_anonymous_args = 0
  1204              		@ link register save eliminated.
  661:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     SPI_QCTL(spi_periph) &= (uint32_t)(~SPI_QCTL_QMOD);
-ARM GAS  /tmp/ccHUNSdN.s 			page 34
+ARM GAS  /tmp/ccsBEoGL.s 			page 34
 
 
  1205              		.loc 1 661 5 view .LVU296
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  675:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** /*!
  676:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \brief      enable quad wire SPI read
  677:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \param[in]  spi_periph: SPIx(only x=5)
-ARM GAS  /tmp/ccHUNSdN.s 			page 35
+ARM GAS  /tmp/ccsBEoGL.s 			page 35
 
 
  678:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     \param[out] none
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  1288              	.LFE148:
  1290              		.section	.text.spi_quad_io23_output_disable,"ax",%progbits
  1291              		.align	1
-ARM GAS  /tmp/ccHUNSdN.s 			page 36
+ARM GAS  /tmp/ccsBEoGL.s 			page 36
 
 
  1292              		.global	spi_quad_io23_output_disable
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  720:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** void spi_i2s_interrupt_enable(uint32_t spi_periph, uint8_t spi_i2s_int)
  721:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c **** {
  1325              		.loc 1 721 1 is_stmt 1 view -0
-ARM GAS  /tmp/ccHUNSdN.s 			page 37
+ARM GAS  /tmp/ccsBEoGL.s 			page 37
 
 
  1326              		.cfi_startproc
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  1359              		.cfi_endproc
  1360              	.LFE150:
  1362              		.section	.text.spi_i2s_interrupt_disable,"ax",%progbits
-ARM GAS  /tmp/ccHUNSdN.s 			page 38
+ARM GAS  /tmp/ccsBEoGL.s 			page 38
 
 
  1363              		.align	1
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  1390              		.loc 1 766 9 is_stmt 1 view .LVU331
  1391              	.L76:
  767:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     default :
-ARM GAS  /tmp/ccHUNSdN.s 			page 39
+ARM GAS  /tmp/ccsBEoGL.s 			page 39
 
 
  768:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****         break;
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  1423              		@ link register save eliminated.
  789:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     uint32_t reg1 = SPI_STAT(spi_periph);
  1424              		.loc 1 789 5 view .LVU338
-ARM GAS  /tmp/ccHUNSdN.s 			page 40
+ARM GAS  /tmp/ccsBEoGL.s 			page 40
 
 
  1425              		.loc 1 789 14 is_stmt 0 view .LVU339
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  812:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****         break;
  813:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     /* SPI CRC error interrupt */
  814:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****     case SPI_INT_FLAG_CRCERR :
-ARM GAS  /tmp/ccHUNSdN.s 			page 41
+ARM GAS  /tmp/ccsBEoGL.s 			page 41
 
 
  815:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****         reg1 = reg1 & SPI_STAT_CRCERR;
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  826:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_spi.c ****         break;
  1484              		.loc 1 826 14 is_stmt 0 view .LVU360
  1485 0034 02F02002 		and	r2, r2, #32
-ARM GAS  /tmp/ccHUNSdN.s 			page 42
+ARM GAS  /tmp/ccsBEoGL.s 			page 42
 
 
  1486              	.LVL107:
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  1522 0054 7047     		bx	lr
  1523              		.cfi_endproc
  1524              	.LFE152:
-ARM GAS  /tmp/ccHUNSdN.s 			page 43
+ARM GAS  /tmp/ccsBEoGL.s 			page 43
 
 
  1526              		.section	.text.spi_i2s_flag_get,"ax",%progbits
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  1550              		.loc 1 868 1 view .LVU381
  1551 0008 0020     		moveq	r0, #0
  1552 000a 7047     		bx	lr
-ARM GAS  /tmp/ccHUNSdN.s 			page 44
+ARM GAS  /tmp/ccsBEoGL.s 			page 44
 
 
  1553              		.cfi_endproc
@@ -2624,97 +2624,97 @@ ARM GAS  /tmp/ccHUNSdN.s 			page 1
  1585              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
  1586              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
  1587              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_spi.h"
-ARM GAS  /tmp/ccHUNSdN.s 			page 45
+ARM GAS  /tmp/ccsBEoGL.s 			page 45
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_spi.c
-     /tmp/ccHUNSdN.s:19     .text.spi_i2s_deinit:0000000000000000 $t
-     /tmp/ccHUNSdN.s:25     .text.spi_i2s_deinit:0000000000000000 spi_i2s_deinit
-     /tmp/ccHUNSdN.s:142    .text.spi_i2s_deinit:000000000000008c $d
-     /tmp/ccHUNSdN.s:148    .text.spi_struct_para_init:0000000000000000 $t
-     /tmp/ccHUNSdN.s:154    .text.spi_struct_para_init:0000000000000000 spi_struct_para_init
-     /tmp/ccHUNSdN.s:182    .text.spi_init:0000000000000000 $t
-     /tmp/ccHUNSdN.s:188    .text.spi_init:0000000000000000 spi_init
-     /tmp/ccHUNSdN.s:252    .text.spi_enable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:258    .text.spi_enable:0000000000000000 spi_enable
-     /tmp/ccHUNSdN.s:277    .text.spi_disable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:283    .text.spi_disable:0000000000000000 spi_disable
-     /tmp/ccHUNSdN.s:302    .text.i2s_init:0000000000000000 $t
-     /tmp/ccHUNSdN.s:308    .text.i2s_init:0000000000000000 i2s_init
-     /tmp/ccHUNSdN.s:354    .text.i2s_psc_config:0000000000000000 $t
-     /tmp/ccHUNSdN.s:360    .text.i2s_psc_config:0000000000000000 i2s_psc_config
-     /tmp/ccHUNSdN.s:546    .text.i2s_psc_config:00000000000000ac $d
-     /tmp/ccHUNSdN.s:553    .text.i2s_enable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:559    .text.i2s_enable:0000000000000000 i2s_enable
-     /tmp/ccHUNSdN.s:578    .text.i2s_disable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:584    .text.i2s_disable:0000000000000000 i2s_disable
-     /tmp/ccHUNSdN.s:603    .text.spi_nss_output_enable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:609    .text.spi_nss_output_enable:0000000000000000 spi_nss_output_enable
-     /tmp/ccHUNSdN.s:628    .text.spi_nss_output_disable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:634    .text.spi_nss_output_disable:0000000000000000 spi_nss_output_disable
-     /tmp/ccHUNSdN.s:653    .text.spi_nss_internal_high:0000000000000000 $t
-     /tmp/ccHUNSdN.s:659    .text.spi_nss_internal_high:0000000000000000 spi_nss_internal_high
-     /tmp/ccHUNSdN.s:678    .text.spi_nss_internal_low:0000000000000000 $t
-     /tmp/ccHUNSdN.s:684    .text.spi_nss_internal_low:0000000000000000 spi_nss_internal_low
-     /tmp/ccHUNSdN.s:703    .text.spi_dma_enable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:709    .text.spi_dma_enable:0000000000000000 spi_dma_enable
-     /tmp/ccHUNSdN.s:739    .text.spi_dma_disable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:745    .text.spi_dma_disable:0000000000000000 spi_dma_disable
-     /tmp/ccHUNSdN.s:775    .text.spi_i2s_data_frame_format_config:0000000000000000 $t
-     /tmp/ccHUNSdN.s:781    .text.spi_i2s_data_frame_format_config:0000000000000000 spi_i2s_data_frame_format_config
-     /tmp/ccHUNSdN.s:807    .text.spi_i2s_data_transmit:0000000000000000 $t
-     /tmp/ccHUNSdN.s:813    .text.spi_i2s_data_transmit:0000000000000000 spi_i2s_data_transmit
-     /tmp/ccHUNSdN.s:830    .text.spi_i2s_data_receive:0000000000000000 $t
-     /tmp/ccHUNSdN.s:836    .text.spi_i2s_data_receive:0000000000000000 spi_i2s_data_receive
-     /tmp/ccHUNSdN.s:855    .text.spi_bidirectional_transfer_config:0000000000000000 $t
-     /tmp/ccHUNSdN.s:861    .text.spi_bidirectional_transfer_config:0000000000000000 spi_bidirectional_transfer_config
-     /tmp/ccHUNSdN.s:888    .text.spi_crc_polynomial_set:0000000000000000 $t
-     /tmp/ccHUNSdN.s:894    .text.spi_crc_polynomial_set:0000000000000000 spi_crc_polynomial_set
-     /tmp/ccHUNSdN.s:911    .text.spi_crc_polynomial_get:0000000000000000 $t
-     /tmp/ccHUNSdN.s:917    .text.spi_crc_polynomial_get:0000000000000000 spi_crc_polynomial_get
-     /tmp/ccHUNSdN.s:936    .text.spi_crc_on:0000000000000000 $t
-     /tmp/ccHUNSdN.s:942    .text.spi_crc_on:0000000000000000 spi_crc_on
-     /tmp/ccHUNSdN.s:961    .text.spi_crc_off:0000000000000000 $t
-     /tmp/ccHUNSdN.s:967    .text.spi_crc_off:0000000000000000 spi_crc_off
-     /tmp/ccHUNSdN.s:986    .text.spi_crc_next:0000000000000000 $t
-     /tmp/ccHUNSdN.s:992    .text.spi_crc_next:0000000000000000 spi_crc_next
-     /tmp/ccHUNSdN.s:1011   .text.spi_crc_get:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1017   .text.spi_crc_get:0000000000000000 spi_crc_get
-     /tmp/ccHUNSdN.s:1049   .text.spi_ti_mode_enable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1055   .text.spi_ti_mode_enable:0000000000000000 spi_ti_mode_enable
-     /tmp/ccHUNSdN.s:1074   .text.spi_ti_mode_disable:0000000000000000 $t
-ARM GAS  /tmp/ccHUNSdN.s 			page 46
+     /tmp/ccsBEoGL.s:19     .text.spi_i2s_deinit:0000000000000000 $t
+     /tmp/ccsBEoGL.s:25     .text.spi_i2s_deinit:0000000000000000 spi_i2s_deinit
+     /tmp/ccsBEoGL.s:142    .text.spi_i2s_deinit:000000000000008c $d
+     /tmp/ccsBEoGL.s:148    .text.spi_struct_para_init:0000000000000000 $t
+     /tmp/ccsBEoGL.s:154    .text.spi_struct_para_init:0000000000000000 spi_struct_para_init
+     /tmp/ccsBEoGL.s:182    .text.spi_init:0000000000000000 $t
+     /tmp/ccsBEoGL.s:188    .text.spi_init:0000000000000000 spi_init
+     /tmp/ccsBEoGL.s:252    .text.spi_enable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:258    .text.spi_enable:0000000000000000 spi_enable
+     /tmp/ccsBEoGL.s:277    .text.spi_disable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:283    .text.spi_disable:0000000000000000 spi_disable
+     /tmp/ccsBEoGL.s:302    .text.i2s_init:0000000000000000 $t
+     /tmp/ccsBEoGL.s:308    .text.i2s_init:0000000000000000 i2s_init
+     /tmp/ccsBEoGL.s:354    .text.i2s_psc_config:0000000000000000 $t
+     /tmp/ccsBEoGL.s:360    .text.i2s_psc_config:0000000000000000 i2s_psc_config
+     /tmp/ccsBEoGL.s:546    .text.i2s_psc_config:00000000000000ac $d
+     /tmp/ccsBEoGL.s:553    .text.i2s_enable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:559    .text.i2s_enable:0000000000000000 i2s_enable
+     /tmp/ccsBEoGL.s:578    .text.i2s_disable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:584    .text.i2s_disable:0000000000000000 i2s_disable
+     /tmp/ccsBEoGL.s:603    .text.spi_nss_output_enable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:609    .text.spi_nss_output_enable:0000000000000000 spi_nss_output_enable
+     /tmp/ccsBEoGL.s:628    .text.spi_nss_output_disable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:634    .text.spi_nss_output_disable:0000000000000000 spi_nss_output_disable
+     /tmp/ccsBEoGL.s:653    .text.spi_nss_internal_high:0000000000000000 $t
+     /tmp/ccsBEoGL.s:659    .text.spi_nss_internal_high:0000000000000000 spi_nss_internal_high
+     /tmp/ccsBEoGL.s:678    .text.spi_nss_internal_low:0000000000000000 $t
+     /tmp/ccsBEoGL.s:684    .text.spi_nss_internal_low:0000000000000000 spi_nss_internal_low
+     /tmp/ccsBEoGL.s:703    .text.spi_dma_enable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:709    .text.spi_dma_enable:0000000000000000 spi_dma_enable
+     /tmp/ccsBEoGL.s:739    .text.spi_dma_disable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:745    .text.spi_dma_disable:0000000000000000 spi_dma_disable
+     /tmp/ccsBEoGL.s:775    .text.spi_i2s_data_frame_format_config:0000000000000000 $t
+     /tmp/ccsBEoGL.s:781    .text.spi_i2s_data_frame_format_config:0000000000000000 spi_i2s_data_frame_format_config
+     /tmp/ccsBEoGL.s:807    .text.spi_i2s_data_transmit:0000000000000000 $t
+     /tmp/ccsBEoGL.s:813    .text.spi_i2s_data_transmit:0000000000000000 spi_i2s_data_transmit
+     /tmp/ccsBEoGL.s:830    .text.spi_i2s_data_receive:0000000000000000 $t
+     /tmp/ccsBEoGL.s:836    .text.spi_i2s_data_receive:0000000000000000 spi_i2s_data_receive
+     /tmp/ccsBEoGL.s:855    .text.spi_bidirectional_transfer_config:0000000000000000 $t
+     /tmp/ccsBEoGL.s:861    .text.spi_bidirectional_transfer_config:0000000000000000 spi_bidirectional_transfer_config
+     /tmp/ccsBEoGL.s:888    .text.spi_crc_polynomial_set:0000000000000000 $t
+     /tmp/ccsBEoGL.s:894    .text.spi_crc_polynomial_set:0000000000000000 spi_crc_polynomial_set
+     /tmp/ccsBEoGL.s:911    .text.spi_crc_polynomial_get:0000000000000000 $t
+     /tmp/ccsBEoGL.s:917    .text.spi_crc_polynomial_get:0000000000000000 spi_crc_polynomial_get
+     /tmp/ccsBEoGL.s:936    .text.spi_crc_on:0000000000000000 $t
+     /tmp/ccsBEoGL.s:942    .text.spi_crc_on:0000000000000000 spi_crc_on
+     /tmp/ccsBEoGL.s:961    .text.spi_crc_off:0000000000000000 $t
+     /tmp/ccsBEoGL.s:967    .text.spi_crc_off:0000000000000000 spi_crc_off
+     /tmp/ccsBEoGL.s:986    .text.spi_crc_next:0000000000000000 $t
+     /tmp/ccsBEoGL.s:992    .text.spi_crc_next:0000000000000000 spi_crc_next
+     /tmp/ccsBEoGL.s:1011   .text.spi_crc_get:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1017   .text.spi_crc_get:0000000000000000 spi_crc_get
+     /tmp/ccsBEoGL.s:1049   .text.spi_ti_mode_enable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1055   .text.spi_ti_mode_enable:0000000000000000 spi_ti_mode_enable
+     /tmp/ccsBEoGL.s:1074   .text.spi_ti_mode_disable:0000000000000000 $t
+ARM GAS  /tmp/ccsBEoGL.s 			page 46
 
 
-     /tmp/ccHUNSdN.s:1080   .text.spi_ti_mode_disable:0000000000000000 spi_ti_mode_disable
-     /tmp/ccHUNSdN.s:1099   .text.i2s_full_duplex_mode_config:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1105   .text.i2s_full_duplex_mode_config:0000000000000000 i2s_full_duplex_mode_config
-     /tmp/ccHUNSdN.s:1166   .text.spi_quad_enable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1172   .text.spi_quad_enable:0000000000000000 spi_quad_enable
-     /tmp/ccHUNSdN.s:1191   .text.spi_quad_disable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1197   .text.spi_quad_disable:0000000000000000 spi_quad_disable
-     /tmp/ccHUNSdN.s:1216   .text.spi_quad_write_enable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1222   .text.spi_quad_write_enable:0000000000000000 spi_quad_write_enable
-     /tmp/ccHUNSdN.s:1241   .text.spi_quad_read_enable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1247   .text.spi_quad_read_enable:0000000000000000 spi_quad_read_enable
-     /tmp/ccHUNSdN.s:1266   .text.spi_quad_io23_output_enable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1272   .text.spi_quad_io23_output_enable:0000000000000000 spi_quad_io23_output_enable
-     /tmp/ccHUNSdN.s:1291   .text.spi_quad_io23_output_disable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1297   .text.spi_quad_io23_output_disable:0000000000000000 spi_quad_io23_output_disable
-     /tmp/ccHUNSdN.s:1316   .text.spi_i2s_interrupt_enable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1322   .text.spi_i2s_interrupt_enable:0000000000000000 spi_i2s_interrupt_enable
-     /tmp/ccHUNSdN.s:1363   .text.spi_i2s_interrupt_disable:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1369   .text.spi_i2s_interrupt_disable:0000000000000000 spi_i2s_interrupt_disable
-     /tmp/ccHUNSdN.s:1410   .text.spi_i2s_interrupt_flag_get:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1416   .text.spi_i2s_interrupt_flag_get:0000000000000000 spi_i2s_interrupt_flag_get
-     /tmp/ccHUNSdN.s:1438   .text.spi_i2s_interrupt_flag_get:000000000000000c $d
-     /tmp/ccHUNSdN.s:1527   .text.spi_i2s_flag_get:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1533   .text.spi_i2s_flag_get:0000000000000000 spi_i2s_flag_get
-     /tmp/ccHUNSdN.s:1557   .text.spi_crc_error_clear:0000000000000000 $t
-     /tmp/ccHUNSdN.s:1563   .text.spi_crc_error_clear:0000000000000000 spi_crc_error_clear
-     /tmp/ccHUNSdN.s:1445   .text.spi_i2s_interrupt_flag_get:0000000000000013 $d
-     /tmp/ccHUNSdN.s:1445   .text.spi_i2s_interrupt_flag_get:0000000000000014 $t
+     /tmp/ccsBEoGL.s:1080   .text.spi_ti_mode_disable:0000000000000000 spi_ti_mode_disable
+     /tmp/ccsBEoGL.s:1099   .text.i2s_full_duplex_mode_config:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1105   .text.i2s_full_duplex_mode_config:0000000000000000 i2s_full_duplex_mode_config
+     /tmp/ccsBEoGL.s:1166   .text.spi_quad_enable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1172   .text.spi_quad_enable:0000000000000000 spi_quad_enable
+     /tmp/ccsBEoGL.s:1191   .text.spi_quad_disable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1197   .text.spi_quad_disable:0000000000000000 spi_quad_disable
+     /tmp/ccsBEoGL.s:1216   .text.spi_quad_write_enable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1222   .text.spi_quad_write_enable:0000000000000000 spi_quad_write_enable
+     /tmp/ccsBEoGL.s:1241   .text.spi_quad_read_enable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1247   .text.spi_quad_read_enable:0000000000000000 spi_quad_read_enable
+     /tmp/ccsBEoGL.s:1266   .text.spi_quad_io23_output_enable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1272   .text.spi_quad_io23_output_enable:0000000000000000 spi_quad_io23_output_enable
+     /tmp/ccsBEoGL.s:1291   .text.spi_quad_io23_output_disable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1297   .text.spi_quad_io23_output_disable:0000000000000000 spi_quad_io23_output_disable
+     /tmp/ccsBEoGL.s:1316   .text.spi_i2s_interrupt_enable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1322   .text.spi_i2s_interrupt_enable:0000000000000000 spi_i2s_interrupt_enable
+     /tmp/ccsBEoGL.s:1363   .text.spi_i2s_interrupt_disable:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1369   .text.spi_i2s_interrupt_disable:0000000000000000 spi_i2s_interrupt_disable
+     /tmp/ccsBEoGL.s:1410   .text.spi_i2s_interrupt_flag_get:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1416   .text.spi_i2s_interrupt_flag_get:0000000000000000 spi_i2s_interrupt_flag_get
+     /tmp/ccsBEoGL.s:1438   .text.spi_i2s_interrupt_flag_get:000000000000000c $d
+     /tmp/ccsBEoGL.s:1527   .text.spi_i2s_flag_get:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1533   .text.spi_i2s_flag_get:0000000000000000 spi_i2s_flag_get
+     /tmp/ccsBEoGL.s:1557   .text.spi_crc_error_clear:0000000000000000 $t
+     /tmp/ccsBEoGL.s:1563   .text.spi_crc_error_clear:0000000000000000 spi_crc_error_clear
+     /tmp/ccsBEoGL.s:1445   .text.spi_i2s_interrupt_flag_get:0000000000000013 $d
+     /tmp/ccsBEoGL.s:1445   .text.spi_i2s_interrupt_flag_get:0000000000000014 $t
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable

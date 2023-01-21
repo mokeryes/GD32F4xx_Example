@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccWYTPow.s 			page 1
+ARM GAS  /tmp/ccclwIQO.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
   29:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-ARM GAS  /tmp/ccWYTPow.s 			page 2
+ARM GAS  /tmp/ccclwIQO.s 			page 2
 
 
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
   58:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     case USART1:
   59:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****         rcu_periph_reset_enable(RCU_USART1RST);
   60:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****         rcu_periph_reset_disable(RCU_USART1RST);
-ARM GAS  /tmp/ccWYTPow.s 			page 3
+ARM GAS  /tmp/ccclwIQO.s 			page 3
 
 
   61:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****         break;
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
   75 003c 9842     		cmp	r0, r3
   76 003e 0ED0     		beq	.L10
   77 0040 03F58063 		add	r3, r3, #1024
-ARM GAS  /tmp/ccWYTPow.s 			page 4
+ARM GAS  /tmp/ccclwIQO.s 			page 4
 
 
   78 0044 9842     		cmp	r0, r3
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  122              		.loc 1 60 9 is_stmt 1 view .LVU20
  123 007a 40F61100 		movw	r0, #2065
  124 007e F4E7     		b	.L13
-ARM GAS  /tmp/ccWYTPow.s 			page 5
+ARM GAS  /tmp/ccclwIQO.s 			page 5
 
 
  125              	.LVL12:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  167 00b2 40F61E00 		movw	r0, #2078
  168 00b6 D8E7     		b	.L13
  169              	.L15:
-ARM GAS  /tmp/ccWYTPow.s 			page 6
+ARM GAS  /tmp/ccclwIQO.s 			page 6
 
 
  170              		.align	2
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  212 0012 9842     		cmp	r0, r3
  213 0014 29D0     		beq	.L17
  214 0016 1AD8     		bhi	.L19
-ARM GAS  /tmp/ccWYTPow.s 			page 7
+ARM GAS  /tmp/ccclwIQO.s 			page 7
 
 
  215 0018 A3F50063 		sub	r3, r3, #2048
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  237              		.loc 1 132 14 view .LVU47
  238 0038 B3FBF5F1 		udiv	r1, r3, r5
  239              	.LVL26:
-ARM GAS  /tmp/ccWYTPow.s 			page 8
+ARM GAS  /tmp/ccclwIQO.s 			page 8
 
 
  133:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****         intdiv = udiv & 0xfff0U;
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  110:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****         break;
  277              		.loc 1 110 16 view .LVU60
  278 0064 FFF7FEFF 		bl	rcu_clock_freq_get
-ARM GAS  /tmp/ccWYTPow.s 			page 9
+ARM GAS  /tmp/ccclwIQO.s 			page 9
 
 
  279              	.LVL31:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  322              		.thumb_func
  324              	usart_parity_config:
  325              	.LVL37:
-ARM GAS  /tmp/ccWYTPow.s 			page 10
+ARM GAS  /tmp/ccclwIQO.s 			page 10
 
 
  326              	.LFB118:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  169:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****       \arg       USART_WL_8BIT: 8 bits
  170:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****       \arg       USART_WL_9BIT: 9 bits
  171:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     \param[out] none
-ARM GAS  /tmp/ccWYTPow.s 			page 11
+ARM GAS  /tmp/ccclwIQO.s 			page 11
 
 
  172:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     \retval     none
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  389              		@ args = 0, pretend = 0, frame = 0
  390              		@ frame_needed = 0, uses_anonymous_args = 0
  391              		@ link register save eliminated.
-ARM GAS  /tmp/ccWYTPow.s 			page 12
+ARM GAS  /tmp/ccclwIQO.s 			page 12
 
 
  196:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     /* clear USART_CTL1 STB bits */
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  434              		.global	usart_disable
  435              		.syntax unified
  436              		.thumb
-ARM GAS  /tmp/ccWYTPow.s 			page 13
+ARM GAS  /tmp/ccclwIQO.s 			page 13
 
 
  437              		.thumb_func
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  470              		@ frame_needed = 0, uses_anonymous_args = 0
  471              		@ link register save eliminated.
  235:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     uint32_t ctl = 0U;
-ARM GAS  /tmp/ccWYTPow.s 			page 14
+ARM GAS  /tmp/ccclwIQO.s 			page 14
 
 
  472              		.loc 1 235 5 view .LVU101
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  256:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     uint32_t ctl = 0U;
  508              		.loc 1 256 5 view .LVU112
  257:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** 
-ARM GAS  /tmp/ccWYTPow.s 			page 15
+ARM GAS  /tmp/ccclwIQO.s 			page 15
 
 
  258:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     ctl = USART_CTL0(usart_periph);
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  278:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** 
  279:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     ctl = USART_CTL3(usart_periph);
  545              		.loc 1 279 5 view .LVU124
-ARM GAS  /tmp/ccWYTPow.s 			page 16
+ARM GAS  /tmp/ccclwIQO.s 			page 16
 
 
  546              		.loc 1 279 9 is_stmt 0 view .LVU125
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  302:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     /* inverted or not the specified siginal */
  303:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     switch(invertpara) {
  580              		.loc 1 303 5 view .LVU134
-ARM GAS  /tmp/ccWYTPow.s 			page 17
+ARM GAS  /tmp/ccclwIQO.s 			page 17
 
 
  581 0000 0529     		cmp	r1, #5
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  311:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****         break;
  611              		.loc 1 311 9 is_stmt 1 view .LVU142
  612 0026 D0F88030 		ldr	r3, [r0, #128]
-ARM GAS  /tmp/ccWYTPow.s 			page 18
+ARM GAS  /tmp/ccclwIQO.s 			page 18
 
 
  311:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****         break;
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  649              		@ args = 0, pretend = 0, frame = 0
  650              		@ frame_needed = 0, uses_anonymous_args = 0
  651              		@ link register save eliminated.
-ARM GAS  /tmp/ccWYTPow.s 			page 19
+ARM GAS  /tmp/ccclwIQO.s 			page 19
 
 
  339:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     /*  clear OVSMOD bit */
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  689              		.loc 1 357 30 is_stmt 0 view .LVU160
  690 000a 0B43     		orrs	r3, r3, r1
  691 000c 4361     		str	r3, [r0, #20]
-ARM GAS  /tmp/ccWYTPow.s 			page 20
+ARM GAS  /tmp/ccclwIQO.s 			page 20
 
 
  358:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** }
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  376:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** */
  377:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** void usart_receiver_timeout_disable(uint32_t usart_periph)
  378:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** {
-ARM GAS  /tmp/ccWYTPow.s 			page 21
+ARM GAS  /tmp/ccclwIQO.s 			page 21
 
 
  732              		.loc 1 378 1 is_stmt 1 view -0
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  773 0016 7047     		bx	lr
  774              		.cfi_endproc
  775              	.LFE131:
-ARM GAS  /tmp/ccWYTPow.s 			page 22
+ARM GAS  /tmp/ccclwIQO.s 			page 22
 
 
  777              		.section	.text.usart_data_transmit,"ax",%progbits
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  813              		.loc 1 414 1 is_stmt 1 view -0
  814              		.cfi_startproc
  815              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccWYTPow.s 			page 23
+ARM GAS  /tmp/ccclwIQO.s 			page 23
 
 
  816              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  857 0012 7047     		bx	lr
  858              		.cfi_endproc
  859              	.LFE134:
-ARM GAS  /tmp/ccWYTPow.s 			page 24
+ARM GAS  /tmp/ccclwIQO.s 			page 24
 
 
  861              		.section	.text.usart_mute_mode_enable,"ax",%progbits
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  898              		@ args = 0, pretend = 0, frame = 0
  899              		@ frame_needed = 0, uses_anonymous_args = 0
  900              		@ link register save eliminated.
-ARM GAS  /tmp/ccWYTPow.s 			page 25
+ARM GAS  /tmp/ccclwIQO.s 			page 25
 
 
  450:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     USART_CTL0(usart_periph) &= ~(USART_CTL0_RWU);
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  939              	.LFE137:
  941              		.section	.text.usart_lin_mode_enable,"ax",%progbits
  942              		.align	1
-ARM GAS  /tmp/ccWYTPow.s 			page 26
+ARM GAS  /tmp/ccclwIQO.s 			page 26
 
 
  943              		.global	usart_lin_mode_enable
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  980              		@ link register save eliminated.
  488:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     USART_CTL1(usart_periph) &= ~(USART_CTL1_LMEN);
  981              		.loc 1 488 5 view .LVU211
-ARM GAS  /tmp/ccWYTPow.s 			page 27
+ARM GAS  /tmp/ccclwIQO.s 			page 27
 
 
  982 0000 0369     		ldr	r3, [r0, #16]
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1021              		.cfi_endproc
  1022              	.LFE140:
  1024              		.section	.text.usart_send_break,"ax",%progbits
-ARM GAS  /tmp/ccWYTPow.s 			page 28
+ARM GAS  /tmp/ccclwIQO.s 			page 28
 
 
  1025              		.align	1
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1062              		@ frame_needed = 0, uses_anonymous_args = 0
  1063              		@ link register save eliminated.
  526:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     USART_CTL2(usart_periph) |= USART_CTL2_HDEN;
-ARM GAS  /tmp/ccWYTPow.s 			page 29
+ARM GAS  /tmp/ccclwIQO.s 			page 29
 
 
  1064              		.loc 1 526 5 view .LVU226
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  540:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** /*!
  541:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     \brief    enable CK pin in synchronous mode
  542:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2,5)
-ARM GAS  /tmp/ccWYTPow.s 			page 30
+ARM GAS  /tmp/ccclwIQO.s 			page 30
 
 
  543:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     \param[out] none
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1147              	.LFE145:
  1149              		.section	.text.usart_synchronous_clock_config,"ax",%progbits
  1150              		.align	1
-ARM GAS  /tmp/ccWYTPow.s 			page 31
+ARM GAS  /tmp/ccclwIQO.s 			page 31
 
 
  1151              		.global	usart_synchronous_clock_config
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1176              	.LVL80:
  586:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     ctl &= ~(USART_CTL1_CLEN | USART_CTL1_CPH | USART_CTL1_CPL);
  1177              		.loc 1 586 5 is_stmt 1 view .LVU247
-ARM GAS  /tmp/ccWYTPow.s 			page 32
+ARM GAS  /tmp/ccclwIQO.s 			page 32
 
 
  1178              		.loc 1 588 80 is_stmt 0 view .LVU248
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1219 0000 8369     		ldr	r3, [r0, #24]
  1220              		.loc 1 602 28 is_stmt 0 view .LVU260
  1221 0002 23F47F43 		bic	r3, r3, #65280
-ARM GAS  /tmp/ccWYTPow.s 			page 33
+ARM GAS  /tmp/ccclwIQO.s 			page 33
 
 
  1222 0006 8361     		str	r3, [r0, #24]
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1266              		.syntax unified
  1267              		.thumb
  1268              		.thumb_func
-ARM GAS  /tmp/ccWYTPow.s 			page 34
+ARM GAS  /tmp/ccclwIQO.s 			page 34
 
 
  1270              	usart_smartcard_mode_disable:
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1305              		.loc 1 636 30 is_stmt 0 view .LVU276
  1306 0002 43F01003 		orr	r3, r3, #16
  1307 0006 4361     		str	r3, [r0, #20]
-ARM GAS  /tmp/ccWYTPow.s 			page 35
+ARM GAS  /tmp/ccclwIQO.s 			page 35
 
 
  637:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** }
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  655:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     \retval     none
  656:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** */
  657:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** void usart_smartcard_autoretry_config(uint32_t usart_periph, uint32_t scrtnum)
-ARM GAS  /tmp/ccWYTPow.s 			page 36
+ARM GAS  /tmp/ccclwIQO.s 			page 36
 
 
  658:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** {
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1389 0000 D0F88430 		ldr	r3, [r0, #132]
  1390              		.loc 1 672 28 is_stmt 0 view .LVU292
  1391 0004 23F07F43 		bic	r3, r3, #-16777216
-ARM GAS  /tmp/ccWYTPow.s 			page 37
+ARM GAS  /tmp/ccclwIQO.s 			page 37
 
 
  1392 0008 C0F88430 		str	r3, [r0, #132]
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1437              	.LFB155:
  686:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** 
  687:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** /*!
-ARM GAS  /tmp/ccWYTPow.s 			page 38
+ARM GAS  /tmp/ccclwIQO.s 			page 38
 
 
  688:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     \brief    disable IrDA mode
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1473              		.loc 1 708 5 is_stmt 1 view .LVU307
  1474 0008 8369     		ldr	r3, [r0, #24]
  1475              		.loc 1 708 28 is_stmt 0 view .LVU308
-ARM GAS  /tmp/ccWYTPow.s 			page 39
+ARM GAS  /tmp/ccclwIQO.s 			page 39
 
 
  1476 000a 1943     		orrs	r1, r1, r3
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1515              		.cfi_endproc
  1516              	.LFE157:
  1518              		.section	.text.usart_hardware_flow_rts_config,"ax",%progbits
-ARM GAS  /tmp/ccWYTPow.s 			page 40
+ARM GAS  /tmp/ccclwIQO.s 			page 40
 
 
  1519              		.align	1
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1554              		.section	.text.usart_hardware_flow_cts_config,"ax",%progbits
  1555              		.align	1
  1556              		.global	usart_hardware_flow_cts_config
-ARM GAS  /tmp/ccWYTPow.s 			page 41
+ARM GAS  /tmp/ccclwIQO.s 			page 41
 
 
  1557              		.syntax unified
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1592              		.global	usart_break_frame_coherence_config
  1593              		.syntax unified
  1594              		.thumb
-ARM GAS  /tmp/ccWYTPow.s 			page 42
+ARM GAS  /tmp/ccclwIQO.s 			page 42
 
 
  1595              		.thumb_func
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  787:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     \param[in]  usart_periph: USARTx(x=0,1,2,5)/UARTx(x=3,4,6,7)
  788:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     \param[in]  pcm:
  789:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****                 only one parameter can be selected which is shown as below:
-ARM GAS  /tmp/ccWYTPow.s 			page 43
+ARM GAS  /tmp/ccclwIQO.s 			page 43
 
 
  790:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****       \arg        USART_PCM_NONE: not check parity
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1666              		.loc 1 812 1 is_stmt 1 view -0
  1667              		.cfi_startproc
  1668              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccWYTPow.s 			page 44
+ARM GAS  /tmp/ccclwIQO.s 			page 44
 
 
  1669              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1706              		.loc 1 831 9 is_stmt 0 view .LVU364
  1707 0000 4369     		ldr	r3, [r0, #20]
  1708              	.LVL115:
-ARM GAS  /tmp/ccWYTPow.s 			page 45
+ARM GAS  /tmp/ccclwIQO.s 			page 45
 
 
  832:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     ctl &= ~USART_CTL2_DENR;
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1744              	.LVL119:
  853:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     ctl &= ~USART_CTL2_DENT;
  1745              		.loc 1 853 5 is_stmt 1 view .LVU376
-ARM GAS  /tmp/ccWYTPow.s 			page 46
+ARM GAS  /tmp/ccclwIQO.s 			page 46
 
 
  1746              		.loc 1 853 9 is_stmt 0 view .LVU377
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1773              		@ args = 0, pretend = 0, frame = 0
  1774              		@ frame_needed = 0, uses_anonymous_args = 0
  1775              		@ link register save eliminated.
-ARM GAS  /tmp/ccWYTPow.s 			page 47
+ARM GAS  /tmp/ccclwIQO.s 			page 47
 
 
  883:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     if(RESET != (USART_REG_VAL(usart_periph, flag) & BIT(USART_BIT_POS(flag)))) {
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1807              		.loc 1 907 5 view .LVU391
  906:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c ****     USART_REG_VAL(usart_periph, flag) &= ~BIT(USART_BIT_POS(flag));
  1808              		.loc 1 906 1 is_stmt 0 view .LVU392
-ARM GAS  /tmp/ccWYTPow.s 			page 48
+ARM GAS  /tmp/ccclwIQO.s 			page 48
 
 
  1809 0000 10B5     		push	{r4, lr}
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1843              		.loc 1 929 1 is_stmt 1 view -0
  1844              		.cfi_startproc
  1845              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccWYTPow.s 			page 49
+ARM GAS  /tmp/ccclwIQO.s 			page 49
 
 
  1846              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  950:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** */
  951:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_usart.c **** void usart_interrupt_disable(uint32_t usart_periph, usart_interrupt_enum interrupt)
  1881              		.loc 1 951 6 is_stmt 1 view -0
-ARM GAS  /tmp/ccWYTPow.s 			page 50
+ARM GAS  /tmp/ccclwIQO.s 			page 50
 
 
  1882              		@ args = 0, pretend = 0, frame = 0
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1907              		.loc 1 978 1 view .LVU413
  1908 0004 10B5     		push	{r4, lr}
  1909              	.LCFI7:
-ARM GAS  /tmp/ccWYTPow.s 			page 51
+ARM GAS  /tmp/ccclwIQO.s 			page 51
 
 
  1910              		.cfi_def_cfa_offset 8
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1952              		.syntax unified
  1953              		.thumb
  1954              		.thumb_func
-ARM GAS  /tmp/ccWYTPow.s 			page 52
+ARM GAS  /tmp/ccclwIQO.s 			page 52
 
 
  1956              	usart_interrupt_flag_clear:
@@ -3118,136 +3118,136 @@ ARM GAS  /tmp/ccWYTPow.s 			page 1
  1991              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
  1992              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  1993              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
-ARM GAS  /tmp/ccWYTPow.s 			page 53
+ARM GAS  /tmp/ccclwIQO.s 			page 53
 
 
  1994              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
  1995              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_usart.h"
-ARM GAS  /tmp/ccWYTPow.s 			page 54
+ARM GAS  /tmp/ccclwIQO.s 			page 54
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_usart.c
-     /tmp/ccWYTPow.s:19     .text.usart_deinit:0000000000000000 $t
-     /tmp/ccWYTPow.s:25     .text.usart_deinit:0000000000000000 usart_deinit
-     /tmp/ccWYTPow.s:172    .text.usart_deinit:00000000000000b8 $d
-     /tmp/ccWYTPow.s:179    .text.usart_baudrate_set:0000000000000000 $t
-     /tmp/ccWYTPow.s:185    .text.usart_baudrate_set:0000000000000000 usart_baudrate_set
-     /tmp/ccWYTPow.s:311    .text.usart_baudrate_set:000000000000007c $d
-     /tmp/ccWYTPow.s:318    .text.usart_parity_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:324    .text.usart_parity_config:0000000000000000 usart_parity_config
-     /tmp/ccWYTPow.s:348    .text.usart_word_length_set:0000000000000000 $t
-     /tmp/ccWYTPow.s:354    .text.usart_word_length_set:0000000000000000 usart_word_length_set
-     /tmp/ccWYTPow.s:378    .text.usart_stop_bit_set:0000000000000000 $t
-     /tmp/ccWYTPow.s:384    .text.usart_stop_bit_set:0000000000000000 usart_stop_bit_set
-     /tmp/ccWYTPow.s:408    .text.usart_enable:0000000000000000 $t
-     /tmp/ccWYTPow.s:414    .text.usart_enable:0000000000000000 usart_enable
-     /tmp/ccWYTPow.s:433    .text.usart_disable:0000000000000000 $t
-     /tmp/ccWYTPow.s:439    .text.usart_disable:0000000000000000 usart_disable
-     /tmp/ccWYTPow.s:458    .text.usart_transmit_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:464    .text.usart_transmit_config:0000000000000000 usart_transmit_config
-     /tmp/ccWYTPow.s:494    .text.usart_receive_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:500    .text.usart_receive_config:0000000000000000 usart_receive_config
-     /tmp/ccWYTPow.s:530    .text.usart_data_first_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:536    .text.usart_data_first_config:0000000000000000 usart_data_first_config
-     /tmp/ccWYTPow.s:566    .text.usart_invert_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:572    .text.usart_invert_config:0000000000000000 usart_invert_config
-     /tmp/ccWYTPow.s:585    .text.usart_invert_config:0000000000000008 $d
-     /tmp/ccWYTPow.s:591    .text.usart_invert_config:000000000000000e $t
-     /tmp/ccWYTPow.s:638    .text.usart_oversample_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:644    .text.usart_oversample_config:0000000000000000 usart_oversample_config
-     /tmp/ccWYTPow.s:668    .text.usart_sample_bit_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:674    .text.usart_sample_bit_config:0000000000000000 usart_sample_bit_config
-     /tmp/ccWYTPow.s:698    .text.usart_receiver_timeout_enable:0000000000000000 $t
-     /tmp/ccWYTPow.s:704    .text.usart_receiver_timeout_enable:0000000000000000 usart_receiver_timeout_enable
-     /tmp/ccWYTPow.s:723    .text.usart_receiver_timeout_disable:0000000000000000 $t
-     /tmp/ccWYTPow.s:729    .text.usart_receiver_timeout_disable:0000000000000000 usart_receiver_timeout_disable
-     /tmp/ccWYTPow.s:748    .text.usart_receiver_timeout_threshold_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:754    .text.usart_receiver_timeout_threshold_config:0000000000000000 usart_receiver_timeout_threshold_config
-     /tmp/ccWYTPow.s:778    .text.usart_data_transmit:0000000000000000 $t
-     /tmp/ccWYTPow.s:784    .text.usart_data_transmit:0000000000000000 usart_data_transmit
-     /tmp/ccWYTPow.s:804    .text.usart_data_receive:0000000000000000 $t
-     /tmp/ccWYTPow.s:810    .text.usart_data_receive:0000000000000000 usart_data_receive
-     /tmp/ccWYTPow.s:829    .text.usart_address_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:835    .text.usart_address_config:0000000000000000 usart_address_config
-     /tmp/ccWYTPow.s:862    .text.usart_mute_mode_enable:0000000000000000 $t
-     /tmp/ccWYTPow.s:868    .text.usart_mute_mode_enable:0000000000000000 usart_mute_mode_enable
-     /tmp/ccWYTPow.s:887    .text.usart_mute_mode_disable:0000000000000000 $t
-     /tmp/ccWYTPow.s:893    .text.usart_mute_mode_disable:0000000000000000 usart_mute_mode_disable
-     /tmp/ccWYTPow.s:912    .text.usart_mute_mode_wakeup_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:918    .text.usart_mute_mode_wakeup_config:0000000000000000 usart_mute_mode_wakeup_config
-     /tmp/ccWYTPow.s:942    .text.usart_lin_mode_enable:0000000000000000 $t
-     /tmp/ccWYTPow.s:948    .text.usart_lin_mode_enable:0000000000000000 usart_lin_mode_enable
-     /tmp/ccWYTPow.s:967    .text.usart_lin_mode_disable:0000000000000000 $t
-     /tmp/ccWYTPow.s:973    .text.usart_lin_mode_disable:0000000000000000 usart_lin_mode_disable
-     /tmp/ccWYTPow.s:992    .text.usart_lin_break_detection_length_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:998    .text.usart_lin_break_detection_length_config:0000000000000000 usart_lin_break_detection_length_config
-     /tmp/ccWYTPow.s:1025   .text.usart_send_break:0000000000000000 $t
-ARM GAS  /tmp/ccWYTPow.s 			page 55
+     /tmp/ccclwIQO.s:19     .text.usart_deinit:0000000000000000 $t
+     /tmp/ccclwIQO.s:25     .text.usart_deinit:0000000000000000 usart_deinit
+     /tmp/ccclwIQO.s:172    .text.usart_deinit:00000000000000b8 $d
+     /tmp/ccclwIQO.s:179    .text.usart_baudrate_set:0000000000000000 $t
+     /tmp/ccclwIQO.s:185    .text.usart_baudrate_set:0000000000000000 usart_baudrate_set
+     /tmp/ccclwIQO.s:311    .text.usart_baudrate_set:000000000000007c $d
+     /tmp/ccclwIQO.s:318    .text.usart_parity_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:324    .text.usart_parity_config:0000000000000000 usart_parity_config
+     /tmp/ccclwIQO.s:348    .text.usart_word_length_set:0000000000000000 $t
+     /tmp/ccclwIQO.s:354    .text.usart_word_length_set:0000000000000000 usart_word_length_set
+     /tmp/ccclwIQO.s:378    .text.usart_stop_bit_set:0000000000000000 $t
+     /tmp/ccclwIQO.s:384    .text.usart_stop_bit_set:0000000000000000 usart_stop_bit_set
+     /tmp/ccclwIQO.s:408    .text.usart_enable:0000000000000000 $t
+     /tmp/ccclwIQO.s:414    .text.usart_enable:0000000000000000 usart_enable
+     /tmp/ccclwIQO.s:433    .text.usart_disable:0000000000000000 $t
+     /tmp/ccclwIQO.s:439    .text.usart_disable:0000000000000000 usart_disable
+     /tmp/ccclwIQO.s:458    .text.usart_transmit_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:464    .text.usart_transmit_config:0000000000000000 usart_transmit_config
+     /tmp/ccclwIQO.s:494    .text.usart_receive_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:500    .text.usart_receive_config:0000000000000000 usart_receive_config
+     /tmp/ccclwIQO.s:530    .text.usart_data_first_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:536    .text.usart_data_first_config:0000000000000000 usart_data_first_config
+     /tmp/ccclwIQO.s:566    .text.usart_invert_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:572    .text.usart_invert_config:0000000000000000 usart_invert_config
+     /tmp/ccclwIQO.s:585    .text.usart_invert_config:0000000000000008 $d
+     /tmp/ccclwIQO.s:591    .text.usart_invert_config:000000000000000e $t
+     /tmp/ccclwIQO.s:638    .text.usart_oversample_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:644    .text.usart_oversample_config:0000000000000000 usart_oversample_config
+     /tmp/ccclwIQO.s:668    .text.usart_sample_bit_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:674    .text.usart_sample_bit_config:0000000000000000 usart_sample_bit_config
+     /tmp/ccclwIQO.s:698    .text.usart_receiver_timeout_enable:0000000000000000 $t
+     /tmp/ccclwIQO.s:704    .text.usart_receiver_timeout_enable:0000000000000000 usart_receiver_timeout_enable
+     /tmp/ccclwIQO.s:723    .text.usart_receiver_timeout_disable:0000000000000000 $t
+     /tmp/ccclwIQO.s:729    .text.usart_receiver_timeout_disable:0000000000000000 usart_receiver_timeout_disable
+     /tmp/ccclwIQO.s:748    .text.usart_receiver_timeout_threshold_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:754    .text.usart_receiver_timeout_threshold_config:0000000000000000 usart_receiver_timeout_threshold_config
+     /tmp/ccclwIQO.s:778    .text.usart_data_transmit:0000000000000000 $t
+     /tmp/ccclwIQO.s:784    .text.usart_data_transmit:0000000000000000 usart_data_transmit
+     /tmp/ccclwIQO.s:804    .text.usart_data_receive:0000000000000000 $t
+     /tmp/ccclwIQO.s:810    .text.usart_data_receive:0000000000000000 usart_data_receive
+     /tmp/ccclwIQO.s:829    .text.usart_address_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:835    .text.usart_address_config:0000000000000000 usart_address_config
+     /tmp/ccclwIQO.s:862    .text.usart_mute_mode_enable:0000000000000000 $t
+     /tmp/ccclwIQO.s:868    .text.usart_mute_mode_enable:0000000000000000 usart_mute_mode_enable
+     /tmp/ccclwIQO.s:887    .text.usart_mute_mode_disable:0000000000000000 $t
+     /tmp/ccclwIQO.s:893    .text.usart_mute_mode_disable:0000000000000000 usart_mute_mode_disable
+     /tmp/ccclwIQO.s:912    .text.usart_mute_mode_wakeup_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:918    .text.usart_mute_mode_wakeup_config:0000000000000000 usart_mute_mode_wakeup_config
+     /tmp/ccclwIQO.s:942    .text.usart_lin_mode_enable:0000000000000000 $t
+     /tmp/ccclwIQO.s:948    .text.usart_lin_mode_enable:0000000000000000 usart_lin_mode_enable
+     /tmp/ccclwIQO.s:967    .text.usart_lin_mode_disable:0000000000000000 $t
+     /tmp/ccclwIQO.s:973    .text.usart_lin_mode_disable:0000000000000000 usart_lin_mode_disable
+     /tmp/ccclwIQO.s:992    .text.usart_lin_break_detection_length_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:998    .text.usart_lin_break_detection_length_config:0000000000000000 usart_lin_break_detection_length_config
+     /tmp/ccclwIQO.s:1025   .text.usart_send_break:0000000000000000 $t
+ARM GAS  /tmp/ccclwIQO.s 			page 55
 
 
-     /tmp/ccWYTPow.s:1031   .text.usart_send_break:0000000000000000 usart_send_break
-     /tmp/ccWYTPow.s:1050   .text.usart_halfduplex_enable:0000000000000000 $t
-     /tmp/ccWYTPow.s:1056   .text.usart_halfduplex_enable:0000000000000000 usart_halfduplex_enable
-     /tmp/ccWYTPow.s:1075   .text.usart_halfduplex_disable:0000000000000000 $t
-     /tmp/ccWYTPow.s:1081   .text.usart_halfduplex_disable:0000000000000000 usart_halfduplex_disable
-     /tmp/ccWYTPow.s:1100   .text.usart_synchronous_clock_enable:0000000000000000 $t
-     /tmp/ccWYTPow.s:1106   .text.usart_synchronous_clock_enable:0000000000000000 usart_synchronous_clock_enable
-     /tmp/ccWYTPow.s:1125   .text.usart_synchronous_clock_disable:0000000000000000 $t
-     /tmp/ccWYTPow.s:1131   .text.usart_synchronous_clock_disable:0000000000000000 usart_synchronous_clock_disable
-     /tmp/ccWYTPow.s:1150   .text.usart_synchronous_clock_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1156   .text.usart_synchronous_clock_config:0000000000000000 usart_synchronous_clock_config
-     /tmp/ccWYTPow.s:1204   .text.usart_guard_time_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1210   .text.usart_guard_time_config:0000000000000000 usart_guard_time_config
-     /tmp/ccWYTPow.s:1239   .text.usart_smartcard_mode_enable:0000000000000000 $t
-     /tmp/ccWYTPow.s:1245   .text.usart_smartcard_mode_enable:0000000000000000 usart_smartcard_mode_enable
-     /tmp/ccWYTPow.s:1264   .text.usart_smartcard_mode_disable:0000000000000000 $t
-     /tmp/ccWYTPow.s:1270   .text.usart_smartcard_mode_disable:0000000000000000 usart_smartcard_mode_disable
-     /tmp/ccWYTPow.s:1289   .text.usart_smartcard_mode_nack_enable:0000000000000000 $t
-     /tmp/ccWYTPow.s:1295   .text.usart_smartcard_mode_nack_enable:0000000000000000 usart_smartcard_mode_nack_enable
-     /tmp/ccWYTPow.s:1314   .text.usart_smartcard_mode_nack_disable:0000000000000000 $t
-     /tmp/ccWYTPow.s:1320   .text.usart_smartcard_mode_nack_disable:0000000000000000 usart_smartcard_mode_nack_disable
-     /tmp/ccWYTPow.s:1339   .text.usart_smartcard_autoretry_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1345   .text.usart_smartcard_autoretry_config:0000000000000000 usart_smartcard_autoretry_config
-     /tmp/ccWYTPow.s:1374   .text.usart_block_length_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1380   .text.usart_block_length_config:0000000000000000 usart_block_length_config
-     /tmp/ccWYTPow.s:1404   .text.usart_irda_mode_enable:0000000000000000 $t
-     /tmp/ccWYTPow.s:1410   .text.usart_irda_mode_enable:0000000000000000 usart_irda_mode_enable
-     /tmp/ccWYTPow.s:1429   .text.usart_irda_mode_disable:0000000000000000 $t
-     /tmp/ccWYTPow.s:1435   .text.usart_irda_mode_disable:0000000000000000 usart_irda_mode_disable
-     /tmp/ccWYTPow.s:1454   .text.usart_prescaler_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1460   .text.usart_prescaler_config:0000000000000000 usart_prescaler_config
-     /tmp/ccWYTPow.s:1486   .text.usart_irda_lowpower_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1492   .text.usart_irda_lowpower_config:0000000000000000 usart_irda_lowpower_config
-     /tmp/ccWYTPow.s:1519   .text.usart_hardware_flow_rts_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1525   .text.usart_hardware_flow_rts_config:0000000000000000 usart_hardware_flow_rts_config
-     /tmp/ccWYTPow.s:1555   .text.usart_hardware_flow_cts_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1561   .text.usart_hardware_flow_cts_config:0000000000000000 usart_hardware_flow_cts_config
-     /tmp/ccWYTPow.s:1591   .text.usart_break_frame_coherence_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1597   .text.usart_break_frame_coherence_config:0000000000000000 usart_break_frame_coherence_config
-     /tmp/ccWYTPow.s:1624   .text.usart_parity_check_coherence_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1630   .text.usart_parity_check_coherence_config:0000000000000000 usart_parity_check_coherence_config
-     /tmp/ccWYTPow.s:1657   .text.usart_hardware_flow_coherence_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1663   .text.usart_hardware_flow_coherence_config:0000000000000000 usart_hardware_flow_coherence_config
-     /tmp/ccWYTPow.s:1690   .text.usart_dma_receive_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1696   .text.usart_dma_receive_config:0000000000000000 usart_dma_receive_config
-     /tmp/ccWYTPow.s:1726   .text.usart_dma_transmit_config:0000000000000000 $t
-     /tmp/ccWYTPow.s:1732   .text.usart_dma_transmit_config:0000000000000000 usart_dma_transmit_config
-     /tmp/ccWYTPow.s:1762   .text.usart_flag_get:0000000000000000 $t
-     /tmp/ccWYTPow.s:1768   .text.usart_flag_get:0000000000000000 usart_flag_get
-     /tmp/ccWYTPow.s:1794   .text.usart_flag_clear:0000000000000000 $t
-     /tmp/ccWYTPow.s:1800   .text.usart_flag_clear:0000000000000000 usart_flag_clear
-     /tmp/ccWYTPow.s:1834   .text.usart_interrupt_enable:0000000000000000 $t
-     /tmp/ccWYTPow.s:1840   .text.usart_interrupt_enable:0000000000000000 usart_interrupt_enable
-     /tmp/ccWYTPow.s:1872   .text.usart_interrupt_disable:0000000000000000 $t
-     /tmp/ccWYTPow.s:1878   .text.usart_interrupt_disable:0000000000000000 usart_interrupt_disable
-     /tmp/ccWYTPow.s:1890   .text.usart_interrupt_flag_get:0000000000000000 $t
-     /tmp/ccWYTPow.s:1896   .text.usart_interrupt_flag_get:0000000000000000 usart_interrupt_flag_get
-ARM GAS  /tmp/ccWYTPow.s 			page 56
+     /tmp/ccclwIQO.s:1031   .text.usart_send_break:0000000000000000 usart_send_break
+     /tmp/ccclwIQO.s:1050   .text.usart_halfduplex_enable:0000000000000000 $t
+     /tmp/ccclwIQO.s:1056   .text.usart_halfduplex_enable:0000000000000000 usart_halfduplex_enable
+     /tmp/ccclwIQO.s:1075   .text.usart_halfduplex_disable:0000000000000000 $t
+     /tmp/ccclwIQO.s:1081   .text.usart_halfduplex_disable:0000000000000000 usart_halfduplex_disable
+     /tmp/ccclwIQO.s:1100   .text.usart_synchronous_clock_enable:0000000000000000 $t
+     /tmp/ccclwIQO.s:1106   .text.usart_synchronous_clock_enable:0000000000000000 usart_synchronous_clock_enable
+     /tmp/ccclwIQO.s:1125   .text.usart_synchronous_clock_disable:0000000000000000 $t
+     /tmp/ccclwIQO.s:1131   .text.usart_synchronous_clock_disable:0000000000000000 usart_synchronous_clock_disable
+     /tmp/ccclwIQO.s:1150   .text.usart_synchronous_clock_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1156   .text.usart_synchronous_clock_config:0000000000000000 usart_synchronous_clock_config
+     /tmp/ccclwIQO.s:1204   .text.usart_guard_time_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1210   .text.usart_guard_time_config:0000000000000000 usart_guard_time_config
+     /tmp/ccclwIQO.s:1239   .text.usart_smartcard_mode_enable:0000000000000000 $t
+     /tmp/ccclwIQO.s:1245   .text.usart_smartcard_mode_enable:0000000000000000 usart_smartcard_mode_enable
+     /tmp/ccclwIQO.s:1264   .text.usart_smartcard_mode_disable:0000000000000000 $t
+     /tmp/ccclwIQO.s:1270   .text.usart_smartcard_mode_disable:0000000000000000 usart_smartcard_mode_disable
+     /tmp/ccclwIQO.s:1289   .text.usart_smartcard_mode_nack_enable:0000000000000000 $t
+     /tmp/ccclwIQO.s:1295   .text.usart_smartcard_mode_nack_enable:0000000000000000 usart_smartcard_mode_nack_enable
+     /tmp/ccclwIQO.s:1314   .text.usart_smartcard_mode_nack_disable:0000000000000000 $t
+     /tmp/ccclwIQO.s:1320   .text.usart_smartcard_mode_nack_disable:0000000000000000 usart_smartcard_mode_nack_disable
+     /tmp/ccclwIQO.s:1339   .text.usart_smartcard_autoretry_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1345   .text.usart_smartcard_autoretry_config:0000000000000000 usart_smartcard_autoretry_config
+     /tmp/ccclwIQO.s:1374   .text.usart_block_length_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1380   .text.usart_block_length_config:0000000000000000 usart_block_length_config
+     /tmp/ccclwIQO.s:1404   .text.usart_irda_mode_enable:0000000000000000 $t
+     /tmp/ccclwIQO.s:1410   .text.usart_irda_mode_enable:0000000000000000 usart_irda_mode_enable
+     /tmp/ccclwIQO.s:1429   .text.usart_irda_mode_disable:0000000000000000 $t
+     /tmp/ccclwIQO.s:1435   .text.usart_irda_mode_disable:0000000000000000 usart_irda_mode_disable
+     /tmp/ccclwIQO.s:1454   .text.usart_prescaler_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1460   .text.usart_prescaler_config:0000000000000000 usart_prescaler_config
+     /tmp/ccclwIQO.s:1486   .text.usart_irda_lowpower_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1492   .text.usart_irda_lowpower_config:0000000000000000 usart_irda_lowpower_config
+     /tmp/ccclwIQO.s:1519   .text.usart_hardware_flow_rts_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1525   .text.usart_hardware_flow_rts_config:0000000000000000 usart_hardware_flow_rts_config
+     /tmp/ccclwIQO.s:1555   .text.usart_hardware_flow_cts_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1561   .text.usart_hardware_flow_cts_config:0000000000000000 usart_hardware_flow_cts_config
+     /tmp/ccclwIQO.s:1591   .text.usart_break_frame_coherence_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1597   .text.usart_break_frame_coherence_config:0000000000000000 usart_break_frame_coherence_config
+     /tmp/ccclwIQO.s:1624   .text.usart_parity_check_coherence_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1630   .text.usart_parity_check_coherence_config:0000000000000000 usart_parity_check_coherence_config
+     /tmp/ccclwIQO.s:1657   .text.usart_hardware_flow_coherence_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1663   .text.usart_hardware_flow_coherence_config:0000000000000000 usart_hardware_flow_coherence_config
+     /tmp/ccclwIQO.s:1690   .text.usart_dma_receive_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1696   .text.usart_dma_receive_config:0000000000000000 usart_dma_receive_config
+     /tmp/ccclwIQO.s:1726   .text.usart_dma_transmit_config:0000000000000000 $t
+     /tmp/ccclwIQO.s:1732   .text.usart_dma_transmit_config:0000000000000000 usart_dma_transmit_config
+     /tmp/ccclwIQO.s:1762   .text.usart_flag_get:0000000000000000 $t
+     /tmp/ccclwIQO.s:1768   .text.usart_flag_get:0000000000000000 usart_flag_get
+     /tmp/ccclwIQO.s:1794   .text.usart_flag_clear:0000000000000000 $t
+     /tmp/ccclwIQO.s:1800   .text.usart_flag_clear:0000000000000000 usart_flag_clear
+     /tmp/ccclwIQO.s:1834   .text.usart_interrupt_enable:0000000000000000 $t
+     /tmp/ccclwIQO.s:1840   .text.usart_interrupt_enable:0000000000000000 usart_interrupt_enable
+     /tmp/ccclwIQO.s:1872   .text.usart_interrupt_disable:0000000000000000 $t
+     /tmp/ccclwIQO.s:1878   .text.usart_interrupt_disable:0000000000000000 usart_interrupt_disable
+     /tmp/ccclwIQO.s:1890   .text.usart_interrupt_flag_get:0000000000000000 $t
+     /tmp/ccclwIQO.s:1896   .text.usart_interrupt_flag_get:0000000000000000 usart_interrupt_flag_get
+ARM GAS  /tmp/ccclwIQO.s 			page 56
 
 
-     /tmp/ccWYTPow.s:1950   .text.usart_interrupt_flag_clear:0000000000000000 $t
-     /tmp/ccWYTPow.s:1956   .text.usart_interrupt_flag_clear:0000000000000000 usart_interrupt_flag_clear
+     /tmp/ccclwIQO.s:1950   .text.usart_interrupt_flag_clear:0000000000000000 $t
+     /tmp/ccclwIQO.s:1956   .text.usart_interrupt_flag_clear:0000000000000000 usart_interrupt_flag_clear
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable

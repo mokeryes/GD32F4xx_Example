@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccHliqc5.s 			page 1
+ARM GAS  /tmp/cczX85Pb.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccHliqc5.s 			page 1
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-ARM GAS  /tmp/ccHliqc5.s 			page 2
+ARM GAS  /tmp/cczX85Pb.s 			page 2
 
 
   33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccHliqc5.s 			page 1
   63              	iref_enable:
   64              	.LFB117:
   51:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
-ARM GAS  /tmp/ccHliqc5.s 			page 3
+ARM GAS  /tmp/cczX85Pb.s 			page 3
 
 
   52:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** /*!
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccHliqc5.s 			page 1
  101 0002 D2F80037 		ldr	r3, [r2, #1792]
  102              		.loc 1 71 14 is_stmt 0 view .LVU13
  103 0006 23F40043 		bic	r3, r3, #32768
-ARM GAS  /tmp/ccHliqc5.s 			page 4
+ARM GAS  /tmp/cczX85Pb.s 			page 4
 
 
  104 000a C2F80037 		str	r3, [r2, #1792]
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccHliqc5.s 			page 1
  145 001c 00C00040 		.word	1073790976
  146              		.cfi_endproc
  147              	.LFE119:
-ARM GAS  /tmp/ccHliqc5.s 			page 5
+ARM GAS  /tmp/cczX85Pb.s 			page 5
 
 
  149              		.section	.text.iref_precision_trim_value_set,"ax",%progbits
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccHliqc5.s 			page 1
  193              	.LFB121:
  100:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** 
  101:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** /*!
-ARM GAS  /tmp/ccHliqc5.s 			page 6
+ARM GAS  /tmp/cczX85Pb.s 			page 6
 
 
  102:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c ****     \brief      set IREF sink mode
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccHliqc5.s 			page 1
  123:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** void iref_step_data_config(uint32_t stepdata)
  124:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_iref.c **** {
  229              		.loc 1 124 1 is_stmt 1 view -0
-ARM GAS  /tmp/ccHliqc5.s 			page 7
+ARM GAS  /tmp/cczX85Pb.s 			page 7
 
 
  230              		.cfi_startproc
@@ -392,31 +392,31 @@ ARM GAS  /tmp/ccHliqc5.s 			page 1
  256              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
  257              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  258              		.file 4 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
-ARM GAS  /tmp/ccHliqc5.s 			page 8
+ARM GAS  /tmp/cczX85Pb.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_iref.c
-     /tmp/ccHliqc5.s:19     .text.iref_deinit:0000000000000000 $t
-     /tmp/ccHliqc5.s:25     .text.iref_deinit:0000000000000000 iref_deinit
-     /tmp/ccHliqc5.s:57     .text.iref_enable:0000000000000000 $t
-     /tmp/ccHliqc5.s:63     .text.iref_enable:0000000000000000 iref_enable
-     /tmp/ccHliqc5.s:81     .text.iref_enable:0000000000000010 $d
-     /tmp/ccHliqc5.s:86     .text.iref_disable:0000000000000000 $t
-     /tmp/ccHliqc5.s:92     .text.iref_disable:0000000000000000 iref_disable
-     /tmp/ccHliqc5.s:110    .text.iref_disable:0000000000000010 $d
-     /tmp/ccHliqc5.s:115    .text.iref_mode_set:0000000000000000 $t
-     /tmp/ccHliqc5.s:121    .text.iref_mode_set:0000000000000000 iref_mode_set
-     /tmp/ccHliqc5.s:145    .text.iref_mode_set:000000000000001c $d
-     /tmp/ccHliqc5.s:150    .text.iref_precision_trim_value_set:0000000000000000 $t
-     /tmp/ccHliqc5.s:156    .text.iref_precision_trim_value_set:0000000000000000 iref_precision_trim_value_set
-     /tmp/ccHliqc5.s:180    .text.iref_precision_trim_value_set:000000000000001c $d
-     /tmp/ccHliqc5.s:185    .text.iref_sink_set:0000000000000000 $t
-     /tmp/ccHliqc5.s:191    .text.iref_sink_set:0000000000000000 iref_sink_set
-     /tmp/ccHliqc5.s:215    .text.iref_sink_set:000000000000001c $d
-     /tmp/ccHliqc5.s:220    .text.iref_step_data_config:0000000000000000 $t
-     /tmp/ccHliqc5.s:226    .text.iref_step_data_config:0000000000000000 iref_step_data_config
-     /tmp/ccHliqc5.s:250    .text.iref_step_data_config:000000000000001c $d
+     /tmp/cczX85Pb.s:19     .text.iref_deinit:0000000000000000 $t
+     /tmp/cczX85Pb.s:25     .text.iref_deinit:0000000000000000 iref_deinit
+     /tmp/cczX85Pb.s:57     .text.iref_enable:0000000000000000 $t
+     /tmp/cczX85Pb.s:63     .text.iref_enable:0000000000000000 iref_enable
+     /tmp/cczX85Pb.s:81     .text.iref_enable:0000000000000010 $d
+     /tmp/cczX85Pb.s:86     .text.iref_disable:0000000000000000 $t
+     /tmp/cczX85Pb.s:92     .text.iref_disable:0000000000000000 iref_disable
+     /tmp/cczX85Pb.s:110    .text.iref_disable:0000000000000010 $d
+     /tmp/cczX85Pb.s:115    .text.iref_mode_set:0000000000000000 $t
+     /tmp/cczX85Pb.s:121    .text.iref_mode_set:0000000000000000 iref_mode_set
+     /tmp/cczX85Pb.s:145    .text.iref_mode_set:000000000000001c $d
+     /tmp/cczX85Pb.s:150    .text.iref_precision_trim_value_set:0000000000000000 $t
+     /tmp/cczX85Pb.s:156    .text.iref_precision_trim_value_set:0000000000000000 iref_precision_trim_value_set
+     /tmp/cczX85Pb.s:180    .text.iref_precision_trim_value_set:000000000000001c $d
+     /tmp/cczX85Pb.s:185    .text.iref_sink_set:0000000000000000 $t
+     /tmp/cczX85Pb.s:191    .text.iref_sink_set:0000000000000000 iref_sink_set
+     /tmp/cczX85Pb.s:215    .text.iref_sink_set:000000000000001c $d
+     /tmp/cczX85Pb.s:220    .text.iref_step_data_config:0000000000000000 $t
+     /tmp/cczX85Pb.s:226    .text.iref_step_data_config:0000000000000000 iref_step_data_config
+     /tmp/cczX85Pb.s:250    .text.iref_step_data_config:000000000000001c $d
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable
