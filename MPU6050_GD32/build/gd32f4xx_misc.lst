@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cctJ15Zt.s 			page 1
+ARM GAS  /tmp/ccLhiLra.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
   29:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-ARM GAS  /tmp/cctJ15Zt.s 			page 2
+ARM GAS  /tmp/ccLhiLra.s 			page 2
 
 
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
   61              	.LFB117:
   55:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c **** 
   56:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c **** /*!
-ARM GAS  /tmp/cctJ15Zt.s 			page 3
+ARM GAS  /tmp/ccLhiLra.s 			page 3
 
 
   57:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c ****     \brief    enable NVIC request
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
   95              		.loc 1 75 12 is_stmt 1 view .LVU20
   96              		.loc 1 75 20 is_stmt 0 view .LVU21
   97 001e DA68     		ldr	r2, [r3, #12]
-ARM GAS  /tmp/cctJ15Zt.s 			page 4
+ARM GAS  /tmp/ccLhiLra.s 			page 4
 
 
   98              		.loc 1 75 29 view .LVU22
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
   77:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c ****     } else if(((SCB->AIRCR) & (uint32_t)0x700U) == NVIC_PRIGROUP_PRE3_SUB1) {
  136              		.loc 1 77 18 is_stmt 0 view .LVU39
  137 0046 0223     		movs	r3, #2
-ARM GAS  /tmp/cctJ15Zt.s 			page 5
+ARM GAS  /tmp/ccLhiLra.s 			page 5
 
 
   76:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c ****         temp_sub = 0x2U;
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
  180              		.loc 1 95 66 view .LVU59
  181 006c 00F01F00 		and	r0, r0, #31
  182              	.LVL13:
-ARM GAS  /tmp/cctJ15Zt.s 			page 6
+ARM GAS  /tmp/ccLhiLra.s 			page 6
 
 
  183              		.loc 1 95 53 view .LVU60
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
  230              	nvic_irq_disable:
  231              	.LVL15:
  232              	.LFB118:
-ARM GAS  /tmp/cctJ15Zt.s 			page 7
+ARM GAS  /tmp/ccLhiLra.s 			page 7
 
 
   97:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c **** 
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
  113:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c ****       \arg        NVIC_VECTTAB_RAM: RAM base address
  114:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c ****       \are        NVIC_VECTTAB_FLASH: Flash base address
  115:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c ****     \param[in]  offset: Vector Table offset
-ARM GAS  /tmp/cctJ15Zt.s 			page 8
+ARM GAS  /tmp/ccLhiLra.s 			page 8
 
 
  116:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c ****     \param[out] none
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
   27:Drivers/CMSIS/core_cmInstr.h **** 
   28:Drivers/CMSIS/core_cmInstr.h **** /* ##########################  Core Instruction Access  ######################### */
   29:Drivers/CMSIS/core_cmInstr.h **** /** \defgroup CMSIS_Core_InstructionInterface CMSIS Core Instruction Interface
-ARM GAS  /tmp/cctJ15Zt.s 			page 9
+ARM GAS  /tmp/ccLhiLra.s 			page 9
 
 
   30:Drivers/CMSIS/core_cmInstr.h ****   Access to dedicated instructions
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
   84:Drivers/CMSIS/core_cmInstr.h ****     It completes when all explicit memory accesses before this instruction complete.
   85:Drivers/CMSIS/core_cmInstr.h ****  */
   86:Drivers/CMSIS/core_cmInstr.h **** #define __DSB()                           __dsb(0xF)
-ARM GAS  /tmp/cctJ15Zt.s 			page 10
+ARM GAS  /tmp/ccLhiLra.s 			page 10
 
 
   87:Drivers/CMSIS/core_cmInstr.h **** 
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
  141:Drivers/CMSIS/core_cmInstr.h ****     \return               Rotated value
  142:Drivers/CMSIS/core_cmInstr.h ****  */
  143:Drivers/CMSIS/core_cmInstr.h **** #define __ROR                             __ror
-ARM GAS  /tmp/cctJ15Zt.s 			page 11
+ARM GAS  /tmp/ccLhiLra.s 			page 11
 
 
  144:Drivers/CMSIS/core_cmInstr.h **** 
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
  198:Drivers/CMSIS/core_cmInstr.h **** 
  199:Drivers/CMSIS/core_cmInstr.h **** 
  200:Drivers/CMSIS/core_cmInstr.h **** /** \brief  STR Exclusive (16 bit)
-ARM GAS  /tmp/cctJ15Zt.s 			page 12
+ARM GAS  /tmp/ccLhiLra.s 			page 12
 
 
  201:Drivers/CMSIS/core_cmInstr.h **** 
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
  255:Drivers/CMSIS/core_cmInstr.h **** 
  256:Drivers/CMSIS/core_cmInstr.h ****     This function counts the number of leading zeros of a data value.
  257:Drivers/CMSIS/core_cmInstr.h **** 
-ARM GAS  /tmp/cctJ15Zt.s 			page 13
+ARM GAS  /tmp/ccLhiLra.s 			page 13
 
 
  258:Drivers/CMSIS/core_cmInstr.h ****     \param [in]  value  Value to count the leading zeros
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
  312:Drivers/CMSIS/core_cmInstr.h **** 
  313:Drivers/CMSIS/core_cmInstr.h **** 
  314:Drivers/CMSIS/core_cmInstr.h **** /** \brief  Send Event
-ARM GAS  /tmp/cctJ15Zt.s 			page 14
+ARM GAS  /tmp/ccLhiLra.s 			page 14
 
 
  315:Drivers/CMSIS/core_cmInstr.h **** 
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
  319              		.thumb_func
  321              	system_lowpower_set:
  322              	.LVL19:
-ARM GAS  /tmp/cctJ15Zt.s 			page 15
+ARM GAS  /tmp/ccLhiLra.s 			page 15
 
 
  323              	.LFB120:
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
  146:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c ****       \arg        SCB_LPM_DEEPSLEEP: if chose this para, the system will enter the SLEEP mode
  147:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c ****       \arg        SCB_LPM_WAKE_BY_ALL_INT: if chose this para, the lowpower mode only can be
  148:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c ****                     woke up by the enable interrupts
-ARM GAS  /tmp/cctJ15Zt.s 			page 16
+ARM GAS  /tmp/ccLhiLra.s 			page 16
 
 
  149:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_misc.c ****     \param[out] none
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
  393              		.loc 1 168 5 view .LVU104
  394 0000 4FF0E023 		mov	r3, #-536813568
  395              		.loc 1 168 7 is_stmt 0 view .LVU105
-ARM GAS  /tmp/cctJ15Zt.s 			page 17
+ARM GAS  /tmp/ccLhiLra.s 			page 17
 
 
  396 0004 0428     		cmp	r0, #4
@@ -988,30 +988,30 @@ ARM GAS  /tmp/cctJ15Zt.s 			page 1
  414              		.file 3 "/usr/arm-none-eabi/include/machine/_default_types.h"
  415              		.file 4 "/usr/arm-none-eabi/include/sys/_stdint.h"
  416              		.file 5 "Drivers/CMSIS/core_cm4.h"
-ARM GAS  /tmp/cctJ15Zt.s 			page 18
+ARM GAS  /tmp/ccLhiLra.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_misc.c
-     /tmp/cctJ15Zt.s:19     .text.nvic_priority_group_set:0000000000000000 $t
-     /tmp/cctJ15Zt.s:25     .text.nvic_priority_group_set:0000000000000000 nvic_priority_group_set
-     /tmp/cctJ15Zt.s:48     .text.nvic_priority_group_set:0000000000000010 $d
-     /tmp/cctJ15Zt.s:53     .text.nvic_irq_enable:0000000000000000 $t
-     /tmp/cctJ15Zt.s:59     .text.nvic_irq_enable:0000000000000000 nvic_irq_enable
-     /tmp/cctJ15Zt.s:217    .text.nvic_irq_enable:0000000000000090 $d
-     /tmp/cctJ15Zt.s:224    .text.nvic_irq_disable:0000000000000000 $t
-     /tmp/cctJ15Zt.s:230    .text.nvic_irq_disable:0000000000000000 nvic_irq_disable
-     /tmp/cctJ15Zt.s:259    .text.nvic_irq_disable:0000000000000014 $d
-     /tmp/cctJ15Zt.s:264    .text.nvic_vector_table_set:0000000000000000 $t
-     /tmp/cctJ15Zt.s:270    .text.nvic_vector_table_set:0000000000000000 nvic_vector_table_set
-     /tmp/cctJ15Zt.s:310    .text.nvic_vector_table_set:0000000000000014 $d
-     /tmp/cctJ15Zt.s:315    .text.system_lowpower_set:0000000000000000 $t
-     /tmp/cctJ15Zt.s:321    .text.system_lowpower_set:0000000000000000 system_lowpower_set
-     /tmp/cctJ15Zt.s:343    .text.system_lowpower_set:000000000000000c $d
-     /tmp/cctJ15Zt.s:348    .text.system_lowpower_reset:0000000000000000 $t
-     /tmp/cctJ15Zt.s:354    .text.system_lowpower_reset:0000000000000000 system_lowpower_reset
-     /tmp/cctJ15Zt.s:374    .text.system_lowpower_reset:000000000000000c $d
-     /tmp/cctJ15Zt.s:379    .text.systick_clksource_set:0000000000000000 $t
-     /tmp/cctJ15Zt.s:385    .text.systick_clksource_set:0000000000000000 systick_clksource_set
+     /tmp/ccLhiLra.s:19     .text.nvic_priority_group_set:0000000000000000 $t
+     /tmp/ccLhiLra.s:25     .text.nvic_priority_group_set:0000000000000000 nvic_priority_group_set
+     /tmp/ccLhiLra.s:48     .text.nvic_priority_group_set:0000000000000010 $d
+     /tmp/ccLhiLra.s:53     .text.nvic_irq_enable:0000000000000000 $t
+     /tmp/ccLhiLra.s:59     .text.nvic_irq_enable:0000000000000000 nvic_irq_enable
+     /tmp/ccLhiLra.s:217    .text.nvic_irq_enable:0000000000000090 $d
+     /tmp/ccLhiLra.s:224    .text.nvic_irq_disable:0000000000000000 $t
+     /tmp/ccLhiLra.s:230    .text.nvic_irq_disable:0000000000000000 nvic_irq_disable
+     /tmp/ccLhiLra.s:259    .text.nvic_irq_disable:0000000000000014 $d
+     /tmp/ccLhiLra.s:264    .text.nvic_vector_table_set:0000000000000000 $t
+     /tmp/ccLhiLra.s:270    .text.nvic_vector_table_set:0000000000000000 nvic_vector_table_set
+     /tmp/ccLhiLra.s:310    .text.nvic_vector_table_set:0000000000000014 $d
+     /tmp/ccLhiLra.s:315    .text.system_lowpower_set:0000000000000000 $t
+     /tmp/ccLhiLra.s:321    .text.system_lowpower_set:0000000000000000 system_lowpower_set
+     /tmp/ccLhiLra.s:343    .text.system_lowpower_set:000000000000000c $d
+     /tmp/ccLhiLra.s:348    .text.system_lowpower_reset:0000000000000000 $t
+     /tmp/ccLhiLra.s:354    .text.system_lowpower_reset:0000000000000000 system_lowpower_reset
+     /tmp/ccLhiLra.s:374    .text.system_lowpower_reset:000000000000000c $d
+     /tmp/ccLhiLra.s:379    .text.systick_clksource_set:0000000000000000 $t
+     /tmp/ccLhiLra.s:385    .text.systick_clksource_set:0000000000000000 systick_clksource_set
 
 NO UNDEFINED SYMBOLS

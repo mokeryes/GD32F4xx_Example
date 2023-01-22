@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccGUn8Mv.s 			page 1
+ARM GAS  /tmp/ccPx2DXD.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccGUn8Mv.s 			page 1
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-ARM GAS  /tmp/ccGUn8Mv.s 			page 2
+ARM GAS  /tmp/ccPx2DXD.s 			page 2
 
 
   33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccGUn8Mv.s 			page 1
   63              	trng_enable:
   64              	.LFB117:
   51:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
-ARM GAS  /tmp/ccGUn8Mv.s 			page 3
+ARM GAS  /tmp/ccPx2DXD.s 			page 3
 
 
   52:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*!
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccGUn8Mv.s 			page 1
  101 0002 D2F80038 		ldr	r3, [r2, #2048]
  102              		.loc 1 71 14 is_stmt 0 view .LVU13
  103 0006 23F00403 		bic	r3, r3, #4
-ARM GAS  /tmp/ccGUn8Mv.s 			page 4
+ARM GAS  /tmp/ccPx2DXD.s 			page 4
 
 
  104 000a C2F80038 		str	r3, [r2, #2048]
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccGUn8Mv.s 			page 1
   84:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** 
   85:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** /*!
   86:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \brief      enable TRNG interrupt
-ARM GAS  /tmp/ccGUn8Mv.s 			page 5
+ARM GAS  /tmp/ccPx2DXD.s 			page 5
 
 
   87:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \param[in]  none
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccGUn8Mv.s 			page 1
  188 0006 23F00803 		bic	r3, r3, #8
  189 000a C2F80038 		str	r3, [r2, #2048]
  105:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** }
-ARM GAS  /tmp/ccGUn8Mv.s 			page 6
+ARM GAS  /tmp/ccPx2DXD.s 			page 6
 
 
  190              		.loc 1 105 1 view .LVU26
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccGUn8Mv.s 			page 1
  227              	.L19:
  228              		.align	2
  229              	.L18:
-ARM GAS  /tmp/ccGUn8Mv.s 			page 7
+ARM GAS  /tmp/ccPx2DXD.s 			page 7
 
 
  230 0010 00000650 		.word	1342570496
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccGUn8Mv.s 			page 1
  151:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c ****     \retval     none
  152:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** */
  153:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** void trng_interrupt_flag_clear(trng_int_flag_enum int_flag)
-ARM GAS  /tmp/ccGUn8Mv.s 			page 8
+ARM GAS  /tmp/ccPx2DXD.s 			page 8
 
 
  154:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_trng.c **** {
@@ -450,36 +450,36 @@ ARM GAS  /tmp/ccGUn8Mv.s 			page 1
  286              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
  287              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
  288              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_trng.h"
-ARM GAS  /tmp/ccGUn8Mv.s 			page 9
+ARM GAS  /tmp/ccPx2DXD.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_trng.c
-     /tmp/ccGUn8Mv.s:19     .text.trng_deinit:0000000000000000 $t
-     /tmp/ccGUn8Mv.s:25     .text.trng_deinit:0000000000000000 trng_deinit
-     /tmp/ccGUn8Mv.s:57     .text.trng_enable:0000000000000000 $t
-     /tmp/ccGUn8Mv.s:63     .text.trng_enable:0000000000000000 trng_enable
-     /tmp/ccGUn8Mv.s:81     .text.trng_enable:0000000000000010 $d
-     /tmp/ccGUn8Mv.s:86     .text.trng_disable:0000000000000000 $t
-     /tmp/ccGUn8Mv.s:92     .text.trng_disable:0000000000000000 trng_disable
-     /tmp/ccGUn8Mv.s:110    .text.trng_disable:0000000000000010 $d
-     /tmp/ccGUn8Mv.s:115    .text.trng_get_true_random_data:0000000000000000 $t
-     /tmp/ccGUn8Mv.s:121    .text.trng_get_true_random_data:0000000000000000 trng_get_true_random_data
-     /tmp/ccGUn8Mv.s:137    .text.trng_get_true_random_data:0000000000000008 $d
-     /tmp/ccGUn8Mv.s:142    .text.trng_interrupt_enable:0000000000000000 $t
-     /tmp/ccGUn8Mv.s:148    .text.trng_interrupt_enable:0000000000000000 trng_interrupt_enable
-     /tmp/ccGUn8Mv.s:166    .text.trng_interrupt_enable:0000000000000010 $d
-     /tmp/ccGUn8Mv.s:171    .text.trng_interrupt_disable:0000000000000000 $t
-     /tmp/ccGUn8Mv.s:177    .text.trng_interrupt_disable:0000000000000000 trng_interrupt_disable
-     /tmp/ccGUn8Mv.s:195    .text.trng_interrupt_disable:0000000000000010 $d
-     /tmp/ccGUn8Mv.s:200    .text.trng_flag_get:0000000000000000 $t
-     /tmp/ccGUn8Mv.s:206    .text.trng_flag_get:0000000000000000 trng_flag_get
-     /tmp/ccGUn8Mv.s:230    .text.trng_flag_get:0000000000000010 $d
-     /tmp/ccGUn8Mv.s:235    .text.trng_interrupt_flag_get:0000000000000000 $t
-     /tmp/ccGUn8Mv.s:241    .text.trng_interrupt_flag_get:0000000000000000 trng_interrupt_flag_get
-     /tmp/ccGUn8Mv.s:253    .text.trng_interrupt_flag_clear:0000000000000000 $t
-     /tmp/ccGUn8Mv.s:259    .text.trng_interrupt_flag_clear:0000000000000000 trng_interrupt_flag_clear
-     /tmp/ccGUn8Mv.s:278    .text.trng_interrupt_flag_clear:0000000000000010 $d
+     /tmp/ccPx2DXD.s:19     .text.trng_deinit:0000000000000000 $t
+     /tmp/ccPx2DXD.s:25     .text.trng_deinit:0000000000000000 trng_deinit
+     /tmp/ccPx2DXD.s:57     .text.trng_enable:0000000000000000 $t
+     /tmp/ccPx2DXD.s:63     .text.trng_enable:0000000000000000 trng_enable
+     /tmp/ccPx2DXD.s:81     .text.trng_enable:0000000000000010 $d
+     /tmp/ccPx2DXD.s:86     .text.trng_disable:0000000000000000 $t
+     /tmp/ccPx2DXD.s:92     .text.trng_disable:0000000000000000 trng_disable
+     /tmp/ccPx2DXD.s:110    .text.trng_disable:0000000000000010 $d
+     /tmp/ccPx2DXD.s:115    .text.trng_get_true_random_data:0000000000000000 $t
+     /tmp/ccPx2DXD.s:121    .text.trng_get_true_random_data:0000000000000000 trng_get_true_random_data
+     /tmp/ccPx2DXD.s:137    .text.trng_get_true_random_data:0000000000000008 $d
+     /tmp/ccPx2DXD.s:142    .text.trng_interrupt_enable:0000000000000000 $t
+     /tmp/ccPx2DXD.s:148    .text.trng_interrupt_enable:0000000000000000 trng_interrupt_enable
+     /tmp/ccPx2DXD.s:166    .text.trng_interrupt_enable:0000000000000010 $d
+     /tmp/ccPx2DXD.s:171    .text.trng_interrupt_disable:0000000000000000 $t
+     /tmp/ccPx2DXD.s:177    .text.trng_interrupt_disable:0000000000000000 trng_interrupt_disable
+     /tmp/ccPx2DXD.s:195    .text.trng_interrupt_disable:0000000000000010 $d
+     /tmp/ccPx2DXD.s:200    .text.trng_flag_get:0000000000000000 $t
+     /tmp/ccPx2DXD.s:206    .text.trng_flag_get:0000000000000000 trng_flag_get
+     /tmp/ccPx2DXD.s:230    .text.trng_flag_get:0000000000000010 $d
+     /tmp/ccPx2DXD.s:235    .text.trng_interrupt_flag_get:0000000000000000 $t
+     /tmp/ccPx2DXD.s:241    .text.trng_interrupt_flag_get:0000000000000000 trng_interrupt_flag_get
+     /tmp/ccPx2DXD.s:253    .text.trng_interrupt_flag_clear:0000000000000000 $t
+     /tmp/ccPx2DXD.s:259    .text.trng_interrupt_flag_clear:0000000000000000 trng_interrupt_flag_clear
+     /tmp/ccPx2DXD.s:278    .text.trng_interrupt_flag_clear:0000000000000010 $d
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable

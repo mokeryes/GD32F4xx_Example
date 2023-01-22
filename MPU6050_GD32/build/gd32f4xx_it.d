@@ -33,7 +33,8 @@ build/gd32f4xx_it.o: Core/Src/gd32f4xx_it.c Core/Inc/gd32f4xx_it.h \
  Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_ipa.h \
  Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_tli.h \
  Core/Inc/main.h Core/Inc/systick.h Core/Inc/bsp_usart.h \
- Hardware/Inc/bsp_mpu6050.h Core/Inc/systick.h Core/Inc/bsp_i2c.h
+ Core/Inc/bsp_i2c.h Hardware/Inc/bsp_mpu6050.h Core/Inc/systick.h \
+ Core/Inc/bsp_i2c.h
 Core/Inc/gd32f4xx_it.h:
 Drivers/CMSIS/Include/gd32f4xx.h:
 Drivers/CMSIS/core_cm4.h:
@@ -74,6 +75,7 @@ Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_tli.h:
 Core/Inc/main.h:
 Core/Inc/systick.h:
 Core/Inc/bsp_usart.h:
+Core/Inc/bsp_i2c.h:
 Hardware/Inc/bsp_mpu6050.h:
 Core/Inc/systick.h:
 Core/Inc/bsp_i2c.h:

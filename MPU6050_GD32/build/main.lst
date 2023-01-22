@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccXAx3sh.s 			page 1
+ARM GAS  /tmp/ccM28NaZ.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -53,36 +53,44 @@ ARM GAS  /tmp/ccXAx3sh.s 			page 1
   42              		.loc 1 8 5 is_stmt 1 view .LVU4
   43 0006 FFF7FEFF 		bl	usart_gpio_config
   44              	.LVL1:
-  45              	.L3:
-   9:Core/Src/main.c ****     MPU6050_init();
-  46              		.loc 1 9 5 view .LVU5
-  47 000a FFF7FEFF 		bl	MPU6050_init
-  48              	.LVL2:
-ARM GAS  /tmp/ccXAx3sh.s 			page 2
+  45              	.L2:
+   9:Core/Src/main.c **** 
+  10:Core/Src/main.c ****     while (1) {
+  46              		.loc 1 10 5 discriminator 1 view .LVU5
+  11:Core/Src/main.c ****         mpu6050_init();
+ARM GAS  /tmp/ccM28NaZ.s 			page 2
 
 
-  10:Core/Src/main.c **** 
-  11:Core/Src/main.c ****     while (1) {
-  49              		.loc 1 11 5 view .LVU6
-  12:Core/Src/main.c ****         MPU6050_init();
-  50              		.loc 1 12 9 view .LVU7
-  51 000e FCE7     		b	.L3
-  52              		.cfi_endproc
-  53              	.LFE119:
-  55              		.text
-  56              	.Letext0:
-  57              		.file 2 "Hardware/Inc/bsp_mpu6050.h"
-  58              		.file 3 "Core/Inc/bsp_usart.h"
-  59              		.file 4 "Core/Inc/systick.h"
-ARM GAS  /tmp/ccXAx3sh.s 			page 3
+  47              		.loc 1 11 9 discriminator 1 view .LVU6
+  48 000a FFF7FEFF 		bl	mpu6050_init
+  49              	.LVL2:
+  12:Core/Src/main.c ****         delay_1ms(10);
+  50              		.loc 1 12 9 discriminator 1 view .LVU7
+  51 000e 0A20     		movs	r0, #10
+  52 0010 FFF7FEFF 		bl	delay_1ms
+  53              	.LVL3:
+  10:Core/Src/main.c ****         mpu6050_init();
+  54              		.loc 1 10 11 discriminator 1 view .LVU8
+  55 0014 F9E7     		b	.L2
+  56              		.cfi_endproc
+  57              	.LFE119:
+  59              		.text
+  60              	.Letext0:
+  61              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+  62              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+  63              		.file 4 "Hardware/Inc/bsp_mpu6050.h"
+  64              		.file 5 "Core/Inc/bsp_usart.h"
+  65              		.file 6 "Core/Inc/systick.h"
+ARM GAS  /tmp/ccM28NaZ.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-     /tmp/ccXAx3sh.s:19     .text.startup.main:0000000000000000 $t
-     /tmp/ccXAx3sh.s:25     .text.startup.main:0000000000000000 main
+     /tmp/ccM28NaZ.s:19     .text.startup.main:0000000000000000 $t
+     /tmp/ccM28NaZ.s:25     .text.startup.main:0000000000000000 main
 
 UNDEFINED SYMBOLS
 systick_config
 usart_gpio_config
-MPU6050_init
+mpu6050_init
+delay_1ms

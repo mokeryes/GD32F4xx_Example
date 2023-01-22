@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccNMoX1B.s 			page 1
+ARM GAS  /tmp/ccFsoVqh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-ARM GAS  /tmp/ccNMoX1B.s 			page 2
+ARM GAS  /tmp/ccFsoVqh.s 			page 2
 
 
   33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
   59              		.syntax unified
   60              		.thumb
   61              		.thumb_func
-ARM GAS  /tmp/ccNMoX1B.s 			page 3
+ARM GAS  /tmp/ccFsoVqh.s 			page 3
 
 
   63              	tli_struct_para_init:
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
   90:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****     tli_struct->backcolor_blue = TLI_DEFAULT_VALUE;
   81              		.loc 1 90 5 view .LVU18
   91:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****     tli_struct->signalpolarity_hs = TLI_HSYN_ACTLIVE_LOW;
-ARM GAS  /tmp/ccNMoX1B.s 			page 4
+ARM GAS  /tmp/ccFsoVqh.s 			page 4
 
 
   82              		.loc 1 91 5 view .LVU19
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  106:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****                   totalsz_vtsz: vertical total size of the display, including active area, back por
  107:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****                   totalsz_htsz: vorizontal total size of the display, including active area, back p
  108:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****                   backcolor_red: background value red
-ARM GAS  /tmp/ccNMoX1B.s 			page 5
+ARM GAS  /tmp/ccFsoVqh.s 			page 5
 
 
  109:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****                   backcolor_green: background value green
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  151              		.loc 1 127 13 is_stmt 0 view .LVU46
  152 002c 02F0F022 		and	r2, r2, #-268374016
  153 0030 C3F81028 		str	r2, [r3, #2064]
-ARM GAS  /tmp/ccNMoX1B.s 			page 6
+ARM GAS  /tmp/ccFsoVqh.s 			page 6
 
 
  128:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****     TLI_ASZ = (tli_struct->activesz_vasz | (tli_struct->activesz_hasz << 16U));
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  199 008c 0A43     		orrs	r2, r2, r1
  200 008e C16A     		ldr	r1, [r0, #44]
  201 0090 0A43     		orrs	r2, r2, r1
-ARM GAS  /tmp/ccNMoX1B.s 			page 7
+ARM GAS  /tmp/ccFsoVqh.s 			page 7
 
 
  202 0092 016B     		ldr	r1, [r0, #48]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  155:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****         TLI_CTL &= ~(TLI_CTL_DFEN);
  239              		.loc 1 155 9 is_stmt 1 view .LVU75
  240              		.loc 1 155 17 is_stmt 0 view .LVU76
-ARM GAS  /tmp/ccNMoX1B.s 			page 8
+ARM GAS  /tmp/ccFsoVqh.s 			page 8
 
 
  241 000e 22F48032 		bicne	r2, r2, #65536
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  285              		.thumb
  286              		.thumb_func
  288              	tli_disable:
-ARM GAS  /tmp/ccNMoX1B.s 			page 9
+ARM GAS  /tmp/ccFsoVqh.s 			page 9
 
 
  289              	.LFB121:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  322              		@ args = 0, pretend = 0, frame = 0
  323              		@ frame_needed = 0, uses_anonymous_args = 0
  324              		@ link register save eliminated.
-ARM GAS  /tmp/ccNMoX1B.s 			page 10
+ARM GAS  /tmp/ccFsoVqh.s 			page 10
 
 
  192:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****     if(TLI_FRAME_BLANK_RELOAD_EN == reload_mod) {
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  209:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****                   layer_window_toppos: window top position
  210:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****                   layer_ppf: LAYER_PPF_ARGB8888,LAYER_PPF_RGB888,LAYER_PPF_RGB565,
  211:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****                                  LAYER_PPF_ARG1555,LAYER_PPF_ARGB4444,LAYER_PPF_L8,
-ARM GAS  /tmp/ccNMoX1B.s 			page 11
+ARM GAS  /tmp/ccFsoVqh.s 			page 11
 
 
  212:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****                                  LAYER_PPF_AL44,LAYER_PPF_AL88
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  383 0006 4FF4C061 		mov	r1, #1536
  384 000a 0722     		movs	r2, #7
  231:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****     layer_struct->layer_window_toppos = TLI_DEFAULT_VALUE;
-ARM GAS  /tmp/ccNMoX1B.s 			page 12
+ARM GAS  /tmp/ccFsoVqh.s 			page 12
 
 
  385              		.loc 1 231 42 view .LVU111
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  259:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****                   layer_default_alpha: the default color alpha
  260:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****                   layer_default_red: the default color red
  261:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****                   layer_default_green: the default color green
-ARM GAS  /tmp/ccNMoX1B.s 			page 13
+ARM GAS  /tmp/ccFsoVqh.s 			page 13
 
 
  262:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****                   layer_default_blue: the default color blue
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  450              		.loc 1 279 5 is_stmt 1 view .LVU137
  451              		.loc 1 279 37 is_stmt 0 view .LVU138
  452 0028 CB88     		ldrh	r3, [r1, #6]
-ARM GAS  /tmp/ccNMoX1B.s 			page 14
+ARM GAS  /tmp/ccFsoVqh.s 			page 14
 
 
  453              		.loc 1 279 26 view .LVU139
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  493 0072 23F00703 		bic	r3, r3, #7
  494 0076 C0F8A030 		str	r3, [r0, #160]
  294:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****     TLI_LxBLEND(layerx) = ((layer_struct->layer_acf2) | (layer_struct->layer_acf1));
-ARM GAS  /tmp/ccNMoX1B.s 			page 15
+ARM GAS  /tmp/ccFsoVqh.s 			page 15
 
 
  495              		.loc 1 294 5 is_stmt 1 view .LVU159
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  537              		.cfi_endproc
  538              	.LFE124:
  540              		.section	.text.tli_layer_window_offset_modify,"ax",%progbits
-ARM GAS  /tmp/ccNMoX1B.s 			page 16
+ARM GAS  /tmp/ccFsoVqh.s 			page 16
 
 
  541              		.align	1
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  577              		.loc 1 322 38 is_stmt 0 view .LVU191
  578 001c D4F80C38 		ldr	r3, [r4, #2060]
  579              		.loc 1 322 65 view .LVU192
-ARM GAS  /tmp/ccNMoX1B.s 			page 17
+ARM GAS  /tmp/ccFsoVqh.s 			page 17
 
 
  580 0020 C3F30B43 		ubfx	r3, r3, #16, #12
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  622              		.loc 1 330 26 is_stmt 0 view .LVU207
  623 0056 D0F8B030 		ldr	r3, [r0, #176]
  624              		.loc 1 330 46 view .LVU208
-ARM GAS  /tmp/ccNMoX1B.s 			page 18
+ARM GAS  /tmp/ccFsoVqh.s 			page 18
 
 
  625 005a C3F30D03 		ubfx	r3, r3, #0, #14
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  654              	.LVL16:
  655              	.L31:
  334:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****         break;
-ARM GAS  /tmp/ccNMoX1B.s 			page 19
+ARM GAS  /tmp/ccFsoVqh.s 			page 19
 
 
  656              		.loc 1 334 9 is_stmt 1 view .LVU221
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  694 00a6 DCE7     		b	.L32
  695              	.L34:
  696              		.align	2
-ARM GAS  /tmp/ccNMoX1B.s 			page 20
+ARM GAS  /tmp/ccFsoVqh.s 			page 20
 
 
  697              	.L33:
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  731              	.LFE126:
  733              		.section	.text.tli_lut_init,"ax",%progbits
  734              		.align	1
-ARM GAS  /tmp/ccNMoX1B.s 			page 21
+ARM GAS  /tmp/ccFsoVqh.s 			page 21
 
 
  735              		.global	tli_lut_init
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  765              		.loc 1 392 1 view .LVU257
  766 0018 7047     		bx	lr
  767              		.cfi_endproc
-ARM GAS  /tmp/ccNMoX1B.s 			page 22
+ARM GAS  /tmp/ccFsoVqh.s 			page 22
 
 
  768              	.LFE127:
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  411:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****     \param[out] none
  412:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****     \retval     none
  413:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c **** */
-ARM GAS  /tmp/ccNMoX1B.s 			page 23
+ARM GAS  /tmp/ccFsoVqh.s 			page 23
 
 
  414:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c **** void tli_layer_enable(uint32_t layerx)
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  850              		.global	tli_color_key_enable
  851              		.syntax unified
  852              		.thumb
-ARM GAS  /tmp/ccNMoX1B.s 			page 24
+ARM GAS  /tmp/ccFsoVqh.s 			page 24
 
 
  853              		.thumb_func
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  889 0000 D0F88430 		ldr	r3, [r0, #132]
  890              		.loc 1 449 23 is_stmt 0 view .LVU278
  891 0004 23F00203 		bic	r3, r3, #2
-ARM GAS  /tmp/ccNMoX1B.s 			page 25
+ARM GAS  /tmp/ccFsoVqh.s 			page 25
 
 
  892 0008 C0F88430 		str	r3, [r0, #132]
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  467:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****     \retval     none
  468:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c **** */
  469:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c **** void tli_lut_disable(uint32_t layerx)
-ARM GAS  /tmp/ccNMoX1B.s 			page 26
+ARM GAS  /tmp/ccFsoVqh.s 			page 26
 
 
  470:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c **** {
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  974 0016 7047     		bx	lr
  975              	.L46:
  976              		.align	2
-ARM GAS  /tmp/ccNMoX1B.s 			page 27
+ARM GAS  /tmp/ccFsoVqh.s 			page 27
 
 
  977              	.L45:
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  501:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****       \arg        TLI_INT_LM: line mark interrupt
  502:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****       \arg        TLI_INT_FE: FIFO error interrupt
  503:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****       \arg        TLI_INT_TE: transaction error interrupt
-ARM GAS  /tmp/ccNMoX1B.s 			page 28
+ARM GAS  /tmp/ccFsoVqh.s 			page 28
 
 
  504:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****       \arg        TLI_INT_LCR: layer configuration reloaded interrupt
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  1053              		@ link register save eliminated.
  526:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****     TLI_INTEN &= ~(int_flag);
  1054              		.loc 1 526 5 view .LVU303
-ARM GAS  /tmp/ccNMoX1B.s 			page 29
+ARM GAS  /tmp/ccFsoVqh.s 			page 29
 
 
  1055 0000 034A     		ldr	r2, .L54
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  544:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****     if(state & int_flag) {
  1093              		.loc 1 544 5 is_stmt 1 view .LVU312
  1094              		.loc 1 544 7 is_stmt 0 view .LVU313
-ARM GAS  /tmp/ccNMoX1B.s 			page 30
+ARM GAS  /tmp/ccFsoVqh.s 			page 30
 
 
  1095 0008 1040     		ands	r0, r0, r2
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  1130              		.loc 1 565 1 is_stmt 1 view -0
  1131              		.cfi_startproc
  1132              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccNMoX1B.s 			page 31
+ARM GAS  /tmp/ccFsoVqh.s 			page 31
 
 
  1133              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  1166              		.loc 1 588 5 view .LVU326
  1167 0000 054B     		ldr	r3, .L67
  589:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_tli.c ****         stat = TLI_INTF;
-ARM GAS  /tmp/ccNMoX1B.s 			page 32
+ARM GAS  /tmp/ccFsoVqh.s 			page 32
 
 
  1168              		.loc 1 589 9 view .LVU327
@@ -1905,82 +1905,82 @@ ARM GAS  /tmp/ccNMoX1B.s 			page 1
  1200              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
  1201              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
  1202              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_tli.h"
-ARM GAS  /tmp/ccNMoX1B.s 			page 33
+ARM GAS  /tmp/ccFsoVqh.s 			page 33
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_tli.c
-     /tmp/ccNMoX1B.s:19     .text.tli_deinit:0000000000000000 $t
-     /tmp/ccNMoX1B.s:25     .text.tli_deinit:0000000000000000 tli_deinit
-     /tmp/ccNMoX1B.s:57     .text.tli_struct_para_init:0000000000000000 $t
-     /tmp/ccNMoX1B.s:63     .text.tli_struct_para_init:0000000000000000 tli_struct_para_init
-     /tmp/ccNMoX1B.s:108    .text.tli_init:0000000000000000 $t
-     /tmp/ccNMoX1B.s:114    .text.tli_init:0000000000000000 tli_init
-     /tmp/ccNMoX1B.s:210    .text.tli_init:000000000000009c $d
-     /tmp/ccNMoX1B.s:215    .text.tli_dither_config:0000000000000000 $t
-     /tmp/ccNMoX1B.s:221    .text.tli_dither_config:0000000000000000 tli_dither_config
-     /tmp/ccNMoX1B.s:248    .text.tli_dither_config:0000000000000018 $d
-     /tmp/ccNMoX1B.s:253    .text.tli_enable:0000000000000000 $t
-     /tmp/ccNMoX1B.s:259    .text.tli_enable:0000000000000000 tli_enable
-     /tmp/ccNMoX1B.s:277    .text.tli_enable:0000000000000010 $d
-     /tmp/ccNMoX1B.s:282    .text.tli_disable:0000000000000000 $t
-     /tmp/ccNMoX1B.s:288    .text.tli_disable:0000000000000000 tli_disable
-     /tmp/ccNMoX1B.s:306    .text.tli_disable:0000000000000010 $d
-     /tmp/ccNMoX1B.s:311    .text.tli_reload_config:0000000000000000 $t
-     /tmp/ccNMoX1B.s:317    .text.tli_reload_config:0000000000000000 tli_reload_config
-     /tmp/ccNMoX1B.s:347    .text.tli_reload_config:0000000000000018 $d
-     /tmp/ccNMoX1B.s:352    .text.tli_layer_struct_para_init:0000000000000000 $t
-     /tmp/ccNMoX1B.s:358    .text.tli_layer_struct_para_init:0000000000000000 tli_layer_struct_para_init
-     /tmp/ccNMoX1B.s:409    .text.tli_layer_init:0000000000000000 $t
-     /tmp/ccNMoX1B.s:415    .text.tli_layer_init:0000000000000000 tli_layer_init
-     /tmp/ccNMoX1B.s:541    .text.tli_layer_window_offset_modify:0000000000000000 $t
-     /tmp/ccNMoX1B.s:547    .text.tli_layer_window_offset_modify:0000000000000000 tli_layer_window_offset_modify
-     /tmp/ccNMoX1B.s:612    .text.tli_layer_window_offset_modify:000000000000004e $d
-     /tmp/ccNMoX1B.s:698    .text.tli_layer_window_offset_modify:00000000000000a8 $d
-     /tmp/ccNMoX1B.s:703    .text.tli_lut_struct_para_init:0000000000000000 $t
-     /tmp/ccNMoX1B.s:709    .text.tli_lut_struct_para_init:0000000000000000 tli_lut_struct_para_init
-     /tmp/ccNMoX1B.s:734    .text.tli_lut_init:0000000000000000 $t
-     /tmp/ccNMoX1B.s:740    .text.tli_lut_init:0000000000000000 tli_lut_init
-     /tmp/ccNMoX1B.s:771    .text.tli_color_key_init:0000000000000000 $t
-     /tmp/ccNMoX1B.s:777    .text.tli_color_key_init:0000000000000000 tli_color_key_init
-     /tmp/ccNMoX1B.s:799    .text.tli_layer_enable:0000000000000000 $t
-     /tmp/ccNMoX1B.s:805    .text.tli_layer_enable:0000000000000000 tli_layer_enable
-     /tmp/ccNMoX1B.s:824    .text.tli_layer_disable:0000000000000000 $t
-     /tmp/ccNMoX1B.s:830    .text.tli_layer_disable:0000000000000000 tli_layer_disable
-     /tmp/ccNMoX1B.s:849    .text.tli_color_key_enable:0000000000000000 $t
-     /tmp/ccNMoX1B.s:855    .text.tli_color_key_enable:0000000000000000 tli_color_key_enable
-     /tmp/ccNMoX1B.s:874    .text.tli_color_key_disable:0000000000000000 $t
-     /tmp/ccNMoX1B.s:880    .text.tli_color_key_disable:0000000000000000 tli_color_key_disable
-     /tmp/ccNMoX1B.s:899    .text.tli_lut_enable:0000000000000000 $t
-     /tmp/ccNMoX1B.s:905    .text.tli_lut_enable:0000000000000000 tli_lut_enable
-     /tmp/ccNMoX1B.s:924    .text.tli_lut_disable:0000000000000000 $t
-     /tmp/ccNMoX1B.s:930    .text.tli_lut_disable:0000000000000000 tli_lut_disable
-     /tmp/ccNMoX1B.s:949    .text.tli_line_mark_set:0000000000000000 $t
-     /tmp/ccNMoX1B.s:955    .text.tli_line_mark_set:0000000000000000 tli_line_mark_set
-     /tmp/ccNMoX1B.s:978    .text.tli_line_mark_set:0000000000000018 $d
-     /tmp/ccNMoX1B.s:983    .text.tli_current_pos_get:0000000000000000 $t
-     /tmp/ccNMoX1B.s:989    .text.tli_current_pos_get:0000000000000000 tli_current_pos_get
-     /tmp/ccNMoX1B.s:1005   .text.tli_current_pos_get:0000000000000008 $d
-     /tmp/ccNMoX1B.s:1010   .text.tli_interrupt_enable:0000000000000000 $t
-     /tmp/ccNMoX1B.s:1016   .text.tli_interrupt_enable:0000000000000000 tli_interrupt_enable
-     /tmp/ccNMoX1B.s:1035   .text.tli_interrupt_enable:0000000000000010 $d
-     /tmp/ccNMoX1B.s:1040   .text.tli_interrupt_disable:0000000000000000 $t
-ARM GAS  /tmp/ccNMoX1B.s 			page 34
+     /tmp/ccFsoVqh.s:19     .text.tli_deinit:0000000000000000 $t
+     /tmp/ccFsoVqh.s:25     .text.tli_deinit:0000000000000000 tli_deinit
+     /tmp/ccFsoVqh.s:57     .text.tli_struct_para_init:0000000000000000 $t
+     /tmp/ccFsoVqh.s:63     .text.tli_struct_para_init:0000000000000000 tli_struct_para_init
+     /tmp/ccFsoVqh.s:108    .text.tli_init:0000000000000000 $t
+     /tmp/ccFsoVqh.s:114    .text.tli_init:0000000000000000 tli_init
+     /tmp/ccFsoVqh.s:210    .text.tli_init:000000000000009c $d
+     /tmp/ccFsoVqh.s:215    .text.tli_dither_config:0000000000000000 $t
+     /tmp/ccFsoVqh.s:221    .text.tli_dither_config:0000000000000000 tli_dither_config
+     /tmp/ccFsoVqh.s:248    .text.tli_dither_config:0000000000000018 $d
+     /tmp/ccFsoVqh.s:253    .text.tli_enable:0000000000000000 $t
+     /tmp/ccFsoVqh.s:259    .text.tli_enable:0000000000000000 tli_enable
+     /tmp/ccFsoVqh.s:277    .text.tli_enable:0000000000000010 $d
+     /tmp/ccFsoVqh.s:282    .text.tli_disable:0000000000000000 $t
+     /tmp/ccFsoVqh.s:288    .text.tli_disable:0000000000000000 tli_disable
+     /tmp/ccFsoVqh.s:306    .text.tli_disable:0000000000000010 $d
+     /tmp/ccFsoVqh.s:311    .text.tli_reload_config:0000000000000000 $t
+     /tmp/ccFsoVqh.s:317    .text.tli_reload_config:0000000000000000 tli_reload_config
+     /tmp/ccFsoVqh.s:347    .text.tli_reload_config:0000000000000018 $d
+     /tmp/ccFsoVqh.s:352    .text.tli_layer_struct_para_init:0000000000000000 $t
+     /tmp/ccFsoVqh.s:358    .text.tli_layer_struct_para_init:0000000000000000 tli_layer_struct_para_init
+     /tmp/ccFsoVqh.s:409    .text.tli_layer_init:0000000000000000 $t
+     /tmp/ccFsoVqh.s:415    .text.tli_layer_init:0000000000000000 tli_layer_init
+     /tmp/ccFsoVqh.s:541    .text.tli_layer_window_offset_modify:0000000000000000 $t
+     /tmp/ccFsoVqh.s:547    .text.tli_layer_window_offset_modify:0000000000000000 tli_layer_window_offset_modify
+     /tmp/ccFsoVqh.s:612    .text.tli_layer_window_offset_modify:000000000000004e $d
+     /tmp/ccFsoVqh.s:698    .text.tli_layer_window_offset_modify:00000000000000a8 $d
+     /tmp/ccFsoVqh.s:703    .text.tli_lut_struct_para_init:0000000000000000 $t
+     /tmp/ccFsoVqh.s:709    .text.tli_lut_struct_para_init:0000000000000000 tli_lut_struct_para_init
+     /tmp/ccFsoVqh.s:734    .text.tli_lut_init:0000000000000000 $t
+     /tmp/ccFsoVqh.s:740    .text.tli_lut_init:0000000000000000 tli_lut_init
+     /tmp/ccFsoVqh.s:771    .text.tli_color_key_init:0000000000000000 $t
+     /tmp/ccFsoVqh.s:777    .text.tli_color_key_init:0000000000000000 tli_color_key_init
+     /tmp/ccFsoVqh.s:799    .text.tli_layer_enable:0000000000000000 $t
+     /tmp/ccFsoVqh.s:805    .text.tli_layer_enable:0000000000000000 tli_layer_enable
+     /tmp/ccFsoVqh.s:824    .text.tli_layer_disable:0000000000000000 $t
+     /tmp/ccFsoVqh.s:830    .text.tli_layer_disable:0000000000000000 tli_layer_disable
+     /tmp/ccFsoVqh.s:849    .text.tli_color_key_enable:0000000000000000 $t
+     /tmp/ccFsoVqh.s:855    .text.tli_color_key_enable:0000000000000000 tli_color_key_enable
+     /tmp/ccFsoVqh.s:874    .text.tli_color_key_disable:0000000000000000 $t
+     /tmp/ccFsoVqh.s:880    .text.tli_color_key_disable:0000000000000000 tli_color_key_disable
+     /tmp/ccFsoVqh.s:899    .text.tli_lut_enable:0000000000000000 $t
+     /tmp/ccFsoVqh.s:905    .text.tli_lut_enable:0000000000000000 tli_lut_enable
+     /tmp/ccFsoVqh.s:924    .text.tli_lut_disable:0000000000000000 $t
+     /tmp/ccFsoVqh.s:930    .text.tli_lut_disable:0000000000000000 tli_lut_disable
+     /tmp/ccFsoVqh.s:949    .text.tli_line_mark_set:0000000000000000 $t
+     /tmp/ccFsoVqh.s:955    .text.tli_line_mark_set:0000000000000000 tli_line_mark_set
+     /tmp/ccFsoVqh.s:978    .text.tli_line_mark_set:0000000000000018 $d
+     /tmp/ccFsoVqh.s:983    .text.tli_current_pos_get:0000000000000000 $t
+     /tmp/ccFsoVqh.s:989    .text.tli_current_pos_get:0000000000000000 tli_current_pos_get
+     /tmp/ccFsoVqh.s:1005   .text.tli_current_pos_get:0000000000000008 $d
+     /tmp/ccFsoVqh.s:1010   .text.tli_interrupt_enable:0000000000000000 $t
+     /tmp/ccFsoVqh.s:1016   .text.tli_interrupt_enable:0000000000000000 tli_interrupt_enable
+     /tmp/ccFsoVqh.s:1035   .text.tli_interrupt_enable:0000000000000010 $d
+     /tmp/ccFsoVqh.s:1040   .text.tli_interrupt_disable:0000000000000000 $t
+ARM GAS  /tmp/ccFsoVqh.s 			page 34
 
 
-     /tmp/ccNMoX1B.s:1046   .text.tli_interrupt_disable:0000000000000000 tli_interrupt_disable
-     /tmp/ccNMoX1B.s:1065   .text.tli_interrupt_disable:0000000000000010 $d
-     /tmp/ccNMoX1B.s:1070   .text.tli_interrupt_flag_get:0000000000000000 $t
-     /tmp/ccNMoX1B.s:1076   .text.tli_interrupt_flag_get:0000000000000000 tli_interrupt_flag_get
-     /tmp/ccNMoX1B.s:1116   .text.tli_interrupt_flag_get:000000000000001c $d
-     /tmp/ccNMoX1B.s:1121   .text.tli_interrupt_flag_clear:0000000000000000 $t
-     /tmp/ccNMoX1B.s:1127   .text.tli_interrupt_flag_clear:0000000000000000 tli_interrupt_flag_clear
-     /tmp/ccNMoX1B.s:1146   .text.tli_interrupt_flag_clear:0000000000000010 $d
-     /tmp/ccNMoX1B.s:1151   .text.tli_flag_get:0000000000000000 $t
-     /tmp/ccNMoX1B.s:1157   .text.tli_flag_get:0000000000000000 tli_flag_get
-     /tmp/ccNMoX1B.s:1192   .text.tli_flag_get:0000000000000018 $d
-     /tmp/ccNMoX1B.s:619    .text.tli_layer_window_offset_modify:0000000000000055 $d
-     /tmp/ccNMoX1B.s:619    .text.tli_layer_window_offset_modify:0000000000000056 $t
+     /tmp/ccFsoVqh.s:1046   .text.tli_interrupt_disable:0000000000000000 tli_interrupt_disable
+     /tmp/ccFsoVqh.s:1065   .text.tli_interrupt_disable:0000000000000010 $d
+     /tmp/ccFsoVqh.s:1070   .text.tli_interrupt_flag_get:0000000000000000 $t
+     /tmp/ccFsoVqh.s:1076   .text.tli_interrupt_flag_get:0000000000000000 tli_interrupt_flag_get
+     /tmp/ccFsoVqh.s:1116   .text.tli_interrupt_flag_get:000000000000001c $d
+     /tmp/ccFsoVqh.s:1121   .text.tli_interrupt_flag_clear:0000000000000000 $t
+     /tmp/ccFsoVqh.s:1127   .text.tli_interrupt_flag_clear:0000000000000000 tli_interrupt_flag_clear
+     /tmp/ccFsoVqh.s:1146   .text.tli_interrupt_flag_clear:0000000000000010 $d
+     /tmp/ccFsoVqh.s:1151   .text.tli_flag_get:0000000000000000 $t
+     /tmp/ccFsoVqh.s:1157   .text.tli_flag_get:0000000000000000 tli_flag_get
+     /tmp/ccFsoVqh.s:1192   .text.tli_flag_get:0000000000000018 $d
+     /tmp/ccFsoVqh.s:619    .text.tli_layer_window_offset_modify:0000000000000055 $d
+     /tmp/ccFsoVqh.s:619    .text.tli_layer_window_offset_modify:0000000000000056 $t
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable

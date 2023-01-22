@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccHFRWt3.s 			page 1
+ARM GAS  /tmp/ccEzAXtG.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
   30:Drivers/CMSIS/Source/system_gd32f4xx.c ****    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
   31:Drivers/CMSIS/Source/system_gd32f4xx.c ****    POSSIBILITY OF SUCH DAMAGE.
   32:Drivers/CMSIS/Source/system_gd32f4xx.c ****    ---------------------------------------------------------------------------*/
-ARM GAS  /tmp/ccHFRWt3.s 			page 2
+ARM GAS  /tmp/ccEzAXtG.s 			page 2
 
 
   33:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
   87:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_120m_8m_hxtal(void);
   88:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_120M_PLL_25M_HXTAL)
   89:Drivers/CMSIS/Source/system_gd32f4xx.c **** uint32_t SystemCoreClock = __SYSTEM_CLOCK_120M_PLL_25M_HXTAL;
-ARM GAS  /tmp/ccHFRWt3.s 			page 3
+ARM GAS  /tmp/ccEzAXtG.s 			page 3
 
 
   90:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_120m_25m_hxtal(void);
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
   32              		.loc 1 138 5 view .LVU1
   33 0000 524B     		ldr	r3, .L28
   34 0002 D3F80028 		ldr	r2, [r3, #2048]
-ARM GAS  /tmp/ccHFRWt3.s 			page 4
+ARM GAS  /tmp/ccEzAXtG.s 			page 4
 
 
   35              		.loc 1 138 13 is_stmt 0 view .LVU2
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
   82 0044 34D9     		bls	.L6
   83              	.LBE10:
   84              		.loc 1 141 5 discriminator 10 view .LVU21
-ARM GAS  /tmp/ccHFRWt3.s 			page 5
+ARM GAS  /tmp/ccEzAXtG.s 			page 5
 
 
  142:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  116 007e C3F80C28 		str	r2, [r3, #2060]
  163:Drivers/CMSIS/Source/system_gd32f4xx.c ****          
  164:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* Configure the System clock source, PLL Multiplier and Divider factors, 
-ARM GAS  /tmp/ccHFRWt3.s 			page 6
+ARM GAS  /tmp/ccEzAXtG.s 			page 6
 
 
  165:Drivers/CMSIS/Source/system_gd32f4xx.c ****         AHB/APBx prescalers and Flash settings */
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  212:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \retval     none
  213:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
  214:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_16m_irc16m(void)
-ARM GAS  /tmp/ccHFRWt3.s 			page 7
+ARM GAS  /tmp/ccEzAXtG.s 			page 7
 
 
  215:Drivers/CMSIS/Source/system_gd32f4xx.c **** {
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  269:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (HXTAL_STARTUP_TIMEOUT != timeout));
  270:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
  271:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* if fail */
-ARM GAS  /tmp/ccHFRWt3.s 			page 8
+ARM GAS  /tmp/ccEzAXtG.s 			page 8
 
 
  272:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_HXTALSTB)){
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  326:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB2 = AHB/2 */
  327:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB2_CKAHB_DIV2;
  328:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* APB1 = AHB/4 */
-ARM GAS  /tmp/ccHFRWt3.s 			page 9
+ARM GAS  /tmp/ccEzAXtG.s 			page 9
 
 
  329:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_APB1_CKAHB_DIV4;
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  383:Drivers/CMSIS/Source/system_gd32f4xx.c ****     if(0U == (RCU_CTL & RCU_CTL_HXTALSTB)){
  384:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
  385:Drivers/CMSIS/Source/system_gd32f4xx.c ****         }
-ARM GAS  /tmp/ccHFRWt3.s 			page 10
+ARM GAS  /tmp/ccEzAXtG.s 			page 10
 
 
  386:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  440:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
  441:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable HXTAL */
  442:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_HXTALEN;
-ARM GAS  /tmp/ccHFRWt3.s 			page 11
+ARM GAS  /tmp/ccEzAXtG.s 			page 11
 
 
  443:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  497:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_168M_PLL_IRC16M)
  498:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
  499:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 168M by PLL which selects IRC16M as its clock source
-ARM GAS  /tmp/ccHFRWt3.s 			page 12
+ARM GAS  /tmp/ccEzAXtG.s 			page 12
 
 
  500:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \param[in]  none
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  554:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
  555:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
  556:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
-ARM GAS  /tmp/ccHFRWt3.s 			page 13
+ARM GAS  /tmp/ccEzAXtG.s 			page 13
 
 
  557:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 &= ~RCU_CFG0_SCS;
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  611:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
  612:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDRF)){
  613:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
-ARM GAS  /tmp/ccHFRWt3.s 			page 14
+ARM GAS  /tmp/ccEzAXtG.s 			page 14
 
 
  614:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  668:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_PLL = (25U | (336U << 6U) | (((2U >> 1U) - 1U) << 16U) |
  669:Drivers/CMSIS/Source/system_gd32f4xx.c ****                    (RCU_PLLSRC_HXTAL) | (7U << 24U));
  670:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
-ARM GAS  /tmp/ccHFRWt3.s 			page 15
+ARM GAS  /tmp/ccEzAXtG.s 			page 15
 
 
  671:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable PLL */
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  725:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_LDOVS;
  726:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
  727:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* IRC16M is stable */
-ARM GAS  /tmp/ccHFRWt3.s 			page 16
+ARM GAS  /tmp/ccEzAXtG.s 			page 16
 
 
  728:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  782:Drivers/CMSIS/Source/system_gd32f4xx.c ****         timeout++;
  783:Drivers/CMSIS/Source/system_gd32f4xx.c ****         stab_flag = (RCU_CTL & RCU_CTL_HXTALSTB);
  784:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }while((0U == stab_flag) && (HXTAL_STARTUP_TIMEOUT != timeout));
-ARM GAS  /tmp/ccHFRWt3.s 			page 17
+ARM GAS  /tmp/ccEzAXtG.s 			page 17
 
 
  785:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  839:Drivers/CMSIS/Source/system_gd32f4xx.c **** */
  840:Drivers/CMSIS/Source/system_gd32f4xx.c **** static void system_clock_200m_25m_hxtal(void)
  124              		.loc 1 840 13 discriminator 10 view .LVU41
-ARM GAS  /tmp/ccHFRWt3.s 			page 18
+ARM GAS  /tmp/ccEzAXtG.s 			page 18
 
 
  125              	.LBB13:
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  161 00a4 9203     		lsls	r2, r2, #14
  162 00a6 06D4     		bmi	.L9
  163              	.L10:
-ARM GAS  /tmp/ccHFRWt3.s 			page 19
+ARM GAS  /tmp/ccEzAXtG.s 			page 19
 
 
  856:Drivers/CMSIS/Source/system_gd32f4xx.c ****         while(1){
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  863:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* HXTAL is stable */
  864:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* AHB = SYSCLK */
  865:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CFG0 |= RCU_AHB_CKSYS_DIV1;
-ARM GAS  /tmp/ccHFRWt3.s 			page 20
+ARM GAS  /tmp/ccEzAXtG.s 			page 20
 
 
  204              		.loc 1 865 5 is_stmt 1 view .LVU71
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  883:Drivers/CMSIS/Source/system_gd32f4xx.c ****     PMU_CTL |= PMU_CTL_HDEN;
  238              		.loc 1 883 5 is_stmt 1 view .LVU87
  239 0108 1368     		ldr	r3, [r2]
-ARM GAS  /tmp/ccHFRWt3.s 			page 21
+ARM GAS  /tmp/ccEzAXtG.s 			page 21
 
 
  240              		.loc 1 883 13 is_stmt 0 view .LVU88
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  277 0138 42F00202 		orr	r2, r2, #2
  278 013c C3F80828 		str	r2, [r3, #2056]
  895:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
-ARM GAS  /tmp/ccHFRWt3.s 			page 22
+ARM GAS  /tmp/ccEzAXtG.s 			page 22
 
 
  896:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is selected as system clock */
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  911:Drivers/CMSIS/Source/system_gd32f4xx.c ****     uint32_t stab_flag = 0U;
  912:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
  913:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* enable IRC16M */
-ARM GAS  /tmp/ccHFRWt3.s 			page 23
+ARM GAS  /tmp/ccEzAXtG.s 			page 23
 
 
  914:Drivers/CMSIS/Source/system_gd32f4xx.c ****     RCU_CTL |= RCU_CTL_IRC16MEN;
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  968:Drivers/CMSIS/Source/system_gd32f4xx.c **** 
  969:Drivers/CMSIS/Source/system_gd32f4xx.c **** #elif defined (__SYSTEM_CLOCK_240M_PLL_8M_HXTAL)
  970:Drivers/CMSIS/Source/system_gd32f4xx.c **** /*!
-ARM GAS  /tmp/ccHFRWt3.s 			page 24
+ARM GAS  /tmp/ccEzAXtG.s 			page 24
 
 
  971:Drivers/CMSIS/Source/system_gd32f4xx.c ****     \brief      configure the system clock to 240M by PLL which selects HXTAL(8M) as its clock sour
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
 1025:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (PMU_CS & PMU_CS_HDSRF)){
 1026:Drivers/CMSIS/Source/system_gd32f4xx.c ****     } 
 1027:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
-ARM GAS  /tmp/ccHFRWt3.s 			page 25
+ARM GAS  /tmp/ccEzAXtG.s 			page 25
 
 
 1028:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* select PLL as system clock */
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
 1082:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* wait until PLL is stable */
 1083:Drivers/CMSIS/Source/system_gd32f4xx.c ****     while(0U == (RCU_CTL & RCU_CTL_PLLSTB)){
 1084:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
-ARM GAS  /tmp/ccHFRWt3.s 			page 26
+ARM GAS  /tmp/ccEzAXtG.s 			page 26
 
 
 1085:Drivers/CMSIS/Source/system_gd32f4xx.c ****     
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  335              		.cfi_def_cfa_offset 32
  336              		.loc 1 1117 19 view .LVU119
  337 0006 6C46     		mov	r4, sp
-ARM GAS  /tmp/ccHFRWt3.s 			page 27
+ARM GAS  /tmp/ccEzAXtG.s 			page 27
 
 
  338 0008 03F11005 		add	r5, r3, #16
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  371 003e 164C     		ldr	r4, .L38+8
 1134:Drivers/CMSIS/Source/system_gd32f4xx.c ****         /* PLL clock source selection, HXTAL or IRC8M/2 */
  372              		.loc 1 1134 17 view .LVU130
-ARM GAS  /tmp/ccHFRWt3.s 			page 28
+ARM GAS  /tmp/ccEzAXtG.s 			page 28
 
 
  373 0040 C2F30142 		ubfx	r2, r2, #16, #2
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
 1148:Drivers/CMSIS/Source/system_gd32f4xx.c ****     }
 1149:Drivers/CMSIS/Source/system_gd32f4xx.c ****     /* calculate AHB clock frequency */
 1150:Drivers/CMSIS/Source/system_gd32f4xx.c ****     idx = GET_BITS(RCU_CFG0, 4, 7);
-ARM GAS  /tmp/ccHFRWt3.s 			page 29
+ARM GAS  /tmp/ccEzAXtG.s 			page 29
 
 
  409              		.loc 1 1150 11 view .LVU148
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  455 00a0 00000000 		.word	SystemCoreClock
  456              		.cfi_endproc
  457              	.LFE119:
-ARM GAS  /tmp/ccHFRWt3.s 			page 30
+ARM GAS  /tmp/ccEzAXtG.s 			page 30
 
 
  459              		.global	SystemCoreClock
@@ -1760,18 +1760,18 @@ ARM GAS  /tmp/ccHFRWt3.s 			page 1
  474              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  475              		.file 4 "Drivers/CMSIS/Include/system_gd32f4xx.h"
  476              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_dbg.h"
-ARM GAS  /tmp/ccHFRWt3.s 			page 31
+ARM GAS  /tmp/ccEzAXtG.s 			page 31
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 system_gd32f4xx.c
-     /tmp/ccHFRWt3.s:19     .text.SystemInit:0000000000000000 $t
-     /tmp/ccHFRWt3.s:25     .text.SystemInit:0000000000000000 SystemInit
-     /tmp/ccHFRWt3.s:300    .text.SystemInit:000000000000014c $d
-     /tmp/ccHFRWt3.s:308    .text.SystemCoreClockUpdate:0000000000000000 $t
-     /tmp/ccHFRWt3.s:314    .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
-     /tmp/ccHFRWt3.s:451    .text.SystemCoreClockUpdate:0000000000000090 $d
-     /tmp/ccHFRWt3.s:464    .data.SystemCoreClock:0000000000000000 SystemCoreClock
-     /tmp/ccHFRWt3.s:461    .data.SystemCoreClock:0000000000000000 $d
+     /tmp/ccEzAXtG.s:19     .text.SystemInit:0000000000000000 $t
+     /tmp/ccEzAXtG.s:25     .text.SystemInit:0000000000000000 SystemInit
+     /tmp/ccEzAXtG.s:300    .text.SystemInit:000000000000014c $d
+     /tmp/ccEzAXtG.s:308    .text.SystemCoreClockUpdate:0000000000000000 $t
+     /tmp/ccEzAXtG.s:314    .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
+     /tmp/ccEzAXtG.s:451    .text.SystemCoreClockUpdate:0000000000000090 $d
+     /tmp/ccEzAXtG.s:464    .data.SystemCoreClock:0000000000000000 SystemCoreClock
+     /tmp/ccEzAXtG.s:461    .data.SystemCoreClock:0000000000000000 $d
 
 NO UNDEFINED SYMBOLS

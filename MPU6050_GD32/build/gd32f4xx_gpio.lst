@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccj3ixfT.s 			page 1
+ARM GAS  /tmp/ccR0adqp.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
   29:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-ARM GAS  /tmp/ccj3ixfT.s 			page 2
+ARM GAS  /tmp/ccR0adqp.s 			page 2
 
 
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
   58:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****         rcu_periph_reset_enable(RCU_GPIOBRST);
   59:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****         rcu_periph_reset_disable(RCU_GPIOBRST);
   60:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****         break;
-ARM GAS  /tmp/ccj3ixfT.s 			page 3
+ARM GAS  /tmp/ccR0adqp.s 			page 3
 
 
   61:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****     case GPIOC:
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
   67              	.LVL2:
   69:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****         break;
   68              		.loc 1 69 9 is_stmt 1 view .LVU8
-ARM GAS  /tmp/ccj3ixfT.s 			page 4
+ARM GAS  /tmp/ccR0adqp.s 			page 4
 
 
   69 0034 40F20340 		movw	r0, #1027
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  113              		.loc 1 53 9 is_stmt 0 view .LVU18
  114 0078 FFF7FEFF 		bl	rcu_periph_reset_enable
  115              	.LVL11:
-ARM GAS  /tmp/ccj3ixfT.s 			page 5
+ARM GAS  /tmp/ccR0adqp.s 			page 5
 
 
   54:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****         break;
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
   74:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****         break;
  160              		.loc 1 74 9 is_stmt 1 view .LVU30
  161 00ac 40F20440 		movw	r0, #1028
-ARM GAS  /tmp/ccj3ixfT.s 			page 6
+ARM GAS  /tmp/ccR0adqp.s 			page 6
 
 
  162 00b0 E6E7     		b	.L15
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  107:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****       \arg        GPIO_MODE_INPUT: input mode
  108:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****       \arg        GPIO_MODE_OUTPUT: output mode
  109:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****       \arg        GPIO_MODE_AF: alternate function mode
-ARM GAS  /tmp/ccj3ixfT.s 			page 7
+ARM GAS  /tmp/ccR0adqp.s 			page 7
 
 
  110:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****       \arg        GPIO_MODE_ANALOG: analog mode
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  131:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****             /* clear the specified pin mode bits */
  132:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****             ctl &= ~GPIO_MODE_MASK(i);
  236              		.loc 1 132 21 view .LVU49
-ARM GAS  /tmp/ccj3ixfT.s 			page 8
+ARM GAS  /tmp/ccR0adqp.s 			page 8
 
 
  237 000e 4FF00308 		mov	r8, #3
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  275 0038 102E     		cmp	r6, #16
  276 003a EAD1     		bne	.L20
  140:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****         }
-ARM GAS  /tmp/ccj3ixfT.s 			page 9
+ARM GAS  /tmp/ccR0adqp.s 			page 9
 
 
  141:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****     }
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  304              		.loc 1 169 5 view .LVU75
  170:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c **** 
  171:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****     if(GPIO_OTYPE_OD == otype) {
-ARM GAS  /tmp/ccj3ixfT.s 			page 10
+ARM GAS  /tmp/ccR0adqp.s 			page 10
 
 
  305              		.loc 1 171 5 view .LVU76
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  181:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****         if((1U << i) & pin) {
  344              		.loc 1 181 16 is_stmt 0 view .LVU93
  345 0016 06FA04F5 		lsl	r5, r6, r4
-ARM GAS  /tmp/ccj3ixfT.s 			page 11
+ARM GAS  /tmp/ccR0adqp.s 			page 11
 
 
  181:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****         if((1U << i) & pin) {
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  194:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****                 only one parameter can be selected which is shown as below:
  195:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****       \arg        GPIOx(x = A,B,C,D,E,F,G,H,I)
  196:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****     \param[in]  pin: GPIO pin
-ARM GAS  /tmp/ccj3ixfT.s 			page 12
+ARM GAS  /tmp/ccR0adqp.s 			page 12
 
 
  197:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****                 one or more parameters can be selected which are shown as below:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  419              		.loc 1 221 1 view .LVU114
  420 0002 7047     		bx	lr
  421              		.cfi_endproc
-ARM GAS  /tmp/ccj3ixfT.s 			page 13
+ARM GAS  /tmp/ccR0adqp.s 			page 13
 
 
  422              	.LFE120:
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  456              		.align	1
  457              		.global	gpio_port_write
  458              		.syntax unified
-ARM GAS  /tmp/ccj3ixfT.s 			page 14
+ARM GAS  /tmp/ccR0adqp.s 			page 14
 
 
  459              		.thumb
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  488              		.loc 1 272 1 is_stmt 1 view -0
  489              		.cfi_startproc
  490              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccj3ixfT.s 			page 15
+ARM GAS  /tmp/ccR0adqp.s 			page 15
 
 
  491              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  528 0002 80B2     		uxth	r0, r0
  529 0004 7047     		bx	lr
  530              		.cfi_endproc
-ARM GAS  /tmp/ccj3ixfT.s 			page 16
+ARM GAS  /tmp/ccR0adqp.s 			page 16
 
 
  531              	.LFE124:
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  568              		.thumb_func
  570              	gpio_output_port_get:
  571              	.LVL53:
-ARM GAS  /tmp/ccj3ixfT.s 			page 17
+ARM GAS  /tmp/ccR0adqp.s 			page 17
 
 
  572              	.LFB126:
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  342:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****       \arg        GPIO_AF_10: USB_FS, USB_HS
  343:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****       \arg        GPIO_AF_11: ENET
  344:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****       \arg        GPIO_AF_12: EXMC, SDIO, USB_HS
-ARM GAS  /tmp/ccj3ixfT.s 			page 18
+ARM GAS  /tmp/ccR0adqp.s 			page 18
 
 
  345:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****       \arg        GPIO_AF_13: DCI
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  629              	.LVL58:
  630              	.L47:
  363:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****         if((1U << i) & pin) {
-ARM GAS  /tmp/ccj3ixfT.s 			page 19
+ARM GAS  /tmp/ccR0adqp.s 			page 19
 
 
  631              		.loc 1 363 9 is_stmt 1 view .LVU160
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  669 003c 0CFA04F4 		lsl	r4, ip, r4
  371:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****             /* clear the specified pin alternate function bits */
  670              		.loc 1 371 11 view .LVU177
-ARM GAS  /tmp/ccj3ixfT.s 			page 20
+ARM GAS  /tmp/ccR0adqp.s 			page 20
 
 
  671 0040 1442     		tst	r4, r2
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  382:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c **** /*!
  383:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****     \brief      lock GPIO pin bit
  384:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****     \param[in]  gpio_periph: GPIO port
-ARM GAS  /tmp/ccj3ixfT.s 			page 21
+ARM GAS  /tmp/ccR0adqp.s 			page 21
 
 
  385:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****                 only one parameter can be selected which is shown as below:
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  751              		.thumb
  752              		.thumb_func
  754              	gpio_bit_toggle:
-ARM GAS  /tmp/ccj3ixfT.s 			page 22
+ARM GAS  /tmp/ccR0adqp.s 			page 22
 
 
  755              	.LVL69:
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  783              		@ frame_needed = 0, uses_anonymous_args = 0
  784              		@ link register save eliminated.
  433:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_gpio.c ****     GPIO_TG(gpio_periph) = 0x0000FFFFU;
-ARM GAS  /tmp/ccj3ixfT.s 			page 23
+ARM GAS  /tmp/ccR0adqp.s 			page 23
 
 
  785              		.loc 1 433 5 view .LVU213
@@ -1337,42 +1337,42 @@ ARM GAS  /tmp/ccj3ixfT.s 			page 1
  798              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
  799              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
  800              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_gpio.h"
-ARM GAS  /tmp/ccj3ixfT.s 			page 24
+ARM GAS  /tmp/ccR0adqp.s 			page 24
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_gpio.c
-     /tmp/ccj3ixfT.s:19     .text.gpio_deinit:0000000000000000 $t
-     /tmp/ccj3ixfT.s:25     .text.gpio_deinit:0000000000000000 gpio_deinit
-     /tmp/ccj3ixfT.s:188    .text.gpio_deinit:00000000000000d0 $d
-     /tmp/ccj3ixfT.s:196    .text.gpio_mode_set:0000000000000000 $t
-     /tmp/ccj3ixfT.s:202    .text.gpio_mode_set:0000000000000000 gpio_mode_set
-     /tmp/ccj3ixfT.s:290    .text.gpio_output_options_set:0000000000000000 $t
-     /tmp/ccj3ixfT.s:296    .text.gpio_output_options_set:0000000000000000 gpio_output_options_set
-     /tmp/ccj3ixfT.s:379    .text.gpio_bit_set:0000000000000000 $t
-     /tmp/ccj3ixfT.s:385    .text.gpio_bit_set:0000000000000000 gpio_bit_set
-     /tmp/ccj3ixfT.s:402    .text.gpio_bit_reset:0000000000000000 $t
-     /tmp/ccj3ixfT.s:408    .text.gpio_bit_reset:0000000000000000 gpio_bit_reset
-     /tmp/ccj3ixfT.s:425    .text.gpio_bit_write:0000000000000000 $t
-     /tmp/ccj3ixfT.s:431    .text.gpio_bit_write:0000000000000000 gpio_bit_write
-     /tmp/ccj3ixfT.s:456    .text.gpio_port_write:0000000000000000 $t
-     /tmp/ccj3ixfT.s:462    .text.gpio_port_write:0000000000000000 gpio_port_write
-     /tmp/ccj3ixfT.s:479    .text.gpio_input_bit_get:0000000000000000 $t
-     /tmp/ccj3ixfT.s:485    .text.gpio_input_bit_get:0000000000000000 gpio_input_bit_get
-     /tmp/ccj3ixfT.s:509    .text.gpio_input_port_get:0000000000000000 $t
-     /tmp/ccj3ixfT.s:515    .text.gpio_input_port_get:0000000000000000 gpio_input_port_get
-     /tmp/ccj3ixfT.s:534    .text.gpio_output_bit_get:0000000000000000 $t
-     /tmp/ccj3ixfT.s:540    .text.gpio_output_bit_get:0000000000000000 gpio_output_bit_get
-     /tmp/ccj3ixfT.s:564    .text.gpio_output_port_get:0000000000000000 $t
-     /tmp/ccj3ixfT.s:570    .text.gpio_output_port_get:0000000000000000 gpio_output_port_get
-     /tmp/ccj3ixfT.s:589    .text.gpio_af_set:0000000000000000 $t
-     /tmp/ccj3ixfT.s:595    .text.gpio_af_set:0000000000000000 gpio_af_set
-     /tmp/ccj3ixfT.s:707    .text.gpio_pin_lock:0000000000000000 $t
-     /tmp/ccj3ixfT.s:713    .text.gpio_pin_lock:0000000000000000 gpio_pin_lock
-     /tmp/ccj3ixfT.s:748    .text.gpio_bit_toggle:0000000000000000 $t
-     /tmp/ccj3ixfT.s:754    .text.gpio_bit_toggle:0000000000000000 gpio_bit_toggle
-     /tmp/ccj3ixfT.s:771    .text.gpio_port_toggle:0000000000000000 $t
-     /tmp/ccj3ixfT.s:777    .text.gpio_port_toggle:0000000000000000 gpio_port_toggle
+     /tmp/ccR0adqp.s:19     .text.gpio_deinit:0000000000000000 $t
+     /tmp/ccR0adqp.s:25     .text.gpio_deinit:0000000000000000 gpio_deinit
+     /tmp/ccR0adqp.s:188    .text.gpio_deinit:00000000000000d0 $d
+     /tmp/ccR0adqp.s:196    .text.gpio_mode_set:0000000000000000 $t
+     /tmp/ccR0adqp.s:202    .text.gpio_mode_set:0000000000000000 gpio_mode_set
+     /tmp/ccR0adqp.s:290    .text.gpio_output_options_set:0000000000000000 $t
+     /tmp/ccR0adqp.s:296    .text.gpio_output_options_set:0000000000000000 gpio_output_options_set
+     /tmp/ccR0adqp.s:379    .text.gpio_bit_set:0000000000000000 $t
+     /tmp/ccR0adqp.s:385    .text.gpio_bit_set:0000000000000000 gpio_bit_set
+     /tmp/ccR0adqp.s:402    .text.gpio_bit_reset:0000000000000000 $t
+     /tmp/ccR0adqp.s:408    .text.gpio_bit_reset:0000000000000000 gpio_bit_reset
+     /tmp/ccR0adqp.s:425    .text.gpio_bit_write:0000000000000000 $t
+     /tmp/ccR0adqp.s:431    .text.gpio_bit_write:0000000000000000 gpio_bit_write
+     /tmp/ccR0adqp.s:456    .text.gpio_port_write:0000000000000000 $t
+     /tmp/ccR0adqp.s:462    .text.gpio_port_write:0000000000000000 gpio_port_write
+     /tmp/ccR0adqp.s:479    .text.gpio_input_bit_get:0000000000000000 $t
+     /tmp/ccR0adqp.s:485    .text.gpio_input_bit_get:0000000000000000 gpio_input_bit_get
+     /tmp/ccR0adqp.s:509    .text.gpio_input_port_get:0000000000000000 $t
+     /tmp/ccR0adqp.s:515    .text.gpio_input_port_get:0000000000000000 gpio_input_port_get
+     /tmp/ccR0adqp.s:534    .text.gpio_output_bit_get:0000000000000000 $t
+     /tmp/ccR0adqp.s:540    .text.gpio_output_bit_get:0000000000000000 gpio_output_bit_get
+     /tmp/ccR0adqp.s:564    .text.gpio_output_port_get:0000000000000000 $t
+     /tmp/ccR0adqp.s:570    .text.gpio_output_port_get:0000000000000000 gpio_output_port_get
+     /tmp/ccR0adqp.s:589    .text.gpio_af_set:0000000000000000 $t
+     /tmp/ccR0adqp.s:595    .text.gpio_af_set:0000000000000000 gpio_af_set
+     /tmp/ccR0adqp.s:707    .text.gpio_pin_lock:0000000000000000 $t
+     /tmp/ccR0adqp.s:713    .text.gpio_pin_lock:0000000000000000 gpio_pin_lock
+     /tmp/ccR0adqp.s:748    .text.gpio_bit_toggle:0000000000000000 $t
+     /tmp/ccR0adqp.s:754    .text.gpio_bit_toggle:0000000000000000 gpio_bit_toggle
+     /tmp/ccR0adqp.s:771    .text.gpio_port_toggle:0000000000000000 $t
+     /tmp/ccR0adqp.s:777    .text.gpio_port_toggle:0000000000000000 gpio_port_toggle
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable

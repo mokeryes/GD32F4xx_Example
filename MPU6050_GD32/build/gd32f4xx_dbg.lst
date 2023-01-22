@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccqVXxGP.s 			page 1
+ARM GAS  /tmp/cc70IFS8.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccqVXxGP.s 			page 1
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dbg.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dbg.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dbg.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-ARM GAS  /tmp/ccqVXxGP.s 			page 2
+ARM GAS  /tmp/cc70IFS8.s 			page 2
 
 
   33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dbg.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccqVXxGP.s 			page 1
   58:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dbg.c ****     \retval     DBG_ID code
   59:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dbg.c **** */
   60:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dbg.c **** uint32_t dbg_id_get(void)
-ARM GAS  /tmp/ccqVXxGP.s 			page 3
+ARM GAS  /tmp/cc70IFS8.s 			page 3
 
 
   61:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dbg.c **** {
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccqVXxGP.s 			page 1
   78:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dbg.c **** }
   97              		.loc 1 78 1 view .LVU13
   98 0008 7047     		bx	lr
-ARM GAS  /tmp/ccqVXxGP.s 			page 4
+ARM GAS  /tmp/cc70IFS8.s 			page 4
 
 
   99              	.L9:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccqVXxGP.s 			page 1
  141              		.thumb_func
  143              	dbg_periph_enable:
  144              	.LVL2:
-ARM GAS  /tmp/ccqVXxGP.s 			page 5
+ARM GAS  /tmp/cc70IFS8.s 			page 5
 
 
  145              	.LFB120:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccqVXxGP.s 			page 1
  166              		.loc 1 126 1 view .LVU24
  167 0018 7047     		bx	lr
  168              		.cfi_endproc
-ARM GAS  /tmp/ccqVXxGP.s 			page 6
+ARM GAS  /tmp/cc70IFS8.s 			page 6
 
 
  169              	.LFE120:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccqVXxGP.s 			page 1
  192              	.LVL5:
  193              		.loc 1 159 5 view .LVU28
  194 000e 1A68     		ldr	r2, [r3]
-ARM GAS  /tmp/ccqVXxGP.s 			page 7
+ARM GAS  /tmp/cc70IFS8.s 			page 7
 
 
  195              		.loc 1 159 33 view .LVU29
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccqVXxGP.s 			page 1
  240              		.thumb_func
  242              	dbg_trace_pin_disable:
  243              	.LFB123:
-ARM GAS  /tmp/ccqVXxGP.s 			page 8
+ARM GAS  /tmp/cc70IFS8.s 			page 8
 
 
  172:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dbg.c **** 
@@ -456,32 +456,32 @@ ARM GAS  /tmp/ccqVXxGP.s 			page 1
  266              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
  267              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  268              		.file 4 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_dbg.h"
-ARM GAS  /tmp/ccqVXxGP.s 			page 9
+ARM GAS  /tmp/cc70IFS8.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_dbg.c
-     /tmp/ccqVXxGP.s:19     .text.dbg_deinit:0000000000000000 $t
-     /tmp/ccqVXxGP.s:25     .text.dbg_deinit:0000000000000000 dbg_deinit
-     /tmp/ccqVXxGP.s:45     .text.dbg_deinit:000000000000000c $d
-     /tmp/ccqVXxGP.s:50     .text.dbg_id_get:0000000000000000 $t
-     /tmp/ccqVXxGP.s:56     .text.dbg_id_get:0000000000000000 dbg_id_get
-     /tmp/ccqVXxGP.s:72     .text.dbg_id_get:0000000000000008 $d
-     /tmp/ccqVXxGP.s:77     .text.dbg_low_power_enable:0000000000000000 $t
-     /tmp/ccqVXxGP.s:83     .text.dbg_low_power_enable:0000000000000000 dbg_low_power_enable
-     /tmp/ccqVXxGP.s:102    .text.dbg_low_power_enable:000000000000000c $d
-     /tmp/ccqVXxGP.s:107    .text.dbg_low_power_disable:0000000000000000 $t
-     /tmp/ccqVXxGP.s:113    .text.dbg_low_power_disable:0000000000000000 dbg_low_power_disable
-     /tmp/ccqVXxGP.s:132    .text.dbg_low_power_disable:000000000000000c $d
-     /tmp/ccqVXxGP.s:137    .text.dbg_periph_enable:0000000000000000 $t
-     /tmp/ccqVXxGP.s:143    .text.dbg_periph_enable:0000000000000000 dbg_periph_enable
-     /tmp/ccqVXxGP.s:172    .text.dbg_periph_disable:0000000000000000 $t
-     /tmp/ccqVXxGP.s:178    .text.dbg_periph_disable:0000000000000000 dbg_periph_disable
-     /tmp/ccqVXxGP.s:207    .text.dbg_trace_pin_enable:0000000000000000 $t
-     /tmp/ccqVXxGP.s:213    .text.dbg_trace_pin_enable:0000000000000000 dbg_trace_pin_enable
-     /tmp/ccqVXxGP.s:231    .text.dbg_trace_pin_enable:000000000000000c $d
-     /tmp/ccqVXxGP.s:236    .text.dbg_trace_pin_disable:0000000000000000 $t
-     /tmp/ccqVXxGP.s:242    .text.dbg_trace_pin_disable:0000000000000000 dbg_trace_pin_disable
-     /tmp/ccqVXxGP.s:260    .text.dbg_trace_pin_disable:000000000000000c $d
+     /tmp/cc70IFS8.s:19     .text.dbg_deinit:0000000000000000 $t
+     /tmp/cc70IFS8.s:25     .text.dbg_deinit:0000000000000000 dbg_deinit
+     /tmp/cc70IFS8.s:45     .text.dbg_deinit:000000000000000c $d
+     /tmp/cc70IFS8.s:50     .text.dbg_id_get:0000000000000000 $t
+     /tmp/cc70IFS8.s:56     .text.dbg_id_get:0000000000000000 dbg_id_get
+     /tmp/cc70IFS8.s:72     .text.dbg_id_get:0000000000000008 $d
+     /tmp/cc70IFS8.s:77     .text.dbg_low_power_enable:0000000000000000 $t
+     /tmp/cc70IFS8.s:83     .text.dbg_low_power_enable:0000000000000000 dbg_low_power_enable
+     /tmp/cc70IFS8.s:102    .text.dbg_low_power_enable:000000000000000c $d
+     /tmp/cc70IFS8.s:107    .text.dbg_low_power_disable:0000000000000000 $t
+     /tmp/cc70IFS8.s:113    .text.dbg_low_power_disable:0000000000000000 dbg_low_power_disable
+     /tmp/cc70IFS8.s:132    .text.dbg_low_power_disable:000000000000000c $d
+     /tmp/cc70IFS8.s:137    .text.dbg_periph_enable:0000000000000000 $t
+     /tmp/cc70IFS8.s:143    .text.dbg_periph_enable:0000000000000000 dbg_periph_enable
+     /tmp/cc70IFS8.s:172    .text.dbg_periph_disable:0000000000000000 $t
+     /tmp/cc70IFS8.s:178    .text.dbg_periph_disable:0000000000000000 dbg_periph_disable
+     /tmp/cc70IFS8.s:207    .text.dbg_trace_pin_enable:0000000000000000 $t
+     /tmp/cc70IFS8.s:213    .text.dbg_trace_pin_enable:0000000000000000 dbg_trace_pin_enable
+     /tmp/cc70IFS8.s:231    .text.dbg_trace_pin_enable:000000000000000c $d
+     /tmp/cc70IFS8.s:236    .text.dbg_trace_pin_disable:0000000000000000 $t
+     /tmp/cc70IFS8.s:242    .text.dbg_trace_pin_disable:0000000000000000 dbg_trace_pin_disable
+     /tmp/cc70IFS8.s:260    .text.dbg_trace_pin_disable:000000000000000c $d
 
 NO UNDEFINED SYMBOLS

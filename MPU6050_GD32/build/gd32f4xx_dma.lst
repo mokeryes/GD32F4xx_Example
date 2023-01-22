@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccq1ll15.s 			page 1
+ARM GAS  /tmp/cckBUabd.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
   29:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-ARM GAS  /tmp/ccq1ll15.s 			page 2
+ARM GAS  /tmp/cckBUabd.s 			page 2
 
 
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
   49              		.loc 1 56 37 view .LVU7
   50 0012 4FF00002 		mov	r2, #0
   51 0016 1A61     		str	r2, [r3, #16]
-ARM GAS  /tmp/ccq1ll15.s 			page 3
+ARM GAS  /tmp/cckBUabd.s 			page 3
 
 
   57:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     DMA_CHCNT(dma_periph, channelx) = DMA_CHCNT_RESET_VALUE;
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
   90              	.L2:
   65:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****         DMA_INTC1(dma_periph) |= DMA_FLAG_ADD(DMA_CHINTF_RESET_VALUE, channelx);
   91              		.loc 1 65 9 is_stmt 1 view .LVU26
-ARM GAS  /tmp/ccq1ll15.s 			page 4
+ARM GAS  /tmp/cckBUabd.s 			page 4
 
 
   65:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****         DMA_INTC1(dma_periph) |= DMA_FLAG_ADD(DMA_CHINTF_RESET_VALUE, channelx);
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  131              		.cfi_startproc
  132              		@ args = 0, pretend = 0, frame = 0
  133              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccq1ll15.s 			page 5
+ARM GAS  /tmp/cckBUabd.s 			page 5
 
 
  134              		@ link register save eliminated.
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  170              		@ frame_needed = 0, uses_anonymous_args = 0
  171              		@ link register save eliminated.
   98:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     /* set the DMA struct with the default values */
-ARM GAS  /tmp/ccq1ll15.s 			page 6
+ARM GAS  /tmp/cckBUabd.s 			page 6
 
 
   99:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     init_struct->periph_addr         = 0U;
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  117:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \param[in]  channelx: specify which DMA channel is initialized
  118:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****       \arg        DMA_CHx(x=0..7)
  119:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \param[in]  init_struct: the data needed to initialize DMA single data mode
-ARM GAS  /tmp/ccq1ll15.s 			page 7
+ARM GAS  /tmp/cckBUabd.s 			page 7
 
 
  120:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****                   periph_addr: peripheral base address
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  238              		.loc 1 143 40 view .LVU75
  239 0016 CB61     		str	r3, [r1, #28]
  144:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** 
-ARM GAS  /tmp/ccq1ll15.s 			page 8
+ARM GAS  /tmp/cckBUabd.s 			page 8
 
 
  145:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     /* configure the number of remaining data to be transferred */
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  279 003a 83B9     		cbnz	r3, .L7
  156:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****         DMA_CHCTL(dma_periph, channelx) |= DMA_CHXCTL_PNAGA;
  280              		.loc 1 156 9 is_stmt 1 view .LVU96
-ARM GAS  /tmp/ccq1ll15.s 			page 9
+ARM GAS  /tmp/cckBUabd.s 			page 9
 
 
  281 003c 0B69     		ldr	r3, [r1, #16]
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  314              		.loc 1 157 12 is_stmt 1 view .LVU110
  157:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****         DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_PNAGA;
  315              		.loc 1 157 14 is_stmt 0 view .LVU111
-ARM GAS  /tmp/ccq1ll15.s 			page 10
+ARM GAS  /tmp/cckBUabd.s 			page 10
 
 
  316 005e 012B     		cmp	r3, #1
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  187:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****                   periph_inc: DMA_PERIPH_INCREASE_ENABLE,DMA_PERIPH_INCREASE_DISABLE,DMA_PERIPH_INC
  188:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****                   memory0_addr: memory0 base address
  189:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****                   memory_width: DMA_MEMORY_WIDTH_8BIT,DMA_MEMORY_WIDTH_16BIT,DMA_MEMORY_WIDTH_32BIT
-ARM GAS  /tmp/ccq1ll15.s 			page 11
+ARM GAS  /tmp/cckBUabd.s 			page 11
 
 
  190:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****                   memory_inc: DMA_MEMORY_INCREASE_ENABLE,DMA_MEMORY_INCREASE_DISABLE
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  383              		.loc 1 212 5 is_stmt 1 view .LVU132
  384              		.loc 1 212 53 is_stmt 0 view .LVU133
  385 0018 D368     		ldr	r3, [r2, #12]
-ARM GAS  /tmp/ccq1ll15.s 			page 12
+ARM GAS  /tmp/cckBUabd.s 			page 12
 
 
  386              		.loc 1 212 40 view .LVU134
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  225:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     if(DMA_PERIPH_INCREASE_ENABLE == init_struct->periph_inc) {
  427              		.loc 1 225 5 is_stmt 1 view .LVU153
  428              		.loc 1 225 49 is_stmt 0 view .LVU154
-ARM GAS  /tmp/ccq1ll15.s 			page 13
+ARM GAS  /tmp/cckBUabd.s 			page 13
 
 
  429 0040 9368     		ldr	r3, [r2, #8]
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  246:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** }
  463              		.loc 1 246 1 view .LVU169
  464 0064 10BD     		pop	{r4, pc}
-ARM GAS  /tmp/ccq1ll15.s 			page 14
+ARM GAS  /tmp/cckBUabd.s 			page 14
 
 
  465              	.LVL28:
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  247:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** 
  248:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** /*!
  249:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \brief    set DMA peripheral base address
-ARM GAS  /tmp/ccq1ll15.s 			page 15
+ARM GAS  /tmp/cckBUabd.s 			page 15
 
 
  250:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  540              		.cfi_startproc
  541              		@ args = 0, pretend = 0, frame = 0
  542              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccq1ll15.s 			page 16
+ARM GAS  /tmp/cckBUabd.s 			page 16
 
 
  276:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     if(memory_flag) {
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  287:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \param[in]  channelx: specify which DMA channel to set number
  288:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****       \arg        DMA_CHx(x=0..7)
  289:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \param[in]  number: the number of remaining data to be transferred by the DMA
-ARM GAS  /tmp/ccq1ll15.s 			page 17
+ARM GAS  /tmp/cckBUabd.s 			page 17
 
 
  290:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \param[out] none
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  620 0000 1823     		movs	r3, #24
  621 0002 5943     		muls	r1, r3, r1
  622              	.LVL42:
-ARM GAS  /tmp/ccq1ll15.s 			page 18
+ARM GAS  /tmp/cckBUabd.s 			page 18
 
 
  623              		.loc 1 309 22 view .LVU204
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  657              	.LVL47:
  658              		.loc 1 331 9 view .LVU212
  659 0006 0B58     		ldr	r3, [r1, r0]
-ARM GAS  /tmp/ccq1ll15.s 			page 19
+ARM GAS  /tmp/cckBUabd.s 			page 19
 
 
  660              	.LVL48:
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  355:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     /* acquire DMA_CHxCTL register */
  356:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     ctl = DMA_CHCTL(dma_periph, channelx);
  693              		.loc 1 356 5 view .LVU222
-ARM GAS  /tmp/ccq1ll15.s 			page 20
+ARM GAS  /tmp/cckBUabd.s 			page 20
 
 
  694              		.loc 1 356 11 is_stmt 0 view .LVU223
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  377:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** */
  378:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** void dma_periph_burst_beats_config(uint32_t dma_periph, dma_channel_enum channelx, uint32_t pbeat)
  379:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** {
-ARM GAS  /tmp/ccq1ll15.s 			page 21
+ARM GAS  /tmp/cckBUabd.s 			page 21
 
 
  730              		.loc 1 379 1 is_stmt 1 view -0
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  393:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \param[in]  channelx: specify which DMA channel
  394:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****       \arg        DMA_CHx(x=0..7)
  395:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \param[in]  msize: transfer data size of memory
-ARM GAS  /tmp/ccq1ll15.s 			page 22
+ARM GAS  /tmp/cckBUabd.s 			page 22
 
 
  396:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****                 only one parameter can be selected which is shown as below:
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  811              		.thumb_func
  813              	dma_periph_width_config:
  814              	.LVL69:
-ARM GAS  /tmp/ccq1ll15.s 			page 23
+ARM GAS  /tmp/cckBUabd.s 			page 23
 
 
  815              	.LFB129:
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  844              		.loc 1 437 1 view .LVU271
  845 0010 7047     		bx	lr
  846              		.cfi_endproc
-ARM GAS  /tmp/ccq1ll15.s 			page 24
+ARM GAS  /tmp/cckBUabd.s 			page 24
 
 
  847              	.LFE129:
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  458:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     }
  459:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** }
  882              		.loc 1 459 1 view .LVU281
-ARM GAS  /tmp/ccq1ll15.s 			page 25
+ARM GAS  /tmp/cckBUabd.s 			page 25
 
 
  883 0010 7047     		bx	lr
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  917              		.loc 1 477 7 view .LVU289
  918 0008 1AB9     		cbnz	r2, .L47
  919              		.loc 1 478 9 is_stmt 1 view .LVU290
-ARM GAS  /tmp/ccq1ll15.s 			page 26
+ARM GAS  /tmp/cckBUabd.s 			page 26
 
 
  920              		.loc 1 478 41 is_stmt 0 view .LVU291
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  487:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** /*!
  488:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \brief    enable DMA circulation mode
  489:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \param[in]  dma_periph: DMAx(x=0,1)
-ARM GAS  /tmp/ccq1ll15.s 			page 27
+ARM GAS  /tmp/cckBUabd.s 			page 27
 
 
  490:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****       \arg        DMAx(x=0,1)
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  993              		@ args = 0, pretend = 0, frame = 0
  994              		@ frame_needed = 0, uses_anonymous_args = 0
  995              		@ link register save eliminated.
-ARM GAS  /tmp/ccq1ll15.s 			page 28
+ARM GAS  /tmp/cckBUabd.s 			page 28
 
 
  512:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     DMA_CHCTL(dma_periph, channelx) &= ~DMA_CHXCTL_CMEN;
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1037              		.loc 1 526 37 view .LVU319
  1038 0008 43F00103 		orr	r3, r3, #1
  1039 000c 0B50     		str	r3, [r1, r0]
-ARM GAS  /tmp/ccq1ll15.s 			page 29
+ARM GAS  /tmp/cckBUabd.s 			page 29
 
 
  527:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** }
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1082              		.thumb_func
  1084              	dma_transfer_direction_config:
  1085              	.LVL93:
-ARM GAS  /tmp/ccq1ll15.s 			page 30
+ARM GAS  /tmp/cckBUabd.s 			page 30
 
 
  1086              	.LFB136:
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  567:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** }
  1115              		.loc 1 567 1 view .LVU339
  1116 0010 7047     		bx	lr
-ARM GAS  /tmp/ccq1ll15.s 			page 31
+ARM GAS  /tmp/cckBUabd.s 			page 31
 
 
  1117              		.cfi_endproc
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1153              		.loc 1 586 41 is_stmt 0 view .LVU348
  1154 000e 23F40023 		bic	r3, r3, #524288
  1155              	.L59:
-ARM GAS  /tmp/ccq1ll15.s 			page 32
+ARM GAS  /tmp/cckBUabd.s 			page 32
 
 
  587:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     } else {
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1193              	.LVL106:
  1194              		.loc 1 603 9 view .LVU357
  1195 0006 0858     		ldr	r0, [r1, r0]
-ARM GAS  /tmp/ccq1ll15.s 			page 33
+ARM GAS  /tmp/cckBUabd.s 			page 33
 
 
  1196              	.LVL107:
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  626:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     /* assign regiser */
  627:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     ctl &= ~DMA_CHXCTL_PERIEN;
  1230              		.loc 1 627 5 is_stmt 1 view .LVU365
-ARM GAS  /tmp/ccq1ll15.s 			page 34
+ARM GAS  /tmp/cckBUabd.s 			page 34
 
 
  1231              		.loc 1 627 9 is_stmt 0 view .LVU366
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1265              	.LVL115:
  1266              		.loc 1 649 9 view .LVU375
  1267 0004 1030     		adds	r0, r0, #16
-ARM GAS  /tmp/ccq1ll15.s 			page 35
+ARM GAS  /tmp/cckBUabd.s 			page 35
 
 
  1268              	.LVL116:
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  667:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     if(ENABLE == newvalue) {
  1304              		.loc 1 667 5 view .LVU385
  668:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****         /* switch buffer mode enable */
-ARM GAS  /tmp/ccq1ll15.s 			page 36
+ARM GAS  /tmp/cckBUabd.s 			page 36
 
 
  669:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****         DMA_CHCTL(dma_periph, channelx) |= DMA_CHXCTL_SBMEN;
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1342              		@ link register save eliminated.
  687:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     return (DMA_CHFCTL(dma_periph, channelx) & DMA_CHXFCTL_FCNT);
  1343              		.loc 1 687 5 view .LVU395
-ARM GAS  /tmp/ccq1ll15.s 			page 37
+ARM GAS  /tmp/cckBUabd.s 			page 37
 
 
  1344              		.loc 1 687 13 is_stmt 0 view .LVU396
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1378 0002 10B5     		push	{r4, lr}
  1379              	.LCFI5:
  1380              		.cfi_def_cfa_offset 8
-ARM GAS  /tmp/ccq1ll15.s 			page 38
+ARM GAS  /tmp/cckBUabd.s 			page 38
 
 
  1381              		.cfi_offset 4, -8
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1418              	.LVL131:
  716:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****             return SET;
  1419              		.loc 1 716 9 is_stmt 1 view .LVU417
-ARM GAS  /tmp/ccq1ll15.s 			page 39
+ARM GAS  /tmp/cckBUabd.s 			page 39
 
 
  716:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****             return SET;
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1452              		.loc 1 742 5 view .LVU423
  1453              		.loc 1 742 7 is_stmt 0 view .LVU424
  1454 0000 0329     		cmp	r1, #3
-ARM GAS  /tmp/ccq1ll15.s 			page 40
+ARM GAS  /tmp/cckBUabd.s 			page 40
 
 
  741:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     if(channelx < DMA_CH4) {
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  746:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     }
  1497              		.loc 1 746 9 view .LVU438
  1498 0028 C468     		ldr	r4, [r0, #12]
-ARM GAS  /tmp/ccq1ll15.s 			page 41
+ARM GAS  /tmp/cckBUabd.s 			page 41
 
 
  746:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     }
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1531              		.loc 1 769 9 is_stmt 1 view .LVU446
  1532 0004 03FB01F1 		mul	r1, r3, r1
  1533              	.LVL144:
-ARM GAS  /tmp/ccq1ll15.s 			page 42
+ARM GAS  /tmp/cckBUabd.s 			page 42
 
 
  1534              		.loc 1 769 9 is_stmt 0 view .LVU447
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  792:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c **** {
  1566              		.loc 1 792 1 is_stmt 1 view -0
  1567              		.cfi_startproc
-ARM GAS  /tmp/ccq1ll15.s 			page 43
+ARM GAS  /tmp/cckBUabd.s 			page 43
 
 
  1568              		@ args = 0, pretend = 0, frame = 0
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  803:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****       \arg        DMAx(x=0,1)
  804:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \param[in]  channelx: specify which DMA channel to get interrupt flag
  805:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****       \arg        DMA_CHx(x=0..7)
-ARM GAS  /tmp/ccq1ll15.s 			page 44
+ARM GAS  /tmp/cckBUabd.s 			page 44
 
 
  806:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****     \param[in]  interrupt: specify get which flag
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  827:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****             interrupt_flag = DMA_INTF0(dma_periph) & DMA_FLAG_ADD(interrupt, channelx);
  828:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****             interrupt_enable = DMA_CHCTL(dma_periph, channelx) & DMA_CHXCTL_SDEIE;
  829:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****             break;
-ARM GAS  /tmp/ccq1ll15.s 			page 45
+ARM GAS  /tmp/cckBUabd.s 			page 45
 
 
  830:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****         case DMA_INTF_TAEIF:
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1647 0018 70BD     		pop	{r4, r5, r6, pc}
  1648              	.LVL152:
  1649              	.L89:
-ARM GAS  /tmp/ccq1ll15.s 			page 46
+ARM GAS  /tmp/cckBUabd.s 			page 46
 
 
  821:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****         case DMA_INTF_FEEIF:
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1690              		.loc 1 823 54 view .LVU492
  1691 0044 4D08     		lsrs	r5, r1, #1
  1692 0046 4843     		muls	r0, r1, r0
-ARM GAS  /tmp/ccq1ll15.s 			page 47
+ARM GAS  /tmp/cckBUabd.s 			page 47
 
 
  1693 0048 00EB8500 		add	r0, r0, r5, lsl #2
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  827:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****             interrupt_enable = DMA_CHCTL(dma_periph, channelx) & DMA_CHXCTL_SDEIE;
  1733              		.loc 1 827 54 view .LVU507
  1734 006e 4D08     		lsrs	r5, r1, #1
-ARM GAS  /tmp/ccq1ll15.s 			page 48
+ARM GAS  /tmp/cckBUabd.s 			page 48
 
 
  1735 0070 4843     		muls	r0, r1, r0
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1775              		.loc 1 831 28 view .LVU521
  1776 009c 02EA0400 		and	r0, r2, r4
  1777              	.LVL178:
-ARM GAS  /tmp/ccq1ll15.s 			page 49
+ARM GAS  /tmp/cckBUabd.s 			page 49
 
 
  832:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****             break;
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  862:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****             break;
  1818              		.loc 1 862 30 view .LVU536
  1819 00c6 03F00803 		and	r3, r3, #8
-ARM GAS  /tmp/ccq1ll15.s 			page 50
+ARM GAS  /tmp/cckBUabd.s 			page 50
 
 
  1820              	.LVL187:
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1861              	.LVL194:
  854:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****             break;
  1862              		.loc 1 854 32 view .LVU550
-ARM GAS  /tmp/ccq1ll15.s 			page 51
+ARM GAS  /tmp/cckBUabd.s 			page 51
 
 
  1863 00f8 C4E7     		b	.L107
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1903              		.loc 1 849 54 is_stmt 0 view .LVU564
  1904 0120 0624     		movs	r4, #6
  1905 0122 C0F34006 		ubfx	r6, r0, #1, #1
-ARM GAS  /tmp/ccq1ll15.s 			page 52
+ARM GAS  /tmp/cckBUabd.s 			page 52
 
 
  1906 0126 6043     		muls	r0, r4, r0
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1947              	.LVL211:
  858:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****             break;
  1948              		.loc 1 858 32 view .LVU578
-ARM GAS  /tmp/ccq1ll15.s 			page 53
+ARM GAS  /tmp/cckBUabd.s 			page 53
 
 
  1949 0156 A5E7     		b	.L105
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  888:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****       \arg        DMA_INT_FLAG_FEE: FIFO error and exception flag
  889:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****       \arg        DMA_INT_FLAG_SDE: single data mode exception flag
  890:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****       \arg        DMA_INT_FLAG_TAE: transfer access error flag
-ARM GAS  /tmp/ccq1ll15.s 			page 54
+ARM GAS  /tmp/cckBUabd.s 			page 54
 
 
  891:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dma.c ****       \arg        DMA_INT_FLAG_HTF: half transfer finish flag
@@ -3200,80 +3200,80 @@ ARM GAS  /tmp/ccq1ll15.s 			page 1
  1999              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  2000              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
  2001              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_dma.h"
-ARM GAS  /tmp/ccq1ll15.s 			page 55
+ARM GAS  /tmp/cckBUabd.s 			page 55
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_dma.c
-     /tmp/ccq1ll15.s:19     .text.dma_deinit:0000000000000000 $t
-     /tmp/ccq1ll15.s:25     .text.dma_deinit:0000000000000000 dma_deinit
-     /tmp/ccq1ll15.s:121    .text.dma_single_data_para_struct_init:0000000000000000 $t
-     /tmp/ccq1ll15.s:127    .text.dma_single_data_para_struct_init:0000000000000000 dma_single_data_para_struct_init
-     /tmp/ccq1ll15.s:158    .text.dma_multi_data_para_struct_init:0000000000000000 $t
-     /tmp/ccq1ll15.s:164    .text.dma_multi_data_para_struct_init:0000000000000000 dma_multi_data_para_struct_init
-     /tmp/ccq1ll15.s:200    .text.dma_single_data_mode_init:0000000000000000 $t
-     /tmp/ccq1ll15.s:206    .text.dma_single_data_mode_init:0000000000000000 dma_single_data_mode_init
-     /tmp/ccq1ll15.s:344    .text.dma_multi_data_mode_init:0000000000000000 $t
-     /tmp/ccq1ll15.s:350    .text.dma_multi_data_mode_init:0000000000000000 dma_multi_data_mode_init
-     /tmp/ccq1ll15.s:496    .text.dma_multi_data_mode_init:0000000000000088 $d
-     /tmp/ccq1ll15.s:501    .text.dma_periph_address_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:507    .text.dma_periph_address_config:0000000000000000 dma_periph_address_config
-     /tmp/ccq1ll15.s:530    .text.dma_memory_address_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:536    .text.dma_memory_address_config:0000000000000000 dma_memory_address_config
-     /tmp/ccq1ll15.s:575    .text.dma_transfer_number_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:581    .text.dma_transfer_number_config:0000000000000000 dma_transfer_number_config
-     /tmp/ccq1ll15.s:604    .text.dma_transfer_number_get:0000000000000000 $t
-     /tmp/ccq1ll15.s:610    .text.dma_transfer_number_get:0000000000000000 dma_transfer_number_get
-     /tmp/ccq1ll15.s:635    .text.dma_priority_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:641    .text.dma_priority_config:0000000000000000 dma_priority_config
-     /tmp/ccq1ll15.s:678    .text.dma_memory_burst_beats_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:684    .text.dma_memory_burst_beats_config:0000000000000000 dma_memory_burst_beats_config
-     /tmp/ccq1ll15.s:721    .text.dma_periph_burst_beats_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:727    .text.dma_periph_burst_beats_config:0000000000000000 dma_periph_burst_beats_config
-     /tmp/ccq1ll15.s:764    .text.dma_memory_width_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:770    .text.dma_memory_width_config:0000000000000000 dma_memory_width_config
-     /tmp/ccq1ll15.s:807    .text.dma_periph_width_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:813    .text.dma_periph_width_config:0000000000000000 dma_periph_width_config
-     /tmp/ccq1ll15.s:850    .text.dma_memory_address_generation_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:856    .text.dma_memory_address_generation_config:0000000000000000 dma_memory_address_generation_config
-     /tmp/ccq1ll15.s:893    .text.dma_peripheral_address_generation_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:899    .text.dma_peripheral_address_generation_config:0000000000000000 dma_peripheral_address_generation_config
-     /tmp/ccq1ll15.s:950    .text.dma_circulation_enable:0000000000000000 $t
-     /tmp/ccq1ll15.s:956    .text.dma_circulation_enable:0000000000000000 dma_circulation_enable
-     /tmp/ccq1ll15.s:982    .text.dma_circulation_disable:0000000000000000 $t
-     /tmp/ccq1ll15.s:988    .text.dma_circulation_disable:0000000000000000 dma_circulation_disable
-     /tmp/ccq1ll15.s:1014   .text.dma_channel_enable:0000000000000000 $t
-     /tmp/ccq1ll15.s:1020   .text.dma_channel_enable:0000000000000000 dma_channel_enable
-     /tmp/ccq1ll15.s:1046   .text.dma_channel_disable:0000000000000000 $t
-     /tmp/ccq1ll15.s:1052   .text.dma_channel_disable:0000000000000000 dma_channel_disable
-     /tmp/ccq1ll15.s:1078   .text.dma_transfer_direction_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:1084   .text.dma_transfer_direction_config:0000000000000000 dma_transfer_direction_config
-     /tmp/ccq1ll15.s:1121   .text.dma_switch_buffer_mode_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:1127   .text.dma_switch_buffer_mode_config:0000000000000000 dma_switch_buffer_mode_config
-     /tmp/ccq1ll15.s:1172   .text.dma_using_memory_get:0000000000000000 $t
-     /tmp/ccq1ll15.s:1178   .text.dma_using_memory_get:0000000000000000 dma_using_memory_get
-     /tmp/ccq1ll15.s:1204   .text.dma_channel_subperipheral_select:0000000000000000 $t
-     /tmp/ccq1ll15.s:1210   .text.dma_channel_subperipheral_select:0000000000000000 dma_channel_subperipheral_select
-     /tmp/ccq1ll15.s:1247   .text.dma_flow_controller_config:0000000000000000 $t
-     /tmp/ccq1ll15.s:1253   .text.dma_flow_controller_config:0000000000000000 dma_flow_controller_config
-     /tmp/ccq1ll15.s:1290   .text.dma_switch_buffer_mode_enable:0000000000000000 $t
-     /tmp/ccq1ll15.s:1296   .text.dma_switch_buffer_mode_enable:0000000000000000 dma_switch_buffer_mode_enable
-     /tmp/ccq1ll15.s:1329   .text.dma_fifo_status_get:0000000000000000 $t
-     /tmp/ccq1ll15.s:1335   .text.dma_fifo_status_get:0000000000000000 dma_fifo_status_get
-ARM GAS  /tmp/ccq1ll15.s 			page 56
+     /tmp/cckBUabd.s:19     .text.dma_deinit:0000000000000000 $t
+     /tmp/cckBUabd.s:25     .text.dma_deinit:0000000000000000 dma_deinit
+     /tmp/cckBUabd.s:121    .text.dma_single_data_para_struct_init:0000000000000000 $t
+     /tmp/cckBUabd.s:127    .text.dma_single_data_para_struct_init:0000000000000000 dma_single_data_para_struct_init
+     /tmp/cckBUabd.s:158    .text.dma_multi_data_para_struct_init:0000000000000000 $t
+     /tmp/cckBUabd.s:164    .text.dma_multi_data_para_struct_init:0000000000000000 dma_multi_data_para_struct_init
+     /tmp/cckBUabd.s:200    .text.dma_single_data_mode_init:0000000000000000 $t
+     /tmp/cckBUabd.s:206    .text.dma_single_data_mode_init:0000000000000000 dma_single_data_mode_init
+     /tmp/cckBUabd.s:344    .text.dma_multi_data_mode_init:0000000000000000 $t
+     /tmp/cckBUabd.s:350    .text.dma_multi_data_mode_init:0000000000000000 dma_multi_data_mode_init
+     /tmp/cckBUabd.s:496    .text.dma_multi_data_mode_init:0000000000000088 $d
+     /tmp/cckBUabd.s:501    .text.dma_periph_address_config:0000000000000000 $t
+     /tmp/cckBUabd.s:507    .text.dma_periph_address_config:0000000000000000 dma_periph_address_config
+     /tmp/cckBUabd.s:530    .text.dma_memory_address_config:0000000000000000 $t
+     /tmp/cckBUabd.s:536    .text.dma_memory_address_config:0000000000000000 dma_memory_address_config
+     /tmp/cckBUabd.s:575    .text.dma_transfer_number_config:0000000000000000 $t
+     /tmp/cckBUabd.s:581    .text.dma_transfer_number_config:0000000000000000 dma_transfer_number_config
+     /tmp/cckBUabd.s:604    .text.dma_transfer_number_get:0000000000000000 $t
+     /tmp/cckBUabd.s:610    .text.dma_transfer_number_get:0000000000000000 dma_transfer_number_get
+     /tmp/cckBUabd.s:635    .text.dma_priority_config:0000000000000000 $t
+     /tmp/cckBUabd.s:641    .text.dma_priority_config:0000000000000000 dma_priority_config
+     /tmp/cckBUabd.s:678    .text.dma_memory_burst_beats_config:0000000000000000 $t
+     /tmp/cckBUabd.s:684    .text.dma_memory_burst_beats_config:0000000000000000 dma_memory_burst_beats_config
+     /tmp/cckBUabd.s:721    .text.dma_periph_burst_beats_config:0000000000000000 $t
+     /tmp/cckBUabd.s:727    .text.dma_periph_burst_beats_config:0000000000000000 dma_periph_burst_beats_config
+     /tmp/cckBUabd.s:764    .text.dma_memory_width_config:0000000000000000 $t
+     /tmp/cckBUabd.s:770    .text.dma_memory_width_config:0000000000000000 dma_memory_width_config
+     /tmp/cckBUabd.s:807    .text.dma_periph_width_config:0000000000000000 $t
+     /tmp/cckBUabd.s:813    .text.dma_periph_width_config:0000000000000000 dma_periph_width_config
+     /tmp/cckBUabd.s:850    .text.dma_memory_address_generation_config:0000000000000000 $t
+     /tmp/cckBUabd.s:856    .text.dma_memory_address_generation_config:0000000000000000 dma_memory_address_generation_config
+     /tmp/cckBUabd.s:893    .text.dma_peripheral_address_generation_config:0000000000000000 $t
+     /tmp/cckBUabd.s:899    .text.dma_peripheral_address_generation_config:0000000000000000 dma_peripheral_address_generation_config
+     /tmp/cckBUabd.s:950    .text.dma_circulation_enable:0000000000000000 $t
+     /tmp/cckBUabd.s:956    .text.dma_circulation_enable:0000000000000000 dma_circulation_enable
+     /tmp/cckBUabd.s:982    .text.dma_circulation_disable:0000000000000000 $t
+     /tmp/cckBUabd.s:988    .text.dma_circulation_disable:0000000000000000 dma_circulation_disable
+     /tmp/cckBUabd.s:1014   .text.dma_channel_enable:0000000000000000 $t
+     /tmp/cckBUabd.s:1020   .text.dma_channel_enable:0000000000000000 dma_channel_enable
+     /tmp/cckBUabd.s:1046   .text.dma_channel_disable:0000000000000000 $t
+     /tmp/cckBUabd.s:1052   .text.dma_channel_disable:0000000000000000 dma_channel_disable
+     /tmp/cckBUabd.s:1078   .text.dma_transfer_direction_config:0000000000000000 $t
+     /tmp/cckBUabd.s:1084   .text.dma_transfer_direction_config:0000000000000000 dma_transfer_direction_config
+     /tmp/cckBUabd.s:1121   .text.dma_switch_buffer_mode_config:0000000000000000 $t
+     /tmp/cckBUabd.s:1127   .text.dma_switch_buffer_mode_config:0000000000000000 dma_switch_buffer_mode_config
+     /tmp/cckBUabd.s:1172   .text.dma_using_memory_get:0000000000000000 $t
+     /tmp/cckBUabd.s:1178   .text.dma_using_memory_get:0000000000000000 dma_using_memory_get
+     /tmp/cckBUabd.s:1204   .text.dma_channel_subperipheral_select:0000000000000000 $t
+     /tmp/cckBUabd.s:1210   .text.dma_channel_subperipheral_select:0000000000000000 dma_channel_subperipheral_select
+     /tmp/cckBUabd.s:1247   .text.dma_flow_controller_config:0000000000000000 $t
+     /tmp/cckBUabd.s:1253   .text.dma_flow_controller_config:0000000000000000 dma_flow_controller_config
+     /tmp/cckBUabd.s:1290   .text.dma_switch_buffer_mode_enable:0000000000000000 $t
+     /tmp/cckBUabd.s:1296   .text.dma_switch_buffer_mode_enable:0000000000000000 dma_switch_buffer_mode_enable
+     /tmp/cckBUabd.s:1329   .text.dma_fifo_status_get:0000000000000000 $t
+     /tmp/cckBUabd.s:1335   .text.dma_fifo_status_get:0000000000000000 dma_fifo_status_get
+ARM GAS  /tmp/cckBUabd.s 			page 56
 
 
-     /tmp/ccq1ll15.s:1361   .text.dma_flag_get:0000000000000000 $t
-     /tmp/ccq1ll15.s:1367   .text.dma_flag_get:0000000000000000 dma_flag_get
-     /tmp/ccq1ll15.s:1439   .text.dma_flag_clear:0000000000000000 $t
-     /tmp/ccq1ll15.s:1445   .text.dma_flag_clear:0000000000000000 dma_flag_clear
-     /tmp/ccq1ll15.s:1512   .text.dma_interrupt_enable:0000000000000000 $t
-     /tmp/ccq1ll15.s:1518   .text.dma_interrupt_enable:0000000000000000 dma_interrupt_enable
-     /tmp/ccq1ll15.s:1557   .text.dma_interrupt_disable:0000000000000000 $t
-     /tmp/ccq1ll15.s:1563   .text.dma_interrupt_disable:0000000000000000 dma_interrupt_disable
-     /tmp/ccq1ll15.s:1602   .text.dma_interrupt_flag_get:0000000000000000 $t
-     /tmp/ccq1ll15.s:1608   .text.dma_interrupt_flag_get:0000000000000000 dma_interrupt_flag_get
-     /tmp/ccq1ll15.s:1979   .text.dma_interrupt_flag_clear:0000000000000000 $t
-     /tmp/ccq1ll15.s:1985   .text.dma_interrupt_flag_clear:0000000000000000 dma_interrupt_flag_clear
+     /tmp/cckBUabd.s:1361   .text.dma_flag_get:0000000000000000 $t
+     /tmp/cckBUabd.s:1367   .text.dma_flag_get:0000000000000000 dma_flag_get
+     /tmp/cckBUabd.s:1439   .text.dma_flag_clear:0000000000000000 $t
+     /tmp/cckBUabd.s:1445   .text.dma_flag_clear:0000000000000000 dma_flag_clear
+     /tmp/cckBUabd.s:1512   .text.dma_interrupt_enable:0000000000000000 $t
+     /tmp/cckBUabd.s:1518   .text.dma_interrupt_enable:0000000000000000 dma_interrupt_enable
+     /tmp/cckBUabd.s:1557   .text.dma_interrupt_disable:0000000000000000 $t
+     /tmp/cckBUabd.s:1563   .text.dma_interrupt_disable:0000000000000000 dma_interrupt_disable
+     /tmp/cckBUabd.s:1602   .text.dma_interrupt_flag_get:0000000000000000 $t
+     /tmp/cckBUabd.s:1608   .text.dma_interrupt_flag_get:0000000000000000 dma_interrupt_flag_get
+     /tmp/cckBUabd.s:1979   .text.dma_interrupt_flag_clear:0000000000000000 $t
+     /tmp/cckBUabd.s:1985   .text.dma_interrupt_flag_clear:0000000000000000 dma_interrupt_flag_clear
 
 NO UNDEFINED SYMBOLS

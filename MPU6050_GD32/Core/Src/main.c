@@ -6,10 +6,10 @@ int main(void)
 {
     systick_config();
     usart_gpio_config();
-    MPU6050_init();
 
     while (1) {
-        MPU6050_init();
+        mpu6050_init();
+        delay_1ms(10);
     }
 
     return 0;

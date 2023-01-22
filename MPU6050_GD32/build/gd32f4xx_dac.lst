@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccHhPwjf.s 			page 1
+ARM GAS  /tmp/ccdgk0pG.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-ARM GAS  /tmp/ccHhPwjf.s 			page 2
+ARM GAS  /tmp/ccdgk0pG.s 			page 2
 
 
   33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
   57              		.align	1
   58              		.global	dac_enable
   59              		.syntax unified
-ARM GAS  /tmp/ccHhPwjf.s 			page 3
+ARM GAS  /tmp/ccdgk0pG.s 			page 3
 
 
   60              		.thumb
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
   98              		.align	1
   99              		.global	dac_disable
  100              		.syntax unified
-ARM GAS  /tmp/ccHhPwjf.s 			page 4
+ARM GAS  /tmp/ccdgk0pG.s 			page 4
 
 
  101              		.thumb
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  139              		.align	1
  140              		.global	dac_dma_enable
  141              		.syntax unified
-ARM GAS  /tmp/ccHhPwjf.s 			page 5
+ARM GAS  /tmp/ccdgk0pG.s 			page 5
 
 
  142              		.thumb
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  180              		.align	1
  181              		.global	dac_dma_disable
  182              		.syntax unified
-ARM GAS  /tmp/ccHhPwjf.s 			page 6
+ARM GAS  /tmp/ccdgk0pG.s 			page 6
 
 
  183              		.thumb
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  221              		.align	1
  222              		.global	dac_output_buffer_enable
  223              		.syntax unified
-ARM GAS  /tmp/ccHhPwjf.s 			page 7
+ARM GAS  /tmp/ccdgk0pG.s 			page 7
 
 
  224              		.thumb
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  262              		.align	1
  263              		.global	dac_output_buffer_disable
  264              		.syntax unified
-ARM GAS  /tmp/ccHhPwjf.s 			page 8
+ARM GAS  /tmp/ccdgk0pG.s 			page 8
 
 
  265              		.thumb
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  303              		.align	1
  304              		.global	dac_output_value_get
  305              		.syntax unified
-ARM GAS  /tmp/ccHhPwjf.s 			page 9
+ARM GAS  /tmp/ccdgk0pG.s 			page 9
 
 
  306              		.thumb
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  339              		.loc 1 161 26 view .LVU78
  340 0010 FAE7     		b	.L41
  341              	.L43:
-ARM GAS  /tmp/ccHhPwjf.s 			page 10
+ARM GAS  /tmp/ccdgk0pG.s 			page 10
 
 
  342 0012 00BF     		.align	2
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  377 0012 7047     		bx	lr
  378              	.L46:
  186:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****         /* data left 12 bit alignment */
-ARM GAS  /tmp/ccHhPwjf.s 			page 11
+ARM GAS  /tmp/ccdgk0pG.s 			page 11
 
 
  187:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****         case DAC_ALIGN_12B_L:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  207:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****         /* data right 8 bit alignment */
  208:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****         case DAC_ALIGN_8B_R:
  209:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****             DAC1_R8DH = data;
-ARM GAS  /tmp/ccHhPwjf.s 			page 12
+ARM GAS  /tmp/ccdgk0pG.s 			page 12
 
 
  413              		.loc 1 209 13 view .LVU99
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  451 0008 42F00402 		orr	r2, r2, #4
  452              	.L56:
  227:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     } else {
-ARM GAS  /tmp/ccHhPwjf.s 			page 13
+ARM GAS  /tmp/ccdgk0pG.s 			page 13
 
 
  228:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****         DAC_CTL |= DAC_CTL_DTEN1;
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  492 0008 22F00402 		bic	r2, r2, #4
  493              	.L62:
  242:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     } else {
-ARM GAS  /tmp/ccHhPwjf.s 			page 14
+ARM GAS  /tmp/ccdgk0pG.s 			page 14
 
 
  243:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****         DAC_CTL &= ~DAC_CTL_DTEN1;
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  525              		.loc 1 265 5 view .LVU124
  526 0000 0B4B     		ldr	r3, .L69
  266:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****         /* configure DAC0 trigger source */
-ARM GAS  /tmp/ccHhPwjf.s 			page 15
+ARM GAS  /tmp/ccdgk0pG.s 			page 15
 
 
  267:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****         DAC_CTL &= ~DAC_CTL_DTSEL0;
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  570              	.LFB128:
  275:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** 
  276:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** /*!
-ARM GAS  /tmp/ccHhPwjf.s 			page 16
+ARM GAS  /tmp/ccdgk0pG.s 			page 16
 
 
  277:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     \brief      enable DAC software trigger
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  289:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** 
  290:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** /*!
  291:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     \brief      disable DAC software trigger
-ARM GAS  /tmp/ccHhPwjf.s 			page 17
+ARM GAS  /tmp/ccdgk0pG.s 			page 17
 
 
  292:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     \param[in]  dac_periph: DACx(x = 0,1)
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  304:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** 
  305:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** /*!
  306:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     \brief      configure DAC wave mode
-ARM GAS  /tmp/ccHhPwjf.s 			page 18
+ARM GAS  /tmp/ccdgk0pG.s 			page 18
 
 
  307:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     \param[in]  dac_periph: DACx(x = 0,1)
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  682              		.loc 1 325 9 is_stmt 1 view .LVU169
  683 0024 D3F80024 		ldr	r2, [r3, #1024]
  325:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     }
-ARM GAS  /tmp/ccHhPwjf.s 			page 19
+ARM GAS  /tmp/ccdgk0pG.s 			page 19
 
 
  684              		.loc 1 325 17 is_stmt 0 view .LVU170
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  713              		.loc 1 351 7 view .LVU174
  714 0006 48B9     		cbnz	r0, .L90
  715              		.loc 1 353 9 is_stmt 1 view .LVU175
-ARM GAS  /tmp/ccHhPwjf.s 			page 20
+ARM GAS  /tmp/ccdgk0pG.s 			page 20
 
 
  716              		.loc 1 353 17 is_stmt 0 view .LVU176
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  367:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****       \arg        DAC_LFSR_BIT0: unmask the LFSR bit0
  368:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****       \arg        DAC_LFSR_BITS1_0: unmask the LFSR bits[1:0]
  369:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****       \arg        DAC_LFSR_BITS2_0: unmask the LFSR bits[2:0]
-ARM GAS  /tmp/ccHhPwjf.s 			page 21
+ARM GAS  /tmp/ccdgk0pG.s 			page 21
 
 
  370:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****       \arg        DAC_LFSR_BITS3_0: unmask the LFSR bits[3:0]
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  408:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****       \arg        DAC_TRIANGLE_AMPLITUDE_511: triangle amplitude is 511
  409:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****       \arg        DAC_TRIANGLE_AMPLITUDE_1023: triangle amplitude is 1023
  410:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****       \arg        DAC_TRIANGLE_AMPLITUDE_2047: triangle amplitude is 2047
-ARM GAS  /tmp/ccHhPwjf.s 			page 22
+ARM GAS  /tmp/ccdgk0pG.s 			page 22
 
 
  411:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****       \arg        DAC_TRIANGLE_AMPLITUDE_4095: triangle amplitude is 4095
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  801              		.loc 1 438 13 is_stmt 0 view .LVU191
  802 0006 43F00113 		orr	r3, r3, #65537
  803 000a C2F80034 		str	r3, [r2, #1024]
-ARM GAS  /tmp/ccHhPwjf.s 			page 23
+ARM GAS  /tmp/ccdgk0pG.s 			page 23
 
 
  439:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** }
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  847              		.global	dac_concurrent_software_trigger_enable
  848              		.syntax unified
  849              		.thumb
-ARM GAS  /tmp/ccHhPwjf.s 			page 24
+ARM GAS  /tmp/ccdgk0pG.s 			page 24
 
 
  850              		.thumb_func
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  474:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** {
  886              		.loc 1 474 1 is_stmt 1 view -0
  887              		.cfi_startproc
-ARM GAS  /tmp/ccHhPwjf.s 			page 25
+ARM GAS  /tmp/ccdgk0pG.s 			page 25
 
 
  888              		@ args = 0, pretend = 0, frame = 0
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  928 0002 D2F80034 		ldr	r3, [r2, #1024]
  929              		.loc 1 490 13 is_stmt 0 view .LVU215
  930 0006 23F00213 		bic	r3, r3, #131074
-ARM GAS  /tmp/ccHhPwjf.s 			page 26
+ARM GAS  /tmp/ccdgk0pG.s 			page 26
 
 
  931 000a C2F80034 		str	r3, [r2, #1024]
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  974              		.align	1
  975              		.global	dac_concurrent_data_set
  976              		.syntax unified
-ARM GAS  /tmp/ccHhPwjf.s 			page 27
+ARM GAS  /tmp/ccdgk0pG.s 			page 27
 
 
  977              		.thumb
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  528:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     case DAC_ALIGN_12B_L:
  529:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****         data = ((uint32_t)data1 << DH_12BIT_OFFSET) | data0;
  1008              		.loc 1 529 9 view .LVU232
-ARM GAS  /tmp/ccHhPwjf.s 			page 28
+ARM GAS  /tmp/ccdgk0pG.s 			page 28
 
 
  530:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****         DACC_L12DH = data;
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  542:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** /*!
  543:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     \brief      enable DAC concurrent interrupt funcution
  544:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     \param[in]  none
-ARM GAS  /tmp/ccHhPwjf.s 			page 29
+ARM GAS  /tmp/ccdgk0pG.s 			page 29
 
 
  545:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     \param[out] none
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  1088              		.loc 1 563 5 view .LVU252
  1089              	.LVL35:
  564:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     ctl = DAC_CTL_DDUDRIE0 | DAC_CTL_DDUDRIE1;
-ARM GAS  /tmp/ccHhPwjf.s 			page 30
+ARM GAS  /tmp/ccdgk0pG.s 			page 30
 
 
  1090              		.loc 1 564 5 view .LVU253
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  1131 0008 C0F34030 		ubfx	r0, r0, #13, #1
  1132 000c 7047     		bx	lr
  1133              	.LVL38:
-ARM GAS  /tmp/ccHhPwjf.s 			page 31
+ARM GAS  /tmp/ccdgk0pG.s 			page 31
 
 
  1134              	.L128:
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  1169              		.loc 1 600 9 is_stmt 0 view .LVU271
  1170 0002 D3F83424 		ldr	r2, [r3, #1076]
  599:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     if(DAC0 == dac_periph) {
-ARM GAS  /tmp/ccHhPwjf.s 			page 32
+ARM GAS  /tmp/ccdgk0pG.s 			page 32
 
 
  1171              		.loc 1 599 7 view .LVU272
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  1210              		.loc 1 615 9 is_stmt 0 view .LVU281
  1211 0002 D3F80024 		ldr	r2, [r3, #1024]
  614:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     if(DAC0 == dac_periph) {
-ARM GAS  /tmp/ccHhPwjf.s 			page 33
+ARM GAS  /tmp/ccdgk0pG.s 			page 33
 
 
  1212              		.loc 1 614 7 view .LVU282
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  1251              		.loc 1 630 9 is_stmt 0 view .LVU291
  1252 0002 D3F80024 		ldr	r2, [r3, #1024]
  629:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     if(DAC0 == dac_periph) {
-ARM GAS  /tmp/ccHhPwjf.s 			page 34
+ARM GAS  /tmp/ccdgk0pG.s 			page 34
 
 
  1253              		.loc 1 629 7 view .LVU292
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  646:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** 
  647:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     if(DAC0 == dac_periph) {
  1292              		.loc 1 647 5 view .LVU302
-ARM GAS  /tmp/ccHhPwjf.s 			page 35
+ARM GAS  /tmp/ccdgk0pG.s 			page 35
 
 
  1293 0000 0A4B     		ldr	r3, .L155
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  661:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     }
  662:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c ****     return temp_flag;
  1334              		.loc 1 662 5 is_stmt 1 view .LVU320
-ARM GAS  /tmp/ccHhPwjf.s 			page 36
+ARM GAS  /tmp/ccdgk0pG.s 			page 36
 
 
  663:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_dac.c **** }
@@ -2140,109 +2140,109 @@ ARM GAS  /tmp/ccHhPwjf.s 			page 1
  1365              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  1366              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
  1367              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
-ARM GAS  /tmp/ccHhPwjf.s 			page 37
+ARM GAS  /tmp/ccdgk0pG.s 			page 37
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_dac.c
-     /tmp/ccHhPwjf.s:19     .text.dac_deinit:0000000000000000 $t
-     /tmp/ccHhPwjf.s:25     .text.dac_deinit:0000000000000000 dac_deinit
-     /tmp/ccHhPwjf.s:57     .text.dac_enable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:63     .text.dac_enable:0000000000000000 dac_enable
-     /tmp/ccHhPwjf.s:93     .text.dac_enable:0000000000000018 $d
-     /tmp/ccHhPwjf.s:98     .text.dac_disable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:104    .text.dac_disable:0000000000000000 dac_disable
-     /tmp/ccHhPwjf.s:134    .text.dac_disable:0000000000000018 $d
-     /tmp/ccHhPwjf.s:139    .text.dac_dma_enable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:145    .text.dac_dma_enable:0000000000000000 dac_dma_enable
-     /tmp/ccHhPwjf.s:175    .text.dac_dma_enable:0000000000000018 $d
-     /tmp/ccHhPwjf.s:180    .text.dac_dma_disable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:186    .text.dac_dma_disable:0000000000000000 dac_dma_disable
-     /tmp/ccHhPwjf.s:216    .text.dac_dma_disable:0000000000000018 $d
-     /tmp/ccHhPwjf.s:221    .text.dac_output_buffer_enable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:227    .text.dac_output_buffer_enable:0000000000000000 dac_output_buffer_enable
-     /tmp/ccHhPwjf.s:257    .text.dac_output_buffer_enable:0000000000000018 $d
-     /tmp/ccHhPwjf.s:262    .text.dac_output_buffer_disable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:268    .text.dac_output_buffer_disable:0000000000000000 dac_output_buffer_disable
-     /tmp/ccHhPwjf.s:298    .text.dac_output_buffer_disable:0000000000000018 $d
-     /tmp/ccHhPwjf.s:303    .text.dac_output_value_get:0000000000000000 $t
-     /tmp/ccHhPwjf.s:309    .text.dac_output_value_get:0000000000000000 dac_output_value_get
-     /tmp/ccHhPwjf.s:344    .text.dac_output_value_get:0000000000000014 $d
-     /tmp/ccHhPwjf.s:349    .text.dac_data_set:0000000000000000 $t
-     /tmp/ccHhPwjf.s:355    .text.dac_data_set:0000000000000000 dac_data_set
-     /tmp/ccHhPwjf.s:424    .text.dac_data_set:0000000000000048 $d
-     /tmp/ccHhPwjf.s:429    .text.dac_trigger_enable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:435    .text.dac_trigger_enable:0000000000000000 dac_trigger_enable
-     /tmp/ccHhPwjf.s:465    .text.dac_trigger_enable:0000000000000018 $d
-     /tmp/ccHhPwjf.s:470    .text.dac_trigger_disable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:476    .text.dac_trigger_disable:0000000000000000 dac_trigger_disable
-     /tmp/ccHhPwjf.s:506    .text.dac_trigger_disable:0000000000000018 $d
-     /tmp/ccHhPwjf.s:511    .text.dac_trigger_source_config:0000000000000000 $t
-     /tmp/ccHhPwjf.s:517    .text.dac_trigger_source_config:0000000000000000 dac_trigger_source_config
-     /tmp/ccHhPwjf.s:557    .text.dac_trigger_source_config:0000000000000030 $d
-     /tmp/ccHhPwjf.s:562    .text.dac_software_trigger_enable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:568    .text.dac_software_trigger_enable:0000000000000000 dac_software_trigger_enable
-     /tmp/ccHhPwjf.s:598    .text.dac_software_trigger_enable:0000000000000018 $d
-     /tmp/ccHhPwjf.s:603    .text.dac_software_trigger_disable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:609    .text.dac_software_trigger_disable:0000000000000000 dac_software_trigger_disable
-     /tmp/ccHhPwjf.s:639    .text.dac_software_trigger_disable:0000000000000018 $d
-     /tmp/ccHhPwjf.s:644    .text.dac_wave_mode_config:0000000000000000 $t
-     /tmp/ccHhPwjf.s:650    .text.dac_wave_mode_config:0000000000000000 dac_wave_mode_config
-     /tmp/ccHhPwjf.s:690    .text.dac_wave_mode_config:0000000000000030 $d
-     /tmp/ccHhPwjf.s:695    .text.dac_wave_bit_width_config:0000000000000000 $t
-     /tmp/ccHhPwjf.s:701    .text.dac_wave_bit_width_config:0000000000000000 dac_wave_bit_width_config
-     /tmp/ccHhPwjf.s:741    .text.dac_wave_bit_width_config:0000000000000030 $d
-     /tmp/ccHhPwjf.s:746    .text.dac_lfsr_noise_config:0000000000000000 $t
-     /tmp/ccHhPwjf.s:752    .text.dac_lfsr_noise_config:0000000000000000 dac_lfsr_noise_config
-     /tmp/ccHhPwjf.s:764    .text.dac_triangle_noise_config:0000000000000000 $t
-     /tmp/ccHhPwjf.s:770    .text.dac_triangle_noise_config:0000000000000000 dac_triangle_noise_config
-     /tmp/ccHhPwjf.s:782    .text.dac_concurrent_enable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:788    .text.dac_concurrent_enable:0000000000000000 dac_concurrent_enable
-     /tmp/ccHhPwjf.s:809    .text.dac_concurrent_enable:0000000000000010 $d
-     /tmp/ccHhPwjf.s:814    .text.dac_concurrent_disable:0000000000000000 $t
-ARM GAS  /tmp/ccHhPwjf.s 			page 38
+     /tmp/ccdgk0pG.s:19     .text.dac_deinit:0000000000000000 $t
+     /tmp/ccdgk0pG.s:25     .text.dac_deinit:0000000000000000 dac_deinit
+     /tmp/ccdgk0pG.s:57     .text.dac_enable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:63     .text.dac_enable:0000000000000000 dac_enable
+     /tmp/ccdgk0pG.s:93     .text.dac_enable:0000000000000018 $d
+     /tmp/ccdgk0pG.s:98     .text.dac_disable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:104    .text.dac_disable:0000000000000000 dac_disable
+     /tmp/ccdgk0pG.s:134    .text.dac_disable:0000000000000018 $d
+     /tmp/ccdgk0pG.s:139    .text.dac_dma_enable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:145    .text.dac_dma_enable:0000000000000000 dac_dma_enable
+     /tmp/ccdgk0pG.s:175    .text.dac_dma_enable:0000000000000018 $d
+     /tmp/ccdgk0pG.s:180    .text.dac_dma_disable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:186    .text.dac_dma_disable:0000000000000000 dac_dma_disable
+     /tmp/ccdgk0pG.s:216    .text.dac_dma_disable:0000000000000018 $d
+     /tmp/ccdgk0pG.s:221    .text.dac_output_buffer_enable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:227    .text.dac_output_buffer_enable:0000000000000000 dac_output_buffer_enable
+     /tmp/ccdgk0pG.s:257    .text.dac_output_buffer_enable:0000000000000018 $d
+     /tmp/ccdgk0pG.s:262    .text.dac_output_buffer_disable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:268    .text.dac_output_buffer_disable:0000000000000000 dac_output_buffer_disable
+     /tmp/ccdgk0pG.s:298    .text.dac_output_buffer_disable:0000000000000018 $d
+     /tmp/ccdgk0pG.s:303    .text.dac_output_value_get:0000000000000000 $t
+     /tmp/ccdgk0pG.s:309    .text.dac_output_value_get:0000000000000000 dac_output_value_get
+     /tmp/ccdgk0pG.s:344    .text.dac_output_value_get:0000000000000014 $d
+     /tmp/ccdgk0pG.s:349    .text.dac_data_set:0000000000000000 $t
+     /tmp/ccdgk0pG.s:355    .text.dac_data_set:0000000000000000 dac_data_set
+     /tmp/ccdgk0pG.s:424    .text.dac_data_set:0000000000000048 $d
+     /tmp/ccdgk0pG.s:429    .text.dac_trigger_enable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:435    .text.dac_trigger_enable:0000000000000000 dac_trigger_enable
+     /tmp/ccdgk0pG.s:465    .text.dac_trigger_enable:0000000000000018 $d
+     /tmp/ccdgk0pG.s:470    .text.dac_trigger_disable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:476    .text.dac_trigger_disable:0000000000000000 dac_trigger_disable
+     /tmp/ccdgk0pG.s:506    .text.dac_trigger_disable:0000000000000018 $d
+     /tmp/ccdgk0pG.s:511    .text.dac_trigger_source_config:0000000000000000 $t
+     /tmp/ccdgk0pG.s:517    .text.dac_trigger_source_config:0000000000000000 dac_trigger_source_config
+     /tmp/ccdgk0pG.s:557    .text.dac_trigger_source_config:0000000000000030 $d
+     /tmp/ccdgk0pG.s:562    .text.dac_software_trigger_enable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:568    .text.dac_software_trigger_enable:0000000000000000 dac_software_trigger_enable
+     /tmp/ccdgk0pG.s:598    .text.dac_software_trigger_enable:0000000000000018 $d
+     /tmp/ccdgk0pG.s:603    .text.dac_software_trigger_disable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:609    .text.dac_software_trigger_disable:0000000000000000 dac_software_trigger_disable
+     /tmp/ccdgk0pG.s:639    .text.dac_software_trigger_disable:0000000000000018 $d
+     /tmp/ccdgk0pG.s:644    .text.dac_wave_mode_config:0000000000000000 $t
+     /tmp/ccdgk0pG.s:650    .text.dac_wave_mode_config:0000000000000000 dac_wave_mode_config
+     /tmp/ccdgk0pG.s:690    .text.dac_wave_mode_config:0000000000000030 $d
+     /tmp/ccdgk0pG.s:695    .text.dac_wave_bit_width_config:0000000000000000 $t
+     /tmp/ccdgk0pG.s:701    .text.dac_wave_bit_width_config:0000000000000000 dac_wave_bit_width_config
+     /tmp/ccdgk0pG.s:741    .text.dac_wave_bit_width_config:0000000000000030 $d
+     /tmp/ccdgk0pG.s:746    .text.dac_lfsr_noise_config:0000000000000000 $t
+     /tmp/ccdgk0pG.s:752    .text.dac_lfsr_noise_config:0000000000000000 dac_lfsr_noise_config
+     /tmp/ccdgk0pG.s:764    .text.dac_triangle_noise_config:0000000000000000 $t
+     /tmp/ccdgk0pG.s:770    .text.dac_triangle_noise_config:0000000000000000 dac_triangle_noise_config
+     /tmp/ccdgk0pG.s:782    .text.dac_concurrent_enable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:788    .text.dac_concurrent_enable:0000000000000000 dac_concurrent_enable
+     /tmp/ccdgk0pG.s:809    .text.dac_concurrent_enable:0000000000000010 $d
+     /tmp/ccdgk0pG.s:814    .text.dac_concurrent_disable:0000000000000000 $t
+ARM GAS  /tmp/ccdgk0pG.s 			page 38
 
 
-     /tmp/ccHhPwjf.s:820    .text.dac_concurrent_disable:0000000000000000 dac_concurrent_disable
-     /tmp/ccHhPwjf.s:841    .text.dac_concurrent_disable:0000000000000010 $d
-     /tmp/ccHhPwjf.s:846    .text.dac_concurrent_software_trigger_enable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:852    .text.dac_concurrent_software_trigger_enable:0000000000000000 dac_concurrent_software_trigger_enable
-     /tmp/ccHhPwjf.s:873    .text.dac_concurrent_software_trigger_enable:0000000000000010 $d
-     /tmp/ccHhPwjf.s:878    .text.dac_concurrent_software_trigger_disable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:884    .text.dac_concurrent_software_trigger_disable:0000000000000000 dac_concurrent_software_trigger_disable
-     /tmp/ccHhPwjf.s:905    .text.dac_concurrent_software_trigger_disable:0000000000000010 $d
-     /tmp/ccHhPwjf.s:910    .text.dac_concurrent_output_buffer_enable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:916    .text.dac_concurrent_output_buffer_enable:0000000000000000 dac_concurrent_output_buffer_enable
-     /tmp/ccHhPwjf.s:937    .text.dac_concurrent_output_buffer_enable:0000000000000010 $d
-     /tmp/ccHhPwjf.s:942    .text.dac_concurrent_output_buffer_disable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:948    .text.dac_concurrent_output_buffer_disable:0000000000000000 dac_concurrent_output_buffer_disable
-     /tmp/ccHhPwjf.s:969    .text.dac_concurrent_output_buffer_disable:0000000000000010 $d
-     /tmp/ccHhPwjf.s:974    .text.dac_concurrent_data_set:0000000000000000 $t
-     /tmp/ccHhPwjf.s:980    .text.dac_concurrent_data_set:0000000000000000 dac_concurrent_data_set
-     /tmp/ccHhPwjf.s:1038   .text.dac_concurrent_data_set:0000000000000030 $d
-     /tmp/ccHhPwjf.s:1043   .text.dac_concurrent_interrupt_enable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:1049   .text.dac_concurrent_interrupt_enable:0000000000000000 dac_concurrent_interrupt_enable
-     /tmp/ccHhPwjf.s:1070   .text.dac_concurrent_interrupt_enable:0000000000000010 $d
-     /tmp/ccHhPwjf.s:1075   .text.dac_concurrent_interrupt_disable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:1081   .text.dac_concurrent_interrupt_disable:0000000000000000 dac_concurrent_interrupt_disable
-     /tmp/ccHhPwjf.s:1102   .text.dac_concurrent_interrupt_disable:0000000000000010 $d
-     /tmp/ccHhPwjf.s:1107   .text.dac_flag_get:0000000000000000 $t
-     /tmp/ccHhPwjf.s:1113   .text.dac_flag_get:0000000000000000 dac_flag_get
-     /tmp/ccHhPwjf.s:1148   .text.dac_flag_get:0000000000000018 $d
-     /tmp/ccHhPwjf.s:1153   .text.dac_flag_clear:0000000000000000 $t
-     /tmp/ccHhPwjf.s:1159   .text.dac_flag_clear:0000000000000000 dac_flag_clear
-     /tmp/ccHhPwjf.s:1189   .text.dac_flag_clear:0000000000000018 $d
-     /tmp/ccHhPwjf.s:1194   .text.dac_interrupt_enable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:1200   .text.dac_interrupt_enable:0000000000000000 dac_interrupt_enable
-     /tmp/ccHhPwjf.s:1230   .text.dac_interrupt_enable:0000000000000018 $d
-     /tmp/ccHhPwjf.s:1235   .text.dac_interrupt_disable:0000000000000000 $t
-     /tmp/ccHhPwjf.s:1241   .text.dac_interrupt_disable:0000000000000000 dac_interrupt_disable
-     /tmp/ccHhPwjf.s:1271   .text.dac_interrupt_disable:0000000000000018 $d
-     /tmp/ccHhPwjf.s:1276   .text.dac_interrupt_flag_get:0000000000000000 $t
-     /tmp/ccHhPwjf.s:1282   .text.dac_interrupt_flag_get:0000000000000000 dac_interrupt_flag_get
-     /tmp/ccHhPwjf.s:1340   .text.dac_interrupt_flag_get:000000000000002c $d
-     /tmp/ccHhPwjf.s:1345   .text.dac_interrupt_flag_clear:0000000000000000 $t
-     /tmp/ccHhPwjf.s:1351   .text.dac_interrupt_flag_clear:0000000000000000 dac_interrupt_flag_clear
+     /tmp/ccdgk0pG.s:820    .text.dac_concurrent_disable:0000000000000000 dac_concurrent_disable
+     /tmp/ccdgk0pG.s:841    .text.dac_concurrent_disable:0000000000000010 $d
+     /tmp/ccdgk0pG.s:846    .text.dac_concurrent_software_trigger_enable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:852    .text.dac_concurrent_software_trigger_enable:0000000000000000 dac_concurrent_software_trigger_enable
+     /tmp/ccdgk0pG.s:873    .text.dac_concurrent_software_trigger_enable:0000000000000010 $d
+     /tmp/ccdgk0pG.s:878    .text.dac_concurrent_software_trigger_disable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:884    .text.dac_concurrent_software_trigger_disable:0000000000000000 dac_concurrent_software_trigger_disable
+     /tmp/ccdgk0pG.s:905    .text.dac_concurrent_software_trigger_disable:0000000000000010 $d
+     /tmp/ccdgk0pG.s:910    .text.dac_concurrent_output_buffer_enable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:916    .text.dac_concurrent_output_buffer_enable:0000000000000000 dac_concurrent_output_buffer_enable
+     /tmp/ccdgk0pG.s:937    .text.dac_concurrent_output_buffer_enable:0000000000000010 $d
+     /tmp/ccdgk0pG.s:942    .text.dac_concurrent_output_buffer_disable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:948    .text.dac_concurrent_output_buffer_disable:0000000000000000 dac_concurrent_output_buffer_disable
+     /tmp/ccdgk0pG.s:969    .text.dac_concurrent_output_buffer_disable:0000000000000010 $d
+     /tmp/ccdgk0pG.s:974    .text.dac_concurrent_data_set:0000000000000000 $t
+     /tmp/ccdgk0pG.s:980    .text.dac_concurrent_data_set:0000000000000000 dac_concurrent_data_set
+     /tmp/ccdgk0pG.s:1038   .text.dac_concurrent_data_set:0000000000000030 $d
+     /tmp/ccdgk0pG.s:1043   .text.dac_concurrent_interrupt_enable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:1049   .text.dac_concurrent_interrupt_enable:0000000000000000 dac_concurrent_interrupt_enable
+     /tmp/ccdgk0pG.s:1070   .text.dac_concurrent_interrupt_enable:0000000000000010 $d
+     /tmp/ccdgk0pG.s:1075   .text.dac_concurrent_interrupt_disable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:1081   .text.dac_concurrent_interrupt_disable:0000000000000000 dac_concurrent_interrupt_disable
+     /tmp/ccdgk0pG.s:1102   .text.dac_concurrent_interrupt_disable:0000000000000010 $d
+     /tmp/ccdgk0pG.s:1107   .text.dac_flag_get:0000000000000000 $t
+     /tmp/ccdgk0pG.s:1113   .text.dac_flag_get:0000000000000000 dac_flag_get
+     /tmp/ccdgk0pG.s:1148   .text.dac_flag_get:0000000000000018 $d
+     /tmp/ccdgk0pG.s:1153   .text.dac_flag_clear:0000000000000000 $t
+     /tmp/ccdgk0pG.s:1159   .text.dac_flag_clear:0000000000000000 dac_flag_clear
+     /tmp/ccdgk0pG.s:1189   .text.dac_flag_clear:0000000000000018 $d
+     /tmp/ccdgk0pG.s:1194   .text.dac_interrupt_enable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:1200   .text.dac_interrupt_enable:0000000000000000 dac_interrupt_enable
+     /tmp/ccdgk0pG.s:1230   .text.dac_interrupt_enable:0000000000000018 $d
+     /tmp/ccdgk0pG.s:1235   .text.dac_interrupt_disable:0000000000000000 $t
+     /tmp/ccdgk0pG.s:1241   .text.dac_interrupt_disable:0000000000000000 dac_interrupt_disable
+     /tmp/ccdgk0pG.s:1271   .text.dac_interrupt_disable:0000000000000018 $d
+     /tmp/ccdgk0pG.s:1276   .text.dac_interrupt_flag_get:0000000000000000 $t
+     /tmp/ccdgk0pG.s:1282   .text.dac_interrupt_flag_get:0000000000000000 dac_interrupt_flag_get
+     /tmp/ccdgk0pG.s:1340   .text.dac_interrupt_flag_get:000000000000002c $d
+     /tmp/ccdgk0pG.s:1345   .text.dac_interrupt_flag_clear:0000000000000000 $t
+     /tmp/ccdgk0pG.s:1351   .text.dac_interrupt_flag_clear:0000000000000000 dac_interrupt_flag_clear
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable

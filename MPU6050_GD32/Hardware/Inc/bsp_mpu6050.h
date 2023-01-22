@@ -7,20 +7,6 @@
 #include "bsp_i2c.h"
 
 
-#define I2C_TIME_OUT    5000
-#define I2C_OK          1
-#define I2C_FAIL        0
-#define I2C_END         1
-typedef enum {
-    I2C_START = 0,
-    I2C_SEND_ADDRESS,
-    I2C_CLEAR_ADDRESS_FLAG,
-    I2C_TRANSMIT_DATA,
-    I2C_RECEIVE_DATA,
-    I2C_STOP
-} i2c_process_enum;
-
-
 #define RAD_TO_DEG          57.295779513082320876798154814105
 
 #define WHO_AM_I_REG        0x75
@@ -32,9 +18,6 @@ typedef enum {
 #define GYRO_CONFIG_REG     0x1B
 #define GYRO_XOUT_H_REG     0x43
 #define MPU6050_ADDR        0xD0
-
-#define W   0
-#define R   1
 
 
 /* MPU6050 数据结构 */
@@ -69,7 +52,7 @@ typedef struct {
     double P[2][2];
 } Kalman_t;
 
-void MPU6050_init(void);
+void mpu6050_init(void);
 
 
 #endif
