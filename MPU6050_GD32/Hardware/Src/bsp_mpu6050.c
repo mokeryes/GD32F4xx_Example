@@ -3,6 +3,133 @@
 
 
 /**
+ * @brief 向I2C从设备内部指定地址写入数据
+ * 
+ * @param pBuffer 准备写入的数据指针
+ * @param size 数据量
+ * @param slave_address I2C从设备地址
+ * @param internal_address I2C从设备内部功能地址
+ */
+static void mpu6050_buffer_write_timeout(uint8_t *pBuffer, uint8_t size, uint8_t slave_address, uint8_t internal_address)
+{
+    uint8_t state = I2C_START;
+    uint8_t timeout = 0;
+    uint8_t write_cycle = RESET;
+    uint8_t nsize = 0;
+
+    i2c_ack_config(I2CX, I2C_ACK_ENABLE);
+
+    while (size) {
+        switch (state) {
+        case I2C_START:
+            // 首次启动I2C总线需要检查总线是否空闲
+            while (i2c_flag_get(I2CX, I2C_FLAG_I2CBSY) && (timeout < I2C_TIME_OUT))
+                timeout++;
+            if (timeout > I2C_TIME_OUT) {
+                timeout = 0;
+                state = I2C_START;
+                i2c_bus_reset();
+                printf("I2C bus is in busy write!\r\n");
+                break;
+            }
+
+            timeout = 0;
+
+            i2c_start_on_bus(I2CX);
+            while ((!i2c_flag_get(I2CX, I2C_FLAG_SBSEND)) && (timeout < I2C_TIME_OUT))
+                timeout++;
+            if (timeout > I2C_TIME_OUT) {
+                timeout = 0;
+                state = I2C_START;
+                i2c_bus_reset();
+                printf("I2C bus is in busy write!\r\n");
+                break;
+            }
+            
+            timeout = 0;
+            state = I2C_SEND_ADDRESS;
+            break;
+
+        case I2C_SEND_ADDRESS:
+            i2c_master_addressing(I2CX, slave_address, I2C_TRANSMITTER);
+            while ((!i2c_flag_get(I2CX, I2C_FLAG_ADDSEND)) && (timeout < I2C_TIME_OUT))
+                timeout++;
+            if (timeout > I2C_TIME_OUT) {
+                timeout = 0;
+                state = I2C_START;
+                i2c_bus_reset();
+                printf("I2C send address ERROR!\r\n");
+                break;
+            }
+
+            timeout = 0;
+            state = I2C_CLEAR_ADDRESS_FLAG;
+            break;
+
+        case I2C_CLEAR_ADDRESS_FLAG:
+            i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+            while ((!i2c_flag_get(I2CX, I2C_FLAG_TBE)) && (timeout < I2C_TIME_OUT))
+                timeout++;
+            if (timeout > I2C_TIME_OUT) {
+                timeout = 0;
+                state = I2C_START;
+                i2c_bus_reset();
+                printf("I2C clear ADDSEND flag ERROR!\r\n");
+                break;
+            }
+
+            timeout = 0;
+            state = I2C_TRANSMIT_DATA;
+            break;
+
+        case I2C_TRANSMIT_DATA:
+            if (write_cycle == RESET) {
+                i2c_data_transmit(I2CX, internal_address);
+                while ((!i2c_flag_get(I2CX, I2C_FLAG_BTC)) && (timeout < I2C_TIME_OUT))
+                    timeout++;
+                if (timeout > I2C_TIME_OUT) {
+                    timeout = 0;
+                    state = I2C_TRANSMIT_DATA;
+                    printf("I2C internal address transmit ERROR!\r\n");
+                    break;
+                }
+
+                write_cycle = SET;
+                timeout = 0;
+                state = I2C_TRANSMIT_DATA;
+                break;
+            }
+
+            i2c_data_transmit(I2CX, pBuffer[nsize]);
+            while ((!i2c_flag_get(I2CX, I2C_FLAG_BTC)) && (timeout < I2C_TIME_OUT))
+                timeout++;
+            if (timeout > I2C_TIME_OUT) {
+                timeout = 0;
+                state = I2C_TRANSMIT_DATA;
+                printf("I2C data transmit ERROR!\r\n");
+                break;
+            }
+            size--; nsize++;
+
+            if (size == 1) {
+                i2c_stop_on_bus(I2CX);
+                state = I2C_STOP;
+                break;
+            }
+
+            timeout = 0;
+            state = I2C_TRANSMIT_DATA;
+            break;
+
+        case I2C_STOP:
+            while (I2C_CTL0(I2CX) & I2C_CTL0_STOP);
+            break;
+        }
+    }
+}
+
+
+/**
  * @brief 从MPU6050中读取多个数据
  * 
  * @param pBuffer 存放数据
@@ -55,9 +182,6 @@ static void mpu6050_buffer_read_timeout(uint8_t *pBuffer, uint8_t size, uint8_t 
                 i2c_master_addressing(I2CX, slave_address, I2C_TRANSMITTER);
             } else {
                 i2c_master_addressing(I2CX, slave_address, I2C_RECEIVER);
-                if (size == 1) {
-                    i2c_ack_config(I2CX, I2C_ACK_DISABLE);
-                }
             }
 
             // 判断是否配置成功
@@ -112,7 +236,9 @@ static void mpu6050_buffer_read_timeout(uint8_t *pBuffer, uint8_t size, uint8_t 
             break;
 
         case I2C_RECEIVE_DATA:
+            // 读取到最后一个字节时，发送NACK并且停止总线
             if (size == 1) {
+                i2c_ack_config(I2CX, I2C_ACK_DISABLE);
                 i2c_stop_on_bus(I2CX);
             }
             while ((!i2c_flag_get(I2CX, I2C_FLAG_RBNE)) && (timeout < I2C_TIME_OUT))
@@ -134,9 +260,6 @@ static void mpu6050_buffer_read_timeout(uint8_t *pBuffer, uint8_t size, uint8_t 
         case I2C_STOP:
             while (I2C_CTL0(I2CX) & I2C_CTL0_STOP);
             break;
-
-        default:
-            // TODO
         }
     }
 }
@@ -145,10 +268,15 @@ void MPU6050_init(void)
 {
     I2C_init();
 
-    // uint8_t check = mpu6050_single_read(WHO_AM_I_REG);
-    // printf("mpu6050_single_read: check = %d\r\n", check);
+    uint8_t write_buffer[1] = {PWR_MGMT_1_REG};
+    // mpu6050_buffer_write_timeout(write_buffer, 1, MPU6050_ADDR, PWR_MGMT_1_REG);
 
+    // 检查MPU6050是否正常
     uint8_t pBuffer[1];
     mpu6050_buffer_read_timeout(pBuffer, 1, MPU6050_ADDR, WHO_AM_I_REG);
-    printf("mpu6050_single_read: Data read: check = %d\r\n", pBuffer[0]);
+    if (pBuffer[0] == 104) {
+        printf("MPU6050 is ready!\r\n");
+    } else {
+        printf("MPU6050 is not ready!\r\n");
+    }
 }
