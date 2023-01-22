@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccBxsNrA.s 			page 1
+ARM GAS  /tmp/cc8aHEH6.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccBxsNrA.s 			page 1
   14:Core/Src/bsp_i2c.c ****     gpio_af_set(I2C_GPIO_PORT, I2C_GPIO_AF, I2C_SCL_PIN);
   42              		.loc 1 14 5 view .LVU4
   43 0004 224C     		ldr	r4, .L2+4
-ARM GAS  /tmp/ccBxsNrA.s 			page 2
+ARM GAS  /tmp/cc8aHEH6.s 			page 2
 
 
   10:Core/Src/bsp_i2c.c **** 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccBxsNrA.s 			page 1
   90 0054 FFF7FEFF 		bl	gpio_output_options_set
   91              	.LVL7:
   21:Core/Src/bsp_i2c.c **** 
-ARM GAS  /tmp/ccBxsNrA.s 			page 3
+ARM GAS  /tmp/cc8aHEH6.s 			page 3
 
 
   22:Core/Src/bsp_i2c.c ****     /* I2C config */
@@ -127,7 +127,7 @@ ARM GAS  /tmp/ccBxsNrA.s 			page 1
   93 0058 41F21500 		movw	r0, #4117
   94 005c FFF7FEFF 		bl	rcu_periph_clock_enable
   95              	.LVL8:
-  24:Core/Src/bsp_i2c.c ****     i2c_clock_config(I2CX, 1000, I2C_DTCY_2);
+  24:Core/Src/bsp_i2c.c ****     i2c_clock_config(I2CX, I2C_SPEED, I2C_DTCY_2);
   96              		.loc 1 24 5 view .LVU14
   97 0060 2846     		mov	r0, r5
   98 0062 0022     		movs	r2, #0
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccBxsNrA.s 			page 1
  139              		.thumb
  140              		.thumb_func
  142              	i2c_buffer_read_timeout:
-ARM GAS  /tmp/ccBxsNrA.s 			page 4
+ARM GAS  /tmp/cc8aHEH6.s 			page 4
 
 
  143              	.LVL13:
@@ -198,97 +198,96 @@ ARM GAS  /tmp/ccBxsNrA.s 			page 1
  146              		.cfi_startproc
  147              		@ args = 0, pretend = 0, frame = 0
  148              		@ frame_needed = 0, uses_anonymous_args = 0
- 149              		.loc 1 39 1 is_stmt 0 view .LVU21
- 150 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
- 151              	.LCFI2:
- 152              		.cfi_def_cfa_offset 32
- 153              		.cfi_offset 3, -32
- 154              		.cfi_offset 4, -28
- 155              		.cfi_offset 5, -24
- 156              		.cfi_offset 6, -20
- 157              		.cfi_offset 7, -16
- 158              		.cfi_offset 8, -12
- 159              		.cfi_offset 9, -8
- 160              		.cfi_offset 14, -4
- 161              		.loc 1 39 1 view .LVU22
- 162 0004 0646     		mov	r6, r0
   40:Core/Src/bsp_i2c.c ****     uint8_t read_cycle = RESET;
- 163              		.loc 1 40 5 is_stmt 1 view .LVU23
- 164              	.LVL14:
+ 149              		.loc 1 40 5 view .LVU21
   41:Core/Src/bsp_i2c.c ****     uint8_t state = I2C_START;
- 165              		.loc 1 41 5 view .LVU24
+ 150              		.loc 1 41 5 view .LVU22
   42:Core/Src/bsp_i2c.c ****     uint8_t fail_state = state;
- 166              		.loc 1 42 5 view .LVU25
+ 151              		.loc 1 42 5 view .LVU23
   43:Core/Src/bsp_i2c.c ****     uint8_t timeout = 0;
- 167              		.loc 1 43 5 view .LVU26
+ 152              		.loc 1 43 5 view .LVU24
   44:Core/Src/bsp_i2c.c **** 
   45:Core/Src/bsp_i2c.c ****     i2c_ack_config(I2CX, I2C_ACK_ENABLE);
- 168              		.loc 1 45 5 view .LVU27
+ 153              		.loc 1 45 5 view .LVU25
   39:Core/Src/bsp_i2c.c ****     uint8_t read_cycle = RESET;
- 169              		.loc 1 39 1 is_stmt 0 view .LVU28
- 170 0006 0D46     		mov	r5, r1
- 171              		.loc 1 45 5 view .LVU29
- 172 0008 3B48     		ldr	r0, .L40
- 173              	.LVL15:
- 174              		.loc 1 45 5 view .LVU30
- 175 000a 4FF48061 		mov	r1, #1024
- 176              	.LVL16:
+ 154              		.loc 1 39 1 is_stmt 0 view .LVU26
+ 155 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
+ 156              	.LCFI2:
+ 157              		.cfi_def_cfa_offset 32
+ 158              		.cfi_offset 3, -32
+ 159              		.cfi_offset 4, -28
+ 160              		.cfi_offset 5, -24
+ 161              		.cfi_offset 6, -20
+ 162              		.cfi_offset 7, -16
+ 163              		.cfi_offset 8, -12
+ 164              		.cfi_offset 9, -8
+ 165              		.cfi_offset 14, -4
   39:Core/Src/bsp_i2c.c ****     uint8_t read_cycle = RESET;
- 177              		.loc 1 39 1 view .LVU31
- 178 000e 9046     		mov	r8, r2
- 179 0010 9946     		mov	r9, r3
- 180              		.loc 1 45 5 view .LVU32
-ARM GAS  /tmp/ccBxsNrA.s 			page 5
+ 166              		.loc 1 39 1 view .LVU27
+ 167 0004 0646     		mov	r6, r0
+ 168 0006 0D46     		mov	r5, r1
+ 169              		.loc 1 45 5 view .LVU28
+ 170 0008 3B48     		ldr	r0, .L40
+ 171              	.LVL14:
+ 172              		.loc 1 45 5 view .LVU29
+ 173 000a 4FF48061 		mov	r1, #1024
+ 174              	.LVL15:
+  39:Core/Src/bsp_i2c.c ****     uint8_t read_cycle = RESET;
+ 175              		.loc 1 39 1 view .LVU30
+ 176 000e 9046     		mov	r8, r2
+ 177 0010 9946     		mov	r9, r3
+ 178              		.loc 1 45 5 view .LVU31
+ 179 0012 FFF7FEFF 		bl	i2c_ack_config
+ARM GAS  /tmp/cc8aHEH6.s 			page 5
 
 
- 181 0012 FFF7FEFF 		bl	i2c_ack_config
- 182              	.LVL17:
+ 180              	.LVL16:
   41:Core/Src/bsp_i2c.c ****     uint8_t fail_state = state;
- 183              		.loc 1 41 13 view .LVU33
- 184 0016 0024     		movs	r4, #0
+ 181              		.loc 1 41 13 view .LVU32
+ 182 0016 0024     		movs	r4, #0
   40:Core/Src/bsp_i2c.c ****     uint8_t state = I2C_START;
- 185              		.loc 1 40 13 view .LVU34
- 186 0018 2746     		mov	r7, r4
- 187              	.LVL18:
- 188              	.L5:
+ 183              		.loc 1 40 13 view .LVU33
+ 184 0018 2746     		mov	r7, r4
+ 185              	.LVL17:
+ 186              	.L5:
   46:Core/Src/bsp_i2c.c **** 
   47:Core/Src/bsp_i2c.c ****     while (size >= 0) {
- 189              		.loc 1 47 5 is_stmt 1 view .LVU35
+ 187              		.loc 1 47 5 is_stmt 1 view .LVU34
   48:Core/Src/bsp_i2c.c ****         timeout = 0;
- 190              		.loc 1 48 9 view .LVU36
+ 188              		.loc 1 48 9 view .LVU35
   49:Core/Src/bsp_i2c.c **** 
   50:Core/Src/bsp_i2c.c ****         switch (state) {
- 191              		.loc 1 50 9 view .LVU37
- 192 001a 013C     		subs	r4, r4, #1
- 193 001c 022C     		cmp	r4, #2
- 194 001e 03D8     		bhi	.L6
- 195 0020 DFE804F0 		tbb	[pc, r4]
- 196              	.L8:
- 197 0024 18       		.byte	(.L10-.L8)/2
- 198 0025 2B       		.byte	(.L9-.L8)/2
- 199 0026 4C       		.byte	(.L7-.L8)/2
- 200 0027 00       		.p2align 1
- 201              	.L6:
+ 189              		.loc 1 50 9 view .LVU36
+ 190 001a 013C     		subs	r4, r4, #1
+ 191 001c 022C     		cmp	r4, #2
+ 192 001e 03D8     		bhi	.L6
+ 193 0020 DFE804F0 		tbb	[pc, r4]
+ 194              	.L8:
+ 195 0024 18       		.byte	(.L10-.L8)/2
+ 196 0025 2B       		.byte	(.L9-.L8)/2
+ 197 0026 4C       		.byte	(.L7-.L8)/2
+ 198 0027 00       		.p2align 1
+ 199              	.L6:
   51:Core/Src/bsp_i2c.c ****         case I2C_START:
   52:Core/Src/bsp_i2c.c ****             if (read_cycle == RESET) {
- 202              		.loc 1 52 13 view .LVU38
- 203              		.loc 1 52 16 is_stmt 0 view .LVU39
- 204 0028 3FB9     		cbnz	r7, .L13
+ 200              		.loc 1 52 13 view .LVU37
+ 201              		.loc 1 52 16 is_stmt 0 view .LVU38
+ 202 0028 3FB9     		cbnz	r7, .L13
   53:Core/Src/bsp_i2c.c ****                 while (i2c_flag_get(I2CX, I2C_FLAG_I2CBSY) && (timeout < I2C_TIME_OUT)) {
- 205              		.loc 1 53 24 view .LVU40
- 206 002a 334C     		ldr	r4, .L40
- 207              	.LVL19:
- 208              	.L11:
- 209              		.loc 1 53 60 is_stmt 1 view .LVU41
- 210              		.loc 1 53 24 is_stmt 0 view .LVU42
- 211 002c 40F20161 		movw	r1, #1537
- 212 0030 2046     		mov	r0, r4
- 213 0032 FFF7FEFF 		bl	i2c_flag_get
- 214              	.LVL20:
- 215              		.loc 1 53 60 view .LVU43
- 216 0036 0028     		cmp	r0, #0
- 217 0038 F8D1     		bne	.L11
- 218              	.L13:
+ 203              		.loc 1 53 24 view .LVU39
+ 204 002a 334C     		ldr	r4, .L40
+ 205              	.LVL18:
+ 206              	.L11:
+ 207              		.loc 1 53 60 is_stmt 1 view .LVU40
+ 208              		.loc 1 53 24 is_stmt 0 view .LVU41
+ 209 002c 40F20161 		movw	r1, #1537
+ 210 0030 2046     		mov	r0, r4
+ 211 0032 FFF7FEFF 		bl	i2c_flag_get
+ 212              	.LVL19:
+ 213              		.loc 1 53 60 view .LVU42
+ 214 0036 0028     		cmp	r0, #0
+ 215 0038 F8D1     		bne	.L11
+ 216              	.L13:
   54:Core/Src/bsp_i2c.c ****                     timeout++;
   55:Core/Src/bsp_i2c.c ****                 }
   56:Core/Src/bsp_i2c.c ****                 if (timeout == I2C_TIME_OUT) {
@@ -298,35 +297,35 @@ ARM GAS  /tmp/ccBxsNrA.s 			page 1
   60:Core/Src/bsp_i2c.c ****                 }
   61:Core/Src/bsp_i2c.c ****             }
   62:Core/Src/bsp_i2c.c **** 
-ARM GAS  /tmp/ccBxsNrA.s 			page 6
-
-
   63:Core/Src/bsp_i2c.c ****             timeout = 0;
- 219              		.loc 1 63 13 is_stmt 1 view .LVU44
- 220              	.LVL21:
+ARM GAS  /tmp/cc8aHEH6.s 			page 6
+
+
+ 217              		.loc 1 63 13 is_stmt 1 view .LVU43
+ 218              	.LVL20:
   64:Core/Src/bsp_i2c.c **** 
   65:Core/Src/bsp_i2c.c ****             i2c_start_on_bus(I2CX);
- 221              		.loc 1 65 13 view .LVU45
- 222 003a 2F48     		ldr	r0, .L40
+ 219              		.loc 1 65 13 view .LVU44
+ 220 003a 2F48     		ldr	r0, .L40
   66:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_SBSEND)) && (timeout < I2C_TIME_OUT)) {
- 223              		.loc 1 66 22 is_stmt 0 view .LVU46
- 224 003c 2E4C     		ldr	r4, .L40
+ 221              		.loc 1 66 22 is_stmt 0 view .LVU45
+ 222 003c 2E4C     		ldr	r4, .L40
   65:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_SBSEND)) && (timeout < I2C_TIME_OUT)) {
- 225              		.loc 1 65 13 view .LVU47
- 226 003e FFF7FEFF 		bl	i2c_start_on_bus
- 227              	.LVL22:
- 228              		.loc 1 66 13 is_stmt 1 view .LVU48
- 229              	.L12:
- 230              		.loc 1 66 59 view .LVU49
- 231              		.loc 1 66 22 is_stmt 0 view .LVU50
- 232 0042 4FF4A061 		mov	r1, #1280
- 233 0046 2046     		mov	r0, r4
- 234 0048 FFF7FEFF 		bl	i2c_flag_get
- 235              	.LVL23:
- 236              		.loc 1 66 59 view .LVU51
- 237 004c 0028     		cmp	r0, #0
- 238 004e F8D0     		beq	.L12
- 239              	.LVL24:
+ 223              		.loc 1 65 13 view .LVU46
+ 224 003e FFF7FEFF 		bl	i2c_start_on_bus
+ 225              	.LVL21:
+ 226              		.loc 1 66 13 is_stmt 1 view .LVU47
+ 227              	.L12:
+ 228              		.loc 1 66 59 view .LVU48
+ 229              		.loc 1 66 22 is_stmt 0 view .LVU49
+ 230 0042 4FF4A061 		mov	r1, #1280
+ 231 0046 2046     		mov	r0, r4
+ 232 0048 FFF7FEFF 		bl	i2c_flag_get
+ 233              	.LVL22:
+ 234              		.loc 1 66 59 view .LVU50
+ 235 004c 0028     		cmp	r0, #0
+ 236 004e F8D0     		beq	.L12
+ 237              	.LVL23:
   67:Core/Src/bsp_i2c.c ****                 timeout++;
   68:Core/Src/bsp_i2c.c ****             }
   69:Core/Src/bsp_i2c.c ****             if (timeout == I2C_TIME_OUT) {
@@ -336,49 +335,49 @@ ARM GAS  /tmp/ccBxsNrA.s 			page 1
   73:Core/Src/bsp_i2c.c ****             }
   74:Core/Src/bsp_i2c.c **** 
   75:Core/Src/bsp_i2c.c ****             state = I2C_SEND_ADDRESS;
- 240              		.loc 1 75 19 view .LVU52
- 241 0050 0124     		movs	r4, #1
- 242 0052 E2E7     		b	.L5
- 243              	.LVL25:
- 244              	.L10:
+ 238              		.loc 1 75 19 view .LVU51
+ 239 0050 0124     		movs	r4, #1
+ 240 0052 E2E7     		b	.L5
+ 241              	.LVL24:
+ 242              	.L10:
   76:Core/Src/bsp_i2c.c ****             break;
   77:Core/Src/bsp_i2c.c **** 
   78:Core/Src/bsp_i2c.c ****         case I2C_SEND_ADDRESS:
   79:Core/Src/bsp_i2c.c ****             if (read_cycle == RESET) {
- 245              		.loc 1 79 13 is_stmt 1 view .LVU53
- 246              		.loc 1 79 16 is_stmt 0 view .LVU54
- 247 0054 7FB9     		cbnz	r7, .L15
+ 243              		.loc 1 79 13 is_stmt 1 view .LVU52
+ 244              		.loc 1 79 16 is_stmt 0 view .LVU53
+ 245 0054 7FB9     		cbnz	r7, .L15
   80:Core/Src/bsp_i2c.c ****                 i2c_master_addressing(I2CX, slave_address, I2C_TRANSMITTER);
- 248              		.loc 1 80 17 is_stmt 1 view .LVU55
- 249 0056 6FF00102 		mvn	r2, #1
- 250              	.L39:
+ 246              		.loc 1 80 17 is_stmt 1 view .LVU54
+ 247 0056 6FF00102 		mvn	r2, #1
+ 248              	.L39:
   81:Core/Src/bsp_i2c.c ****             } else {
   82:Core/Src/bsp_i2c.c ****                 i2c_master_addressing(I2CX, slave_address, I2C_RECEIVER);
- 251              		.loc 1 82 17 is_stmt 0 view .LVU56
- 252 005a 2748     		ldr	r0, .L40
+ 249              		.loc 1 82 17 is_stmt 0 view .LVU55
+ 250 005a 2748     		ldr	r0, .L40
   83:Core/Src/bsp_i2c.c ****             }
   84:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_ADDSEND)) && (timeout < I2C_TIME_OUT)) {
-ARM GAS  /tmp/ccBxsNrA.s 			page 7
+ 251              		.loc 1 84 22 view .LVU56
+ARM GAS  /tmp/cc8aHEH6.s 			page 7
 
 
- 253              		.loc 1 84 22 view .LVU57
- 254 005c 264C     		ldr	r4, .L40
+ 252 005c 264C     		ldr	r4, .L40
   82:Core/Src/bsp_i2c.c ****             }
- 255              		.loc 1 82 17 view .LVU58
- 256 005e 4146     		mov	r1, r8
- 257 0060 FFF7FEFF 		bl	i2c_master_addressing
- 258              	.LVL26:
- 259              	.L17:
- 260              		.loc 1 84 60 is_stmt 1 view .LVU59
- 261              		.loc 1 84 22 is_stmt 0 view .LVU60
- 262 0064 40F20151 		movw	r1, #1281
- 263 0068 2046     		mov	r0, r4
- 264 006a FFF7FEFF 		bl	i2c_flag_get
- 265              	.LVL27:
- 266              		.loc 1 84 60 view .LVU61
- 267 006e 0028     		cmp	r0, #0
- 268 0070 F8D0     		beq	.L17
- 269              	.LVL28:
+ 253              		.loc 1 82 17 view .LVU57
+ 254 005e 4146     		mov	r1, r8
+ 255 0060 FFF7FEFF 		bl	i2c_master_addressing
+ 256              	.LVL25:
+ 257              	.L17:
+ 258              		.loc 1 84 60 is_stmt 1 view .LVU58
+ 259              		.loc 1 84 22 is_stmt 0 view .LVU59
+ 260 0064 40F20151 		movw	r1, #1281
+ 261 0068 2046     		mov	r0, r4
+ 262 006a FFF7FEFF 		bl	i2c_flag_get
+ 263              	.LVL26:
+ 264              		.loc 1 84 60 view .LVU60
+ 265 006e 0028     		cmp	r0, #0
+ 266 0070 F8D0     		beq	.L17
+ 267              	.LVL27:
   85:Core/Src/bsp_i2c.c ****                 timeout++;
   86:Core/Src/bsp_i2c.c ****             }
   87:Core/Src/bsp_i2c.c ****             if (timeout == I2C_TIME_OUT) {
@@ -388,41 +387,41 @@ ARM GAS  /tmp/ccBxsNrA.s 			page 1
   91:Core/Src/bsp_i2c.c ****             }
   92:Core/Src/bsp_i2c.c **** 
   93:Core/Src/bsp_i2c.c ****             state = I2C_CLEAR_ADDRESS_FLAG;
- 270              		.loc 1 93 19 view .LVU62
- 271 0072 0224     		movs	r4, #2
- 272 0074 D1E7     		b	.L5
- 273              	.LVL29:
- 274              	.L15:
+ 268              		.loc 1 93 19 view .LVU61
+ 269 0072 0224     		movs	r4, #2
+ 270 0074 D1E7     		b	.L5
+ 271              	.LVL28:
+ 272              	.L15:
   82:Core/Src/bsp_i2c.c ****             }
- 275              		.loc 1 82 17 is_stmt 1 view .LVU63
- 276 0076 0122     		movs	r2, #1
- 277 0078 EFE7     		b	.L39
- 278              	.L9:
+ 273              		.loc 1 82 17 is_stmt 1 view .LVU62
+ 274 0076 0122     		movs	r2, #1
+ 275 0078 EFE7     		b	.L39
+ 276              	.L9:
   94:Core/Src/bsp_i2c.c ****             break;
   95:Core/Src/bsp_i2c.c **** 
   96:Core/Src/bsp_i2c.c ****         case I2C_CLEAR_ADDRESS_FLAG:
   97:Core/Src/bsp_i2c.c ****             i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
- 279              		.loc 1 97 13 view .LVU64
- 280 007a 1F48     		ldr	r0, .L40
+ 277              		.loc 1 97 13 view .LVU63
+ 278 007a 1F48     		ldr	r0, .L40
   98:Core/Src/bsp_i2c.c ****             if (read_cycle == RESET) {
   99:Core/Src/bsp_i2c.c ****                 while ((!i2c_flag_get(I2CX, I2C_FLAG_TBE)) && (timeout < I2C_TIME_OUT)) {
- 281              		.loc 1 99 26 is_stmt 0 view .LVU65
- 282 007c 1E4C     		ldr	r4, .L40
+ 279              		.loc 1 99 26 is_stmt 0 view .LVU64
+ 280 007c 1E4C     		ldr	r4, .L40
   97:Core/Src/bsp_i2c.c ****             if (read_cycle == RESET) {
- 283              		.loc 1 97 13 view .LVU66
- 284 007e 40F20151 		movw	r1, #1281
- 285 0082 FFF7FEFF 		bl	i2c_flag_clear
- 286              	.LVL30:
+ 281              		.loc 1 97 13 view .LVU65
+ 282 007e 40F20151 		movw	r1, #1281
+ 283 0082 FFF7FEFF 		bl	i2c_flag_clear
+ 284              	.LVL29:
   98:Core/Src/bsp_i2c.c ****             if (read_cycle == RESET) {
- 287              		.loc 1 98 13 is_stmt 1 view .LVU67
+ 285              		.loc 1 98 13 is_stmt 1 view .LVU66
   98:Core/Src/bsp_i2c.c ****             if (read_cycle == RESET) {
- 288              		.loc 1 98 16 is_stmt 0 view .LVU68
- 289 0086 87B1     		cbz	r7, .L19
-ARM GAS  /tmp/ccBxsNrA.s 			page 8
+ 286              		.loc 1 98 16 is_stmt 0 view .LVU67
+ 287 0086 87B1     		cbz	r7, .L19
+ 288              	.LVL30:
+ARM GAS  /tmp/cc8aHEH6.s 			page 8
 
 
- 290              	.LVL31:
- 291              	.L21:
+ 289              	.L21:
  100:Core/Src/bsp_i2c.c ****                     timeout++;
  101:Core/Src/bsp_i2c.c ****                 }
  102:Core/Src/bsp_i2c.c ****             }
@@ -452,235 +451,243 @@ ARM GAS  /tmp/ccBxsNrA.s 			page 1
  126:Core/Src/bsp_i2c.c **** 
  127:Core/Src/bsp_i2c.c ****         case I2C_RECEIVE_DATA:
  128:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_RBNE)) && (timeout < I2C_TIME_OUT)) {
- 292              		.loc 1 128 57 is_stmt 1 view .LVU69
- 293              		.loc 1 128 22 is_stmt 0 view .LVU70
- 294 0088 40F20651 		movw	r1, #1286
- 295 008c 2046     		mov	r0, r4
- 296 008e FFF7FEFF 		bl	i2c_flag_get
- 297              	.LVL32:
- 298              		.loc 1 128 57 view .LVU71
- 299 0092 0028     		cmp	r0, #0
- 300 0094 F8D0     		beq	.L21
+ 290              		.loc 1 128 57 is_stmt 1 view .LVU68
+ 291              		.loc 1 128 22 is_stmt 0 view .LVU69
+ 292 0088 40F20651 		movw	r1, #1286
+ 293 008c 2046     		mov	r0, r4
+ 294 008e FFF7FEFF 		bl	i2c_flag_get
+ 295              	.LVL31:
+ 296              		.loc 1 128 57 view .LVU70
+ 297 0092 0028     		cmp	r0, #0
+ 298 0094 F8D0     		beq	.L21
  129:Core/Src/bsp_i2c.c ****                 timeout++;
  130:Core/Src/bsp_i2c.c ****             }
  131:Core/Src/bsp_i2c.c ****             if (timeout == I2C_TIME_OUT) {
- 301              		.loc 1 131 13 is_stmt 1 view .LVU72
+ 299              		.loc 1 131 13 is_stmt 1 view .LVU71
  132:Core/Src/bsp_i2c.c ****                 fail_state = state;
  133:Core/Src/bsp_i2c.c ****                 state = I2C_FAIL;
  134:Core/Src/bsp_i2c.c ****                 break;
  135:Core/Src/bsp_i2c.c ****             }
  136:Core/Src/bsp_i2c.c **** 
  137:Core/Src/bsp_i2c.c ****             *pBuffer = i2c_data_receive(I2CX);
- 302              		.loc 1 137 13 view .LVU73
- 303              		.loc 1 137 24 is_stmt 0 view .LVU74
- 304 0096 2046     		mov	r0, r4
- 305 0098 FFF7FEFF 		bl	i2c_data_receive
- 306              	.LVL33:
+ 300              		.loc 1 137 13 view .LVU72
+ 301              		.loc 1 137 24 is_stmt 0 view .LVU73
+ 302 0096 2046     		mov	r0, r4
+ 303 0098 FFF7FEFF 		bl	i2c_data_receive
+ 304              	.LVL32:
  138:Core/Src/bsp_i2c.c ****             pBuffer++;
  139:Core/Src/bsp_i2c.c **** 
-ARM GAS  /tmp/ccBxsNrA.s 			page 9
-
-
  140:Core/Src/bsp_i2c.c ****             if (size == 1) {
- 307              		.loc 1 140 16 view .LVU75
- 308 009c 012D     		cmp	r5, #1
+ARM GAS  /tmp/cc8aHEH6.s 			page 9
+
+
+ 305              		.loc 1 140 16 view .LVU74
+ 306 009c 012D     		cmp	r5, #1
  137:Core/Src/bsp_i2c.c ****             pBuffer++;
- 309              		.loc 1 137 22 view .LVU76
- 310 009e 06F8010B 		strb	r0, [r6], #1
+ 307              		.loc 1 137 22 view .LVU75
+ 308 009e 06F8010B 		strb	r0, [r6], #1
  138:Core/Src/bsp_i2c.c ****             pBuffer++;
- 311              		.loc 1 138 13 is_stmt 1 view .LVU77
- 312              	.LVL34:
- 313              		.loc 1 140 13 view .LVU78
- 314              		.loc 1 140 16 is_stmt 0 view .LVU79
- 315 00a2 1AD0     		beq	.L22
+ 309              		.loc 1 138 13 is_stmt 1 view .LVU76
+ 310              	.LVL33:
+ 311              		.loc 1 140 13 view .LVU77
+ 312              		.loc 1 140 16 is_stmt 0 view .LVU78
+ 313 00a2 1AD0     		beq	.L22
  141:Core/Src/bsp_i2c.c ****                 i2c_ack_config(I2CX, I2C_ACK_DISABLE);
  142:Core/Src/bsp_i2c.c ****             }
  143:Core/Src/bsp_i2c.c **** 
  144:Core/Src/bsp_i2c.c ****             size--;
- 316              		.loc 1 144 13 is_stmt 1 view .LVU80
- 317              		.loc 1 144 17 is_stmt 0 view .LVU81
- 318 00a4 013D     		subs	r5, r5, #1
- 319 00a6 EDB2     		uxtb	r5, r5
- 320              	.LVL35:
+ 314              		.loc 1 144 13 is_stmt 1 view .LVU79
+ 315              		.loc 1 144 17 is_stmt 0 view .LVU80
+ 316 00a4 013D     		subs	r5, r5, #1
+ 317 00a6 EDB2     		uxtb	r5, r5
+ 318              	.LVL34:
  145:Core/Src/bsp_i2c.c **** 
  146:Core/Src/bsp_i2c.c ****             state = size ? I2C_RECEIVE_DATA : I2C_STOP;
- 321              		.loc 1 146 13 is_stmt 1 view .LVU82
+ 319              		.loc 1 146 13 is_stmt 1 view .LVU81
   47:Core/Src/bsp_i2c.c ****         timeout = 0;
- 322              		.loc 1 47 5 view .LVU83
+ 320              		.loc 1 47 5 view .LVU82
   48:Core/Src/bsp_i2c.c **** 
- 323              		.loc 1 48 9 view .LVU84
+ 321              		.loc 1 48 9 view .LVU83
   50:Core/Src/bsp_i2c.c ****         case I2C_START:
- 324              		.loc 1 50 9 view .LVU85
+ 322              		.loc 1 50 9 view .LVU84
   50:Core/Src/bsp_i2c.c ****         case I2C_START:
- 325              		.loc 1 50 9 is_stmt 0 view .LVU86
- 326 00a8 EEE7     		b	.L21
- 327              	.LVL36:
- 328              	.L19:
+ 323              		.loc 1 50 9 is_stmt 0 view .LVU85
+ 324 00a8 EEE7     		b	.L21
+ 325              	.LVL35:
+ 326              	.L19:
   99:Core/Src/bsp_i2c.c ****                     timeout++;
- 329              		.loc 1 99 60 is_stmt 1 view .LVU87
+ 327              		.loc 1 99 60 is_stmt 1 view .LVU86
   99:Core/Src/bsp_i2c.c ****                     timeout++;
- 330              		.loc 1 99 26 is_stmt 0 view .LVU88
- 331 00aa 40F20751 		movw	r1, #1287
- 332 00ae 2046     		mov	r0, r4
- 333 00b0 FFF7FEFF 		bl	i2c_flag_get
- 334              	.LVL37:
+ 328              		.loc 1 99 26 is_stmt 0 view .LVU87
+ 329 00aa 40F20751 		movw	r1, #1287
+ 330 00ae 2046     		mov	r0, r4
+ 331 00b0 FFF7FEFF 		bl	i2c_flag_get
+ 332              	.LVL36:
   99:Core/Src/bsp_i2c.c ****                     timeout++;
- 335              		.loc 1 99 60 view .LVU89
- 336 00b4 0028     		cmp	r0, #0
- 337 00b6 F8D0     		beq	.L19
- 338              	.LVL38:
+ 333              		.loc 1 99 60 view .LVU88
+ 334 00b4 0028     		cmp	r0, #0
+ 335 00b6 F8D0     		beq	.L19
+ 336              	.LVL37:
  109:Core/Src/bsp_i2c.c ****             break;
- 339              		.loc 1 109 19 view .LVU90
- 340 00b8 0324     		movs	r4, #3
- 341 00ba AEE7     		b	.L5
- 342              	.LVL39:
- 343              	.L7:
+ 337              		.loc 1 109 19 view .LVU89
+ 338 00b8 0324     		movs	r4, #3
+ 339 00ba AEE7     		b	.L5
+ 340              	.LVL38:
+ 341              	.L7:
  113:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_BTC)) && (timeout < I2C_TIME_OUT)) {
- 344              		.loc 1 113 13 is_stmt 1 view .LVU91
- 345 00bc 0E48     		ldr	r0, .L40
-ARM GAS  /tmp/ccBxsNrA.s 			page 10
+ 342              		.loc 1 113 13 is_stmt 1 view .LVU90
+ 343 00bc 0E48     		ldr	r0, .L40
+ 114:Core/Src/bsp_i2c.c ****                 timeout++;
+ARM GAS  /tmp/cc8aHEH6.s 			page 10
 
 
- 114:Core/Src/bsp_i2c.c ****                 timeout++;
- 346              		.loc 1 114 22 is_stmt 0 view .LVU92
- 347 00be 0E4C     		ldr	r4, .L40
+ 344              		.loc 1 114 22 is_stmt 0 view .LVU91
+ 345 00be 0E4C     		ldr	r4, .L40
  113:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_BTC)) && (timeout < I2C_TIME_OUT)) {
- 348              		.loc 1 113 13 view .LVU93
- 349 00c0 4946     		mov	r1, r9
- 350 00c2 FFF7FEFF 		bl	i2c_data_transmit
- 351              	.LVL40:
+ 346              		.loc 1 113 13 view .LVU92
+ 347 00c0 4946     		mov	r1, r9
+ 348 00c2 FFF7FEFF 		bl	i2c_data_transmit
+ 349              	.LVL39:
  114:Core/Src/bsp_i2c.c ****                 timeout++;
- 352              		.loc 1 114 13 is_stmt 1 view .LVU94
- 353              	.L20:
+ 350              		.loc 1 114 13 is_stmt 1 view .LVU93
+ 351              	.L20:
  114:Core/Src/bsp_i2c.c ****                 timeout++;
- 354              		.loc 1 114 56 view .LVU95
+ 352              		.loc 1 114 56 view .LVU94
  114:Core/Src/bsp_i2c.c ****                 timeout++;
- 355              		.loc 1 114 22 is_stmt 0 view .LVU96
- 356 00c6 40F20251 		movw	r1, #1282
- 357 00ca 2046     		mov	r0, r4
- 358 00cc FFF7FEFF 		bl	i2c_flag_get
- 359              	.LVL41:
+ 353              		.loc 1 114 22 is_stmt 0 view .LVU95
+ 354 00c6 40F20251 		movw	r1, #1282
+ 355 00ca 2046     		mov	r0, r4
+ 356 00cc FFF7FEFF 		bl	i2c_flag_get
+ 357              	.LVL40:
  114:Core/Src/bsp_i2c.c ****                 timeout++;
- 360              		.loc 1 114 56 view .LVU97
- 361 00d0 0028     		cmp	r0, #0
- 362 00d2 F8D0     		beq	.L20
- 363              	.LVL42:
+ 358              		.loc 1 114 56 view .LVU96
+ 359 00d0 0028     		cmp	r0, #0
+ 360 00d2 F8D0     		beq	.L20
+ 361              	.LVL41:
  124:Core/Src/bsp_i2c.c ****             break;
- 364              		.loc 1 124 19 view .LVU98
- 365 00d4 0024     		movs	r4, #0
+ 362              		.loc 1 124 19 view .LVU97
+ 363 00d4 0024     		movs	r4, #0
  123:Core/Src/bsp_i2c.c ****             state = I2C_START;
- 366              		.loc 1 123 24 view .LVU99
- 367 00d6 0127     		movs	r7, #1
- 368              	.LVL43:
+ 364              		.loc 1 123 24 view .LVU98
+ 365 00d6 0127     		movs	r7, #1
+ 366              	.LVL42:
  123:Core/Src/bsp_i2c.c ****             state = I2C_START;
- 369              		.loc 1 123 24 view .LVU100
- 370 00d8 9FE7     		b	.L5
- 371              	.LVL44:
- 372              	.L22:
+ 367              		.loc 1 123 24 view .LVU99
+ 368 00d8 9FE7     		b	.L5
+ 369              	.LVL43:
+ 370              	.L22:
  141:Core/Src/bsp_i2c.c ****             }
- 373              		.loc 1 141 17 is_stmt 1 view .LVU101
- 374 00da 0748     		ldr	r0, .L40
- 375 00dc 0021     		movs	r1, #0
- 376 00de FFF7FEFF 		bl	i2c_ack_config
- 377              	.LVL45:
+ 371              		.loc 1 141 17 is_stmt 1 view .LVU100
+ 372 00da 0748     		ldr	r0, .L40
+ 373 00dc 0021     		movs	r1, #0
+ 374 00de FFF7FEFF 		bl	i2c_ack_config
+ 375              	.LVL44:
  144:Core/Src/bsp_i2c.c **** 
- 378              		.loc 1 144 13 view .LVU102
- 379              		.loc 1 146 13 view .LVU103
+ 376              		.loc 1 144 13 view .LVU101
+ 377              		.loc 1 146 13 view .LVU102
   47:Core/Src/bsp_i2c.c ****         timeout = 0;
- 380              		.loc 1 47 5 view .LVU104
+ 378              		.loc 1 47 5 view .LVU103
   48:Core/Src/bsp_i2c.c **** 
- 381              		.loc 1 48 9 view .LVU105
+ 379              		.loc 1 48 9 view .LVU104
   50:Core/Src/bsp_i2c.c ****         case I2C_START:
- 382              		.loc 1 50 9 view .LVU106
+ 380              		.loc 1 50 9 view .LVU105
  147:Core/Src/bsp_i2c.c ****             break;
  148:Core/Src/bsp_i2c.c ****             
  149:Core/Src/bsp_i2c.c ****         case I2C_STOP:
  150:Core/Src/bsp_i2c.c ****             i2c_stop_on_bus(I2CX);
- 383              		.loc 1 150 13 view .LVU107
- 384 00e2 0548     		ldr	r0, .L40
-ARM GAS  /tmp/ccBxsNrA.s 			page 11
+ 381              		.loc 1 150 13 view .LVU106
+ 382 00e2 0548     		ldr	r0, .L40
+ 383 00e4 FFF7FEFF 		bl	i2c_stop_on_bus
+ARM GAS  /tmp/cc8aHEH6.s 			page 11
 
 
- 385 00e4 FFF7FEFF 		bl	i2c_stop_on_bus
- 386              	.LVL46:
+ 384              	.LVL45:
  151:Core/Src/bsp_i2c.c ****             while (I2C_CTL0(I2CX) & I2C_CTL0_STOP);
- 387              		.loc 1 151 13 view .LVU108
- 388              		.loc 1 151 20 is_stmt 0 view .LVU109
- 389 00e8 044B     		ldr	r3, .L40+4
- 390              	.L23:
- 391              		.loc 1 151 20 is_stmt 1 discriminator 1 view .LVU110
- 392 00ea D3F80004 		ldr	r0, [r3, #1024]
- 393 00ee 10F40070 		ands	r0, r0, #512
- 394 00f2 FAD1     		bne	.L23
- 152:Core/Src/bsp_i2c.c ****             size--;
- 395              		.loc 1 152 13 view .LVU111
- 396              	.LVL47:
- 153:Core/Src/bsp_i2c.c ****             return RESET;
- 397              		.loc 1 153 13 view .LVU112
- 154:Core/Src/bsp_i2c.c ****             break;
- 155:Core/Src/bsp_i2c.c **** 
- 156:Core/Src/bsp_i2c.c ****         case I2C_FAIL:
- 157:Core/Src/bsp_i2c.c ****             switch (fail_state) {
- 158:Core/Src/bsp_i2c.c ****             case I2C_START:
- 159:Core/Src/bsp_i2c.c ****                 printf("I2C bus start error!\r\n");
- 160:Core/Src/bsp_i2c.c ****                 return SET;
- 161:Core/Src/bsp_i2c.c ****             case I2C_SEND_ADDRESS:
- 162:Core/Src/bsp_i2c.c ****                 printf("I2C bus master addressing error!\r\n");
- 163:Core/Src/bsp_i2c.c ****                 return SET;
- 164:Core/Src/bsp_i2c.c ****             case I2C_CLEAR_ADDRESS_FLAG: 
- 165:Core/Src/bsp_i2c.c ****                 printf("I2C bus clear ADDSEND flag error!\r\n");
- 166:Core/Src/bsp_i2c.c ****                 return SET;
- 167:Core/Src/bsp_i2c.c ****             case I2C_TRANSMIT_DATA:
- 168:Core/Src/bsp_i2c.c ****                 printf("I2C bus transmitting data error!\r\n");
- 169:Core/Src/bsp_i2c.c ****                 return SET;
- 170:Core/Src/bsp_i2c.c ****             case I2C_RECEIVE_DATA: 
- 171:Core/Src/bsp_i2c.c ****                 printf("I2C bus receiving data error!\r\n");
- 172:Core/Src/bsp_i2c.c ****                 return SET;
- 173:Core/Src/bsp_i2c.c ****             }
- 174:Core/Src/bsp_i2c.c ****             break;
- 175:Core/Src/bsp_i2c.c ****         }
- 176:Core/Src/bsp_i2c.c ****     }
- 177:Core/Src/bsp_i2c.c **** }
- 398              		.loc 1 177 1 is_stmt 0 view .LVU113
- 399 00f4 BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
- 400              	.LVL48:
- 401              	.L41:
- 402              		.loc 1 177 1 view .LVU114
- 403              		.align	2
- 404              	.L40:
- 405 00f8 00540040 		.word	1073763328
- 406 00fc 00500040 		.word	1073762304
- 407              		.cfi_endproc
- 408              	.LFE117:
- 410              		.section	.text.i2c_buffer_write_timeout,"ax",%progbits
- 411              		.align	1
- 412              		.global	i2c_buffer_write_timeout
- 413              		.syntax unified
- 414              		.thumb
- 415              		.thumb_func
-ARM GAS  /tmp/ccBxsNrA.s 			page 12
+ 385              		.loc 1 151 13 view .LVU107
+ 386              		.loc 1 151 20 is_stmt 0 view .LVU108
+ 387 00e8 044B     		ldr	r3, .L40+4
+ 388              	.L23:
+ 389              		.loc 1 151 20 is_stmt 1 discriminator 1 view .LVU109
+ 390 00ea D3F80004 		ldr	r0, [r3, #1024]
+ 391 00ee 10F40070 		ands	r0, r0, #512
+ 392 00f2 FAD1     		bne	.L23
+ 152:Core/Src/bsp_i2c.c ****             return RESET;
+ 153:Core/Src/bsp_i2c.c ****             break;
+ 154:Core/Src/bsp_i2c.c **** 
+ 155:Core/Src/bsp_i2c.c ****         case I2C_FAIL:
+ 156:Core/Src/bsp_i2c.c ****             switch (fail_state) {
+ 157:Core/Src/bsp_i2c.c ****             case I2C_START:
+ 158:Core/Src/bsp_i2c.c ****                 printf("I2C bus start error!\r\n");
+ 159:Core/Src/bsp_i2c.c ****                 return SET;
+ 160:Core/Src/bsp_i2c.c ****             case I2C_SEND_ADDRESS:
+ 161:Core/Src/bsp_i2c.c ****                 printf("I2C bus master addressing error!\r\n");
+ 162:Core/Src/bsp_i2c.c ****                 return SET;
+ 163:Core/Src/bsp_i2c.c ****             case I2C_CLEAR_ADDRESS_FLAG: 
+ 164:Core/Src/bsp_i2c.c ****                 printf("I2C bus clear ADDSEND flag error!\r\n");
+ 165:Core/Src/bsp_i2c.c ****                 return SET;
+ 166:Core/Src/bsp_i2c.c ****             case I2C_TRANSMIT_DATA:
+ 167:Core/Src/bsp_i2c.c ****                 printf("I2C bus transmitting data error!\r\n");
+ 168:Core/Src/bsp_i2c.c ****                 return SET;
+ 169:Core/Src/bsp_i2c.c ****             case I2C_RECEIVE_DATA: 
+ 170:Core/Src/bsp_i2c.c ****                 printf("I2C bus receiving data error!\r\n");
+ 171:Core/Src/bsp_i2c.c ****                 return SET;
+ 172:Core/Src/bsp_i2c.c ****             }
+ 173:Core/Src/bsp_i2c.c ****             break;
+ 174:Core/Src/bsp_i2c.c ****         }
+ 175:Core/Src/bsp_i2c.c ****     }
+ 176:Core/Src/bsp_i2c.c **** }
+ 393              		.loc 1 176 1 is_stmt 0 view .LVU110
+ 394 00f4 BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
+ 395              	.LVL46:
+ 396              	.L41:
+ 397              		.loc 1 176 1 view .LVU111
+ 398              		.align	2
+ 399              	.L40:
+ 400 00f8 00540040 		.word	1073763328
+ 401 00fc 00500040 		.word	1073762304
+ 402              		.cfi_endproc
+ 403              	.LFE117:
+ 405              		.section	.text.i2c_buffer_write_timeout,"ax",%progbits
+ 406              		.align	1
+ 407              		.global	i2c_buffer_write_timeout
+ 408              		.syntax unified
+ 409              		.thumb
+ 410              		.thumb_func
+ 412              	i2c_buffer_write_timeout:
+ 413              	.LVL47:
+ 414              	.LFB118:
+ 177:Core/Src/bsp_i2c.c **** 
+ 178:Core/Src/bsp_i2c.c **** /**
+ARM GAS  /tmp/cc8aHEH6.s 			page 12
 
 
- 417              	i2c_buffer_write_timeout:
- 418              	.LVL49:
- 419              	.LFB118:
- 178:Core/Src/bsp_i2c.c **** 
- 179:Core/Src/bsp_i2c.c **** /**
- 180:Core/Src/bsp_i2c.c ****  * @brief 向I2C设备写入数据
- 181:Core/Src/bsp_i2c.c ****  * 
- 182:Core/Src/bsp_i2c.c ****  * @param pBuffer 携带数据的指针
- 183:Core/Src/bsp_i2c.c ****  * @param size 数据量
- 184:Core/Src/bsp_i2c.c ****  * @param slave_address 从设备地址
- 185:Core/Src/bsp_i2c.c ****  * @param internal_address 从设备内部功能地址
- 186:Core/Src/bsp_i2c.c ****  * @return FlagStatus 
- 187:Core/Src/bsp_i2c.c ****  */
- 188:Core/Src/bsp_i2c.c **** FlagStatus i2c_buffer_write_timeout(uint8_t *pBuffer, uint8_t size, uint8_t slave_address, uint8_t 
- 189:Core/Src/bsp_i2c.c **** {
- 420              		.loc 1 189 1 is_stmt 1 view -0
- 421              		.cfi_startproc
- 422              		@ args = 0, pretend = 0, frame = 0
- 423              		@ frame_needed = 0, uses_anonymous_args = 0
- 424              		.loc 1 189 1 is_stmt 0 view .LVU116
+ 179:Core/Src/bsp_i2c.c ****  * @brief 向I2C设备写入数据
+ 180:Core/Src/bsp_i2c.c ****  * 
+ 181:Core/Src/bsp_i2c.c ****  * @param pBuffer 携带数据的指针
+ 182:Core/Src/bsp_i2c.c ****  * @param size 数据量
+ 183:Core/Src/bsp_i2c.c ****  * @param slave_address 从设备地址
+ 184:Core/Src/bsp_i2c.c ****  * @param internal_address 从设备内部功能地址
+ 185:Core/Src/bsp_i2c.c ****  * @return FlagStatus 
+ 186:Core/Src/bsp_i2c.c ****  */
+ 187:Core/Src/bsp_i2c.c **** FlagStatus i2c_buffer_write_timeout(uint8_t *pBuffer, uint8_t size, uint8_t slave_address, uint8_t 
+ 188:Core/Src/bsp_i2c.c **** {
+ 415              		.loc 1 188 1 is_stmt 1 view -0
+ 416              		.cfi_startproc
+ 417              		@ args = 0, pretend = 0, frame = 0
+ 418              		@ frame_needed = 0, uses_anonymous_args = 0
+ 189:Core/Src/bsp_i2c.c ****     uint8_t write_cycle = RESET;
+ 419              		.loc 1 189 5 view .LVU113
+ 190:Core/Src/bsp_i2c.c ****     uint8_t state = I2C_START;
+ 420              		.loc 1 190 5 view .LVU114
+ 191:Core/Src/bsp_i2c.c ****     uint8_t fail_state = state;
+ 421              		.loc 1 191 5 view .LVU115
+ 192:Core/Src/bsp_i2c.c ****     uint8_t timeout = 0;
+ 422              		.loc 1 192 5 view .LVU116
+ 193:Core/Src/bsp_i2c.c **** 
+ 194:Core/Src/bsp_i2c.c ****     i2c_ack_config(I2CX, I2C_ACK_ENABLE);
+ 423              		.loc 1 194 5 view .LVU117
+ 188:Core/Src/bsp_i2c.c ****     uint8_t write_cycle = RESET;
+ 424              		.loc 1 188 1 is_stmt 0 view .LVU118
  425 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
  426              	.LCFI3:
  427              		.cfi_def_cfa_offset 32
@@ -692,408 +699,389 @@ ARM GAS  /tmp/ccBxsNrA.s 			page 1
  433              		.cfi_offset 8, -12
  434              		.cfi_offset 9, -8
  435              		.cfi_offset 14, -4
- 436              		.loc 1 189 1 view .LVU117
+ 188:Core/Src/bsp_i2c.c ****     uint8_t write_cycle = RESET;
+ 436              		.loc 1 188 1 view .LVU119
  437 0004 0746     		mov	r7, r0
- 190:Core/Src/bsp_i2c.c ****     uint8_t write_cycle = RESET;
- 438              		.loc 1 190 5 is_stmt 1 view .LVU118
- 439              	.LVL50:
- 191:Core/Src/bsp_i2c.c ****     uint8_t state = I2C_START;
- 440              		.loc 1 191 5 view .LVU119
- 192:Core/Src/bsp_i2c.c ****     uint8_t fail_state = state;
- 441              		.loc 1 192 5 view .LVU120
- 193:Core/Src/bsp_i2c.c ****     uint8_t timeout = 0;
- 442              		.loc 1 193 5 view .LVU121
- 194:Core/Src/bsp_i2c.c **** 
- 195:Core/Src/bsp_i2c.c ****     i2c_ack_config(I2CX, I2C_ACK_ENABLE);
- 443              		.loc 1 195 5 view .LVU122
- 189:Core/Src/bsp_i2c.c ****     uint8_t write_cycle = RESET;
- 444              		.loc 1 189 1 is_stmt 0 view .LVU123
- 445 0006 0D46     		mov	r5, r1
- 446              		.loc 1 195 5 view .LVU124
- 447 0008 3A48     		ldr	r0, .L75
- 448              	.LVL51:
- 449              		.loc 1 195 5 view .LVU125
- 450 000a 4FF48061 		mov	r1, #1024
- 451              	.LVL52:
- 189:Core/Src/bsp_i2c.c ****     uint8_t write_cycle = RESET;
- 452              		.loc 1 189 1 view .LVU126
- 453 000e 9046     		mov	r8, r2
-ARM GAS  /tmp/ccBxsNrA.s 			page 13
+ 438 0006 0D46     		mov	r5, r1
+ 439              		.loc 1 194 5 view .LVU120
+ 440 0008 3948     		ldr	r0, .L75
+ 441              	.LVL48:
+ 442              		.loc 1 194 5 view .LVU121
+ 443 000a 4FF48061 		mov	r1, #1024
+ 444              	.LVL49:
+ 188:Core/Src/bsp_i2c.c ****     uint8_t write_cycle = RESET;
+ 445              		.loc 1 188 1 view .LVU122
+ 446 000e 9046     		mov	r8, r2
+ 447 0010 9946     		mov	r9, r3
+ 448              		.loc 1 194 5 view .LVU123
+ 449 0012 FFF7FEFF 		bl	i2c_ack_config
+ 450              	.LVL50:
+ 190:Core/Src/bsp_i2c.c ****     uint8_t fail_state = state;
+ 451              		.loc 1 190 13 view .LVU124
+ARM GAS  /tmp/cc8aHEH6.s 			page 13
 
 
- 454 0010 9946     		mov	r9, r3
- 455              		.loc 1 195 5 view .LVU127
- 456 0012 FFF7FEFF 		bl	i2c_ack_config
- 457              	.LVL53:
- 191:Core/Src/bsp_i2c.c ****     uint8_t fail_state = state;
- 458              		.loc 1 191 13 view .LVU128
- 459 0016 0024     		movs	r4, #0
- 190:Core/Src/bsp_i2c.c ****     uint8_t state = I2C_START;
- 460              		.loc 1 190 13 view .LVU129
- 461 0018 2646     		mov	r6, r4
- 462              	.LVL54:
- 463              	.L44:
- 196:Core/Src/bsp_i2c.c **** 
- 197:Core/Src/bsp_i2c.c ****     while (size >= 0) {
- 464              		.loc 1 197 5 is_stmt 1 view .LVU130
- 198:Core/Src/bsp_i2c.c ****         timeout = 0;
- 465              		.loc 1 198 9 view .LVU131
- 199:Core/Src/bsp_i2c.c **** 
- 200:Core/Src/bsp_i2c.c ****         switch (state) {
- 466              		.loc 1 200 9 view .LVU132
- 467 001a 052C     		cmp	r4, #5
- 468 001c FDD8     		bhi	.L44
- 469 001e 01A3     		adr	r3, .L46
- 470 0020 53F824F0 		ldr	pc, [r3, r4, lsl #2]
- 471              		.p2align 2
- 472              	.L46:
- 473 0024 3D000000 		.word	.L50+1
- 474 0028 69000000 		.word	.L49+1
- 475 002c 89000000 		.word	.L48+1
- 476 0030 A9000000 		.word	.L47+1
- 477 0034 1B000000 		.word	.L44+1
- 478 0038 DD000000 		.word	.L45+1
- 479              		.p2align 1
- 480              	.L50:
- 481              	.LVL55:
- 201:Core/Src/bsp_i2c.c ****         case I2C_START:
- 202:Core/Src/bsp_i2c.c ****             if (write_cycle == RESET) {
- 482              		.loc 1 202 13 view .LVU133
- 483              		.loc 1 202 16 is_stmt 0 view .LVU134
- 484 003c 3EB9     		cbnz	r6, .L51
- 203:Core/Src/bsp_i2c.c ****                 while (i2c_flag_get(I2CX, I2C_FLAG_I2CBSY) && (timeout < I2C_TIME_OUT)) {
- 485              		.loc 1 203 24 view .LVU135
- 486 003e 2D4C     		ldr	r4, .L75
- 487              	.LVL56:
- 488              	.L52:
- 489              		.loc 1 203 60 is_stmt 1 view .LVU136
- 490              		.loc 1 203 24 is_stmt 0 view .LVU137
- 491 0040 40F20161 		movw	r1, #1537
- 492 0044 2046     		mov	r0, r4
- 493 0046 FFF7FEFF 		bl	i2c_flag_get
- 494              	.LVL57:
- 495              		.loc 1 203 60 view .LVU138
- 496 004a 0028     		cmp	r0, #0
- 497 004c F8D1     		bne	.L52
- 498              	.L51:
- 204:Core/Src/bsp_i2c.c ****                     timeout++;
- 205:Core/Src/bsp_i2c.c ****                 }
-ARM GAS  /tmp/ccBxsNrA.s 			page 14
+ 452 0016 0024     		movs	r4, #0
+ 189:Core/Src/bsp_i2c.c ****     uint8_t state = I2C_START;
+ 453              		.loc 1 189 13 view .LVU125
+ 454 0018 2646     		mov	r6, r4
+ 455              	.LVL51:
+ 456              	.L44:
+ 195:Core/Src/bsp_i2c.c **** 
+ 196:Core/Src/bsp_i2c.c ****     while (size >= 0) {
+ 457              		.loc 1 196 5 is_stmt 1 view .LVU126
+ 197:Core/Src/bsp_i2c.c ****         timeout = 0;
+ 458              		.loc 1 197 9 view .LVU127
+ 198:Core/Src/bsp_i2c.c **** 
+ 199:Core/Src/bsp_i2c.c ****         switch (state) {
+ 459              		.loc 1 199 9 view .LVU128
+ 460 001a 052C     		cmp	r4, #5
+ 461 001c FDD8     		bhi	.L44
+ 462 001e 01A3     		adr	r3, .L46
+ 463 0020 53F824F0 		ldr	pc, [r3, r4, lsl #2]
+ 464              		.p2align 2
+ 465              	.L46:
+ 466 0024 3D000000 		.word	.L50+1
+ 467 0028 69000000 		.word	.L49+1
+ 468 002c 89000000 		.word	.L48+1
+ 469 0030 A9000000 		.word	.L47+1
+ 470 0034 1B000000 		.word	.L44+1
+ 471 0038 DB000000 		.word	.L45+1
+ 472              		.p2align 1
+ 473              	.L50:
+ 474              	.LVL52:
+ 200:Core/Src/bsp_i2c.c ****         case I2C_START:
+ 201:Core/Src/bsp_i2c.c ****             if (write_cycle == RESET) {
+ 475              		.loc 1 201 13 view .LVU129
+ 476              		.loc 1 201 16 is_stmt 0 view .LVU130
+ 477 003c 3EB9     		cbnz	r6, .L51
+ 202:Core/Src/bsp_i2c.c ****                 while (i2c_flag_get(I2CX, I2C_FLAG_I2CBSY) && (timeout < I2C_TIME_OUT)) {
+ 478              		.loc 1 202 24 view .LVU131
+ 479 003e 2C4C     		ldr	r4, .L75
+ 480              	.LVL53:
+ 481              	.L52:
+ 482              		.loc 1 202 60 is_stmt 1 view .LVU132
+ 483              		.loc 1 202 24 is_stmt 0 view .LVU133
+ 484 0040 40F20161 		movw	r1, #1537
+ 485 0044 2046     		mov	r0, r4
+ 486 0046 FFF7FEFF 		bl	i2c_flag_get
+ 487              	.LVL54:
+ 488              		.loc 1 202 60 view .LVU134
+ 489 004a 0028     		cmp	r0, #0
+ 490 004c F8D1     		bne	.L52
+ 491              	.L51:
+ 203:Core/Src/bsp_i2c.c ****                     timeout++;
+ 204:Core/Src/bsp_i2c.c ****                 }
+ 205:Core/Src/bsp_i2c.c ****                 if (timeout == I2C_TIME_OUT) {
+ 206:Core/Src/bsp_i2c.c ****                     fail_state = state;
+ 207:Core/Src/bsp_i2c.c ****                     state = I2C_FAIL;
+ 208:Core/Src/bsp_i2c.c ****                     break;
+ 209:Core/Src/bsp_i2c.c ****                 }
+ 210:Core/Src/bsp_i2c.c ****             }
+ARM GAS  /tmp/cc8aHEH6.s 			page 14
 
 
- 206:Core/Src/bsp_i2c.c ****                 if (timeout == I2C_TIME_OUT) {
- 207:Core/Src/bsp_i2c.c ****                     fail_state = state;
- 208:Core/Src/bsp_i2c.c ****                     state = I2C_FAIL;
- 209:Core/Src/bsp_i2c.c ****                     break;
- 210:Core/Src/bsp_i2c.c ****                 }
- 211:Core/Src/bsp_i2c.c ****             }
- 212:Core/Src/bsp_i2c.c **** 
- 213:Core/Src/bsp_i2c.c ****             timeout = 0;
- 499              		.loc 1 213 13 is_stmt 1 view .LVU139
- 500              	.LVL58:
- 214:Core/Src/bsp_i2c.c **** 
- 215:Core/Src/bsp_i2c.c ****             i2c_start_on_bus(I2CX);
- 501              		.loc 1 215 13 view .LVU140
- 502 004e 2948     		ldr	r0, .L75
- 216:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_SBSEND)) && (timeout < I2C_TIME_OUT)) {
- 503              		.loc 1 216 22 is_stmt 0 view .LVU141
- 504 0050 284C     		ldr	r4, .L75
+ 211:Core/Src/bsp_i2c.c **** 
+ 212:Core/Src/bsp_i2c.c ****             timeout = 0;
+ 492              		.loc 1 212 13 is_stmt 1 view .LVU135
+ 493              	.LVL55:
+ 213:Core/Src/bsp_i2c.c **** 
+ 214:Core/Src/bsp_i2c.c ****             i2c_start_on_bus(I2CX);
+ 494              		.loc 1 214 13 view .LVU136
+ 495 004e 2848     		ldr	r0, .L75
  215:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_SBSEND)) && (timeout < I2C_TIME_OUT)) {
- 505              		.loc 1 215 13 view .LVU142
- 506 0052 FFF7FEFF 		bl	i2c_start_on_bus
- 507              	.LVL59:
- 508              		.loc 1 216 13 is_stmt 1 view .LVU143
- 509              	.L53:
- 510              		.loc 1 216 59 view .LVU144
- 511              		.loc 1 216 22 is_stmt 0 view .LVU145
- 512 0056 4FF4A061 		mov	r1, #1280
- 513 005a 2046     		mov	r0, r4
- 514 005c FFF7FEFF 		bl	i2c_flag_get
- 515              	.LVL60:
- 516              		.loc 1 216 59 view .LVU146
- 517 0060 0028     		cmp	r0, #0
- 518 0062 F8D0     		beq	.L53
- 217:Core/Src/bsp_i2c.c ****                 timeout++;
- 218:Core/Src/bsp_i2c.c ****             }
- 219:Core/Src/bsp_i2c.c ****             if (timeout == I2C_TIME_OUT) {
- 220:Core/Src/bsp_i2c.c ****                 fail_state = state;
- 221:Core/Src/bsp_i2c.c ****                 state = I2C_FAIL;
- 222:Core/Src/bsp_i2c.c ****                 break;
- 223:Core/Src/bsp_i2c.c ****             }
- 224:Core/Src/bsp_i2c.c **** 
- 225:Core/Src/bsp_i2c.c ****             state = I2C_SEND_ADDRESS;
- 519              		.loc 1 225 19 view .LVU147
- 520 0064 0124     		movs	r4, #1
- 521 0066 D8E7     		b	.L44
- 522              	.LVL61:
- 523              	.L49:
- 226:Core/Src/bsp_i2c.c ****             break;
- 227:Core/Src/bsp_i2c.c **** 
- 228:Core/Src/bsp_i2c.c ****         case I2C_SEND_ADDRESS:
- 229:Core/Src/bsp_i2c.c ****             i2c_master_addressing(I2CX, slave_address, I2C_TRANSMITTER);
- 524              		.loc 1 229 13 is_stmt 1 view .LVU148
- 525 0068 2248     		ldr	r0, .L75
- 230:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_ADDSEND)) && (timeout < I2C_TIME_OUT)) {
- 526              		.loc 1 230 22 is_stmt 0 view .LVU149
- 527 006a 224C     		ldr	r4, .L75
- 528              	.LVL62:
+ 496              		.loc 1 215 22 is_stmt 0 view .LVU137
+ 497 0050 274C     		ldr	r4, .L75
+ 214:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_SBSEND)) && (timeout < I2C_TIME_OUT)) {
+ 498              		.loc 1 214 13 view .LVU138
+ 499 0052 FFF7FEFF 		bl	i2c_start_on_bus
+ 500              	.LVL56:
+ 501              		.loc 1 215 13 is_stmt 1 view .LVU139
+ 502              	.L53:
+ 503              		.loc 1 215 59 view .LVU140
+ 504              		.loc 1 215 22 is_stmt 0 view .LVU141
+ 505 0056 4FF4A061 		mov	r1, #1280
+ 506 005a 2046     		mov	r0, r4
+ 507 005c FFF7FEFF 		bl	i2c_flag_get
+ 508              	.LVL57:
+ 509              		.loc 1 215 59 view .LVU142
+ 510 0060 0028     		cmp	r0, #0
+ 511 0062 F8D0     		beq	.L53
+ 216:Core/Src/bsp_i2c.c ****                 timeout++;
+ 217:Core/Src/bsp_i2c.c ****             }
+ 218:Core/Src/bsp_i2c.c ****             if (timeout == I2C_TIME_OUT) {
+ 219:Core/Src/bsp_i2c.c ****                 fail_state = state;
+ 220:Core/Src/bsp_i2c.c ****                 state = I2C_FAIL;
+ 221:Core/Src/bsp_i2c.c ****                 break;
+ 222:Core/Src/bsp_i2c.c ****             }
+ 223:Core/Src/bsp_i2c.c **** 
+ 224:Core/Src/bsp_i2c.c ****             state = I2C_SEND_ADDRESS;
+ 512              		.loc 1 224 19 view .LVU143
+ 513 0064 0124     		movs	r4, #1
+ 514 0066 D8E7     		b	.L44
+ 515              	.LVL58:
+ 516              	.L49:
+ 225:Core/Src/bsp_i2c.c ****             break;
+ 226:Core/Src/bsp_i2c.c **** 
+ 227:Core/Src/bsp_i2c.c ****         case I2C_SEND_ADDRESS:
+ 228:Core/Src/bsp_i2c.c ****             i2c_master_addressing(I2CX, slave_address, I2C_TRANSMITTER);
+ 517              		.loc 1 228 13 is_stmt 1 view .LVU144
+ 518 0068 2148     		ldr	r0, .L75
  229:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_ADDSEND)) && (timeout < I2C_TIME_OUT)) {
-ARM GAS  /tmp/ccBxsNrA.s 			page 15
+ 519              		.loc 1 229 22 is_stmt 0 view .LVU145
+ 520 006a 214C     		ldr	r4, .L75
+ 521              	.LVL59:
+ 228:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_ADDSEND)) && (timeout < I2C_TIME_OUT)) {
+ 522              		.loc 1 228 13 view .LVU146
+ 523 006c 6FF00102 		mvn	r2, #1
+ 524 0070 4146     		mov	r1, r8
+ 525 0072 FFF7FEFF 		bl	i2c_master_addressing
+ 526              	.LVL60:
+ 527              		.loc 1 229 13 is_stmt 1 view .LVU147
+ARM GAS  /tmp/cc8aHEH6.s 			page 15
 
 
- 529              		.loc 1 229 13 view .LVU150
- 530 006c 6FF00102 		mvn	r2, #1
- 531 0070 4146     		mov	r1, r8
- 532 0072 FFF7FEFF 		bl	i2c_master_addressing
- 533              	.LVL63:
- 534              		.loc 1 230 13 is_stmt 1 view .LVU151
- 535              	.L55:
- 536              		.loc 1 230 60 view .LVU152
- 537              		.loc 1 230 22 is_stmt 0 view .LVU153
- 538 0076 40F20151 		movw	r1, #1281
- 539 007a 2046     		mov	r0, r4
- 540 007c FFF7FEFF 		bl	i2c_flag_get
- 541              	.LVL64:
- 542              		.loc 1 230 60 view .LVU154
- 543 0080 0028     		cmp	r0, #0
- 544 0082 F8D0     		beq	.L55
- 231:Core/Src/bsp_i2c.c ****                 timeout++;
- 232:Core/Src/bsp_i2c.c ****             }
- 233:Core/Src/bsp_i2c.c ****             if (timeout == I2C_TIME_OUT) {
- 234:Core/Src/bsp_i2c.c ****                 fail_state = state;
- 235:Core/Src/bsp_i2c.c ****                 state = I2C_FAIL;
- 236:Core/Src/bsp_i2c.c ****                 break;
- 237:Core/Src/bsp_i2c.c ****             }
- 238:Core/Src/bsp_i2c.c **** 
- 239:Core/Src/bsp_i2c.c ****             state = I2C_CLEAR_ADDRESS_FLAG;
- 545              		.loc 1 239 19 view .LVU155
- 546 0084 0224     		movs	r4, #2
- 547 0086 C8E7     		b	.L44
- 548              	.LVL65:
- 549              	.L48:
- 240:Core/Src/bsp_i2c.c ****             break;
- 241:Core/Src/bsp_i2c.c **** 
- 242:Core/Src/bsp_i2c.c ****         case I2C_CLEAR_ADDRESS_FLAG:
- 243:Core/Src/bsp_i2c.c ****             i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
- 550              		.loc 1 243 13 is_stmt 1 view .LVU156
- 551 0088 1A48     		ldr	r0, .L75
- 552 008a 40F20151 		movw	r1, #1281
- 553 008e FFF7FEFF 		bl	i2c_flag_clear
- 554              	.LVL66:
- 244:Core/Src/bsp_i2c.c ****             if (write_cycle == RESET) {
- 555              		.loc 1 244 13 view .LVU157
- 556              		.loc 1 244 16 is_stmt 0 view .LVU158
- 557 0092 3EB9     		cbnz	r6, .L61
- 245:Core/Src/bsp_i2c.c ****                 while ((!i2c_flag_get(I2CX, I2C_FLAG_TBE)) && (timeout < I2C_TIME_OUT)) {
- 558              		.loc 1 245 26 view .LVU159
- 559 0094 174C     		ldr	r4, .L75
- 560              	.LVL67:
- 561              	.L56:
- 562              		.loc 1 245 60 is_stmt 1 view .LVU160
- 563              		.loc 1 245 26 is_stmt 0 view .LVU161
- 564 0096 40F20751 		movw	r1, #1287
- 565 009a 2046     		mov	r0, r4
- 566 009c FFF7FEFF 		bl	i2c_flag_get
- 567              	.LVL68:
- 568              		.loc 1 245 60 view .LVU162
- 569 00a0 0028     		cmp	r0, #0
- 570 00a2 F8D0     		beq	.L56
-ARM GAS  /tmp/ccBxsNrA.s 			page 16
+ 528              	.L55:
+ 529              		.loc 1 229 60 view .LVU148
+ 530              		.loc 1 229 22 is_stmt 0 view .LVU149
+ 531 0076 40F20151 		movw	r1, #1281
+ 532 007a 2046     		mov	r0, r4
+ 533 007c FFF7FEFF 		bl	i2c_flag_get
+ 534              	.LVL61:
+ 535              		.loc 1 229 60 view .LVU150
+ 536 0080 0028     		cmp	r0, #0
+ 537 0082 F8D0     		beq	.L55
+ 230:Core/Src/bsp_i2c.c ****                 timeout++;
+ 231:Core/Src/bsp_i2c.c ****             }
+ 232:Core/Src/bsp_i2c.c ****             if (timeout == I2C_TIME_OUT) {
+ 233:Core/Src/bsp_i2c.c ****                 fail_state = state;
+ 234:Core/Src/bsp_i2c.c ****                 state = I2C_FAIL;
+ 235:Core/Src/bsp_i2c.c ****                 break;
+ 236:Core/Src/bsp_i2c.c ****             }
+ 237:Core/Src/bsp_i2c.c **** 
+ 238:Core/Src/bsp_i2c.c ****             state = I2C_CLEAR_ADDRESS_FLAG;
+ 538              		.loc 1 238 19 view .LVU151
+ 539 0084 0224     		movs	r4, #2
+ 540 0086 C8E7     		b	.L44
+ 541              	.LVL62:
+ 542              	.L48:
+ 239:Core/Src/bsp_i2c.c ****             break;
+ 240:Core/Src/bsp_i2c.c **** 
+ 241:Core/Src/bsp_i2c.c ****         case I2C_CLEAR_ADDRESS_FLAG:
+ 242:Core/Src/bsp_i2c.c ****             i2c_flag_clear(I2CX, I2C_FLAG_ADDSEND);
+ 543              		.loc 1 242 13 is_stmt 1 view .LVU152
+ 544 0088 1948     		ldr	r0, .L75
+ 545 008a 40F20151 		movw	r1, #1281
+ 546 008e FFF7FEFF 		bl	i2c_flag_clear
+ 547              	.LVL63:
+ 243:Core/Src/bsp_i2c.c ****             if (write_cycle == RESET) {
+ 548              		.loc 1 243 13 view .LVU153
+ 549              		.loc 1 243 16 is_stmt 0 view .LVU154
+ 550 0092 3EB9     		cbnz	r6, .L61
+ 244:Core/Src/bsp_i2c.c ****                 while ((!i2c_flag_get(I2CX, I2C_FLAG_TBE)) && (timeout < I2C_TIME_OUT)) {
+ 551              		.loc 1 244 26 view .LVU155
+ 552 0094 164C     		ldr	r4, .L75
+ 553              	.LVL64:
+ 554              	.L56:
+ 555              		.loc 1 244 60 is_stmt 1 view .LVU156
+ 556              		.loc 1 244 26 is_stmt 0 view .LVU157
+ 557 0096 40F20751 		movw	r1, #1287
+ 558 009a 2046     		mov	r0, r4
+ 559 009c FFF7FEFF 		bl	i2c_flag_get
+ 560              	.LVL65:
+ 561              		.loc 1 244 60 view .LVU158
+ 562 00a0 0028     		cmp	r0, #0
+ 563 00a2 F8D0     		beq	.L56
+ 564              	.L61:
+ 245:Core/Src/bsp_i2c.c ****                     timeout++;
+ 246:Core/Src/bsp_i2c.c ****                 }
+ 247:Core/Src/bsp_i2c.c ****                 if (timeout == I2C_TIME_OUT) {
+ 248:Core/Src/bsp_i2c.c ****                     fail_state = state;
+ 249:Core/Src/bsp_i2c.c ****                     state = I2C_FAIL;
+ARM GAS  /tmp/cc8aHEH6.s 			page 16
 
 
- 571              	.L61:
- 246:Core/Src/bsp_i2c.c ****                     timeout++;
- 247:Core/Src/bsp_i2c.c ****                 }
- 248:Core/Src/bsp_i2c.c ****                 if (timeout == I2C_TIME_OUT) {
- 249:Core/Src/bsp_i2c.c ****                     fail_state = state;
- 250:Core/Src/bsp_i2c.c ****                     state = I2C_FAIL;
- 251:Core/Src/bsp_i2c.c ****                     break;
- 252:Core/Src/bsp_i2c.c ****                 }
- 253:Core/Src/bsp_i2c.c ****             }
- 254:Core/Src/bsp_i2c.c **** 
- 255:Core/Src/bsp_i2c.c ****             state = I2C_TRANSMIT_DATA;
- 572              		.loc 1 255 19 view .LVU163
- 573 00a4 0324     		movs	r4, #3
- 574 00a6 B8E7     		b	.L44
- 575              	.LVL69:
- 576              	.L47:
- 256:Core/Src/bsp_i2c.c ****             break;
- 257:Core/Src/bsp_i2c.c **** 
- 258:Core/Src/bsp_i2c.c ****         case I2C_TRANSMIT_DATA:
- 259:Core/Src/bsp_i2c.c ****             if (write_cycle == RESET) {
- 577              		.loc 1 259 13 is_stmt 1 view .LVU164
- 578              		.loc 1 259 16 is_stmt 0 view .LVU165
- 579 00a8 86B9     		cbnz	r6, .L57
- 260:Core/Src/bsp_i2c.c ****                 i2c_data_transmit(I2CX, internal_address);
- 580              		.loc 1 260 17 is_stmt 1 view .LVU166
- 581 00aa 1248     		ldr	r0, .L75
- 582 00ac 4946     		mov	r1, r9
- 583 00ae FFF7FEFF 		bl	i2c_data_transmit
- 584              	.LVL70:
- 585              	.L58:
- 261:Core/Src/bsp_i2c.c ****             } else {
- 262:Core/Src/bsp_i2c.c ****                 i2c_data_transmit(I2CX, *pBuffer);
- 263:Core/Src/bsp_i2c.c ****                 pBuffer++;
- 264:Core/Src/bsp_i2c.c ****                 size--;
- 265:Core/Src/bsp_i2c.c ****             }
- 266:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_BTC)) && (timeout < I2C_TIME_OUT)) {
- 586              		.loc 1 266 22 is_stmt 0 view .LVU167
- 587 00b2 104E     		ldr	r6, .L75
- 588              	.LVL71:
- 589              	.L59:
- 590              		.loc 1 266 56 is_stmt 1 view .LVU168
- 591              		.loc 1 266 22 is_stmt 0 view .LVU169
- 592 00b4 40F20251 		movw	r1, #1282
- 593 00b8 3046     		mov	r0, r6
- 594 00ba FFF7FEFF 		bl	i2c_flag_get
- 595              	.LVL72:
- 596              		.loc 1 266 56 view .LVU170
- 597 00be 0028     		cmp	r0, #0
- 598 00c0 F8D0     		beq	.L59
- 267:Core/Src/bsp_i2c.c ****                 timeout++;
- 268:Core/Src/bsp_i2c.c ****             }
- 269:Core/Src/bsp_i2c.c **** 
- 270:Core/Src/bsp_i2c.c ****             if (timeout == I2C_TIME_OUT) {
- 599              		.loc 1 270 13 is_stmt 1 view .LVU171
- 271:Core/Src/bsp_i2c.c ****                 fail_state = state;
- 272:Core/Src/bsp_i2c.c ****                 state = I2C_FAIL;
- 273:Core/Src/bsp_i2c.c ****                 break;
-ARM GAS  /tmp/ccBxsNrA.s 			page 17
-
-
- 274:Core/Src/bsp_i2c.c ****             }
- 275:Core/Src/bsp_i2c.c **** 
- 276:Core/Src/bsp_i2c.c ****             write_cycle = SET;
- 600              		.loc 1 276 13 view .LVU172
- 601              	.LVL73:
- 277:Core/Src/bsp_i2c.c **** 
- 278:Core/Src/bsp_i2c.c ****             state = size ? I2C_TRANSMIT_DATA : I2C_STOP;
- 602              		.loc 1 278 13 view .LVU173
- 603              		.loc 1 278 19 is_stmt 0 view .LVU174
- 604 00c2 002D     		cmp	r5, #0
- 605 00c4 08BF     		it	eq
- 606 00c6 0524     		moveq	r4, #5
- 607              	.LVL74:
- 608              		.loc 1 278 19 view .LVU175
- 609 00c8 0126     		movs	r6, #1
- 610              	.LVL75:
- 611              		.loc 1 278 19 view .LVU176
- 612 00ca A6E7     		b	.L44
- 613              	.LVL76:
- 614              	.L57:
- 262:Core/Src/bsp_i2c.c ****                 pBuffer++;
- 615              		.loc 1 262 17 is_stmt 1 view .LVU177
- 616 00cc 17F8011B 		ldrb	r1, [r7], #1	@ zero_extendqisi2
- 617 00d0 0848     		ldr	r0, .L75
- 264:Core/Src/bsp_i2c.c ****             }
- 618              		.loc 1 264 21 is_stmt 0 view .LVU178
- 619 00d2 013D     		subs	r5, r5, #1
- 620              	.LVL77:
- 262:Core/Src/bsp_i2c.c ****                 pBuffer++;
- 621              		.loc 1 262 17 view .LVU179
- 622 00d4 FFF7FEFF 		bl	i2c_data_transmit
- 623              	.LVL78:
+ 250:Core/Src/bsp_i2c.c ****                     break;
+ 251:Core/Src/bsp_i2c.c ****                 }
+ 252:Core/Src/bsp_i2c.c ****             }
+ 253:Core/Src/bsp_i2c.c **** 
+ 254:Core/Src/bsp_i2c.c ****             state = I2C_TRANSMIT_DATA;
+ 565              		.loc 1 254 19 view .LVU159
+ 566 00a4 0324     		movs	r4, #3
+ 567 00a6 B8E7     		b	.L44
+ 568              	.LVL66:
+ 569              	.L47:
+ 255:Core/Src/bsp_i2c.c ****             break;
+ 256:Core/Src/bsp_i2c.c **** 
+ 257:Core/Src/bsp_i2c.c ****         case I2C_TRANSMIT_DATA:
+ 258:Core/Src/bsp_i2c.c ****             if (write_cycle == RESET) {
+ 570              		.loc 1 258 13 is_stmt 1 view .LVU160
+ 571              		.loc 1 258 16 is_stmt 0 view .LVU161
+ 572 00a8 86B9     		cbnz	r6, .L57
+ 259:Core/Src/bsp_i2c.c ****                 i2c_data_transmit(I2CX, internal_address);
+ 573              		.loc 1 259 17 is_stmt 1 view .LVU162
+ 574 00aa 1148     		ldr	r0, .L75
+ 575 00ac 4946     		mov	r1, r9
+ 576 00ae FFF7FEFF 		bl	i2c_data_transmit
+ 577              	.LVL67:
+ 578              	.L58:
+ 260:Core/Src/bsp_i2c.c ****             } else {
+ 261:Core/Src/bsp_i2c.c ****                 i2c_data_transmit(I2CX, *pBuffer);
+ 262:Core/Src/bsp_i2c.c ****                 // pBuffer++;
  263:Core/Src/bsp_i2c.c ****                 size--;
- 624              		.loc 1 263 17 is_stmt 1 view .LVU180
  264:Core/Src/bsp_i2c.c ****             }
- 625              		.loc 1 264 17 view .LVU181
- 264:Core/Src/bsp_i2c.c ****             }
- 626              		.loc 1 264 21 is_stmt 0 view .LVU182
- 627 00d8 EDB2     		uxtb	r5, r5
- 264:Core/Src/bsp_i2c.c ****             }
- 628              		.loc 1 264 21 view .LVU183
- 629 00da EAE7     		b	.L58
- 630              	.LVL79:
- 631              	.L45:
- 279:Core/Src/bsp_i2c.c ****             break;
- 280:Core/Src/bsp_i2c.c **** 
- 281:Core/Src/bsp_i2c.c ****         case I2C_STOP:
- 282:Core/Src/bsp_i2c.c ****             i2c_stop_on_bus(I2CX);
- 632              		.loc 1 282 13 is_stmt 1 view .LVU184
- 633 00dc 0548     		ldr	r0, .L75
- 634 00de FFF7FEFF 		bl	i2c_stop_on_bus
- 635              	.LVL80:
- 283:Core/Src/bsp_i2c.c ****             while (I2C_CTL0(I2CX) & I2C_CTL0_STOP);
- 636              		.loc 1 283 13 view .LVU185
- 637              		.loc 1 283 20 is_stmt 0 view .LVU186
- 638 00e2 054B     		ldr	r3, .L75+4
- 639              	.L60:
-ARM GAS  /tmp/ccBxsNrA.s 			page 18
+ 265:Core/Src/bsp_i2c.c ****             while ((!i2c_flag_get(I2CX, I2C_FLAG_BTC)) && (timeout < I2C_TIME_OUT)) {
+ 579              		.loc 1 265 22 is_stmt 0 view .LVU163
+ 580 00b2 0F4E     		ldr	r6, .L75
+ 581              	.LVL68:
+ 582              	.L59:
+ 583              		.loc 1 265 56 is_stmt 1 view .LVU164
+ 584              		.loc 1 265 22 is_stmt 0 view .LVU165
+ 585 00b4 40F20251 		movw	r1, #1282
+ 586 00b8 3046     		mov	r0, r6
+ 587 00ba FFF7FEFF 		bl	i2c_flag_get
+ 588              	.LVL69:
+ 589              		.loc 1 265 56 view .LVU166
+ 590 00be 0028     		cmp	r0, #0
+ 591 00c0 F8D0     		beq	.L59
+ 266:Core/Src/bsp_i2c.c ****                 timeout++;
+ 267:Core/Src/bsp_i2c.c ****             }
+ 268:Core/Src/bsp_i2c.c **** 
+ 269:Core/Src/bsp_i2c.c ****             if (timeout == I2C_TIME_OUT) {
+ 592              		.loc 1 269 13 is_stmt 1 view .LVU167
+ 270:Core/Src/bsp_i2c.c ****                 fail_state = state;
+ 271:Core/Src/bsp_i2c.c ****                 state = I2C_FAIL;
+ 272:Core/Src/bsp_i2c.c ****                 break;
+ 273:Core/Src/bsp_i2c.c ****             }
+ 274:Core/Src/bsp_i2c.c **** 
+ 275:Core/Src/bsp_i2c.c ****             write_cycle = SET;
+ 593              		.loc 1 275 13 view .LVU168
+ 594              	.LVL70:
+ 276:Core/Src/bsp_i2c.c **** 
+ARM GAS  /tmp/cc8aHEH6.s 			page 17
 
 
- 640              		.loc 1 283 20 is_stmt 1 discriminator 1 view .LVU187
- 641 00e4 D3F80004 		ldr	r0, [r3, #1024]
- 642 00e8 10F40070 		ands	r0, r0, #512
- 643 00ec FAD1     		bne	.L60
- 284:Core/Src/bsp_i2c.c ****             size--;
- 644              		.loc 1 284 13 view .LVU188
- 645              	.LVL81:
- 285:Core/Src/bsp_i2c.c ****             return RESET;
- 646              		.loc 1 285 13 view .LVU189
- 286:Core/Src/bsp_i2c.c ****             break;
- 287:Core/Src/bsp_i2c.c **** 
- 288:Core/Src/bsp_i2c.c ****         case I2C_FAIL:
- 289:Core/Src/bsp_i2c.c ****             switch (fail_state) {
- 290:Core/Src/bsp_i2c.c ****             case I2C_START:
- 291:Core/Src/bsp_i2c.c ****                 printf("I2C bus start error!\r\n");
- 292:Core/Src/bsp_i2c.c ****                 return SET;
- 293:Core/Src/bsp_i2c.c ****             case I2C_SEND_ADDRESS:
- 294:Core/Src/bsp_i2c.c ****                 printf("I2C bus master addressing error!\r\n");
- 295:Core/Src/bsp_i2c.c ****                 return SET;
- 296:Core/Src/bsp_i2c.c ****             case I2C_CLEAR_ADDRESS_FLAG: 
- 297:Core/Src/bsp_i2c.c ****                 printf("I2C bus clear ADDSEND flag error!\r\n");
- 298:Core/Src/bsp_i2c.c ****                 return SET;
- 299:Core/Src/bsp_i2c.c ****             case I2C_TRANSMIT_DATA:
- 300:Core/Src/bsp_i2c.c ****                 printf("I2C bus transmitting data error!\r\n");
- 301:Core/Src/bsp_i2c.c ****                 return SET;
- 302:Core/Src/bsp_i2c.c ****             case I2C_RECEIVE_DATA: 
- 303:Core/Src/bsp_i2c.c ****                 printf("I2C bus receiving data error!\r\n");
- 304:Core/Src/bsp_i2c.c ****                 return SET;
- 305:Core/Src/bsp_i2c.c ****             }
- 306:Core/Src/bsp_i2c.c ****             break; 
- 307:Core/Src/bsp_i2c.c ****         }
- 308:Core/Src/bsp_i2c.c ****     }
- 309:Core/Src/bsp_i2c.c **** }...
- 647              		.loc 1 309 1 is_stmt 0 view .LVU190
- 648 00ee BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
- 649              	.LVL82:
- 650              	.L76:
- 651              		.loc 1 309 1 view .LVU191
- 652 00f2 00BF     		.align	2
- 653              	.L75:
- 654 00f4 00540040 		.word	1073763328
- 655 00f8 00500040 		.word	1073762304
- 656              		.cfi_endproc
- 657              	.LFE118:
- 659              		.text
- 660              	.Letext0:
- 661              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 662              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 663              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
- 664              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
- 665              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_i2c.h"
- 666              		.file 7 "Core/Inc/bsp_i2c.h"
- 667              		.file 8 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_gpio.h"
- 668              		.file 9 "<built-in>"
-ARM GAS  /tmp/ccBxsNrA.s 			page 19
+ 277:Core/Src/bsp_i2c.c ****             state = size ? I2C_TRANSMIT_DATA : I2C_STOP;
+ 595              		.loc 1 277 13 view .LVU169
+ 596              		.loc 1 277 19 is_stmt 0 view .LVU170
+ 597 00c2 002D     		cmp	r5, #0
+ 598 00c4 08BF     		it	eq
+ 599 00c6 0524     		moveq	r4, #5
+ 600              	.LVL71:
+ 601              		.loc 1 277 19 view .LVU171
+ 602 00c8 0126     		movs	r6, #1
+ 603              	.LVL72:
+ 604              		.loc 1 277 19 view .LVU172
+ 605 00ca A6E7     		b	.L44
+ 606              	.LVL73:
+ 607              	.L57:
+ 261:Core/Src/bsp_i2c.c ****                 // pBuffer++;
+ 608              		.loc 1 261 17 is_stmt 1 view .LVU173
+ 609 00cc 3978     		ldrb	r1, [r7]	@ zero_extendqisi2
+ 610 00ce 0848     		ldr	r0, .L75
+ 263:Core/Src/bsp_i2c.c ****             }
+ 611              		.loc 1 263 21 is_stmt 0 view .LVU174
+ 612 00d0 013D     		subs	r5, r5, #1
+ 261:Core/Src/bsp_i2c.c ****                 // pBuffer++;
+ 613              		.loc 1 261 17 view .LVU175
+ 614 00d2 FFF7FEFF 		bl	i2c_data_transmit
+ 615              	.LVL74:
+ 263:Core/Src/bsp_i2c.c ****             }
+ 616              		.loc 1 263 17 is_stmt 1 view .LVU176
+ 263:Core/Src/bsp_i2c.c ****             }
+ 617              		.loc 1 263 21 is_stmt 0 view .LVU177
+ 618 00d6 EDB2     		uxtb	r5, r5
+ 619              	.LVL75:
+ 263:Core/Src/bsp_i2c.c ****             }
+ 620              		.loc 1 263 21 view .LVU178
+ 621 00d8 EBE7     		b	.L58
+ 622              	.LVL76:
+ 623              	.L45:
+ 278:Core/Src/bsp_i2c.c ****             break;
+ 279:Core/Src/bsp_i2c.c **** 
+ 280:Core/Src/bsp_i2c.c ****         case I2C_STOP:
+ 281:Core/Src/bsp_i2c.c ****             i2c_stop_on_bus(I2CX);
+ 624              		.loc 1 281 13 is_stmt 1 view .LVU179
+ 625 00da 0548     		ldr	r0, .L75
+ 626 00dc FFF7FEFF 		bl	i2c_stop_on_bus
+ 627              	.LVL77:
+ 282:Core/Src/bsp_i2c.c ****             while (I2C_CTL0(I2CX) & I2C_CTL0_STOP);
+ 628              		.loc 1 282 13 view .LVU180
+ 629              		.loc 1 282 20 is_stmt 0 view .LVU181
+ 630 00e0 044B     		ldr	r3, .L75+4
+ 631              	.L60:
+ 632              		.loc 1 282 20 is_stmt 1 discriminator 1 view .LVU182
+ 633 00e2 D3F80004 		ldr	r0, [r3, #1024]
+ 634 00e6 10F40070 		ands	r0, r0, #512
+ 635 00ea FAD1     		bne	.L60
+ 283:Core/Src/bsp_i2c.c ****             return RESET;
+ 284:Core/Src/bsp_i2c.c ****             break;
+ 285:Core/Src/bsp_i2c.c **** 
+ 286:Core/Src/bsp_i2c.c ****         case I2C_FAIL:
+ARM GAS  /tmp/cc8aHEH6.s 			page 18
+
+
+ 287:Core/Src/bsp_i2c.c ****             switch (fail_state) {
+ 288:Core/Src/bsp_i2c.c ****             case I2C_START:
+ 289:Core/Src/bsp_i2c.c ****                 printf("I2C bus start error!\r\n");
+ 290:Core/Src/bsp_i2c.c ****                 return SET;
+ 291:Core/Src/bsp_i2c.c ****             case I2C_SEND_ADDRESS:
+ 292:Core/Src/bsp_i2c.c ****                 printf("I2C bus master addressing error!\r\n");
+ 293:Core/Src/bsp_i2c.c ****                 return SET;
+ 294:Core/Src/bsp_i2c.c ****             case I2C_CLEAR_ADDRESS_FLAG: 
+ 295:Core/Src/bsp_i2c.c ****                 printf("I2C bus clear ADDSEND flag error!\r\n");
+ 296:Core/Src/bsp_i2c.c ****                 return SET;
+ 297:Core/Src/bsp_i2c.c ****             case I2C_TRANSMIT_DATA:
+ 298:Core/Src/bsp_i2c.c ****                 printf("I2C bus transmitting data error!\r\n");
+ 299:Core/Src/bsp_i2c.c ****                 return SET;
+ 300:Core/Src/bsp_i2c.c ****             case I2C_RECEIVE_DATA: 
+ 301:Core/Src/bsp_i2c.c ****                 printf("I2C bus receiving data error!\r\n");
+ 302:Core/Src/bsp_i2c.c ****                 return SET;
+ 303:Core/Src/bsp_i2c.c ****             }
+ 304:Core/Src/bsp_i2c.c ****             break; 
+ 305:Core/Src/bsp_i2c.c ****         }
+ 306:Core/Src/bsp_i2c.c ****     }
+ 307:Core/Src/bsp_i2c.c **** }...
+ 636              		.loc 1 307 1 is_stmt 0 view .LVU183
+ 637 00ec BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
+ 638              	.LVL78:
+ 639              	.L76:
+ 640              		.loc 1 307 1 view .LVU184
+ 641              		.align	2
+ 642              	.L75:
+ 643 00f0 00540040 		.word	1073763328
+ 644 00f4 00500040 		.word	1073762304
+ 645              		.cfi_endproc
+ 646              	.LFE118:
+ 648              		.text
+ 649              	.Letext0:
+ 650              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 651              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 652              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
+ 653              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
+ 654              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_i2c.h"
+ 655              		.file 7 "Core/Inc/bsp_i2c.h"
+ 656              		.file 8 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_gpio.h"
+ 657              		.file 9 "<built-in>"
+ARM GAS  /tmp/cc8aHEH6.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 bsp_i2c.c
-     /tmp/ccBxsNrA.s:19     .text.i2c_config:0000000000000000 $t
-     /tmp/ccBxsNrA.s:25     .text.i2c_config:0000000000000000 i2c_config
-     /tmp/ccBxsNrA.s:130    .text.i2c_config:000000000000008c $d
-     /tmp/ccBxsNrA.s:136    .text.i2c_buffer_read_timeout:0000000000000000 $t
-     /tmp/ccBxsNrA.s:142    .text.i2c_buffer_read_timeout:0000000000000000 i2c_buffer_read_timeout
-     /tmp/ccBxsNrA.s:197    .text.i2c_buffer_read_timeout:0000000000000024 $d
-     /tmp/ccBxsNrA.s:405    .text.i2c_buffer_read_timeout:00000000000000f8 $d
-     /tmp/ccBxsNrA.s:411    .text.i2c_buffer_write_timeout:0000000000000000 $t
-     /tmp/ccBxsNrA.s:417    .text.i2c_buffer_write_timeout:0000000000000000 i2c_buffer_write_timeout
-     /tmp/ccBxsNrA.s:473    .text.i2c_buffer_write_timeout:0000000000000024 $d
-     /tmp/ccBxsNrA.s:479    .text.i2c_buffer_write_timeout:000000000000003c $t
-     /tmp/ccBxsNrA.s:654    .text.i2c_buffer_write_timeout:00000000000000f4 $d
-     /tmp/ccBxsNrA.s:200    .text.i2c_buffer_read_timeout:0000000000000027 $d
-     /tmp/ccBxsNrA.s:200    .text.i2c_buffer_read_timeout:0000000000000028 $t
+     /tmp/cc8aHEH6.s:19     .text.i2c_config:0000000000000000 $t
+     /tmp/cc8aHEH6.s:25     .text.i2c_config:0000000000000000 i2c_config
+     /tmp/cc8aHEH6.s:130    .text.i2c_config:000000000000008c $d
+     /tmp/cc8aHEH6.s:136    .text.i2c_buffer_read_timeout:0000000000000000 $t
+     /tmp/cc8aHEH6.s:142    .text.i2c_buffer_read_timeout:0000000000000000 i2c_buffer_read_timeout
+     /tmp/cc8aHEH6.s:195    .text.i2c_buffer_read_timeout:0000000000000024 $d
+     /tmp/cc8aHEH6.s:400    .text.i2c_buffer_read_timeout:00000000000000f8 $d
+     /tmp/cc8aHEH6.s:406    .text.i2c_buffer_write_timeout:0000000000000000 $t
+     /tmp/cc8aHEH6.s:412    .text.i2c_buffer_write_timeout:0000000000000000 i2c_buffer_write_timeout
+     /tmp/cc8aHEH6.s:466    .text.i2c_buffer_write_timeout:0000000000000024 $d
+     /tmp/cc8aHEH6.s:472    .text.i2c_buffer_write_timeout:000000000000003c $t
+     /tmp/cc8aHEH6.s:643    .text.i2c_buffer_write_timeout:00000000000000f0 $d
+     /tmp/cc8aHEH6.s:198    .text.i2c_buffer_read_timeout:0000000000000027 $d
+     /tmp/cc8aHEH6.s:198    .text.i2c_buffer_read_timeout:0000000000000028 $t
 
 UNDEFINED SYMBOLS
 i2c_deinit

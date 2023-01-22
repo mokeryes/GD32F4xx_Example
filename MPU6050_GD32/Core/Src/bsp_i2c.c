@@ -21,7 +21,7 @@ void i2c_config()
 
     /* I2C config */
     rcu_periph_clock_enable(I2C_RCU);
-    i2c_clock_config(I2CX, 1000, I2C_DTCY_2);
+    i2c_clock_config(I2CX, I2C_SPEED, I2C_DTCY_2);
     i2c_mode_addr_config(I2CX, I2C_I2CMODE_ENABLE, I2C_ADDFORMAT_7BITS, SLAVE_ADDRESS7);
     i2c_enable(I2CX);
     i2c_ack_config(I2CX, I2C_ACK_DISABLE);
@@ -149,7 +149,6 @@ FlagStatus i2c_buffer_read_timeout(uint8_t *pBuffer, uint8_t size, uint8_t slave
         case I2C_STOP:
             i2c_stop_on_bus(I2CX);
             while (I2C_CTL0(I2CX) & I2C_CTL0_STOP);
-            size--;
             return RESET;
             break;
 
@@ -260,7 +259,7 @@ FlagStatus i2c_buffer_write_timeout(uint8_t *pBuffer, uint8_t size, uint8_t slav
                 i2c_data_transmit(I2CX, internal_address);
             } else {
                 i2c_data_transmit(I2CX, *pBuffer);
-                pBuffer++;
+                // pBuffer++;
                 size--;
             }
             while ((!i2c_flag_get(I2CX, I2C_FLAG_BTC)) && (timeout < I2C_TIME_OUT)) {
@@ -281,7 +280,6 @@ FlagStatus i2c_buffer_write_timeout(uint8_t *pBuffer, uint8_t size, uint8_t slav
         case I2C_STOP:
             i2c_stop_on_bus(I2CX);
             while (I2C_CTL0(I2CX) & I2C_CTL0_STOP);
-            size--;
             return RESET;
             break;
 

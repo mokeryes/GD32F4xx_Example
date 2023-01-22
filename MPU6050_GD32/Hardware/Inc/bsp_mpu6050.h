@@ -17,6 +17,7 @@
 #define TEMP_OUT_H_REG      0x41
 #define GYRO_CONFIG_REG     0x1B
 #define GYRO_XOUT_H_REG     0x43
+#define CONFIG              0x1A
 #define MPU6050_ADDR        0xD0
 
 
@@ -53,6 +54,7 @@ typedef struct {
 } Kalman_t;
 
 void mpu6050_init(void);
+void mpu6050_read_accel(MPU6050_t *data);
 
 
 #endif

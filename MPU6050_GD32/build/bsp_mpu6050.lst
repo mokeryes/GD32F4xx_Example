@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccdAfRG9.s 			page 1
+ARM GAS  /tmp/cckGbony.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,139 +20,401 @@ ARM GAS  /tmp/ccdAfRG9.s 			page 1
   17              		.file 1 "Hardware/Src/bsp_mpu6050.c"
   18              		.section	.rodata.mpu6050_init.str1.1,"aMS",%progbits,1
   19              	.LC0:
-  20 0000 72656164 		.ascii	"read success! check value: check = %d\015\012\000"
-  20      20737563 
-  20      63657373 
-  20      21206368 
-  20      65636B20 
+  20 0000 6D707536 		.ascii	"mpu6050 is ready!\015\000"
+  20      30353020 
+  20      69732072 
+  20      65616479 
+  20      210D00
   21              	.LC1:
-  22 0028 77726974 		.ascii	"write success!\015\000"
-  22      65207375 
-  22      63636573 
-  22      73210D00 
-  23              		.section	.text.mpu6050_init,"ax",%progbits
-  24              		.align	1
-  25              		.global	mpu6050_init
-  26              		.syntax unified
-  27              		.thumb
-  28              		.thumb_func
-  30              	mpu6050_init:
-  31              	.LFB119:
+  22 0013 77726974 		.ascii	"write PWR_MGMT_1_REG success!\015\000"
+  22      65205057 
+  22      525F4D47 
+  22      4D545F31 
+  22      5F524547 
+  23              	.LC2:
+  24 0032 77726974 		.ascii	"write SMPLRT_DIV_REG success!\015\000"
+  24      6520534D 
+  24      504C5254 
+  24      5F444956 
+  24      5F524547 
+  25              	.LC3:
+  26 0051 77726974 		.ascii	"write ACCEL_CONFIG_REG success!\015\000"
+  26      65204143 
+  26      43454C5F 
+  26      434F4E46 
+  26      49475F52 
+  27              	.LC4:
+  28 0072 77726974 		.ascii	"write GYRO_CONFIG_REG success!\015\000"
+  28      65204759 
+  28      524F5F43 
+  28      4F4E4649 
+  28      475F5245 
+  29              		.section	.text.mpu6050_init,"ax",%progbits
+  30              		.align	1
+  31              		.global	mpu6050_init
+  32              		.syntax unified
+  33              		.thumb
+  34              		.thumb_func
+  36              	mpu6050_init:
+  37              	.LFB119:
    1:Hardware/Src/bsp_mpu6050.c **** #include <stdio.h>
+ARM GAS  /tmp/cckGbony.s 			page 2
+
+
    2:Hardware/Src/bsp_mpu6050.c **** #include "bsp_mpu6050.h"
    3:Hardware/Src/bsp_mpu6050.c **** 
-   4:Hardware/Src/bsp_mpu6050.c **** 
-   5:Hardware/Src/bsp_mpu6050.c **** /**
-   6:Hardware/Src/bsp_mpu6050.c ****  * @brief 初始化MPU6050，并检查MPU6050工作是否正常
-   7:Hardware/Src/bsp_mpu6050.c ****  * 
-   8:Hardware/Src/bsp_mpu6050.c ****  */
-   9:Hardware/Src/bsp_mpu6050.c **** void mpu6050_init(void)
-  10:Hardware/Src/bsp_mpu6050.c **** {
-  32              		.loc 1 10 1 view -0
-  33              		.cfi_startproc
-  34              		@ args = 0, pretend = 0, frame = 24
-  35              		@ frame_needed = 0, uses_anonymous_args = 0
+   4:Hardware/Src/bsp_mpu6050.c **** const double Accel_Z_corrector = 14418.0;
+   5:Hardware/Src/bsp_mpu6050.c **** 
+   6:Hardware/Src/bsp_mpu6050.c **** /**
+   7:Hardware/Src/bsp_mpu6050.c ****  * @brief 初始化MPU6050，并检查MPU6050工作是否正常
+   8:Hardware/Src/bsp_mpu6050.c ****  * 
+   9:Hardware/Src/bsp_mpu6050.c ****  */
+  10:Hardware/Src/bsp_mpu6050.c **** void mpu6050_init(void)
+  11:Hardware/Src/bsp_mpu6050.c **** {
+  38              		.loc 1 11 1 view -0
+  39              		.cfi_startproc
+  40              		@ args = 0, pretend = 0, frame = 8
+  41              		@ frame_needed = 0, uses_anonymous_args = 0
+  12:Hardware/Src/bsp_mpu6050.c ****     i2c_config();
+  42              		.loc 1 12 5 view .LVU1
   11:Hardware/Src/bsp_mpu6050.c ****     i2c_config();
-  36              		.loc 1 11 5 view .LVU1
-  10:Hardware/Src/bsp_mpu6050.c ****     i2c_config();
-  37              		.loc 1 10 1 is_stmt 0 view .LVU2
-  38 0000 7FB5     		push	{r0, r1, r2, r3, r4, r5, r6, lr}
-  39              	.LCFI0:
-ARM GAS  /tmp/ccdAfRG9.s 			page 2
+  43              		.loc 1 11 1 is_stmt 0 view .LVU2
+  44 0000 07B5     		push	{r0, r1, r2, lr}
+  45              	.LCFI0:
+  46              		.cfi_def_cfa_offset 16
+  47              		.cfi_offset 14, -4
+  48              		.loc 1 12 5 view .LVU3
+  49 0002 FFF7FEFF 		bl	i2c_config
+  50              	.LVL0:
+  13:Hardware/Src/bsp_mpu6050.c **** 
+  14:Hardware/Src/bsp_mpu6050.c ****     // 检查MPU6050是否正常
+  15:Hardware/Src/bsp_mpu6050.c ****     uint8_t read_buffer[1];
+  51              		.loc 1 15 5 is_stmt 1 view .LVU4
+  16:Hardware/Src/bsp_mpu6050.c ****     if (!i2c_buffer_read_timeout(read_buffer, 1, MPU6050_ADDR, WHO_AM_I_REG))
+  52              		.loc 1 16 5 view .LVU5
+  53              		.loc 1 16 10 is_stmt 0 view .LVU6
+  54 0006 7523     		movs	r3, #117
+  55 0008 D022     		movs	r2, #208
+  56 000a 0121     		movs	r1, #1
+  57 000c 6846     		mov	r0, sp
+  58 000e FFF7FEFF 		bl	i2c_buffer_read_timeout
+  59              	.LVL1:
+  60              		.loc 1 16 8 view .LVU7
+  61 0012 10B9     		cbnz	r0, .L2
+  17:Hardware/Src/bsp_mpu6050.c ****         printf("mpu6050 is ready!\r\n");
+  62              		.loc 1 17 9 is_stmt 1 view .LVU8
+  63 0014 1948     		ldr	r0, .L7
+  64 0016 FFF7FEFF 		bl	puts
+  65              	.LVL2:
+  66              	.L2:
+  18:Hardware/Src/bsp_mpu6050.c **** 
+  19:Hardware/Src/bsp_mpu6050.c ****     uint8_t cmd[4] = {0, 0x07, 0x00, 0x00};
+  67              		.loc 1 19 5 view .LVU9
+  68              		.loc 1 19 13 is_stmt 0 view .LVU10
+  69 001a 4FF4E063 		mov	r3, #1792
+  70 001e 0193     		str	r3, [sp, #4]
+  20:Hardware/Src/bsp_mpu6050.c **** 
+  21:Hardware/Src/bsp_mpu6050.c ****     if (!i2c_buffer_write_timeout(&cmd[0], 1, MPU6050_ADDR, PWR_MGMT_1_REG))
+  71              		.loc 1 21 5 is_stmt 1 view .LVU11
+  72              		.loc 1 21 10 is_stmt 0 view .LVU12
+  73 0020 D022     		movs	r2, #208
+ARM GAS  /tmp/cckGbony.s 			page 3
 
 
-  40              		.cfi_def_cfa_offset 32
-  41              		.cfi_offset 14, -4
-  42              		.loc 1 11 5 view .LVU3
-  43 0002 FFF7FEFF 		bl	i2c_config
-  44              	.LVL0:
-  12:Hardware/Src/bsp_mpu6050.c **** 
-  13:Hardware/Src/bsp_mpu6050.c ****     // 检查MPU6050是否正常
-  14:Hardware/Src/bsp_mpu6050.c ****     uint8_t read_buffer[10];
-  45              		.loc 1 14 5 is_stmt 1 view .LVU4
-  15:Hardware/Src/bsp_mpu6050.c ****     if (!i2c_buffer_read_timeout(read_buffer, 1, MPU6050_ADDR, WHO_AM_I_REG))
-  46              		.loc 1 15 5 view .LVU5
-  47              		.loc 1 15 10 is_stmt 0 view .LVU6
-  48 0006 7523     		movs	r3, #117
-  49 0008 D022     		movs	r2, #208
-  50 000a 0121     		movs	r1, #1
-  51 000c 6846     		mov	r0, sp
-  52 000e FFF7FEFF 		bl	i2c_buffer_read_timeout
-  53              	.LVL1:
-  54              		.loc 1 15 8 view .LVU7
-  55 0012 20B9     		cbnz	r0, .L2
-  16:Hardware/Src/bsp_mpu6050.c ****         printf("read success! check value: check = %d\r\n", read_buffer[0]);
-  56              		.loc 1 16 9 is_stmt 1 view .LVU8
-  57 0014 9DF80010 		ldrb	r1, [sp]	@ zero_extendqisi2
-  58 0018 0948     		ldr	r0, .L4
-  59 001a FFF7FEFF 		bl	printf
-  60              	.LVL2:
-  61              	.L2:
-  17:Hardware/Src/bsp_mpu6050.c **** 
-  18:Hardware/Src/bsp_mpu6050.c ****     delay_1ms(100);
-  62              		.loc 1 18 5 view .LVU9
-  63 001e 6420     		movs	r0, #100
-  64 0020 FFF7FEFF 		bl	delay_1ms
-  65              	.LVL3:
-  19:Hardware/Src/bsp_mpu6050.c **** 
-  20:Hardware/Src/bsp_mpu6050.c ****     uint8_t write_buffer[10];
-  66              		.loc 1 20 5 view .LVU10
-  21:Hardware/Src/bsp_mpu6050.c ****     if (!i2c_buffer_write_timeout(write_buffer, 1, MPU6050_ADDR, PWR_MGMT_1_REG))
-  67              		.loc 1 21 5 view .LVU11
-  68              		.loc 1 21 10 is_stmt 0 view .LVU12
-  69 0024 6B23     		movs	r3, #107
-  70 0026 D022     		movs	r2, #208
-  71 0028 0121     		movs	r1, #1
-  72 002a 03A8     		add	r0, sp, #12
-  73 002c FFF7FEFF 		bl	i2c_buffer_write_timeout
-  74              	.LVL4:
-  75              		.loc 1 21 8 view .LVU13
-  76 0030 10B9     		cbnz	r0, .L1
-  22:Hardware/Src/bsp_mpu6050.c ****         printf("write success!\r\n");
-  77              		.loc 1 22 9 is_stmt 1 view .LVU14
-  78 0032 0448     		ldr	r0, .L4+4
-  79 0034 FFF7FEFF 		bl	puts
-  80              	.LVL5:
-  81              	.L1:
-  23:Hardware/Src/bsp_mpu6050.c **** }...
-  82              		.loc 1 23 1 is_stmt 0 view .LVU15
-  83 0038 07B0     		add	sp, sp, #28
-  84              	.LCFI1:
-ARM GAS  /tmp/ccdAfRG9.s 			page 3
+  74 0022 6B23     		movs	r3, #107
+  75 0024 0121     		movs	r1, #1
+  76 0026 01A8     		add	r0, sp, #4
+  77 0028 FFF7FEFF 		bl	i2c_buffer_write_timeout
+  78              	.LVL3:
+  79              		.loc 1 21 8 view .LVU13
+  80 002c 10B9     		cbnz	r0, .L3
+  22:Hardware/Src/bsp_mpu6050.c ****         printf("write PWR_MGMT_1_REG success!\r\n");
+  81              		.loc 1 22 9 is_stmt 1 view .LVU14
+  82 002e 1448     		ldr	r0, .L7+4
+  83 0030 FFF7FEFF 		bl	puts
+  84              	.LVL4:
+  85              	.L3:
+  23:Hardware/Src/bsp_mpu6050.c **** 
+  24:Hardware/Src/bsp_mpu6050.c ****     if (!i2c_buffer_write_timeout(&cmd[1], 1, MPU6050_ADDR, SMPLRT_DIV_REG))
+  86              		.loc 1 24 5 view .LVU15
+  87              		.loc 1 24 10 is_stmt 0 view .LVU16
+  88 0034 1923     		movs	r3, #25
+  89 0036 D022     		movs	r2, #208
+  90 0038 0121     		movs	r1, #1
+  91 003a 0DF10500 		add	r0, sp, #5
+  92 003e FFF7FEFF 		bl	i2c_buffer_write_timeout
+  93              	.LVL5:
+  94              		.loc 1 24 8 view .LVU17
+  95 0042 10B9     		cbnz	r0, .L4
+  25:Hardware/Src/bsp_mpu6050.c ****         printf("write SMPLRT_DIV_REG success!\r\n");
+  96              		.loc 1 25 9 is_stmt 1 view .LVU18
+  97 0044 0F48     		ldr	r0, .L7+8
+  98 0046 FFF7FEFF 		bl	puts
+  99              	.LVL6:
+ 100              	.L4:
+  26:Hardware/Src/bsp_mpu6050.c **** 
+  27:Hardware/Src/bsp_mpu6050.c ****     if (!i2c_buffer_write_timeout(&cmd[2], 1, MPU6050_ADDR, ACCEL_CONFIG_REG))
+ 101              		.loc 1 27 5 view .LVU19
+ 102              		.loc 1 27 10 is_stmt 0 view .LVU20
+ 103 004a 1C23     		movs	r3, #28
+ 104 004c D022     		movs	r2, #208
+ 105 004e 0121     		movs	r1, #1
+ 106 0050 0DF10600 		add	r0, sp, #6
+ 107 0054 FFF7FEFF 		bl	i2c_buffer_write_timeout
+ 108              	.LVL7:
+ 109              		.loc 1 27 8 view .LVU21
+ 110 0058 10B9     		cbnz	r0, .L5
+  28:Hardware/Src/bsp_mpu6050.c ****         printf("write ACCEL_CONFIG_REG success!\r\n");
+ 111              		.loc 1 28 9 is_stmt 1 view .LVU22
+ 112 005a 0B48     		ldr	r0, .L7+12
+ 113 005c FFF7FEFF 		bl	puts
+ 114              	.LVL8:
+ 115              	.L5:
+  29:Hardware/Src/bsp_mpu6050.c **** 
+  30:Hardware/Src/bsp_mpu6050.c ****     if (!i2c_buffer_write_timeout(&cmd[3], 1, MPU6050_ADDR, GYRO_CONFIG_REG))
+ 116              		.loc 1 30 5 view .LVU23
+ 117              		.loc 1 30 10 is_stmt 0 view .LVU24
+ 118 0060 1B23     		movs	r3, #27
+ 119 0062 D022     		movs	r2, #208
+ 120 0064 0121     		movs	r1, #1
+ 121 0066 0DF10700 		add	r0, sp, #7
+ARM GAS  /tmp/cckGbony.s 			page 4
 
 
-  85              		.cfi_def_cfa_offset 4
-  86              		@ sp needed
-  87 003a 5DF804FB 		ldr	pc, [sp], #4
-  88              	.L5:
-  89 003e 00BF     		.align	2
-  90              	.L4:
-  91 0040 00000000 		.word	.LC0
-  92 0044 28000000 		.word	.LC1
-  93              		.cfi_endproc
-  94              	.LFE119:
-  96              		.text
-  97              	.Letext0:
-  98              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
-  99              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 100              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
- 101              		.file 5 "Core/Inc/bsp_i2c.h"
- 102              		.file 6 "/usr/arm-none-eabi/include/stdio.h"
- 103              		.file 7 "Core/Inc/systick.h"
- 104              		.file 8 "<built-in>"
-ARM GAS  /tmp/ccdAfRG9.s 			page 4
+ 122 006a FFF7FEFF 		bl	i2c_buffer_write_timeout
+ 123              	.LVL9:
+ 124              		.loc 1 30 8 view .LVU25
+ 125 006e 10B9     		cbnz	r0, .L1
+  31:Hardware/Src/bsp_mpu6050.c ****         printf("write GYRO_CONFIG_REG success!\r\n");
+ 126              		.loc 1 31 9 is_stmt 1 view .LVU26
+ 127 0070 0648     		ldr	r0, .L7+16
+ 128 0072 FFF7FEFF 		bl	puts
+ 129              	.LVL10:
+ 130              	.L1:
+  32:Hardware/Src/bsp_mpu6050.c **** }
+ 131              		.loc 1 32 1 is_stmt 0 view .LVU27
+ 132 0076 03B0     		add	sp, sp, #12
+ 133              	.LCFI1:
+ 134              		.cfi_def_cfa_offset 4
+ 135              		@ sp needed
+ 136 0078 5DF804FB 		ldr	pc, [sp], #4
+ 137              	.L8:
+ 138              		.align	2
+ 139              	.L7:
+ 140 007c 00000000 		.word	.LC0
+ 141 0080 13000000 		.word	.LC1
+ 142 0084 32000000 		.word	.LC2
+ 143 0088 51000000 		.word	.LC3
+ 144 008c 72000000 		.word	.LC4
+ 145              		.cfi_endproc
+ 146              	.LFE119:
+ 148              		.section	.rodata.mpu6050_read_accel.str1.1,"aMS",%progbits,1
+ 149              	.LC5:
+ 150 0000 61636365 		.ascii	"accel_data[%d]: %lf\015\012\000"
+ 150      6C5F6461 
+ 150      74615B25 
+ 150      645D3A20 
+ 150      256C660D 
+ 151              		.global	__aeabi_i2d
+ 152              		.global	__aeabi_dmul
+ 153              		.global	__aeabi_ddiv
+ 154              		.section	.text.mpu6050_read_accel,"ax",%progbits
+ 155              		.align	1
+ 156              		.global	mpu6050_read_accel
+ 157              		.syntax unified
+ 158              		.thumb
+ 159              		.thumb_func
+ 161              	mpu6050_read_accel:
+ 162              	.LVL11:
+ 163              	.LFB120:
+  33:Hardware/Src/bsp_mpu6050.c **** 
+  34:Hardware/Src/bsp_mpu6050.c **** /**
+  35:Hardware/Src/bsp_mpu6050.c ****  * @brief 从MPU6050中读取加速度数据
+  36:Hardware/Src/bsp_mpu6050.c ****  * 
+  37:Hardware/Src/bsp_mpu6050.c ****  * @param data 存放度渠道的数据
+  38:Hardware/Src/bsp_mpu6050.c ****  */
+  39:Hardware/Src/bsp_mpu6050.c **** void mpu6050_read_accel(MPU6050_t *data)
+  40:Hardware/Src/bsp_mpu6050.c **** {
+ 164              		.loc 1 40 1 is_stmt 1 view -0
+ 165              		.cfi_startproc
+ 166              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  /tmp/cckGbony.s 			page 5
+
+
+ 167              		@ frame_needed = 0, uses_anonymous_args = 0
+  41:Hardware/Src/bsp_mpu6050.c ****     uint8_t accel_data[6] = {0};
+ 168              		.loc 1 41 5 view .LVU29
+  40:Hardware/Src/bsp_mpu6050.c ****     uint8_t accel_data[6] = {0};
+ 169              		.loc 1 40 1 is_stmt 0 view .LVU30
+ 170 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+ 171              	.LCFI2:
+ 172              		.cfi_def_cfa_offset 32
+ 173              		.cfi_offset 4, -20
+ 174              		.cfi_offset 5, -16
+ 175              		.cfi_offset 6, -12
+ 176              		.cfi_offset 7, -8
+ 177              		.cfi_offset 14, -4
+  42:Hardware/Src/bsp_mpu6050.c **** 
+  43:Hardware/Src/bsp_mpu6050.c ****     i2c_buffer_read_timeout(accel_data, 6, MPU6050_ADDR, ACCEL_XOUT_H_REG);
+ 178              		.loc 1 43 5 view .LVU31
+ 179 0002 3B23     		movs	r3, #59
+  41:Hardware/Src/bsp_mpu6050.c **** 
+ 180              		.loc 1 41 13 view .LVU32
+ 181 0004 0025     		movs	r5, #0
+  40:Hardware/Src/bsp_mpu6050.c ****     uint8_t accel_data[6] = {0};
+ 182              		.loc 1 40 1 view .LVU33
+ 183 0006 0446     		mov	r4, r0
+ 184              		.loc 1 43 5 view .LVU34
+ 185 0008 D022     		movs	r2, #208
+ 186 000a 0621     		movs	r1, #6
+ 187 000c 6846     		mov	r0, sp
+ 188              	.LVL12:
+  41:Hardware/Src/bsp_mpu6050.c **** 
+ 189              		.loc 1 41 13 view .LVU35
+ 190 000e 0095     		str	r5, [sp]
+ 191 0010 ADF80450 		strh	r5, [sp, #4]	@ movhi
+ 192              		.loc 1 43 5 is_stmt 1 view .LVU36
+ 193 0014 FFF7FEFF 		bl	i2c_buffer_read_timeout
+ 194              	.LVL13:
+  44:Hardware/Src/bsp_mpu6050.c **** 
+  45:Hardware/Src/bsp_mpu6050.c ****     for (uint8_t i = 0; i < 6; i++)
+ 195              		.loc 1 45 5 view .LVU37
+ 196              	.LBB2:
+ 197              		.loc 1 45 10 view .LVU38
+ 198              		.loc 1 45 27 view .LVU39
+  46:Hardware/Src/bsp_mpu6050.c ****         printf("accel_data[%d]: %lf\r\n", i, accel_data[i]);
+ 199              		.loc 1 46 9 is_stmt 0 view .LVU40
+ 200 0018 194F     		ldr	r7, .L12+8
+ 201 001a 6E46     		mov	r6, sp
+ 202              	.LVL14:
+ 203              	.L10:
+ 204              		.loc 1 46 9 is_stmt 1 discriminator 3 view .LVU41
+ 205 001c 2946     		mov	r1, r5
+ 206 001e 16F8012B 		ldrb	r2, [r6], #1	@ zero_extendqisi2
+ 207 0022 3846     		mov	r0, r7
+  45:Hardware/Src/bsp_mpu6050.c ****         printf("accel_data[%d]: %lf\r\n", i, accel_data[i]);
+ 208              		.loc 1 45 27 is_stmt 0 discriminator 3 view .LVU42
+ 209 0024 0135     		adds	r5, r5, #1
+ 210              	.LVL15:
+ 211              		.loc 1 46 9 discriminator 3 view .LVU43
+ 212 0026 FFF7FEFF 		bl	printf
+ARM GAS  /tmp/cckGbony.s 			page 6
+
+
+ 213              	.LVL16:
+  45:Hardware/Src/bsp_mpu6050.c ****         printf("accel_data[%d]: %lf\r\n", i, accel_data[i]);
+ 214              		.loc 1 45 33 is_stmt 1 discriminator 3 view .LVU44
+  45:Hardware/Src/bsp_mpu6050.c ****         printf("accel_data[%d]: %lf\r\n", i, accel_data[i]);
+ 215              		.loc 1 45 27 discriminator 3 view .LVU45
+ 216 002a 062D     		cmp	r5, #6
+ 217 002c F6D1     		bne	.L10
+ 218              	.LBE2:
+  47:Hardware/Src/bsp_mpu6050.c **** 
+  48:Hardware/Src/bsp_mpu6050.c ****     data->Accel_X_RAW = (uint16_t)(accel_data[0] << 8 | accel_data[1]);
+ 219              		.loc 1 48 5 view .LVU46
+  49:Hardware/Src/bsp_mpu6050.c ****     data->Accel_X_RAW = (uint16_t)(accel_data[2] << 8 | accel_data[3]);
+ 220              		.loc 1 49 5 view .LVU47
+  50:Hardware/Src/bsp_mpu6050.c ****     data->Accel_X_RAW = (uint16_t)(accel_data[4] << 8 | accel_data[5]);
+ 221              		.loc 1 50 5 view .LVU48
+ 222 002e BDF80400 		ldrh	r0, [sp, #4]
+ 223 0032 40BA     		rev16	r0, r0
+ 224              		.loc 1 50 23 is_stmt 0 view .LVU49
+ 225 0034 2080     		strh	r0, [r4]	@ movhi
+  51:Hardware/Src/bsp_mpu6050.c **** 
+  52:Hardware/Src/bsp_mpu6050.c ****     data->Ax = data->Accel_X_RAW / 16384.0;
+ 226              		.loc 1 52 5 is_stmt 1 view .LVU50
+ 227              		.loc 1 52 34 is_stmt 0 view .LVU51
+ 228 0036 80B2     		uxth	r0, r0
+ 229 0038 FFF7FEFF 		bl	__aeabi_i2d
+ 230              	.LVL17:
+ 231 003c 114B     		ldr	r3, .L12+12
+ 232 003e 0022     		movs	r2, #0
+ 233 0040 FFF7FEFF 		bl	__aeabi_dmul
+ 234              	.LVL18:
+ 235              		.loc 1 52 14 view .LVU52
+ 236 0044 C4E90201 		strd	r0, [r4, #8]
+  53:Hardware/Src/bsp_mpu6050.c ****     data->Ay = data->Accel_Y_RAW / 16384.0;
+ 237              		.loc 1 53 5 is_stmt 1 view .LVU53
+ 238              		.loc 1 53 34 is_stmt 0 view .LVU54
+ 239 0048 6088     		ldrh	r0, [r4, #2]
+ 240 004a FFF7FEFF 		bl	__aeabi_i2d
+ 241              	.LVL19:
+ 242 004e 0D4B     		ldr	r3, .L12+12
+ 243 0050 0022     		movs	r2, #0
+ 244 0052 FFF7FEFF 		bl	__aeabi_dmul
+ 245              	.LVL20:
+ 246              		.loc 1 53 14 view .LVU55
+ 247 0056 C4E90401 		strd	r0, [r4, #16]
+  54:Hardware/Src/bsp_mpu6050.c ****     data->Az = data->Accel_Z_RAW / Accel_Z_corrector;
+ 248              		.loc 1 54 5 is_stmt 1 view .LVU56
+ 249              		.loc 1 54 34 is_stmt 0 view .LVU57
+ 250 005a A088     		ldrh	r0, [r4, #4]
+ 251 005c FFF7FEFF 		bl	__aeabi_i2d
+ 252              	.LVL21:
+ 253 0060 05A3     		adr	r3, .L12
+ 254 0062 D3E90023 		ldrd	r2, [r3]
+ 255 0066 FFF7FEFF 		bl	__aeabi_ddiv
+ 256              	.LVL22:
+ 257              		.loc 1 54 14 view .LVU58
+ 258 006a C4E90601 		strd	r0, [r4, #24]
+  55:Hardware/Src/bsp_mpu6050.c **** }...
+ARM GAS  /tmp/cckGbony.s 			page 7
+
+
+ 259              		.loc 1 55 1 view .LVU59
+ 260 006e 03B0     		add	sp, sp, #12
+ 261              	.LCFI3:
+ 262              		.cfi_def_cfa_offset 20
+ 263              		@ sp needed
+ 264 0070 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 265              	.LVL23:
+ 266              	.L13:
+ 267              		.loc 1 55 1 view .LVU60
+ 268 0072 00BFAFF3 		.align	3
+ 268      0080
+ 269              	.L12:
+ 270 0078 00000000 		.word	0
+ 271 007c 0029CC40 		.word	1087121664
+ 272 0080 00000000 		.word	.LC5
+ 273 0084 0000103F 		.word	1058013184
+ 274              		.cfi_endproc
+ 275              	.LFE120:
+ 277              		.global	Accel_Z_corrector
+ 278              		.section	.rodata.Accel_Z_corrector,"a"
+ 279              		.align	3
+ 282              	Accel_Z_corrector:
+ 283 0000 00000000 		.word	0
+ 284 0004 0029CC40 		.word	1087121664
+ 285              		.text
+ 286              	.Letext0:
+ 287              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 288              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 289              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
+ 290              		.file 5 "Hardware/Inc/bsp_mpu6050.h"
+ 291              		.file 6 "/usr/arm-none-eabi/include/stdio.h"
+ 292              		.file 7 "Core/Inc/bsp_i2c.h"
+ 293              		.file 8 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_dbg.h"
+ 294              		.file 9 "<built-in>"
+ARM GAS  /tmp/cckGbony.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 bsp_mpu6050.c
-     /tmp/ccdAfRG9.s:24     .text.mpu6050_init:0000000000000000 $t
-     /tmp/ccdAfRG9.s:30     .text.mpu6050_init:0000000000000000 mpu6050_init
-     /tmp/ccdAfRG9.s:91     .text.mpu6050_init:0000000000000040 $d
+     /tmp/cckGbony.s:30     .text.mpu6050_init:0000000000000000 $t
+     /tmp/cckGbony.s:36     .text.mpu6050_init:0000000000000000 mpu6050_init
+     /tmp/cckGbony.s:140    .text.mpu6050_init:000000000000007c $d
+     /tmp/cckGbony.s:155    .text.mpu6050_read_accel:0000000000000000 $t
+     /tmp/cckGbony.s:161    .text.mpu6050_read_accel:0000000000000000 mpu6050_read_accel
+     /tmp/cckGbony.s:270    .text.mpu6050_read_accel:0000000000000078 $d
+     /tmp/cckGbony.s:282    .rodata.Accel_Z_corrector:0000000000000000 Accel_Z_corrector
+     /tmp/cckGbony.s:279    .rodata.Accel_Z_corrector:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 i2c_config
 i2c_buffer_read_timeout
-printf
-delay_1ms
-i2c_buffer_write_timeout
 puts
+i2c_buffer_write_timeout
+__aeabi_i2d
+__aeabi_dmul
+__aeabi_ddiv
+printf
