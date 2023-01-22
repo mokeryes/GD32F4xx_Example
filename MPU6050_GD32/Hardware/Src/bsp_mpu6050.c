@@ -111,7 +111,7 @@ static void mpu6050_buffer_write_timeout(uint8_t *pBuffer, uint8_t size, uint8_t
             }
             size--; nsize++;
 
-            if (size == 1) {
+            if (size == 0) {
                 i2c_stop_on_bus(I2CX);
                 state = I2C_STOP;
                 break;
@@ -237,10 +237,6 @@ static void mpu6050_buffer_read_timeout(uint8_t *pBuffer, uint8_t size, uint8_t 
 
         case I2C_RECEIVE_DATA:
             // 读取到最后一个字节时，发送NACK并且停止总线
-            if (size == 1) {
-                i2c_ack_config(I2CX, I2C_ACK_DISABLE);
-                i2c_stop_on_bus(I2CX);
-            }
             while ((!i2c_flag_get(I2CX, I2C_FLAG_RBNE)) && (timeout < I2C_TIME_OUT))
                 timeout++;
             if (timeout > I2C_TIME_OUT) {
@@ -258,18 +254,24 @@ static void mpu6050_buffer_read_timeout(uint8_t *pBuffer, uint8_t size, uint8_t 
             break;
 
         case I2C_STOP:
+            i2c_stop_on_bus(I2CX);
             while (I2C_CTL0(I2CX) & I2C_CTL0_STOP);
             break;
         }
     }
 }
 
+
+/**
+ * @brief 初始化MPU6050，并检查MPU6050工作是否正常
+ * 
+ */
 void MPU6050_init(void)
 {
     I2C_init();
 
-    uint8_t write_buffer[1] = {PWR_MGMT_1_REG};
-    // mpu6050_buffer_write_timeout(write_buffer, 1, MPU6050_ADDR, PWR_MGMT_1_REG);
+    uint8_t write_buffer[1] = {0};
+    mpu6050_buffer_write_timeout(write_buffer, 1, MPU6050_ADDR, PWR_MGMT_1_REG);
 
     // 检查MPU6050是否正常
     uint8_t pBuffer[1];
