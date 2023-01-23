@@ -259,13 +259,12 @@ FlagStatus i2c_buffer_write_timeout(uint8_t *pBuffer, uint8_t size, uint8_t slav
                 i2c_data_transmit(I2CX, internal_address);
             } else {
                 i2c_data_transmit(I2CX, *pBuffer);
-                // pBuffer++;
+                pBuffer++;
                 size--;
             }
             while ((!i2c_flag_get(I2CX, I2C_FLAG_BTC)) && (timeout < I2C_TIME_OUT)) {
                 timeout++;
             }
-
             if (timeout == I2C_TIME_OUT) {
                 fail_state = state;
                 state = I2C_FAIL;

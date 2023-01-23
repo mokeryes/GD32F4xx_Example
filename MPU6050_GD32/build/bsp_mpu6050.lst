@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cckGbony.s 			page 1
+ARM GAS  /tmp/ccCLMoIW.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cckGbony.s 			page 1
   36              	mpu6050_init:
   37              	.LFB119:
    1:Hardware/Src/bsp_mpu6050.c **** #include <stdio.h>
-ARM GAS  /tmp/cckGbony.s 			page 2
+ARM GAS  /tmp/ccCLMoIW.s 			page 2
 
 
    2:Hardware/Src/bsp_mpu6050.c **** #include "bsp_mpu6050.h"
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cckGbony.s 			page 1
   71              		.loc 1 21 5 is_stmt 1 view .LVU11
   72              		.loc 1 21 10 is_stmt 0 view .LVU12
   73 0020 D022     		movs	r2, #208
-ARM GAS  /tmp/cckGbony.s 			page 3
+ARM GAS  /tmp/ccCLMoIW.s 			page 3
 
 
   74 0022 6B23     		movs	r3, #107
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cckGbony.s 			page 1
  119 0062 D022     		movs	r2, #208
  120 0064 0121     		movs	r1, #1
  121 0066 0DF10700 		add	r0, sp, #7
-ARM GAS  /tmp/cckGbony.s 			page 4
+ARM GAS  /tmp/ccCLMoIW.s 			page 4
 
 
  122 006a FFF7FEFF 		bl	i2c_buffer_write_timeout
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cckGbony.s 			page 1
  164              		.loc 1 40 1 is_stmt 1 view -0
  165              		.cfi_startproc
  166              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  /tmp/cckGbony.s 			page 5
+ARM GAS  /tmp/ccCLMoIW.s 			page 5
 
 
  167              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cckGbony.s 			page 1
  210              	.LVL15:
  211              		.loc 1 46 9 discriminator 3 view .LVU43
  212 0026 FFF7FEFF 		bl	printf
-ARM GAS  /tmp/cckGbony.s 			page 6
+ARM GAS  /tmp/ccCLMoIW.s 			page 6
 
 
  213              	.LVL16:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cckGbony.s 			page 1
  257              		.loc 1 54 14 view .LVU58
  258 006a C4E90601 		strd	r0, [r4, #24]
   55:Hardware/Src/bsp_mpu6050.c **** }...
-ARM GAS  /tmp/cckGbony.s 			page 7
+ARM GAS  /tmp/ccCLMoIW.s 			page 7
 
 
  259              		.loc 1 55 1 view .LVU59
@@ -395,19 +395,19 @@ ARM GAS  /tmp/cckGbony.s 			page 1
  292              		.file 7 "Core/Inc/bsp_i2c.h"
  293              		.file 8 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_dbg.h"
  294              		.file 9 "<built-in>"
-ARM GAS  /tmp/cckGbony.s 			page 8
+ARM GAS  /tmp/ccCLMoIW.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 bsp_mpu6050.c
-     /tmp/cckGbony.s:30     .text.mpu6050_init:0000000000000000 $t
-     /tmp/cckGbony.s:36     .text.mpu6050_init:0000000000000000 mpu6050_init
-     /tmp/cckGbony.s:140    .text.mpu6050_init:000000000000007c $d
-     /tmp/cckGbony.s:155    .text.mpu6050_read_accel:0000000000000000 $t
-     /tmp/cckGbony.s:161    .text.mpu6050_read_accel:0000000000000000 mpu6050_read_accel
-     /tmp/cckGbony.s:270    .text.mpu6050_read_accel:0000000000000078 $d
-     /tmp/cckGbony.s:282    .rodata.Accel_Z_corrector:0000000000000000 Accel_Z_corrector
-     /tmp/cckGbony.s:279    .rodata.Accel_Z_corrector:0000000000000000 $d
+     /tmp/ccCLMoIW.s:30     .text.mpu6050_init:0000000000000000 $t
+     /tmp/ccCLMoIW.s:36     .text.mpu6050_init:0000000000000000 mpu6050_init
+     /tmp/ccCLMoIW.s:140    .text.mpu6050_init:000000000000007c $d
+     /tmp/ccCLMoIW.s:155    .text.mpu6050_read_accel:0000000000000000 $t
+     /tmp/ccCLMoIW.s:161    .text.mpu6050_read_accel:0000000000000000 mpu6050_read_accel
+     /tmp/ccCLMoIW.s:270    .text.mpu6050_read_accel:0000000000000078 $d
+     /tmp/ccCLMoIW.s:282    .rodata.Accel_Z_corrector:0000000000000000 Accel_Z_corrector
+     /tmp/ccCLMoIW.s:279    .rodata.Accel_Z_corrector:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 i2c_config
