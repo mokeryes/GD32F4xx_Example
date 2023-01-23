@@ -105,7 +105,7 @@
  *         芯片内部通过计算稳定状态时的加速度值，在300mg~950mg之间则说明加速度传感器工作正常。
  *         因此在芯片自检过程中应保持姿态稳定。
  *         Self-test response = Sensor output with self-test enabled - Sensor output without self-test enabled
- *  加速度传感器采样范围配置：
+ * 加速度传感器采样范围配置：
  *     AFS_SEL => ACCEL_CONFIG_REG[Bit4:Bit3]
  *      -----------------------------
  *     | AFS_SEL  | Full Scale Range |
@@ -115,7 +115,7 @@
  *     |    2     |        ± 8g      |
  *     |    3     |       ± 16g      |
  *      -----------------------------
- *  高通滤波器配置：
+ * 高通滤波器配置：
  *     ACCEL_HPF => ACCEL_CONFIG_REG[Bit2:Bit0]
  *      ---------------------------------------------
  *     | ACCEL_HPF | Filter Mode | Cut-off Frequency |
@@ -133,10 +133,17 @@
 
 /**
  * 自由落体运动检测临界值设置
+ * 同时对加速度三个轴的加速度区绝对值，若大于某值，则判定为自由落体运动
  * FF_THR => FF_THR_REG[Bit7:Bit0]
  */
 #define FF_THR_REG              0x1D
 
+/**
+ * 自由落体运动检测在1ms内的加速度变化
+ * 设置三轴加速度绝对值在1ms内的变化临界值，，若超过该临界值，则判定为自由落体运动 
+ * FF_DUR => FF_DUR_REG[Bit7:Bit0]
+ */
+#define FF_DUR_REG              0x1E
 
 /* MPU6050 数据结构 */
 typedef struct {
