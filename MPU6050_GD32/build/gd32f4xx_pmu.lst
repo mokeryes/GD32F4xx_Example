@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccyX2SYB.s 			page 1
+ARM GAS  /tmp/ccApHiU0.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-ARM GAS  /tmp/ccyX2SYB.s 			page 2
+ARM GAS  /tmp/ccApHiU0.s 			page 2
 
 
   33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
   60              		.thumb
   61              		.thumb_func
   63              	pmu_lvd_select:
-ARM GAS  /tmp/ccyX2SYB.s 			page 3
+ARM GAS  /tmp/ccApHiU0.s 			page 3
 
 
   64              	.LVL2:
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
   92              		.loc 1 78 1 view .LVU16
   93 0020 7047     		bx	lr
   94              	.L4:
-ARM GAS  /tmp/ccyX2SYB.s 			page 4
+ARM GAS  /tmp/ccApHiU0.s 			page 4
 
 
   95 0022 00BF     		.align	2
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
   92:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c **** /*!
   93:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****     \brief      select LDO output voltage
   94:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****                 this bit set by software when the main PLL closed, before closing PLL, change the s
-ARM GAS  /tmp/ccyX2SYB.s 			page 5
+ARM GAS  /tmp/ccApHiU0.s 			page 5
 
 
   95:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****     \param[in]  ldo_output:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  174              		.loc 1 116 1 is_stmt 1 view -0
  175              		.cfi_startproc
  176              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccyX2SYB.s 			page 6
+ARM GAS  /tmp/ccApHiU0.s 			page 6
 
 
  177              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  220              		.cfi_endproc
  221              	.LFE121:
  223              		.section	.text.pmu_lowdriver_mode_enable,"ax",%progbits
-ARM GAS  /tmp/ccyX2SYB.s 			page 7
+ARM GAS  /tmp/ccApHiU0.s 			page 7
 
 
  224              		.align	1
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  250              	.LFE123:
  252              		.section	.text.pmu_lowdriver_mode_disable,"ax",%progbits
  253              		.align	1
-ARM GAS  /tmp/ccyX2SYB.s 			page 8
+ARM GAS  /tmp/ccApHiU0.s 			page 8
 
 
  254              		.global	pmu_lowdriver_mode_disable
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  179:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c **** void pmu_lowpower_driver_config(uint32_t mode)
  180:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c **** {
  291              		.loc 1 180 1 is_stmt 1 view -0
-ARM GAS  /tmp/ccyX2SYB.s 			page 9
+ARM GAS  /tmp/ccApHiU0.s 			page 9
 
 
  292              		.cfi_startproc
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  333 0002 1A68     		ldr	r2, [r3]
  334              		.loc 1 195 13 is_stmt 0 view .LVU51
  335 0004 22F40062 		bic	r2, r2, #2048
-ARM GAS  /tmp/ccyX2SYB.s 			page 10
+ARM GAS  /tmp/ccApHiU0.s 			page 10
 
 
  336 0008 1A60     		str	r2, [r3]
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  374              		.loc 1 213 7 is_stmt 0 view .LVU60
  375 000a 08B9     		cbnz	r0, .L30
  214:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****         __WFI();
-ARM GAS  /tmp/ccyX2SYB.s 			page 11
+ARM GAS  /tmp/ccApHiU0.s 			page 11
 
 
  376              		.loc 1 214 9 is_stmt 1 view .LVU61
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
   51:Drivers/CMSIS/core_cmInstr.h ****     Wait For Interrupt is a hint instruction that suspends execution
   52:Drivers/CMSIS/core_cmInstr.h ****     until one of a number of events occurs.
   53:Drivers/CMSIS/core_cmInstr.h ****  */
-ARM GAS  /tmp/ccyX2SYB.s 			page 12
+ARM GAS  /tmp/ccApHiU0.s 			page 12
 
 
   54:Drivers/CMSIS/core_cmInstr.h **** #define __WFI                             __wfi
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  108:Drivers/CMSIS/core_cmInstr.h **** 
  109:Drivers/CMSIS/core_cmInstr.h ****     This function reverses the byte order in two unsigned short values.
  110:Drivers/CMSIS/core_cmInstr.h **** 
-ARM GAS  /tmp/ccyX2SYB.s 			page 13
+ARM GAS  /tmp/ccApHiU0.s 			page 13
 
 
  111:Drivers/CMSIS/core_cmInstr.h ****     \param [in]    value  Value to reverse
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  165:Drivers/CMSIS/core_cmInstr.h **** #define __LDREXB(ptr)                     ((uint8_t ) __ldrex(ptr))
  166:Drivers/CMSIS/core_cmInstr.h **** 
  167:Drivers/CMSIS/core_cmInstr.h **** 
-ARM GAS  /tmp/ccyX2SYB.s 			page 14
+ARM GAS  /tmp/ccApHiU0.s 			page 14
 
 
  168:Drivers/CMSIS/core_cmInstr.h **** /** \brief  LDR Exclusive (16 bit)
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  222:Drivers/CMSIS/core_cmInstr.h **** 
  223:Drivers/CMSIS/core_cmInstr.h **** 
  224:Drivers/CMSIS/core_cmInstr.h **** /** \brief  Remove the exclusive lock
-ARM GAS  /tmp/ccyX2SYB.s 			page 15
+ARM GAS  /tmp/ccApHiU0.s 			page 15
 
 
  225:Drivers/CMSIS/core_cmInstr.h **** 
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  279:Drivers/CMSIS/core_cmInstr.h **** #elif defined ( __GNUC__ ) /*------------------ GNU Compiler ---------------------*/
  280:Drivers/CMSIS/core_cmInstr.h **** /* GNU gcc specific functions */
  281:Drivers/CMSIS/core_cmInstr.h **** 
-ARM GAS  /tmp/ccyX2SYB.s 			page 16
+ARM GAS  /tmp/ccApHiU0.s 			page 16
 
 
  282:Drivers/CMSIS/core_cmInstr.h **** /** \brief  No Operation
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  403              	@ 0 "" 2
  404              		.thumb
  405              		.syntax unified
-ARM GAS  /tmp/ccyX2SYB.s 			page 17
+ARM GAS  /tmp/ccApHiU0.s 			page 17
 
 
  406              	.LBE19:
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  438              		.cfi_offset 4, -12
  439              		.cfi_offset 5, -8
  440              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccyX2SYB.s 			page 18
+ARM GAS  /tmp/ccApHiU0.s 			page 18
 
 
  441              		.loc 1 239 5 view .LVU73
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  479 0032 0B61     		str	r3, [r1, #16]
  254:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c **** 
  255:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****     reg_snap[0] = REG32(0xE000E010U);
-ARM GAS  /tmp/ccyX2SYB.s 			page 19
+ARM GAS  /tmp/ccApHiU0.s 			page 19
 
 
  480              		.loc 1 255 5 is_stmt 1 view .LVU90
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  523              		.loc 1 266 5 is_stmt 1 view .LVU112
  524              		.loc 1 266 7 is_stmt 0 view .LVU113
  525 006c B2B9     		cbnz	r2, .L37
-ARM GAS  /tmp/ccyX2SYB.s 			page 20
+ARM GAS  /tmp/ccApHiU0.s 			page 20
 
 
  267:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****         __WFI();
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  564              		.loc 1 280 5 is_stmt 1 view .LVU130
  565              		.loc 1 280 8 is_stmt 0 view .LVU131
  566 008a 084A     		ldr	r2, .L40+8
-ARM GAS  /tmp/ccyX2SYB.s 			page 21
+ARM GAS  /tmp/ccApHiU0.s 			page 21
 
 
  567 008c 1369     		ldr	r3, [r2, #16]
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  604              	@ 0 "" 2
  605              		.thumb
  606              		.syntax unified
-ARM GAS  /tmp/ccyX2SYB.s 			page 22
+ARM GAS  /tmp/ccApHiU0.s 			page 22
 
 
  607              	.LBE25:
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  650              		@ frame_needed = 0, uses_anonymous_args = 0
  651              		@ link register save eliminated.
  291:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****     /* set stbmod bit */
-ARM GAS  /tmp/ccyX2SYB.s 			page 23
+ARM GAS  /tmp/ccApHiU0.s 			page 23
 
 
  292:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****     PMU_CTL |= PMU_CTL_STBMOD;
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  691              		.loc 1 306 5 is_stmt 1 view .LVU164
  692              	.LBB28:
  693              	.LBI28:
-ARM GAS  /tmp/ccyX2SYB.s 			page 24
+ARM GAS  /tmp/ccApHiU0.s 			page 24
 
 
  297:Drivers/CMSIS/core_cmInstr.h **** {
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  736              		.loc 1 318 1 view .LVU171
  737 000a 7047     		bx	lr
  738              	.L47:
-ARM GAS  /tmp/ccyX2SYB.s 			page 25
+ARM GAS  /tmp/ccApHiU0.s 			page 25
 
 
  739              		.align	2
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  332:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****     \brief      backup SRAM LDO on
  333:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****     \param[in]  bkp_ldo:
  334:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****       \arg        PMU_BLDOON_OFF: backup SRAM LDO closed
-ARM GAS  /tmp/ccyX2SYB.s 			page 26
+ARM GAS  /tmp/ccApHiU0.s 			page 26
 
 
  335:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****       \arg        PMU_BLDOON_ON: open the backup SRAM LDO
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  822              		@ link register save eliminated.
  353:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****     PMU_CTL |= PMU_CTL_BKPWEN;
  823              		.loc 1 353 5 view .LVU183
-ARM GAS  /tmp/ccyX2SYB.s 			page 27
+ARM GAS  /tmp/ccApHiU0.s 			page 27
 
 
  824 0000 024A     		ldr	r2, .L55
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  869              		.global	pmu_flag_get
  870              		.syntax unified
  871              		.thumb
-ARM GAS  /tmp/ccyX2SYB.s 			page 28
+ARM GAS  /tmp/ccApHiU0.s 			page 28
 
 
  872              		.thumb_func
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  905              		.syntax unified
  906              		.thumb
  907              		.thumb_func
-ARM GAS  /tmp/ccyX2SYB.s 			page 29
+ARM GAS  /tmp/ccApHiU0.s 			page 29
 
 
  909              	pmu_highdriver_switch_select:
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  951 0024 00700040 		.word	1073770496
  952              		.cfi_endproc
  953              	.LFE122:
-ARM GAS  /tmp/ccyX2SYB.s 			page 30
+ARM GAS  /tmp/ccApHiU0.s 			page 30
 
 
  955              		.section	.text.pmu_flag_clear,"ax",%progbits
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  986 0012 7047     		bx	lr
  987              	.L70:
  407:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_pmu.c ****         break;
-ARM GAS  /tmp/ccyX2SYB.s 			page 31
+ARM GAS  /tmp/ccApHiU0.s 			page 31
 
 
  988              		.loc 1 407 9 is_stmt 1 view .LVU215
@@ -1828,78 +1828,78 @@ ARM GAS  /tmp/ccyX2SYB.s 			page 1
  1011              		.file 5 "Drivers/CMSIS/core_cm4.h"
  1012              		.file 6 "Drivers/CMSIS/Include/gd32f4xx.h"
  1013              		.file 7 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
-ARM GAS  /tmp/ccyX2SYB.s 			page 32
+ARM GAS  /tmp/ccApHiU0.s 			page 32
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_pmu.c
-     /tmp/ccyX2SYB.s:19     .text.pmu_deinit:0000000000000000 $t
-     /tmp/ccyX2SYB.s:25     .text.pmu_deinit:0000000000000000 pmu_deinit
-     /tmp/ccyX2SYB.s:57     .text.pmu_lvd_select:0000000000000000 $t
-     /tmp/ccyX2SYB.s:63     .text.pmu_lvd_select:0000000000000000 pmu_lvd_select
-     /tmp/ccyX2SYB.s:97     .text.pmu_lvd_select:0000000000000024 $d
-     /tmp/ccyX2SYB.s:102    .text.pmu_lvd_disable:0000000000000000 $t
-     /tmp/ccyX2SYB.s:108    .text.pmu_lvd_disable:0000000000000000 pmu_lvd_disable
-     /tmp/ccyX2SYB.s:126    .text.pmu_lvd_disable:000000000000000c $d
-     /tmp/ccyX2SYB.s:131    .text.pmu_ldo_output_select:0000000000000000 $t
-     /tmp/ccyX2SYB.s:137    .text.pmu_ldo_output_select:0000000000000000 pmu_ldo_output_select
-     /tmp/ccyX2SYB.s:161    .text.pmu_ldo_output_select:0000000000000014 $d
-     /tmp/ccyX2SYB.s:166    .text.pmu_highdriver_mode_enable:0000000000000000 $t
-     /tmp/ccyX2SYB.s:172    .text.pmu_highdriver_mode_enable:0000000000000000 pmu_highdriver_mode_enable
-     /tmp/ccyX2SYB.s:190    .text.pmu_highdriver_mode_enable:000000000000000c $d
-     /tmp/ccyX2SYB.s:195    .text.pmu_highdriver_mode_disable:0000000000000000 $t
-     /tmp/ccyX2SYB.s:201    .text.pmu_highdriver_mode_disable:0000000000000000 pmu_highdriver_mode_disable
-     /tmp/ccyX2SYB.s:219    .text.pmu_highdriver_mode_disable:000000000000000c $d
-     /tmp/ccyX2SYB.s:224    .text.pmu_lowdriver_mode_enable:0000000000000000 $t
-     /tmp/ccyX2SYB.s:230    .text.pmu_lowdriver_mode_enable:0000000000000000 pmu_lowdriver_mode_enable
-     /tmp/ccyX2SYB.s:248    .text.pmu_lowdriver_mode_enable:000000000000000c $d
-     /tmp/ccyX2SYB.s:253    .text.pmu_lowdriver_mode_disable:0000000000000000 $t
-     /tmp/ccyX2SYB.s:259    .text.pmu_lowdriver_mode_disable:0000000000000000 pmu_lowdriver_mode_disable
-     /tmp/ccyX2SYB.s:277    .text.pmu_lowdriver_mode_disable:000000000000000c $d
-     /tmp/ccyX2SYB.s:282    .text.pmu_lowpower_driver_config:0000000000000000 $t
-     /tmp/ccyX2SYB.s:288    .text.pmu_lowpower_driver_config:0000000000000000 pmu_lowpower_driver_config
-     /tmp/ccyX2SYB.s:312    .text.pmu_lowpower_driver_config:0000000000000014 $d
-     /tmp/ccyX2SYB.s:317    .text.pmu_normalpower_driver_config:0000000000000000 $t
-     /tmp/ccyX2SYB.s:323    .text.pmu_normalpower_driver_config:0000000000000000 pmu_normalpower_driver_config
-     /tmp/ccyX2SYB.s:347    .text.pmu_normalpower_driver_config:0000000000000014 $d
-     /tmp/ccyX2SYB.s:352    .text.pmu_to_sleepmode:0000000000000000 $t
-     /tmp/ccyX2SYB.s:358    .text.pmu_to_sleepmode:0000000000000000 pmu_to_sleepmode
-     /tmp/ccyX2SYB.s:413    .text.pmu_to_sleepmode:0000000000000014 $d
-     /tmp/ccyX2SYB.s:418    .text.pmu_to_deepsleepmode:0000000000000000 $t
-     /tmp/ccyX2SYB.s:424    .text.pmu_to_deepsleepmode:0000000000000000 pmu_to_deepsleepmode
-     /tmp/ccyX2SYB.s:626    .text.pmu_to_deepsleepmode:00000000000000a4 $d
-     /tmp/ccyX2SYB.s:1005   .bss.reg_snap.0:0000000000000000 reg_snap.0
-     /tmp/ccyX2SYB.s:639    .text.pmu_to_standbymode:0000000000000000 $t
-     /tmp/ccyX2SYB.s:645    .text.pmu_to_standbymode:0000000000000000 pmu_to_standbymode
-     /tmp/ccyX2SYB.s:710    .text.pmu_to_standbymode:0000000000000044 $d
-     /tmp/ccyX2SYB.s:717    .text.pmu_wakeup_pin_enable:0000000000000000 $t
-     /tmp/ccyX2SYB.s:723    .text.pmu_wakeup_pin_enable:0000000000000000 pmu_wakeup_pin_enable
-     /tmp/ccyX2SYB.s:741    .text.pmu_wakeup_pin_enable:000000000000000c $d
-     /tmp/ccyX2SYB.s:746    .text.pmu_wakeup_pin_disable:0000000000000000 $t
-     /tmp/ccyX2SYB.s:752    .text.pmu_wakeup_pin_disable:0000000000000000 pmu_wakeup_pin_disable
-     /tmp/ccyX2SYB.s:770    .text.pmu_wakeup_pin_disable:000000000000000c $d
-     /tmp/ccyX2SYB.s:775    .text.pmu_backup_ldo_config:0000000000000000 $t
-     /tmp/ccyX2SYB.s:781    .text.pmu_backup_ldo_config:0000000000000000 pmu_backup_ldo_config
-     /tmp/ccyX2SYB.s:805    .text.pmu_backup_ldo_config:0000000000000014 $d
-     /tmp/ccyX2SYB.s:810    .text.pmu_backup_write_enable:0000000000000000 $t
-     /tmp/ccyX2SYB.s:816    .text.pmu_backup_write_enable:0000000000000000 pmu_backup_write_enable
-     /tmp/ccyX2SYB.s:834    .text.pmu_backup_write_enable:000000000000000c $d
-     /tmp/ccyX2SYB.s:839    .text.pmu_backup_write_disable:0000000000000000 $t
-     /tmp/ccyX2SYB.s:845    .text.pmu_backup_write_disable:0000000000000000 pmu_backup_write_disable
-     /tmp/ccyX2SYB.s:863    .text.pmu_backup_write_disable:000000000000000c $d
-     /tmp/ccyX2SYB.s:868    .text.pmu_flag_get:0000000000000000 $t
-ARM GAS  /tmp/ccyX2SYB.s 			page 33
+     /tmp/ccApHiU0.s:19     .text.pmu_deinit:0000000000000000 $t
+     /tmp/ccApHiU0.s:25     .text.pmu_deinit:0000000000000000 pmu_deinit
+     /tmp/ccApHiU0.s:57     .text.pmu_lvd_select:0000000000000000 $t
+     /tmp/ccApHiU0.s:63     .text.pmu_lvd_select:0000000000000000 pmu_lvd_select
+     /tmp/ccApHiU0.s:97     .text.pmu_lvd_select:0000000000000024 $d
+     /tmp/ccApHiU0.s:102    .text.pmu_lvd_disable:0000000000000000 $t
+     /tmp/ccApHiU0.s:108    .text.pmu_lvd_disable:0000000000000000 pmu_lvd_disable
+     /tmp/ccApHiU0.s:126    .text.pmu_lvd_disable:000000000000000c $d
+     /tmp/ccApHiU0.s:131    .text.pmu_ldo_output_select:0000000000000000 $t
+     /tmp/ccApHiU0.s:137    .text.pmu_ldo_output_select:0000000000000000 pmu_ldo_output_select
+     /tmp/ccApHiU0.s:161    .text.pmu_ldo_output_select:0000000000000014 $d
+     /tmp/ccApHiU0.s:166    .text.pmu_highdriver_mode_enable:0000000000000000 $t
+     /tmp/ccApHiU0.s:172    .text.pmu_highdriver_mode_enable:0000000000000000 pmu_highdriver_mode_enable
+     /tmp/ccApHiU0.s:190    .text.pmu_highdriver_mode_enable:000000000000000c $d
+     /tmp/ccApHiU0.s:195    .text.pmu_highdriver_mode_disable:0000000000000000 $t
+     /tmp/ccApHiU0.s:201    .text.pmu_highdriver_mode_disable:0000000000000000 pmu_highdriver_mode_disable
+     /tmp/ccApHiU0.s:219    .text.pmu_highdriver_mode_disable:000000000000000c $d
+     /tmp/ccApHiU0.s:224    .text.pmu_lowdriver_mode_enable:0000000000000000 $t
+     /tmp/ccApHiU0.s:230    .text.pmu_lowdriver_mode_enable:0000000000000000 pmu_lowdriver_mode_enable
+     /tmp/ccApHiU0.s:248    .text.pmu_lowdriver_mode_enable:000000000000000c $d
+     /tmp/ccApHiU0.s:253    .text.pmu_lowdriver_mode_disable:0000000000000000 $t
+     /tmp/ccApHiU0.s:259    .text.pmu_lowdriver_mode_disable:0000000000000000 pmu_lowdriver_mode_disable
+     /tmp/ccApHiU0.s:277    .text.pmu_lowdriver_mode_disable:000000000000000c $d
+     /tmp/ccApHiU0.s:282    .text.pmu_lowpower_driver_config:0000000000000000 $t
+     /tmp/ccApHiU0.s:288    .text.pmu_lowpower_driver_config:0000000000000000 pmu_lowpower_driver_config
+     /tmp/ccApHiU0.s:312    .text.pmu_lowpower_driver_config:0000000000000014 $d
+     /tmp/ccApHiU0.s:317    .text.pmu_normalpower_driver_config:0000000000000000 $t
+     /tmp/ccApHiU0.s:323    .text.pmu_normalpower_driver_config:0000000000000000 pmu_normalpower_driver_config
+     /tmp/ccApHiU0.s:347    .text.pmu_normalpower_driver_config:0000000000000014 $d
+     /tmp/ccApHiU0.s:352    .text.pmu_to_sleepmode:0000000000000000 $t
+     /tmp/ccApHiU0.s:358    .text.pmu_to_sleepmode:0000000000000000 pmu_to_sleepmode
+     /tmp/ccApHiU0.s:413    .text.pmu_to_sleepmode:0000000000000014 $d
+     /tmp/ccApHiU0.s:418    .text.pmu_to_deepsleepmode:0000000000000000 $t
+     /tmp/ccApHiU0.s:424    .text.pmu_to_deepsleepmode:0000000000000000 pmu_to_deepsleepmode
+     /tmp/ccApHiU0.s:626    .text.pmu_to_deepsleepmode:00000000000000a4 $d
+     /tmp/ccApHiU0.s:1005   .bss.reg_snap.0:0000000000000000 reg_snap.0
+     /tmp/ccApHiU0.s:639    .text.pmu_to_standbymode:0000000000000000 $t
+     /tmp/ccApHiU0.s:645    .text.pmu_to_standbymode:0000000000000000 pmu_to_standbymode
+     /tmp/ccApHiU0.s:710    .text.pmu_to_standbymode:0000000000000044 $d
+     /tmp/ccApHiU0.s:717    .text.pmu_wakeup_pin_enable:0000000000000000 $t
+     /tmp/ccApHiU0.s:723    .text.pmu_wakeup_pin_enable:0000000000000000 pmu_wakeup_pin_enable
+     /tmp/ccApHiU0.s:741    .text.pmu_wakeup_pin_enable:000000000000000c $d
+     /tmp/ccApHiU0.s:746    .text.pmu_wakeup_pin_disable:0000000000000000 $t
+     /tmp/ccApHiU0.s:752    .text.pmu_wakeup_pin_disable:0000000000000000 pmu_wakeup_pin_disable
+     /tmp/ccApHiU0.s:770    .text.pmu_wakeup_pin_disable:000000000000000c $d
+     /tmp/ccApHiU0.s:775    .text.pmu_backup_ldo_config:0000000000000000 $t
+     /tmp/ccApHiU0.s:781    .text.pmu_backup_ldo_config:0000000000000000 pmu_backup_ldo_config
+     /tmp/ccApHiU0.s:805    .text.pmu_backup_ldo_config:0000000000000014 $d
+     /tmp/ccApHiU0.s:810    .text.pmu_backup_write_enable:0000000000000000 $t
+     /tmp/ccApHiU0.s:816    .text.pmu_backup_write_enable:0000000000000000 pmu_backup_write_enable
+     /tmp/ccApHiU0.s:834    .text.pmu_backup_write_enable:000000000000000c $d
+     /tmp/ccApHiU0.s:839    .text.pmu_backup_write_disable:0000000000000000 $t
+     /tmp/ccApHiU0.s:845    .text.pmu_backup_write_disable:0000000000000000 pmu_backup_write_disable
+     /tmp/ccApHiU0.s:863    .text.pmu_backup_write_disable:000000000000000c $d
+     /tmp/ccApHiU0.s:868    .text.pmu_flag_get:0000000000000000 $t
+ARM GAS  /tmp/ccApHiU0.s 			page 33
 
 
-     /tmp/ccyX2SYB.s:874    .text.pmu_flag_get:0000000000000000 pmu_flag_get
-     /tmp/ccyX2SYB.s:898    .text.pmu_flag_get:0000000000000010 $d
-     /tmp/ccyX2SYB.s:903    .text.pmu_highdriver_switch_select:0000000000000000 $t
-     /tmp/ccyX2SYB.s:909    .text.pmu_highdriver_switch_select:0000000000000000 pmu_highdriver_switch_select
-     /tmp/ccyX2SYB.s:951    .text.pmu_highdriver_switch_select:0000000000000024 $d
-     /tmp/ccyX2SYB.s:956    .text.pmu_flag_clear:0000000000000000 $t
-     /tmp/ccyX2SYB.s:962    .text.pmu_flag_clear:0000000000000000 pmu_flag_clear
-     /tmp/ccyX2SYB.s:997    .text.pmu_flag_clear:0000000000000020 $d
-     /tmp/ccyX2SYB.s:1002   .bss.reg_snap.0:0000000000000000 $d
+     /tmp/ccApHiU0.s:874    .text.pmu_flag_get:0000000000000000 pmu_flag_get
+     /tmp/ccApHiU0.s:898    .text.pmu_flag_get:0000000000000010 $d
+     /tmp/ccApHiU0.s:903    .text.pmu_highdriver_switch_select:0000000000000000 $t
+     /tmp/ccApHiU0.s:909    .text.pmu_highdriver_switch_select:0000000000000000 pmu_highdriver_switch_select
+     /tmp/ccApHiU0.s:951    .text.pmu_highdriver_switch_select:0000000000000024 $d
+     /tmp/ccApHiU0.s:956    .text.pmu_flag_clear:0000000000000000 $t
+     /tmp/ccApHiU0.s:962    .text.pmu_flag_clear:0000000000000000 pmu_flag_clear
+     /tmp/ccApHiU0.s:997    .text.pmu_flag_clear:0000000000000020 $d
+     /tmp/ccApHiU0.s:1002   .bss.reg_snap.0:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable

@@ -12,8 +12,8 @@
 #define I2C_GPIO_PORT           GPIOB
 #define I2C_SCL_PIN             GPIO_PIN_6
 #define I2C_SDA_PIN             GPIO_PIN_7
-#define I2C_SPEED               1000
-#define I2C_TIME_OUT            5000
+#define I2C_SPEED               100
+#define I2C_TIME_OUT            800
 #define SLAVE_ADDRESS7          0xD0
 
 void i2c_config(void);

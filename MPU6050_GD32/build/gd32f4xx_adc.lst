@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccq7G377.s 			page 1
+ARM GAS  /tmp/cc2bTCrI.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-ARM GAS  /tmp/ccq7G377.s 			page 2
+ARM GAS  /tmp/cc2bTCrI.s 			page 2
 
 
   33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
   40 0006 FFF7FEFF 		bl	rcu_periph_reset_enable
   41              	.LVL0:
   73:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     rcu_periph_reset_disable(RCU_ADCRST);
-ARM GAS  /tmp/ccq7G377.s 			page 3
+ARM GAS  /tmp/cc2bTCrI.s 			page 3
 
 
   42              		.loc 1 73 5 is_stmt 1 view .LVU4
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
   94:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     ADC_SYNCCTL |= (uint32_t) prescaler;
   77              		.loc 1 94 5 is_stmt 1 view .LVU10
   78 000e D3F80423 		ldr	r2, [r3, #772]
-ARM GAS  /tmp/ccq7G377.s 			page 4
+ARM GAS  /tmp/cc2bTCrI.s 			page 4
 
 
   79              		.loc 1 94 17 is_stmt 0 view .LVU11
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  116              	.LVL4:
  111:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     if(newvalue) {
  117              		.loc 1 111 7 view .LVU17
-ARM GAS  /tmp/ccq7G377.s 			page 5
+ARM GAS  /tmp/cc2bTCrI.s 			page 5
 
 
  118 000e 7AB1     		cbz	r2, .L6
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  137:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     }
  138:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** }
  148              		.loc 1 138 1 view .LVU31
-ARM GAS  /tmp/ccq7G377.s 			page 6
+ARM GAS  /tmp/cc2bTCrI.s 			page 6
 
 
  149 002e 10BD     		pop	{r4, pc}
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  141:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \brief        configure ADC data alignment
  142:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \param[in]    adc_periph: ADCx,x=0,1,2
  143:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \param[in]    data_alignment: data alignment select
-ARM GAS  /tmp/ccq7G377.s 			page 7
+ARM GAS  /tmp/cc2bTCrI.s 			page 7
 
 
  144:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****                   only one parameter can be selected which is shown as below:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  161:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** /*!
  162:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \brief        enable ADC interface
  163:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \param[in]    adc_periph: ADCx,x=0,1,2
-ARM GAS  /tmp/ccq7G377.s 			page 8
+ARM GAS  /tmp/cc2bTCrI.s 			page 8
 
 
  164:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \param[out]   none
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  184:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     ADC_CTL1(adc_periph) &= ~((uint32_t)ADC_CTL1_ADCON);
  263              		.loc 1 184 5 view .LVU62
  264 0000 8368     		ldr	r3, [r0, #8]
-ARM GAS  /tmp/ccq7G377.s 			page 9
+ARM GAS  /tmp/cc2bTCrI.s 			page 9
 
 
  265              		.loc 1 184 26 is_stmt 0 view .LVU63
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  303 000e 1907     		lsls	r1, r3, #28
  304 0010 FCD4     		bmi	.L38
  200:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     /* enable ADC calibration process */
-ARM GAS  /tmp/ccq7G377.s 			page 10
+ARM GAS  /tmp/cc2bTCrI.s 			page 10
 
 
  201:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     ADC_CTL1(adc_periph) |= ADC_CTL1_CLB;
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  339              		.loc 1 219 5 view .LVU84
  220:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         if(RESET != (function & ADC_VBAT_CHANNEL_SWITCH)) {
  340              		.loc 1 220 31 is_stmt 0 view .LVU85
-ARM GAS  /tmp/ccq7G377.s 			page 11
+ARM GAS  /tmp/cc2bTCrI.s 			page 11
 
 
  341 0000 00F48003 		and	r3, r0, #4194304
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  231:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         }
  374              		.loc 1 231 13 is_stmt 1 view .LVU99
  375 002e 074A     		ldr	r2, .L59
-ARM GAS  /tmp/ccq7G377.s 			page 12
+ARM GAS  /tmp/cc2bTCrI.s 			page 12
 
 
  376 0030 D2F80433 		ldr	r3, [r2, #772]
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  412              		@ link register save eliminated.
  254:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     ADC_CTL0(adc_periph) &= ~((uint32_t)ADC_CTL0_DRES);
  413              		.loc 1 254 5 view .LVU106
-ARM GAS  /tmp/ccq7G377.s 			page 13
+ARM GAS  /tmp/cc2bTCrI.s 			page 13
 
 
  414 0000 4368     		ldr	r3, [r0, #4]
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  287:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \retval       none
  288:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** */
  289:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** void adc_oversample_mode_config(uint32_t adc_periph, uint32_t mode, uint16_t shift, uint8_t ratio)
-ARM GAS  /tmp/ccq7G377.s 			page 14
+ARM GAS  /tmp/cc2bTCrI.s 			page 14
 
 
  290:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** {
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  484              	.LFB126:
  300:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** 
  301:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** /*!
-ARM GAS  /tmp/ccq7G377.s 			page 15
+ARM GAS  /tmp/cc2bTCrI.s 			page 15
 
 
  302:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \brief        enable ADC oversample mode
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  521 000c 7047     		bx	lr
  522              		.cfi_endproc
  523              	.LFE127:
-ARM GAS  /tmp/ccq7G377.s 			page 16
+ARM GAS  /tmp/cc2bTCrI.s 			page 16
 
 
  525              		.section	.text.adc_dma_mode_enable,"ax",%progbits
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  561              		.cfi_startproc
  562              		@ args = 0, pretend = 0, frame = 0
  563              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccq7G377.s 			page 17
+ARM GAS  /tmp/cc2bTCrI.s 			page 17
 
 
  564              		@ link register save eliminated.
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  608              	.LVL20:
  609              	.LFB131:
  357:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** 
-ARM GAS  /tmp/ccq7G377.s 			page 18
+ARM GAS  /tmp/cc2bTCrI.s 			page 18
 
 
  358:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** /*!
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  384:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     /* disable discontinuous mode of routine & inserted channel */
  385:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     ADC_CTL0(adc_periph) &= ~((uint32_t)(ADC_CTL0_DISRC | ADC_CTL0_DISIC));
  640              		.loc 1 385 5 view .LVU150
-ARM GAS  /tmp/ccq7G377.s 			page 19
+ARM GAS  /tmp/cc2bTCrI.s 			page 19
 
 
  641 0000 4368     		ldr	r3, [r0, #4]
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  400:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     case ADC_CHANNEL_DISCON_DISABLE:
  401:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     /* disable discontinuous mode of routine & inserted channel */
  402:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     default:
-ARM GAS  /tmp/ccq7G377.s 			page 20
+ARM GAS  /tmp/cc2bTCrI.s 			page 20
 
 
  403:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         break;
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  423:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     case ADC_ROUTINE_CHANNEL:
  424:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         if((length >= 1U) && (length <= 16U)) {
  713              		.loc 1 424 9 view .LVU170
-ARM GAS  /tmp/ccq7G377.s 			page 21
+ARM GAS  /tmp/cc2bTCrI.s 			page 21
 
 
  714              		.loc 1 424 27 is_stmt 0 view .LVU171
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  754              		.cfi_endproc
  755              	.LFE133:
  757              		.section	.text.adc_routine_channel_config,"ax",%progbits
-ARM GAS  /tmp/ccq7G377.s 			page 22
+ARM GAS  /tmp/cc2bTCrI.s 			page 22
 
 
  758              		.align	1
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  467:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         rsq = ADC_RSQ2(adc_periph);
  784              		.loc 1 467 9 is_stmt 1 view .LVU191
  785              		.loc 1 467 13 is_stmt 0 view .LVU192
-ARM GAS  /tmp/ccq7G377.s 			page 23
+ARM GAS  /tmp/cc2bTCrI.s 			page 23
 
 
  786 0006 446B     		ldr	r4, [r0, #52]
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  815              		.loc 1 492 15 is_stmt 0 view .LVU206
  816 0020 0169     		ldr	r1, [r0, #16]
  817              	.LVL35:
-ARM GAS  /tmp/ccq7G377.s 			page 24
+ARM GAS  /tmp/cc2bTCrI.s 			page 24
 
 
  493:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         sampt &= ~((uint32_t)(ADC_SAMPTX_SPTN << (ADC_CHANNEL_SAMPLE_LENGTH * adc_channel)));
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  853              	.LVL42:
  475:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         /* the channel number is written to these bits to select a channel as the nth conversion in
  854              		.loc 1 475 9 is_stmt 1 view .LVU222
-ARM GAS  /tmp/ccq7G377.s 			page 25
+ARM GAS  /tmp/cc2bTCrI.s 			page 25
 
 
  475:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         /* the channel number is written to these bits to select a channel as the nth conversion in
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  892              		.loc 1 482 13 view .LVU239
  893 0066 24EA0504 		bic	r4, r4, r5
  894              	.LVL48:
-ARM GAS  /tmp/ccq7G377.s 			page 26
+ARM GAS  /tmp/cc2bTCrI.s 			page 26
 
 
  484:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         ADC_RSQ0(adc_periph) = rsq;
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  932 008a 0B43     		orrs	r3, r3, r1
  933              	.LVL55:
  503:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     } else {
-ARM GAS  /tmp/ccq7G377.s 			page 27
+ARM GAS  /tmp/cc2bTCrI.s 			page 27
 
 
  934              		.loc 1 503 9 is_stmt 1 view .LVU257
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  535:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     /* the channel number is written to these bits to select a channel as the nth conversion in the
  536:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     if(rank < 4U) {
  960              		.loc 1 536 7 is_stmt 0 view .LVU265
-ARM GAS  /tmp/ccq7G377.s 			page 28
+ARM GAS  /tmp/cc2bTCrI.s 			page 28
 
 
  961 0000 0329     		cmp	r1, #3
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  541:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     }
  542:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** 
  543:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     /* ADC sampling time config */
-ARM GAS  /tmp/ccq7G377.s 			page 29
+ARM GAS  /tmp/cc2bTCrI.s 			page 29
 
 
  544:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     if(adc_channel < ADC_CHANNEL_SAMPLE_TEN) {
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1043 0044 122A     		cmp	r2, #18
  1044 0046 FCD8     		bhi	.L88
  553:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         sampt &= ~((uint32_t)(ADC_SAMPTX_SPTN << (ADC_CHANNEL_SAMPLE_LENGTH * (adc_channel - ADC_CH
-ARM GAS  /tmp/ccq7G377.s 			page 30
+ARM GAS  /tmp/cc2bTCrI.s 			page 30
 
 
  1045              		.loc 1 553 9 is_stmt 1 view .LVU300
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  563:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \brief      configure ADC inserted channel offset
  564:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \param[in]  adc_periph: ADCx,x=0,1,2
  565:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \param[in]  inserted_channel : insert channel select
-ARM GAS  /tmp/ccq7G377.s 			page 31
+ARM GAS  /tmp/cc2bTCrI.s 			page 31
 
 
  566:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****                 only one parameter can be selected which is shown as below:
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1119              	.LVL82:
  1120              		.loc 1 587 43 view .LVU328
  1121 0014 40F82120 		strls	r2, [r0, r1, lsl #2]
-ARM GAS  /tmp/ccq7G377.s 			page 32
+ARM GAS  /tmp/cc2bTCrI.s 			page 32
 
 
  588:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     }
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  629:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \arg        ADC_EXTTRIG_INSERTED_T4_CH3: timer4 capture compare 3
  630:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \arg        ADC_EXTTRIG_INSERTED_T4_TRGO: timer4 capture compare TRGO
  631:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \arg        ADC_EXTTRIG_INSERTED_T7_CH1: timer7 capture compare 1
-ARM GAS  /tmp/ccq7G377.s 			page 33
+ARM GAS  /tmp/cc2bTCrI.s 			page 33
 
 
  632:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \arg        ADC_EXTTRIG_INSERTED_T7_CH2: timer7 capture compare 2
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  648:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         ADC_CTL1(adc_periph) |= (uint32_t)external_trigger_source;
  1167              		.loc 1 648 30 is_stmt 0 view .LVU340
  1168 001c 23F47023 		bic	r3, r3, #983040
-ARM GAS  /tmp/ccq7G377.s 			page 34
+ARM GAS  /tmp/cc2bTCrI.s 			page 34
 
 
  1169 0020 F6E7     		b	.L98
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1201 0012 8368     		ldr	r3, [r0, #8]
  1202              		.loc 1 678 30 is_stmt 0 view .LVU346
  1203 0014 43EA0273 		orr	r3, r3, r2, lsl #28
-ARM GAS  /tmp/ccq7G377.s 			page 35
+ARM GAS  /tmp/cc2bTCrI.s 			page 35
 
 
  1204              	.L103:
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  701:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** {
  1234              		.loc 1 701 1 is_stmt 1 view -0
  1235              		.cfi_startproc
-ARM GAS  /tmp/ccq7G377.s 			page 36
+ARM GAS  /tmp/cc2bTCrI.s 			page 36
 
 
  1236              		@ args = 0, pretend = 0, frame = 0
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  717:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \brief      configure end of conversion mode
  718:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \param[in]  adc_periph: ADCx,x=0,1,2
  719:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \param[in]  end_selection: end of conversion mode
-ARM GAS  /tmp/ccq7G377.s 			page 37
+ARM GAS  /tmp/cc2bTCrI.s 			page 37
 
 
  720:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****                 only one parameter can be selected which is shown as below:
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1307              		.global	adc_routine_data_read
  1308              		.syntax unified
  1309              		.thumb
-ARM GAS  /tmp/ccq7G377.s 			page 38
+ARM GAS  /tmp/cc2bTCrI.s 			page 38
 
 
  1310              		.thumb_func
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1340              		.loc 1 767 1 is_stmt 1 view -0
  1341              		.cfi_startproc
  1342              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccq7G377.s 			page 39
+ARM GAS  /tmp/cc2bTCrI.s 			page 39
 
 
  1343              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1371              		.loc 1 777 9 is_stmt 1 view .LVU385
  777:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         break;
  1372              		.loc 1 777 15 is_stmt 0 view .LVU386
-ARM GAS  /tmp/ccq7G377.s 			page 40
+ARM GAS  /tmp/cc2bTCrI.s 			page 40
 
 
  1373 0012 006C     		ldr	r0, [r0, #64]
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  800:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** void adc_watchdog_single_channel_disable(uint32_t adc_periph)
  801:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** {
  1413              		.loc 1 801 1 is_stmt 1 view -0
-ARM GAS  /tmp/ccq7G377.s 			page 41
+ARM GAS  /tmp/cc2bTCrI.s 			page 41
 
 
  1414              		.cfi_startproc
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1452              	.LVL102:
  1453              		.loc 1 819 26 view .LVU405
  1454 000c 4160     		str	r1, [r0, #4]
-ARM GAS  /tmp/ccq7G377.s 			page 42
+ARM GAS  /tmp/cc2bTCrI.s 			page 42
 
 
  820:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     ADC_CTL0(adc_periph) |= (uint32_t) ADC_CTL0_WDSC;
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1491 0010 0329     		cmp	r1, #3
  1492 0012 0AD0     		beq	.L127
  1493 0014 0129     		cmp	r1, #1
-ARM GAS  /tmp/ccq7G377.s 			page 43
+ARM GAS  /tmp/cc2bTCrI.s 			page 43
 
 
  1494 0016 03D1     		bne	.L125
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1530              	.LFB146:
  855:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** 
  856:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** /*!
-ARM GAS  /tmp/ccq7G377.s 			page 44
+ARM GAS  /tmp/cc2bTCrI.s 			page 44
 
 
  857:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \brief      disable ADC analog watchdog
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  877:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         break;
  1555              		.loc 1 877 9 is_stmt 1 view .LVU431
  1556 0016 4368     		ldr	r3, [r0, #4]
-ARM GAS  /tmp/ccq7G377.s 			page 45
+ARM GAS  /tmp/cc2bTCrI.s 			page 45
 
 
  877:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         break;
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1594              		.loc 1 901 26 is_stmt 0 view .LVU441
  1595 000a 4262     		str	r2, [r0, #36]
  902:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** }
-ARM GAS  /tmp/ccq7G377.s 			page 46
+ARM GAS  /tmp/cc2bTCrI.s 			page 46
 
 
  1596              		.loc 1 902 1 view .LVU442
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1627              	.LVL110:
  1628              		.loc 1 926 1 view .LVU450
  1629 0008 0020     		moveq	r0, #0
-ARM GAS  /tmp/ccq7G377.s 			page 47
+ARM GAS  /tmp/cc2bTCrI.s 			page 47
 
 
  1630 000a 7047     		bx	lr
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  946:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** 
  947:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** /*!
  948:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \brief      get the bit state of ADCx software start conversion
-ARM GAS  /tmp/ccq7G377.s 			page 48
+ARM GAS  /tmp/cc2bTCrI.s 			page 48
 
 
  949:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \param[in]  adc_periph: ADCx, x=0,1,2 only one among these parameters can be selected
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1702              		@ link register save eliminated.
  972:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     FlagStatus reval = RESET;
  1703              		.loc 1 972 5 view .LVU463
-ARM GAS  /tmp/ccq7G377.s 			page 49
+ARM GAS  /tmp/cc2bTCrI.s 			page 49
 
 
  973:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     if((uint32_t)RESET != (ADC_STAT(adc_periph) & ADC_STAT_STIC)) {
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1736 0002 20D0     		beq	.L141
  1737 0004 05D8     		bhi	.L142
  1738 0006 0129     		cmp	r1, #1
-ARM GAS  /tmp/ccq7G377.s 			page 50
+ARM GAS  /tmp/cc2bTCrI.s 			page 50
 
 
  1739 0008 0DD0     		beq	.L143
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1766              	.LVL123:
  1767              	.L145:
 1022:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****             interrupt_flag = SET;
-ARM GAS  /tmp/ccq7G377.s 			page 51
+ARM GAS  /tmp/cc2bTCrI.s 			page 51
 
 
 1023:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         }
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1803 0044 7047     		bx	lr
  1804              	.LVL131:
  1805              	.L141:
-ARM GAS  /tmp/ccq7G377.s 			page 52
+ARM GAS  /tmp/cc2bTCrI.s 			page 52
 
 
 1013:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         if((ADC_CTL0(adc_periph) & ADC_CTL0_EOICIE) && state) {
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1843              		.global	adc_interrupt_enable
  1844              		.syntax unified
  1845              		.thumb
-ARM GAS  /tmp/ccq7G377.s 			page 53
+ARM GAS  /tmp/cc2bTCrI.s 			page 53
 
 
  1846              		.thumb_func
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
 1070:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         break;
 1071:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     case ADC_INT_EOIC:
 1072:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         /* enable end of inserted sequence conversion interrupt */
-ARM GAS  /tmp/ccq7G377.s 			page 54
+ARM GAS  /tmp/cc2bTCrI.s 			page 54
 
 
 1073:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         ADC_CTL0(adc_periph) |= (uint32_t) ADC_CTL0_EOICIE;
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
 1087:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****                 only one parameter can be selected which is shown as below:
 1088:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****       \arg      ADC_INT_WDE: analog watchdog interrupt flag
 1089:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****       \arg      ADC_INT_EOC: end of sequence conversion interrupt flag
-ARM GAS  /tmp/ccq7G377.s 			page 55
+ARM GAS  /tmp/cc2bTCrI.s 			page 55
 
 
 1090:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****       \arg      ADC_INT_EOIC: end of inserted sequence conversion interrupt flag
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  1940              	.L164:
 1103:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****         break;
  1941              		.loc 1 1103 9 is_stmt 1 view .LVU523
-ARM GAS  /tmp/ccq7G377.s 			page 56
+ARM GAS  /tmp/cc2bTCrI.s 			page 56
 
 
  1942 0022 4368     		ldr	r3, [r0, #4]
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
 1137:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** {
  1971              		.loc 1 1137 1 is_stmt 1 view -0
  1972              		.cfi_startproc
-ARM GAS  /tmp/ccq7G377.s 			page 57
+ARM GAS  /tmp/cc2bTCrI.s 			page 57
 
 
  1973              		@ args = 0, pretend = 0, frame = 0
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  2014              		.loc 1 1152 17 is_stmt 0 view .LVU537
  2015 0006 22F47062 		bic	r2, r2, #3840
  2016 000a C3F80423 		str	r2, [r3, #772]
-ARM GAS  /tmp/ccq7G377.s 			page 58
+ARM GAS  /tmp/cc2bTCrI.s 			page 58
 
 
 1153:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     ADC_SYNCCTL |= sample_delay;
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  2056 0014 C3F80423 		str	r2, [r3, #772]
 1170:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** }
  2057              		.loc 1 1170 1 view .LVU546
-ARM GAS  /tmp/ccq7G377.s 			page 59
+ARM GAS  /tmp/cc2bTCrI.s 			page 59
 
 
  2058 0018 7047     		bx	lr
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
 1183:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c **** /*!
 1184:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \brief      configure ADC sync DMA engine issues requests according to the SYNCDMA bits
 1185:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \param[in]  none
-ARM GAS  /tmp/ccq7G377.s 			page 60
+ARM GAS  /tmp/cc2bTCrI.s 			page 60
 
 
 1186:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_adc.c ****     \param[out] none
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  2142              		.loc 1 1203 1 view .LVU558
  2143 0006 7047     		bx	lr
  2144              	.L186:
-ARM GAS  /tmp/ccq7G377.s 			page 61
+ARM GAS  /tmp/cc2bTCrI.s 			page 61
 
 
  2145              		.align	2
@@ -3612,116 +3612,116 @@ ARM GAS  /tmp/ccq7G377.s 			page 1
  2154              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  2155              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
  2156              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
-ARM GAS  /tmp/ccq7G377.s 			page 62
+ARM GAS  /tmp/cc2bTCrI.s 			page 62
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_adc.c
-     /tmp/ccq7G377.s:19     .text.adc_deinit:0000000000000000 $t
-     /tmp/ccq7G377.s:25     .text.adc_deinit:0000000000000000 adc_deinit
-     /tmp/ccq7G377.s:57     .text.adc_clock_config:0000000000000000 $t
-     /tmp/ccq7G377.s:63     .text.adc_clock_config:0000000000000000 adc_clock_config
-     /tmp/ccq7G377.s:87     .text.adc_clock_config:000000000000001c $d
-     /tmp/ccq7G377.s:92     .text.adc_special_function_config:0000000000000000 $t
-     /tmp/ccq7G377.s:98     .text.adc_special_function_config:0000000000000000 adc_special_function_config
-     /tmp/ccq7G377.s:182    .text.adc_data_alignment_config:0000000000000000 $t
-     /tmp/ccq7G377.s:188    .text.adc_data_alignment_config:0000000000000000 adc_data_alignment_config
-     /tmp/ccq7G377.s:218    .text.adc_enable:0000000000000000 $t
-     /tmp/ccq7G377.s:224    .text.adc_enable:0000000000000000 adc_enable
-     /tmp/ccq7G377.s:249    .text.adc_disable:0000000000000000 $t
-     /tmp/ccq7G377.s:255    .text.adc_disable:0000000000000000 adc_disable
-     /tmp/ccq7G377.s:274    .text.adc_calibration_enable:0000000000000000 $t
-     /tmp/ccq7G377.s:280    .text.adc_calibration_enable:0000000000000000 adc_calibration_enable
-     /tmp/ccq7G377.s:325    .text.adc_channel_16_to_18:0000000000000000 $t
-     /tmp/ccq7G377.s:331    .text.adc_channel_16_to_18:0000000000000000 adc_channel_16_to_18
-     /tmp/ccq7G377.s:394    .text.adc_channel_16_to_18:000000000000004c $d
-     /tmp/ccq7G377.s:399    .text.adc_resolution_config:0000000000000000 $t
-     /tmp/ccq7G377.s:405    .text.adc_resolution_config:0000000000000000 adc_resolution_config
-     /tmp/ccq7G377.s:429    .text.adc_oversample_mode_config:0000000000000000 $t
-     /tmp/ccq7G377.s:435    .text.adc_oversample_mode_config:0000000000000000 adc_oversample_mode_config
-     /tmp/ccq7G377.s:476    .text.adc_oversample_mode_enable:0000000000000000 $t
-     /tmp/ccq7G377.s:482    .text.adc_oversample_mode_enable:0000000000000000 adc_oversample_mode_enable
-     /tmp/ccq7G377.s:501    .text.adc_oversample_mode_disable:0000000000000000 $t
-     /tmp/ccq7G377.s:507    .text.adc_oversample_mode_disable:0000000000000000 adc_oversample_mode_disable
-     /tmp/ccq7G377.s:526    .text.adc_dma_mode_enable:0000000000000000 $t
-     /tmp/ccq7G377.s:532    .text.adc_dma_mode_enable:0000000000000000 adc_dma_mode_enable
-     /tmp/ccq7G377.s:551    .text.adc_dma_mode_disable:0000000000000000 $t
-     /tmp/ccq7G377.s:557    .text.adc_dma_mode_disable:0000000000000000 adc_dma_mode_disable
-     /tmp/ccq7G377.s:576    .text.adc_dma_request_after_last_enable:0000000000000000 $t
-     /tmp/ccq7G377.s:582    .text.adc_dma_request_after_last_enable:0000000000000000 adc_dma_request_after_last_enable
-     /tmp/ccq7G377.s:601    .text.adc_dma_request_after_last_disable:0000000000000000 $t
-     /tmp/ccq7G377.s:607    .text.adc_dma_request_after_last_disable:0000000000000000 adc_dma_request_after_last_disable
-     /tmp/ccq7G377.s:626    .text.adc_discontinuous_mode_config:0000000000000000 $t
-     /tmp/ccq7G377.s:632    .text.adc_discontinuous_mode_config:0000000000000000 adc_discontinuous_mode_config
-     /tmp/ccq7G377.s:692    .text.adc_channel_length_config:0000000000000000 $t
-     /tmp/ccq7G377.s:698    .text.adc_channel_length_config:0000000000000000 adc_channel_length_config
-     /tmp/ccq7G377.s:758    .text.adc_routine_channel_config:0000000000000000 $t
-     /tmp/ccq7G377.s:764    .text.adc_routine_channel_config:0000000000000000 adc_routine_channel_config
-     /tmp/ccq7G377.s:944    .text.adc_inserted_channel_config:0000000000000000 $t
-     /tmp/ccq7G377.s:950    .text.adc_inserted_channel_config:0000000000000000 adc_inserted_channel_config
-     /tmp/ccq7G377.s:1078   .text.adc_inserted_channel_offset_config:0000000000000000 $t
-     /tmp/ccq7G377.s:1084   .text.adc_inserted_channel_offset_config:0000000000000000 adc_inserted_channel_offset_config
-     /tmp/ccq7G377.s:1128   .text.adc_external_trigger_source_config:0000000000000000 $t
-     /tmp/ccq7G377.s:1134   .text.adc_external_trigger_source_config:0000000000000000 adc_external_trigger_source_config
-     /tmp/ccq7G377.s:1174   .text.adc_external_trigger_config:0000000000000000 $t
-     /tmp/ccq7G377.s:1180   .text.adc_external_trigger_config:0000000000000000 adc_external_trigger_config
-     /tmp/ccq7G377.s:1225   .text.adc_software_trigger_enable:0000000000000000 $t
-     /tmp/ccq7G377.s:1231   .text.adc_software_trigger_enable:0000000000000000 adc_software_trigger_enable
-     /tmp/ccq7G377.s:1266   .text.adc_end_of_conversion_config:0000000000000000 $t
-     /tmp/ccq7G377.s:1272   .text.adc_end_of_conversion_config:0000000000000000 adc_end_of_conversion_config
-     /tmp/ccq7G377.s:1306   .text.adc_routine_data_read:0000000000000000 $t
-     /tmp/ccq7G377.s:1312   .text.adc_routine_data_read:0000000000000000 adc_routine_data_read
-     /tmp/ccq7G377.s:1331   .text.adc_inserted_data_read:0000000000000000 $t
-ARM GAS  /tmp/ccq7G377.s 			page 63
+     /tmp/cc2bTCrI.s:19     .text.adc_deinit:0000000000000000 $t
+     /tmp/cc2bTCrI.s:25     .text.adc_deinit:0000000000000000 adc_deinit
+     /tmp/cc2bTCrI.s:57     .text.adc_clock_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:63     .text.adc_clock_config:0000000000000000 adc_clock_config
+     /tmp/cc2bTCrI.s:87     .text.adc_clock_config:000000000000001c $d
+     /tmp/cc2bTCrI.s:92     .text.adc_special_function_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:98     .text.adc_special_function_config:0000000000000000 adc_special_function_config
+     /tmp/cc2bTCrI.s:182    .text.adc_data_alignment_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:188    .text.adc_data_alignment_config:0000000000000000 adc_data_alignment_config
+     /tmp/cc2bTCrI.s:218    .text.adc_enable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:224    .text.adc_enable:0000000000000000 adc_enable
+     /tmp/cc2bTCrI.s:249    .text.adc_disable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:255    .text.adc_disable:0000000000000000 adc_disable
+     /tmp/cc2bTCrI.s:274    .text.adc_calibration_enable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:280    .text.adc_calibration_enable:0000000000000000 adc_calibration_enable
+     /tmp/cc2bTCrI.s:325    .text.adc_channel_16_to_18:0000000000000000 $t
+     /tmp/cc2bTCrI.s:331    .text.adc_channel_16_to_18:0000000000000000 adc_channel_16_to_18
+     /tmp/cc2bTCrI.s:394    .text.adc_channel_16_to_18:000000000000004c $d
+     /tmp/cc2bTCrI.s:399    .text.adc_resolution_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:405    .text.adc_resolution_config:0000000000000000 adc_resolution_config
+     /tmp/cc2bTCrI.s:429    .text.adc_oversample_mode_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:435    .text.adc_oversample_mode_config:0000000000000000 adc_oversample_mode_config
+     /tmp/cc2bTCrI.s:476    .text.adc_oversample_mode_enable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:482    .text.adc_oversample_mode_enable:0000000000000000 adc_oversample_mode_enable
+     /tmp/cc2bTCrI.s:501    .text.adc_oversample_mode_disable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:507    .text.adc_oversample_mode_disable:0000000000000000 adc_oversample_mode_disable
+     /tmp/cc2bTCrI.s:526    .text.adc_dma_mode_enable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:532    .text.adc_dma_mode_enable:0000000000000000 adc_dma_mode_enable
+     /tmp/cc2bTCrI.s:551    .text.adc_dma_mode_disable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:557    .text.adc_dma_mode_disable:0000000000000000 adc_dma_mode_disable
+     /tmp/cc2bTCrI.s:576    .text.adc_dma_request_after_last_enable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:582    .text.adc_dma_request_after_last_enable:0000000000000000 adc_dma_request_after_last_enable
+     /tmp/cc2bTCrI.s:601    .text.adc_dma_request_after_last_disable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:607    .text.adc_dma_request_after_last_disable:0000000000000000 adc_dma_request_after_last_disable
+     /tmp/cc2bTCrI.s:626    .text.adc_discontinuous_mode_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:632    .text.adc_discontinuous_mode_config:0000000000000000 adc_discontinuous_mode_config
+     /tmp/cc2bTCrI.s:692    .text.adc_channel_length_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:698    .text.adc_channel_length_config:0000000000000000 adc_channel_length_config
+     /tmp/cc2bTCrI.s:758    .text.adc_routine_channel_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:764    .text.adc_routine_channel_config:0000000000000000 adc_routine_channel_config
+     /tmp/cc2bTCrI.s:944    .text.adc_inserted_channel_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:950    .text.adc_inserted_channel_config:0000000000000000 adc_inserted_channel_config
+     /tmp/cc2bTCrI.s:1078   .text.adc_inserted_channel_offset_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1084   .text.adc_inserted_channel_offset_config:0000000000000000 adc_inserted_channel_offset_config
+     /tmp/cc2bTCrI.s:1128   .text.adc_external_trigger_source_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1134   .text.adc_external_trigger_source_config:0000000000000000 adc_external_trigger_source_config
+     /tmp/cc2bTCrI.s:1174   .text.adc_external_trigger_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1180   .text.adc_external_trigger_config:0000000000000000 adc_external_trigger_config
+     /tmp/cc2bTCrI.s:1225   .text.adc_software_trigger_enable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1231   .text.adc_software_trigger_enable:0000000000000000 adc_software_trigger_enable
+     /tmp/cc2bTCrI.s:1266   .text.adc_end_of_conversion_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1272   .text.adc_end_of_conversion_config:0000000000000000 adc_end_of_conversion_config
+     /tmp/cc2bTCrI.s:1306   .text.adc_routine_data_read:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1312   .text.adc_routine_data_read:0000000000000000 adc_routine_data_read
+     /tmp/cc2bTCrI.s:1331   .text.adc_inserted_data_read:0000000000000000 $t
+ARM GAS  /tmp/cc2bTCrI.s 			page 63
 
 
-     /tmp/ccq7G377.s:1337   .text.adc_inserted_data_read:0000000000000000 adc_inserted_data_read
-     /tmp/ccq7G377.s:1351   .text.adc_inserted_data_read:0000000000000008 $d
-     /tmp/ccq7G377.s:1355   .text.adc_inserted_data_read:000000000000000c $t
-     /tmp/ccq7G377.s:1404   .text.adc_watchdog_single_channel_disable:0000000000000000 $t
-     /tmp/ccq7G377.s:1410   .text.adc_watchdog_single_channel_disable:0000000000000000 adc_watchdog_single_channel_disable
-     /tmp/ccq7G377.s:1429   .text.adc_watchdog_single_channel_enable:0000000000000000 $t
-     /tmp/ccq7G377.s:1435   .text.adc_watchdog_single_channel_enable:0000000000000000 adc_watchdog_single_channel_enable
-     /tmp/ccq7G377.s:1466   .text.adc_watchdog_sequence_channel_enable:0000000000000000 $t
-     /tmp/ccq7G377.s:1472   .text.adc_watchdog_sequence_channel_enable:0000000000000000 adc_watchdog_sequence_channel_enable
-     /tmp/ccq7G377.s:1522   .text.adc_watchdog_disable:0000000000000000 $t
-     /tmp/ccq7G377.s:1528   .text.adc_watchdog_disable:0000000000000000 adc_watchdog_disable
-     /tmp/ccq7G377.s:1570   .text.adc_watchdog_threshold_config:0000000000000000 $t
-     /tmp/ccq7G377.s:1576   .text.adc_watchdog_threshold_config:0000000000000000 adc_watchdog_threshold_config
-     /tmp/ccq7G377.s:1602   .text.adc_flag_get:0000000000000000 $t
-     /tmp/ccq7G377.s:1608   .text.adc_flag_get:0000000000000000 adc_flag_get
-     /tmp/ccq7G377.s:1635   .text.adc_flag_clear:0000000000000000 $t
-     /tmp/ccq7G377.s:1641   .text.adc_flag_clear:0000000000000000 adc_flag_clear
-     /tmp/ccq7G377.s:1660   .text.adc_routine_software_startconv_flag_get:0000000000000000 $t
-     /tmp/ccq7G377.s:1666   .text.adc_routine_software_startconv_flag_get:0000000000000000 adc_routine_software_startconv_flag_get
-     /tmp/ccq7G377.s:1689   .text.adc_inserted_software_startconv_flag_get:0000000000000000 $t
-     /tmp/ccq7G377.s:1695   .text.adc_inserted_software_startconv_flag_get:0000000000000000 adc_inserted_software_startconv_flag_get
-     /tmp/ccq7G377.s:1718   .text.adc_interrupt_flag_get:0000000000000000 $t
-     /tmp/ccq7G377.s:1724   .text.adc_interrupt_flag_get:0000000000000000 adc_interrupt_flag_get
-     /tmp/ccq7G377.s:1824   .text.adc_interrupt_flag_clear:0000000000000000 $t
-     /tmp/ccq7G377.s:1830   .text.adc_interrupt_flag_clear:0000000000000000 adc_interrupt_flag_clear
-     /tmp/ccq7G377.s:1842   .text.adc_interrupt_enable:0000000000000000 $t
-     /tmp/ccq7G377.s:1848   .text.adc_interrupt_enable:0000000000000000 adc_interrupt_enable
-     /tmp/ccq7G377.s:1902   .text.adc_interrupt_disable:0000000000000000 $t
-     /tmp/ccq7G377.s:1908   .text.adc_interrupt_disable:0000000000000000 adc_interrupt_disable
-     /tmp/ccq7G377.s:1962   .text.adc_sync_mode_config:0000000000000000 $t
-     /tmp/ccq7G377.s:1968   .text.adc_sync_mode_config:0000000000000000 adc_sync_mode_config
-     /tmp/ccq7G377.s:1992   .text.adc_sync_mode_config:000000000000001c $d
-     /tmp/ccq7G377.s:1997   .text.adc_sync_delay_config:0000000000000000 $t
-     /tmp/ccq7G377.s:2003   .text.adc_sync_delay_config:0000000000000000 adc_sync_delay_config
-     /tmp/ccq7G377.s:2027   .text.adc_sync_delay_config:000000000000001c $d
-     /tmp/ccq7G377.s:2032   .text.adc_sync_dma_config:0000000000000000 $t
-     /tmp/ccq7G377.s:2038   .text.adc_sync_dma_config:0000000000000000 adc_sync_dma_config
-     /tmp/ccq7G377.s:2062   .text.adc_sync_dma_config:000000000000001c $d
-     /tmp/ccq7G377.s:2067   .text.adc_sync_dma_request_after_last_enable:0000000000000000 $t
-     /tmp/ccq7G377.s:2073   .text.adc_sync_dma_request_after_last_enable:0000000000000000 adc_sync_dma_request_after_last_enable
-     /tmp/ccq7G377.s:2091   .text.adc_sync_dma_request_after_last_enable:0000000000000010 $d
-     /tmp/ccq7G377.s:2096   .text.adc_sync_dma_request_after_last_disable:0000000000000000 $t
-     /tmp/ccq7G377.s:2102   .text.adc_sync_dma_request_after_last_disable:0000000000000000 adc_sync_dma_request_after_last_disable
-     /tmp/ccq7G377.s:2120   .text.adc_sync_dma_request_after_last_disable:0000000000000010 $d
-     /tmp/ccq7G377.s:2125   .text.adc_sync_routine_data_read:0000000000000000 $t
-     /tmp/ccq7G377.s:2131   .text.adc_sync_routine_data_read:0000000000000000 adc_sync_routine_data_read
-     /tmp/ccq7G377.s:2147   .text.adc_sync_routine_data_read:0000000000000008 $d
+     /tmp/cc2bTCrI.s:1337   .text.adc_inserted_data_read:0000000000000000 adc_inserted_data_read
+     /tmp/cc2bTCrI.s:1351   .text.adc_inserted_data_read:0000000000000008 $d
+     /tmp/cc2bTCrI.s:1355   .text.adc_inserted_data_read:000000000000000c $t
+     /tmp/cc2bTCrI.s:1404   .text.adc_watchdog_single_channel_disable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1410   .text.adc_watchdog_single_channel_disable:0000000000000000 adc_watchdog_single_channel_disable
+     /tmp/cc2bTCrI.s:1429   .text.adc_watchdog_single_channel_enable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1435   .text.adc_watchdog_single_channel_enable:0000000000000000 adc_watchdog_single_channel_enable
+     /tmp/cc2bTCrI.s:1466   .text.adc_watchdog_sequence_channel_enable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1472   .text.adc_watchdog_sequence_channel_enable:0000000000000000 adc_watchdog_sequence_channel_enable
+     /tmp/cc2bTCrI.s:1522   .text.adc_watchdog_disable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1528   .text.adc_watchdog_disable:0000000000000000 adc_watchdog_disable
+     /tmp/cc2bTCrI.s:1570   .text.adc_watchdog_threshold_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1576   .text.adc_watchdog_threshold_config:0000000000000000 adc_watchdog_threshold_config
+     /tmp/cc2bTCrI.s:1602   .text.adc_flag_get:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1608   .text.adc_flag_get:0000000000000000 adc_flag_get
+     /tmp/cc2bTCrI.s:1635   .text.adc_flag_clear:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1641   .text.adc_flag_clear:0000000000000000 adc_flag_clear
+     /tmp/cc2bTCrI.s:1660   .text.adc_routine_software_startconv_flag_get:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1666   .text.adc_routine_software_startconv_flag_get:0000000000000000 adc_routine_software_startconv_flag_get
+     /tmp/cc2bTCrI.s:1689   .text.adc_inserted_software_startconv_flag_get:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1695   .text.adc_inserted_software_startconv_flag_get:0000000000000000 adc_inserted_software_startconv_flag_get
+     /tmp/cc2bTCrI.s:1718   .text.adc_interrupt_flag_get:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1724   .text.adc_interrupt_flag_get:0000000000000000 adc_interrupt_flag_get
+     /tmp/cc2bTCrI.s:1824   .text.adc_interrupt_flag_clear:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1830   .text.adc_interrupt_flag_clear:0000000000000000 adc_interrupt_flag_clear
+     /tmp/cc2bTCrI.s:1842   .text.adc_interrupt_enable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1848   .text.adc_interrupt_enable:0000000000000000 adc_interrupt_enable
+     /tmp/cc2bTCrI.s:1902   .text.adc_interrupt_disable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1908   .text.adc_interrupt_disable:0000000000000000 adc_interrupt_disable
+     /tmp/cc2bTCrI.s:1962   .text.adc_sync_mode_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:1968   .text.adc_sync_mode_config:0000000000000000 adc_sync_mode_config
+     /tmp/cc2bTCrI.s:1992   .text.adc_sync_mode_config:000000000000001c $d
+     /tmp/cc2bTCrI.s:1997   .text.adc_sync_delay_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:2003   .text.adc_sync_delay_config:0000000000000000 adc_sync_delay_config
+     /tmp/cc2bTCrI.s:2027   .text.adc_sync_delay_config:000000000000001c $d
+     /tmp/cc2bTCrI.s:2032   .text.adc_sync_dma_config:0000000000000000 $t
+     /tmp/cc2bTCrI.s:2038   .text.adc_sync_dma_config:0000000000000000 adc_sync_dma_config
+     /tmp/cc2bTCrI.s:2062   .text.adc_sync_dma_config:000000000000001c $d
+     /tmp/cc2bTCrI.s:2067   .text.adc_sync_dma_request_after_last_enable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:2073   .text.adc_sync_dma_request_after_last_enable:0000000000000000 adc_sync_dma_request_after_last_enable
+     /tmp/cc2bTCrI.s:2091   .text.adc_sync_dma_request_after_last_enable:0000000000000010 $d
+     /tmp/cc2bTCrI.s:2096   .text.adc_sync_dma_request_after_last_disable:0000000000000000 $t
+     /tmp/cc2bTCrI.s:2102   .text.adc_sync_dma_request_after_last_disable:0000000000000000 adc_sync_dma_request_after_last_disable
+     /tmp/cc2bTCrI.s:2120   .text.adc_sync_dma_request_after_last_disable:0000000000000010 $d
+     /tmp/cc2bTCrI.s:2125   .text.adc_sync_routine_data_read:0000000000000000 $t
+     /tmp/cc2bTCrI.s:2131   .text.adc_sync_routine_data_read:0000000000000000 adc_sync_routine_data_read
+     /tmp/cc2bTCrI.s:2147   .text.adc_sync_routine_data_read:0000000000000008 $d
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable

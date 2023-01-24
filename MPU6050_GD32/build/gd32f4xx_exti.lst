@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccC6Sq1i.s 			page 1
+ARM GAS  /tmp/cctTmwAl.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-ARM GAS  /tmp/ccC6Sq1i.s 			page 2
+ARM GAS  /tmp/cctTmwAl.s 			page 2
 
 
   33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
   61              		.syntax unified
   62              		.thumb
   63              		.thumb_func
-ARM GAS  /tmp/ccC6Sq1i.s 			page 3
+ARM GAS  /tmp/cctTmwAl.s 			page 3
 
 
   65              	exti_init:
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
   91              		.loc 1 80 5 is_stmt 1 view .LVU19
   92 001c D3F8085C 		ldr	r5, [r3, #3080]
   93              		.loc 1 80 15 is_stmt 0 view .LVU20
-ARM GAS  /tmp/ccC6Sq1i.s 			page 4
+ARM GAS  /tmp/cctTmwAl.s 			page 4
 
 
   94 0020 25EA0005 		bic	r5, r5, r0
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
  100:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
  101:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     case EXTI_TRIG_FALLING:
  102:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_RTEN &= ~(uint32_t)linex;
-ARM GAS  /tmp/ccC6Sq1i.s 			page 5
+ARM GAS  /tmp/cctTmwAl.s 			page 5
 
 
  103:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         EXTI_FTEN |= (uint32_t)linex;
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
  162              	.L12:
  107:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****         break;
  163              		.loc 1 107 9 view .LVU43
-ARM GAS  /tmp/ccC6Sq1i.s 			page 6
+ARM GAS  /tmp/cctTmwAl.s 			page 6
 
 
  164 0080 D3F80C2C 		ldr	r2, [r3, #3084]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
  205 0008 C2F8003C 		str	r3, [r2, #3072]
  126:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** }
  206              		.loc 1 126 1 view .LVU50
-ARM GAS  /tmp/ccC6Sq1i.s 			page 7
+ARM GAS  /tmp/cctTmwAl.s 			page 7
 
 
  207 000c 7047     		bx	lr
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
  252              	exti_event_enable:
  253              	.LVL12:
  254              	.LFB120:
-ARM GAS  /tmp/ccC6Sq1i.s 			page 8
+ARM GAS  /tmp/cctTmwAl.s 			page 8
 
 
  140:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c **** 
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
  287              		@ args = 0, pretend = 0, frame = 0
  288              		@ frame_needed = 0, uses_anonymous_args = 0
  289              		@ link register save eliminated.
-ARM GAS  /tmp/ccC6Sq1i.s 			page 9
+ARM GAS  /tmp/cctTmwAl.s 			page 9
 
 
  164:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     EXTI_EVEN &= ~(uint32_t)linex;
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
  331 0010 00300140 		.word	1073819648
  332              		.cfi_endproc
  333              	.LFE122:
-ARM GAS  /tmp/ccC6Sq1i.s 			page 10
+ARM GAS  /tmp/cctTmwAl.s 			page 10
 
 
  335              		.section	.text.exti_software_interrupt_disable,"ax",%progbits
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
  196:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****                 only one parameter can be selected which is shown as below:
  197:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****       \arg        EXTI_x (x=0..22): EXTI line x
  198:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \param[out] none
-ARM GAS  /tmp/ccC6Sq1i.s 			page 11
+ARM GAS  /tmp/cctTmwAl.s 			page 11
 
 
  199:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     \retval     FlagStatus: status of flag (RESET or SET)
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
  410              		.loc 1 219 1 is_stmt 1 view -0
  411              		.cfi_startproc
  412              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccC6Sq1i.s 			page 12
+ARM GAS  /tmp/cctTmwAl.s 			page 12
 
 
  413              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
  236:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_exti.c ****     flag_right = EXTI_INTEN & (uint32_t)linex;
  452              		.loc 1 236 5 is_stmt 1 view .LVU87
  453              		.loc 1 236 18 is_stmt 0 view .LVU88
-ARM GAS  /tmp/ccC6Sq1i.s 			page 13
+ARM GAS  /tmp/cctTmwAl.s 			page 13
 
 
  454 0008 D1F8001C 		ldr	r1, [r1, #3072]
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
  493 0000 014B     		ldr	r3, .L45
  494 0002 C3F8140C 		str	r0, [r3, #3092]
  495 0006 7047     		bx	lr
-ARM GAS  /tmp/ccC6Sq1i.s 			page 14
+ARM GAS  /tmp/cctTmwAl.s 			page 14
 
 
  496              	.L46:
@@ -793,46 +793,46 @@ ARM GAS  /tmp/ccC6Sq1i.s 			page 1
  506              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  507              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
  508              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_exti.h"
-ARM GAS  /tmp/ccC6Sq1i.s 			page 15
+ARM GAS  /tmp/cctTmwAl.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_exti.c
-     /tmp/ccC6Sq1i.s:19     .text.exti_deinit:0000000000000000 $t
-     /tmp/ccC6Sq1i.s:25     .text.exti_deinit:0000000000000000 exti_deinit
-     /tmp/ccC6Sq1i.s:54     .text.exti_deinit:000000000000001c $d
-     /tmp/ccC6Sq1i.s:59     .text.exti_init:0000000000000000 $t
-     /tmp/ccC6Sq1i.s:65     .text.exti_init:0000000000000000 exti_init
-     /tmp/ccC6Sq1i.s:181    .text.exti_init:0000000000000098 $d
-     /tmp/ccC6Sq1i.s:186    .text.exti_interrupt_enable:0000000000000000 $t
-     /tmp/ccC6Sq1i.s:192    .text.exti_interrupt_enable:0000000000000000 exti_interrupt_enable
-     /tmp/ccC6Sq1i.s:211    .text.exti_interrupt_enable:0000000000000010 $d
-     /tmp/ccC6Sq1i.s:216    .text.exti_interrupt_disable:0000000000000000 $t
-     /tmp/ccC6Sq1i.s:222    .text.exti_interrupt_disable:0000000000000000 exti_interrupt_disable
-     /tmp/ccC6Sq1i.s:241    .text.exti_interrupt_disable:0000000000000010 $d
-     /tmp/ccC6Sq1i.s:246    .text.exti_event_enable:0000000000000000 $t
-     /tmp/ccC6Sq1i.s:252    .text.exti_event_enable:0000000000000000 exti_event_enable
-     /tmp/ccC6Sq1i.s:271    .text.exti_event_enable:0000000000000010 $d
-     /tmp/ccC6Sq1i.s:276    .text.exti_event_disable:0000000000000000 $t
-     /tmp/ccC6Sq1i.s:282    .text.exti_event_disable:0000000000000000 exti_event_disable
-     /tmp/ccC6Sq1i.s:301    .text.exti_event_disable:0000000000000010 $d
-     /tmp/ccC6Sq1i.s:306    .text.exti_software_interrupt_enable:0000000000000000 $t
-     /tmp/ccC6Sq1i.s:312    .text.exti_software_interrupt_enable:0000000000000000 exti_software_interrupt_enable
-     /tmp/ccC6Sq1i.s:331    .text.exti_software_interrupt_enable:0000000000000010 $d
-     /tmp/ccC6Sq1i.s:336    .text.exti_software_interrupt_disable:0000000000000000 $t
-     /tmp/ccC6Sq1i.s:342    .text.exti_software_interrupt_disable:0000000000000000 exti_software_interrupt_disable
-     /tmp/ccC6Sq1i.s:361    .text.exti_software_interrupt_disable:0000000000000010 $d
-     /tmp/ccC6Sq1i.s:366    .text.exti_flag_get:0000000000000000 $t
-     /tmp/ccC6Sq1i.s:372    .text.exti_flag_get:0000000000000000 exti_flag_get
-     /tmp/ccC6Sq1i.s:396    .text.exti_flag_get:0000000000000010 $d
-     /tmp/ccC6Sq1i.s:401    .text.exti_flag_clear:0000000000000000 $t
-     /tmp/ccC6Sq1i.s:407    .text.exti_flag_clear:0000000000000000 exti_flag_clear
-     /tmp/ccC6Sq1i.s:424    .text.exti_flag_clear:0000000000000008 $d
-     /tmp/ccC6Sq1i.s:429    .text.exti_interrupt_flag_get:0000000000000000 $t
-     /tmp/ccC6Sq1i.s:435    .text.exti_interrupt_flag_get:0000000000000000 exti_interrupt_flag_get
-     /tmp/ccC6Sq1i.s:475    .text.exti_interrupt_flag_get:000000000000001c $d
-     /tmp/ccC6Sq1i.s:480    .text.exti_interrupt_flag_clear:0000000000000000 $t
-     /tmp/ccC6Sq1i.s:486    .text.exti_interrupt_flag_clear:0000000000000000 exti_interrupt_flag_clear
-     /tmp/ccC6Sq1i.s:499    .text.exti_interrupt_flag_clear:0000000000000008 $d
+     /tmp/cctTmwAl.s:19     .text.exti_deinit:0000000000000000 $t
+     /tmp/cctTmwAl.s:25     .text.exti_deinit:0000000000000000 exti_deinit
+     /tmp/cctTmwAl.s:54     .text.exti_deinit:000000000000001c $d
+     /tmp/cctTmwAl.s:59     .text.exti_init:0000000000000000 $t
+     /tmp/cctTmwAl.s:65     .text.exti_init:0000000000000000 exti_init
+     /tmp/cctTmwAl.s:181    .text.exti_init:0000000000000098 $d
+     /tmp/cctTmwAl.s:186    .text.exti_interrupt_enable:0000000000000000 $t
+     /tmp/cctTmwAl.s:192    .text.exti_interrupt_enable:0000000000000000 exti_interrupt_enable
+     /tmp/cctTmwAl.s:211    .text.exti_interrupt_enable:0000000000000010 $d
+     /tmp/cctTmwAl.s:216    .text.exti_interrupt_disable:0000000000000000 $t
+     /tmp/cctTmwAl.s:222    .text.exti_interrupt_disable:0000000000000000 exti_interrupt_disable
+     /tmp/cctTmwAl.s:241    .text.exti_interrupt_disable:0000000000000010 $d
+     /tmp/cctTmwAl.s:246    .text.exti_event_enable:0000000000000000 $t
+     /tmp/cctTmwAl.s:252    .text.exti_event_enable:0000000000000000 exti_event_enable
+     /tmp/cctTmwAl.s:271    .text.exti_event_enable:0000000000000010 $d
+     /tmp/cctTmwAl.s:276    .text.exti_event_disable:0000000000000000 $t
+     /tmp/cctTmwAl.s:282    .text.exti_event_disable:0000000000000000 exti_event_disable
+     /tmp/cctTmwAl.s:301    .text.exti_event_disable:0000000000000010 $d
+     /tmp/cctTmwAl.s:306    .text.exti_software_interrupt_enable:0000000000000000 $t
+     /tmp/cctTmwAl.s:312    .text.exti_software_interrupt_enable:0000000000000000 exti_software_interrupt_enable
+     /tmp/cctTmwAl.s:331    .text.exti_software_interrupt_enable:0000000000000010 $d
+     /tmp/cctTmwAl.s:336    .text.exti_software_interrupt_disable:0000000000000000 $t
+     /tmp/cctTmwAl.s:342    .text.exti_software_interrupt_disable:0000000000000000 exti_software_interrupt_disable
+     /tmp/cctTmwAl.s:361    .text.exti_software_interrupt_disable:0000000000000010 $d
+     /tmp/cctTmwAl.s:366    .text.exti_flag_get:0000000000000000 $t
+     /tmp/cctTmwAl.s:372    .text.exti_flag_get:0000000000000000 exti_flag_get
+     /tmp/cctTmwAl.s:396    .text.exti_flag_get:0000000000000010 $d
+     /tmp/cctTmwAl.s:401    .text.exti_flag_clear:0000000000000000 $t
+     /tmp/cctTmwAl.s:407    .text.exti_flag_clear:0000000000000000 exti_flag_clear
+     /tmp/cctTmwAl.s:424    .text.exti_flag_clear:0000000000000008 $d
+     /tmp/cctTmwAl.s:429    .text.exti_interrupt_flag_get:0000000000000000 $t
+     /tmp/cctTmwAl.s:435    .text.exti_interrupt_flag_get:0000000000000000 exti_interrupt_flag_get
+     /tmp/cctTmwAl.s:475    .text.exti_interrupt_flag_get:000000000000001c $d
+     /tmp/cctTmwAl.s:480    .text.exti_interrupt_flag_clear:0000000000000000 $t
+     /tmp/cctTmwAl.s:486    .text.exti_interrupt_flag_clear:0000000000000000 exti_interrupt_flag_clear
+     /tmp/cctTmwAl.s:499    .text.exti_interrupt_flag_clear:0000000000000008 $d
 
 NO UNDEFINED SYMBOLS

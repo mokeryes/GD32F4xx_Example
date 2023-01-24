@@ -6,18 +6,25 @@ int main(void)
 {
     systick_config();
     usart_gpio_config();
-    mpu6050_init();
 
-    MPU6050_t accel_data;
+    printf("\r\n---------- GD32F4xx -----------\r\n");
+
+    MPU6050_t mpu6050_data;
+    ErrStatus mpu6050_state = mpu6050_init();
 
     while (1) {
-        mpu6050_read_accel(&accel_data);
+        if (mpu6050_state == SUCCESS) {
+            mpu6050_read_accel(&mpu6050_data);
+            mpu6050_read_gyro(&mpu6050_data);
 
-        printf("Accel_X_RAW: %lf\r\n", accel_data.Accel_X_RAW);
-        printf("Accel_Y_RAW: %lf\r\n", accel_data.Accel_Y_RAW);
-        printf("Accel_Z_RAW: %lf\r\n", accel_data.Accel_Z_RAW);
+            printf(
+                "Ax: %lf Ay: %lf Az: %lf Gx: %lf Gy: %lf Gz: %lf\r\n", 
+                mpu6050_data.Ax, mpu6050_data.Ay, mpu6050_data.Az,
+                mpu6050_data.Gx, mpu6050_data.Gy, mpu6050_data.Gz 
+            );
 
-        delay_1ms(500);
+            delay_1ms(10);
+        }
     }
 
     return 0;

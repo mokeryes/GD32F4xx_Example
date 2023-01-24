@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccimqHD6.s 			page 1
+ARM GAS  /tmp/cclmYrUa.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
   29:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-ARM GAS  /tmp/ccimqHD6.s 			page 2
+ARM GAS  /tmp/cclmYrUa.s 			page 2
 
 
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
   86:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \brief    enable the peripherals clock
   87:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \param[in]  periph: RCU peripherals, refer to rcu_periph_enum
   88:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****                 only one parameter can be selected which is shown as below:
-ARM GAS  /tmp/ccimqHD6.s 			page 3
+ARM GAS  /tmp/cclmYrUa.s 			page 3
 
 
   89:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_GPIOx (x = A, B, C, D, E, F, G, H, I): GPIO ports clock
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
   44 0012 8240     		lsls	r2, r2, r0
   45              		.loc 1 126 25 view .LVU5
   46 0014 0A43     		orrs	r2, r2, r1
-ARM GAS  /tmp/ccimqHD6.s 			page 4
+ARM GAS  /tmp/cclmYrUa.s 			page 4
 
 
   47 0016 1A60     		str	r2, [r3]
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  167:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** */
  168:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** void rcu_periph_clock_disable(rcu_periph_enum periph)
  169:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** {
-ARM GAS  /tmp/ccimqHD6.s 			page 5
+ARM GAS  /tmp/cclmYrUa.s 			page 5
 
 
   63              		.loc 1 169 1 is_stmt 1 view -0
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  191:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_USBHSULPI_SLP: USBHSULPI clock
  192:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_DCI_SLP: DCI clock
  193:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_TRNG_SLP: TRNG clock
-ARM GAS  /tmp/ccimqHD6.s 			page 6
+ARM GAS  /tmp/cclmYrUa.s 			page 6
 
 
  194:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_USBFS_SLP: USBFS clock
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  232:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_IPA_SLP: IPA clock
  233:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_ENET_SLP: ENET clock
  234:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_ENETTX_SLP: ENETTX clock
-ARM GAS  /tmp/ccimqHD6.s 			page 7
+ARM GAS  /tmp/cclmYrUa.s 			page 7
 
 
  235:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_ENETRX_SLP: ENETRX clock
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  273:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_DMAxRST (x=0,1): reset DMA
  274:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_IPARST: reset IPA
  275:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_ENETRST: reset ENET
-ARM GAS  /tmp/ccimqHD6.s 			page 8
+ARM GAS  /tmp/cclmYrUa.s 			page 8
 
 
  276:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_USBHSRST: reset USBHS
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  314:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_DCIRST: reset DCI
  315:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_TRNGRST: reset TRNG
  316:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_USBFSRST: reset USBFS
-ARM GAS  /tmp/ccimqHD6.s 			page 9
+ARM GAS  /tmp/cclmYrUa.s 			page 9
 
 
  317:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_EXMCRST: reset EXMC
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  175 0000 034A     		ldr	r2, .L8
  176 0002 D2F87038 		ldr	r3, [r2, #2160]
  177              		.loc 1 349 15 is_stmt 0 view .LVU20
-ARM GAS  /tmp/ccimqHD6.s 			page 10
+ARM GAS  /tmp/cclmYrUa.s 			page 10
 
 
  178 0006 43F48033 		orr	r3, r3, #65536
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  223              		.thumb_func
  225              	rcu_system_clock_source_config:
  226              	.LVL4:
-ARM GAS  /tmp/ccimqHD6.s 			page 11
+ARM GAS  /tmp/cclmYrUa.s 			page 11
 
 
  227              	.LFB125:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  261              		.syntax unified
  262              		.thumb
  263              		.thumb_func
-ARM GAS  /tmp/ccimqHD6.s 			page 12
+ARM GAS  /tmp/cclmYrUa.s 			page 12
 
 
  265              	rcu_system_clock_source_get:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  296              		.loc 1 406 1 is_stmt 1 view -0
  297              		.cfi_startproc
  298              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccimqHD6.s 			page 13
+ARM GAS  /tmp/cclmYrUa.s 			page 13
 
 
  299              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  425:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \retval     none
  426:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** */
  427:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** void rcu_apb1_clock_config(uint32_t ck_apb1)
-ARM GAS  /tmp/ccimqHD6.s 			page 14
+ARM GAS  /tmp/cclmYrUa.s 			page 14
 
 
  428:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** {
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  443:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_APB2_CKAHB_DIV4: select CK_AHB / 4 as CK_APB2
  444:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_APB2_CKAHB_DIV8: select CK_AHB / 8 as CK_APB2
  445:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_APB2_CKAHB_DIV16: select CK_AHB / 16 as CK_APB2
-ARM GAS  /tmp/ccimqHD6.s 			page 15
+ARM GAS  /tmp/cclmYrUa.s 			page 15
 
 
  446:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \param[out] none
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  461:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \param[in]  ckout0_src: CK_OUT0 clock source selection
  462:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****                 only one parameter can be selected which is shown as below:
  463:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_CKOUT0SRC_IRC16M: IRC16M selected
-ARM GAS  /tmp/ccimqHD6.s 			page 16
+ARM GAS  /tmp/cclmYrUa.s 			page 16
 
 
  464:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_CKOUT0SRC_LXTAL: LXTAL selected
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  453              		.thumb_func
  455              	rcu_ckout1_config:
  456              	.LVL24:
-ARM GAS  /tmp/ccimqHD6.s 			page 17
+ARM GAS  /tmp/cclmYrUa.s 			page 17
 
 
  457              	.LFB131:
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  487              		.cfi_endproc
  488              	.LFE131:
  490              		.section	.text.rcu_pll_config,"ax",%progbits
-ARM GAS  /tmp/ccimqHD6.s 			page 18
+ARM GAS  /tmp/cclmYrUa.s 			page 18
 
 
  491              		.align	1
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  520              	.LVL29:
  522:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     uint32_t ss_modulation_inc;
  521              		.loc 1 522 1 view .LVU100
-ARM GAS  /tmp/ccimqHD6.s 			page 19
+ARM GAS  /tmp/cclmYrUa.s 			page 19
 
 
  522 0006 049E     		ldr	r6, [sp, #16]
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  563              		.loc 1 540 41 discriminator 5 view .LVU114
  564 003c B01E     		subs	r0, r6, #2
  565              		.loc 1 540 38 discriminator 5 view .LVU115
-ARM GAS  /tmp/ccimqHD6.s 			page 20
+ARM GAS  /tmp/cclmYrUa.s 			page 20
 
 
  566 003e 0D28     		cmp	r0, #13
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  604              	.L44:
  526:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     ss_modulation_reg = RCU_PLLSSCTL;
  605              		.loc 1 526 23 view .LVU130
-ARM GAS  /tmp/ccimqHD6.s 			page 21
+ARM GAS  /tmp/cclmYrUa.s 			page 21
 
 
  606 0062 0020     		movs	r0, #0
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  647              		.loc 1 565 38 view .LVU140
  648 0014 41EA8010 		orr	r0, r1, r0, lsl #6
  649              	.LVL45:
-ARM GAS  /tmp/ccimqHD6.s 			page 22
+ARM GAS  /tmp/cclmYrUa.s 			page 22
 
 
  650              		.loc 1 565 20 view .LVU141
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  683              		@ frame_needed = 0, uses_anonymous_args = 0
  588:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     /* check the function parameter */
  589:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     if(CHECK_PLLSAI_N_VALID(pllsai_n) && CHECK_PLLSAI_P_VALID(pllsai_p) && CHECK_PLLSAI_R_VALID(pll
-ARM GAS  /tmp/ccimqHD6.s 			page 23
+ARM GAS  /tmp/cclmYrUa.s 			page 23
 
 
  684              		.loc 1 589 5 view .LVU147
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  597:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     return SUCCESS;
  729              		.loc 1 597 5 is_stmt 1 view .LVU163
  730              		.loc 1 597 12 is_stmt 0 view .LVU164
-ARM GAS  /tmp/ccimqHD6.s 			page 24
+ARM GAS  /tmp/cclmYrUa.s 			page 24
 
 
  731 0038 0120     		movs	r0, #1
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  617:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     reg &= ~RCU_BDCTL_RTCSRC;
  768              		.loc 1 617 5 is_stmt 1 view .LVU171
  618:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     RCU_BDCTL = (reg | rtc_clock_source);
-ARM GAS  /tmp/ccimqHD6.s 			page 25
+ARM GAS  /tmp/cclmYrUa.s 			page 25
 
 
  769              		.loc 1 618 5 view .LVU172
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  635:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     /* reset the RTCDIV bits and set according to rtc_div value */
  636:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     reg &= ~RCU_CFG0_RTCDIV;
  808              		.loc 1 636 5 is_stmt 1 view .LVU181
-ARM GAS  /tmp/ccimqHD6.s 			page 26
+ARM GAS  /tmp/cclmYrUa.s 			page 26
 
 
  637:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     RCU_CFG0 = (reg | rtc_div);
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  846 0002 D2F80838 		ldr	r3, [r2, #2056]
  847              	.LVL63:
  655:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     /* reset the I2SSEL bit and set according to i2s_clock_source */
-ARM GAS  /tmp/ccimqHD6.s 			page 27
+ARM GAS  /tmp/cclmYrUa.s 			page 27
 
 
  656:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     reg &= ~RCU_CFG0_I2SSEL;
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  885 0000 044A     		ldr	r2, .L71
  886 0002 D2F8C038 		ldr	r3, [r2, #2240]
  887              	.LVL67:
-ARM GAS  /tmp/ccimqHD6.s 			page 28
+ARM GAS  /tmp/cclmYrUa.s 			page 28
 
 
  674:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     /* reset the CK48MSEL bit and set according to i2s_clock_source */
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  924              		.loc 1 692 9 is_stmt 0 view .LVU210
  925 0000 044A     		ldr	r2, .L74
  926 0002 D2F8C038 		ldr	r3, [r2, #2240]
-ARM GAS  /tmp/ccimqHD6.s 			page 29
+ARM GAS  /tmp/cclmYrUa.s 			page 29
 
 
  927              	.LVL71:
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  960              		@ frame_needed = 0, uses_anonymous_args = 0
  961              		@ link register save eliminated.
  715:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     /* configure the TIMERSEL bit and select the TIMER clock prescaler */
-ARM GAS  /tmp/ccimqHD6.s 			page 30
+ARM GAS  /tmp/cclmYrUa.s 			page 30
 
 
  716:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     if(timer_clock_prescaler == RCU_TIMER_PSC_MUL2) {
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  733:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     uint32_t reg;
  1001              		.loc 1 733 5 view .LVU227
  734:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** 
-ARM GAS  /tmp/ccimqHD6.s 			page 31
+ARM GAS  /tmp/cclmYrUa.s 			page 31
 
 
  735:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     reg = RCU_CFG1;
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1040              		@ link register save eliminated.
  752:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     uint32_t reg;
  1041              		.loc 1 752 5 view .LVU237
-ARM GAS  /tmp/ccimqHD6.s 			page 32
+ARM GAS  /tmp/cclmYrUa.s 			page 32
 
 
  753:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** 
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  774:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \retval     ErrStatus: SUCCESS or ERROR
  775:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** */
  776:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** ErrStatus rcu_osci_stab_wait(rcu_osci_type_enum osci)
-ARM GAS  /tmp/ccimqHD6.s 			page 33
+ARM GAS  /tmp/cclmYrUa.s 			page 33
 
 
  777:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** {
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  831:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     /* wait IRC32K stable */
  832:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     case RCU_IRC32K:
  833:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****         while((RESET == osci_stat) && (OSC_STARTUP_TIMEOUT != stb_cnt)) {
-ARM GAS  /tmp/ccimqHD6.s 			page 34
+ARM GAS  /tmp/cclmYrUa.s 			page 34
 
 
  834:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****             osci_stat = rcu_flag_get(RCU_FLAG_IRC32KSTB);
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  888:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** /*!
  889:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \brief    turn on the oscillator
  890:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \param[in]  osci: oscillator types, refer to rcu_osci_type_enum
-ARM GAS  /tmp/ccimqHD6.s 			page 35
+ARM GAS  /tmp/cclmYrUa.s 			page 35
 
 
  891:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****                 only one parameter can be selected which is shown as below:
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1099              		.cfi_endproc
  1100              	.LFE178:
  1102              		.section	.text.rcu_osci_bypass_mode_enable,"ax",%progbits
-ARM GAS  /tmp/ccimqHD6.s 			page 36
+ARM GAS  /tmp/cclmYrUa.s 			page 36
 
 
  1103              		.align	1
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  945:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****         RCU_CTL &= ~RCU_CTL_HXTALEN;
  1135              		.loc 1 945 17 view .LVU255
  1136 001a 21F48031 		bic	r1, r1, #65536
-ARM GAS  /tmp/ccimqHD6.s 			page 37
+ARM GAS  /tmp/cclmYrUa.s 			page 37
 
 
  1137 001e C3F80018 		str	r1, [r3, #2048]
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1173              		.global	rcu_osci_bypass_mode_disable
  1174              		.syntax unified
  1175              		.thumb
-ARM GAS  /tmp/ccimqHD6.s 			page 38
+ARM GAS  /tmp/cclmYrUa.s 			page 38
 
 
  1176              		.thumb_func
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  985:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****         break;
  1210              		.loc 1 985 9 is_stmt 1 view .LVU278
  1211 0026 7047     		bx	lr
-ARM GAS  /tmp/ccimqHD6.s 			page 39
+ARM GAS  /tmp/cclmYrUa.s 			page 39
 
 
  1212              	.LVL92:
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
 1003:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** 
 1004:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** /*!
 1005:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \brief    set the IRC16M adjust value
-ARM GAS  /tmp/ccimqHD6.s 			page 40
+ARM GAS  /tmp/cclmYrUa.s 			page 40
 
 
 1006:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \param[in]  irc16m_adjval: IRC16M adjust value, must be between 0 and 0x1F
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1291              	rcu_spread_spectrum_config:
  1292              	.LVL99:
  1293              	.LFB149:
-ARM GAS  /tmp/ccimqHD6.s 			page 41
+ARM GAS  /tmp/cclmYrUa.s 			page 41
 
 
 1020:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** 
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1324 0018 10BD     		pop	{r4, pc}
  1325              	.L107:
  1326 001a 00BF     		.align	2
-ARM GAS  /tmp/ccimqHD6.s 			page 42
+ARM GAS  /tmp/cclmYrUa.s 			page 42
 
 
  1327              	.L106:
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
 1057:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \param[out] none
 1058:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \retval     none
 1059:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** */
-ARM GAS  /tmp/ccimqHD6.s 			page 43
+ARM GAS  /tmp/cclmYrUa.s 			page 43
 
 
 1060:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** void rcu_spread_spectrum_disable(void)
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1410              		.loc 1 1075 1 view .LVU323
  1411 000e 7047     		bx	lr
  1412              	.L116:
-ARM GAS  /tmp/ccimqHD6.s 			page 44
+ARM GAS  /tmp/cclmYrUa.s 			page 44
 
 
  1413              		.align	2
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
 1090:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \param[in]  none
 1091:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \param[out] none
 1092:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     \retval     none
-ARM GAS  /tmp/ccimqHD6.s 			page 45
+ARM GAS  /tmp/cclmYrUa.s 			page 45
 
 
 1093:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** */
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
 1113:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     RCU_DSV = dsvol;
  1493              		.loc 1 1113 13 is_stmt 0 view .LVU334
  1494 0000 024B     		ldr	r3, .L124
-ARM GAS  /tmp/ccimqHD6.s 			page 46
+ARM GAS  /tmp/cclmYrUa.s 			page 46
 
 
 1112:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     dsvol &= RCU_DSV_DSLPVS;
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1528              		.loc 1 1128 1 is_stmt 0 view .LVU344
  1529 0000 F0B5     		push	{r4, r5, r6, r7, lr}
  1530              	.LCFI3:
-ARM GAS  /tmp/ccimqHD6.s 			page 47
+ARM GAS  /tmp/cclmYrUa.s 			page 47
 
 
  1531              		.cfi_def_cfa_offset 20
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1576 0030 C3F38103 		ubfx	r3, r3, #2, #2
  1577              	.LVL107:
 1139:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     switch(sws) {
-ARM GAS  /tmp/ccimqHD6.s 			page 48
+ARM GAS  /tmp/cclmYrUa.s 			page 48
 
 
  1578              		.loc 1 1139 5 is_stmt 1 view .LVU359
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
 1153:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****         /* PLL clock source selection, HXTAL or IRC16M/2 */
  1609              		.loc 1 1153 9 view .LVU373
 1153:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****         /* PLL clock source selection, HXTAL or IRC16M/2 */
-ARM GAS  /tmp/ccimqHD6.s 			page 49
+ARM GAS  /tmp/cclmYrUa.s 			page 49
 
 
  1610              		.loc 1 1153 14 is_stmt 0 view .LVU374
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
 1169:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     clk_exp = ahb_exp[idx];
  1644              		.loc 1 1169 9 view .LVU390
  1645 0088 C3F30313 		ubfx	r3, r3, #4, #4
-ARM GAS  /tmp/ccimqHD6.s 			page 50
+ARM GAS  /tmp/cclmYrUa.s 			page 50
 
 
  1646              	.LVL115:
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1684              		.p2align 1
  1685              	.L136:
 1139:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     /* IRC16M is selected as CK_SYS */
-ARM GAS  /tmp/ccimqHD6.s 			page 51
+ARM GAS  /tmp/cclmYrUa.s 			page 51
 
 
  1686              		.loc 1 1139 5 is_stmt 0 view .LVU407
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1717              	.LVL123:
  1718              	.L133:
 1176:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** 
-ARM GAS  /tmp/ccimqHD6.s 			page 52
+ARM GAS  /tmp/cclmYrUa.s 			page 52
 
 
  1719              		.loc 1 1176 15 view .LVU415
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
 1215:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_FLAG_BORRST: BOR reset flags
 1216:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_FLAG_EPRST: external PIN reset flag
 1217:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_FLAG_PORRST: Power reset flag
-ARM GAS  /tmp/ccimqHD6.s 			page 53
+ARM GAS  /tmp/cclmYrUa.s 			page 53
 
 
 1218:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_FLAG_SWRST: software reset flag
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  779:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****     FlagStatus osci_stat = RESET;
  1793              		.loc 1 779 5 view .LVU432
  780:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c **** 
-ARM GAS  /tmp/ccimqHD6.s 			page 54
+ARM GAS  /tmp/cclmYrUa.s 			page 54
 
 
  1794              		.loc 1 780 5 view .LVU433
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1837              	.LVL134:
  857:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****             osci_stat = rcu_flag_get(RCU_FLAG_PLLI2SSTB);
  1838              		.loc 1 857 36 discriminator 1 view .LVU445
-ARM GAS  /tmp/ccimqHD6.s 			page 55
+ARM GAS  /tmp/cclmYrUa.s 			page 55
 
 
  1839 0028 F9D1     		bne	.L152
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1880              		.loc 1 803 21 view .LVU458
  1881 0058 08E0     		b	.L180
  1882              	.LVL143:
-ARM GAS  /tmp/ccimqHD6.s 			page 56
+ARM GAS  /tmp/cclmYrUa.s 			page 56
 
 
  1883              	.L167:
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  1923              		.loc 1 810 25 is_stmt 0 view .LVU472
  1924 007c 0120     		movs	r0, #1
  1925 007e FFF7FEFF 		bl	rcu_flag_get
-ARM GAS  /tmp/ccimqHD6.s 			page 57
+ARM GAS  /tmp/cclmYrUa.s 			page 57
 
 
  1926              	.LVL152:
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  827:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****             reval = SUCCESS;
  1965              		.loc 1 827 21 is_stmt 0 view .LVU488
  1966 009c 43F21100 		movw	r0, #12305
-ARM GAS  /tmp/ccimqHD6.s 			page 58
+ARM GAS  /tmp/cclmYrUa.s 			page 58
 
 
  1967              	.LVL161:
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  2007              	.LVL170:
  847:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****         }
  2008              		.loc 1 847 13 is_stmt 1 view .LVU503
-ARM GAS  /tmp/ccimqHD6.s 			page 59
+ARM GAS  /tmp/cclmYrUa.s 			page 59
 
 
  845:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****             osci_stat = rcu_flag_get(RCU_FLAG_PLLSTB);
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  2048              	.LVL179:
  875:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****             reval = SUCCESS;
  2049              		.loc 1 875 21 view .LVU519
-ARM GAS  /tmp/ccimqHD6.s 			page 60
+ARM GAS  /tmp/cclmYrUa.s 			page 60
 
 
  2050 00da C7E7     		b	.L180
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  2096 0024 D1F80038 		ldr	r3, [r1, #2048]
   66:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****                  | RCU_CTL_PLLSAIEN);
  2097              		.loc 1 66 13 is_stmt 0 view .LVU530
-ARM GAS  /tmp/ccimqHD6.s 			page 61
+ARM GAS  /tmp/cclmYrUa.s 			page 61
 
 
  2098 0028 23F0A853 		bic	r3, r3, #352321536
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  2137 0078 00300024 		.word	603992064
  2138 007c 10300024 		.word	603992080
  2139              		.cfi_endproc
-ARM GAS  /tmp/ccimqHD6.s 			page 62
+ARM GAS  /tmp/cclmYrUa.s 			page 62
 
 
  2140              	.LFE116:
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
 1251:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_INT_FLAG_LXTALSTB: LXTAL stabilization interrupt flag
 1252:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_INT_FLAG_IRC16MSTB: IRC16M stabilization interrupt flag
 1253:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_INT_FLAG_HXTALSTB: HXTAL stabilization interrupt flag
-ARM GAS  /tmp/ccimqHD6.s 			page 63
+ARM GAS  /tmp/cclmYrUa.s 			page 63
 
 
 1254:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_INT_FLAG_PLLSTB: PLL stabilization interrupt flag
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  2202              		@ link register save eliminated.
  2203 0000 FFF7FEBF 		b	rcu_periph_clock_enable
  2204              		.cfi_endproc
-ARM GAS  /tmp/ccimqHD6.s 			page 64
+ARM GAS  /tmp/cclmYrUa.s 			page 64
 
 
  2205              	.LFE170:
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
 1317:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****                 only one parameter can be selected which is shown as below:
 1318:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_INT_IRC32KSTB: IRC32K stabilization interrupt disable
 1319:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_INT_LXTALSTB: LXTAL stabilization interrupt disable
-ARM GAS  /tmp/ccimqHD6.s 			page 65
+ARM GAS  /tmp/cclmYrUa.s 			page 65
 
 
 1320:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_rcu.c ****       \arg        RCU_INT_IRC16MSTB: IRC16M stabilization interrupt disable
@@ -3875,146 +3875,146 @@ ARM GAS  /tmp/ccimqHD6.s 			page 1
  2253              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  2254              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
  2255              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
-ARM GAS  /tmp/ccimqHD6.s 			page 66
+ARM GAS  /tmp/cclmYrUa.s 			page 66
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_rcu.c
-     /tmp/ccimqHD6.s:19     .text.rcu_periph_clock_enable:0000000000000000 $t
-     /tmp/ccimqHD6.s:25     .text.rcu_periph_clock_enable:0000000000000000 rcu_periph_clock_enable
-     /tmp/ccimqHD6.s:54     .text.rcu_periph_clock_disable:0000000000000000 $t
-     /tmp/ccimqHD6.s:60     .text.rcu_periph_clock_disable:0000000000000000 rcu_periph_clock_disable
-     /tmp/ccimqHD6.s:89     .text.rcu_periph_clock_sleep_enable:0000000000000000 $t
-     /tmp/ccimqHD6.s:95     .text.rcu_periph_clock_sleep_enable:0000000000000000 rcu_periph_clock_sleep_enable
-     /tmp/ccimqHD6.s:107    .text.rcu_periph_clock_sleep_disable:0000000000000000 $t
-     /tmp/ccimqHD6.s:113    .text.rcu_periph_clock_sleep_disable:0000000000000000 rcu_periph_clock_sleep_disable
-     /tmp/ccimqHD6.s:125    .text.rcu_periph_reset_enable:0000000000000000 $t
-     /tmp/ccimqHD6.s:131    .text.rcu_periph_reset_enable:0000000000000000 rcu_periph_reset_enable
-     /tmp/ccimqHD6.s:143    .text.rcu_periph_reset_disable:0000000000000000 $t
-     /tmp/ccimqHD6.s:149    .text.rcu_periph_reset_disable:0000000000000000 rcu_periph_reset_disable
-     /tmp/ccimqHD6.s:161    .text.rcu_bkp_reset_enable:0000000000000000 $t
-     /tmp/ccimqHD6.s:167    .text.rcu_bkp_reset_enable:0000000000000000 rcu_bkp_reset_enable
-     /tmp/ccimqHD6.s:185    .text.rcu_bkp_reset_enable:0000000000000010 $d
-     /tmp/ccimqHD6.s:190    .text.rcu_bkp_reset_disable:0000000000000000 $t
-     /tmp/ccimqHD6.s:196    .text.rcu_bkp_reset_disable:0000000000000000 rcu_bkp_reset_disable
-     /tmp/ccimqHD6.s:214    .text.rcu_bkp_reset_disable:0000000000000010 $d
-     /tmp/ccimqHD6.s:219    .text.rcu_system_clock_source_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:225    .text.rcu_system_clock_source_config:0000000000000000 rcu_system_clock_source_config
-     /tmp/ccimqHD6.s:254    .text.rcu_system_clock_source_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:259    .text.rcu_system_clock_source_get:0000000000000000 $t
-     /tmp/ccimqHD6.s:265    .text.rcu_system_clock_source_get:0000000000000000 rcu_system_clock_source_get
-     /tmp/ccimqHD6.s:282    .text.rcu_system_clock_source_get:000000000000000c $d
-     /tmp/ccimqHD6.s:287    .text.rcu_ahb_clock_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:293    .text.rcu_ahb_clock_config:0000000000000000 rcu_ahb_clock_config
-     /tmp/ccimqHD6.s:322    .text.rcu_ahb_clock_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:327    .text.rcu_apb1_clock_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:333    .text.rcu_apb1_clock_config:0000000000000000 rcu_apb1_clock_config
-     /tmp/ccimqHD6.s:362    .text.rcu_apb1_clock_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:367    .text.rcu_apb2_clock_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:373    .text.rcu_apb2_clock_config:0000000000000000 rcu_apb2_clock_config
-     /tmp/ccimqHD6.s:402    .text.rcu_apb2_clock_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:407    .text.rcu_ckout0_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:413    .text.rcu_ckout0_config:0000000000000000 rcu_ckout0_config
-     /tmp/ccimqHD6.s:444    .text.rcu_ckout0_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:449    .text.rcu_ckout1_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:455    .text.rcu_ckout1_config:0000000000000000 rcu_ckout1_config
-     /tmp/ccimqHD6.s:486    .text.rcu_ckout1_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:491    .text.rcu_pll_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:497    .text.rcu_pll_config:0000000000000000 rcu_pll_config
-     /tmp/ccimqHD6.s:611    .text.rcu_pll_config:0000000000000068 $d
-     /tmp/ccimqHD6.s:616    .text.rcu_plli2s_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:622    .text.rcu_plli2s_config:0000000000000000 rcu_plli2s_config
-     /tmp/ccimqHD6.s:666    .text.rcu_plli2s_config:0000000000000024 $d
-     /tmp/ccimqHD6.s:671    .text.rcu_pllsai_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:677    .text.rcu_pllsai_config:0000000000000000 rcu_pllsai_config
-     /tmp/ccimqHD6.s:743    .text.rcu_pllsai_config:0000000000000040 $d
-     /tmp/ccimqHD6.s:748    .text.rcu_rtc_clock_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:754    .text.rcu_rtc_clock_config:0000000000000000 rcu_rtc_clock_config
-     /tmp/ccimqHD6.s:783    .text.rcu_rtc_clock_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:788    .text.rcu_rtc_div_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:794    .text.rcu_rtc_div_config:0000000000000000 rcu_rtc_div_config
-     /tmp/ccimqHD6.s:823    .text.rcu_rtc_div_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:828    .text.rcu_i2s_clock_config:0000000000000000 $t
-ARM GAS  /tmp/ccimqHD6.s 			page 67
+     /tmp/cclmYrUa.s:19     .text.rcu_periph_clock_enable:0000000000000000 $t
+     /tmp/cclmYrUa.s:25     .text.rcu_periph_clock_enable:0000000000000000 rcu_periph_clock_enable
+     /tmp/cclmYrUa.s:54     .text.rcu_periph_clock_disable:0000000000000000 $t
+     /tmp/cclmYrUa.s:60     .text.rcu_periph_clock_disable:0000000000000000 rcu_periph_clock_disable
+     /tmp/cclmYrUa.s:89     .text.rcu_periph_clock_sleep_enable:0000000000000000 $t
+     /tmp/cclmYrUa.s:95     .text.rcu_periph_clock_sleep_enable:0000000000000000 rcu_periph_clock_sleep_enable
+     /tmp/cclmYrUa.s:107    .text.rcu_periph_clock_sleep_disable:0000000000000000 $t
+     /tmp/cclmYrUa.s:113    .text.rcu_periph_clock_sleep_disable:0000000000000000 rcu_periph_clock_sleep_disable
+     /tmp/cclmYrUa.s:125    .text.rcu_periph_reset_enable:0000000000000000 $t
+     /tmp/cclmYrUa.s:131    .text.rcu_periph_reset_enable:0000000000000000 rcu_periph_reset_enable
+     /tmp/cclmYrUa.s:143    .text.rcu_periph_reset_disable:0000000000000000 $t
+     /tmp/cclmYrUa.s:149    .text.rcu_periph_reset_disable:0000000000000000 rcu_periph_reset_disable
+     /tmp/cclmYrUa.s:161    .text.rcu_bkp_reset_enable:0000000000000000 $t
+     /tmp/cclmYrUa.s:167    .text.rcu_bkp_reset_enable:0000000000000000 rcu_bkp_reset_enable
+     /tmp/cclmYrUa.s:185    .text.rcu_bkp_reset_enable:0000000000000010 $d
+     /tmp/cclmYrUa.s:190    .text.rcu_bkp_reset_disable:0000000000000000 $t
+     /tmp/cclmYrUa.s:196    .text.rcu_bkp_reset_disable:0000000000000000 rcu_bkp_reset_disable
+     /tmp/cclmYrUa.s:214    .text.rcu_bkp_reset_disable:0000000000000010 $d
+     /tmp/cclmYrUa.s:219    .text.rcu_system_clock_source_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:225    .text.rcu_system_clock_source_config:0000000000000000 rcu_system_clock_source_config
+     /tmp/cclmYrUa.s:254    .text.rcu_system_clock_source_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:259    .text.rcu_system_clock_source_get:0000000000000000 $t
+     /tmp/cclmYrUa.s:265    .text.rcu_system_clock_source_get:0000000000000000 rcu_system_clock_source_get
+     /tmp/cclmYrUa.s:282    .text.rcu_system_clock_source_get:000000000000000c $d
+     /tmp/cclmYrUa.s:287    .text.rcu_ahb_clock_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:293    .text.rcu_ahb_clock_config:0000000000000000 rcu_ahb_clock_config
+     /tmp/cclmYrUa.s:322    .text.rcu_ahb_clock_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:327    .text.rcu_apb1_clock_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:333    .text.rcu_apb1_clock_config:0000000000000000 rcu_apb1_clock_config
+     /tmp/cclmYrUa.s:362    .text.rcu_apb1_clock_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:367    .text.rcu_apb2_clock_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:373    .text.rcu_apb2_clock_config:0000000000000000 rcu_apb2_clock_config
+     /tmp/cclmYrUa.s:402    .text.rcu_apb2_clock_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:407    .text.rcu_ckout0_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:413    .text.rcu_ckout0_config:0000000000000000 rcu_ckout0_config
+     /tmp/cclmYrUa.s:444    .text.rcu_ckout0_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:449    .text.rcu_ckout1_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:455    .text.rcu_ckout1_config:0000000000000000 rcu_ckout1_config
+     /tmp/cclmYrUa.s:486    .text.rcu_ckout1_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:491    .text.rcu_pll_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:497    .text.rcu_pll_config:0000000000000000 rcu_pll_config
+     /tmp/cclmYrUa.s:611    .text.rcu_pll_config:0000000000000068 $d
+     /tmp/cclmYrUa.s:616    .text.rcu_plli2s_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:622    .text.rcu_plli2s_config:0000000000000000 rcu_plli2s_config
+     /tmp/cclmYrUa.s:666    .text.rcu_plli2s_config:0000000000000024 $d
+     /tmp/cclmYrUa.s:671    .text.rcu_pllsai_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:677    .text.rcu_pllsai_config:0000000000000000 rcu_pllsai_config
+     /tmp/cclmYrUa.s:743    .text.rcu_pllsai_config:0000000000000040 $d
+     /tmp/cclmYrUa.s:748    .text.rcu_rtc_clock_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:754    .text.rcu_rtc_clock_config:0000000000000000 rcu_rtc_clock_config
+     /tmp/cclmYrUa.s:783    .text.rcu_rtc_clock_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:788    .text.rcu_rtc_div_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:794    .text.rcu_rtc_div_config:0000000000000000 rcu_rtc_div_config
+     /tmp/cclmYrUa.s:823    .text.rcu_rtc_div_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:828    .text.rcu_i2s_clock_config:0000000000000000 $t
+ARM GAS  /tmp/cclmYrUa.s 			page 67
 
 
-     /tmp/ccimqHD6.s:834    .text.rcu_i2s_clock_config:0000000000000000 rcu_i2s_clock_config
-     /tmp/ccimqHD6.s:863    .text.rcu_i2s_clock_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:868    .text.rcu_ck48m_clock_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:874    .text.rcu_ck48m_clock_config:0000000000000000 rcu_ck48m_clock_config
-     /tmp/ccimqHD6.s:903    .text.rcu_ck48m_clock_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:908    .text.rcu_pll48m_clock_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:914    .text.rcu_pll48m_clock_config:0000000000000000 rcu_pll48m_clock_config
-     /tmp/ccimqHD6.s:943    .text.rcu_pll48m_clock_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:948    .text.rcu_timer_clock_prescaler_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:954    .text.rcu_timer_clock_prescaler_config:0000000000000000 rcu_timer_clock_prescaler_config
-     /tmp/ccimqHD6.s:982    .text.rcu_timer_clock_prescaler_config:000000000000001c $d
-     /tmp/ccimqHD6.s:987    .text.rcu_tli_clock_div_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:993    .text.rcu_tli_clock_div_config:0000000000000000 rcu_tli_clock_div_config
-     /tmp/ccimqHD6.s:1022   .text.rcu_tli_clock_div_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:1027   .text.rcu_lxtal_drive_capability_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:1033   .text.rcu_lxtal_drive_capability_config:0000000000000000 rcu_lxtal_drive_capability_config
-     /tmp/ccimqHD6.s:1062   .text.rcu_lxtal_drive_capability_config:0000000000000014 $d
-     /tmp/ccimqHD6.s:1067   .text.rcu_osci_on:0000000000000000 $t
-     /tmp/ccimqHD6.s:1073   .text.rcu_osci_on:0000000000000000 rcu_osci_on
-     /tmp/ccimqHD6.s:1085   .text.rcu_osci_off:0000000000000000 $t
-     /tmp/ccimqHD6.s:1091   .text.rcu_osci_off:0000000000000000 rcu_osci_off
-     /tmp/ccimqHD6.s:1103   .text.rcu_osci_bypass_mode_enable:0000000000000000 $t
-     /tmp/ccimqHD6.s:1109   .text.rcu_osci_bypass_mode_enable:0000000000000000 rcu_osci_bypass_mode_enable
-     /tmp/ccimqHD6.s:1167   .text.rcu_osci_bypass_mode_enable:0000000000000044 $d
-     /tmp/ccimqHD6.s:1172   .text.rcu_osci_bypass_mode_disable:0000000000000000 $t
-     /tmp/ccimqHD6.s:1178   .text.rcu_osci_bypass_mode_disable:0000000000000000 rcu_osci_bypass_mode_disable
-     /tmp/ccimqHD6.s:1236   .text.rcu_osci_bypass_mode_disable:0000000000000044 $d
-     /tmp/ccimqHD6.s:1241   .text.rcu_irc16m_adjust_value_set:0000000000000000 $t
-     /tmp/ccimqHD6.s:1247   .text.rcu_irc16m_adjust_value_set:0000000000000000 rcu_irc16m_adjust_value_set
-     /tmp/ccimqHD6.s:1280   .text.rcu_irc16m_adjust_value_set:0000000000000018 $d
-     /tmp/ccimqHD6.s:1285   .text.rcu_spread_spectrum_config:0000000000000000 $t
-     /tmp/ccimqHD6.s:1291   .text.rcu_spread_spectrum_config:0000000000000000 rcu_spread_spectrum_config
-     /tmp/ccimqHD6.s:1328   .text.rcu_spread_spectrum_config:000000000000001c $d
-     /tmp/ccimqHD6.s:1333   .text.rcu_spread_spectrum_enable:0000000000000000 $t
-     /tmp/ccimqHD6.s:1339   .text.rcu_spread_spectrum_enable:0000000000000000 rcu_spread_spectrum_enable
-     /tmp/ccimqHD6.s:1357   .text.rcu_spread_spectrum_enable:0000000000000010 $d
-     /tmp/ccimqHD6.s:1362   .text.rcu_spread_spectrum_disable:0000000000000000 $t
-     /tmp/ccimqHD6.s:1368   .text.rcu_spread_spectrum_disable:0000000000000000 rcu_spread_spectrum_disable
-     /tmp/ccimqHD6.s:1386   .text.rcu_spread_spectrum_disable:0000000000000010 $d
-     /tmp/ccimqHD6.s:1391   .text.rcu_hxtal_clock_monitor_enable:0000000000000000 $t
-     /tmp/ccimqHD6.s:1397   .text.rcu_hxtal_clock_monitor_enable:0000000000000000 rcu_hxtal_clock_monitor_enable
-     /tmp/ccimqHD6.s:1415   .text.rcu_hxtal_clock_monitor_enable:0000000000000010 $d
-     /tmp/ccimqHD6.s:1420   .text.rcu_hxtal_clock_monitor_disable:0000000000000000 $t
-     /tmp/ccimqHD6.s:1426   .text.rcu_hxtal_clock_monitor_disable:0000000000000000 rcu_hxtal_clock_monitor_disable
-     /tmp/ccimqHD6.s:1444   .text.rcu_hxtal_clock_monitor_disable:0000000000000010 $d
-     /tmp/ccimqHD6.s:1449   .text.rcu_voltage_key_unlock:0000000000000000 $t
-     /tmp/ccimqHD6.s:1455   .text.rcu_voltage_key_unlock:0000000000000000 rcu_voltage_key_unlock
-     /tmp/ccimqHD6.s:1472   .text.rcu_voltage_key_unlock:000000000000000c $d
-     /tmp/ccimqHD6.s:1478   .text.rcu_deepsleep_voltage_set:0000000000000000 $t
-     /tmp/ccimqHD6.s:1484   .text.rcu_deepsleep_voltage_set:0000000000000000 rcu_deepsleep_voltage_set
-     /tmp/ccimqHD6.s:1506   .text.rcu_deepsleep_voltage_set:000000000000000c $d
-     /tmp/ccimqHD6.s:1511   .text.rcu_clock_freq_get:0000000000000000 $t
-     /tmp/ccimqHD6.s:1517   .text.rcu_clock_freq_get:0000000000000000 rcu_clock_freq_get
-     /tmp/ccimqHD6.s:1679   .text.rcu_clock_freq_get:00000000000000b4 $d
-     /tmp/ccimqHD6.s:1684   .text.rcu_clock_freq_get:00000000000000b8 $t
-     /tmp/ccimqHD6.s:1738   .text.rcu_clock_freq_get:00000000000000d8 $d
-     /tmp/ccimqHD6.s:1746   .text.rcu_flag_get:0000000000000000 $t
-ARM GAS  /tmp/ccimqHD6.s 			page 68
+     /tmp/cclmYrUa.s:834    .text.rcu_i2s_clock_config:0000000000000000 rcu_i2s_clock_config
+     /tmp/cclmYrUa.s:863    .text.rcu_i2s_clock_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:868    .text.rcu_ck48m_clock_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:874    .text.rcu_ck48m_clock_config:0000000000000000 rcu_ck48m_clock_config
+     /tmp/cclmYrUa.s:903    .text.rcu_ck48m_clock_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:908    .text.rcu_pll48m_clock_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:914    .text.rcu_pll48m_clock_config:0000000000000000 rcu_pll48m_clock_config
+     /tmp/cclmYrUa.s:943    .text.rcu_pll48m_clock_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:948    .text.rcu_timer_clock_prescaler_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:954    .text.rcu_timer_clock_prescaler_config:0000000000000000 rcu_timer_clock_prescaler_config
+     /tmp/cclmYrUa.s:982    .text.rcu_timer_clock_prescaler_config:000000000000001c $d
+     /tmp/cclmYrUa.s:987    .text.rcu_tli_clock_div_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:993    .text.rcu_tli_clock_div_config:0000000000000000 rcu_tli_clock_div_config
+     /tmp/cclmYrUa.s:1022   .text.rcu_tli_clock_div_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:1027   .text.rcu_lxtal_drive_capability_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:1033   .text.rcu_lxtal_drive_capability_config:0000000000000000 rcu_lxtal_drive_capability_config
+     /tmp/cclmYrUa.s:1062   .text.rcu_lxtal_drive_capability_config:0000000000000014 $d
+     /tmp/cclmYrUa.s:1067   .text.rcu_osci_on:0000000000000000 $t
+     /tmp/cclmYrUa.s:1073   .text.rcu_osci_on:0000000000000000 rcu_osci_on
+     /tmp/cclmYrUa.s:1085   .text.rcu_osci_off:0000000000000000 $t
+     /tmp/cclmYrUa.s:1091   .text.rcu_osci_off:0000000000000000 rcu_osci_off
+     /tmp/cclmYrUa.s:1103   .text.rcu_osci_bypass_mode_enable:0000000000000000 $t
+     /tmp/cclmYrUa.s:1109   .text.rcu_osci_bypass_mode_enable:0000000000000000 rcu_osci_bypass_mode_enable
+     /tmp/cclmYrUa.s:1167   .text.rcu_osci_bypass_mode_enable:0000000000000044 $d
+     /tmp/cclmYrUa.s:1172   .text.rcu_osci_bypass_mode_disable:0000000000000000 $t
+     /tmp/cclmYrUa.s:1178   .text.rcu_osci_bypass_mode_disable:0000000000000000 rcu_osci_bypass_mode_disable
+     /tmp/cclmYrUa.s:1236   .text.rcu_osci_bypass_mode_disable:0000000000000044 $d
+     /tmp/cclmYrUa.s:1241   .text.rcu_irc16m_adjust_value_set:0000000000000000 $t
+     /tmp/cclmYrUa.s:1247   .text.rcu_irc16m_adjust_value_set:0000000000000000 rcu_irc16m_adjust_value_set
+     /tmp/cclmYrUa.s:1280   .text.rcu_irc16m_adjust_value_set:0000000000000018 $d
+     /tmp/cclmYrUa.s:1285   .text.rcu_spread_spectrum_config:0000000000000000 $t
+     /tmp/cclmYrUa.s:1291   .text.rcu_spread_spectrum_config:0000000000000000 rcu_spread_spectrum_config
+     /tmp/cclmYrUa.s:1328   .text.rcu_spread_spectrum_config:000000000000001c $d
+     /tmp/cclmYrUa.s:1333   .text.rcu_spread_spectrum_enable:0000000000000000 $t
+     /tmp/cclmYrUa.s:1339   .text.rcu_spread_spectrum_enable:0000000000000000 rcu_spread_spectrum_enable
+     /tmp/cclmYrUa.s:1357   .text.rcu_spread_spectrum_enable:0000000000000010 $d
+     /tmp/cclmYrUa.s:1362   .text.rcu_spread_spectrum_disable:0000000000000000 $t
+     /tmp/cclmYrUa.s:1368   .text.rcu_spread_spectrum_disable:0000000000000000 rcu_spread_spectrum_disable
+     /tmp/cclmYrUa.s:1386   .text.rcu_spread_spectrum_disable:0000000000000010 $d
+     /tmp/cclmYrUa.s:1391   .text.rcu_hxtal_clock_monitor_enable:0000000000000000 $t
+     /tmp/cclmYrUa.s:1397   .text.rcu_hxtal_clock_monitor_enable:0000000000000000 rcu_hxtal_clock_monitor_enable
+     /tmp/cclmYrUa.s:1415   .text.rcu_hxtal_clock_monitor_enable:0000000000000010 $d
+     /tmp/cclmYrUa.s:1420   .text.rcu_hxtal_clock_monitor_disable:0000000000000000 $t
+     /tmp/cclmYrUa.s:1426   .text.rcu_hxtal_clock_monitor_disable:0000000000000000 rcu_hxtal_clock_monitor_disable
+     /tmp/cclmYrUa.s:1444   .text.rcu_hxtal_clock_monitor_disable:0000000000000010 $d
+     /tmp/cclmYrUa.s:1449   .text.rcu_voltage_key_unlock:0000000000000000 $t
+     /tmp/cclmYrUa.s:1455   .text.rcu_voltage_key_unlock:0000000000000000 rcu_voltage_key_unlock
+     /tmp/cclmYrUa.s:1472   .text.rcu_voltage_key_unlock:000000000000000c $d
+     /tmp/cclmYrUa.s:1478   .text.rcu_deepsleep_voltage_set:0000000000000000 $t
+     /tmp/cclmYrUa.s:1484   .text.rcu_deepsleep_voltage_set:0000000000000000 rcu_deepsleep_voltage_set
+     /tmp/cclmYrUa.s:1506   .text.rcu_deepsleep_voltage_set:000000000000000c $d
+     /tmp/cclmYrUa.s:1511   .text.rcu_clock_freq_get:0000000000000000 $t
+     /tmp/cclmYrUa.s:1517   .text.rcu_clock_freq_get:0000000000000000 rcu_clock_freq_get
+     /tmp/cclmYrUa.s:1679   .text.rcu_clock_freq_get:00000000000000b4 $d
+     /tmp/cclmYrUa.s:1684   .text.rcu_clock_freq_get:00000000000000b8 $t
+     /tmp/cclmYrUa.s:1738   .text.rcu_clock_freq_get:00000000000000d8 $d
+     /tmp/cclmYrUa.s:1746   .text.rcu_flag_get:0000000000000000 $t
+ARM GAS  /tmp/cclmYrUa.s 			page 68
 
 
-     /tmp/ccimqHD6.s:1752   .text.rcu_flag_get:0000000000000000 rcu_flag_get
-     /tmp/ccimqHD6.s:1779   .text.rcu_osci_stab_wait:0000000000000000 $t
-     /tmp/ccimqHD6.s:1785   .text.rcu_osci_stab_wait:0000000000000000 rcu_osci_stab_wait
-     /tmp/ccimqHD6.s:2054   .text.rcu_osci_stab_wait:00000000000000dc $d
-     /tmp/ccimqHD6.s:2059   .text.rcu_deinit:0000000000000000 $t
-     /tmp/ccimqHD6.s:2065   .text.rcu_deinit:0000000000000000 rcu_deinit
-     /tmp/ccimqHD6.s:2136   .text.rcu_deinit:0000000000000074 $d
-     /tmp/ccimqHD6.s:2143   .text.rcu_all_reset_flag_clear:0000000000000000 $t
-     /tmp/ccimqHD6.s:2149   .text.rcu_all_reset_flag_clear:0000000000000000 rcu_all_reset_flag_clear
-     /tmp/ccimqHD6.s:2167   .text.rcu_all_reset_flag_clear:0000000000000010 $d
-     /tmp/ccimqHD6.s:2172   .text.rcu_interrupt_flag_get:0000000000000000 $t
-     /tmp/ccimqHD6.s:2178   .text.rcu_interrupt_flag_get:0000000000000000 rcu_interrupt_flag_get
-     /tmp/ccimqHD6.s:2190   .text.rcu_interrupt_flag_clear:0000000000000000 $t
-     /tmp/ccimqHD6.s:2196   .text.rcu_interrupt_flag_clear:0000000000000000 rcu_interrupt_flag_clear
-     /tmp/ccimqHD6.s:2208   .text.rcu_interrupt_enable:0000000000000000 $t
-     /tmp/ccimqHD6.s:2214   .text.rcu_interrupt_enable:0000000000000000 rcu_interrupt_enable
-     /tmp/ccimqHD6.s:2226   .text.rcu_interrupt_disable:0000000000000000 $t
-     /tmp/ccimqHD6.s:2232   .text.rcu_interrupt_disable:0000000000000000 rcu_interrupt_disable
+     /tmp/cclmYrUa.s:1752   .text.rcu_flag_get:0000000000000000 rcu_flag_get
+     /tmp/cclmYrUa.s:1779   .text.rcu_osci_stab_wait:0000000000000000 $t
+     /tmp/cclmYrUa.s:1785   .text.rcu_osci_stab_wait:0000000000000000 rcu_osci_stab_wait
+     /tmp/cclmYrUa.s:2054   .text.rcu_osci_stab_wait:00000000000000dc $d
+     /tmp/cclmYrUa.s:2059   .text.rcu_deinit:0000000000000000 $t
+     /tmp/cclmYrUa.s:2065   .text.rcu_deinit:0000000000000000 rcu_deinit
+     /tmp/cclmYrUa.s:2136   .text.rcu_deinit:0000000000000074 $d
+     /tmp/cclmYrUa.s:2143   .text.rcu_all_reset_flag_clear:0000000000000000 $t
+     /tmp/cclmYrUa.s:2149   .text.rcu_all_reset_flag_clear:0000000000000000 rcu_all_reset_flag_clear
+     /tmp/cclmYrUa.s:2167   .text.rcu_all_reset_flag_clear:0000000000000010 $d
+     /tmp/cclmYrUa.s:2172   .text.rcu_interrupt_flag_get:0000000000000000 $t
+     /tmp/cclmYrUa.s:2178   .text.rcu_interrupt_flag_get:0000000000000000 rcu_interrupt_flag_get
+     /tmp/cclmYrUa.s:2190   .text.rcu_interrupt_flag_clear:0000000000000000 $t
+     /tmp/cclmYrUa.s:2196   .text.rcu_interrupt_flag_clear:0000000000000000 rcu_interrupt_flag_clear
+     /tmp/cclmYrUa.s:2208   .text.rcu_interrupt_enable:0000000000000000 $t
+     /tmp/cclmYrUa.s:2214   .text.rcu_interrupt_enable:0000000000000000 rcu_interrupt_enable
+     /tmp/cclmYrUa.s:2226   .text.rcu_interrupt_disable:0000000000000000 $t
+     /tmp/cclmYrUa.s:2232   .text.rcu_interrupt_disable:0000000000000000 rcu_interrupt_disable
 
 NO UNDEFINED SYMBOLS

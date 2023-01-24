@@ -10,17 +10,20 @@
 #define RAD_TO_DEG              57.295779513082320876798154814105
 
 /**
- *                          MPU6050寄存器地址表
- *     -------------------------------------------------------------------
- *    | Register | Bit7 | Bit6 | Bit 5 | Bit4 | Bit3 | Bit2 | Bit1 | Bit0 |
- *     -------------------------------------------------------------------
+ * 设备写地址 0xD0
+ * 设备读地址 0xD1
  */
+#define MPU6050_ADDR            0xD0
+#define WHO_AM_I_REG            0x75
+
 /**
- * AUX IIC 寄存器配置，用于MPU6050的AUX_CL, AUX_DA外接辅助IIC设备
+ *                       MPU6050寄存器地址表
+ *  -------------------------------------------------------------------
+ * | Register | Bit7 | Bit6 | Bit 5 | Bit4 | Bit3 | Bit2 | Bit1 | Bit0 |
+ *  -------------------------------------------------------------------
+ * |    -     |  -   |   -  |   -   |  -   |   -  |   -  |  -   |  -   |
+ *  -------------------------------------------------------------------
  */
-#define AUX_VDDIO_REG           0x01
-    #define AUX_VDDIO_ENABLE    0x01
-    #define AUX_VDDIO_DISABLE   0x00
 
 /**
  * 陀螺仪数据输出频率设置 
@@ -51,7 +54,7 @@
  *     DLPF_CFG[2:0] => CONFIG_REG[Bit2:Bit0]
  *     ----------------------------------------------------------------------------
  *    | DLPF_CFG | Accelerometer (Fs = 1kHz) |             Gyroscope               |
- *    |----------------------------------------------------------------------------|
+ *    |          |-----------------------------------------------------------------|
  *    |          | Bandwidth(Hz) | Delay(ms) | Bandwidth(Hz) | Delay(ms) | Fs(kHz) |
  *    |          |-----------------------------------------------------------------|
  *    |    0     |      260      |    0      |       256     |    0.98   |    8    |
@@ -94,6 +97,16 @@
     #define GYRO_CONFIG_VALUE   0xE0 // 陀螺仪所有轴自检，采样范围设置为：±250°/s
 
 /**
+ * 陀螺仪X、Y、Z轴的高位、低位数据读取寄存器
+ */
+#define GYRO_XOUT_H_REG         0x43 
+#define GYRO_XOUT_L_REG         0x44
+#define GYRO_YOUT_H_REG         0x45 
+#define GYRO_YOUT_L_REG         0x46
+#define GYRO_ZOUT_H_REG         0x47
+#define GYRO_ZOUT_L_REG         0x48
+
+/**
  * 触发加速度传感器自检以及配置加速度传感器采样范围，同时可配置高通滤波器
  *     X轴加速度自检：
  *         XA_ST => ACCEL_CONFIG_REG[Bit7]
@@ -107,14 +120,14 @@
  *         Self-test response = Sensor output with self-test enabled - Sensor output without self-test enabled
  * 加速度传感器采样范围配置：
  *     AFS_SEL => ACCEL_CONFIG_REG[Bit4:Bit3]
- *      -----------------------------
- *     | AFS_SEL  | Full Scale Range |
- *     |-----------------------------|
- *     |    0     |        ± 2g      |
- *     |    1     |        ± 4g      |
- *     |    2     |        ± 8g      |
- *     |    3     |       ± 16g      |
- *      -----------------------------
+ *      --------------------------------------------------
+ *     | AFS_SEL  | Full Scale Range |  LSB Sensitivity   |
+ *     |-----------------------------|--------------------|
+ *     |    0     |        ± 2g      |   16384 LSB/mg     | 
+ *     |    1     |        ± 4g      |    8192 LSB/mg     | 
+ *     |    2     |        ± 8g      |    4096 LSB/mg     | 
+ *     |    3     |       ± 16g      |    2048 LSB/mg     | 
+ *      --------------------------------------------------
  * 高通滤波器配置：
  *     ACCEL_HPF => ACCEL_CONFIG_REG[Bit2:Bit0]
  *      ---------------------------------------------
@@ -129,7 +142,17 @@
  *      ---------------------------------------------
  */
 #define ACCEL_CONFIG_REG        0x1C
-    #define ACCEL_CONFIF_VALUE  0xE0 // 加速度传感器自检，采样范围±2g，高通滤波器关闭
+    #define ACCEL_CONFIG_VALUE  0xE0 // 加速度传感器自检，采样范围±2g，高通滤波器关闭
+
+/**
+ * 加速度传感器X、Y、Z轴的高位、低位数据读取寄存器
+ */
+#define ACCEL_XOUT_H_REG        0x3B
+#define ACCEL_XOUT_L_REG        0x3C
+#define ACCEL_YOUT_H_REG        0x3D
+#define ACCEL_YOUT_L_REG        0x3E
+#define ACCEL_ZOUT_H_REG        0x3F
+#define ACCEL_ZOUT_L_REG        0x40
 
 /**
  * 自由落体运动检测临界值设置
@@ -144,6 +167,35 @@
  * FF_DUR => FF_DUR_REG[Bit7:Bit0]
  */
 #define FF_DUR_REG              0x1E
+
+/**
+ * 配置是否复位、激活、循环复位读取设备，配置是否关闭温度传感器，配置时钟
+ * 复位开关寄存器，复位后需要延时一会儿
+ *     DEVICE_RESET => PWR_MGMT_1_REG[Bit7]
+ * 睡眠模式/待机模式开关寄存器：
+ *     SLEEP => PWR_MGMT_1_REG[Bit6]
+ * 低功耗单数据读取模式，可在 PWR_MGMT_2_REG 进行具体设置：
+ *     CYCLE => PWR_MGMT_1_REG[Bit5]
+ * 是否关闭温度传感器：
+ *     TEMP_DIS => PWR_MGMT_1_REG[Bit3]
+ * 时钟选择：
+ *     CLKSEL => PWR_MGMT_1_REG[Bit2:Bit0]
+ *      ------------------------------------------------------------------
+ *     | CLKSEL |                    Clock Source                         |
+ *      ------------------------------------------------------------------
+ *     |   0    | Internal 8MHz Oscillator                                |
+ *     |   1    | PLL with X axis gyroscope reference                     |
+ *     |   2    | PLL with Y axis gyroscope reference                     |
+ *     |   3    | PLL with Z axis gyroscope reference                     |
+ *     |   4    | PLL with external 32.768kHz reference                   |
+ *     |   5    | PLL with external 19.2MHz reference                     |
+ *     |   6    | Reserved                                                |
+ *     |   7    | Stops the clock and keeps the timing generator in reset |
+ *      ------------------------------------------------------------------
+ */
+#define PWR_MGMT_1_REG          0x6B
+   #define PWR_MGMT_1_RESET     0x80
+   #define PWR_MGMT_1_WAKEUP    0x00 // 低功耗模式关闭、开启温度传感器、选择内部8MHz时钟作为时钟源
 
 /* MPU6050 数据结构 */
 typedef struct {
@@ -177,8 +229,9 @@ typedef struct {
     double P[2][2];
 } Kalman_t;
 
-void mpu6050_init(void);
+ErrStatus mpu6050_init(void);
 void mpu6050_read_accel(MPU6050_t *data);
+void mpu6050_read_gyro(MPU6050_t *data);
 
 
 #endif
