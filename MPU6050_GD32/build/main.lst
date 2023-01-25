@@ -1,0 +1,187 @@
+ARM GAS  /tmp/ccoorv8t.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/main.c"
+  18              		.section	.rodata.main.str1.1,"aMS",%progbits,1
+  19              	.LC0:
+  20 0000 0D0A2D2D 		.ascii	"\015\012---------- GD32F4xx -----------\015\000"
+  20      2D2D2D2D 
+  20      2D2D2D2D 
+  20      20474433 
+  20      32463478 
+  21              	.LC1:
+  22 0023 41783A20 		.ascii	"Ax: %lf Ay: %lf Az: %lf Gx: %lf Gy: %lf Gz: %lf\015"
+  22      256C6620 
+  22      41793A20 
+  22      256C6620 
+  22      417A3A20 
+  23 0053 0A00     		.ascii	"\012\000"
+  24              		.section	.text.startup.main,"ax",%progbits
+  25              		.align	1
+  26              		.global	main
+  27              		.syntax unified
+  28              		.thumb
+  29              		.thumb_func
+  31              	main:
+  32              	.LFB119:
+   1:Core/Src/main.c **** #include <stdio.h>
+   2:Core/Src/main.c **** #include "main.h"
+   3:Core/Src/main.c **** 
+   4:Core/Src/main.c **** 
+   5:Core/Src/main.c **** int main(void)
+   6:Core/Src/main.c **** {
+  33              		.loc 1 6 1 view -0
+  34              		.cfi_startproc
+  35              		@ args = 0, pretend = 0, frame = 88
+  36              		@ frame_needed = 0, uses_anonymous_args = 0
+   7:Core/Src/main.c ****     systick_config();
+  37              		.loc 1 7 5 view .LVU1
+   6:Core/Src/main.c ****     systick_config();
+  38              		.loc 1 6 1 is_stmt 0 view .LVU2
+  39 0000 10B5     		push	{r4, lr}
+  40              	.LCFI0:
+  41              		.cfi_def_cfa_offset 8
+  42              		.cfi_offset 4, -8
+ARM GAS  /tmp/ccoorv8t.s 			page 2
+
+
+  43              		.cfi_offset 14, -4
+  44 0002 A0B0     		sub	sp, sp, #128
+  45              	.LCFI1:
+  46              		.cfi_def_cfa_offset 136
+  47              		.loc 1 7 5 view .LVU3
+  48 0004 FFF7FEFF 		bl	systick_config
+  49              	.LVL0:
+   8:Core/Src/main.c ****     usart_gpio_config();
+  50              		.loc 1 8 5 is_stmt 1 view .LVU4
+  51 0008 FFF7FEFF 		bl	usart_gpio_config
+  52              	.LVL1:
+   9:Core/Src/main.c **** 
+  10:Core/Src/main.c ****     printf("\r\n---------- GD32F4xx -----------\r\n");
+  53              		.loc 1 10 5 view .LVU5
+  54 000c 1548     		ldr	r0, .L6
+  11:Core/Src/main.c **** 
+  12:Core/Src/main.c ****     MPU6050_t mpu6050_data;
+  13:Core/Src/main.c ****     ErrStatus mpu6050_state = mpu6050_init();
+  14:Core/Src/main.c **** 
+  15:Core/Src/main.c ****     while (1) {
+  16:Core/Src/main.c ****         if (mpu6050_state == SUCCESS) {
+  17:Core/Src/main.c ****             mpu6050_read_accel(&mpu6050_data);
+  18:Core/Src/main.c ****             mpu6050_read_gyro(&mpu6050_data);
+  19:Core/Src/main.c **** 
+  20:Core/Src/main.c ****             printf(
+  55              		.loc 1 20 13 is_stmt 0 view .LVU6
+  56 000e 164C     		ldr	r4, .L6+4
+  10:Core/Src/main.c **** 
+  57              		.loc 1 10 5 view .LVU7
+  58 0010 FFF7FEFF 		bl	puts
+  59              	.LVL2:
+  12:Core/Src/main.c ****     ErrStatus mpu6050_state = mpu6050_init();
+  60              		.loc 1 12 5 is_stmt 1 view .LVU8
+  13:Core/Src/main.c **** 
+  61              		.loc 1 13 5 view .LVU9
+  13:Core/Src/main.c **** 
+  62              		.loc 1 13 31 is_stmt 0 view .LVU10
+  63 0014 FFF7FEFF 		bl	mpu6050_init
+  64              	.LVL3:
+  65              	.L2:
+  15:Core/Src/main.c ****         if (mpu6050_state == SUCCESS) {
+  66              		.loc 1 15 5 is_stmt 1 view .LVU11
+  16:Core/Src/main.c ****             mpu6050_read_accel(&mpu6050_data);
+  67              		.loc 1 16 9 view .LVU12
+  16:Core/Src/main.c ****             mpu6050_read_accel(&mpu6050_data);
+  68              		.loc 1 16 12 is_stmt 0 view .LVU13
+  69 0018 0128     		cmp	r0, #1
+  70 001a FDD1     		bne	.L2
+  71              	.LVL4:
+  72              	.L5:
+  17:Core/Src/main.c ****             mpu6050_read_gyro(&mpu6050_data);
+  73              		.loc 1 17 13 is_stmt 1 view .LVU14
+  74 001c 0AA8     		add	r0, sp, #40
+  75 001e FFF7FEFF 		bl	mpu6050_read_accel
+  76              	.LVL5:
+  18:Core/Src/main.c **** 
+  77              		.loc 1 18 13 view .LVU15
+ARM GAS  /tmp/ccoorv8t.s 			page 3
+
+
+  78 0022 0AA8     		add	r0, sp, #40
+  79 0024 FFF7FEFF 		bl	mpu6050_read_gyro
+  80              	.LVL6:
+  81              		.loc 1 20 13 view .LVU16
+  82 0028 DDE91823 		ldrd	r2, [sp, #96]
+  83 002c CDE90823 		strd	r2, [sp, #32]
+  84 0030 DDE91623 		ldrd	r2, [sp, #88]
+  85 0034 CDE90623 		strd	r2, [sp, #24]
+  86 0038 DDE91423 		ldrd	r2, [sp, #80]
+  87 003c CDE90423 		strd	r2, [sp, #16]
+  88 0040 DDE91023 		ldrd	r2, [sp, #64]
+  89 0044 CDE90223 		strd	r2, [sp, #8]
+  90 0048 DDE90E23 		ldrd	r2, [sp, #56]
+  91 004c 2046     		mov	r0, r4
+  92 004e CDE90023 		strd	r2, [sp]
+  93 0052 DDE90C23 		ldrd	r2, [sp, #48]
+  94 0056 FFF7FEFF 		bl	printf
+  95              	.LVL7:
+  21:Core/Src/main.c ****                 "Ax: %lf Ay: %lf Az: %lf Gx: %lf Gy: %lf Gz: %lf\r\n", 
+  22:Core/Src/main.c ****                 mpu6050_data.Ax, mpu6050_data.Ay, mpu6050_data.Az,
+  23:Core/Src/main.c ****                 mpu6050_data.Gx, mpu6050_data.Gy, mpu6050_data.Gz 
+  24:Core/Src/main.c ****             );
+  25:Core/Src/main.c **** 
+  26:Core/Src/main.c ****             delay_1ms(10);
+  96              		.loc 1 26 13 view .LVU17
+  97 005a 0A20     		movs	r0, #10
+  98 005c FFF7FEFF 		bl	delay_1ms
+  99              	.LVL8:
+ 100 0060 DCE7     		b	.L5
+ 101              	.L7:
+ 102 0062 00BF     		.align	2
+ 103              	.L6:
+ 104 0064 00000000 		.word	.LC0
+ 105 0068 23000000 		.word	.LC1
+ 106              		.cfi_endproc
+ 107              	.LFE119:
+ 109              		.text
+ 110              	.Letext0:
+ 111              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 112              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 113              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
+ 114              		.file 5 "Hardware/Inc/bsp_mpu6050.h"
+ 115              		.file 6 "Core/Inc/systick.h"
+ 116              		.file 7 "Core/Inc/bsp_usart.h"
+ 117              		.file 8 "/usr/arm-none-eabi/include/stdio.h"
+ 118              		.file 9 "<built-in>"
+ARM GAS  /tmp/ccoorv8t.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/ccoorv8t.s:25     .text.startup.main:0000000000000000 $t
+     /tmp/ccoorv8t.s:31     .text.startup.main:0000000000000000 main
+     /tmp/ccoorv8t.s:104    .text.startup.main:0000000000000064 $d
+
+UNDEFINED SYMBOLS
+systick_config
+usart_gpio_config
+puts
+mpu6050_init
+mpu6050_read_accel
+mpu6050_read_gyro
+printf
+delay_1ms

@@ -1,0 +1,560 @@
+ARM GAS  /tmp/ccIllxKK.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"bsp_mpu6050.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Hardware/Src/bsp_mpu6050.c"
+  18              		.section	.rodata.mpu6050_init.str1.1,"aMS",%progbits,1
+  19              	.LC0:
+  20 0000 4D505536 		.ascii	"MPU6050 is ready!\015\000"
+  20      30353020 
+  20      69732072 
+  20      65616479 
+  20      210D00
+  21              	.LC2:
+  22 0013 4D505536 		.ascii	"MPU6050 is not ready!\015\000"
+  22      30353020 
+  22      6973206E 
+  22      6F742072 
+  22      65616479 
+  23              		.section	.text.mpu6050_init,"ax",%progbits
+  24              		.align	1
+  25              		.global	mpu6050_init
+  26              		.syntax unified
+  27              		.thumb
+  28              		.thumb_func
+  30              	mpu6050_init:
+  31              	.LFB119:
+   1:Hardware/Src/bsp_mpu6050.c **** #include <stdio.h>
+   2:Hardware/Src/bsp_mpu6050.c **** #include "bsp_mpu6050.h"
+   3:Hardware/Src/bsp_mpu6050.c **** 
+   4:Hardware/Src/bsp_mpu6050.c **** const double Accel_Z_corrector = 14418.0;
+   5:Hardware/Src/bsp_mpu6050.c **** 
+   6:Hardware/Src/bsp_mpu6050.c **** /**
+   7:Hardware/Src/bsp_mpu6050.c ****  * @brief 初始化MPU6050，并检查MPU6050工作是否正常
+   8:Hardware/Src/bsp_mpu6050.c ****  * 
+   9:Hardware/Src/bsp_mpu6050.c ****  */
+  10:Hardware/Src/bsp_mpu6050.c **** ErrStatus mpu6050_init(void)
+  11:Hardware/Src/bsp_mpu6050.c **** {
+  32              		.loc 1 11 1 view -0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 16
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  12:Hardware/Src/bsp_mpu6050.c ****     i2c_config();
+  36              		.loc 1 12 5 view .LVU1
+  11:Hardware/Src/bsp_mpu6050.c ****     i2c_config();
+  37              		.loc 1 11 1 is_stmt 0 view .LVU2
+ARM GAS  /tmp/ccIllxKK.s 			page 2
+
+
+  38 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+  39              	.LCFI0:
+  40              		.cfi_def_cfa_offset 24
+  41              		.cfi_offset 4, -8
+  42              		.cfi_offset 14, -4
+  43              		.loc 1 12 5 view .LVU3
+  44 0002 FFF7FEFF 		bl	i2c_config
+  45              	.LVL0:
+  13:Hardware/Src/bsp_mpu6050.c **** 
+  14:Hardware/Src/bsp_mpu6050.c ****     // 获取MPU6050状态
+  15:Hardware/Src/bsp_mpu6050.c ****     uint8_t read_buffer[1] = {0};
+  46              		.loc 1 15 5 is_stmt 1 view .LVU4
+  47              		.loc 1 15 13 is_stmt 0 view .LVU5
+  48 0006 0024     		movs	r4, #0
+  16:Hardware/Src/bsp_mpu6050.c ****     i2c_buffer_read_timeout(read_buffer, 1, MPU6050_ADDR, WHO_AM_I_REG);
+  49              		.loc 1 16 5 view .LVU6
+  50 0008 7523     		movs	r3, #117
+  51 000a D022     		movs	r2, #208
+  52 000c 0121     		movs	r1, #1
+  53 000e 01A8     		add	r0, sp, #4
+  15:Hardware/Src/bsp_mpu6050.c ****     i2c_buffer_read_timeout(read_buffer, 1, MPU6050_ADDR, WHO_AM_I_REG);
+  54              		.loc 1 15 13 view .LVU7
+  55 0010 8DF80440 		strb	r4, [sp, #4]
+  56              		.loc 1 16 5 is_stmt 1 view .LVU8
+  57 0014 FFF7FEFF 		bl	i2c_buffer_read_timeout
+  58              	.LVL1:
+  17:Hardware/Src/bsp_mpu6050.c ****     if (read_buffer[0] == 104) {
+  59              		.loc 1 17 5 view .LVU9
+  60              		.loc 1 17 8 is_stmt 0 view .LVU10
+  61 0018 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
+  62 001c 682B     		cmp	r3, #104
+  63 001e 36D1     		bne	.L2
+  64              	.LBB2:
+  18:Hardware/Src/bsp_mpu6050.c ****         printf("MPU6050 is ready!\r\n");
+  65              		.loc 1 18 9 is_stmt 1 view .LVU11
+  66 0020 1D48     		ldr	r0, .L4
+  67 0022 FFF7FEFF 		bl	puts
+  68              	.LVL2:
+  19:Hardware/Src/bsp_mpu6050.c **** 
+  20:Hardware/Src/bsp_mpu6050.c ****         // uint8_t data[6] = {
+  21:Hardware/Src/bsp_mpu6050.c ****         //     PWR_MGMT_1_RESET,
+  22:Hardware/Src/bsp_mpu6050.c ****         //     PWR_MGMT_1_WAKEUP,
+  23:Hardware/Src/bsp_mpu6050.c ****         //     CONFIG_VALUE,
+  24:Hardware/Src/bsp_mpu6050.c ****         //     GYRO_CONFIG_VALUE,
+  25:Hardware/Src/bsp_mpu6050.c ****         //     ACCEL_CONFIG_VALUE,
+  26:Hardware/Src/bsp_mpu6050.c ****         //     SMPLRT_DIV_0
+  27:Hardware/Src/bsp_mpu6050.c ****         // };
+  28:Hardware/Src/bsp_mpu6050.c ****         uint8_t data[6] = {
+  69              		.loc 1 28 9 view .LVU12
+  70              		.loc 1 28 17 is_stmt 0 view .LVU13
+  71 0026 1D4B     		ldr	r3, .L4+4
+  72 0028 1868     		ldr	r0, [r3]	@ unaligned
+  73 002a 9B88     		ldrh	r3, [r3, #4]	@ unaligned
+  74 002c 0290     		str	r0, [sp, #8]
+  29:Hardware/Src/bsp_mpu6050.c ****             0x80,
+  30:Hardware/Src/bsp_mpu6050.c ****             0x00,
+  31:Hardware/Src/bsp_mpu6050.c ****             0x00,
+ARM GAS  /tmp/ccIllxKK.s 			page 3
+
+
+  32:Hardware/Src/bsp_mpu6050.c ****             0x00,
+  33:Hardware/Src/bsp_mpu6050.c ****             0x00,
+  34:Hardware/Src/bsp_mpu6050.c ****             0x07
+  35:Hardware/Src/bsp_mpu6050.c ****         };
+  36:Hardware/Src/bsp_mpu6050.c **** 
+  37:Hardware/Src/bsp_mpu6050.c ****         // 复位设备并延时100ms以等待设备复位完成
+  38:Hardware/Src/bsp_mpu6050.c ****         i2c_buffer_write_timeout(&data[0], 1, MPU6050_ADDR, PWR_MGMT_1_REG);
+  75              		.loc 1 38 9 view .LVU14
+  76 002e D022     		movs	r2, #208
+  77 0030 0121     		movs	r1, #1
+  28:Hardware/Src/bsp_mpu6050.c ****             0x80,
+  78              		.loc 1 28 17 view .LVU15
+  79 0032 ADF80C30 		strh	r3, [sp, #12]	@ unaligned
+  80              		.loc 1 38 9 is_stmt 1 view .LVU16
+  81 0036 02A8     		add	r0, sp, #8
+  82 0038 6B23     		movs	r3, #107
+  83 003a FFF7FEFF 		bl	i2c_buffer_write_timeout
+  84              	.LVL3:
+  39:Hardware/Src/bsp_mpu6050.c ****         delay_1ms(100);
+  85              		.loc 1 39 9 view .LVU17
+  86 003e 6420     		movs	r0, #100
+  87 0040 FFF7FEFF 		bl	delay_1ms
+  88              	.LVL4:
+  40:Hardware/Src/bsp_mpu6050.c **** 
+  41:Hardware/Src/bsp_mpu6050.c ****         i2c_buffer_write_timeout(&data[1], 1, MPU6050_ADDR, PWR_MGMT_1_REG);
+  89              		.loc 1 41 9 view .LVU18
+  90 0044 6B23     		movs	r3, #107
+  91 0046 D022     		movs	r2, #208
+  92 0048 0121     		movs	r1, #1
+  93 004a 0DF10900 		add	r0, sp, #9
+  94 004e FFF7FEFF 		bl	i2c_buffer_write_timeout
+  95              	.LVL5:
+  42:Hardware/Src/bsp_mpu6050.c **** 
+  43:Hardware/Src/bsp_mpu6050.c ****         i2c_buffer_write_timeout(&data[2], 1, MPU6050_ADDR, CONFIG_REG);
+  96              		.loc 1 43 9 view .LVU19
+  97 0052 1A23     		movs	r3, #26
+  98 0054 D022     		movs	r2, #208
+  99 0056 0121     		movs	r1, #1
+ 100 0058 0DF10A00 		add	r0, sp, #10
+ 101 005c FFF7FEFF 		bl	i2c_buffer_write_timeout
+ 102              	.LVL6:
+  44:Hardware/Src/bsp_mpu6050.c **** 
+  45:Hardware/Src/bsp_mpu6050.c ****         i2c_buffer_write_timeout(&data[3], 1, MPU6050_ADDR, GYRO_CONFIG_REG);
+ 103              		.loc 1 45 9 view .LVU20
+ 104 0060 1B23     		movs	r3, #27
+ 105 0062 D022     		movs	r2, #208
+ 106 0064 0121     		movs	r1, #1
+ 107 0066 0DF10B00 		add	r0, sp, #11
+ 108 006a FFF7FEFF 		bl	i2c_buffer_write_timeout
+ 109              	.LVL7:
+  46:Hardware/Src/bsp_mpu6050.c **** 
+  47:Hardware/Src/bsp_mpu6050.c ****         i2c_buffer_write_timeout(&data[4], 1, MPU6050_ADDR, ACCEL_CONFIG_REG);
+ 110              		.loc 1 47 9 view .LVU21
+ 111 006e 1C23     		movs	r3, #28
+ 112 0070 D022     		movs	r2, #208
+ 113 0072 0121     		movs	r1, #1
+ 114 0074 03A8     		add	r0, sp, #12
+ARM GAS  /tmp/ccIllxKK.s 			page 4
+
+
+ 115 0076 FFF7FEFF 		bl	i2c_buffer_write_timeout
+ 116              	.LVL8:
+  48:Hardware/Src/bsp_mpu6050.c **** 
+  49:Hardware/Src/bsp_mpu6050.c ****         i2c_buffer_write_timeout(&data[5], 1, MPU6050_ADDR, SMPLRT_DIV_REG);
+ 117              		.loc 1 49 9 view .LVU22
+ 118 007a 1923     		movs	r3, #25
+ 119 007c D022     		movs	r2, #208
+ 120 007e 0121     		movs	r1, #1
+ 121 0080 0DF10D00 		add	r0, sp, #13
+ 122 0084 FFF7FEFF 		bl	i2c_buffer_write_timeout
+ 123              	.LVL9:
+ 124              	.LBE2:
+  50:Hardware/Src/bsp_mpu6050.c **** 
+  51:Hardware/Src/bsp_mpu6050.c ****     } else {
+  52:Hardware/Src/bsp_mpu6050.c ****         printf("MPU6050 is not ready!\r\n");
+  53:Hardware/Src/bsp_mpu6050.c ****         return ERROR;
+  54:Hardware/Src/bsp_mpu6050.c ****     }
+  55:Hardware/Src/bsp_mpu6050.c **** 
+  56:Hardware/Src/bsp_mpu6050.c ****     return SUCCESS;
+ 125              		.loc 1 56 5 view .LVU23
+ 126              		.loc 1 56 12 is_stmt 0 view .LVU24
+ 127 0088 0120     		movs	r0, #1
+ 128              	.L3:
+  57:Hardware/Src/bsp_mpu6050.c **** }
+ 129              		.loc 1 57 1 view .LVU25
+ 130 008a 04B0     		add	sp, sp, #16
+ 131              	.LCFI1:
+ 132              		.cfi_remember_state
+ 133              		.cfi_def_cfa_offset 8
+ 134              		@ sp needed
+ 135 008c 10BD     		pop	{r4, pc}
+ 136              	.L2:
+ 137              	.LCFI2:
+ 138              		.cfi_restore_state
+  52:Hardware/Src/bsp_mpu6050.c ****         return ERROR;
+ 139              		.loc 1 52 9 is_stmt 1 view .LVU26
+ 140 008e 0448     		ldr	r0, .L4+8
+ 141 0090 FFF7FEFF 		bl	puts
+ 142              	.LVL10:
+  53:Hardware/Src/bsp_mpu6050.c ****     }
+ 143              		.loc 1 53 9 view .LVU27
+  53:Hardware/Src/bsp_mpu6050.c ****     }
+ 144              		.loc 1 53 16 is_stmt 0 view .LVU28
+ 145 0094 2046     		mov	r0, r4
+ 146 0096 F8E7     		b	.L3
+ 147              	.L5:
+ 148              		.align	2
+ 149              	.L4:
+ 150 0098 00000000 		.word	.LC0
+ 151 009c 00000000 		.word	.LANCHOR0
+ 152 00a0 13000000 		.word	.LC2
+ 153              		.cfi_endproc
+ 154              	.LFE119:
+ 156              		.global	__aeabi_i2d
+ 157              		.global	__aeabi_dmul
+ 158              		.global	__aeabi_ddiv
+ 159              		.section	.text.mpu6050_read_accel,"ax",%progbits
+ARM GAS  /tmp/ccIllxKK.s 			page 5
+
+
+ 160              		.align	1
+ 161              		.global	mpu6050_read_accel
+ 162              		.syntax unified
+ 163              		.thumb
+ 164              		.thumb_func
+ 166              	mpu6050_read_accel:
+ 167              	.LVL11:
+ 168              	.LFB120:
+  58:Hardware/Src/bsp_mpu6050.c **** 
+  59:Hardware/Src/bsp_mpu6050.c **** /**
+  60:Hardware/Src/bsp_mpu6050.c ****  * @brief 从MPU6050中读取三轴加速度数据
+  61:Hardware/Src/bsp_mpu6050.c ****  * 
+  62:Hardware/Src/bsp_mpu6050.c ****  * @param data 存放读取到的数据
+  63:Hardware/Src/bsp_mpu6050.c ****  */
+  64:Hardware/Src/bsp_mpu6050.c **** void mpu6050_read_accel(MPU6050_t *data)
+  65:Hardware/Src/bsp_mpu6050.c **** {
+ 169              		.loc 1 65 1 is_stmt 1 view -0
+ 170              		.cfi_startproc
+ 171              		@ args = 0, pretend = 0, frame = 8
+ 172              		@ frame_needed = 0, uses_anonymous_args = 0
+  66:Hardware/Src/bsp_mpu6050.c ****     uint8_t accel_data[6] = {0};
+ 173              		.loc 1 66 5 view .LVU30
+  65:Hardware/Src/bsp_mpu6050.c ****     uint8_t accel_data[6] = {0};
+ 174              		.loc 1 65 1 is_stmt 0 view .LVU31
+ 175 0000 73B5     		push	{r0, r1, r4, r5, r6, lr}
+ 176              	.LCFI3:
+ 177              		.cfi_def_cfa_offset 24
+ 178              		.cfi_offset 4, -16
+ 179              		.cfi_offset 5, -12
+ 180              		.cfi_offset 6, -8
+ 181              		.cfi_offset 14, -4
+ 182              		.loc 1 66 13 view .LVU32
+ 183 0002 0023     		movs	r3, #0
+  65:Hardware/Src/bsp_mpu6050.c ****     uint8_t accel_data[6] = {0};
+ 184              		.loc 1 65 1 view .LVU33
+ 185 0004 0446     		mov	r4, r0
+ 186              		.loc 1 66 13 view .LVU34
+ 187 0006 0093     		str	r3, [sp]
+ 188 0008 ADF80430 		strh	r3, [sp, #4]	@ movhi
+  67:Hardware/Src/bsp_mpu6050.c **** 
+  68:Hardware/Src/bsp_mpu6050.c ****     i2c_buffer_read_timeout(accel_data, 6, MPU6050_ADDR, ACCEL_XOUT_H_REG);
+ 189              		.loc 1 68 5 is_stmt 1 view .LVU35
+ 190 000c D022     		movs	r2, #208
+ 191 000e 3B23     		movs	r3, #59
+ 192 0010 0621     		movs	r1, #6
+ 193 0012 6846     		mov	r0, sp
+ 194              	.LVL12:
+ 195              		.loc 1 68 5 is_stmt 0 view .LVU36
+ 196 0014 FFF7FEFF 		bl	i2c_buffer_read_timeout
+ 197              	.LVL13:
+  69:Hardware/Src/bsp_mpu6050.c ****     // i2c_buffer_read_timeout(&accel_data[0], 2, MPU6050_ADDR, ACCEL_XOUT_H_REG);
+  70:Hardware/Src/bsp_mpu6050.c ****     // i2c_buffer_read_timeout(&accel_data[2], 2, MPU6050_ADDR, ACCEL_YOUT_H_REG);
+  71:Hardware/Src/bsp_mpu6050.c ****     // i2c_buffer_read_timeout(&accel_data[4], 2, MPU6050_ADDR, ACCEL_ZOUT_H_REG);
+  72:Hardware/Src/bsp_mpu6050.c **** 
+  73:Hardware/Src/bsp_mpu6050.c ****     data->Accel_X_RAW = (uint16_t)(accel_data[0] << 8 | accel_data[1]);
+ 198              		.loc 1 73 5 is_stmt 1 view .LVU37
+ 199 0018 BDF80230 		ldrh	r3, [sp, #2]
+ARM GAS  /tmp/ccIllxKK.s 			page 6
+
+
+ 200 001c BDF80000 		ldrh	r0, [sp]
+ 201 0020 5BBA     		rev16	r3, r3
+ 202 0022 9EB2     		uxth	r6, r3
+  74:Hardware/Src/bsp_mpu6050.c ****     data->Accel_Y_RAW = (uint16_t)(accel_data[2] << 8 | accel_data[3]);
+ 203              		.loc 1 74 23 is_stmt 0 view .LVU38
+ 204 0024 6380     		strh	r3, [r4, #2]	@ movhi
+ 205 0026 BDF80430 		ldrh	r3, [sp, #4]
+ 206 002a 40BA     		rev16	r0, r0
+ 207 002c 5BBA     		rev16	r3, r3
+  73:Hardware/Src/bsp_mpu6050.c ****     data->Accel_Y_RAW = (uint16_t)(accel_data[2] << 8 | accel_data[3]);
+ 208              		.loc 1 73 23 view .LVU39
+ 209 002e 2080     		strh	r0, [r4]	@ movhi
+ 210              		.loc 1 74 5 is_stmt 1 view .LVU40
+  75:Hardware/Src/bsp_mpu6050.c ****     data->Accel_Z_RAW = (uint16_t)(accel_data[4] << 8 | accel_data[5]);
+ 211              		.loc 1 75 5 view .LVU41
+ 212              		.loc 1 75 23 is_stmt 0 view .LVU42
+ 213 0030 A380     		strh	r3, [r4, #4]	@ movhi
+  76:Hardware/Src/bsp_mpu6050.c **** 
+  77:Hardware/Src/bsp_mpu6050.c ****     data->Ax = data->Accel_X_RAW / 16384.0;
+ 214              		.loc 1 77 5 is_stmt 1 view .LVU43
+ 215              		.loc 1 77 34 is_stmt 0 view .LVU44
+ 216 0032 80B2     		uxth	r0, r0
+ 217 0034 9DB2     		uxth	r5, r3
+ 218 0036 FFF7FEFF 		bl	__aeabi_i2d
+ 219              	.LVL14:
+ 220 003a 0F4B     		ldr	r3, .L7+8
+ 221 003c 0022     		movs	r2, #0
+ 222 003e FFF7FEFF 		bl	__aeabi_dmul
+ 223              	.LVL15:
+ 224              		.loc 1 77 14 view .LVU45
+ 225 0042 C4E90201 		strd	r0, [r4, #8]
+  78:Hardware/Src/bsp_mpu6050.c ****     data->Ay = data->Accel_Y_RAW / 16384.0;
+ 226              		.loc 1 78 5 is_stmt 1 view .LVU46
+ 227              		.loc 1 78 34 is_stmt 0 view .LVU47
+ 228 0046 3046     		mov	r0, r6
+ 229 0048 FFF7FEFF 		bl	__aeabi_i2d
+ 230              	.LVL16:
+ 231 004c 0A4B     		ldr	r3, .L7+8
+ 232 004e 0022     		movs	r2, #0
+ 233 0050 FFF7FEFF 		bl	__aeabi_dmul
+ 234              	.LVL17:
+ 235              		.loc 1 78 14 view .LVU48
+ 236 0054 C4E90401 		strd	r0, [r4, #16]
+  79:Hardware/Src/bsp_mpu6050.c ****     data->Az = data->Accel_Z_RAW / Accel_Z_corrector;
+ 237              		.loc 1 79 5 is_stmt 1 view .LVU49
+ 238              		.loc 1 79 34 is_stmt 0 view .LVU50
+ 239 0058 2846     		mov	r0, r5
+ 240 005a FFF7FEFF 		bl	__aeabi_i2d
+ 241              	.LVL18:
+ 242 005e 04A3     		adr	r3, .L7
+ 243 0060 D3E90023 		ldrd	r2, [r3]
+ 244 0064 FFF7FEFF 		bl	__aeabi_ddiv
+ 245              	.LVL19:
+ 246              		.loc 1 79 14 view .LVU51
+ 247 0068 C4E90601 		strd	r0, [r4, #24]
+  80:Hardware/Src/bsp_mpu6050.c **** }
+ 248              		.loc 1 80 1 view .LVU52
+ARM GAS  /tmp/ccIllxKK.s 			page 7
+
+
+ 249 006c 02B0     		add	sp, sp, #8
+ 250              	.LCFI4:
+ 251              		.cfi_def_cfa_offset 16
+ 252              		@ sp needed
+ 253 006e 70BD     		pop	{r4, r5, r6, pc}
+ 254              	.LVL20:
+ 255              	.L8:
+ 256              		.loc 1 80 1 view .LVU53
+ 257              		.align	3
+ 258              	.L7:
+ 259 0070 00000000 		.word	0
+ 260 0074 0029CC40 		.word	1087121664
+ 261 0078 0000103F 		.word	1058013184
+ 262              		.cfi_endproc
+ 263              	.LFE120:
+ 265              		.section	.text.mpu6050_read_gyro,"ax",%progbits
+ 266              		.align	1
+ 267              		.global	mpu6050_read_gyro
+ 268              		.syntax unified
+ 269              		.thumb
+ 270              		.thumb_func
+ 272              	mpu6050_read_gyro:
+ 273              	.LVL21:
+ 274              	.LFB121:
+  81:Hardware/Src/bsp_mpu6050.c **** 
+  82:Hardware/Src/bsp_mpu6050.c **** /**
+  83:Hardware/Src/bsp_mpu6050.c ****  * @brief 从MPU6050读取三轴陀螺仪数据
+  84:Hardware/Src/bsp_mpu6050.c ****  * 
+  85:Hardware/Src/bsp_mpu6050.c ****  * @param data 读取到的数据
+  86:Hardware/Src/bsp_mpu6050.c ****  */
+  87:Hardware/Src/bsp_mpu6050.c **** void mpu6050_read_gyro(MPU6050_t *data)
+  88:Hardware/Src/bsp_mpu6050.c **** {
+ 275              		.loc 1 88 1 is_stmt 1 view -0
+ 276              		.cfi_startproc
+ 277              		@ args = 0, pretend = 0, frame = 8
+ 278              		@ frame_needed = 0, uses_anonymous_args = 0
+  89:Hardware/Src/bsp_mpu6050.c ****     uint8_t gyro_data[6] = {0};
+ 279              		.loc 1 89 5 view .LVU55
+  88:Hardware/Src/bsp_mpu6050.c ****     uint8_t gyro_data[6] = {0};
+ 280              		.loc 1 88 1 is_stmt 0 view .LVU56
+ 281 0000 73B5     		push	{r0, r1, r4, r5, r6, lr}
+ 282              	.LCFI5:
+ 283              		.cfi_def_cfa_offset 24
+ 284              		.cfi_offset 4, -16
+ 285              		.cfi_offset 5, -12
+ 286              		.cfi_offset 6, -8
+ 287              		.cfi_offset 14, -4
+ 288              		.loc 1 89 13 view .LVU57
+ 289 0002 0023     		movs	r3, #0
+  88:Hardware/Src/bsp_mpu6050.c ****     uint8_t gyro_data[6] = {0};
+ 290              		.loc 1 88 1 view .LVU58
+ 291 0004 0446     		mov	r4, r0
+ 292              		.loc 1 89 13 view .LVU59
+ 293 0006 0093     		str	r3, [sp]
+ 294 0008 ADF80430 		strh	r3, [sp, #4]	@ movhi
+  90:Hardware/Src/bsp_mpu6050.c **** 
+  91:Hardware/Src/bsp_mpu6050.c ****     i2c_buffer_read_timeout(gyro_data, 6, MPU6050_ADDR, GYRO_XOUT_H_REG);
+ARM GAS  /tmp/ccIllxKK.s 			page 8
+
+
+ 295              		.loc 1 91 5 is_stmt 1 view .LVU60
+ 296 000c D022     		movs	r2, #208
+ 297 000e 4323     		movs	r3, #67
+ 298 0010 0621     		movs	r1, #6
+ 299 0012 6846     		mov	r0, sp
+ 300              	.LVL22:
+ 301              		.loc 1 91 5 is_stmt 0 view .LVU61
+ 302 0014 FFF7FEFF 		bl	i2c_buffer_read_timeout
+ 303              	.LVL23:
+  92:Hardware/Src/bsp_mpu6050.c ****     // i2c_buffer_read_timeout(&gyro_data[0], 2, MPU6050_ADDR, GYRO_XOUT_H_REG);
+  93:Hardware/Src/bsp_mpu6050.c ****     // i2c_buffer_read_timeout(&gyro_data[2], 2, MPU6050_ADDR, GYRO_YOUT_H_REG);
+  94:Hardware/Src/bsp_mpu6050.c ****     // i2c_buffer_read_timeout(&gyro_data[4], 2, MPU6050_ADDR, GYRO_ZOUT_H_REG);
+  95:Hardware/Src/bsp_mpu6050.c **** 
+  96:Hardware/Src/bsp_mpu6050.c ****     data->Gyro_X_RAW = (uint16_t)(gyro_data[0] << 8 | gyro_data[1]);
+ 304              		.loc 1 96 5 is_stmt 1 view .LVU62
+ 305 0018 BDF80230 		ldrh	r3, [sp, #2]
+ 306 001c BDF80000 		ldrh	r0, [sp]
+ 307 0020 5BBA     		rev16	r3, r3
+ 308 0022 9EB2     		uxth	r6, r3
+  97:Hardware/Src/bsp_mpu6050.c ****     data->Gyro_Y_RAW = (uint16_t)(gyro_data[2] << 8 | gyro_data[3]);
+ 309              		.loc 1 97 22 is_stmt 0 view .LVU63
+ 310 0024 6384     		strh	r3, [r4, #34]	@ movhi
+ 311 0026 BDF80430 		ldrh	r3, [sp, #4]
+ 312 002a 40BA     		rev16	r0, r0
+ 313 002c 5BBA     		rev16	r3, r3
+  96:Hardware/Src/bsp_mpu6050.c ****     data->Gyro_Y_RAW = (uint16_t)(gyro_data[2] << 8 | gyro_data[3]);
+ 314              		.loc 1 96 22 view .LVU64
+ 315 002e 2084     		strh	r0, [r4, #32]	@ movhi
+ 316              		.loc 1 97 5 is_stmt 1 view .LVU65
+  98:Hardware/Src/bsp_mpu6050.c ****     data->Gyro_Z_RAW = (uint16_t)(gyro_data[4] << 8 | gyro_data[5]);
+ 317              		.loc 1 98 5 view .LVU66
+ 318              		.loc 1 98 22 is_stmt 0 view .LVU67
+ 319 0030 A384     		strh	r3, [r4, #36]	@ movhi
+  99:Hardware/Src/bsp_mpu6050.c **** 
+ 100:Hardware/Src/bsp_mpu6050.c ****     data->Gx = data->Gyro_X_RAW / 131.0;
+ 320              		.loc 1 100 5 is_stmt 1 view .LVU68
+ 321              		.loc 1 100 33 is_stmt 0 view .LVU69
+ 322 0032 80B2     		uxth	r0, r0
+ 323 0034 9DB2     		uxth	r5, r3
+ 324 0036 FFF7FEFF 		bl	__aeabi_i2d
+ 325              	.LVL24:
+ 326 003a 0FA3     		adr	r3, .L10
+ 327 003c D3E90023 		ldrd	r2, [r3]
+ 328 0040 FFF7FEFF 		bl	__aeabi_ddiv
+ 329              	.LVL25:
+ 330              		.loc 1 100 14 view .LVU70
+ 331 0044 C4E90A01 		strd	r0, [r4, #40]
+ 101:Hardware/Src/bsp_mpu6050.c ****     data->Gy = data->Gyro_Y_RAW / 131.0;
+ 332              		.loc 1 101 5 is_stmt 1 view .LVU71
+ 333              		.loc 1 101 33 is_stmt 0 view .LVU72
+ 334 0048 3046     		mov	r0, r6
+ 335 004a FFF7FEFF 		bl	__aeabi_i2d
+ 336              	.LVL26:
+ 337 004e 0AA3     		adr	r3, .L10
+ 338 0050 D3E90023 		ldrd	r2, [r3]
+ 339 0054 FFF7FEFF 		bl	__aeabi_ddiv
+ 340              	.LVL27:
+ARM GAS  /tmp/ccIllxKK.s 			page 9
+
+
+ 341              		.loc 1 101 14 view .LVU73
+ 342 0058 C4E90C01 		strd	r0, [r4, #48]
+ 102:Hardware/Src/bsp_mpu6050.c ****     data->Gz = data->Gyro_Z_RAW / 131.0;
+ 343              		.loc 1 102 5 is_stmt 1 view .LVU74
+ 344              		.loc 1 102 33 is_stmt 0 view .LVU75
+ 345 005c 2846     		mov	r0, r5
+ 346 005e FFF7FEFF 		bl	__aeabi_i2d
+ 347              	.LVL28:
+ 348 0062 05A3     		adr	r3, .L10
+ 349 0064 D3E90023 		ldrd	r2, [r3]
+ 350 0068 FFF7FEFF 		bl	__aeabi_ddiv
+ 351              	.LVL29:
+ 352              		.loc 1 102 14 view .LVU76
+ 353 006c C4E90E01 		strd	r0, [r4, #56]
+ 103:Hardware/Src/bsp_mpu6050.c **** }...
+ 354              		.loc 1 103 1 view .LVU77
+ 355 0070 02B0     		add	sp, sp, #8
+ 356              	.LCFI6:
+ 357              		.cfi_def_cfa_offset 16
+ 358              		@ sp needed
+ 359 0072 70BD     		pop	{r4, r5, r6, pc}
+ 360              	.LVL30:
+ 361              	.L11:
+ 362              		.loc 1 103 1 view .LVU78
+ 363 0074 AFF30080 		.align	3
+ 364              	.L10:
+ 365 0078 00000000 		.word	0
+ 366 007c 00606040 		.word	1080057856
+ 367              		.cfi_endproc
+ 368              	.LFE121:
+ 370              		.global	Accel_Z_corrector
+ 371              		.section	.rodata.Accel_Z_corrector,"a"
+ 372              		.align	3
+ 375              	Accel_Z_corrector:
+ 376 0000 00000000 		.word	0
+ 377 0004 0029CC40 		.word	1087121664
+ 378              		.section	.rodata
+ 379              		.set	.LANCHOR0,. + 0
+ 380              	.LC1:
+ 381 0000 80000000 		.ascii	"\200\000\000\000\000\007"
+ 381      0007
+ 382              		.text
+ 383              	.Letext0:
+ 384              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 385              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 386              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
+ 387              		.file 5 "Hardware/Inc/bsp_mpu6050.h"
+ 388              		.file 6 "Core/Inc/bsp_i2c.h"
+ 389              		.file 7 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_dbg.h"
+ 390              		.file 8 "Core/Inc/systick.h"
+ 391              		.file 9 "<built-in>"
+ARM GAS  /tmp/ccIllxKK.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 bsp_mpu6050.c
+     /tmp/ccIllxKK.s:24     .text.mpu6050_init:0000000000000000 $t
+     /tmp/ccIllxKK.s:30     .text.mpu6050_init:0000000000000000 mpu6050_init
+     /tmp/ccIllxKK.s:150    .text.mpu6050_init:0000000000000098 $d
+     /tmp/ccIllxKK.s:160    .text.mpu6050_read_accel:0000000000000000 $t
+     /tmp/ccIllxKK.s:166    .text.mpu6050_read_accel:0000000000000000 mpu6050_read_accel
+     /tmp/ccIllxKK.s:259    .text.mpu6050_read_accel:0000000000000070 $d
+     /tmp/ccIllxKK.s:266    .text.mpu6050_read_gyro:0000000000000000 $t
+     /tmp/ccIllxKK.s:272    .text.mpu6050_read_gyro:0000000000000000 mpu6050_read_gyro
+     /tmp/ccIllxKK.s:365    .text.mpu6050_read_gyro:0000000000000078 $d
+     /tmp/ccIllxKK.s:375    .rodata.Accel_Z_corrector:0000000000000000 Accel_Z_corrector
+     /tmp/ccIllxKK.s:372    .rodata.Accel_Z_corrector:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+i2c_config
+i2c_buffer_read_timeout
+puts
+i2c_buffer_write_timeout
+delay_1ms
+__aeabi_i2d
+__aeabi_dmul
+__aeabi_ddiv
