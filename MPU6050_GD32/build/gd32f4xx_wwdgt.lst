@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc6WsPsW.s 			page 1
+ARM GAS  /tmp/ccVKCfos.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc6WsPsW.s 			page 1
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_wwdgt.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_wwdgt.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_wwdgt.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
-ARM GAS  /tmp/cc6WsPsW.s 			page 2
+ARM GAS  /tmp/ccVKCfos.s 			page 2
 
 
   33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_wwdgt.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc6WsPsW.s 			page 1
   63              	wwdgt_enable:
   64              	.LFB117:
   51:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_wwdgt.c **** 
-ARM GAS  /tmp/cc6WsPsW.s 			page 3
+ARM GAS  /tmp/ccVKCfos.s 			page 3
 
 
   52:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_wwdgt.c **** /*!
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc6WsPsW.s 			page 1
  101              		.loc 1 71 15 is_stmt 0 view .LVU13
  102 0000 024B     		ldr	r3, .L6
  103              		.loc 1 71 17 view .LVU14
-ARM GAS  /tmp/cc6WsPsW.s 			page 4
+ARM GAS  /tmp/ccVKCfos.s 			page 4
 
 
  104 0002 00F07F00 		and	r0, r0, #127
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc6WsPsW.s 			page 1
  139 0006 00F07F00 		and	r0, r0, #127
  140              	.LVL6:
  141              		.loc 1 91 17 view .LVU22
-ARM GAS  /tmp/cc6WsPsW.s 			page 5
+ARM GAS  /tmp/ccVKCfos.s 			page 5
 
 
  142 000a 1143     		orrs	r1, r1, r2
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc6WsPsW.s 			page 1
  181 000c 00200040 		.word	1073750016
  182              		.cfi_endproc
  183              	.LFE120:
-ARM GAS  /tmp/cc6WsPsW.s 			page 6
+ARM GAS  /tmp/ccVKCfos.s 			page 6
 
 
  185              		.section	.text.wwdgt_flag_clear,"ax",%progbits
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc6WsPsW.s 			page 1
  222              		.loc 1 127 1 is_stmt 1 view -0
  223              		.cfi_startproc
  224              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/cc6WsPsW.s 			page 7
+ARM GAS  /tmp/ccVKCfos.s 			page 7
 
 
  225              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -385,31 +385,31 @@ ARM GAS  /tmp/cc6WsPsW.s 			page 1
  245              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  246              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
  247              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
-ARM GAS  /tmp/cc6WsPsW.s 			page 8
+ARM GAS  /tmp/ccVKCfos.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_wwdgt.c
-     /tmp/cc6WsPsW.s:19     .text.wwdgt_deinit:0000000000000000 $t
-     /tmp/cc6WsPsW.s:25     .text.wwdgt_deinit:0000000000000000 wwdgt_deinit
-     /tmp/cc6WsPsW.s:57     .text.wwdgt_enable:0000000000000000 $t
-     /tmp/cc6WsPsW.s:63     .text.wwdgt_enable:0000000000000000 wwdgt_enable
-     /tmp/cc6WsPsW.s:81     .text.wwdgt_enable:0000000000000010 $d
-     /tmp/cc6WsPsW.s:86     .text.wwdgt_counter_update:0000000000000000 $t
-     /tmp/cc6WsPsW.s:92     .text.wwdgt_counter_update:0000000000000000 wwdgt_counter_update
-     /tmp/cc6WsPsW.s:113    .text.wwdgt_counter_update:000000000000000c $d
-     /tmp/cc6WsPsW.s:118    .text.wwdgt_config:0000000000000000 $t
-     /tmp/cc6WsPsW.s:124    .text.wwdgt_config:0000000000000000 wwdgt_config
-     /tmp/cc6WsPsW.s:153    .text.wwdgt_config:0000000000000018 $d
-     /tmp/cc6WsPsW.s:158    .text.wwdgt_flag_get:0000000000000000 $t
-     /tmp/cc6WsPsW.s:164    .text.wwdgt_flag_get:0000000000000000 wwdgt_flag_get
-     /tmp/cc6WsPsW.s:181    .text.wwdgt_flag_get:000000000000000c $d
-     /tmp/cc6WsPsW.s:186    .text.wwdgt_flag_clear:0000000000000000 $t
-     /tmp/cc6WsPsW.s:192    .text.wwdgt_flag_clear:0000000000000000 wwdgt_flag_clear
-     /tmp/cc6WsPsW.s:209    .text.wwdgt_flag_clear:000000000000000c $d
-     /tmp/cc6WsPsW.s:214    .text.wwdgt_interrupt_enable:0000000000000000 $t
-     /tmp/cc6WsPsW.s:220    .text.wwdgt_interrupt_enable:0000000000000000 wwdgt_interrupt_enable
-     /tmp/cc6WsPsW.s:238    .text.wwdgt_interrupt_enable:0000000000000010 $d
+     /tmp/ccVKCfos.s:19     .text.wwdgt_deinit:0000000000000000 $t
+     /tmp/ccVKCfos.s:25     .text.wwdgt_deinit:0000000000000000 wwdgt_deinit
+     /tmp/ccVKCfos.s:57     .text.wwdgt_enable:0000000000000000 $t
+     /tmp/ccVKCfos.s:63     .text.wwdgt_enable:0000000000000000 wwdgt_enable
+     /tmp/ccVKCfos.s:81     .text.wwdgt_enable:0000000000000010 $d
+     /tmp/ccVKCfos.s:86     .text.wwdgt_counter_update:0000000000000000 $t
+     /tmp/ccVKCfos.s:92     .text.wwdgt_counter_update:0000000000000000 wwdgt_counter_update
+     /tmp/ccVKCfos.s:113    .text.wwdgt_counter_update:000000000000000c $d
+     /tmp/ccVKCfos.s:118    .text.wwdgt_config:0000000000000000 $t
+     /tmp/ccVKCfos.s:124    .text.wwdgt_config:0000000000000000 wwdgt_config
+     /tmp/ccVKCfos.s:153    .text.wwdgt_config:0000000000000018 $d
+     /tmp/ccVKCfos.s:158    .text.wwdgt_flag_get:0000000000000000 $t
+     /tmp/ccVKCfos.s:164    .text.wwdgt_flag_get:0000000000000000 wwdgt_flag_get
+     /tmp/ccVKCfos.s:181    .text.wwdgt_flag_get:000000000000000c $d
+     /tmp/ccVKCfos.s:186    .text.wwdgt_flag_clear:0000000000000000 $t
+     /tmp/ccVKCfos.s:192    .text.wwdgt_flag_clear:0000000000000000 wwdgt_flag_clear
+     /tmp/ccVKCfos.s:209    .text.wwdgt_flag_clear:000000000000000c $d
+     /tmp/ccVKCfos.s:214    .text.wwdgt_interrupt_enable:0000000000000000 $t
+     /tmp/ccVKCfos.s:220    .text.wwdgt_interrupt_enable:0000000000000000 wwdgt_interrupt_enable
+     /tmp/ccVKCfos.s:238    .text.wwdgt_interrupt_enable:0000000000000010 $d
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable

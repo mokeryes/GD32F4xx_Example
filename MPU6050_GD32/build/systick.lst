@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccPTIo7p.s 			page 1
+ARM GAS  /tmp/ccHyHatJ.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
   30:Core/Src/systick.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Core/Src/systick.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   32:Core/Src/systick.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-ARM GAS  /tmp/ccPTIo7p.s 			page 2
+ARM GAS  /tmp/ccHyHatJ.s 			page 2
 
 
   33:Core/Src/systick.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
@@ -69,27 +69,37 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
   38:Core/Src/systick.c **** #include "gd32f4xx.h"
   39:Core/Src/systick.c **** #include "systick.h"
   40:Core/Src/systick.c **** 
-  41:Core/Src/systick.c **** volatile static uint32_t delay;
-  42:Core/Src/systick.c **** 
-  43:Core/Src/systick.c **** /*!
-  44:Core/Src/systick.c ****     \brief    configure systick
-  45:Core/Src/systick.c ****     \param[in]  none
-  46:Core/Src/systick.c ****     \param[out] none
-  47:Core/Src/systick.c ****     \retval     none
-  48:Core/Src/systick.c **** */
-  49:Core/Src/systick.c **** void systick_config(void)
-  50:Core/Src/systick.c **** {
-  27              		.loc 1 50 1 view -0
+  41:Core/Src/systick.c **** /*
+  42:Core/Src/systick.c ****  * Systick select external clock source
+  43:Core/Src/systick.c ****  * value is 0.5s clock count number
+  44:Core/Src/systick.c ****  * User overwrite the macro define value
+  45:Core/Src/systick.c ****  */
+  46:Core/Src/systick.c **** #define SYSTICK_EXT_CLOCK_500MS_CNT (120000000/8/2)
+  47:Core/Src/systick.c **** 
+  48:Core/Src/systick.c **** volatile static uint32_t delay;
+  49:Core/Src/systick.c **** volatile static uint32_t systick_ms = 0;
+  50:Core/Src/systick.c **** volatile static uint32_t systick_us = 0;
+  51:Core/Src/systick.c **** volatile static uint8_t is_init = 0;
+  52:Core/Src/systick.c **** 
+  53:Core/Src/systick.c **** /*!
+  54:Core/Src/systick.c ****     \brief    configure systick
+  55:Core/Src/systick.c ****     \param[in]  none
+  56:Core/Src/systick.c ****     \param[out] none
+  57:Core/Src/systick.c ****     \retval     none
+  58:Core/Src/systick.c **** */
+  59:Core/Src/systick.c **** ErrStatus systick_config(void)
+  60:Core/Src/systick.c **** {
+  27              		.loc 1 60 1 view -0
   28              		.cfi_startproc
   29              		@ args = 0, pretend = 0, frame = 0
   30              		@ frame_needed = 0, uses_anonymous_args = 0
   31              		@ link register save eliminated.
-  51:Core/Src/systick.c ****     /* setup systick timer for 1000Hz interrupts */
-  52:Core/Src/systick.c ****     if(SysTick_Config(SystemCoreClock / 1000U)) {
-  32              		.loc 1 52 5 view .LVU1
+  61:Core/Src/systick.c ****     /* setup systick timer for 1000Hz interrupts */
+  62:Core/Src/systick.c ****     if(SysTick_Config(SystemCoreClock / 1000U)) {
+  32              		.loc 1 62 5 view .LVU1
   33              	.LVL0:
-  34              	.LBB16:
-  35              	.LBI16:
+  34              	.LBB20:
+  35              	.LBI20:
   36              		.file 2 "Drivers/CMSIS/core_cm4.h"
    1:Drivers/CMSIS/core_cm4.h **** /**************************************************************************//**
    2:Drivers/CMSIS/core_cm4.h ****  * @file     core_cm4.h
@@ -108,6 +118,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
   15:Drivers/CMSIS/core_cm4.h ****    - Redistributions of source code must retain the above copyright
   16:Drivers/CMSIS/core_cm4.h ****      notice, this list of conditions and the following disclaimer.
   17:Drivers/CMSIS/core_cm4.h ****    - Redistributions in binary form must reproduce the above copyright
+ARM GAS  /tmp/ccHyHatJ.s 			page 3
+
+
   18:Drivers/CMSIS/core_cm4.h ****      notice, this list of conditions and the following disclaimer in the
   19:Drivers/CMSIS/core_cm4.h ****      documentation and/or other materials provided with the distribution.
   20:Drivers/CMSIS/core_cm4.h ****    - Neither the name of ARM nor the names of its contributors may be used
@@ -118,9 +131,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
   25:Drivers/CMSIS/core_cm4.h ****    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
   26:Drivers/CMSIS/core_cm4.h ****    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
   27:Drivers/CMSIS/core_cm4.h ****    ARE DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDERS AND CONTRIBUTORS BE
-ARM GAS  /tmp/ccPTIo7p.s 			page 3
-
-
   28:Drivers/CMSIS/core_cm4.h ****    LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
   29:Drivers/CMSIS/core_cm4.h ****    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
   30:Drivers/CMSIS/core_cm4.h ****    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
@@ -168,6 +178,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
   72:Drivers/CMSIS/core_cm4.h **** #define __CM4_CMSIS_VERSION_SUB   (0x20)                                   /*!< [15:0]  CMSIS HAL s
   73:Drivers/CMSIS/core_cm4.h **** #define __CM4_CMSIS_VERSION       ((__CM4_CMSIS_VERSION_MAIN << 16) | \
   74:Drivers/CMSIS/core_cm4.h ****                                     __CM4_CMSIS_VERSION_SUB          )     /*!< CMSIS HAL version n
+ARM GAS  /tmp/ccHyHatJ.s 			page 4
+
+
   75:Drivers/CMSIS/core_cm4.h **** 
   76:Drivers/CMSIS/core_cm4.h **** #define __CORTEX_M                (0x04)                                   /*!< Cortex-M Core      
   77:Drivers/CMSIS/core_cm4.h **** 
@@ -178,9 +191,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
   82:Drivers/CMSIS/core_cm4.h ****   #define __STATIC_INLINE  static __inline
   83:Drivers/CMSIS/core_cm4.h **** 
   84:Drivers/CMSIS/core_cm4.h **** #elif defined ( __GNUC__ )
-ARM GAS  /tmp/ccPTIo7p.s 			page 4
-
-
   85:Drivers/CMSIS/core_cm4.h ****   #define __ASM            __asm                                      /*!< asm keyword for GNU Comp
   86:Drivers/CMSIS/core_cm4.h ****   #define __INLINE         inline                                     /*!< inline keyword for GNU C
   87:Drivers/CMSIS/core_cm4.h ****   #define __STATIC_INLINE  static inline
@@ -228,6 +238,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  129:Drivers/CMSIS/core_cm4.h ****     #else
  130:Drivers/CMSIS/core_cm4.h ****       #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESEN
  131:Drivers/CMSIS/core_cm4.h ****       #define __FPU_USED       0
+ARM GAS  /tmp/ccHyHatJ.s 			page 5
+
+
  132:Drivers/CMSIS/core_cm4.h ****     #endif
  133:Drivers/CMSIS/core_cm4.h ****   #else
  134:Drivers/CMSIS/core_cm4.h ****     #define __FPU_USED         0
@@ -238,9 +251,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  139:Drivers/CMSIS/core_cm4.h ****     #if (__FPU_PRESENT == 1)
  140:Drivers/CMSIS/core_cm4.h ****       #define __FPU_USED       1
  141:Drivers/CMSIS/core_cm4.h ****     #else
-ARM GAS  /tmp/ccPTIo7p.s 			page 5
-
-
  142:Drivers/CMSIS/core_cm4.h ****       #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESEN
  143:Drivers/CMSIS/core_cm4.h ****       #define __FPU_USED       0
  144:Drivers/CMSIS/core_cm4.h ****     #endif
@@ -288,6 +298,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  186:Drivers/CMSIS/core_cm4.h **** #include <stdint.h>                      /* standard types definitions                      */
  187:Drivers/CMSIS/core_cm4.h **** #include <core_cmInstr.h>                /* Core Instruction Access                         */
  188:Drivers/CMSIS/core_cm4.h **** #include <core_cmFunc.h>                 /* Core Function Access                            */
+ARM GAS  /tmp/ccHyHatJ.s 			page 6
+
+
  189:Drivers/CMSIS/core_cm4.h **** #include <core_cm4_simd.h>               /* Compiler specific SIMD Intrinsics               */
  190:Drivers/CMSIS/core_cm4.h **** 
  191:Drivers/CMSIS/core_cm4.h **** #endif /* __CORE_CM4_H_GENERIC */
@@ -298,9 +311,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  196:Drivers/CMSIS/core_cm4.h **** #define __CORE_CM4_H_DEPENDANT
  197:Drivers/CMSIS/core_cm4.h **** 
  198:Drivers/CMSIS/core_cm4.h **** /* check device defines and use defaults */
-ARM GAS  /tmp/ccPTIo7p.s 			page 6
-
-
  199:Drivers/CMSIS/core_cm4.h **** #if defined __CHECK_DEVICE_DEFINES
  200:Drivers/CMSIS/core_cm4.h ****   #ifndef __CM4_REV
  201:Drivers/CMSIS/core_cm4.h ****     #define __CM4_REV               0x0000
@@ -348,6 +358,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  243:Drivers/CMSIS/core_cm4.h **** 
  244:Drivers/CMSIS/core_cm4.h **** 
  245:Drivers/CMSIS/core_cm4.h **** 
+ARM GAS  /tmp/ccHyHatJ.s 			page 7
+
+
  246:Drivers/CMSIS/core_cm4.h **** /*******************************************************************************
  247:Drivers/CMSIS/core_cm4.h ****  *                 Register Abstraction
  248:Drivers/CMSIS/core_cm4.h ****   Core Register contain:
@@ -358,9 +371,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  253:Drivers/CMSIS/core_cm4.h ****   - Core Debug Register
  254:Drivers/CMSIS/core_cm4.h ****   - Core MPU Register
  255:Drivers/CMSIS/core_cm4.h ****   - Core FPU Register
-ARM GAS  /tmp/ccPTIo7p.s 			page 7
-
-
  256:Drivers/CMSIS/core_cm4.h ****  ******************************************************************************/
  257:Drivers/CMSIS/core_cm4.h **** /** \defgroup CMSIS_core_register Defines and Type Definitions
  258:Drivers/CMSIS/core_cm4.h ****     \brief Type definitions and defines for Cortex-M processor based devices.
@@ -408,6 +418,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  300:Drivers/CMSIS/core_cm4.h **** } IPSR_Type;
  301:Drivers/CMSIS/core_cm4.h **** 
  302:Drivers/CMSIS/core_cm4.h **** 
+ARM GAS  /tmp/ccHyHatJ.s 			page 8
+
+
  303:Drivers/CMSIS/core_cm4.h **** /** \brief  Union type to access the Special-Purpose Program Status Registers (xPSR).
  304:Drivers/CMSIS/core_cm4.h ****  */
  305:Drivers/CMSIS/core_cm4.h **** typedef union
@@ -418,9 +431,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  310:Drivers/CMSIS/core_cm4.h **** #if (__CORTEX_M != 0x04)
  311:Drivers/CMSIS/core_cm4.h ****     uint32_t _reserved0:15;              /*!< bit:  9..23  Reserved                           */
  312:Drivers/CMSIS/core_cm4.h **** #else
-ARM GAS  /tmp/ccPTIo7p.s 			page 8
-
-
  313:Drivers/CMSIS/core_cm4.h ****     uint32_t _reserved0:7;               /*!< bit:  9..15  Reserved                           */
  314:Drivers/CMSIS/core_cm4.h ****     uint32_t GE:4;                       /*!< bit: 16..19  Greater than or Equal flags        */
  315:Drivers/CMSIS/core_cm4.h ****     uint32_t _reserved1:4;               /*!< bit: 20..23  Reserved                           */
@@ -468,6 +478,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  357:Drivers/CMSIS/core_cm4.h ****        uint32_t RESERVED0[24];
  358:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t ICER[8];                 /*!< Offset: 0x080 (R/W)  Interrupt Clear Enable Register 
  359:Drivers/CMSIS/core_cm4.h ****        uint32_t RSERVED1[24];
+ARM GAS  /tmp/ccHyHatJ.s 			page 9
+
+
  360:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t ISPR[8];                 /*!< Offset: 0x100 (R/W)  Interrupt Set Pending Register  
  361:Drivers/CMSIS/core_cm4.h ****        uint32_t RESERVED2[24];
  362:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t ICPR[8];                 /*!< Offset: 0x180 (R/W)  Interrupt Clear Pending Register
@@ -478,9 +491,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  367:Drivers/CMSIS/core_cm4.h ****        uint32_t RESERVED5[644];
  368:Drivers/CMSIS/core_cm4.h ****   __O  uint32_t STIR;                    /*!< Offset: 0xE00 ( /W)  Software Trigger Interrupt Regis
  369:Drivers/CMSIS/core_cm4.h **** }  NVIC_Type;
-ARM GAS  /tmp/ccPTIo7p.s 			page 9
-
-
  370:Drivers/CMSIS/core_cm4.h **** 
  371:Drivers/CMSIS/core_cm4.h **** /* Software Triggered Interrupt Register Definitions */
  372:Drivers/CMSIS/core_cm4.h **** #define NVIC_STIR_INTID_Pos                 0                                          /*!< STIR: I
@@ -528,6 +538,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  414:Drivers/CMSIS/core_cm4.h **** 
  415:Drivers/CMSIS/core_cm4.h **** #define SCB_CPUID_VARIANT_Pos              20                                             /*!< SCB 
  416:Drivers/CMSIS/core_cm4.h **** #define SCB_CPUID_VARIANT_Msk              (0xFUL << SCB_CPUID_VARIANT_Pos)               /*!< SCB 
+ARM GAS  /tmp/ccHyHatJ.s 			page 10
+
+
  417:Drivers/CMSIS/core_cm4.h **** 
  418:Drivers/CMSIS/core_cm4.h **** #define SCB_CPUID_ARCHITECTURE_Pos         16                                             /*!< SCB 
  419:Drivers/CMSIS/core_cm4.h **** #define SCB_CPUID_ARCHITECTURE_Msk         (0xFUL << SCB_CPUID_ARCHITECTURE_Pos)          /*!< SCB 
@@ -538,9 +551,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  424:Drivers/CMSIS/core_cm4.h **** #define SCB_CPUID_REVISION_Pos              0                                             /*!< SCB 
  425:Drivers/CMSIS/core_cm4.h **** #define SCB_CPUID_REVISION_Msk             (0xFUL << SCB_CPUID_REVISION_Pos)              /*!< SCB 
  426:Drivers/CMSIS/core_cm4.h **** 
-ARM GAS  /tmp/ccPTIo7p.s 			page 10
-
-
  427:Drivers/CMSIS/core_cm4.h **** /* SCB Interrupt Control State Register Definitions */
  428:Drivers/CMSIS/core_cm4.h **** #define SCB_ICSR_NMIPENDSET_Pos            31                                             /*!< SCB 
  429:Drivers/CMSIS/core_cm4.h **** #define SCB_ICSR_NMIPENDSET_Msk            (1UL << SCB_ICSR_NMIPENDSET_Pos)               /*!< SCB 
@@ -588,6 +598,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  471:Drivers/CMSIS/core_cm4.h **** 
  472:Drivers/CMSIS/core_cm4.h **** #define SCB_AIRCR_PRIGROUP_Pos              8                                             /*!< SCB 
  473:Drivers/CMSIS/core_cm4.h **** #define SCB_AIRCR_PRIGROUP_Msk             (7UL << SCB_AIRCR_PRIGROUP_Pos)                /*!< SCB 
+ARM GAS  /tmp/ccHyHatJ.s 			page 11
+
+
  474:Drivers/CMSIS/core_cm4.h **** 
  475:Drivers/CMSIS/core_cm4.h **** #define SCB_AIRCR_SYSRESETREQ_Pos           2                                             /*!< SCB 
  476:Drivers/CMSIS/core_cm4.h **** #define SCB_AIRCR_SYSRESETREQ_Msk          (1UL << SCB_AIRCR_SYSRESETREQ_Pos)             /*!< SCB 
@@ -598,9 +611,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  481:Drivers/CMSIS/core_cm4.h **** #define SCB_AIRCR_VECTRESET_Pos             0                                             /*!< SCB 
  482:Drivers/CMSIS/core_cm4.h **** #define SCB_AIRCR_VECTRESET_Msk            (1UL << SCB_AIRCR_VECTRESET_Pos)               /*!< SCB 
  483:Drivers/CMSIS/core_cm4.h **** 
-ARM GAS  /tmp/ccPTIo7p.s 			page 11
-
-
  484:Drivers/CMSIS/core_cm4.h **** /* SCB System Control Register Definitions */
  485:Drivers/CMSIS/core_cm4.h **** #define SCB_SCR_SEVONPEND_Pos               4                                             /*!< SCB 
  486:Drivers/CMSIS/core_cm4.h **** #define SCB_SCR_SEVONPEND_Msk              (1UL << SCB_SCR_SEVONPEND_Pos)                 /*!< SCB 
@@ -648,6 +658,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  528:Drivers/CMSIS/core_cm4.h **** 
  529:Drivers/CMSIS/core_cm4.h **** #define SCB_SHCSR_MEMFAULTPENDED_Pos       13                                             /*!< SCB 
  530:Drivers/CMSIS/core_cm4.h **** #define SCB_SHCSR_MEMFAULTPENDED_Msk       (1UL << SCB_SHCSR_MEMFAULTPENDED_Pos)          /*!< SCB 
+ARM GAS  /tmp/ccHyHatJ.s 			page 12
+
+
  531:Drivers/CMSIS/core_cm4.h **** 
  532:Drivers/CMSIS/core_cm4.h **** #define SCB_SHCSR_USGFAULTPENDED_Pos       12                                             /*!< SCB 
  533:Drivers/CMSIS/core_cm4.h **** #define SCB_SHCSR_USGFAULTPENDED_Msk       (1UL << SCB_SHCSR_USGFAULTPENDED_Pos)          /*!< SCB 
@@ -658,9 +671,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  538:Drivers/CMSIS/core_cm4.h **** #define SCB_SHCSR_PENDSVACT_Pos            10                                             /*!< SCB 
  539:Drivers/CMSIS/core_cm4.h **** #define SCB_SHCSR_PENDSVACT_Msk            (1UL << SCB_SHCSR_PENDSVACT_Pos)               /*!< SCB 
  540:Drivers/CMSIS/core_cm4.h **** 
-ARM GAS  /tmp/ccPTIo7p.s 			page 12
-
-
  541:Drivers/CMSIS/core_cm4.h **** #define SCB_SHCSR_MONITORACT_Pos            8                                             /*!< SCB 
  542:Drivers/CMSIS/core_cm4.h **** #define SCB_SHCSR_MONITORACT_Msk           (1UL << SCB_SHCSR_MONITORACT_Pos)              /*!< SCB 
  543:Drivers/CMSIS/core_cm4.h **** 
@@ -708,6 +718,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  585:Drivers/CMSIS/core_cm4.h **** 
  586:Drivers/CMSIS/core_cm4.h **** #define SCB_DFSR_BKPT_Pos                   1                                             /*!< SCB 
  587:Drivers/CMSIS/core_cm4.h **** #define SCB_DFSR_BKPT_Msk                  (1UL << SCB_DFSR_BKPT_Pos)                     /*!< SCB 
+ARM GAS  /tmp/ccHyHatJ.s 			page 13
+
+
  588:Drivers/CMSIS/core_cm4.h **** 
  589:Drivers/CMSIS/core_cm4.h **** #define SCB_DFSR_HALTED_Pos                 0                                             /*!< SCB 
  590:Drivers/CMSIS/core_cm4.h **** #define SCB_DFSR_HALTED_Msk                (1UL << SCB_DFSR_HALTED_Pos)                   /*!< SCB 
@@ -718,9 +731,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  595:Drivers/CMSIS/core_cm4.h **** /** \ingroup  CMSIS_core_register
  596:Drivers/CMSIS/core_cm4.h ****     \defgroup CMSIS_SCnSCB System Controls not in SCB (SCnSCB)
  597:Drivers/CMSIS/core_cm4.h ****     \brief      Type definitions for the System Control and ID Register not in the SCB
-ARM GAS  /tmp/ccPTIo7p.s 			page 13
-
-
  598:Drivers/CMSIS/core_cm4.h ****   @{
  599:Drivers/CMSIS/core_cm4.h ****  */
  600:Drivers/CMSIS/core_cm4.h **** 
@@ -768,6 +778,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  642:Drivers/CMSIS/core_cm4.h **** {
  643:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t CTRL;                    /*!< Offset: 0x000 (R/W)  SysTick Control and Status Regis
  644:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t LOAD;                    /*!< Offset: 0x004 (R/W)  SysTick Reload Value Register   
+ARM GAS  /tmp/ccHyHatJ.s 			page 14
+
+
  645:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t VAL;                     /*!< Offset: 0x008 (R/W)  SysTick Current Value Register  
  646:Drivers/CMSIS/core_cm4.h ****   __I  uint32_t CALIB;                   /*!< Offset: 0x00C (R/ )  SysTick Calibration Register    
  647:Drivers/CMSIS/core_cm4.h **** } SysTick_Type;
@@ -778,9 +791,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  652:Drivers/CMSIS/core_cm4.h **** 
  653:Drivers/CMSIS/core_cm4.h **** #define SysTick_CTRL_CLKSOURCE_Pos          2                                             /*!< SysT
  654:Drivers/CMSIS/core_cm4.h **** #define SysTick_CTRL_CLKSOURCE_Msk         (1UL << SysTick_CTRL_CLKSOURCE_Pos)            /*!< SysT
-ARM GAS  /tmp/ccPTIo7p.s 			page 14
-
-
  655:Drivers/CMSIS/core_cm4.h **** 
  656:Drivers/CMSIS/core_cm4.h **** #define SysTick_CTRL_TICKINT_Pos            1                                             /*!< SysT
  657:Drivers/CMSIS/core_cm4.h **** #define SysTick_CTRL_TICKINT_Msk           (1UL << SysTick_CTRL_TICKINT_Pos)              /*!< SysT
@@ -828,6 +838,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  699:Drivers/CMSIS/core_cm4.h ****        uint32_t RESERVED0[864];
  700:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t TER;                     /*!< Offset: 0xE00 (R/W)  ITM Trace Enable Register       
  701:Drivers/CMSIS/core_cm4.h ****        uint32_t RESERVED1[15];
+ARM GAS  /tmp/ccHyHatJ.s 			page 15
+
+
  702:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t TPR;                     /*!< Offset: 0xE40 (R/W)  ITM Trace Privilege Register    
  703:Drivers/CMSIS/core_cm4.h ****        uint32_t RESERVED2[15];
  704:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t TCR;                     /*!< Offset: 0xE80 (R/W)  ITM Trace Control Register      
@@ -838,9 +851,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  709:Drivers/CMSIS/core_cm4.h ****        uint32_t RESERVED4[43];
  710:Drivers/CMSIS/core_cm4.h ****   __O  uint32_t LAR;                     /*!< Offset: 0xFB0 ( /W)  ITM Lock Access Register        
  711:Drivers/CMSIS/core_cm4.h ****   __I  uint32_t LSR;                     /*!< Offset: 0xFB4 (R/ )  ITM Lock Status Register        
-ARM GAS  /tmp/ccPTIo7p.s 			page 15
-
-
  712:Drivers/CMSIS/core_cm4.h ****        uint32_t RESERVED5[6];
  713:Drivers/CMSIS/core_cm4.h ****   __I  uint32_t PID4;                    /*!< Offset: 0xFD0 (R/ )  ITM Peripheral Identification Re
  714:Drivers/CMSIS/core_cm4.h ****   __I  uint32_t PID5;                    /*!< Offset: 0xFD4 (R/ )  ITM Peripheral Identification Re
@@ -888,6 +898,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  756:Drivers/CMSIS/core_cm4.h **** #define ITM_TCR_ITMENA_Pos                  0                                             /*!< ITM 
  757:Drivers/CMSIS/core_cm4.h **** #define ITM_TCR_ITMENA_Msk                 (1UL << ITM_TCR_ITMENA_Pos)                    /*!< ITM 
  758:Drivers/CMSIS/core_cm4.h **** 
+ARM GAS  /tmp/ccHyHatJ.s 			page 16
+
+
  759:Drivers/CMSIS/core_cm4.h **** /* ITM Integration Write Register Definitions */
  760:Drivers/CMSIS/core_cm4.h **** #define ITM_IWR_ATVALIDM_Pos                0                                             /*!< ITM 
  761:Drivers/CMSIS/core_cm4.h **** #define ITM_IWR_ATVALIDM_Msk               (1UL << ITM_IWR_ATVALIDM_Pos)                  /*!< ITM 
@@ -898,9 +911,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  766:Drivers/CMSIS/core_cm4.h **** 
  767:Drivers/CMSIS/core_cm4.h **** /* ITM Integration Mode Control Register Definitions */
  768:Drivers/CMSIS/core_cm4.h **** #define ITM_IMCR_INTEGRATION_Pos            0                                             /*!< ITM 
-ARM GAS  /tmp/ccPTIo7p.s 			page 16
-
-
  769:Drivers/CMSIS/core_cm4.h **** #define ITM_IMCR_INTEGRATION_Msk           (1UL << ITM_IMCR_INTEGRATION_Pos)              /*!< ITM 
  770:Drivers/CMSIS/core_cm4.h **** 
  771:Drivers/CMSIS/core_cm4.h **** /* ITM Lock Status Register Definitions */
@@ -948,6 +958,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  813:Drivers/CMSIS/core_cm4.h ****        uint32_t RESERVED2[1];
  814:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t COMP3;                   /*!< Offset: 0x050 (R/W)  Comparator Register 3           
  815:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t MASK3;                   /*!< Offset: 0x054 (R/W)  Mask Register 3                 
+ARM GAS  /tmp/ccHyHatJ.s 			page 17
+
+
  816:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t FUNCTION3;               /*!< Offset: 0x058 (R/W)  Function Register 3             
  817:Drivers/CMSIS/core_cm4.h **** } DWT_Type;
  818:Drivers/CMSIS/core_cm4.h **** 
@@ -958,9 +971,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  823:Drivers/CMSIS/core_cm4.h **** #define DWT_CTRL_NOTRCPKT_Pos              27                                          /*!< DWT CTR
  824:Drivers/CMSIS/core_cm4.h **** #define DWT_CTRL_NOTRCPKT_Msk              (0x1UL << DWT_CTRL_NOTRCPKT_Pos)            /*!< DWT CTR
  825:Drivers/CMSIS/core_cm4.h **** 
-ARM GAS  /tmp/ccPTIo7p.s 			page 17
-
-
  826:Drivers/CMSIS/core_cm4.h **** #define DWT_CTRL_NOEXTTRIG_Pos             26                                          /*!< DWT CTR
  827:Drivers/CMSIS/core_cm4.h **** #define DWT_CTRL_NOEXTTRIG_Msk             (0x1UL << DWT_CTRL_NOEXTTRIG_Pos)           /*!< DWT CTR
  828:Drivers/CMSIS/core_cm4.h **** 
@@ -1008,6 +1018,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  870:Drivers/CMSIS/core_cm4.h **** 
  871:Drivers/CMSIS/core_cm4.h **** #define DWT_CTRL_CYCCNTENA_Pos              0                                          /*!< DWT CTR
  872:Drivers/CMSIS/core_cm4.h **** #define DWT_CTRL_CYCCNTENA_Msk             (0x1UL << DWT_CTRL_CYCCNTENA_Pos)           /*!< DWT CTR
+ARM GAS  /tmp/ccHyHatJ.s 			page 18
+
+
  873:Drivers/CMSIS/core_cm4.h **** 
  874:Drivers/CMSIS/core_cm4.h **** /* DWT CPI Count Register Definitions */
  875:Drivers/CMSIS/core_cm4.h **** #define DWT_CPICNT_CPICNT_Pos               0                                          /*!< DWT CPI
@@ -1018,9 +1031,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  880:Drivers/CMSIS/core_cm4.h **** #define DWT_EXCCNT_EXCCNT_Msk              (0xFFUL << DWT_EXCCNT_EXCCNT_Pos)           /*!< DWT EXC
  881:Drivers/CMSIS/core_cm4.h **** 
  882:Drivers/CMSIS/core_cm4.h **** /* DWT Sleep Count Register Definitions */
-ARM GAS  /tmp/ccPTIo7p.s 			page 18
-
-
  883:Drivers/CMSIS/core_cm4.h **** #define DWT_SLEEPCNT_SLEEPCNT_Pos           0                                          /*!< DWT SLE
  884:Drivers/CMSIS/core_cm4.h **** #define DWT_SLEEPCNT_SLEEPCNT_Msk          (0xFFUL << DWT_SLEEPCNT_SLEEPCNT_Pos)       /*!< DWT SLE
  885:Drivers/CMSIS/core_cm4.h **** 
@@ -1068,6 +1078,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  927:Drivers/CMSIS/core_cm4.h **** 
  928:Drivers/CMSIS/core_cm4.h **** 
  929:Drivers/CMSIS/core_cm4.h **** /** \ingroup  CMSIS_core_register
+ARM GAS  /tmp/ccHyHatJ.s 			page 19
+
+
  930:Drivers/CMSIS/core_cm4.h ****     \defgroup CMSIS_TPI     Trace Port Interface (TPI)
  931:Drivers/CMSIS/core_cm4.h ****     \brief      Type definitions for the Trace Port Interface (TPI)
  932:Drivers/CMSIS/core_cm4.h ****   @{
@@ -1078,9 +1091,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  937:Drivers/CMSIS/core_cm4.h **** typedef struct
  938:Drivers/CMSIS/core_cm4.h **** {
  939:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t SSPSR;                   /*!< Offset: 0x000 (R/ )  Supported Parallel Port Size Reg
-ARM GAS  /tmp/ccPTIo7p.s 			page 19
-
-
  940:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t CSPSR;                   /*!< Offset: 0x004 (R/W)  Current Parallel Port Size Regis
  941:Drivers/CMSIS/core_cm4.h ****        uint32_t RESERVED0[2];
  942:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t ACPR;                    /*!< Offset: 0x010 (R/W)  Asynchronous Clock Prescaler Reg
@@ -1128,6 +1138,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  984:Drivers/CMSIS/core_cm4.h **** #define TPI_FFSR_FlInProg_Msk              (0x1UL << TPI_FFSR_FlInProg_Pos)            /*!< TPI FFS
  985:Drivers/CMSIS/core_cm4.h **** 
  986:Drivers/CMSIS/core_cm4.h **** /* TPI Formatter and Flush Control Register Definitions */
+ARM GAS  /tmp/ccHyHatJ.s 			page 20
+
+
  987:Drivers/CMSIS/core_cm4.h **** #define TPI_FFCR_TrigIn_Pos                 8                                          /*!< TPI FFC
  988:Drivers/CMSIS/core_cm4.h **** #define TPI_FFCR_TrigIn_Msk                (0x1UL << TPI_FFCR_TrigIn_Pos)              /*!< TPI FFC
  989:Drivers/CMSIS/core_cm4.h **** 
@@ -1138,9 +1151,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  994:Drivers/CMSIS/core_cm4.h **** #define TPI_TRIGGER_TRIGGER_Pos             0                                          /*!< TPI TRI
  995:Drivers/CMSIS/core_cm4.h **** #define TPI_TRIGGER_TRIGGER_Msk            (0x1UL << TPI_TRIGGER_TRIGGER_Pos)          /*!< TPI TRI
  996:Drivers/CMSIS/core_cm4.h **** 
-ARM GAS  /tmp/ccPTIo7p.s 			page 20
-
-
  997:Drivers/CMSIS/core_cm4.h **** /* TPI Integration ETM Data Register Definitions (FIFO0) */
  998:Drivers/CMSIS/core_cm4.h **** #define TPI_FIFO0_ITM_ATVALID_Pos          29                                          /*!< TPI FIF
  999:Drivers/CMSIS/core_cm4.h **** #define TPI_FIFO0_ITM_ATVALID_Msk          (0x3UL << TPI_FIFO0_ITM_ATVALID_Pos)        /*!< TPI FIF
@@ -1188,6 +1198,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1041:Drivers/CMSIS/core_cm4.h **** 
 1042:Drivers/CMSIS/core_cm4.h **** #define TPI_FIFO1_ITM0_Pos                  0                                          /*!< TPI FIF
 1043:Drivers/CMSIS/core_cm4.h **** #define TPI_FIFO1_ITM0_Msk                 (0xFFUL << TPI_FIFO1_ITM0_Pos)              /*!< TPI FIF
+ARM GAS  /tmp/ccHyHatJ.s 			page 21
+
+
 1044:Drivers/CMSIS/core_cm4.h **** 
 1045:Drivers/CMSIS/core_cm4.h **** /* TPI ITATBCTR0 Register Definitions */
 1046:Drivers/CMSIS/core_cm4.h **** #define TPI_ITATBCTR0_ATREADY_Pos           0                                          /*!< TPI ITA
@@ -1198,9 +1211,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1051:Drivers/CMSIS/core_cm4.h **** #define TPI_ITCTRL_Mode_Msk                (0x1UL << TPI_ITCTRL_Mode_Pos)              /*!< TPI ITC
 1052:Drivers/CMSIS/core_cm4.h **** 
 1053:Drivers/CMSIS/core_cm4.h **** /* TPI DEVID Register Definitions */
-ARM GAS  /tmp/ccPTIo7p.s 			page 21
-
-
 1054:Drivers/CMSIS/core_cm4.h **** #define TPI_DEVID_NRZVALID_Pos             11                                          /*!< TPI DEV
 1055:Drivers/CMSIS/core_cm4.h **** #define TPI_DEVID_NRZVALID_Msk             (0x1UL << TPI_DEVID_NRZVALID_Pos)           /*!< TPI DEV
 1056:Drivers/CMSIS/core_cm4.h **** 
@@ -1248,6 +1258,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1098:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t RBAR_A1;                 /*!< Offset: 0x014 (R/W)  MPU Alias 1 Region Base Address 
 1099:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t RASR_A1;                 /*!< Offset: 0x018 (R/W)  MPU Alias 1 Region Attribute and
 1100:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t RBAR_A2;                 /*!< Offset: 0x01C (R/W)  MPU Alias 2 Region Base Address 
+ARM GAS  /tmp/ccHyHatJ.s 			page 22
+
+
 1101:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t RASR_A2;                 /*!< Offset: 0x020 (R/W)  MPU Alias 2 Region Attribute and
 1102:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t RBAR_A3;                 /*!< Offset: 0x024 (R/W)  MPU Alias 3 Region Base Address 
 1103:Drivers/CMSIS/core_cm4.h ****   __IO uint32_t RASR_A3;                 /*!< Offset: 0x028 (R/W)  MPU Alias 3 Region Attribute and
@@ -1258,9 +1271,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1108:Drivers/CMSIS/core_cm4.h **** #define MPU_TYPE_IREGION_Msk               (0xFFUL << MPU_TYPE_IREGION_Pos)               /*!< MPU 
 1109:Drivers/CMSIS/core_cm4.h **** 
 1110:Drivers/CMSIS/core_cm4.h **** #define MPU_TYPE_DREGION_Pos                8                                             /*!< MPU 
-ARM GAS  /tmp/ccPTIo7p.s 			page 22
-
-
 1111:Drivers/CMSIS/core_cm4.h **** #define MPU_TYPE_DREGION_Msk               (0xFFUL << MPU_TYPE_DREGION_Pos)               /*!< MPU 
 1112:Drivers/CMSIS/core_cm4.h **** 
 1113:Drivers/CMSIS/core_cm4.h **** #define MPU_TYPE_SEPARATE_Pos               0                                             /*!< MPU 
@@ -1308,6 +1318,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1155:Drivers/CMSIS/core_cm4.h **** 
 1156:Drivers/CMSIS/core_cm4.h **** #define MPU_RASR_C_Pos                     17                                             /*!< MPU 
 1157:Drivers/CMSIS/core_cm4.h **** #define MPU_RASR_C_Msk                     (1UL << MPU_RASR_C_Pos)                        /*!< MPU 
+ARM GAS  /tmp/ccHyHatJ.s 			page 23
+
+
 1158:Drivers/CMSIS/core_cm4.h **** 
 1159:Drivers/CMSIS/core_cm4.h **** #define MPU_RASR_B_Pos                     16                                             /*!< MPU 
 1160:Drivers/CMSIS/core_cm4.h **** #define MPU_RASR_B_Msk                     (1UL << MPU_RASR_B_Pos)                        /*!< MPU 
@@ -1318,9 +1331,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1165:Drivers/CMSIS/core_cm4.h **** #define MPU_RASR_SIZE_Pos                   1                                             /*!< MPU 
 1166:Drivers/CMSIS/core_cm4.h **** #define MPU_RASR_SIZE_Msk                  (0x1FUL << MPU_RASR_SIZE_Pos)                  /*!< MPU 
 1167:Drivers/CMSIS/core_cm4.h **** 
-ARM GAS  /tmp/ccPTIo7p.s 			page 23
-
-
 1168:Drivers/CMSIS/core_cm4.h **** #define MPU_RASR_ENABLE_Pos                 0                                             /*!< MPU 
 1169:Drivers/CMSIS/core_cm4.h **** #define MPU_RASR_ENABLE_Msk                (1UL << MPU_RASR_ENABLE_Pos)                   /*!< MPU 
 1170:Drivers/CMSIS/core_cm4.h **** 
@@ -1368,6 +1378,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1212:Drivers/CMSIS/core_cm4.h **** 
 1213:Drivers/CMSIS/core_cm4.h **** #define FPU_FPCCR_THREAD_Pos                3                                             /*!< FPCC
 1214:Drivers/CMSIS/core_cm4.h **** #define FPU_FPCCR_THREAD_Msk               (1UL << FPU_FPCCR_THREAD_Pos)                  /*!< FPCC
+ARM GAS  /tmp/ccHyHatJ.s 			page 24
+
+
 1215:Drivers/CMSIS/core_cm4.h **** 
 1216:Drivers/CMSIS/core_cm4.h **** #define FPU_FPCCR_USER_Pos                  1                                             /*!< FPCC
 1217:Drivers/CMSIS/core_cm4.h **** #define FPU_FPCCR_USER_Msk                 (1UL << FPU_FPCCR_USER_Pos)                    /*!< FPCC
@@ -1378,9 +1391,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1222:Drivers/CMSIS/core_cm4.h **** /* Floating-Point Context Address Register */
 1223:Drivers/CMSIS/core_cm4.h **** #define FPU_FPCAR_ADDRESS_Pos               3                                             /*!< FPCA
 1224:Drivers/CMSIS/core_cm4.h **** #define FPU_FPCAR_ADDRESS_Msk              (0x1FFFFFFFUL << FPU_FPCAR_ADDRESS_Pos)        /*!< FPCA
-ARM GAS  /tmp/ccPTIo7p.s 			page 24
-
-
 1225:Drivers/CMSIS/core_cm4.h **** 
 1226:Drivers/CMSIS/core_cm4.h **** /* Floating-Point Default Status Control Register */
 1227:Drivers/CMSIS/core_cm4.h **** #define FPU_FPDSCR_AHP_Pos                 26                                             /*!< FPDS
@@ -1428,6 +1438,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1269:Drivers/CMSIS/core_cm4.h **** #define FPU_MVFR1_FP_HPFP_Msk              (0xFUL << FPU_MVFR1_FP_HPFP_Pos)               /*!< MVFR
 1270:Drivers/CMSIS/core_cm4.h **** 
 1271:Drivers/CMSIS/core_cm4.h **** #define FPU_MVFR1_D_NaN_mode_Pos            4                                             /*!< MVFR
+ARM GAS  /tmp/ccHyHatJ.s 			page 25
+
+
 1272:Drivers/CMSIS/core_cm4.h **** #define FPU_MVFR1_D_NaN_mode_Msk           (0xFUL << FPU_MVFR1_D_NaN_mode_Pos)            /*!< MVFR
 1273:Drivers/CMSIS/core_cm4.h **** 
 1274:Drivers/CMSIS/core_cm4.h **** #define FPU_MVFR1_FtZ_mode_Pos              0                                             /*!< MVFR
@@ -1438,9 +1451,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1279:Drivers/CMSIS/core_cm4.h **** 
 1280:Drivers/CMSIS/core_cm4.h **** 
 1281:Drivers/CMSIS/core_cm4.h **** /** \ingroup  CMSIS_core_register
-ARM GAS  /tmp/ccPTIo7p.s 			page 25
-
-
 1282:Drivers/CMSIS/core_cm4.h ****     \defgroup CMSIS_CoreDebug       Core Debug Registers (CoreDebug)
 1283:Drivers/CMSIS/core_cm4.h ****     \brief      Type definitions for the Core Debug Registers
 1284:Drivers/CMSIS/core_cm4.h ****   @{
@@ -1488,6 +1498,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1326:Drivers/CMSIS/core_cm4.h **** #define CoreDebug_DHCSR_C_STEP_Msk         (1UL << CoreDebug_DHCSR_C_STEP_Pos)            /*!< Core
 1327:Drivers/CMSIS/core_cm4.h **** 
 1328:Drivers/CMSIS/core_cm4.h **** #define CoreDebug_DHCSR_C_HALT_Pos          1                                             /*!< Core
+ARM GAS  /tmp/ccHyHatJ.s 			page 26
+
+
 1329:Drivers/CMSIS/core_cm4.h **** #define CoreDebug_DHCSR_C_HALT_Msk         (1UL << CoreDebug_DHCSR_C_HALT_Pos)            /*!< Core
 1330:Drivers/CMSIS/core_cm4.h **** 
 1331:Drivers/CMSIS/core_cm4.h **** #define CoreDebug_DHCSR_C_DEBUGEN_Pos       0                                             /*!< Core
@@ -1498,9 +1511,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1336:Drivers/CMSIS/core_cm4.h **** #define CoreDebug_DCRSR_REGWnR_Msk         (1UL << CoreDebug_DCRSR_REGWnR_Pos)            /*!< Core
 1337:Drivers/CMSIS/core_cm4.h **** 
 1338:Drivers/CMSIS/core_cm4.h **** #define CoreDebug_DCRSR_REGSEL_Pos          0                                             /*!< Core
-ARM GAS  /tmp/ccPTIo7p.s 			page 26
-
-
 1339:Drivers/CMSIS/core_cm4.h **** #define CoreDebug_DCRSR_REGSEL_Msk         (0x1FUL << CoreDebug_DCRSR_REGSEL_Pos)         /*!< Core
 1340:Drivers/CMSIS/core_cm4.h **** 
 1341:Drivers/CMSIS/core_cm4.h **** /* Debug Exception and Monitor Control Register */
@@ -1548,6 +1558,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1383:Drivers/CMSIS/core_cm4.h **** 
 1384:Drivers/CMSIS/core_cm4.h **** /** \ingroup    CMSIS_core_register
 1385:Drivers/CMSIS/core_cm4.h ****     \defgroup   CMSIS_core_base     Core Definitions
+ARM GAS  /tmp/ccHyHatJ.s 			page 27
+
+
 1386:Drivers/CMSIS/core_cm4.h ****     \brief      Definitions for base addresses, unions, and structures.
 1387:Drivers/CMSIS/core_cm4.h ****   @{
 1388:Drivers/CMSIS/core_cm4.h ****  */
@@ -1558,9 +1571,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1393:Drivers/CMSIS/core_cm4.h **** #define DWT_BASE            (0xE0001000UL)                            /*!< DWT Base Address        
 1394:Drivers/CMSIS/core_cm4.h **** #define TPI_BASE            (0xE0040000UL)                            /*!< TPI Base Address        
 1395:Drivers/CMSIS/core_cm4.h **** #define CoreDebug_BASE      (0xE000EDF0UL)                            /*!< Core Debug Base Address 
-ARM GAS  /tmp/ccPTIo7p.s 			page 27
-
-
 1396:Drivers/CMSIS/core_cm4.h **** #define SysTick_BASE        (SCS_BASE +  0x0010UL)                    /*!< SysTick Base Address    
 1397:Drivers/CMSIS/core_cm4.h **** #define NVIC_BASE           (SCS_BASE +  0x0100UL)                    /*!< NVIC Base Address       
 1398:Drivers/CMSIS/core_cm4.h **** #define SCB_BASE            (SCS_BASE +  0x0D00UL)                    /*!< System Control Block Bas
@@ -1608,6 +1618,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1440:Drivers/CMSIS/core_cm4.h ****     @{
 1441:Drivers/CMSIS/core_cm4.h ****  */
 1442:Drivers/CMSIS/core_cm4.h **** 
+ARM GAS  /tmp/ccHyHatJ.s 			page 28
+
+
 1443:Drivers/CMSIS/core_cm4.h **** /** \brief  Set Priority Grouping
 1444:Drivers/CMSIS/core_cm4.h **** 
 1445:Drivers/CMSIS/core_cm4.h ****   The function sets the priority grouping field using the required unlock sequence.
@@ -1618,9 +1631,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1450:Drivers/CMSIS/core_cm4.h **** 
 1451:Drivers/CMSIS/core_cm4.h ****     \param [in]      PriorityGroup  Priority grouping field.
 1452:Drivers/CMSIS/core_cm4.h ****  */
-ARM GAS  /tmp/ccPTIo7p.s 			page 28
-
-
 1453:Drivers/CMSIS/core_cm4.h **** __STATIC_INLINE void NVIC_SetPriorityGrouping(uint32_t PriorityGroup)
 1454:Drivers/CMSIS/core_cm4.h **** {
 1455:Drivers/CMSIS/core_cm4.h ****   uint32_t reg_value;
@@ -1668,6 +1678,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1497:Drivers/CMSIS/core_cm4.h ****  */
 1498:Drivers/CMSIS/core_cm4.h **** __STATIC_INLINE void NVIC_DisableIRQ(IRQn_Type IRQn)
 1499:Drivers/CMSIS/core_cm4.h **** {
+ARM GAS  /tmp/ccHyHatJ.s 			page 29
+
+
 1500:Drivers/CMSIS/core_cm4.h ****   NVIC->ICER[((uint32_t)(IRQn) >> 5)] = (1 << ((uint32_t)(IRQn) & 0x1F)); /* disable interrupt */
 1501:Drivers/CMSIS/core_cm4.h **** }
 1502:Drivers/CMSIS/core_cm4.h **** 
@@ -1678,9 +1691,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1507:Drivers/CMSIS/core_cm4.h ****     for the specified interrupt.
 1508:Drivers/CMSIS/core_cm4.h **** 
 1509:Drivers/CMSIS/core_cm4.h ****     \param [in]      IRQn  Interrupt number.
-ARM GAS  /tmp/ccPTIo7p.s 			page 29
-
-
 1510:Drivers/CMSIS/core_cm4.h **** 
 1511:Drivers/CMSIS/core_cm4.h ****     \return             0  Interrupt status is not pending.
 1512:Drivers/CMSIS/core_cm4.h ****     \return             1  Interrupt status is pending.
@@ -1728,6 +1738,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1554:Drivers/CMSIS/core_cm4.h **** {
 1555:Drivers/CMSIS/core_cm4.h ****   return((uint32_t)((NVIC->IABR[(uint32_t)(IRQn) >> 5] & (1 << ((uint32_t)(IRQn) & 0x1F)))?1:0)); /
 1556:Drivers/CMSIS/core_cm4.h **** }
+ARM GAS  /tmp/ccHyHatJ.s 			page 30
+
+
 1557:Drivers/CMSIS/core_cm4.h **** 
 1558:Drivers/CMSIS/core_cm4.h **** 
 1559:Drivers/CMSIS/core_cm4.h **** /** \brief  Set Interrupt Priority
@@ -1738,9 +1751,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1564:Drivers/CMSIS/core_cm4.h **** 
 1565:Drivers/CMSIS/core_cm4.h ****     \param [in]      IRQn  Interrupt number.
 1566:Drivers/CMSIS/core_cm4.h ****     \param [in]  priority  Priority to set.
-ARM GAS  /tmp/ccPTIo7p.s 			page 30
-
-
 1567:Drivers/CMSIS/core_cm4.h ****  */
 1568:Drivers/CMSIS/core_cm4.h **** __STATIC_INLINE void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
 1569:Drivers/CMSIS/core_cm4.h **** {
@@ -1788,6 +1798,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1611:Drivers/CMSIS/core_cm4.h **** {
 1612:Drivers/CMSIS/core_cm4.h ****   uint32_t PriorityGroupTmp = (PriorityGroup & 0x07);          /* only values 0..7 are used        
 1613:Drivers/CMSIS/core_cm4.h ****   uint32_t PreemptPriorityBits;
+ARM GAS  /tmp/ccHyHatJ.s 			page 31
+
+
 1614:Drivers/CMSIS/core_cm4.h ****   uint32_t SubPriorityBits;
 1615:Drivers/CMSIS/core_cm4.h **** 
 1616:Drivers/CMSIS/core_cm4.h ****   PreemptPriorityBits = ((7 - PriorityGroupTmp) > __NVIC_PRIO_BITS) ? __NVIC_PRIO_BITS : 7 - Priori
@@ -1798,9 +1811,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1621:Drivers/CMSIS/core_cm4.h ****            ((SubPriority     & ((1 << (SubPriorityBits    )) - 1)))
 1622:Drivers/CMSIS/core_cm4.h ****          );
 1623:Drivers/CMSIS/core_cm4.h **** }
-ARM GAS  /tmp/ccPTIo7p.s 			page 31
-
-
 1624:Drivers/CMSIS/core_cm4.h **** 
 1625:Drivers/CMSIS/core_cm4.h **** 
 1626:Drivers/CMSIS/core_cm4.h **** /** \brief  Decode Priority
@@ -1848,6 +1858,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1668:Drivers/CMSIS/core_cm4.h **** 
 1669:Drivers/CMSIS/core_cm4.h **** 
 1670:Drivers/CMSIS/core_cm4.h **** 
+ARM GAS  /tmp/ccHyHatJ.s 			page 32
+
+
 1671:Drivers/CMSIS/core_cm4.h **** /* ##################################    SysTick function  ########################################
 1672:Drivers/CMSIS/core_cm4.h **** /** \ingroup  CMSIS_Core_FunctionInterface
 1673:Drivers/CMSIS/core_cm4.h ****     \defgroup CMSIS_Core_SysTickFunctions SysTick Functions
@@ -1858,9 +1871,6 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1678:Drivers/CMSIS/core_cm4.h **** #if (__Vendor_SysTickConfig == 0)
 1679:Drivers/CMSIS/core_cm4.h **** 
 1680:Drivers/CMSIS/core_cm4.h **** /** \brief  System Tick Configuration
-ARM GAS  /tmp/ccPTIo7p.s 			page 32
-
-
 1681:Drivers/CMSIS/core_cm4.h **** 
 1682:Drivers/CMSIS/core_cm4.h ****     The function initializes the System Timer and its interrupt, and starts the System Tick Timer.
 1683:Drivers/CMSIS/core_cm4.h ****     Counter is in free running mode to generate periodic interrupts.
@@ -1877,90 +1887,90 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
 1694:Drivers/CMSIS/core_cm4.h ****  */
 1695:Drivers/CMSIS/core_cm4.h **** __STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
   37              		.loc 2 1695 26 view .LVU2
-  38              	.LBB17:
+  38              	.LBB21:
 1696:Drivers/CMSIS/core_cm4.h **** {
 1697:Drivers/CMSIS/core_cm4.h ****   if ((ticks - 1) > SysTick_LOAD_RELOAD_Msk)  return (1);      /* Reload value impossible */
   39              		.loc 2 1697 3 view .LVU3
-  40              	.LBE17:
-  41              	.LBE16:
-  42              		.loc 1 52 8 is_stmt 0 view .LVU4
-  43 0000 0C4B     		ldr	r3, .L6
+  40              	.LBE21:
+  41              	.LBE20:
+  42              		.loc 1 62 8 is_stmt 0 view .LVU4
+  43 0000 0D4B     		ldr	r3, .L4
   44              	.LVL1:
-  45              		.loc 1 52 8 view .LVU5
+  45              		.loc 1 62 8 view .LVU5
   46 0002 4FF47A72 		mov	r2, #1000
   47 0006 1B68     		ldr	r3, [r3]
   48              	.LVL2:
-  49              		.loc 1 52 8 view .LVU6
+  49              		.loc 1 62 8 view .LVU6
   50 0008 B3FBF2F3 		udiv	r3, r3, r2
   51              	.LVL3:
-  52              	.LBB28:
-  53              	.LBB27:
+  52              	.LBB32:
+  53              	.LBB31:
   54              		.loc 2 1697 14 view .LVU7
   55 000c 013B     		subs	r3, r3, #1
   56              	.LVL4:
   57              		.loc 2 1697 6 view .LVU8
   58 000e B3F1807F 		cmp	r3, #16777216
-  59 0012 0DD2     		bcs	.L2
+  59 0012 0ED2     		bcs	.L3
 1698:Drivers/CMSIS/core_cm4.h **** 
 1699:Drivers/CMSIS/core_cm4.h ****   SysTick->LOAD  = ticks - 1;                                  /* set reload register */
   60              		.loc 2 1699 3 is_stmt 1 view .LVU9
   61              		.loc 2 1699 18 is_stmt 0 view .LVU10
   62 0014 4FF0E022 		mov	r2, #-536813568
-  63              	.LBB18:
-  64              	.LBB19:
-  65              	.LBB20:
+  63              	.LBB22:
+  64              	.LBB23:
+ARM GAS  /tmp/ccHyHatJ.s 			page 33
+
+
+  65              	.LBB24:
 1571:Drivers/CMSIS/core_cm4.h ****   else {
   66              		.loc 2 1571 42 view .LVU11
   67 0018 F021     		movs	r1, #240
-  68              	.LBE20:
-  69              	.LBE19:
-  70              	.LBE18:
+  68              	.LBE24:
+  69              	.LBE23:
+  70              	.LBE22:
   71              		.loc 2 1699 18 view .LVU12
   72 001a 5361     		str	r3, [r2, #20]
 1700:Drivers/CMSIS/core_cm4.h ****   NVIC_SetPriority (SysTick_IRQn, (1<<__NVIC_PRIO_BITS) - 1);  /* set Priority for Systick Interrup
-ARM GAS  /tmp/ccPTIo7p.s 			page 33
-
-
   73              		.loc 2 1700 3 is_stmt 1 view .LVU13
   74              	.LVL5:
-  75              	.LBB25:
-  76              	.LBI18:
+  75              	.LBB29:
+  76              	.LBI22:
 1568:Drivers/CMSIS/core_cm4.h **** {
   77              		.loc 2 1568 22 view .LVU14
 1570:Drivers/CMSIS/core_cm4.h ****     SCB->SHP[((uint32_t)(IRQn) & 0xF)-4] = ((priority << (8 - __NVIC_PRIO_BITS)) & 0xff); } /* set 
   78              		.loc 2 1570 3 view .LVU15
-  79              	.LBB23:
-  80              	.LBI19:
+  79              	.LBB27:
+  80              	.LBI23:
 1568:Drivers/CMSIS/core_cm4.h **** {
   81              		.loc 2 1568 22 view .LVU16
-  82              	.LBB21:
+  82              	.LBB25:
 1571:Drivers/CMSIS/core_cm4.h ****   else {
   83              		.loc 2 1571 5 view .LVU17
 1571:Drivers/CMSIS/core_cm4.h ****   else {
   84              		.loc 2 1571 42 is_stmt 0 view .LVU18
-  85 001c 064B     		ldr	r3, .L6+4
+  85 001c 074B     		ldr	r3, .L4+4
   86              	.LVL6:
 1571:Drivers/CMSIS/core_cm4.h ****   else {
   87              		.loc 2 1571 42 view .LVU19
-  88              	.LBE21:
-  89              	.LBE23:
-  90              	.LBE25:
+  88              	.LBE25:
+  89              	.LBE27:
+  90              	.LBE29:
 1701:Drivers/CMSIS/core_cm4.h ****   SysTick->VAL   = 0;                                          /* Load the SysTick Counter Value */
 1702:Drivers/CMSIS/core_cm4.h ****   SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |
   91              		.loc 2 1702 18 view .LVU20
   92 001e 0720     		movs	r0, #7
-  93              	.LBB26:
-  94              	.LBB24:
-  95              	.LBB22:
+  93              	.LBB30:
+  94              	.LBB28:
+  95              	.LBB26:
 1571:Drivers/CMSIS/core_cm4.h ****   else {
   96              		.loc 2 1571 42 view .LVU21
   97 0020 83F82310 		strb	r1, [r3, #35]
   98              	.LVL7:
 1571:Drivers/CMSIS/core_cm4.h ****   else {
   99              		.loc 2 1571 42 view .LVU22
- 100              	.LBE22:
- 101              	.LBE24:
- 102              	.LBE26:
+ 100              	.LBE26:
+ 101              	.LBE28:
+ 102              	.LBE30:
 1701:Drivers/CMSIS/core_cm4.h ****   SysTick->VAL   = 0;                                          /* Load the SysTick Counter Value */
  103              		.loc 2 1701 3 is_stmt 1 view .LVU23
 1701:Drivers/CMSIS/core_cm4.h ****   SysTick->VAL   = 0;                                          /* Load the SysTick Counter Value */
@@ -1968,6 +1978,9 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  105 0024 0021     		movs	r1, #0
  106 0026 9161     		str	r1, [r2, #24]
  107              		.loc 2 1702 3 is_stmt 1 view .LVU25
+ARM GAS  /tmp/ccHyHatJ.s 			page 34
+
+
  108              		.loc 2 1702 18 is_stmt 0 view .LVU26
  109 0028 1061     		str	r0, [r2, #16]
 1703:Drivers/CMSIS/core_cm4.h ****                    SysTick_CTRL_TICKINT_Msk   |
@@ -1976,185 +1989,332 @@ ARM GAS  /tmp/ccPTIo7p.s 			page 1
  110              		.loc 2 1705 3 is_stmt 1 view .LVU27
  111              	.LVL8:
  112              		.loc 2 1705 3 is_stmt 0 view .LVU28
- 113              	.LBE27:
- 114              	.LBE28:
-ARM GAS  /tmp/ccPTIo7p.s 			page 34
-
-
-  53:Core/Src/systick.c ****         /* capture error */
-  54:Core/Src/systick.c ****         while(1) {
-  55:Core/Src/systick.c ****         }
-  56:Core/Src/systick.c ****     }
-  57:Core/Src/systick.c ****     /* configure the systick handler priority */
-  58:Core/Src/systick.c ****     NVIC_SetPriority(SysTick_IRQn, 0x00U);
- 115              		.loc 1 58 5 is_stmt 1 view .LVU29
- 116              	.LBB29:
- 117              	.LBI29:
+ 113              	.LBE31:
+ 114              	.LBE32:
+ 115              	.LBB33:
+ 116              	.LBI33:
+  59:Core/Src/systick.c **** {
+ 117              		.loc 1 59 11 is_stmt 1 view .LVU29
+  63:Core/Src/systick.c ****         /* capture error */
+  64:Core/Src/systick.c ****         while(1) {
+  65:Core/Src/systick.c ****             return ERROR;
+  66:Core/Src/systick.c ****         }
+  67:Core/Src/systick.c ****     }
+  68:Core/Src/systick.c ****     /* configure the systick handler priority */
+  69:Core/Src/systick.c ****     NVIC_SetPriority(SysTick_IRQn, 0x00U);
+ 118              		.loc 1 69 5 view .LVU30
+ 119              	.LBB34:
+ 120              	.LBI34:
 1568:Drivers/CMSIS/core_cm4.h **** {
- 118              		.loc 2 1568 22 view .LVU30
+ 121              		.loc 2 1568 22 view .LVU31
 1570:Drivers/CMSIS/core_cm4.h ****     SCB->SHP[((uint32_t)(IRQn) & 0xF)-4] = ((priority << (8 - __NVIC_PRIO_BITS)) & 0xff); } /* set 
- 119              		.loc 2 1570 3 view .LVU31
- 120              	.LBB30:
- 121              	.LBI30:
+ 122              		.loc 2 1570 3 view .LVU32
+ 123              	.LBB35:
+ 124              	.LBI35:
 1568:Drivers/CMSIS/core_cm4.h **** {
- 122              		.loc 2 1568 22 view .LVU32
- 123              	.LBB31:
+ 125              		.loc 2 1568 22 view .LVU33
+ 126              	.LBB36:
 1571:Drivers/CMSIS/core_cm4.h ****   else {
- 124              		.loc 2 1571 5 view .LVU33
+ 127              		.loc 2 1571 5 view .LVU34
 1571:Drivers/CMSIS/core_cm4.h ****   else {
- 125              		.loc 2 1571 42 is_stmt 0 view .LVU34
- 126 002a 83F82310 		strb	r1, [r3, #35]
- 127              	.LVL9:
+ 128              		.loc 2 1571 42 is_stmt 0 view .LVU35
+ 129 002a 83F82310 		strb	r1, [r3, #35]
+ 130              	.LVL9:
 1571:Drivers/CMSIS/core_cm4.h ****   else {
- 128              		.loc 2 1571 42 view .LVU35
- 129              	.LBE31:
- 130              	.LBE30:
- 131              	.LBE29:
-  59:Core/Src/systick.c **** }
- 132              		.loc 1 59 1 view .LVU36
- 133 002e 7047     		bx	lr
- 134              	.L2:
-  54:Core/Src/systick.c ****         }
- 135              		.loc 1 54 9 is_stmt 1 discriminator 1 view .LVU37
-  55:Core/Src/systick.c ****     }
- 136              		.loc 1 55 9 discriminator 1 view .LVU38
-  54:Core/Src/systick.c ****         }
- 137              		.loc 1 54 14 discriminator 1 view .LVU39
- 138 0030 FEE7     		b	.L2
- 139              	.L7:
- 140 0032 00BF     		.align	2
- 141              	.L6:
- 142 0034 00000000 		.word	SystemCoreClock
- 143 0038 00ED00E0 		.word	-536810240
- 144              		.cfi_endproc
- 145              	.LFE116:
- 147              		.section	.text.delay_1ms,"ax",%progbits
- 148              		.align	1
- 149              		.global	delay_1ms
- 150              		.syntax unified
- 151              		.thumb
- 152              		.thumb_func
- 154              	delay_1ms:
- 155              	.LVL10:
- 156              	.LFB117:
-  60:Core/Src/systick.c **** 
-ARM GAS  /tmp/ccPTIo7p.s 			page 35
-
-
-  61:Core/Src/systick.c **** /*!
-  62:Core/Src/systick.c ****     \brief    delay a time in milliseconds
-  63:Core/Src/systick.c ****     \param[in]  count: count in milliseconds
-  64:Core/Src/systick.c ****     \param[out] none
-  65:Core/Src/systick.c ****     \retval     none
-  66:Core/Src/systick.c **** */
-  67:Core/Src/systick.c **** void delay_1ms(uint32_t count)
-  68:Core/Src/systick.c **** {
- 157              		.loc 1 68 1 view -0
- 158              		.cfi_startproc
- 159              		@ args = 0, pretend = 0, frame = 0
- 160              		@ frame_needed = 0, uses_anonymous_args = 0
- 161              		@ link register save eliminated.
-  69:Core/Src/systick.c ****     delay = count;
- 162              		.loc 1 69 5 view .LVU41
- 163              		.loc 1 69 11 is_stmt 0 view .LVU42
- 164 0000 024B     		ldr	r3, .L11
- 165 0002 1860     		str	r0, [r3]
+ 131              		.loc 2 1571 42 view .LVU36
+ 132              	.LBE36:
+ 133              	.LBE35:
+ 134              	.LBE34:
   70:Core/Src/systick.c **** 
-  71:Core/Src/systick.c ****     while(0U != delay) {
- 166              		.loc 1 71 5 is_stmt 1 view .LVU43
- 167              	.L9:
-  72:Core/Src/systick.c ****     }
- 168              		.loc 1 72 5 discriminator 1 view .LVU44
-  71:Core/Src/systick.c ****     }
- 169              		.loc 1 71 14 discriminator 1 view .LVU45
- 170 0004 1A68     		ldr	r2, [r3]
- 171 0006 002A     		cmp	r2, #0
- 172 0008 FCD1     		bne	.L9
-  73:Core/Src/systick.c **** }
- 173              		.loc 1 73 1 is_stmt 0 view .LVU46
- 174 000a 7047     		bx	lr
- 175              	.L12:
- 176              		.align	2
- 177              	.L11:
- 178 000c 00000000 		.word	delay
- 179              		.cfi_endproc
- 180              	.LFE117:
- 182              		.section	.text.delay_decrement,"ax",%progbits
- 183              		.align	1
- 184              		.global	delay_decrement
- 185              		.syntax unified
- 186              		.thumb
- 187              		.thumb_func
- 189              	delay_decrement:
- 190              	.LFB118:
-  74:Core/Src/systick.c **** 
-  75:Core/Src/systick.c **** /*!
-  76:Core/Src/systick.c ****     \brief    delay decrement
-  77:Core/Src/systick.c ****     \param[in]  none
-  78:Core/Src/systick.c ****     \param[out] none
-  79:Core/Src/systick.c ****     \retval     none
-  80:Core/Src/systick.c **** */
-  81:Core/Src/systick.c **** void delay_decrement(void)
-  82:Core/Src/systick.c **** {
- 191              		.loc 1 82 1 is_stmt 1 view -0
- 192              		.cfi_startproc
-ARM GAS  /tmp/ccPTIo7p.s 			page 36
+  71:Core/Src/systick.c ****     return SUCCESS;
+ 135              		.loc 1 71 5 is_stmt 1 view .LVU37
+ 136              	.LBB39:
+ 137              	.LBB38:
+ 138              	.LBB37:
+1571:Drivers/CMSIS/core_cm4.h ****   else {
+ 139              		.loc 2 1571 42 is_stmt 0 view .LVU38
+ 140 002e 0120     		movs	r0, #1
+ 141 0030 7047     		bx	lr
+ 142              	.LVL10:
+ 143              	.L3:
+1571:Drivers/CMSIS/core_cm4.h ****   else {
+ARM GAS  /tmp/ccHyHatJ.s 			page 35
 
 
- 193              		@ args = 0, pretend = 0, frame = 0
- 194              		@ frame_needed = 0, uses_anonymous_args = 0
- 195              		@ link register save eliminated.
-  83:Core/Src/systick.c ****     if(0U != delay) {
- 196              		.loc 1 83 5 view .LVU48
- 197              		.loc 1 83 11 is_stmt 0 view .LVU49
- 198 0000 034B     		ldr	r3, .L18
- 199 0002 1A68     		ldr	r2, [r3]
- 200              		.loc 1 83 7 view .LVU50
- 201 0004 12B1     		cbz	r2, .L13
-  84:Core/Src/systick.c ****         delay--;
- 202              		.loc 1 84 9 is_stmt 1 view .LVU51
- 203              		.loc 1 84 14 is_stmt 0 view .LVU52
- 204 0006 1A68     		ldr	r2, [r3]
- 205 0008 013A     		subs	r2, r2, #1
- 206 000a 1A60     		str	r2, [r3]
- 207              	.L13:
+ 144              		.loc 2 1571 42 view .LVU39
+ 145              	.LBE37:
+ 146              	.LBE38:
+ 147              	.LBE39:
+ 148              	.LBE33:
+  65:Core/Src/systick.c ****         }
+ 149              		.loc 1 65 20 view .LVU40
+ 150 0032 0020     		movs	r0, #0
+ 151              	.LVL11:
+  72:Core/Src/systick.c **** }
+ 152              		.loc 1 72 1 view .LVU41
+ 153 0034 7047     		bx	lr
+ 154              	.L5:
+ 155 0036 00BF     		.align	2
+ 156              	.L4:
+ 157 0038 00000000 		.word	SystemCoreClock
+ 158 003c 00ED00E0 		.word	-536810240
+ 159              		.cfi_endproc
+ 160              	.LFE116:
+ 162              		.section	.text.delay_1ms,"ax",%progbits
+ 163              		.align	1
+ 164              		.global	delay_1ms
+ 165              		.syntax unified
+ 166              		.thumb
+ 167              		.thumb_func
+ 169              	delay_1ms:
+ 170              	.LVL12:
+ 171              	.LFB117:
+  73:Core/Src/systick.c **** 
+  74:Core/Src/systick.c **** /*!
+  75:Core/Src/systick.c ****     \brief    delay a time in milliseconds
+  76:Core/Src/systick.c ****     \param[in]  count: count in milliseconds
+  77:Core/Src/systick.c ****     \param[out] none
+  78:Core/Src/systick.c ****     \retval     none
+  79:Core/Src/systick.c **** */
+  80:Core/Src/systick.c **** void delay_1ms(uint32_t count)
+  81:Core/Src/systick.c **** {
+ 172              		.loc 1 81 1 is_stmt 1 view -0
+ 173              		.cfi_startproc
+ 174              		@ args = 0, pretend = 0, frame = 0
+ 175              		@ frame_needed = 0, uses_anonymous_args = 0
+ 176              		@ link register save eliminated.
+  82:Core/Src/systick.c ****     delay = count;
+ 177              		.loc 1 82 5 view .LVU43
+ 178              		.loc 1 82 11 is_stmt 0 view .LVU44
+ 179 0000 024B     		ldr	r3, .L9
+ 180 0002 1860     		str	r0, [r3]
+  83:Core/Src/systick.c **** 
+  84:Core/Src/systick.c ****     while(0U != delay) {
+ 181              		.loc 1 84 5 is_stmt 1 view .LVU45
+ 182              	.L7:
   85:Core/Src/systick.c ****     }
+ 183              		.loc 1 85 5 discriminator 1 view .LVU46
+  84:Core/Src/systick.c ****     }
+ 184              		.loc 1 84 14 discriminator 1 view .LVU47
+ 185 0004 1A68     		ldr	r2, [r3]
+ 186 0006 002A     		cmp	r2, #0
+ARM GAS  /tmp/ccHyHatJ.s 			page 36
+
+
+ 187 0008 FCD1     		bne	.L7
   86:Core/Src/systick.c **** }
- 208              		.loc 1 86 1 view .LVU53
- 209 000c 7047     		bx	lr
- 210              	.L19:
- 211 000e 00BF     		.align	2
- 212              	.L18:
- 213 0010 00000000 		.word	delay
- 214              		.cfi_endproc
- 215              	.LFE118:
- 217              		.section	.bss.delay,"aw",%nobits
- 218              		.align	2
- 221              	delay:
- 222 0000 00000000 		.space	4
- 223              		.text
- 224              	.Letext0:
- 225              		.file 3 "Drivers/CMSIS/Include/gd32f4xx.h"
- 226              		.file 4 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 227              		.file 5 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 228              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_dbg.h"
- 229              		.file 7 "Drivers/CMSIS/Include/system_gd32f4xx.h"
-ARM GAS  /tmp/ccPTIo7p.s 			page 37
+ 188              		.loc 1 86 1 is_stmt 0 view .LVU48
+ 189 000a 7047     		bx	lr
+ 190              	.L10:
+ 191              		.align	2
+ 192              	.L9:
+ 193 000c 00000000 		.word	delay
+ 194              		.cfi_endproc
+ 195              	.LFE117:
+ 197              		.section	.text.get_systick_ms,"ax",%progbits
+ 198              		.align	1
+ 199              		.global	get_systick_ms
+ 200              		.syntax unified
+ 201              		.thumb
+ 202              		.thumb_func
+ 204              	get_systick_ms:
+ 205              	.LFB118:
+  87:Core/Src/systick.c **** 
+  88:Core/Src/systick.c **** /*
+  89:Core/Src/systick.c ****  * Max 4294967295(ms)=4294967(s)=71582(min)=1193(hour)=49(day)
+  90:Core/Src/systick.c ****  */
+  91:Core/Src/systick.c **** uint32_t get_systick_ms(void)
+  92:Core/Src/systick.c **** {
+ 206              		.loc 1 92 1 is_stmt 1 view -0
+ 207              		.cfi_startproc
+ 208              		@ args = 0, pretend = 0, frame = 0
+ 209              		@ frame_needed = 0, uses_anonymous_args = 0
+  93:Core/Src/systick.c ****   if (!is_init) systick_config();
+ 210              		.loc 1 93 3 view .LVU50
+  92:Core/Src/systick.c ****   if (!is_init) systick_config();
+ 211              		.loc 1 92 1 is_stmt 0 view .LVU51
+ 212 0000 10B5     		push	{r4, lr}
+ 213              	.LCFI0:
+ 214              		.cfi_def_cfa_offset 8
+ 215              		.cfi_offset 4, -8
+ 216              		.cfi_offset 14, -4
+ 217              		.loc 1 93 7 view .LVU52
+ 218 0002 0A4B     		ldr	r3, .L15
+ 219 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 220              		.loc 1 93 6 view .LVU53
+ 221 0006 0BB9     		cbnz	r3, .L12
+ 222              		.loc 1 93 17 is_stmt 1 discriminator 1 view .LVU54
+ 223 0008 FFF7FEFF 		bl	systick_config
+ 224              	.LVL13:
+ 225              	.L12:
+  94:Core/Src/systick.c **** 
+  95:Core/Src/systick.c ****   uint32_t _systick_ms, _val;
+  96:Core/Src/systick.c **** 
+  97:Core/Src/systick.c ****   do {
+  98:Core/Src/systick.c ****     _systick_ms = systick_ms;
+ 226              		.loc 1 98 17 is_stmt 0 discriminator 1 view .LVU55
+ 227 000c 084B     		ldr	r3, .L15+4
+  99:Core/Src/systick.c ****     _val = SysTick->VAL;
+ 228              		.loc 1 99 10 discriminator 1 view .LVU56
+ 229 000e 4FF0E024 		mov	r4, #-536813568
+ 230              	.L13:
+ARM GAS  /tmp/ccHyHatJ.s 			page 37
+
+
+  95:Core/Src/systick.c **** 
+ 231              		.loc 1 95 3 is_stmt 1 discriminator 1 view .LVU57
+  97:Core/Src/systick.c ****     _systick_ms = systick_ms;
+ 232              		.loc 1 97 3 discriminator 1 view .LVU58
+  98:Core/Src/systick.c ****     _val = SysTick->VAL;
+ 233              		.loc 1 98 5 discriminator 1 view .LVU59
+  98:Core/Src/systick.c ****     _val = SysTick->VAL;
+ 234              		.loc 1 98 17 is_stmt 0 discriminator 1 view .LVU60
+ 235 0012 1968     		ldr	r1, [r3]
+ 236              	.LVL14:
+ 237              		.loc 1 99 5 is_stmt 1 discriminator 1 view .LVU61
+ 238              		.loc 1 99 10 is_stmt 0 discriminator 1 view .LVU62
+ 239 0014 A269     		ldr	r2, [r4, #24]
+ 240              	.LVL15:
+ 100:Core/Src/systick.c ****   } while (_systick_ms != systick_ms);
+ 241              		.loc 1 100 24 is_stmt 1 discriminator 1 view .LVU63
+ 242 0016 1868     		ldr	r0, [r3]
+ 243 0018 8842     		cmp	r0, r1
+ 244 001a FAD1     		bne	.L13
+ 101:Core/Src/systick.c **** 
+ 102:Core/Src/systick.c ****   uint32_t tick = (SYSTICK_EXT_CLOCK_500MS_CNT - _val);
+ 245              		.loc 1 102 3 view .LVU64
+ 246              	.LVL16:
+ 103:Core/Src/systick.c ****   uint32_t tick_ms = tick / (SYSTICK_EXT_CLOCK_500MS_CNT / 500);
+ 247              		.loc 1 103 3 view .LVU65
+ 102:Core/Src/systick.c ****   uint32_t tick_ms = tick / (SYSTICK_EXT_CLOCK_500MS_CNT / 500);
+ 248              		.loc 1 102 12 is_stmt 0 view .LVU66
+ 249 001c 054B     		ldr	r3, .L15+8
+ 250 001e 9B1A     		subs	r3, r3, r2
+ 251              	.LVL17:
+ 252              		.loc 1 103 12 view .LVU67
+ 253 0020 43F69822 		movw	r2, #15000
+ 254              	.LVL18:
+ 255              		.loc 1 103 12 view .LVU68
+ 256 0024 B3FBF2F3 		udiv	r3, r3, r2
+ 257              	.LVL19:
+ 104:Core/Src/systick.c ****   tick_ms = tick_ms + _systick_ms;
+ 258              		.loc 1 104 3 is_stmt 1 view .LVU69
+ 105:Core/Src/systick.c **** 
+ 106:Core/Src/systick.c ****   return tick_ms ;
+ 259              		.loc 1 106 3 view .LVU70
+ 107:Core/Src/systick.c **** }
+ 260              		.loc 1 107 1 is_stmt 0 view .LVU71
+ 261 0028 1844     		add	r0, r0, r3
+ 262              	.LVL20:
+ 263              		.loc 1 107 1 view .LVU72
+ 264 002a 10BD     		pop	{r4, pc}
+ 265              	.L16:
+ 266              		.align	2
+ 267              	.L15:
+ 268 002c 00000000 		.word	is_init
+ 269 0030 00000000 		.word	systick_ms
+ 270 0034 E0707200 		.word	7500000
+ 271              		.cfi_endproc
+ 272              	.LFE118:
+ 274              		.section	.text.delay_decrement,"ax",%progbits
+ 275              		.align	1
+ARM GAS  /tmp/ccHyHatJ.s 			page 38
+
+
+ 276              		.global	delay_decrement
+ 277              		.syntax unified
+ 278              		.thumb
+ 279              		.thumb_func
+ 281              	delay_decrement:
+ 282              	.LFB119:
+ 108:Core/Src/systick.c **** 
+ 109:Core/Src/systick.c **** /*!
+ 110:Core/Src/systick.c ****     \brief    delay decrement
+ 111:Core/Src/systick.c ****     \param[in]  none
+ 112:Core/Src/systick.c ****     \param[out] none
+ 113:Core/Src/systick.c ****     \retval     none
+ 114:Core/Src/systick.c **** */
+ 115:Core/Src/systick.c **** void delay_decrement(void)
+ 116:Core/Src/systick.c **** {
+ 283              		.loc 1 116 1 is_stmt 1 view -0
+ 284              		.cfi_startproc
+ 285              		@ args = 0, pretend = 0, frame = 0
+ 286              		@ frame_needed = 0, uses_anonymous_args = 0
+ 287              		@ link register save eliminated.
+ 117:Core/Src/systick.c ****     if(0U != delay) {
+ 288              		.loc 1 117 5 view .LVU74
+ 289              		.loc 1 117 11 is_stmt 0 view .LVU75
+ 290 0000 034B     		ldr	r3, .L22
+ 291 0002 1A68     		ldr	r2, [r3]
+ 292              		.loc 1 117 7 view .LVU76
+ 293 0004 12B1     		cbz	r2, .L17
+ 118:Core/Src/systick.c ****         delay--;
+ 294              		.loc 1 118 9 is_stmt 1 view .LVU77
+ 295              		.loc 1 118 14 is_stmt 0 view .LVU78
+ 296 0006 1A68     		ldr	r2, [r3]
+ 297 0008 013A     		subs	r2, r2, #1
+ 298 000a 1A60     		str	r2, [r3]
+ 299              	.L17:
+ 119:Core/Src/systick.c ****     }
+ 120:Core/Src/systick.c **** }
+ 300              		.loc 1 120 1 view .LVU79
+ 301 000c 7047     		bx	lr
+ 302              	.L23:
+ 303 000e 00BF     		.align	2
+ 304              	.L22:
+ 305 0010 00000000 		.word	delay
+ 306              		.cfi_endproc
+ 307              	.LFE119:
+ 309              		.section	.bss.is_init,"aw",%nobits
+ 312              	is_init:
+ 313 0000 00       		.space	1
+ 314              		.section	.bss.systick_us,"aw",%nobits
+ 315              		.align	2
+ 318              	systick_us:
+ 319 0000 00000000 		.space	4
+ 320              		.section	.bss.systick_ms,"aw",%nobits
+ 321              		.align	2
+ 324              	systick_ms:
+ 325 0000 00000000 		.space	4
+ 326              		.section	.bss.delay,"aw",%nobits
+ 327              		.align	2
+ARM GAS  /tmp/ccHyHatJ.s 			page 39
+
+
+ 330              	delay:
+ 331 0000 00000000 		.space	4
+ 332              		.text
+ 333              	.Letext0:
+ 334              		.file 3 "Drivers/CMSIS/Include/gd32f4xx.h"
+ 335              		.file 4 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 336              		.file 5 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 337              		.file 6 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_dbg.h"
+ 338              		.file 7 "Drivers/CMSIS/Include/system_gd32f4xx.h"
+ARM GAS  /tmp/ccHyHatJ.s 			page 40
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 systick.c
-     /tmp/ccPTIo7p.s:19     .text.systick_config:0000000000000000 $t
-     /tmp/ccPTIo7p.s:25     .text.systick_config:0000000000000000 systick_config
-     /tmp/ccPTIo7p.s:142    .text.systick_config:0000000000000034 $d
-     /tmp/ccPTIo7p.s:148    .text.delay_1ms:0000000000000000 $t
-     /tmp/ccPTIo7p.s:154    .text.delay_1ms:0000000000000000 delay_1ms
-     /tmp/ccPTIo7p.s:178    .text.delay_1ms:000000000000000c $d
-     /tmp/ccPTIo7p.s:221    .bss.delay:0000000000000000 delay
-     /tmp/ccPTIo7p.s:183    .text.delay_decrement:0000000000000000 $t
-     /tmp/ccPTIo7p.s:189    .text.delay_decrement:0000000000000000 delay_decrement
-     /tmp/ccPTIo7p.s:213    .text.delay_decrement:0000000000000010 $d
-     /tmp/ccPTIo7p.s:218    .bss.delay:0000000000000000 $d
+     /tmp/ccHyHatJ.s:19     .text.systick_config:0000000000000000 $t
+     /tmp/ccHyHatJ.s:25     .text.systick_config:0000000000000000 systick_config
+     /tmp/ccHyHatJ.s:157    .text.systick_config:0000000000000038 $d
+     /tmp/ccHyHatJ.s:163    .text.delay_1ms:0000000000000000 $t
+     /tmp/ccHyHatJ.s:169    .text.delay_1ms:0000000000000000 delay_1ms
+     /tmp/ccHyHatJ.s:193    .text.delay_1ms:000000000000000c $d
+     /tmp/ccHyHatJ.s:330    .bss.delay:0000000000000000 delay
+     /tmp/ccHyHatJ.s:198    .text.get_systick_ms:0000000000000000 $t
+     /tmp/ccHyHatJ.s:204    .text.get_systick_ms:0000000000000000 get_systick_ms
+     /tmp/ccHyHatJ.s:268    .text.get_systick_ms:000000000000002c $d
+     /tmp/ccHyHatJ.s:312    .bss.is_init:0000000000000000 is_init
+     /tmp/ccHyHatJ.s:324    .bss.systick_ms:0000000000000000 systick_ms
+     /tmp/ccHyHatJ.s:275    .text.delay_decrement:0000000000000000 $t
+     /tmp/ccHyHatJ.s:281    .text.delay_decrement:0000000000000000 delay_decrement
+     /tmp/ccHyHatJ.s:305    .text.delay_decrement:0000000000000010 $d
+     /tmp/ccHyHatJ.s:313    .bss.is_init:0000000000000000 $d
+     /tmp/ccHyHatJ.s:315    .bss.systick_us:0000000000000000 $d
+     /tmp/ccHyHatJ.s:318    .bss.systick_us:0000000000000000 systick_us
+     /tmp/ccHyHatJ.s:321    .bss.systick_ms:0000000000000000 $d
+     /tmp/ccHyHatJ.s:327    .bss.delay:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 SystemCoreClock

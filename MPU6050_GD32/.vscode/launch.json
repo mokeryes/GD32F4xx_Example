@@ -8,6 +8,7 @@
             "executable": "${workspaceRoot}/build/${workspaceFolderBasename}.elf",
             "request": "launch",
             "type": "cortex-debug",
+            "svdFile": "./Drivers/GD32F4xx.svd",
             "servertype": "openocd",
             "device": "GD32F450",
             "interface": "swd",

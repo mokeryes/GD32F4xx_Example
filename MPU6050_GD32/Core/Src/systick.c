@@ -46,7 +46,7 @@ volatile static uint32_t delay;
     \param[out] none
     \retval     none
 */
-void systick_config(void)
+ErrStatus systick_config(void)
 {
     /* setup systick timer for 1000Hz interrupts */
     if(SysTick_Config(SystemCoreClock / 1000U)) {
@@ -56,6 +56,8 @@ void systick_config(void)
     }
     /* configure the systick handler priority */
     NVIC_SetPriority(SysTick_IRQn, 0x00U);
+
+    return SUCCESS;
 }
 
 /*!

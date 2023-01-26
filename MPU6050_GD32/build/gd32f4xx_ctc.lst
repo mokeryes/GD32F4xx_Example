@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccZfOZb3.s 			page 1
+ARM GAS  /tmp/ccbgIjuv.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
   30:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c **** INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
   31:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c **** NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
   32:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c **** PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-ARM GAS  /tmp/ccZfOZb3.s 			page 2
+ARM GAS  /tmp/ccbgIjuv.s 			page 2
 
 
   33:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c **** WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
   52              	.LVL1:
   53              		.cfi_endproc
   54              	.LFE116:
-ARM GAS  /tmp/ccZfOZb3.s 			page 3
+ARM GAS  /tmp/ccbgIjuv.s 			page 3
 
 
   56              		.section	.text.ctc_counter_enable,"ax",%progbits
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
   79:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c **** {
   94              		.loc 1 79 1 is_stmt 1 view -0
   95              		.cfi_startproc
-ARM GAS  /tmp/ccZfOZb3.s 			page 4
+ARM GAS  /tmp/ccbgIjuv.s 			page 4
 
 
   96              		@ args = 0, pretend = 0, frame = 0
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  136 000e D3F8002C 		ldr	r2, [r3, #3072]
  137              		.loc 1 95 14 is_stmt 0 view .LVU19
  138 0012 42EA0022 		orr	r2, r2, r0, lsl #8
-ARM GAS  /tmp/ccZfOZb3.s 			page 5
+ARM GAS  /tmp/ccbgIjuv.s 			page 5
 
 
  139 0016 C3F8002C 		str	r2, [r3, #3072]
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  185              	ctc_hardware_trim_mode_config:
  186              	.LVL3:
  187              	.LFB121:
-ARM GAS  /tmp/ccZfOZb3.s 			page 6
+ARM GAS  /tmp/ccbgIjuv.s 			page 6
 
 
  108:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c **** 
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  129:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****       \arg        CTC_REFSOURCE_POLARITY_RISING: reference signal source polarity is rising edge
  130:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****     \param[out] none
  131:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****     \retval     none
-ARM GAS  /tmp/ccZfOZb3.s 			page 7
+ARM GAS  /tmp/ccbgIjuv.s 			page 7
 
 
  132:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c **** */
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  261              		@ frame_needed = 0, uses_anonymous_args = 0
  262              		@ link register save eliminated.
  150:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****     CTC_CTL1 &= (uint32_t)(~CTC_CTL1_REFSEL);
-ARM GAS  /tmp/ccZfOZb3.s 			page 8
+ARM GAS  /tmp/ccbgIjuv.s 			page 8
 
 
  263              		.loc 1 150 5 view .LVU38
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  298              		.loc 1 171 5 view .LVU44
  299 0000 064B     		ldr	r3, .L24
  300 0002 D3F8042C 		ldr	r2, [r3, #3076]
-ARM GAS  /tmp/ccZfOZb3.s 			page 9
+ARM GAS  /tmp/ccbgIjuv.s 			page 9
 
 
  301              		.loc 1 171 14 is_stmt 0 view .LVU45
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  343 0016 C3F8042C 		str	r2, [r3, #3076]
  186:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c **** }
  344              		.loc 1 186 1 view .LVU54
-ARM GAS  /tmp/ccZfOZb3.s 			page 10
+ARM GAS  /tmp/ccbgIjuv.s 			page 10
 
 
  345 001a 7047     		bx	lr
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  388              		.cfi_endproc
  389              	.LFE126:
  391              		.section	.text.ctc_counter_capture_value_read,"ax",%progbits
-ARM GAS  /tmp/ccZfOZb3.s 			page 11
+ARM GAS  /tmp/ccbgIjuv.s 			page 11
 
 
  392              		.align	1
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  215:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****     \brief    read CTC trim counter direction when reference sync pulse occurred
  216:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****     \param[in]  none
  217:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****     \param[out] none
-ARM GAS  /tmp/ccZfOZb3.s 			page 12
+ARM GAS  /tmp/ccbgIjuv.s 			page 12
 
 
  218:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****     \retval     FlagStatus: SET or RESET
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  468              	.LVL13:
  240:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****     reload_value = (uint16_t)(CTC_CTL1 & CTC_CTL1_RLVALUE);
  469              		.loc 1 240 5 view .LVU75
-ARM GAS  /tmp/ccZfOZb3.s 			page 13
+ARM GAS  /tmp/ccbgIjuv.s 			page 13
 
 
  470              		.loc 1 240 31 is_stmt 0 view .LVU76
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  511              		.loc 1 255 1 view .LVU86
  512 000a 7047     		bx	lr
  513              	.L43:
-ARM GAS  /tmp/ccZfOZb3.s 			page 14
+ARM GAS  /tmp/ccbgIjuv.s 			page 14
 
 
  514              		.align	2
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  555              		.thumb_func
  557              	ctc_interrupt_disable:
  558              	.LVL19:
-ARM GAS  /tmp/ccZfOZb3.s 			page 15
+ARM GAS  /tmp/ccbgIjuv.s 			page 15
 
 
  559              	.LFB132:
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  297:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****       \arg        CTC_INT_FLAG_CKERR: clock trim error bit interrupt
  298:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****       \arg        CTC_INT_FLAG_REFMISS: reference sync pulse miss interrupt
  299:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****       \arg        CTC_INT_FLAG_TRIMERR: trim value error interrupt
-ARM GAS  /tmp/ccZfOZb3.s 			page 16
+ARM GAS  /tmp/ccbgIjuv.s 			page 16
 
 
  300:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****     \param[out] none
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  622              	.LVL24:
  623              		.loc 1 317 23 discriminator 1 view .LVU110
  624 001c 18BF     		it	ne
-ARM GAS  /tmp/ccZfOZb3.s 			page 17
+ARM GAS  /tmp/ccbgIjuv.s 			page 17
 
 
  625 001e 0120     		movne	r0, #1
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  656              		.loc 1 340 7 is_stmt 0 view .LVU116
  657 0006 10F4E06F 		tst	r0, #1792
  658              		.loc 1 341 18 view .LVU117
-ARM GAS  /tmp/ccZfOZb3.s 			page 18
+ARM GAS  /tmp/ccbgIjuv.s 			page 18
 
 
  659 000a 14BF     		ite	ne
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  693              		.loc 1 363 7 view .LVU124
  694 0006 0342     		tst	r3, r0
  364:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****         return SET;
-ARM GAS  /tmp/ccZfOZb3.s 			page 19
+ARM GAS  /tmp/ccbgIjuv.s 			page 19
 
 
  365:Drivers/GD32F4xx_standard_peripheral/Source/gd32f4xx_ctc.c ****     } else {
@@ -1136,75 +1136,75 @@ ARM GAS  /tmp/ccZfOZb3.s 			page 1
  730              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
  731              		.file 4 "Drivers/CMSIS/Include/gd32f4xx.h"
  732              		.file 5 "Drivers/GD32F4xx_standard_peripheral/Include/gd32f4xx_rcu.h"
-ARM GAS  /tmp/ccZfOZb3.s 			page 20
+ARM GAS  /tmp/ccbgIjuv.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gd32f4xx_ctc.c
-     /tmp/ccZfOZb3.s:19     .text.ctc_deinit:0000000000000000 $t
-     /tmp/ccZfOZb3.s:25     .text.ctc_deinit:0000000000000000 ctc_deinit
-     /tmp/ccZfOZb3.s:57     .text.ctc_counter_enable:0000000000000000 $t
-     /tmp/ccZfOZb3.s:63     .text.ctc_counter_enable:0000000000000000 ctc_counter_enable
-     /tmp/ccZfOZb3.s:81     .text.ctc_counter_enable:0000000000000010 $d
-     /tmp/ccZfOZb3.s:86     .text.ctc_counter_disable:0000000000000000 $t
-     /tmp/ccZfOZb3.s:92     .text.ctc_counter_disable:0000000000000000 ctc_counter_disable
-     /tmp/ccZfOZb3.s:110    .text.ctc_counter_disable:0000000000000010 $d
-     /tmp/ccZfOZb3.s:115    .text.ctc_irc48m_trim_value_config:0000000000000000 $t
-     /tmp/ccZfOZb3.s:121    .text.ctc_irc48m_trim_value_config:0000000000000000 ctc_irc48m_trim_value_config
-     /tmp/ccZfOZb3.s:145    .text.ctc_irc48m_trim_value_config:000000000000001c $d
-     /tmp/ccZfOZb3.s:150    .text.ctc_software_refsource_pulse_generate:0000000000000000 $t
-     /tmp/ccZfOZb3.s:156    .text.ctc_software_refsource_pulse_generate:0000000000000000 ctc_software_refsource_pulse_generate
-     /tmp/ccZfOZb3.s:174    .text.ctc_software_refsource_pulse_generate:0000000000000010 $d
-     /tmp/ccZfOZb3.s:179    .text.ctc_hardware_trim_mode_config:0000000000000000 $t
-     /tmp/ccZfOZb3.s:185    .text.ctc_hardware_trim_mode_config:0000000000000000 ctc_hardware_trim_mode_config
-     /tmp/ccZfOZb3.s:209    .text.ctc_hardware_trim_mode_config:000000000000001c $d
-     /tmp/ccZfOZb3.s:214    .text.ctc_refsource_polarity_config:0000000000000000 $t
-     /tmp/ccZfOZb3.s:220    .text.ctc_refsource_polarity_config:0000000000000000 ctc_refsource_polarity_config
-     /tmp/ccZfOZb3.s:244    .text.ctc_refsource_polarity_config:000000000000001c $d
-     /tmp/ccZfOZb3.s:249    .text.ctc_refsource_signal_select:0000000000000000 $t
-     /tmp/ccZfOZb3.s:255    .text.ctc_refsource_signal_select:0000000000000000 ctc_refsource_signal_select
-     /tmp/ccZfOZb3.s:279    .text.ctc_refsource_signal_select:000000000000001c $d
-     /tmp/ccZfOZb3.s:284    .text.ctc_refsource_prescaler_config:0000000000000000 $t
-     /tmp/ccZfOZb3.s:290    .text.ctc_refsource_prescaler_config:0000000000000000 ctc_refsource_prescaler_config
-     /tmp/ccZfOZb3.s:314    .text.ctc_refsource_prescaler_config:000000000000001c $d
-     /tmp/ccZfOZb3.s:319    .text.ctc_clock_limit_value_config:0000000000000000 $t
-     /tmp/ccZfOZb3.s:325    .text.ctc_clock_limit_value_config:0000000000000000 ctc_clock_limit_value_config
-     /tmp/ccZfOZb3.s:349    .text.ctc_clock_limit_value_config:000000000000001c $d
-     /tmp/ccZfOZb3.s:354    .text.ctc_counter_reload_value_config:0000000000000000 $t
-     /tmp/ccZfOZb3.s:360    .text.ctc_counter_reload_value_config:0000000000000000 ctc_counter_reload_value_config
-     /tmp/ccZfOZb3.s:387    .text.ctc_counter_reload_value_config:000000000000001c $d
-     /tmp/ccZfOZb3.s:392    .text.ctc_counter_capture_value_read:0000000000000000 $t
-     /tmp/ccZfOZb3.s:398    .text.ctc_counter_capture_value_read:0000000000000000 ctc_counter_capture_value_read
-     /tmp/ccZfOZb3.s:421    .text.ctc_counter_capture_value_read:000000000000000c $d
-     /tmp/ccZfOZb3.s:426    .text.ctc_counter_direction_read:0000000000000000 $t
-     /tmp/ccZfOZb3.s:432    .text.ctc_counter_direction_read:0000000000000000 ctc_counter_direction_read
-     /tmp/ccZfOZb3.s:449    .text.ctc_counter_direction_read:000000000000000c $d
-     /tmp/ccZfOZb3.s:454    .text.ctc_counter_reload_value_read:0000000000000000 $t
-     /tmp/ccZfOZb3.s:460    .text.ctc_counter_reload_value_read:0000000000000000 ctc_counter_reload_value_read
-     /tmp/ccZfOZb3.s:482    .text.ctc_counter_reload_value_read:000000000000000c $d
-     /tmp/ccZfOZb3.s:487    .text.ctc_irc48m_trim_value_read:0000000000000000 $t
-     /tmp/ccZfOZb3.s:493    .text.ctc_irc48m_trim_value_read:0000000000000000 ctc_irc48m_trim_value_read
-     /tmp/ccZfOZb3.s:516    .text.ctc_irc48m_trim_value_read:000000000000000c $d
-     /tmp/ccZfOZb3.s:521    .text.ctc_interrupt_enable:0000000000000000 $t
-     /tmp/ccZfOZb3.s:527    .text.ctc_interrupt_enable:0000000000000000 ctc_interrupt_enable
-     /tmp/ccZfOZb3.s:546    .text.ctc_interrupt_enable:0000000000000010 $d
-     /tmp/ccZfOZb3.s:551    .text.ctc_interrupt_disable:0000000000000000 $t
-     /tmp/ccZfOZb3.s:557    .text.ctc_interrupt_disable:0000000000000000 ctc_interrupt_disable
-     /tmp/ccZfOZb3.s:576    .text.ctc_interrupt_disable:0000000000000010 $d
-     /tmp/ccZfOZb3.s:581    .text.ctc_interrupt_flag_get:0000000000000000 $t
-     /tmp/ccZfOZb3.s:587    .text.ctc_interrupt_flag_get:0000000000000000 ctc_interrupt_flag_get
-     /tmp/ccZfOZb3.s:632    .text.ctc_interrupt_flag_get:0000000000000024 $d
-     /tmp/ccZfOZb3.s:637    .text.ctc_interrupt_flag_clear:0000000000000000 $t
-     /tmp/ccZfOZb3.s:643    .text.ctc_interrupt_flag_clear:0000000000000000 ctc_interrupt_flag_clear
-ARM GAS  /tmp/ccZfOZb3.s 			page 21
+     /tmp/ccbgIjuv.s:19     .text.ctc_deinit:0000000000000000 $t
+     /tmp/ccbgIjuv.s:25     .text.ctc_deinit:0000000000000000 ctc_deinit
+     /tmp/ccbgIjuv.s:57     .text.ctc_counter_enable:0000000000000000 $t
+     /tmp/ccbgIjuv.s:63     .text.ctc_counter_enable:0000000000000000 ctc_counter_enable
+     /tmp/ccbgIjuv.s:81     .text.ctc_counter_enable:0000000000000010 $d
+     /tmp/ccbgIjuv.s:86     .text.ctc_counter_disable:0000000000000000 $t
+     /tmp/ccbgIjuv.s:92     .text.ctc_counter_disable:0000000000000000 ctc_counter_disable
+     /tmp/ccbgIjuv.s:110    .text.ctc_counter_disable:0000000000000010 $d
+     /tmp/ccbgIjuv.s:115    .text.ctc_irc48m_trim_value_config:0000000000000000 $t
+     /tmp/ccbgIjuv.s:121    .text.ctc_irc48m_trim_value_config:0000000000000000 ctc_irc48m_trim_value_config
+     /tmp/ccbgIjuv.s:145    .text.ctc_irc48m_trim_value_config:000000000000001c $d
+     /tmp/ccbgIjuv.s:150    .text.ctc_software_refsource_pulse_generate:0000000000000000 $t
+     /tmp/ccbgIjuv.s:156    .text.ctc_software_refsource_pulse_generate:0000000000000000 ctc_software_refsource_pulse_generate
+     /tmp/ccbgIjuv.s:174    .text.ctc_software_refsource_pulse_generate:0000000000000010 $d
+     /tmp/ccbgIjuv.s:179    .text.ctc_hardware_trim_mode_config:0000000000000000 $t
+     /tmp/ccbgIjuv.s:185    .text.ctc_hardware_trim_mode_config:0000000000000000 ctc_hardware_trim_mode_config
+     /tmp/ccbgIjuv.s:209    .text.ctc_hardware_trim_mode_config:000000000000001c $d
+     /tmp/ccbgIjuv.s:214    .text.ctc_refsource_polarity_config:0000000000000000 $t
+     /tmp/ccbgIjuv.s:220    .text.ctc_refsource_polarity_config:0000000000000000 ctc_refsource_polarity_config
+     /tmp/ccbgIjuv.s:244    .text.ctc_refsource_polarity_config:000000000000001c $d
+     /tmp/ccbgIjuv.s:249    .text.ctc_refsource_signal_select:0000000000000000 $t
+     /tmp/ccbgIjuv.s:255    .text.ctc_refsource_signal_select:0000000000000000 ctc_refsource_signal_select
+     /tmp/ccbgIjuv.s:279    .text.ctc_refsource_signal_select:000000000000001c $d
+     /tmp/ccbgIjuv.s:284    .text.ctc_refsource_prescaler_config:0000000000000000 $t
+     /tmp/ccbgIjuv.s:290    .text.ctc_refsource_prescaler_config:0000000000000000 ctc_refsource_prescaler_config
+     /tmp/ccbgIjuv.s:314    .text.ctc_refsource_prescaler_config:000000000000001c $d
+     /tmp/ccbgIjuv.s:319    .text.ctc_clock_limit_value_config:0000000000000000 $t
+     /tmp/ccbgIjuv.s:325    .text.ctc_clock_limit_value_config:0000000000000000 ctc_clock_limit_value_config
+     /tmp/ccbgIjuv.s:349    .text.ctc_clock_limit_value_config:000000000000001c $d
+     /tmp/ccbgIjuv.s:354    .text.ctc_counter_reload_value_config:0000000000000000 $t
+     /tmp/ccbgIjuv.s:360    .text.ctc_counter_reload_value_config:0000000000000000 ctc_counter_reload_value_config
+     /tmp/ccbgIjuv.s:387    .text.ctc_counter_reload_value_config:000000000000001c $d
+     /tmp/ccbgIjuv.s:392    .text.ctc_counter_capture_value_read:0000000000000000 $t
+     /tmp/ccbgIjuv.s:398    .text.ctc_counter_capture_value_read:0000000000000000 ctc_counter_capture_value_read
+     /tmp/ccbgIjuv.s:421    .text.ctc_counter_capture_value_read:000000000000000c $d
+     /tmp/ccbgIjuv.s:426    .text.ctc_counter_direction_read:0000000000000000 $t
+     /tmp/ccbgIjuv.s:432    .text.ctc_counter_direction_read:0000000000000000 ctc_counter_direction_read
+     /tmp/ccbgIjuv.s:449    .text.ctc_counter_direction_read:000000000000000c $d
+     /tmp/ccbgIjuv.s:454    .text.ctc_counter_reload_value_read:0000000000000000 $t
+     /tmp/ccbgIjuv.s:460    .text.ctc_counter_reload_value_read:0000000000000000 ctc_counter_reload_value_read
+     /tmp/ccbgIjuv.s:482    .text.ctc_counter_reload_value_read:000000000000000c $d
+     /tmp/ccbgIjuv.s:487    .text.ctc_irc48m_trim_value_read:0000000000000000 $t
+     /tmp/ccbgIjuv.s:493    .text.ctc_irc48m_trim_value_read:0000000000000000 ctc_irc48m_trim_value_read
+     /tmp/ccbgIjuv.s:516    .text.ctc_irc48m_trim_value_read:000000000000000c $d
+     /tmp/ccbgIjuv.s:521    .text.ctc_interrupt_enable:0000000000000000 $t
+     /tmp/ccbgIjuv.s:527    .text.ctc_interrupt_enable:0000000000000000 ctc_interrupt_enable
+     /tmp/ccbgIjuv.s:546    .text.ctc_interrupt_enable:0000000000000010 $d
+     /tmp/ccbgIjuv.s:551    .text.ctc_interrupt_disable:0000000000000000 $t
+     /tmp/ccbgIjuv.s:557    .text.ctc_interrupt_disable:0000000000000000 ctc_interrupt_disable
+     /tmp/ccbgIjuv.s:576    .text.ctc_interrupt_disable:0000000000000010 $d
+     /tmp/ccbgIjuv.s:581    .text.ctc_interrupt_flag_get:0000000000000000 $t
+     /tmp/ccbgIjuv.s:587    .text.ctc_interrupt_flag_get:0000000000000000 ctc_interrupt_flag_get
+     /tmp/ccbgIjuv.s:632    .text.ctc_interrupt_flag_get:0000000000000024 $d
+     /tmp/ccbgIjuv.s:637    .text.ctc_interrupt_flag_clear:0000000000000000 $t
+     /tmp/ccbgIjuv.s:643    .text.ctc_interrupt_flag_clear:0000000000000000 ctc_interrupt_flag_clear
+ARM GAS  /tmp/ccbgIjuv.s 			page 21
 
 
-     /tmp/ccZfOZb3.s:670    .text.ctc_interrupt_flag_clear:0000000000000018 $d
-     /tmp/ccZfOZb3.s:675    .text.ctc_flag_get:0000000000000000 $t
-     /tmp/ccZfOZb3.s:681    .text.ctc_flag_get:0000000000000000 ctc_flag_get
-     /tmp/ccZfOZb3.s:705    .text.ctc_flag_get:0000000000000010 $d
-     /tmp/ccZfOZb3.s:710    .text.ctc_flag_clear:0000000000000000 $t
-     /tmp/ccZfOZb3.s:716    .text.ctc_flag_clear:0000000000000000 ctc_flag_clear
+     /tmp/ccbgIjuv.s:670    .text.ctc_interrupt_flag_clear:0000000000000018 $d
+     /tmp/ccbgIjuv.s:675    .text.ctc_flag_get:0000000000000000 $t
+     /tmp/ccbgIjuv.s:681    .text.ctc_flag_get:0000000000000000 ctc_flag_get
+     /tmp/ccbgIjuv.s:705    .text.ctc_flag_get:0000000000000010 $d
+     /tmp/ccbgIjuv.s:710    .text.ctc_flag_clear:0000000000000000 $t
+     /tmp/ccbgIjuv.s:716    .text.ctc_flag_clear:0000000000000000 ctc_flag_clear
 
 UNDEFINED SYMBOLS
 rcu_periph_reset_enable
