@@ -18,3 +18,9 @@ GD32_Make \
 ## 添加源文件及头文件路径需修改的项
 添加源文件之后，需要修改**Makefile**，在**C_SOURCES**末端追加头文件路径。 \
 若要自己添加头文件目录，需要在**C_INCLUDES**添加新的头文件路径。
+
+## 关于**Makefile**中的**clean**
+- Windows
+`-del /q $(BUILD_DIR)`
+- Linux/Unix
+`rm -rf $(BUILD_DIR)`
